@@ -1,17 +1,33 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">My Vue Native App</text>
+    <StatusBar/>
+    <Header/>
+    <text class="textColorPrimary">Junimea mobile</text>
   </view>
 </template>
 
+
+<script>
+import StatusBar from "./components/StatusBar";
+import Header from "./components/Header";
+export default {
+  name: "App",
+  components:{
+    StatusBar,
+    Header
+  }
+}
+</script>
+
+
 <style>
 .container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
+  background-color: #252525;
   flex: 1;
 }
-.text-color-primary {
-  color: blue;
+.textColorPrimary {
+  color: #AAAAAA;
+  font-size: 24px;
+  font-weight: 300;
 }
 </style>
