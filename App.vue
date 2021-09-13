@@ -1,5 +1,6 @@
 <template>
   <view class="container">
+    <Login/>
     <StatusBar/>
     <Header/>
     <text class="textColorPrimary">Junimea mobile</text>
@@ -8,11 +9,13 @@
 
 
 <script>
+import Login from "./components/Login";
 import StatusBar from "./components/StatusBar";
 import Header from "./components/Header";
 export default {
   name: "App",
   components:{
+    Login,
     StatusBar,
     Header
   }
