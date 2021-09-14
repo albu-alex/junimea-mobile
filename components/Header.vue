@@ -22,7 +22,7 @@ export default {
 
 <style>
 .header{
-  height: 5%;
+  height: 6%;
   background-color: black;
   align-items: flex-start;
 }
@@ -30,7 +30,7 @@ export default {
   font-size: 20px;
   font-weight: 700;
   color: ghostwhite;
-  margin-top: 3%;
+  margin-top: 6%;
   margin-left: 3%;
 }
 </style>

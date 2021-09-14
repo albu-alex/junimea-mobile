@@ -1,23 +1,24 @@
 <template>
   <view class="container">
-    <Login/>
-    <StatusBar/>
-    <Header/>
-    <text class="textColorPrimary">Junimea mobile</text>
+    <Login v-if="!isLoggedIn" @changeComponent="isLoggedIn = true"/>
+    <MainPage v-if="isLoggedIn" />
   </view>
 </template>
 
 
 <script>
 import Login from "./components/Login";
-import StatusBar from "./components/StatusBar";
-import Header from "./components/Header";
+import MainPage from "./components/MainPage";
 export default {
+  data(){
+    return {
+      isLoggedIn: false,
+    }
+  },
   name: "App",
   components:{
-    Login,
-    StatusBar,
-    Header
+    MainPage,
+    Login
   }
 }
 </script>
@@ -27,10 +28,5 @@ export default {
 .container {
   background-color: #252525;
   flex: 1;
-}
-.textColorPrimary {
-  color: #AAAAAA;
-  font-size: 24px;
-  font-weight: 300;
 }
 </style>
