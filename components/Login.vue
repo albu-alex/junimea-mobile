@@ -25,15 +25,20 @@ export default {
   data(){
     return {
       username: "",
-      password: "",
-      loggedIn: false
+      password: ""
     }
   },
   methods:{
+    // The verifyLogin method posts the username and the password to the API;
+    // If the message is "Succesful login", then the user is allowed to continue to the main page
+    // Otherwise, an alert message is displayed
+    // Also, the timeout case is handled
     async verifyLogin(){
+      //Data from the text-inputs is reset
       this.username = "";
       this.password = "";
-      let logged = false;
+      //This variable checks if the login operation was successful or not
+      let loggedIn = false;
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Login',
@@ -46,7 +51,7 @@ export default {
       .then(function(response){
         if(response.data.message === "Succesful login") {
           alert("Login successful!")
-          logged = true;
+          loggedIn = true;
         }
         else
           alert(response.data.message + " Wrong username or password!");
@@ -54,7 +59,7 @@ export default {
       .catch(function (response){
         alert("Timeout! " + response.data.message)
       });
-      if(logged)
+      if(loggedIn)
         this.$emit('verifyLogin');
     },
     registerNewUser(){
