@@ -4,6 +4,7 @@
   <view class="userLogin">
     <text class="pageIntro">Welcome to juni.</text>
     <text-input placeholder="Username or Email" v-model="username" class="textInput"></text-input>
+    <text-input placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
     <text-input placeholder="Password" v-model="password" class="textInput"></text-input>
     <view class="loginButtons">
       <touchable-opacity class="loginButton" :on-press="verifyLogin">
@@ -25,7 +26,11 @@ export default {
   data(){
     return {
       username: "",
-      password: ""
+      password: "",
+      email: "",
+      //This variable keeps track of whether the user needs to register or not
+      //Defaults to true
+      registeredUser: true
     }
   },
   methods:{
@@ -52,7 +57,6 @@ export default {
         }
         else
           alert(response.data.message + " Wrong username or password!");
-        // alert(response.data.message);
       })
       .catch(function (response){
         //Debugging purposes only
@@ -65,10 +69,31 @@ export default {
       if(loggedIn)
         this.$emit('verifyLogin');
     },
-    registerNewUser(){
-      // TODO: Redirect user to register page
-      alert("New feature coming soon!");
-    },
+    //The registerNewUser method registers the user if he cannot be found in the database;
+    //If the user is not registered, a text-input with an email address placeholder will appear
+    //TODO: finalise implementing function
+    async registerNewUser(){
+      if(this.registeredUser)
+        this.registeredUser = true;
+      else{
+        await axios({
+          method: 'post',
+          url: 'http://52.57.118.176/Auth/Register',
+          data:{
+            "UserName": this.username,
+            "Email": this.email,
+            "Password": this.password
+          },
+          timeout: 4000
+        })
+        .then(function (response){
+          alert(response);
+        })
+        .catch(function (response){
+          alert(response);
+        });
+      }
+    }
   }
 }
 </script>
