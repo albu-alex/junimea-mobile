@@ -1,4 +1,4 @@
-# Day 1
+﻿# Day 1
 ## Today I have done the following:
 <uL>
 <li>
