@@ -31,6 +31,9 @@ export default {
   },
   methods:{
     async verifyLogin(){
+      this.username = "";
+      this.password = "";
+      let logged = false;
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Login',
@@ -41,16 +44,18 @@ export default {
         }
       })
       .then(function(response){
-        // if(response.data.succeeded)
-        //   this.$emit("changeComponent")
-        // else
-        //   alert(response.data.message + " Wrong username or password!")
-        alert(response.data.succeeded);
-        this.$emit("changeComponent");
+        if(response.data.message === "Succesful login") {
+          alert("Login successful!")
+          logged = true;
+        }
+        else
+          alert(response.data.message + " Wrong username or password!");
       })
       .catch(function (response){
-        alert("Timeout!")
+        alert("Timeout! " + response.data.message)
       });
+      if(logged)
+        this.$emit('verifyLogin');
     },
     registerNewUser(){
       // TODO: Redirect user to register page

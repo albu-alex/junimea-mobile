@@ -1,6 +1,6 @@
 <template>
   <view class="container">
-    <Login v-if="!isLoggedIn" @changeComponent="isLoggedIn = true"/>
+    <Login v-if="!isLoggedIn" @verifyLogin="isLoggedIn = true"/>
     <MainPage v-if="isLoggedIn" />
   </view>
 </template>
