@@ -34,33 +34,34 @@ export default {
     // Otherwise, an alert message is displayed
     // Also, the timeout case is handled
     async verifyLogin(){
-      //Data from the text-inputs is reset
-      this.username = "";
-      this.password = "";
       //This variable checks if the login operation was successful or not
       let loggedIn = false;
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Login',
         data:{
-          UserNameOrEmail: this.username,
-          Password: this.password,
-          RememberME: true
-        }
+          "UserNameOrEmail" : this.username,
+          "Password" : this.password,
+          "RememberMe" : false
+        },
+        timeout: 4000
       })
       .then(function(response){
         if(response.data.message === "Succesful login") {
-          alert("Login successful!")
           loggedIn = true;
         }
         else
           alert(response.data.message + " Wrong username or password!");
+        // alert(response.data.message);
       })
       .catch(function (response){
-        alert("Timeout!")
         //Debugging purposes only
-        loggedIn = true;
+        // loggedIn = true;
+        alert(response);
       });
+      //Data from the text-inputs is reset
+      this.username = "";
+      this.password = "";
       if(loggedIn)
         this.$emit('verifyLogin');
     },

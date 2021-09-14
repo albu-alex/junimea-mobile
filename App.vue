@@ -1,8 +1,8 @@
 <template>
   <view class="container">
-    <Login v-if="!isLoggedIn" @verifyLogin="isLoggedIn = true"/>
+    <Login v-if="!isLoggedIn" @verifyLogin="isLoggedIn = true" />
     <MainPage v-if="isLoggedIn" />
-    <Settings v-if="settingsDisplayed && isLoggedIn" @displaySettings="settingsDisplayed = !settingsDisplayed"/>
+    <Settings v-if="settingsDisplayed && isLoggedIn" @displaySettings="settingsDisplayed = !settingsDisplayed" />
   </view>
 </template>
 
