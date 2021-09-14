@@ -23,7 +23,7 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_2.jpg" alt="Second photo" height="50%" width=auto/>
 
-#Day 2
+# Day 2
 
 ## Today I have done the following:
 
