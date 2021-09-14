@@ -1,7 +1,7 @@
 <template>
   <view class="mainPage">
     <StatusBar/>
-    <Header/>
+    <Header @displaySettings="displaySettings"/>
     <text class="textColorPrimary">Junimea mobile</text>
   </view>
 </template>
@@ -14,6 +14,11 @@ export default {
   components:{
     StatusBar,
     Header
+  },
+  methods:{
+    displaySettings(){
+      this.$emit("displaySettings")
+    }
   }
 }
 </script>

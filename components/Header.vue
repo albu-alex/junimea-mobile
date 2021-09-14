@@ -2,7 +2,7 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view class="header">
-      <touchable-opacity id="homepageButton" :on-press="displayAlert">
+      <touchable-opacity id="homepageButton" :on-press="displaySettings">
         <text class="headerText">juni.</text>
       </touchable-opacity>
   </view>
@@ -13,8 +13,8 @@
 export default {
   name: "Header",
   methods:{
-    displayAlert(){
-      alert("Hello!");
+    displaySettings(){
+      this.$emit("displaySettings");
     }
   }
 }
