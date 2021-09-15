@@ -1,19 +1,52 @@
 <template>
   <view class="settings">
-    <text>Hello</text>
+    <text class="textPrimary">Hello, {{newUsername}}!</text>
+    <view class="settingsTab">
+      <touchable-opacity :on-press="logout">
+        <text class="textSecondary">Logout</text>
+      </touchable-opacity>
+      <touchable-opacity :on-press="changeViewMode">
+        <text class="textSecondary">Change view mode</text>
+      </touchable-opacity>
+    </view>
   </view>
 </template>
 
 <script>
 export default {
-  name: "Settings"
+  name: "Settings",
+  props:{
+    newUsername: String
+  },
+  methods:{
+    logout(){
+      alert("New feature coming soon!");
+    },
+    changeViewMode(){
+      alert("New feature coming soon!");
+    }
+  }
 }
 </script>
 
 <style>
 .settings{
-  width: 10%;
-  flex: 1;
   background-color: #252525;
+}
+.settingsTab{
+  flex-direction: row;
+  justify-content: space-between;
+}
+.textSecondary{
+  color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 200;
+}
+.textPrimary {
+  color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 500;
+  align-self: center;
+  margin-bottom: 10px;
 }
 </style>

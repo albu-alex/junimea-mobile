@@ -1,8 +1,7 @@
 <template>
   <view class="container">
-    <Login v-if="!isLoggedIn" @verifyLogin="isLoggedIn = true" />
-    <MainPage v-if="isLoggedIn" />
-    <Settings v-if="settingsDisplayed && isLoggedIn" @displaySettings="settingsDisplayed = !settingsDisplayed" />
+    <Login v-if="!isLoggedIn" @verifyLogin="verifyLogin($event)" />
+    <MainPage v-if="isLoggedIn" :newUsername="username" />
   </view>
 </template>
 
@@ -15,7 +14,7 @@ export default {
   data(){
     return {
       isLoggedIn: false,
-      settingsDisplayed: true
+      username: "",
     }
   },
   name: "App",
@@ -23,6 +22,12 @@ export default {
     Settings,
     MainPage,
     Login
+  },
+  methods:{
+    verifyLogin(newUsername){
+      this.isLoggedIn = true
+      this.username = newUsername;
+    }
   }
 }
 </script>

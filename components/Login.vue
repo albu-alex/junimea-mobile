@@ -18,7 +18,7 @@
 </template>
 
 
-<!--TODO: To be moved-->
+<!--TODO: To be moved into separate folder-->
 <script>
 import axios from "axios";
 export default {
@@ -61,13 +61,15 @@ export default {
       .catch(function (response){
         //Debugging purposes only
         // loggedIn = true;
-        alert(response);
+        alert(response + " You must not leave the fields empty!");
       });
+      if(loggedIn)
+        this.$emit('verifyLogin', this.username);
       //Data from the text-inputs is reset
       this.username = "";
       this.password = "";
-      if(loggedIn)
-        this.$emit('verifyLogin');
+      //Debugging purposes only
+      this.$emit('verifyLogin', "test");
     },
     //The registerNewUser method registers the user if he cannot be found in the database;
     //If the user is not registered, a text-input with an email address placeholder will appear
