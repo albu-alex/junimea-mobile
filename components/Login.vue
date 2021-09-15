@@ -69,14 +69,14 @@ export default {
       this.username = "";
       this.password = "";
       //Debugging purposes only
-      this.$emit('verifyLogin', "test");
+      // this.$emit('verifyLogin', "test");
     },
     //The registerNewUser method registers the user if he cannot be found in the database;
     //If the user is not registered, a text-input with an email address placeholder will appear
     //TODO: finalise implementing function
     async registerNewUser(){
       if(this.registeredUser)
-        this.registeredUser = true;
+        this.registeredUser = false;
       else{
         await axios({
           method: 'post',
@@ -89,12 +89,21 @@ export default {
           timeout: 4000
         })
         .then(function (response){
-          alert(response);
+          if(!response){
+            alert("New user registered successfully!");
+            this.$emit('verifyLogin', this.username);
+          }
         })
         .catch(function (response){
           alert(response);
         });
       }
+      //Data from the text-inputs is reset
+      this.username = "";
+      this.email = "";
+      this.password = "";
+      // Debugging purposes only
+      this.$emit('verifyLogin', "test");
     }
   }
 }
