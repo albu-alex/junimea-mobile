@@ -1,4 +1,6 @@
-﻿# Day 1
+<a href=#one>Day 1</a><a href=#two>Day 2</a><a href=#three>Day 3</a>
+
+# <a=one>Day 1</a>
 ## Today I have done the following:
 <uL>
 <li>
@@ -23,7 +25,7 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_2.jpg" alt="Second photo" height="50%" width=auto/>
 
-# Day 2
+# <a=two>Day 2</a>
 
 ## Today I have done the following:
 
@@ -59,3 +61,48 @@
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day2_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day2_2.jpg" alt="Second photo" height="50%" width=auto/>
+
+# <a=three>Day 3</a>
+
+## Today I have done the following:
+
+<ul>
+    <li>
+        Implemented the register feature, although it is not yet connected to the API
+    </li>
+    <li>
+        Implemented the settings bar, yet to connect all functionalities to the frontend
+    </li>
+    <li>
+        Started implementing posts
+    </li>
+    <li>
+        Added minimal post styling and distinct posts
+    </li>
+    <li>
+        Minor styling changes
+    </li>
+</ul>
+
+## Things to improve upon:
+
+<ul>
+    <li>
+        Improve the posts(ASAP)
+    </li>
+    <li>
+        Connect the post verification and registration feature to the API
+    </li>
+    <li>
+        Add functionalities to the settings bar
+    </li>
+    <li>
+        Implement the add photo feature to the posts
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_3.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_4.jpg" alt="Second photo" height="50%" width=auto/>
