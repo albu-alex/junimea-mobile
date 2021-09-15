@@ -1,6 +1,6 @@
-<a href=#one>Day 1</a><a href=#two>Day 2</a><a href=#three>Day 3</a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a>
 
-# <a=one>Day 1</a>
+# <a id="one">Day 1</a>
 ## Today I have done the following:
 <uL>
 <li>
@@ -25,7 +25,7 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_2.jpg" alt="Second photo" height="50%" width=auto/>
 
-# <a=two>Day 2</a>
+# <a id="two">Day 2</a>
 
 ## Today I have done the following:
 
@@ -62,7 +62,7 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day2_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day2_2.jpg" alt="Second photo" height="50%" width=auto/>
 
-# <a=three>Day 3</a>
+# <a id="three">Day 3</a>
 
 ## Today I have done the following:
 
