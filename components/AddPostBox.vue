@@ -1,7 +1,7 @@
 <template>
 <view class="postBox">
-  <text-area class="addNewPost" placeholder="What are you thinking about?"/>
-  <touchable-opacity :on-click="addPost">
+  <text-input class="addNewPost" placeholder="What are you thinking about?"/>
+  <touchable-opacity v-model="postText" :on-press="addPost" class="postButton">
     <text class="postButtonText">Create new post</text>
   </touchable-opacity>
 </view>
@@ -9,11 +9,22 @@
 
 <script>
 export default {
+  data(){
+    return{
+      postText: "",
+      posts: []
+    }
+  },
   name: "AddPostBox",
   methods:{
     addPost(){
-      //TODO: implement an axios request after server touch up
-      alert("New feature coming soon!");
+      let post={
+        id: this.posts.length,
+        text: this.postText
+      }
+      this.posts.push(post);
+      alert(post)
+      this.$emit('addPost', post);
     }
   }
 }
@@ -21,8 +32,13 @@ export default {
 
 <style>
 .postBox{
+  margin-top: 3%;
   flex-direction: row;
   justify-content: center;
+}
+.postButton{
+  margin-top: 5%;
+  margin-left: 10%;
 }
 .postButtonText{
   color: #AAAAAA;
@@ -30,11 +46,11 @@ export default {
   font-size: 12px;
 }
 .addNewPost{
-  background-color: #252525;
-  color: #AAAAAA;
-  width: 75%;
-  height: 20%;
+  background-color: ghostwhite;
+  color: dimgrey;
+  width: 50%;
+  height: 50px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
 }
 </style>

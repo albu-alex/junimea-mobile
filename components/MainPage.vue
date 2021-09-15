@@ -3,7 +3,10 @@
     <StatusBar/>
     <Settings :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
     <Header @displaySettings="settingsDisplayed = !settingsDisplayed" />
-    <AddPostBox />
+    <AddPostBox @addPost="addPost($event)" />
+<!--    <ul>-->
+<!--      <li v-for="post in posts" :key="post.id"><UserPost :userPostText="post.text" /></li>-->
+<!--    </ul>-->
   </view>
 </template>
 
@@ -12,14 +15,17 @@ import StatusBar from "./StatusBar";
 import Header from "./Header";
 import Settings from "./Settings";
 import AddPostBox from "./AddPostBox";
+// import UserPost from "./UserPost";
 export default {
   name: "MainPage",
   data(){
     return{
-      settingsDisplayed: false
+      settingsDisplayed: false,
+      posts: []
     }
   },
   components:{
+    // UserPost,
     StatusBar,
     Header,
     Settings,
@@ -27,6 +33,13 @@ export default {
   },
   props:{
     newUsername: String
+  },
+  methods:{
+    async addPost(newPost){
+      //TODO: axios request
+      await this.posts.push(newPost)
+      alert(newPost.id)
+    }
   }
 }
 </script>

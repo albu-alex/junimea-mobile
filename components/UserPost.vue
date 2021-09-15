@@ -1,12 +1,15 @@
 <template>
   <view class="post">
-
+    <text>{{userPostText}}</text>
   </view>
 </template>
 
 <script>
 export default {
-  name: "UserPost"
+  name: "UserPost",
+  props:{
+    userPostText: String
+  }
 }
 </script>
 
