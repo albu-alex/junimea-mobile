@@ -104,5 +104,8 @@
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_3.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_4.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_3.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_4.jpg" alt="Fourth photo" height="50%" width=auto/>
+
+## Day 3.5
+## Made actual register requests to the API and validated them. Also, refactoring in validation of input(status code instead of message)
