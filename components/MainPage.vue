@@ -3,6 +3,7 @@
     <StatusBar/>
     <Settings :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
     <Header @displaySettings="settingsDisplayed = !settingsDisplayed" />
+    <AddPostBox />
   </view>
 </template>
 
@@ -10,6 +11,7 @@
 import StatusBar from "./StatusBar";
 import Header from "./Header";
 import Settings from "./Settings";
+import AddPostBox from "./AddPostBox";
 export default {
   name: "MainPage",
   data(){
@@ -20,7 +22,8 @@ export default {
   components:{
     StatusBar,
     Header,
-    Settings
+    Settings,
+    AddPostBox
   },
   props:{
     newUsername: String
