@@ -52,7 +52,7 @@ export default {
         timeout: 4000
       })
       .then(function(response){
-        if(response.data.message === "Succesful login") {
+        if(response.status === 200) {
           loggedIn = true;
         }
         else
