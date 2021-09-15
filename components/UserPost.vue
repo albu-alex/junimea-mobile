@@ -1,6 +1,6 @@
 <template>
   <view class="post">
-    <text>{{userPostText}}</text>
+    <text class="postText">{{userPostText}}</text>
   </view>
 </template>
 
@@ -14,5 +14,14 @@ export default {
 </script>
 
 <style>
-
+.post{
+  margin-bottom: 5%;
+}
+.postText{
+  color: #AAAAAA;
+  font-size: 24px;
+  font-weight: 500;
+  align-self: flex-start;
+  margin-left: 3%;
+}
 </style>

@@ -103,7 +103,7 @@ export default {
       this.email = "";
       this.password = "";
       // Debugging purposes only
-      this.$emit('verifyLogin', "test");
+      // this.$emit('verifyLogin', "test");
     }
   }
 }

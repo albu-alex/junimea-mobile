@@ -1,7 +1,7 @@
 <template>
 <view class="postBox">
-  <text-input class="addNewPost" placeholder="What are you thinking about?"/>
-  <touchable-opacity v-model="postText" :on-press="addPost" class="postButton">
+  <text-input v-model="postText" class="addNewPost" placeholder="What are you thinking about?"/>
+  <touchable-opacity :on-press="addPost" class="postButton">
     <text class="postButtonText">Create new post</text>
   </touchable-opacity>
 </view>
@@ -18,13 +18,17 @@ export default {
   name: "AddPostBox",
   methods:{
     addPost(){
+      if(!this.postText){
+        alert("Post must contain text!");
+        return 1;
+      }
       let post={
         id: this.posts.length,
         text: this.postText
       }
       this.posts.push(post);
-      alert(post)
       this.$emit('addPost', post);
+      this.postText = "";
     }
   }
 }
@@ -37,18 +41,18 @@ export default {
   justify-content: center;
 }
 .postButton{
-  margin-top: 5%;
-  margin-left: 10%;
+  margin-top: 4%;
+  margin-left: 6%;
 }
 .postButtonText{
   color: #AAAAAA;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
 }
 .addNewPost{
   background-color: ghostwhite;
   color: dimgrey;
-  width: 50%;
+  width: 60%;
   height: 50px;
   font-weight: 400;
   font-size: 18px;
