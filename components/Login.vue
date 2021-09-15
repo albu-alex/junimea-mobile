@@ -35,7 +35,7 @@ export default {
   },
   methods:{
     // The verifyLogin method posts the username and the password to the API;
-    // If the message is "Succesful login", then the user is allowed to continue to the main page
+    // If the status of the request is 200, then the user is allowed to continue to the main page
     // Otherwise, an alert message is displayed
     // Also, the timeout case is handled
     async verifyLogin(){
@@ -78,6 +78,7 @@ export default {
       if(this.registeredUser)
         this.registeredUser = false;
       else{
+        let isRegistered = false;
         await axios({
           method: 'post',
           url: 'http://52.57.118.176/Auth/Register',
@@ -89,14 +90,20 @@ export default {
           timeout: 4000
         })
         .then(function (response){
-          if(!response){
+          if(response.status === 200){
+            isRegistered = true;
             alert("New user registered successfully!");
-            this.$emit('verifyLogin', this.username);
           }
         })
         .catch(function (response){
-          alert(response);
+          if(response.status === 500){
+            alert("This account has already been registered!");
+          }
+          else
+            alert(response);
         });
+        if(isRegistered)
+          this.$emit('verifyLogin', "test");
       }
       //Data from the text-inputs is reset
       this.username = "";
