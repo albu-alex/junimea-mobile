@@ -1,10 +1,17 @@
 <template>
-<view class="postBox">
-  <text-input v-model="postText" class="addNewPost" placeholder="What are you thinking about?"/>
-  <touchable-opacity :on-press="addPost" class="postButton">
-    <text class="postButtonText">Create new post</text>
-  </touchable-opacity>
-</view>
+  <view class="postBox">
+    <text-input v-model="postText" class="addNewPost" placeholder="What are you thinking about?"/>
+    <view class="postButtons">
+      <touchable-opacity :on-press="addPost" class="postButton">
+        <text class="postButtonText">Create new post</text>
+      </touchable-opacity>
+      <touchable-opacity :on-press="uploadFile" class="postPhoto">
+    <!--    Source to be changed with something not static-->
+        <Image :source="require('D:\\Cursuri\\vue-native\\junimea-mobile\\assets\\add_photo_icon.png')"
+                :style="{width: 25, height:25}" />
+      </touchable-opacity>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -17,6 +24,9 @@ export default {
   },
   name: "AddPostBox",
   methods:{
+    uploadFile(){
+      alert("hey!")
+    },
     addPost(){
       if(!this.postText){
         alert("Post must contain text!");
@@ -35,24 +45,35 @@ export default {
 </script>
 
 <style>
-.postBox{
-  margin-top: 3%;
+.postButtons{
   flex-direction: row;
   justify-content: center;
 }
-.postButton{
+.postBox{
+  margin-top: 3%;
+  justify-content: center;
+}
+.postPhoto{
   margin-top: 4%;
   margin-left: 6%;
 }
+.postButton{
+  background-color: #AAAAAA;
+  height: 25px;
+  margin-top: 4%;
+  margin-right: 6%;
+  justify-content: center;
+  align-self: center;
+}
 .postButtonText{
-  color: #AAAAAA;
+  color: black;
   font-weight: 400;
   font-size: 14px;
 }
 .addNewPost{
   background-color: ghostwhite;
   color: dimgrey;
-  width: 60%;
+  width: 100%;
   height: 50px;
   font-weight: 400;
   font-size: 18px;

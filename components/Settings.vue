@@ -1,3 +1,5 @@
+<!--Component displays all the settings that the user can access-->
+<!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
   <view class="settings">
     <text class="textPrimary">Hello, {{newUsername}}!</text>
