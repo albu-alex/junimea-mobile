@@ -15,11 +15,12 @@
 </template>
 
 <script>
+// import * as Permissions from 'expo-permissions';
+// import { Camera } from 'expo-camera';
 export default {
   data(){
     return{
       postText: "",
-      posts: []
     }
   },
   name: "AddPostBox",
@@ -33,10 +34,8 @@ export default {
         return 1;
       }
       let post={
-        id: this.posts.length,
         text: this.postText
       }
-      this.posts.push(post);
       this.$emit('addPost', post);
       this.postText = "";
     }

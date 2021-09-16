@@ -69,7 +69,7 @@ export default {
       this.username = "";
       this.password = "";
       //Debugging purposes only
-      this.$emit('verifyLogin', "test");
+      // this.$emit('verifyLogin', "test");
     },
     //The registerNewUser method registers the user if he cannot be found in the database;
     //If the user is not registered, a text-input with an email address placeholder will appear

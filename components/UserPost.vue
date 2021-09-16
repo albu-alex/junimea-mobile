@@ -1,6 +1,11 @@
 <template>
   <view class="post">
     <text class="postText">{{userPostText}}</text>
+    <text class="postText">{{id}}</text>
+    <text class="postText">{{files}}</text>
+    <text class="postText">{{username}}</text>
+    <text class="postText">{{profilePic}}</text>
+    <text class="postText">{{likes}}</text>
   </view>
 </template>
 
@@ -8,7 +13,12 @@
 export default {
   name: "UserPost",
   props:{
-    userPostText: String
+    userPostText: String,
+    id: Number,
+    files: Array,
+    username: String,
+    profilePic: String,
+    likes: Number
   }
 }
 </script>
