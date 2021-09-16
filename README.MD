@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a>
 
 # <a id="one">Day 1</a>
 ## Today I have done the following:
@@ -109,3 +109,31 @@
 
 ## Day 3.5
 ## Made actual register requests to the API and validated them. Also, refactoring in validation of input(status code instead of message)
+
+# <a id="four">Day 4</a>
+## Today I have done the following:
+<uL>
+<li>
+    Created api requests for post add
+</li>
+<li>
+    Styling changes for AddPostBox.vue component
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add dots instead of actual characters for the login form(if the user wants to)
+    </li>
+    <li>
+        Style the user posts
+    </li>
+    <li>
+        Add the feature in which the user can choose which photo to upload
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day4_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day4-2.jpg" alt="Second photo" height="50%" width=auto/>
