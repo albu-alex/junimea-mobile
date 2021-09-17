@@ -5,7 +5,7 @@
     <text class="pageIntro">Welcome to juni.</text>
     <text-input placeholder="Username or Email" v-model="username" class="textInput"></text-input>
     <text-input placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
-    <text-input placeholder="Password" v-model="password" class="textInput"></text-input>
+    <text-input :secureTextEntry="!showPassword" placeholder="Password" v-model="password" class="textInput"></text-input>
     <view class="loginButtons">
       <touchable-opacity class="loginButton" :on-press="verifyLogin">
         <text class="loginButtonText">Login</text>
@@ -28,6 +28,7 @@ export default {
       username: "",
       password: "",
       email: "",
+      showPassword: false,
       //This variable keeps track of whether the user needs to register or not
       //Defaults to true
       registeredUser: true
@@ -41,6 +42,7 @@ export default {
     async verifyLogin(){
       //This variable checks if the login operation was successful or not
       let loggedIn = false;
+      let shownPassword = false;
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Login',
@@ -52,17 +54,20 @@ export default {
         timeout: 4000
       })
       .then(function(response){
-        if(response.status === 200) {
+        if(response.data.statusCode === 200) {
           loggedIn = true;
         }
-        else
+        else {
+          shownPassword = true;
           alert(response.data.message + " Wrong username or password!");
+        }
       })
       .catch(function (response){
         //Debugging purposes only
         // loggedIn = true;
         alert(response + " You must not leave the fields empty!");
       });
+      this.showPassword = shownPassword;
       if(loggedIn)
         this.$emit('verifyLogin', this.username);
       //Data from the text-inputs is reset
