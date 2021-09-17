@@ -151,6 +151,9 @@
 <li>
     Implemented the secure password input field, so that the characters do not show    
 </li>
+<li>
+    Added a scroll view for the posts
+</li>
 </uL>
 
 ## Things to improve upon:
