@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a>
 
 # <a id="one">Day 1</a>
 ## Today I have done the following:
@@ -137,3 +137,35 @@
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day4_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day4-2.jpg" alt="Second photo" height="50%" width=auto/>
+
+
+# <a id="four">Day 5</a>
+## Today I have done the following:
+<uL>
+<li>
+    Implemented the logout functionality, altough not complete
+</li>
+<li>
+    Styled the UserPost.vue component
+</li>
+<li>
+    Implemented the secure password input field, so that the characters do not show    
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Find a good image picker component; react native is really limited in this aspect
+    </li>
+    <li>
+        Continue implementing features for the settings bar
+    </li>
+    <li>
+        Create a UserProfile component
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day5_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day5-2.jpg" alt="Second photo" height="50%" width=auto/>
