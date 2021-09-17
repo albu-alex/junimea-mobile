@@ -8,8 +8,10 @@
     <Header @displaySettings="settingsDisplayed = !settingsDisplayed" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox @addPost="addPost($event)" />
-    <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id"
-    :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
+    <scroll-view>
+      <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id"
+      :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
+    </scroll-view>
   </view>
 </template>
 
