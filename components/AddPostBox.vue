@@ -15,36 +15,7 @@
 </template>
 
 <script>
-import axios from "axios";
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-  Platform,
-  PermissionsAndroid,
-} from 'react-native';
-const requestCameraPermission = async () => {
-  if (Platform.OS === 'android') {
-    try {
-      const granted = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.CAMERA,
-          {
-            title: 'Camera Permission',
-            message: 'App needs camera permission',
-          },
-      );
-      // If CAMERA Permission is granted
-      return granted === PermissionsAndroid.RESULTS.GRANTED;
-    } catch (err) {
-      console.warn(err);
-      return false;
-    }
-  } else return true;
-};
+// import * as ImagePicker from 'expo-image-picker';
 export default {
   data(){
     return{
@@ -55,30 +26,6 @@ export default {
   name: "AddPostBox",
   methods:{
     uploadFile(){
-      let options = {
-        mediaType: type,
-        maxWidth: 300,
-        maxHeight: 550,
-        quality: 1,
-      };
-      launchImageLibrary(options, (response) => {
-        console.log('Response = ', response);
-
-        if (response.didCancel) {
-          alert('User cancelled camera picker');
-          return;
-        } else if (response.errorCode === 'camera_unavailable') {
-          alert('Camera not available on device');
-          return;
-        } else if (response.errorCode === 'permission') {
-          alert('Permission not satisfied');
-          return;
-        } else if (response.errorCode === 'others') {
-          alert(response.errorMessage);
-          return;
-        }
-        setFilePath(response);
-      });
     },
     addPost(){
       if(!this.postText){

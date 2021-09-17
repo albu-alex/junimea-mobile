@@ -4,7 +4,7 @@
 <template>
   <view class="mainPage">
     <StatusBar/>
-    <Settings :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
     <Header @displaySettings="settingsDisplayed = !settingsDisplayed" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox @addPost="addPost($event)" />
@@ -44,6 +44,9 @@ export default {
     newUsername: String
   },
   methods:{
+    Logout(){
+      this.$emit("Logout")
+    },
     async addPost(newPost){
       let post;
       await axios({

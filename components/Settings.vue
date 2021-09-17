@@ -21,8 +21,9 @@ export default {
     newUsername: String
   },
   methods:{
+    //This function emits a method in which the user is taken back to the login component
     logout(){
-      alert("New feature coming soon!");
+      this.$emit("Logout");
     },
     changeViewMode(){
       alert("New feature coming soon!");

@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <Login v-if="!isLoggedIn" @verifyLogin="verifyLogin($event)" />
-    <MainPage v-if="isLoggedIn" :newUsername="username" />
+    <MainPage v-if="isLoggedIn" @Logout="isLoggedIn = false" :newUsername="username" />
   </view>
 </template>
 
