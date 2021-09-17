@@ -1,6 +1,8 @@
+<!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
   <view class="post">
     <view class="postHeader">
+<!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
       <Image v-if="profilePic != null" :source="profilePic" :style="{width: 25, height:25}"/>
       <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
       <text class="postHeaderText">{{username}}</text>
@@ -15,12 +17,15 @@
   </view>
 </template>
 
+
+<!--TODO: To be moved into separate folder-->
 <script>
 import { Dimensions } from "react-native";
 const win = Dimensions.get('window');
 export default {
   data(){
     return {
+      //These variables are used to dynamically resize the photo on any device
       pageWidth: win.width,
       pageHeight: win.height,
     }
@@ -36,6 +41,7 @@ export default {
   }
 }
 </script>
+
 
 <style>
 .postHeader{
