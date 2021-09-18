@@ -11,8 +11,9 @@
                 :style="{width: 25, height:25}" />
       </touchable-opacity>
     </view>
+<!--    Only for debugging purposes-->
 <!--    <text v-for="image in images">-->
-<!--      <Image :source="{uri: String(image)}" :style="{width: 600, height:300}" />-->
+<!--      <Image :source="{uri: String(image.uri)}" :style="{width: image.width, height:image.height}" />-->
 <!--    </text>-->
   </view>
 </template>
@@ -41,9 +42,8 @@ export default {
         return;
       }
       let newImage = pickerResult.uri
-      if(newImage != null)
-        this.images.push(newImage)
-      alert(pickerResult.uri);
+      alert("Photo added successfully!")
+      this.images.push(newImage)
     },
     addPost(){
       if(!this.postText){
@@ -52,9 +52,11 @@ export default {
       }
       let post={
         text: this.postText,
+        images: this.images,
       }
       this.$emit('addPost', post);
       this.postText = "";
+      this.images = [];
     }
   }
 }

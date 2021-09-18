@@ -54,7 +54,7 @@ export default {
         url: 'http://52.57.118.176/Post/Add',
         data:{
           "Title": newPost.text,
-          "Files": ["https://sanoboardbucket.s3.eu-central-1.amazonaws.com/1c2dfecf-2df9-43f5-8008-b9a559c41145semnatura1.jpg"]
+          "Files": newPost.images
         },
         timeout: 4000
       })
