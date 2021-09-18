@@ -9,37 +9,41 @@
     <!--    Source to be changed with something not static-->
         <Image :source="require('D:\\Cursuri\\vue-native\\junimea-mobile\\assets\\add_photo_icon.png')"
                 :style="{width: 25, height:25}" />
-        <Camera ref="camera" :type="this.type" />
       </touchable-opacity>
     </view>
+<!--    <text v-for="image in images">-->
+<!--      <Image :source="{uri: String(image)}" :style="{width: 600, height:300}" />-->
+<!--    </text>-->
   </view>
 </template>
 
 <script>
-// import * as ImagePicker from 'expo-image-picker';
-import * as Permissions from 'expo-permissions';
-import { Camera } from 'expo-camera';
+import * as ImagePicker from 'expo-image-picker';
 export default {
   data(){
     return{
       postText: "",
       images: [],
-      hasCameraPermission: false,
-      type: Camera.Constants.Type.back,
     }
-  },
-  async mounted(){
-    const status = await Camera.requestCameraPermissionsAsync();
-    this.hasCameraPermission = status.toString() === 'granted'
-  },
-  components:{
-    Camera,
   },
   name: "AddPostBox",
   methods:{
-    uploadFile(){
-      const newImage = this.$refs.camera.takePictureAsync();
-      alert(this.hasCameraPermission)
+    async uploadFile(){
+      let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+      if (permissionResult.granted === false) {
+        alert("Permission to access camera roll is required!");
+        return;
+      }
+
+      let pickerResult = await ImagePicker.launchImageLibraryAsync();
+      if (pickerResult.cancelled === true) {
+        return;
+      }
+      let newImage = pickerResult.uri
+      if(newImage != null)
+        this.images.push(newImage)
+      alert(pickerResult.uri);
     },
     addPost(){
       if(!this.postText){
