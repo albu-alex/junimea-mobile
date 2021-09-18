@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a>
 
 # <a id="one">Day 1</a>
 ## Today I have done the following:
@@ -172,3 +172,36 @@
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day5_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day5-2.jpg" alt="Second photo" height="50%" width=auto/>
+
+# <a id="six">Day 6</a>
+## Today I have done the following:
+<uL>
+<li>
+    Added the add photo feature for each post(optional)
+</li>
+<li>
+    Photo posts zoom in on click
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Fix all zoom in photo bugs
+    </li>
+    <li>
+        Make the create post UI more clear for the user(optional)
+    </li>
+    <li>
+        Create a UserProfile component
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day6_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day6_2.jpg" alt="Second photo" height="50%" width=auto/>
+
+
+# <a id="seven">Day 7</a>
+
+## Duminica pana si dumnezo o luat pauza
