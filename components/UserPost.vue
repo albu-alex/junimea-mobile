@@ -3,7 +3,7 @@
   <view class="post">
     <view class="postHeader">
 <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
-      <Image v-if="profilePic != null" :source="profilePic" :style="{width: 25, height:25}"/>
+      <Image v-if="profilePic != null" :source="profilePic" :style="{width: 25, height:25, borderRadius: 50}"/>
       <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
       <text class="postHeaderText">{{username}}</text>
     </view>
