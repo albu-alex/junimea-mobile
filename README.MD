@@ -204,4 +204,43 @@
 
 # <a id="seven">Day 7</a>
 
-## Duminica pana si dumnezo o luat pauza
+## Major updates!
+
+## Today I have done the following:
+<uL>
+<li>
+    Added auto resize to post photos so that they render in full and with original aspect ratio, with respect to page width
+</li>
+<li>
+    Removed the zoom photo(or preview photo) functionality for a while
+</li>
+<li>
+    Updated the header component with two new photos(one is the logo and the other is a placeholder for the profile picture
+</li>
+<li>
+    Created a new UserProfile component, in which the user can update the profile picture and see his own posts
+</li>
+<li>
+    The Junimea Logo actually redirects you to the top of the page
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        All of today's functionalities have to be connected with the API
+    </li>
+    <li>
+        Add comments and likes/dislikes to the post
+    </li>
+    <li>
+        Change the styling of the Login component
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_3.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_4.jpg" alt="Fourth photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_5.jpg" alt="Fifth photo" height="50%" width=auto/>
