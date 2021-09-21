@@ -9,6 +9,11 @@
         <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
+<!--    Have to figure out how to get user profile picture from API-->
+    <touchable-opacity id="junimeaLogoButton" :on-press="goToProfile">
+      <Image class="profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+             :style="{width: 25, height:25, borderRadius: 50}" />
+    </touchable-opacity>
   </view>
 </template>
 
@@ -22,6 +27,9 @@ export default {
     },
     goToTop(){
       this.$emit("goToTop")
+    },
+    goToProfile(){
+      alert("New feature coming soon!")
     }
   }
 }
@@ -43,5 +51,8 @@ export default {
 }
 .junimeaLogo{
   margin-left: 50%;
+}
+.profilePicture{
+  margin-left: 40%;
 }
 </style>
