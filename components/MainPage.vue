@@ -5,10 +5,10 @@
   <view class="mainPage">
     <StatusBar/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
-    <Header @displaySettings="settingsDisplayed = !settingsDisplayed" />
+    <Header @goToTop="goToTop" @displaySettings="settingsDisplayed = !settingsDisplayed" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox @addPost="addPost($event)" />
-    <scroll-view>
+    <scroll-view ref="pagePosts">
       <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
     </scroll-view>
@@ -46,6 +46,12 @@ export default {
   methods:{
     Logout(){
       this.$emit("Logout")
+    },
+    goToTop(){
+      this.$refs.pagePosts.current?.scrollTo({
+        y: 0.0,
+        animated: true
+      });
     },
     async addPost(newPost){
       let post;

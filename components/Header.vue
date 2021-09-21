@@ -5,6 +5,10 @@
       <touchable-opacity id="homepageButton" :on-press="displaySettings">
         <text class="headerText">juni.</text>
       </touchable-opacity>
+      <touchable-opacity id="junimeaLogoButton" :on-press="goToTop">
+        <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
+               :style="{width: 25, height:25}" />
+      </touchable-opacity>
   </view>
 </template>
 
@@ -15,6 +19,9 @@ export default {
   methods:{
     displaySettings(){
       this.$emit("displaySettings");
+    },
+    goToTop(){
+      this.$emit("goToTop")
     }
   }
 }
@@ -24,13 +31,17 @@ export default {
 .header{
   height: 4%;
   background-color: black;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
 }
 .headerText{
   font-size: 20px;
   font-weight: 700;
   color: ghostwhite;
   margin-top: 2.5%;
-  margin-left: 3%;
+  margin-left: 5%;
+}
+.junimeaLogo{
+  margin-left: 50%;
 }
 </style>

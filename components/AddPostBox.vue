@@ -6,8 +6,7 @@
         <text class="postButtonText">Create new post</text>
       </touchable-opacity>
       <touchable-opacity :on-press="uploadFile" class="postPhoto">
-    <!--    Source to be changed with something not static-->
-        <Image :source="require('D:\\Cursuri\\vue-native\\junimea-mobile\\assets\\add_photo_icon.png')"
+        <Image :source="require('../assets/add_photo_icon.png')"
                 :style="{width: 25, height:25}" />
       </touchable-opacity>
     </view>
