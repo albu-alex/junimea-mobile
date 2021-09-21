@@ -9,9 +9,9 @@
     </view>
     <view class="postContent">
       <text class="postText">{{userPostText}}</text>
-      <text class="postText" v-for="file in files">
+      <text class="postText" v-for="(file,index) in files">
         <touchable-opacity :on-press="zoomImage">
-          <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: pageHeight*zoomCoefficient}" />
+          <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
         </touchable-opacity>
       </text>
     </view>
@@ -30,7 +30,6 @@ export default {
       //These variables are used to dynamically resize the photo on any device
       pageWidth: win.width,
       pageHeight: win.height,
-      zoomCoefficient: 0.2
     }
   },
   name: "UserPost",
@@ -38,16 +37,17 @@ export default {
     userPostText: String,
     id: Number,
     files: Array,
+    dimensions: Array,
     username: String,
     profilePic: String,
     likes: Number
   },
   methods:{
     zoomImage(){
-      if(this.zoomCoefficient === 0.2)
-        this.zoomCoefficient = 0.8;
-      else
-        this.zoomCoefficient = 0.2;
+      // if(this.zoomCoefficient === 0.2)
+      //   this.zoomCoefficient = 0.8;
+      // else
+      //   this.zoomCoefficient = 0.2;
     }
   },
 }

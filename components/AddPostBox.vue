@@ -41,7 +41,11 @@ export default {
       if (pickerResult.cancelled === true) {
         return;
       }
-      let newImage = pickerResult.uri
+      let newImage = {
+        uri: pickerResult.uri,
+        height: pickerResult.height,
+        width: pickerResult.width
+      }
       alert("Photo added successfully!")
       this.images.push(newImage)
     },

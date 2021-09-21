@@ -9,7 +9,7 @@
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox @addPost="addPost($event)" />
     <scroll-view>
-      <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id"
+      <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
     </scroll-view>
   </view>
@@ -49,12 +49,16 @@ export default {
     },
     async addPost(newPost){
       let post;
+      let newImages = [];
+      newPost.images.forEach(image => newImages.push(image.uri))
+      let dimensions = [];
+      newPost.images.forEach(image => dimensions.push(image))
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Post/Add',
         data:{
           "Title": newPost.text,
-          "Files": newPost.images
+          "Files": newImages
         },
         timeout: 4000
       })
@@ -66,7 +70,8 @@ export default {
             "files": response.data.files,
             "username": response.data.userName,
             "profilePic": response.data.profilePicUrl,
-            "likes": response.data.likes
+            "likes": response.data.likes,
+            "dimensions": dimensions
           }
         }
       })
