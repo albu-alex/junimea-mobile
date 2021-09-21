@@ -5,11 +5,13 @@
   <view class="mainPage">
     <StatusBar/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
-    <Header @goToTop="goToTop" @displaySettings="settingsDisplayed = !settingsDisplayed" />
+    <Header @goToProfile="profileDisplayed = !profileDisplayed" @goToTop="goToTop"
+            @displaySettings="settingsDisplayed = !settingsDisplayed" />
+    <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox @addPost="addPost($event)" />
-    <scroll-view ref="pagePosts">
-      <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
+    <AddPostBox v-if="!profileDisplayed" @addPost="addPost($event)" />
+    <scroll-view v-if="!profileDisplayed" ref="pagePosts">
+      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
     </scroll-view>
   </view>
@@ -22,6 +24,7 @@ import Header from "./Header";
 import Settings from "./Settings";
 import AddPostBox from "./AddPostBox";
 import UserPost from "./UserPost";
+import UserProfile from "./UserProfile";
 import axios from "axios";
 export default {
   name: "MainPage",
@@ -30,10 +33,14 @@ export default {
       //Variable keeps track of the settings bar
       //Defaults to false
       settingsDisplayed: false,
-      posts: []
+      posts: [],
+      //Variable keeps track of the profile page
+      //Defaults to false
+      profileDisplayed: false,
     }
   },
   components:{
+    UserProfile,
     UserPost,
     StatusBar,
     Header,
@@ -84,7 +91,8 @@ export default {
       .catch(function (response){
         alert(response);
       });
-      this.posts.push(post)
+      if(post)
+        this.posts.push(post)
     }
   }
 }

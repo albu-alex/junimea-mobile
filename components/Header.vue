@@ -26,10 +26,10 @@ export default {
       this.$emit("displaySettings");
     },
     goToTop(){
-      this.$emit("goToTop")
+      this.$emit("goToTop");
     },
     goToProfile(){
-      alert("New feature coming soon!")
+      this.$emit("goToProfile");
     }
   }
 }
@@ -50,7 +50,7 @@ export default {
   margin-left: 5%;
 }
 .junimeaLogo{
-  margin-left: 50%;
+  margin-left: 52%;
 }
 .profilePicture{
   margin-left: 40%;
