@@ -3,9 +3,9 @@
 <template>
   <view class="userLogin">
     <text class="pageIntro">Welcome to juni.</text>
-    <text-input placeholder="Username or Email" v-model="username" class="textInput"></text-input>
-    <text-input placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
-    <text-input :secureTextEntry="!showPassword" placeholder="Password" v-model="password" class="textInput"></text-input>
+    <text-input placeholderTextColor="ghostwhite" placeholder="Username or Email" v-model="username" class="textInput"></text-input>
+    <text-input placeholderTextColor="ghostwhite" placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
+    <text-input placeholderTextColor="ghostwhite" :secureTextEntry="!showPassword" placeholder="Password" v-model="password" class="textInput"></text-input>
     <view class="loginButtons">
       <touchable-opacity class="loginButton" :on-press="verifyLogin">
         <text class="loginButtonText">Login</text>
@@ -17,17 +17,25 @@
     <touchable-opacity class="loginButton" :on-press="loginAsGuest">
       <text class="loginButtonText">Login as guest</text>
     </touchable-opacity>
+<!--    To be replaced with actual logo-->
+    <Image :source="{uri: 'https://i.makeagif.com/media/3-16-2016/_xIU5P.gif'}"
+           :style="{width: pageWidth/2, height: (pageWidth/512)*512/2}" />
   </view>
 </template>
 
 
 <!--TODO: To be moved into separate folder-->
 <script>
+import { Dimensions } from "react-native";
+const win = Dimensions.get('window');
 import axios from "axios";
 export default {
   name: "Login",
   data(){
     return {
+      //These variables are used to dynamically resize the photo on any device
+      pageWidth: win.width,
+      pageHeight: win.height,
       username: "",
       password: "",
       email: "",
@@ -141,6 +149,7 @@ export default {
   font-size: 32px;
   font-weight: 700;
   color: ghostwhite;
+  margin-bottom: 15%;
 }
 .loginButton{
   background-color: #505050;
