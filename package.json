@@ -22,7 +22,8 @@
     "react-native-reanimated": "^2.2.2",
     "react-native-web": "~0.13.12",
     "vue-native-core": "^0.3.1",
-    "vue-native-helper": "^0.3.1"
+    "vue-native-helper": "^0.3.1",
+    "vue-pull-refresh": "^0.2.7"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

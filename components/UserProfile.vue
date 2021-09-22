@@ -7,29 +7,42 @@
     <touchable-opacity :on-press="uploadProfilePicture" class="profilePictureButton">
       <text class="profilePictureButtonText">Change profile picture</text>
     </touchable-opacity>
-    <scroll-view ref="pagePosts">
-      <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
-                :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
-    </scroll-view>
+    <RefreshControl :refreshing="refreshing" :onRefresh="refreshList"/>
+      <scroll-view ref="pagePosts">
+        <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
+                  :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
+      </scroll-view>
   </view>
 </template>
 
 <script>
 import UserPost from "./UserPost";
+import RefreshControl from 'react-native';
 export default {
+  data(){
+    return{
+      refreshing: false,
+    }
+  },
   name: "UserProfile",
   props:{
     username: String,
     posts: Array
   },
   components:{
-    UserPost
+    UserPost,
+    RefreshControl
   },
-  methods:{
-    uploadProfilePicture(){
+  methods: {
+    uploadProfilePicture() {
       // Have to figure out connection between profile picture and API
       alert("New feature coming soon!")
-    }
+    },
+    refreshList() {
+      this.refreshing = true;
+      alert("Hey, user!")
+      this.refreshing = false;
+    },
   }
 }
 </script>

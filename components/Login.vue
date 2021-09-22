@@ -78,7 +78,6 @@ export default {
     },
     //The registerNewUser method registers the user if he cannot be found in the database;
     //If the user is not registered, a text-input with an email address placeholder will appear
-    //TODO: finalise implementing function
     async registerNewUser(){
       if(this.registeredUser)
         this.registeredUser = false;
