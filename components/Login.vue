@@ -14,6 +14,9 @@
         <text class="loginButtonText">Register</text>
       </touchable-opacity>
     </view>
+    <touchable-opacity class="loginButton" :on-press="loginAsGuest">
+      <text class="loginButtonText">Login as guest</text>
+    </touchable-opacity>
   </view>
 </template>
 
@@ -115,6 +118,12 @@ export default {
       this.password = "";
       // Debugging purposes only
       // this.$emit('verifyLogin', "test");
+    },
+    // This function allow a new user to enter the feed of posts without making a new account
+    // If user logs in as guest, he cannot make new post and cannot access his profile
+    loginAsGuest(){
+      alert("Beware that if you continue as a guest, your experience will be limited")
+      this.$emit('verifyLogin', "");
     }
   }
 }

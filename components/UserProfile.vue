@@ -1,5 +1,5 @@
 <template>
-  <view class="profile">
+  <view class="profile" v-if="username !== ''">
 <!--    Have to figure out how to get user profile picture from API-->
     <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
@@ -36,6 +36,7 @@ export default {
       alert("New feature coming soon!")
     },
     refreshList() {
+      // TODO: Pull data from API
       this.refreshing = true;
       alert("Hey, user!")
       this.refreshing = false;

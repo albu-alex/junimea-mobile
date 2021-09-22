@@ -2,7 +2,8 @@
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
   <view class="settings">
-    <text class="textPrimary">Hello, {{newUsername}}!</text>
+    <text class="textPrimary" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
+    <text class="textPrimary" v-else>Hey, guest!</text>
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondary">Logout</text>

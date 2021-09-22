@@ -5,7 +5,7 @@
   <view class="mainPage">
     <StatusBar/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
-    <Header @goToProfile="profileDisplayed = !profileDisplayed" @goToTop="goToTop"
+    <Header @goToProfile="goToProfile" @goToTop="goToTop"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
     <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
@@ -60,12 +60,24 @@ export default {
         animated: true
       });
     },
+    goToProfile(){
+      if(this.newUsername === ''){
+        alert("It looks like you are a guest! You must register to access this page!")
+        return;
+      }
+      this.profileDisplayed = !this.profileDisplayed
+    },
     refreshList() {
+      // TODO: Pull data from API
       this.refreshing = true;
       alert("Hey, user!")
       this.refreshing = false;
     },
     async addPost(newPost){
+      if(this.newUsername === ''){
+        alert("It looks like you are a guest! You must register before creating a post!")
+        return;
+      }
       let post;
       let newImages = [];
       newPost.images.forEach(image => newImages.push(image.uri))
