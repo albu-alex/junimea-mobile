@@ -10,7 +10,7 @@
     <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed" @addPost="addPost($event)" />
-    <scroll-view :onScrollEndDrag="refreshList" v-if="!profileDisplayed" ref="pagePosts">
+    <scroll-view :onMomentumScrollEnd="refreshList" v-if="!profileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
     </scroll-view>
@@ -39,6 +39,10 @@ export default {
       profileDisplayed: false,
     }
   },
+  async beforeMount(){
+    //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
+    await this.getInitialPosts();
+  },
   components:{
     UserProfile,
     UserPost,
@@ -51,6 +55,26 @@ export default {
     newUsername: String
   },
   methods:{
+    async getInitialPosts(){
+      //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
+      await axios.get(`https://randomuser.me/api/?results=3`).then((response) => {
+        let users = response.data.results;
+        for(let i=0;i<users.length;i++){
+          let image = {
+            uri: users[i].picture.large,
+            height: 300,
+            width: 300
+          }
+          let images = [];
+          images.push(image)
+          let post = {
+            text: "This post was taken from randomuser.me",
+            images: images
+          }
+          this.addPost(post);
+        }
+      });
+    },
     Logout(){
       this.$emit("Logout")
     },
@@ -70,7 +94,7 @@ export default {
     refreshList() {
       // TODO: Pull data from API
       this.refreshing = true;
-      alert("Hey, user!")
+      this.getInitialPosts();
       this.refreshing = false;
     },
     async addPost(newPost){
