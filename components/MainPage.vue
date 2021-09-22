@@ -10,7 +10,7 @@
     <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed" @addPost="addPost($event)" />
-    <scroll-view v-if="!profileDisplayed" ref="pagePosts">
+    <scroll-view :onScrollEndDrag="refreshList" v-if="!profileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
     </scroll-view>
@@ -59,6 +59,11 @@ export default {
         y: 0.0,
         animated: true
       });
+    },
+    refreshList() {
+      this.refreshing = true;
+      alert("Hey, user!")
+      this.refreshing = false;
     },
     async addPost(newPost){
       let post;

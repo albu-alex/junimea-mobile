@@ -7,8 +7,7 @@
     <touchable-opacity :on-press="uploadProfilePicture" class="profilePictureButton">
       <text class="profilePictureButtonText">Change profile picture</text>
     </touchable-opacity>
-    <RefreshControl :refreshing="refreshing" :onRefresh="refreshList"/>
-      <scroll-view ref="pagePosts">
+      <scroll-view :onScrollEndDrag="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
       </scroll-view>
@@ -17,7 +16,6 @@
 
 <script>
 import UserPost from "./UserPost";
-import RefreshControl from 'react-native';
 export default {
   data(){
     return{
@@ -30,8 +28,7 @@ export default {
     posts: Array
   },
   components:{
-    UserPost,
-    RefreshControl
+    UserPost
   },
   methods: {
     uploadProfilePicture() {
