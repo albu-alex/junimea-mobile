@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a>
 
 # <a id="one">Day 1</a>
 ## Today I have done the following:
@@ -244,3 +244,41 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_3.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_4.jpg" alt="Fourth photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_5.jpg" alt="Fifth photo" height="50%" width=auto/>
+
+# <a id="seven">Day 8</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Styled the login form and added a placeholder for the Junimea logo
+</li>
+<li>
+    Added infinite(lazy) loading, without pull to refresh just yet
+</li>
+<li>
+    Changed the text inside the text inputs in the Login.vue component
+</li>
+<li>
+    Added a guest functionality with corresponding limitations
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Style the entire application, with Junimea logos
+    </li>
+    <li>
+        !Add comments and likes/dislikes to the post
+    </li>
+    <li>
+        Add an upload profile picture feature after API implementation
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_3.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_4.gif" alt="First video" height="50%" width=auto/>
+
