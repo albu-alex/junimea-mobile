@@ -245,7 +245,7 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_4.jpg" alt="Fourth photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_5.jpg" alt="Fifth photo" height="50%" width=auto/>
 
-# <a id="seven">Day 8</a>
+# <a id="eight">Day 8</a>
 
 ## Today I have done the following:
 <uL>
