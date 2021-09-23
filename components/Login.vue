@@ -21,9 +21,10 @@
     <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButton" :on-press="loginAsGuest">
       <text class="loginButtonText">Login as guest</text>
     </touchable-opacity>
-<!--    To be replaced with actual logo-->
-    <Image v-if="!isLoading&&!waitingForSubmit" :source="{uri: 'https://i.makeagif.com/media/3-16-2016/_xIU5P.gif'}"
-           :style="{width: pageWidth/2, height: (pageWidth/512)*512/2}" />
+    <touchable-opacity :on-press="junimeaOnFacebook">
+      <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-colorat-cu-scris.png')"
+             :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
+    </touchable-opacity>
   </view>
 </template>
 
@@ -32,6 +33,7 @@
 <script>
 import { Dimensions } from "react-native";
 const win = Dimensions.get('window');
+import Linking from "react-native";
 import axios from "axios";
 import Loading from "./Loading";
 export default {
@@ -59,6 +61,10 @@ export default {
     }
   },
   methods:{
+    //This method redirects you to the junimea facebook page
+    junimeaOnFacebook(){
+      Linking.Linking.openURL("https://www.facebook.com/www.juni.ro/");
+    },
     //This function sleeps the loading component, such that an actual loading is simulated
     sleep(ms){
       return new Promise(resolve => setTimeout(resolve, ms));
