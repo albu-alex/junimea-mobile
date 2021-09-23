@@ -2,11 +2,15 @@
 <!--It consists of two text inputs, a login button, a register button and a welcome message-->
 <template>
   <view class="userLogin">
-    <text class="pageIntro">Welcome to juni.</text>
-    <text-input placeholderTextColor="ghostwhite" placeholder="Username or Email" v-model="username" class="textInput"></text-input>
-    <text-input placeholderTextColor="ghostwhite" placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
-    <text-input placeholderTextColor="ghostwhite" :secureTextEntry="!showPassword" placeholder="Password" v-model="password" class="textInput"></text-input>
-    <view class="loginButtons">
+    <Loading v-if="isLoading"/>
+<!--    <view v-if="isLoading" :style="{flex: 1, justifyContent: 'center'}">-->
+<!--      <activity-indicator size="large" color="dimgrey" />-->
+<!--    </view>-->
+    <text class="pageIntro" v-if="!isLoading">Welcome to juni.</text>
+    <text-input v-if="!isLoading" placeholderTextColor="ghostwhite" placeholder="Username or Email" v-model="username" class="textInput"></text-input>
+    <text-input v-if="!isLoading" placeholderTextColor="ghostwhite" placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
+    <text-input v-if="!isLoading" placeholderTextColor="ghostwhite" :secureTextEntry="!showPassword" placeholder="Password" v-model="password" class="textInput"></text-input>
+    <view v-if="!isLoading" class="loginButtons">
       <touchable-opacity class="loginButton" :on-press="verifyLogin">
         <text class="loginButtonText">Login</text>
       </touchable-opacity>
@@ -14,11 +18,11 @@
         <text class="loginButtonText">Register</text>
       </touchable-opacity>
     </view>
-    <touchable-opacity class="loginButton" :on-press="loginAsGuest">
+    <touchable-opacity v-if="!isLoading" class="loginButton" :on-press="loginAsGuest">
       <text class="loginButtonText">Login as guest</text>
     </touchable-opacity>
 <!--    To be replaced with actual logo-->
-    <Image :source="{uri: 'https://i.makeagif.com/media/3-16-2016/_xIU5P.gif'}"
+    <Image v-if="!isLoading" :source="{uri: 'https://i.makeagif.com/media/3-16-2016/_xIU5P.gif'}"
            :style="{width: pageWidth/2, height: (pageWidth/512)*512/2}" />
   </view>
 </template>
@@ -29,10 +33,18 @@
 import { Dimensions } from "react-native";
 const win = Dimensions.get('window');
 import axios from "axios";
+import Loading from "./Loading";
 export default {
   name: "Login",
+  components: {Loading},
+  async mounted(){
+    await this.sleep(1000)
+    this.isLoading = false;
+  },
   data(){
     return {
+      //This variable is responsible for displaying the loading component
+      isLoading: true,
       //These variables are used to dynamically resize the photo on any device
       pageWidth: win.width,
       pageHeight: win.height,
@@ -46,6 +58,9 @@ export default {
     }
   },
   methods:{
+    sleep(ms){
+      return new Promise(resolve => setTimeout(resolve, ms));
+    },
     // The verifyLogin method posts the username and the password to the API;
     // If the status of the request is 200, then the user is allowed to continue to the main page
     // Otherwise, an alert message is displayed
