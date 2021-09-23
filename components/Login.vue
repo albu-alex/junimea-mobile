@@ -8,7 +8,7 @@
     </view>
     <text class="pageIntro" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
     <text-input v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite" placeholder="Username or Email" v-model="username" class="textInput"></text-input>
-    <text-input v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite" placeholder="Email Address" v-model="email" class="textInput" v-if="!registeredUser"></text-input>
+    <text-input v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite" placeholder="Email Address" v-model="email" class="textInput"></text-input>
     <text-input v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite" :secureTextEntry="!showPassword" placeholder="Password" v-model="password" class="textInput"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
       <touchable-opacity class="loginButton" :on-press="verifyLogin">
@@ -22,7 +22,7 @@
       <text class="loginButtonText">Login as guest</text>
     </touchable-opacity>
     <touchable-opacity :on-press="junimeaOnFacebook">
-      <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-colorat-cu-scris.png')"
+      <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-colorat-cu-scris.gif')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
   </view>
