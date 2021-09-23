@@ -13,6 +13,9 @@
     <scroll-view :onMomentumScrollEnd="refreshList" v-if="!profileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
+      <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
+        <activity-indicator size="large" color="dimgrey" />
+      </view>
     </scroll-view>
   </view>
 </template>
@@ -30,6 +33,8 @@ export default {
   name: "MainPage",
   data(){
     return{
+      //This variable is responsible for displaying the loading component
+      isLoading: false,
       //Variable keeps track of the settings bar
       //Defaults to false
       settingsDisplayed: false,
@@ -41,7 +46,9 @@ export default {
   },
   async beforeMount(){
     //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
+    this.isLoading = true;
     await this.getInitialPosts();
+    this.isLoading = false;
   },
   components:{
     UserProfile,
@@ -93,9 +100,8 @@ export default {
     },
     refreshList() {
       // TODO: Pull data from API
-      this.refreshing = true;
+      this.isLoading = true;
       this.getInitialPosts();
-      this.refreshing = false;
     },
     async addPost(newPost){
       if(this.newUsername === ''){

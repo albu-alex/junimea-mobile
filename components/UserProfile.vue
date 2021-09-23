@@ -38,7 +38,6 @@ export default {
     refreshList() {
       // TODO: Pull data from API
       this.refreshing = true;
-      alert("Hey, user!")
       this.refreshing = false;
     },
   }
