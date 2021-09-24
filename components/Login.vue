@@ -38,7 +38,9 @@ import axios from "axios";
 import Loading from "./Loading";
 export default {
   name: "Login",
-  components: {Loading},
+  components: {
+    Loading
+  },
   async mounted(){
     await this.sleep(1000)
     this.isLoading = false;

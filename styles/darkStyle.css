@@ -1,0 +1,36 @@
+.textInput{
+    background-color: #505050;
+    width: 90%;
+    height: 5%;
+    margin-bottom: 5%;
+    color: ghostwhite;
+}
+.pageIntro{
+    font-size: 32px;
+    font-weight: 700;
+    color: ghostwhite;
+    margin-bottom: 15%;
+}
+.loginButton{
+    background-color: #505050;
+    margin: 5%;
+}
+.loginButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.loginButtonText{
+    align-self: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: ghostwhite;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.userLogin{
+    flex: 1;
+    background-color: #212121;
+    align-items: center;
+    justify-content: center;
+}
