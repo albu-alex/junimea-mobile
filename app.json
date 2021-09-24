@@ -4,11 +4,11 @@
     "slug": "junimea-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/unicorn-colorat-cu-scris.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/junimea-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#303030"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/unicorn-alb-cu-scris.png",
         "backgroundColor": "#FFFFFF"
       }
     },
