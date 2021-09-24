@@ -138,6 +138,7 @@ export default {
             "username": response.data.userName,
             "profilePic": response.data.profilePicUrl,
             "likes": response.data.likes,
+            "liked": response.data.liked,
             "dimensions": dimensions
           }
         }

@@ -92,6 +92,7 @@ export default {
   font-size: 14px;
 }
 .addNewPost{
+  align-self: center;
   background-color: ghostwhite;
   color: dimgrey;
   width: 90%;

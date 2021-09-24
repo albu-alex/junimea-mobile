@@ -15,7 +15,15 @@
         </touchable-opacity>
       </text>
     </view>
-    <text class="postText">{{likes}}</text>
+    <view class="postFeedback">
+      <touchable-opacity :on-press="interactWithPost">
+        <Image :style="{width: 25, height:25}" :source="require('../assets/up-button.png')" />
+      </touchable-opacity>
+      <text class="likesText">{{likes}}</text>
+      <touchable-opacity :on-press="interactWithPost">
+        <Image :style="{width: 25, height:25}" :source="require('../assets/down-button.png')" />
+      </touchable-opacity>
+    </view>
   </view>
 </template>
 
@@ -40,7 +48,8 @@ export default {
     dimensions: Array,
     username: String,
     profilePic: String,
-    likes: Number
+    likes: Number,
+    liked: Boolean
   },
   methods:{
     zoomImage(){
@@ -48,6 +57,14 @@ export default {
       //   this.zoomCoefficient = 0.8;
       // else
       //   this.zoomCoefficient = 0.2;
+    },
+    interactWithPost(){
+      if(!this.liked) {
+        this.liked = true;
+        return this.likes = this.likes + 1;
+      }
+      this.liked = false;
+      return this.likes = this.likes - 1;
     }
   },
 }
@@ -70,11 +87,24 @@ export default {
   align-self: flex-start;
   margin-left: 3%;
 }
+.likesText{
+  color: #AAAAAA;
+  font-size: 24px;
+  font-weight: 500;
+  align-self: center;
+  margin-right: 5%;
+  margin-left: 5%;
+}
 .postText{
   color: #AAAAAA;
   font-size: 24px;
   font-weight: 500;
   align-self: center;
   margin-bottom: 2%;
+}
+.postFeedback{
+  align-self: center;
+  flex-direction: row;
+  align-content: center;
 }
 </style>

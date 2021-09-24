@@ -37,6 +37,7 @@ export default {
     },
     refreshList() {
       // TODO: Pull data from API
+      // This feature will be implemented after the API is configured
       this.refreshing = true;
       this.refreshing = false;
     },
