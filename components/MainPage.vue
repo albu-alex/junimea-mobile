@@ -7,7 +7,7 @@
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
-    <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" />
+    <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" @goToMainPage="profileDisplayed = false" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost" @addPost="addPost($event)" />
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
@@ -102,7 +102,7 @@ export default {
         alert("It looks like you are a guest! You must register to access this page!")
         return;
       }
-      this.profileDisplayed = !this.profileDisplayed
+      this.profileDisplayed = true
     },
     refreshList() {
       // TODO: Pull data from API

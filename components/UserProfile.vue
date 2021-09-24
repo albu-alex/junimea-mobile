@@ -1,6 +1,9 @@
 <template>
   <view class="profile" v-if="username !== ''">
 <!--    Have to figure out how to get user profile picture from API-->
+    <touchable-opacity :on-press="goToMainPage">
+      <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
+    </touchable-opacity>
     <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryText">{{username}}</text>
@@ -41,6 +44,9 @@ export default {
       this.refreshing = true;
       this.refreshing = false;
     },
+    goToMainPage(){
+      this.$emit("goToMainPage");
+    }
   }
 }
 </script>

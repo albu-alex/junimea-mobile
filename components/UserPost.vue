@@ -9,7 +9,7 @@
     </view>
     <view class="postContent">
       <text class="postText">{{userPostText}}</text>
-      <text class="postText" v-for="(file,index) in files">
+      <text v-for="(file,index) in files">
         <touchable-opacity :on-press="zoomImage">
           <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
         </touchable-opacity>
@@ -99,7 +99,8 @@ export default {
   color: #AAAAAA;
   font-size: 24px;
   font-weight: 500;
-  align-self: center;
+  align-self: flex-start;
+  margin-left: 2%;
   margin-bottom: 2%;
 }
 .postFeedback{
