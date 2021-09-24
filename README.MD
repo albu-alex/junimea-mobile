@@ -1,4 +1,7 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a>
+
+This is the QR code to the app:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/server_qr.png" alt="Server QR Code" height="50%" width=auto/>
 
 # <a id="one">Day 1</a>
 ## Today I have done the following:
@@ -320,3 +323,48 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_2.gif" alt="Second video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_3.jpg" alt="First photo" height="50%" width=auto/>
+
+# <a id="ten">Day 10</a>
+
+## Major updates!
+
+## Today I have done the following:
+<uL>
+<li>
+    Finished styling the Login.vue component
+</li>
+<li>
+    Finished styling the MainPage.vue component
+</li>
+<li>
+    Added small features in the Login.vue text inputs in order to enhance the user experience
+</li>
+<li>
+    Added a like/dislike feature(although it is in beta, it has bugs)
+</li>
+<li>
+    Changed the way the user transitions from UserProfile.vue to MainPage.vue
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add a comment feature
+    </li>
+    <li>
+        Add the change view mode feature
+    </li>
+    <li>
+        Fix bugs
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_3.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_4.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_6.gif" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_5.jpg" alt="Fourth photo" height="50%" width=auto/>
+
