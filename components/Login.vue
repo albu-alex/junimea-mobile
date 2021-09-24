@@ -167,7 +167,7 @@ export default {
 <style>
 .textInput{
   background-color: #505050;
-  width: 100%;
+  width: 90%;
   height: 5%;
   margin-bottom: 5%;
   color: ghostwhite;

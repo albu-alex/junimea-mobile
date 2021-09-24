@@ -94,7 +94,7 @@ export default {
 .addNewPost{
   background-color: ghostwhite;
   color: dimgrey;
-  width: 100%;
+  width: 90%;
   height: 50px;
   font-weight: 400;
   font-size: 18px;

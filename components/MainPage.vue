@@ -1,6 +1,6 @@
 <!--This component makes up the majority of what the user sees-->
 <!--After the Login component is done showing, the MainPage component is shown-->
-<!--Consists of: StatusBar, Settings, Header, AddPostBox and UserPost components-->
+<!--Consists of: StatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
   <view class="mainPage">
     <StatusBar/>
@@ -9,7 +9,10 @@
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
     <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed" @addPost="addPost($event)" />
+    <AddPostBox v-if="!profileDisplayed&&!waitingForPost" @addPost="addPost($event)" />
+    <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
+      <activity-indicator size="large" color="dimgrey" />
+    </view>
     <scroll-view :onMomentumScrollEnd="refreshList" v-if="!profileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
@@ -33,6 +36,9 @@ export default {
   name: "MainPage",
   data(){
     return{
+      // This variable is responsible for checking whether the creation of the post is occurring or not
+      // Defaults to false
+      waitingForPost: false,
       //This variable is responsible for displaying the loading component
       isLoading: false,
       //Variable keeps track of the settings bar
@@ -108,6 +114,7 @@ export default {
         alert("It looks like you are a guest! You must register before creating a post!")
         return;
       }
+      this.waitingForPost = true;
       let post;
       let newImages = [];
       newPost.images.forEach(image => newImages.push(image.uri))
@@ -139,7 +146,8 @@ export default {
         alert(response);
       });
       if(post)
-        this.posts.push(post)
+        this.posts = [post].concat(this.posts)
+      this.waitingForPost = false;
     }
   }
 }
