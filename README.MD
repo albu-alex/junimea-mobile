@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a>
 
 # <a id="one">Day 1</a>
 ## Today I have done the following:
@@ -282,3 +282,41 @@
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_3.jpg" alt="Third photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_4.gif" alt="First video" height="50%" width=auto/>
 
+# <a id="nine">Day 9</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Styled the login form and added a Junimea Logo which redirects to the facebook page
+</li>
+<li>
+    Added animation to the infinite loading component
+</li>
+<li>
+    Created a Loading component
+</li>
+<li>
+    Added loading animations for API requests
+</li>
+<li>
+    Fixed minor bug in which the email address input form would still show up while waiting for axios request
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        !!ADD LIKES/DISLIKES and comments
+    </li>
+    <li>
+        Keep styling the app to make it more user friendly and attractive
+    </li>
+    <li>
+        Fix bug in which junimea logo from Login component disappears after a request error 
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_2.gif" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_3.jpg" alt="First photo" height="50%" width=auto/>
