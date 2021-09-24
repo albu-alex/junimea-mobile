@@ -345,6 +345,9 @@ This is the QR code to the app:
 <li>
     Changed the way the user transitions from UserProfile.vue to MainPage.vue
 </li>
+<li>
+    Changed the app splash screen
+</li>
 </uL>
 
 ## Things to improve upon:
