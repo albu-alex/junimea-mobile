@@ -13,7 +13,7 @@
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <scroll-view :onMomentumScrollEnd="refreshList" v-if="!profileDisplayed" ref="pagePosts">
+    <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" v-if="!profileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
       <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
@@ -68,7 +68,7 @@ export default {
     newUsername: String
   },
   methods:{
-    async getInitialPosts(){
+    async getInitialPosts(postPositon){
       //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
       await axios.get(`https://randomuser.me/api/?results=3`).then((response) => {
         let users = response.data.results;
@@ -84,7 +84,7 @@ export default {
             text: "This post was taken from randomuser.me",
             images: images
           }
-          this.addPost(post);
+          this.addPost(post, postPositon);
         }
       });
     },
@@ -104,12 +104,22 @@ export default {
       }
       this.profileDisplayed = true
     },
-    refreshList() {
+    refreshList(event) {
       // TODO: Pull data from API
-      this.isLoading = true;
-      this.getInitialPosts();
+      // this.isLoading = true;
+      // this.getInitialPosts();
+      let paddingToBottom = 1000;
+      if(event.nativeEvent.contentOffset.y < 0){
+        this.isLoading = true;
+        this.getInitialPosts("top");
+        return;
+      }
+      if(event.nativeEvent.contentOffset.y > (event.nativeEvent.contentSize.height - paddingToBottom)){
+        this.isLoading = true;
+        this.getInitialPosts("bottom")
+      }
     },
-    async addPost(newPost){
+    async addPost(newPost, postPosition){
       if(this.newUsername === ''){
         alert("It looks like you are a guest! You must register before creating a post!")
         return;
@@ -147,7 +157,10 @@ export default {
         alert(response);
       });
       if(post)
-        this.posts = [post].concat(this.posts)
+        if(postPosition === 'top')
+          this.posts = [post].concat(this.posts)
+        else
+          this.posts.push(post)
       this.waitingForPost = false;
     }
   }
