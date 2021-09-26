@@ -391,5 +391,5 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_2.gif" alt="Third video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_3.gif" alt="Third video" height="50%" width=auto/>
 
