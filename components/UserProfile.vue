@@ -10,10 +10,14 @@
     <touchable-opacity :on-press="uploadProfilePicture" class="profilePictureButton">
       <text class="profilePictureButtonText">Change profile picture</text>
     </touchable-opacity>
-      <scroll-view :onScrollEndDrag="refreshList" ref="pagePosts">
+<!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
+      <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
       </scroll-view>
+    <view v-if="isLoading" :style="{justifyContent: 'center'}">
+      <activity-indicator size="large" color="dimgrey" />
+    </view>
   </view>
 </template>
 
@@ -22,7 +26,7 @@ import UserPost from "./UserPost";
 export default {
   data(){
     return{
-      refreshing: false,
+      isLoading: false,
     }
   },
   name: "UserProfile",
@@ -34,15 +38,23 @@ export default {
     UserPost
   },
   methods: {
+    //This function sleeps the loading component, such that an actual loading is simulated
+    sleep(ms){
+      return new Promise(resolve => setTimeout(resolve, ms));
+    },
     uploadProfilePicture() {
       // Have to figure out connection between profile picture and API
       alert("New feature coming soon!")
     },
-    refreshList() {
+    refreshList(event) {
       // TODO: Pull data from API
-      // This feature will be implemented after the API is configured
-      this.refreshing = true;
-      this.refreshing = false;
+      // This feature will be implemented completely after the API is configured
+      if(event.nativeEvent.contentOffset.y < 0){
+        this.isLoading = true;
+        this.$emit("refreshUserPosts");
+        this.sleep(500);
+        this.isLoading = false;
+      }
     },
     goToMainPage(){
       this.$emit("goToMainPage");

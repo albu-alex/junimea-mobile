@@ -7,12 +7,14 @@
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
-    <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" @goToMainPage="profileDisplayed = false" />
+    <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" @goToMainPage="profileDisplayed = false"
+      @refreshUserPosts="getInitialPosts('top')" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost" @addPost="addPost($event, 'top')" />
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
+    <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" v-if="!profileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
@@ -68,7 +70,7 @@ export default {
     newUsername: String
   },
   methods:{
-    async getInitialPosts(postPositon){
+    async getInitialPosts(postPosition){
       //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
       await axios.get(`https://randomuser.me/api/?results=3`).then((response) => {
         let users = response.data.results;
@@ -84,7 +86,7 @@ export default {
             text: "This post was taken from randomuser.me",
             images: images
           }
-          this.addPost(post, postPositon);
+          this.addPost(post, postPosition);
         }
       });
     },
