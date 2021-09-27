@@ -4,9 +4,9 @@
     <touchable-opacity :on-press="goToMainPage">
       <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
     </touchable-opacity>
-    <Image v-if="!profilePictureURL" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+    <Image v-if="!profilePictureURL&&!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <Image v-else :source="{uri: profilePictureURL}"
+    <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryText">{{username}}</text>
     <touchable-opacity :on-press="uploadProfilePicture" class="profilePictureButton">
@@ -38,7 +38,8 @@ export default {
   name: "UserProfile",
   props:{
     username: String,
-    posts: Array
+    posts: Array,
+    profilePicture: String
   },
   components:{
     UserPost

@@ -6,9 +6,9 @@
     <StatusBar/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" />
+            @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
     <UserProfile v-if="profileDisplayed" :username="newUsername" :posts="posts" @goToMainPage="profileDisplayed = false"
-      @refreshUserPosts="getInitialPosts('top')" />
+      @refreshUserPosts="getInitialPosts('top')" :profilePicture="profilePicture" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost" @addPost="addPost($event, 'top')" />
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
@@ -50,6 +50,8 @@ export default {
       //Variable keeps track of the profile page
       //Defaults to false
       profileDisplayed: false,
+      //This variable holds the URL for the user profile picture
+      profilePicture: "",
     }
   },
   async beforeMount(){
@@ -158,11 +160,13 @@ export default {
       .catch(function (response){
         alert(response);
       });
-      if(post)
+      if(post){
+        this.profilePicture = post.profilePic
         if(postPosition === 'top')
           this.posts = [post].concat(this.posts)
         else
           this.posts.push(post)
+      }
       this.waitingForPost = false;
     }
   }

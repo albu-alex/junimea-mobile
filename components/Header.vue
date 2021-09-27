@@ -11,7 +11,11 @@
       </touchable-opacity>
 <!--    Have to figure out how to get user profile picture from API-->
     <touchable-opacity id="junimeaLogoButton" :on-press="goToProfile">
-      <Image class="profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+      <Image v-if="profilePic === ''" class="profilePicture"
+             :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+             :style="{width: 25, height:25, borderRadius: 50}" />
+      <Image v-else class="profilePicture"
+             :source="{uri: profilePic}"
              :style="{width: 25, height:25, borderRadius: 50}" />
     </touchable-opacity>
   </view>
@@ -31,6 +35,9 @@ export default {
     goToProfile(){
       this.$emit("goToProfile");
     }
+  },
+  props:{
+    profilePic: String
   }
 }
 </script>
