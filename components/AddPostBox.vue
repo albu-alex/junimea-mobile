@@ -19,6 +19,8 @@
 
 <script>
 import * as ImagePicker from 'expo-image-picker';
+import axios from "axios";
+import FormData from "form-data";
 export default {
   data(){
     return{
@@ -40,12 +42,30 @@ export default {
       if (pickerResult.cancelled === true) {
         return;
       }
+      let localUri = pickerResult.uri;
+      let filename = localUri.split('/').pop();
+      let newUri;
+      let data = new FormData();
+      data.append('Pic', {uri: localUri, name: filename});
+      await axios.post('http://52.57.118.176/User/ProfilePic', data, {
+        timeout: 4000,
+        headers: { "Content-Type": "multipart/form-data" }
+      })
+      .then(function (response){
+        if(response.status === 200){
+          newUri = response.data.url
+        }
+      })
+      .catch(function (response){
+        alert(response);
+      });
       let newImage = {
-        uri: pickerResult.uri,
+        uri: newUri,
+        filename: filename,
         height: pickerResult.height,
         width: pickerResult.width
       }
-      alert("Photo added successfully!")
+      alert(newImage.uri)
       this.images.push(newImage)
     },
     addPost(){

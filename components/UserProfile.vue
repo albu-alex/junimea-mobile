@@ -66,9 +66,6 @@ export default {
       let localUri = pickerResult.uri;
       let filename = localUri.split('/').pop();
 
-      // Infer the type of the image
-      let match = /\.(\w+)$/.exec(filename);
-
       return {localUri, filename};
     },
     //This functions uploads the picture selected by the user to replace the profile picture
@@ -92,7 +89,6 @@ export default {
       if(newProfilePic){
         this.profilePictureURL = newProfilePic;
       }
-      alert(this.profilePictureURL)
     },
     refreshList(event) {
       // TODO: Pull data from API

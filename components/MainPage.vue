@@ -110,8 +110,6 @@ export default {
     },
     refreshList(event) {
       // TODO: Pull data from API
-      // this.isLoading = true;
-      // this.getInitialPosts();
       let paddingToBottom = 1000;
       if(event.nativeEvent.contentOffset.y < 0){
         this.isLoading = true;
