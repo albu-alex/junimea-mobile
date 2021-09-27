@@ -421,7 +421,7 @@ This is the QR code to the app:
 </ul>
 
 ## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_1.png" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_2.png" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_2.gif" alt="Second video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_3.jpg" alt="First photo" height="50%" width=auto/>
 
