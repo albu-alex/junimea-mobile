@@ -4,7 +4,9 @@
     <touchable-opacity :on-press="goToMainPage">
       <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
     </touchable-opacity>
-    <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+    <Image v-if="!profilePictureURL" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+    <Image v-else :source="{uri: profilePictureURL}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryText">{{username}}</text>
     <touchable-opacity :on-press="uploadProfilePicture" class="profilePictureButton">
@@ -23,10 +25,14 @@
 
 <script>
 import UserPost from "./UserPost";
+import axios from "axios";
+import * as ImagePicker from 'expo-image-picker';
+import FormData from 'form-data'
 export default {
   data(){
     return{
       isLoading: false,
+      profilePictureURL: ""
     }
   },
   name: "UserProfile",
@@ -42,9 +48,52 @@ export default {
     sleep(ms){
       return new Promise(resolve => setTimeout(resolve, ms));
     },
-    uploadProfilePicture() {
-      // Have to figure out connection between profile picture and API
-      alert("New feature coming soon!")
+    //This function is used in order to upload the photo which the user has selected for profile picture
+    async uploadFile(){
+      let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+      if (permissionResult.granted === false) {
+        alert("Permission to access camera roll is required!");
+        return;
+      }
+
+      let pickerResult = await ImagePicker.launchImageLibraryAsync();
+      if (pickerResult.cancelled === true) {
+        return;
+      }
+      let newImage = {
+        uri: pickerResult.uri,
+        height: pickerResult.height,
+        width: pickerResult.width
+      }
+      const imageExt = pickerResult.uri.split('.').pop();
+      const imageMime = `image/${imageExt}`;
+      let picture = await fetch(pickerResult.uri);
+      picture = await picture.blob();
+      alert(picture.width)
+      const imageData = new File([picture], `photo.${imageExt}`);
+      return {imageData, imageMime};
+    },
+    //This functions uploads the picture selected by the user to replace the profile picture
+    async uploadProfilePicture() {
+      let profilePicture = await this.uploadFile()
+      let data = new FormData();
+      data.append('Pic', profilePicture.imageData);
+      let newProfilePic;
+      await axios.post('http://52.57.118.176/User/ProfilePic', data, {
+        timeout: 4000
+      })
+      .then(function (response){
+        if(response.status === 200){
+          newProfilePic = response.data.url
+        }
+      })
+      .catch(function (response){
+        alert(response);
+      });
+      if(newProfilePic){
+        this.profilePictureURL = newProfilePic;
+      }
     },
     refreshList(event) {
       // TODO: Pull data from API
