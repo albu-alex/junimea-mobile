@@ -46,8 +46,8 @@ export default {
       let filename = localUri.split('/').pop();
       let newUri;
       let data = new FormData();
-      data.append('Pic', {uri: localUri, name: filename});
-      await axios.post('http://52.57.118.176/User/ProfilePic', data, {
+      data.append('File', {uri: localUri, name: filename});
+      await axios.post('http://52.57.118.176/Post/AddFile', data, {
         timeout: 4000,
         headers: { "Content-Type": "multipart/form-data" }
       })
@@ -61,7 +61,6 @@ export default {
       });
       let newImage = {
         uri: newUri,
-        filename: filename,
         height: pickerResult.height,
         width: pickerResult.width
       }
