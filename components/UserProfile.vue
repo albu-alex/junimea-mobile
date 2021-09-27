@@ -62,27 +62,25 @@ export default {
       if (pickerResult.cancelled === true) {
         return;
       }
-      let newImage = {
-        uri: pickerResult.uri,
-        height: pickerResult.height,
-        width: pickerResult.width
-      }
-      const imageExt = pickerResult.uri.split('.').pop();
-      const imageMime = `image/${imageExt}`;
-      let picture = await fetch(pickerResult.uri);
-      picture = await picture.blob();
-      alert(picture.width)
-      const imageData = new File([picture], `photo.${imageExt}`);
-      return {imageData, imageMime};
+      // ImagePicker saves the taken photo to disk and returns a local URI to it
+      let localUri = pickerResult.uri;
+      let filename = localUri.split('/').pop();
+
+      // Infer the type of the image
+      let match = /\.(\w+)$/.exec(filename);
+      let type = match ? `image/${match[1]}` : `image`;
+
+      return {localUri, filename};
     },
     //This functions uploads the picture selected by the user to replace the profile picture
     async uploadProfilePicture() {
       let profilePicture = await this.uploadFile()
       let data = new FormData();
-      data.append('Pic', profilePicture.imageData);
+      data.append('Pic', {uri: profilePicture.localUri, name: profilePicture.filename});
       let newProfilePic;
       await axios.post('http://52.57.118.176/User/ProfilePic', data, {
-        timeout: 4000
+        timeout: 4000,
+        headers: { "Content-Type": "multipart/form-data" }
       })
       .then(function (response){
         if(response.status === 200){
@@ -95,6 +93,7 @@ export default {
       if(newProfilePic){
         this.profilePictureURL = newProfilePic;
       }
+      alert(this.profilePictureURL)
     },
     refreshList(event) {
       // TODO: Pull data from API
