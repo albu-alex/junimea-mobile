@@ -16,7 +16,7 @@
     </view>
     <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" v-if="!profileDisplayed" ref="pagePosts">
-      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
+      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="(post.dimensions) ? post.dimensions : []"
       :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
       <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
         <activity-indicator size="large" color="dimgrey" />
@@ -47,6 +47,8 @@ export default {
       //Defaults to false
       settingsDisplayed: false,
       posts: [],
+      //This variable keeps track of the number of posts displayed
+      postNumber: 10,
       //Variable keeps track of the profile page
       //Defaults to false
       profileDisplayed: false,
@@ -73,24 +75,20 @@ export default {
   },
   methods:{
     async getInitialPosts(postPosition){
-      //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
-      await axios.get(`https://randomuser.me/api/?results=3`).then((response) => {
-        let users = response.data.results;
-        for(let i=0;i<users.length;i++){
-          let image = {
-            uri: users[i].picture.large,
-            height: 300,
-            width: 300
-          }
-          let images = [];
-          images.push(image)
-          let post = {
-            text: "This post was taken from randomuser.me",
-            images: images
-          }
-          this.addPost(post, postPosition);
-        }
+      let posts;
+      await axios({
+        method: 'get',
+        url: `http://52.57.118.176/Post/List/${this.postNumber}`,
+        timeout: 4000
+      })
+      .then(function (response){
+        posts = response.data
+      })
+      .catch(function(response){
+        alert(response)
       });
+      if(posts)
+        this.posts = posts;
     },
     Logout(){
       this.$emit("Logout")

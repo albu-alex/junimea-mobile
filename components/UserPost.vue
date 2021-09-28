@@ -11,7 +11,8 @@
       <text class="postText">{{userPostText}}</text>
       <text v-for="(file,index) in files">
         <touchable-opacity :on-press="zoomImage">
-          <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+          <Image v-if="dimensions[index] !== []" :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+          <Image v-else :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/300)*300}" />
         </touchable-opacity>
       </text>
     </view>
