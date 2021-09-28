@@ -83,12 +83,22 @@ export default {
       })
       .then(function (response){
         posts = response.data
+        for(let i=0;i<posts.length;i++){
+          posts[i]["dimensions"] =
+              [{
+                uri: "",
+                width: 300,
+                height: 300
+              }]
+        }
       })
       .catch(function(response){
         alert(response)
       });
-      if(posts)
+      if(posts) {
         this.posts = posts;
+        this.postNumber += 10;
+      }
     },
     Logout(){
       this.$emit("Logout")
