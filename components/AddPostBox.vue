@@ -64,7 +64,6 @@ export default {
         height: pickerResult.height,
         width: pickerResult.width
       }
-      alert(newImage.uri)
       this.images.push(newImage)
     },
     addPost(){

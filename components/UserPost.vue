@@ -33,6 +33,7 @@
 <script>
 import { Dimensions } from "react-native";
 const win = Dimensions.get('window');
+import axios from 'axios';
 export default {
   data(){
     return {
@@ -59,13 +60,27 @@ export default {
       // else
       //   this.zoomCoefficient = 0.2;
     },
-    interactWithPost(){
-      if(!this.liked) {
-        this.liked = true;
-        return this.likes = this.likes + 1;
-      }
-      this.liked = false;
-      return this.likes = this.likes - 1;
+    async interactWithPost(){
+      let newLikes;
+      await axios({
+        method: 'post',
+        url: `http://52.57.118.176/Post/Like`,
+        data:{
+          "Value": 1,
+          "Id": this.id
+        },
+        timeout: 4000
+        })
+      .then(function (response){
+        if(response.data.errorMessage === null){
+          newLikes = response.data.count;
+        }
+      })
+      .catch(function(response){
+        alert(response)
+      });
+      if(newLikes)
+        this.likes = newLikes;
     }
   },
 }

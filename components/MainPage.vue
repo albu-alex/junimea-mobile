@@ -96,7 +96,10 @@ export default {
         alert(response)
       });
       if(posts) {
-        this.posts = posts;
+        if(this.postNumber === 10)
+          this.posts = posts;
+        else
+          posts.forEach(post => this.posts.push(post))
         this.postNumber += 10;
       }
     },
