@@ -18,12 +18,9 @@
     </view>
     <view class="postFeedback">
       <touchable-opacity :on-press="interactWithPost">
-        <Image :style="{width: 25, height:25}" :source="require('../assets/up-button.png')" />
+        <Image class="upButton" :style="{width: 25, height:25}" :source="require('../assets/up-button.png')" />
       </touchable-opacity>
       <text class="likesText">{{likes}}</text>
-      <touchable-opacity :on-press="interactWithPost">
-        <Image :style="{width: 25, height:25}" :source="require('../assets/down-button.png')" />
-      </touchable-opacity>
     </view>
   </view>
 </template>
@@ -62,11 +59,16 @@ export default {
     },
     async interactWithPost(){
       let newLikes;
+      let value;
+      if(this.liked)
+        value = 1;
+      else
+        value = -1;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/Post/Like`,
         data:{
-          "Value": 1,
+          "Value": value,
           "Id": this.id
         },
         timeout: 4000
@@ -74,13 +76,16 @@ export default {
       .then(function (response){
         if(response.data.errorMessage === null){
           newLikes = response.data.count;
+          alert(response.data.count)
         }
       })
       .catch(function(response){
         alert(response)
       });
-      if(newLikes)
+      if(newLikes) {
         this.likes = newLikes;
+        this.liked = !this.liked
+      }
     }
   },
 }
@@ -88,6 +93,9 @@ export default {
 
 
 <style>
+.upButton{
+  margin-top: 6%;
+}
 .postHeader{
   flex-direction: row;
   justify-content: center;
@@ -123,5 +131,6 @@ export default {
   align-self: center;
   flex-direction: row;
   align-content: center;
+  margin-top: 2%;
 }
 </style>
