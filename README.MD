@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a>
 
 This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/server_qr.png" alt="Server QR Code" height="50%" width=auto/>
@@ -424,4 +424,35 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_2.gif" alt="Second video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_3.jpg" alt="First photo" height="50%" width=auto/>
+
+# <a id="thirteen">Day 13</a>
+## Today I have done the following:
+<uL>
+<li>
+    Implemented the like post picture feature
+</li>
+<li>
+    Removed the dislike button because it is not part of app design
+</li>
+<li>
+    Fixed getInitialPost method bugs
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Fix the bug in which the updated profile picture is displayed after an app restart
+    </li>
+    <li>
+        Implement the other API features
+    </li>
+    <li>
+        Style the alerts
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day13_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day13_2.jpg" alt="Second video" height="50%" width=auto/>
 
