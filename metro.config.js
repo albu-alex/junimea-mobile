@@ -22,7 +22,7 @@ module.exports = (async () => {
       })
     },
     resolver: {
-      sourceExts: [...sourceExts, "vue"]
+      sourceExts: [...sourceExts, "vue", "ts", "tsx"]
     }
   };
 })();
