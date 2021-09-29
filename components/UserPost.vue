@@ -60,7 +60,7 @@ export default {
     async interactWithPost(){
       let newLikes;
       let value;
-      if(this.liked)
+      if(!this.liked)
         value = 1;
       else
         value = -1;
@@ -76,7 +76,6 @@ export default {
       .then(function (response){
         if(response.data.errorMessage === null){
           newLikes = response.data.count;
-          alert(response.data.count)
         }
       })
       .catch(function(response){

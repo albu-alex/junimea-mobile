@@ -84,12 +84,17 @@ export default {
       .then(function (response){
         posts = response.data
         for(let i=0;i<posts.length;i++){
-          posts[i]["dimensions"] =
-              [{
-                uri: "",
-                width: 300,
-                height: 300
-              }]
+          const numberOfPhotos = posts[i].files.length;
+          posts[i]["dimensions"] = []
+          for(let j=0;j<numberOfPhotos;j++) {
+            posts[i]["dimensions"].push(
+                {
+                  uri: "",
+                  width: 300,
+                  height: 300
+                }
+            )
+          }
         }
       })
       .catch(function(response){
