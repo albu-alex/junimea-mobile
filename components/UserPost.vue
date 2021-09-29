@@ -10,10 +10,9 @@
     <view class="postContent">
       <text class="postText">{{userPostText}}</text>
       <text v-for="(file,index) in files">
-        <touchable-opacity :on-press="zoomImage">
-          <Image v-if="dimensions[index] !== []" :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
-          <Image v-else :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/300)*300}" />
-        </touchable-opacity>
+        <scroll-view :zoomScale="zoom" :pinchGestureEnabled="true">
+          <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+        </scroll-view>
       </text>
     </view>
     <view class="postFeedback">
@@ -37,6 +36,8 @@ export default {
       //These variables are used to dynamically resize the photo on any device
       pageWidth: win.width,
       pageHeight: win.height,
+      //This variable keeps track of the zooming
+      zoom: 0.1
     }
   },
   name: "UserPost",
