@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a>
 
 This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/server_qr.png" alt="Server QR Code" height="50%" width=auto/>
@@ -455,4 +455,28 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day13_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day13_2.jpg" alt="Second video" height="50%" width=auto/>
+
+# <a id="fourteen">Day 14</a>
+## Today I have done the following:
+<uL>
+<li>
+    Fixed almost all post loading bugs
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Implement pinch to zoom feature
+    </li>
+    <li>
+        Implement prompts
+    </li>
+    <li>
+        Fix other bugs
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day14_1.gif" alt="First video" height="50%" width=auto/>
 
