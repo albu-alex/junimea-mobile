@@ -4,6 +4,7 @@
   <view class="settings">
     <text class="textPrimary" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimary" v-else>Hey, guest!</text>
+    <UpdateProfileForm v-if="visiblePrompts" />
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondary">Logout</text>
@@ -15,7 +16,6 @@
         <text class="textSecondary">Update your profile</text>
       </touchable-opacity>
     </view>
-    <UpdateProfileForm />
   </view>
 </template>
 
@@ -30,7 +30,7 @@ export default {
       lastName: "",
       emailAddress: "",
       //This variable keeps track of the visibility of the update profile prompts
-      visiblePrompts: true
+      visiblePrompts: false
     }
   },
   props:{
@@ -48,6 +48,10 @@ export default {
       alert("New feature coming soon!");
     },
     async updateProfile(){
+      if(!this.visiblePrompts){
+        this.visiblePrompts = true;
+        return;
+      }
       await axios({
         method: 'post',
         url: `http://52.57.118.176/User/Update`,
@@ -66,6 +70,7 @@ export default {
       .catch(function(response){
         alert(response)
       });
+      this.visiblePrompts = false;
     }
   }
 }
