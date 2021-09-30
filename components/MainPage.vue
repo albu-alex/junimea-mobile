@@ -57,9 +57,8 @@ export default {
     }
   },
   async beforeMount(){
-    //!!! CURRENTLY THIS IS JUST A MOCK UP! FINAL VERSION WILL MAKE A LOT MORE SENSE
     this.isLoading = true;
-    await this.getInitialPosts();
+    await this.getInitialPosts('top');
     this.isLoading = false;
   },
   components:{
@@ -94,6 +93,8 @@ export default {
                   height: 300
                 }
             )
+            //This is just to skip the refactor that is due to come
+            posts[i]["username"] = posts[i].userName
           }
         }
       })
@@ -103,9 +104,13 @@ export default {
       if(posts) {
         if(this.postNumber === 10)
           this.posts = posts;
-        else
-          posts.forEach(post => this.posts.push(post))
-        this.postNumber += 10;
+        else {
+          if (postPosition === 'bottom' || !postPosition)
+            posts.forEach(post => this.posts.push(post))
+          else
+            this.posts = posts.concat(this.posts)
+        }
+        this.postNumber += 11;
       }
     },
     Logout(){
@@ -134,7 +139,7 @@ export default {
       }
       if(event.nativeEvent.contentOffset.y > (event.nativeEvent.contentSize.height - paddingToBottom)){
         this.isLoading = true;
-        this.getInitialPosts("bottom")
+        this.getInitialPosts("bottom");
       }
     },
     async addPost(newPost, postPosition){
