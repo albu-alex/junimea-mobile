@@ -149,8 +149,6 @@ export default {
       this.email = "";
       this.password = "";
       this.waitingForSubmit = false;
-      // Debugging purposes only
-      // this.$emit('verifyLogin', "test");
     },
     // This function allow a new user to enter the feed of posts without making a new account
     // If user logs in as guest, he cannot make new post and cannot access his profile

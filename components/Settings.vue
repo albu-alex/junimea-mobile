@@ -20,15 +20,11 @@
 </template>
 
 <script>
-import axios from 'axios';
 import UpdateProfileForm from "./UpdateProfileForm";
 export default {
   name: "Settings",
   data(){
     return{
-      firstName: "",
-      lastName: "",
-      emailAddress: "",
       //This variable keeps track of the visibility of the update profile prompts
       visiblePrompts: false
     }
@@ -52,24 +48,6 @@ export default {
         this.visiblePrompts = true;
         return;
       }
-      await axios({
-        method: 'post',
-        url: `http://52.57.118.176/User/Update`,
-        data:{
-          "FirstName" : this.firstName,
-          "LastName" : this.lastName,
-          "Email" : this.emailAddress
-        },
-        timeout: 4000
-      })
-      .then(function (response){
-        if(response.status === 200){
-          alert("Your profile details have been updated successfully!")
-        }
-      })
-      .catch(function(response){
-        alert(response)
-      });
       this.visiblePrompts = false;
     }
   }

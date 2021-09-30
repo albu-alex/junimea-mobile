@@ -2,29 +2,56 @@
 <view class="updateProfile">
   <text-input :autoCorrect="false"
               placeholderTextColor="ghostwhite" placeholder="First Name"
-              class="inputForm">
+              v-model="firstName" class="inputForm">
   </text-input>
   <text-input :autoCorrect="false"
-              placeholderTextColor="ghostwhite" placeholder="Second Name"
-              class="inputForm">
+              placeholderTextColor="ghostwhite" placeholder="Last Name"
+              v-model="lastName" class="inputForm">
   </text-input>
   <text-input :autoCorrect="false"
               placeholderTextColor="ghostwhite" placeholder="Email address"
-              class="inputForm">
+              v-model="emailAddress" class="inputForm">
   </text-input>
-  <touchable-opacity :on-press="returnUpdatedProfile">
+  <touchable-opacity :on-press="updateProfile">
     <text class="sendButtonText">Send</text>
   </touchable-opacity>
 </view>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "UpdateProfileForm",
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      emailAddress: "",
+    }
+  },
   methods:{
-    returnUpdatedProfile(){
-      //This function updated the models firstName, lastName and emailAddress in Settings.vue
-      this.$emit("updateProfileFields");
+    async updateProfile(){
+      await axios({
+        method: 'post',
+        url: `http://52.57.118.176/User/Update`,
+        data:{
+          "FirstName" : this.firstName,
+          "LastName" : this.lastName,
+          "Email" : this.emailAddress
+        },
+        timeout: 4000
+      })
+      .then(function (response){
+        if(response.status === 200){
+          alert("Your profile details have been updated successfully!")
+        }
+      })
+      .catch(function(response){
+        alert(response)
+      });
+      this.firstName = '';
+      this.lastName = '';
+      this.emailAddress = '';
     }
   }
 }
