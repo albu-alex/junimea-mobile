@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a>
 
 This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/server_qr.png" alt="Server QR Code" height="50%" width=auto/>
@@ -479,4 +479,45 @@ This is the QR code to the app:
 
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day14_1.gif" alt="First video" height="50%" width=auto/>
+
+# <a id="fifteen">Day 15</a>
+
+## Major updates!
+
+## Today I have done the following:
+<uL>
+<li>
+    Fixed the bug in which the username of the post creator would not appear
+</li>
+<li>
+    Fixed the like post feature in which you could not unlike
+</li>
+<li>
+    Properly loading the posts from the API on pull to refresh vs lazy loading
+</li>
+<li>
+    Created a new UpdateProfile component
+</li>
+<li>
+    Refactoring
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Fix the settings bar sizing issue
+    </li>
+    <li>
+        Implement prompts
+    </li>
+    <li>
+        Style alerts
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_2.gif" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_3.gif" alt="Third video" height="50%" width=auto/>
 
