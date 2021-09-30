@@ -82,7 +82,7 @@ export default {
       .catch(function(response){
         alert(response)
       });
-      if(newLikes) {
+      if(newLikes !== undefined) {
         this.likes = newLikes;
         this.liked = !this.liked
       }
