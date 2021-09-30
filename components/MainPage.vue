@@ -194,7 +194,8 @@ export default {
 
 <style>
 .settings{
-  height: 15%;
+  height: 10%;
+  flex-grow: 0.07;
 }
 .mainPage{
   background-color: #252525;
