@@ -100,8 +100,6 @@ export default {
         }
       })
       .catch(function (response){
-        //Debugging purposes only
-        // loggedIn = true;
         alert(response + " You must not leave the fields empty!");
       });
       this.showPassword = shownPassword;
@@ -111,8 +109,6 @@ export default {
       this.username = "";
       this.password = "";
       this.waitingForSubmit = false;
-      //Debugging purposes only
-      // this.$emit('verifyLogin', "test");
     },
     //The registerNewUser method registers the user if he cannot be found in the database;
     //If the user is not registered, a text-input with an email address placeholder will appear

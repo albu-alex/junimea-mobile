@@ -14,18 +14,14 @@
       <touchable-opacity :on-press="updateProfile">
         <text class="textSecondary">Update your profile</text>
       </touchable-opacity>
-      <Prompt
-          :visibility="visiblePrompts"
-          title="say something"
-          placeholder="Aa"
-      />
     </view>
+    <UpdateProfileForm />
   </view>
 </template>
 
 <script>
 import axios from 'axios';
-import Prompt from 'react-native-input-prompt'
+import UpdateProfileForm from "./UpdateProfileForm";
 export default {
   name: "Settings",
   data(){
@@ -41,7 +37,7 @@ export default {
     newUsername: String
   },
   components:{
-    Prompt
+    UpdateProfileForm
   },
   methods:{
     //This function emits a method in which the user is taken back to the login component
