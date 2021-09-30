@@ -15,7 +15,8 @@
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
-                  :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
+                  :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
+                   v-if="post.username === username"></UserPost>
       </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
