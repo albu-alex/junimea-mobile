@@ -8,7 +8,7 @@
               placeholderTextColor="ghostwhite" placeholder="Last Name"
               v-model="lastName" class="inputForm">
   </text-input>
-  <text-input :autoCorrect="false"
+  <text-input :autoCorrect="false" keyboardType="email-address"
               placeholderTextColor="ghostwhite" placeholder="Email address"
               v-model="emailAddress" class="inputForm">
   </text-input>
