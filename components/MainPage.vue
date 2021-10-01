@@ -73,6 +73,30 @@ export default {
       profilePicture: "",
     }
   },
+  async created(){
+    let postNumber = 10;
+    let found = false;
+    let profilePicture;
+    let username = this.newUsername
+    while(!found){
+      await axios({
+        method: 'get',
+        url: `http://52.57.118.176/Post/List/${this.postNumber}`,
+        timeout: 4000
+      })
+      .then(function (response){
+        let posts = response.data
+        for(let i=0;i<posts.length;i++){
+          if(posts[i].userName === username){
+            profilePicture = posts[i].profilePic;
+            found = true;
+          }
+        }
+      });
+      postNumber += 10;
+    }
+    this.profilePicture = profilePicture;
+  },
   async beforeMount(){
     this.isLoading = true;
     await this.getInitialPosts('top');
@@ -112,6 +136,7 @@ export default {
             )
             //This is just to skip the refactor that is due to come
             posts[i]["username"] = posts[i].userName
+            posts[i]["profilePic"] = posts[i].profilePicUrl
           }
         }
       })
