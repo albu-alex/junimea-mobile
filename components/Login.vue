@@ -139,15 +139,14 @@ export default {
       })
       .catch(function (error){
         if(error.response){
-          alert(Object.values(error.response.data.errors)[0]);
+          if(Object.values(error.response.data.errors)[0])
+            alert(Object.values(error.response.data.errors)[0]);
+          else
+            alert("This account has already been registered!")
         }
       });
       if(isRegistered)
-        this.$emit('verifyLogin', "test");
-      //Data from the text-inputs is reset
-      this.username = "";
-      this.email = "";
-      this.password = "";
+        this.$emit('verifyLogin', this.username);
       this.waitingForSubmit = false;
     },
     // This function allow a new user to enter the feed of posts without making a new account

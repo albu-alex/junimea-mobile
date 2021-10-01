@@ -46,8 +46,10 @@ export default {
           alert("Your profile details have been updated successfully!")
         }
       })
-      .catch(function(response){
-        alert(response)
+      .catch(function (error){
+        if(error.response){
+          alert(Object.values(error.response.data.errors)[0]);
+        }
       });
       this.firstName = '';
       this.lastName = '';
