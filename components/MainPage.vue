@@ -139,9 +139,6 @@ export default {
             posts[i]["profilePic"] = posts[i].profilePicUrl
           }
         }
-      })
-      .catch(function(response){
-        alert(response)
       });
       if(posts) {
         if(this.postNumber === 10)
@@ -172,7 +169,6 @@ export default {
       this.profileDisplayed = true
     },
     refreshList(event) {
-      // TODO: Pull data from API
       let paddingToBottom = 1000;
       if(event.nativeEvent.contentOffset.y < 0){
         this.isLoading = true;
@@ -217,9 +213,6 @@ export default {
             "dimensions": dimensions
           }
         }
-      })
-      .catch(function (response){
-        alert(response);
       });
       if(post){
         this.profilePicture = post.profilePic
