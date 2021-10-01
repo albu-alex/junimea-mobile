@@ -6,6 +6,8 @@
     </touchable-opacity>
     <Image v-if="!profilePictureURL&&!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+    <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
+           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryText">{{username}}</text>
