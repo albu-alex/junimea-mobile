@@ -88,7 +88,7 @@ export default {
         let posts = response.data
         for(let i=0;i<posts.length;i++){
           if(posts[i].userName === username){
-            profilePicture = posts[i].profilePic;
+            profilePicture = posts[i].profilePicUrl;
             found = true;
           }
         }

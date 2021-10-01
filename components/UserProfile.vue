@@ -98,7 +98,6 @@ export default {
       }
     },
     refreshList(event) {
-      // TODO: Pull data from API
       // This feature will be implemented completely after the API is configured
       if(event.nativeEvent.contentOffset.y < 0){
         this.isLoading = true;
