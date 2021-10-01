@@ -99,8 +99,10 @@ export default {
           alert(response.data.message + " Wrong username or password!");
         }
       })
-      .catch(function (response){
-        alert(response + " You must not leave the fields empty!");
+      .catch(function (error){
+        if(error.response){
+          alert(Object.values(error.response.data.errors)[0]);
+        }
       });
       this.showPassword = shownPassword;
       if(loggedIn)
@@ -135,12 +137,10 @@ export default {
           alert("New user registered successfully!");
         }
       })
-      .catch(function (response){
-        if(response.status === 500){
-          alert("This account has already been registered!");
+      .catch(function (error){
+        if(error.response){
+          alert(Object.values(error.response.data.errors)[0]);
         }
-        else
-          alert(response);
       });
       if(isRegistered)
         this.$emit('verifyLogin', "test");
