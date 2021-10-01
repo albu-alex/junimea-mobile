@@ -14,10 +14,20 @@
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-    <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" v-if="!profileDisplayed" ref="pagePosts">
-      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="(post.dimensions) ? post.dimensions : []"
-      :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes" ></UserPost>
+    <scroll-view v-if="postProfileDisplayed">
+      <UserProfile v-if="postProfileDisplayed" :username="postUsername"
+                   :posts="posts" @goToMainPage="postProfileDisplayed = false"
+                   @refreshUserPosts="getInitialPosts('top')"
+                   :profilePicture="postProfilePicture"></UserProfile>
+    </scroll-view>
+<!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
+    <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+                 v-if="!profileDisplayed&&!postProfileDisplayed" ref="pagePosts">
+      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id"
+                :userPostText="post.title" :id="post.id"
+                :dimensions="(post.dimensions) ? post.dimensions : []"
+                :files="post.files" :username="post.username" :profilePic="post.profilePic"
+                :likes="post.likes" @goToUser="goToUser" ></UserPost>
       <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
         <activity-indicator size="large" color="dimgrey" />
       </view>
@@ -52,6 +62,10 @@ export default {
       //Variable keeps track of the profile page
       //Defaults to false
       profileDisplayed: false,
+      //This variable keeps track if the user has clicked on another user's profile
+      postProfileDisplayed: false,
+      postUsername: "",
+      postProfilePicture: "",
       //This variable holds the URL for the user profile picture
       profilePicture: "",
     }
@@ -187,6 +201,11 @@ export default {
           this.posts.push(post)
       }
       this.waitingForPost = false;
+    },
+    goToUser(event){
+      this.postUsername = event.username
+      this.postProfilePicture = event.profilePicture
+      this.postProfileDisplayed = true;
     }
   }
 }

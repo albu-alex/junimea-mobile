@@ -1,12 +1,14 @@
 <!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
   <view class="post">
-    <view class="postHeader">
-<!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
-      <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
-      <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
-      <text class="postHeaderText">{{username}}</text>
-    </view>
+    <touchable-opacity :on-press="redirectToUser">
+      <view class="postHeader">
+  <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
+        <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
+        <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
+        <text class="postHeaderText">{{username}}</text>
+      </view>
+    </touchable-opacity>
     <view class="postContent">
       <text class="postText">{{userPostText}}</text>
       <text v-for="(file,index) in files">
@@ -57,6 +59,9 @@ export default {
       //   this.zoomCoefficient = 0.8;
       // else
       //   this.zoomCoefficient = 0.2;
+    },
+    redirectToUser(){
+      this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
     },
     async interactWithPost(){
       let newLikes;
