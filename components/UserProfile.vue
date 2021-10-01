@@ -9,7 +9,8 @@
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryText">{{username}}</text>
-    <touchable-opacity :on-press="uploadProfilePicture" class="profilePictureButton">
+    <touchable-opacity v-if="isMainUser"
+        :on-press="uploadProfilePicture" class="profilePictureButton">
       <text class="profilePictureButtonText">Change profile picture</text>
     </touchable-opacity>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
@@ -40,7 +41,8 @@ export default {
   props:{
     username: String,
     posts: Array,
-    profilePicture: String
+    profilePicture: String,
+    isMainUser: Boolean
   },
   components:{
     UserPost
