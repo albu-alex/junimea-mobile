@@ -68,8 +68,8 @@ export default {
       this.images.push(newImage)
     },
     addPost(){
-      if(!this.postText && this.images.length === 0){
-        alert("You cannot create an empty post!");
+      if(!this.postText){
+        alert("Post text is required!");
         return 1;
       }
       let post;
