@@ -25,6 +25,9 @@
       <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-colorat-cu-scris.gif')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
+    <touchable-opacity :on-press="reportBugs">
+      <text class="bugButtonText">Found any bugs? Report them!</text>
+    </touchable-opacity>
   </view>
 </template>
 
@@ -154,6 +157,10 @@ export default {
     loginAsGuest(){
       alert("Beware that if you continue as a guest, your experience will be limited")
       this.$emit('verifyLogin', "");
+    },
+    //This function will consist in an email prompt in order to contact us regarding any bugs
+    reportBugs(){
+      alert("New feature coming soon!")
     }
   }
 }
@@ -187,6 +194,14 @@ export default {
   font-size: 20px;
   font-weight: 400;
   color: ghostwhite;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.bugButtonText{
+  align-self: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #AAAAAA;
   margin-left: 1%;
   margin-right: 1%;
 }

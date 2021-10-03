@@ -72,16 +72,10 @@ export default {
         alert("Post text is required!");
         return 1;
       }
-      let post;
-      if(this.postText)
-        post = {
+      let post = {
           text: this.postText,
           images: this.images,
-        }
-      else
-        post = {
-          images: this.images,
-        }
+      }
       this.$emit('addPost', post);
       this.postText = "";
       this.images = [];
