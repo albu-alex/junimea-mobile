@@ -64,17 +64,24 @@ export default {
         height: pickerResult.height,
         width: pickerResult.width
       }
+      alert("Image added successfully!")
       this.images.push(newImage)
     },
     addPost(){
-      if(!this.postText){
-        alert("Post must contain text!");
+      if(!this.postText && this.images.length === 0){
+        alert("You cannot create an empty post!");
         return 1;
       }
-      let post={
-        text: this.postText,
-        images: this.images,
-      }
+      let post;
+      if(this.postText)
+        post = {
+          text: this.postText,
+          images: this.images,
+        }
+      else
+        post = {
+          images: this.images,
+        }
       this.$emit('addPost', post);
       this.postText = "";
       this.images = [];
