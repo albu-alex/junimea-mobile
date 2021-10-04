@@ -18,14 +18,18 @@
         </touchable-opacity>
       </view>
       <text v-for="(file,index) in files">
-        <scroll-view :zoomScale="zoom" :pinchGestureEnabled="true">
-          <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
-        </scroll-view>
+          <scroll-view :pinchGestureEnabled="true">
+            <Animated.Image :source="{uri: String(file)}"
+                            :style="{transform:[{scale: zoomScale}], width: pageWidth,
+                            height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+          </scroll-view>
       </text>
     </view>
     <view class="postFeedback">
       <touchable-opacity :on-press="interactWithPost">
-        <Image class="upButton" :style="{width: 25, height:25}" :source="require('../assets/up-button.png')" />
+        <Animated.Image class="upButton"
+               :style="{width: 25, height:25}"
+               :source="require('../assets/up-button.png')" />
       </touchable-opacity>
       <text class="likesText">{{likes}}</text>
     </view>
@@ -35,7 +39,8 @@
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import { Dimensions } from "react-native";
+import { Dimensions, Animated } from "react-native";
+import GestureHandler, {PinchGestureHandler} from 'react-native-gesture-handler'
 const win = Dimensions.get('window');
 import axios from 'axios';
 export default {
@@ -45,10 +50,12 @@ export default {
       pageWidth: win.width,
       pageHeight: win.height,
       //This variable keeps track of the zooming
-      zoom: 0.1
+      zoomScale: 0.1
     }
   },
   name: "UserPost",
+  components:{
+  },
   props:{
     userPostText: String,
     id: Number,
@@ -61,10 +68,7 @@ export default {
   },
   methods:{
     zoomImage(){
-      // if(this.zoomCoefficient === 0.2)
-      //   this.zoomCoefficient = 0.8;
-      // else
-      //   this.zoomCoefficient = 0.2;
+      alert("Wait for implementation!")
     },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
