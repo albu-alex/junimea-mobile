@@ -9,11 +9,14 @@
         <text class="postHeaderText">{{username}}</text>
       </view>
     </touchable-opacity>
-    <touchable-opacity :on-press="reportBug">
-      <Image :source="require('../assets/three-dots.png')" :style="{width: 25, height:10, alignSelf: 'flex-end'}" />
-    </touchable-opacity>
     <view class="postContent">
-      <text class="postText">{{userPostText}}</text>
+      <view class="postContentHeader">
+        <text class="postText">{{userPostText}}</text>
+        <touchable-opacity :on-press="reportBug">
+          <Image :source="require('../assets/three-dots.png')"
+                 :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
+        </touchable-opacity>
+      </view>
       <text v-for="(file,index) in files">
         <scroll-view :zoomScale="zoom" :pinchGestureEnabled="true">
           <Image :source="{uri: String(file)}" :style="{width: pageWidth, height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
@@ -105,6 +108,10 @@ export default {
 
 
 <style>
+.postContentHeader{
+  flex-direction: row;
+  justify-content: space-between;
+}
 .upButton{
   margin-top: 6%;
 }
