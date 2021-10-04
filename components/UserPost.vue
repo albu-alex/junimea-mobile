@@ -18,18 +18,25 @@
         </touchable-opacity>
       </view>
       <text v-for="(file,index) in files">
+        <PinchGestureHandler>
           <scroll-view :pinchGestureEnabled="true">
-            <Animated.Image :source="{uri: String(file)}"
-                            :style="{transform:[{scale: zoomScale}], width: pageWidth,
+            <animated:Image :source="{uri: String(file)}"
+                            :style="{width: pageWidth, marginBottom: 10,
                             height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
           </scroll-view>
+        </PinchGestureHandler>
       </text>
     </view>
     <view class="postFeedback">
-      <touchable-opacity :on-press="interactWithPost">
-        <Animated.Image class="upButton"
+      <touchable-opacity :on-press="likePost">
+        <animated:Image class="upButton"
                :style="{width: 25, height:25}"
                :source="require('../assets/up-button.png')" />
+      </touchable-opacity>
+      <touchable-opacity :on-press="dislikePost">
+        <animated:Image class="upButton"
+              :style="{width: 25, height:25, marginLeft: 20}"
+              :source="require('../assets/down-button.png')" />
       </touchable-opacity>
       <text class="likesText">{{likes}}</text>
     </view>
@@ -50,11 +57,14 @@ export default {
       pageWidth: win.width,
       pageHeight: win.height,
       //This variable keeps track of the zooming
-      zoomScale: 0.1
+      zoomScale: 0.1,
+      //As default comes the same as this.liked
+      disliked: Boolean
     }
   },
   name: "UserPost",
   components:{
+    PinchGestureHandler
   },
   props:{
     userPostText: String,
@@ -65,6 +75,9 @@ export default {
     profilePic: String,
     likes: Number,
     liked: Boolean
+  },
+  beforeMount(){
+    this.disliked = this.liked;
   },
   methods:{
     zoomImage(){
@@ -77,7 +90,36 @@ export default {
     reportBug(){
       alert("Not yet!")
     },
-    async interactWithPost(){
+    async dislikePost(){
+      let newLikes;
+      let value;
+      if(!this.disliked)
+        value = -1;
+      else
+        value = 1;
+      await axios({
+        method: 'post',
+        url: `http://52.57.118.176/Post/Like`,
+        data:{
+          "Value": value,
+          "Id": this.id
+        },
+        timeout: 4000
+      })
+      .then(function (response){
+        if(response.data.errorMessage === null){
+          newLikes = response.data.count;
+        }
+      })
+      .catch(function(response){
+        alert(response)
+      });
+      if(newLikes !== undefined){
+        this.likes = newLikes;
+        this.disliked = !this.disliked
+      }
+    },
+    async likePost(){
       let newLikes;
       let value;
       if(!this.liked)
