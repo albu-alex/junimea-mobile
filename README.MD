@@ -1,4 +1,5 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a>
+
 
 This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/server_qr.png" alt="Server QR Code" height="50%" width=auto/>
@@ -591,3 +592,44 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day17_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day17_2.jpg" alt="Second photo" height="50%" width=auto/>
+
+# <a id="eighteen">Day 18</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Tweaked Login component
+</li>
+<li>
+    Fixed various bugs in MainPage and Login
+</li>
+<li>
+    Added multiline text posts
+</li>
+<li>
+    The keyboard that appears on dark mode is actually the dark mode one(iOS)
+</li>
+<li>
+    Added back the dislike button, even though it might not be needed
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add pinch gesture zoom for photos
+    </li>
+    <li>
+        Add a comment placeholder
+    </li>
+    <li>
+        Add saved posts
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_3.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_4.jpg" alt="Fourth photo" height="50%" width=auto/>
+
