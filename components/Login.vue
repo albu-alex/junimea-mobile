@@ -7,15 +7,19 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
     <text class="pageIntro" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
-    <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
-                placeholder="Username or Email" v-model="username" class="textInput"
-                keyboardAppearance="dark"></text-input>
+    <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
+                placeholder="Username" v-model="username" class="textInput"
+                keyboardAppearance="dark" autoComplete="username"></text-input>
+    <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
+                placeholderTextColor="ghostwhite" placeholder="Username or Email"
+                v-model="username" class="textInput" keyboardAppearance="dark"></text-input>
     <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="dark"
                 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Email Address" v-model="email" class="textInput"></text-input>
+                placeholder="Email Address" v-model="email" class="textInput"
+                autoComplete="email"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
                 :secureTextEntry="!showPassword" placeholder="Password" v-model="password"
-                class="textInput" keyboardAppearance="dark"></text-input>
+                class="textInput" keyboardAppearance="dark" autoComplete="password"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
       <touchable-opacity class="loginButton" :on-press="verifyLogin">
         <text class="loginButtonText">Login</text>
