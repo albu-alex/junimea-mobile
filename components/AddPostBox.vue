@@ -1,6 +1,7 @@
 <template>
   <view class="postBox">
-    <text-input v-model="postText" class="addNewPost" placeholder="What are you thinking about?"/>
+    <text-input v-model="postText" class="addNewPost" placeholder="What are you thinking about?"
+                :multiline="true" keyboardAppearance="dark"/>
     <view class="postButtons">
       <touchable-opacity :on-press="addPost" class="postButton">
         <text class="postButtonText">Create new post</text>
@@ -10,10 +11,6 @@
                 :style="{width: 25, height:25}" />
       </touchable-opacity>
     </view>
-<!--    Only for debugging purposes-->
-<!--    <text v-for="image in images">-->
-<!--      <Image :source="{uri: String(image.uri)}" :style="{width: image.width, height:image.height}" />-->
-<!--    </text>-->
   </view>
 </template>
 
