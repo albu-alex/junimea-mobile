@@ -25,7 +25,7 @@
       <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-colorat-cu-scris.gif')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
-    <touchable-opacity :on-press="reportBugs">
+    <touchable-opacity v-if="!waitingForSubmit" :on-press="reportBugs">
       <text class="bugButtonText">Found any bugs? Report them!</text>
     </touchable-opacity>
   </view>

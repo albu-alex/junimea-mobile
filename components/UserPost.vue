@@ -9,6 +9,9 @@
         <text class="postHeaderText">{{username}}</text>
       </view>
     </touchable-opacity>
+    <touchable-opacity :on-press="reportBug">
+      <Image :source="require('../assets/three-dots.png')" :style="{width: 45, height:25, alignSelf: 'flex-end'}" />
+    </touchable-opacity>
     <view class="postContent">
       <text class="postText">{{userPostText}}</text>
       <text v-for="(file,index) in files">
@@ -62,6 +65,10 @@ export default {
     },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
+    },
+    //This function is supposed to let you report bugs and visibility options
+    reportBug(){
+      alert("Not yet!")
     },
     async interactWithPost(){
       let newLikes;
