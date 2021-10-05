@@ -44,7 +44,7 @@
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import { Dimensions } from "react-native";
+import { Dimensions, Alert } from "react-native";
 const win = Dimensions.get('window');
 import Linking from "react-native";
 import axios from "axios";
@@ -109,12 +109,37 @@ export default {
         }
         else {
           shownPassword = true;
-          alert(response.data.message + " Wrong username or password!");
+          Alert.alert(response.data.message, "Wrong username or password",
+              [
+                {
+                  text: "Try again",
+                  style: "cancel",
+                },
+                {
+                  text: "Register",
+                  style: "register",
+                  onPress: () => this.registeredUser = false,
+                }
+              ],
+              {
+                cancelable: true,
+              }
+          );
         }
       })
       .catch(function (error){
         if(error.response){
-          alert(Object.values(error.response.data.errors)[0]);
+          Alert.alert("Error", String(Object.values(error.response.data.errors)[0]),
+              [
+                {
+                  text: "Try again",
+                  style: "cancel",
+                },
+              ],
+              {
+                cancelable: true,
+              }
+          );
         }
       });
       this.showPassword = shownPassword;
@@ -147,16 +172,33 @@ export default {
       .then(function (response){
         if(response.status === 200){
           isRegistered = true;
-          alert("New user registered successfully!");
         }
       })
       .catch(function (error){
-        if(error.response){
-          if(Object.values(error.response.data.errors)[0])
-            alert(Object.values(error.response.data.errors)[0]);
-          else
-            alert("This account has already been registered!")
-        }
+        if(error.response)
+          Alert.alert("Wait", "This account has already been registered",
+              [
+                {
+                  text: "Login",
+                  style: "cancel",
+                },
+              ],
+              {
+                cancelable: true,
+              }
+          );
+        else
+          Alert.alert("Error", "Undefined behaviour",
+              [
+                {
+                  text: "Try again",
+                  style: "cancel",
+                },
+              ],
+              {
+                cancelable: true,
+              }
+          );
       });
       if(isRegistered)
         this.$emit('verifyLogin', this.username);
