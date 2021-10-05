@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a>
 
 
 This is the QR code to the app:
@@ -633,3 +633,54 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_3.jpg" alt="Third photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_4.jpg" alt="Fourth photo" height="50%" width=auto/>
 
+# <a id="nineteen">Day 19</a>
+
+## Major updates!
+
+## Today I have done the following:
+<uL>
+<li>
+    Added a pinch to zoom feature, available only on iOS for now
+</li>
+<li>
+    Changed the background of the UserPost component, so that it distinguishes itself
+</li>
+<li>
+    Added a report user placeholder
+</li>
+<li>
+    Customized the alerts in Login component
+</li>
+<li>
+    Added a search icon placeholder    
+</li>
+<li>
+    Various bug fixes
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Continue styling all the alerts
+    </li>
+    <li>
+        Fix the Junimea logo issue in Login component
+    </li>
+    <li>
+        Add login with google and login with facebook placeholders
+    </li>
+    <li>
+        Add a share button placeholder
+    </li>
+    <li>
+        Find a way to implement the change view mode feature
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_3.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_4.jpg" alt="Fourth photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_5.gif" alt="First video" height="50%" width=auto/>
