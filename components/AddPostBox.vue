@@ -18,6 +18,7 @@
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
+import {Alert} from "react-native";
 export default {
   data(){
     return{
@@ -26,8 +27,25 @@ export default {
     }
   },
   name: "AddPostBox",
+  props:{
+    username: String
+  },
   methods:{
     async uploadFile(){
+      if(this.username === ""){
+        Alert.alert("Error", "Users can not create posts",
+            [
+              {
+                text: "Login first",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
+            }
+        );
+        return;
+      }
       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
       if (permissionResult.granted === false) {
@@ -65,6 +83,20 @@ export default {
       this.images.push(newImage)
     },
     addPost(){
+      if(this.username === ""){
+        Alert.alert("Error", "Users can not create posts",
+            [
+              {
+                text: "Login first",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
+            }
+        );
+        return;
+      }
       if(!this.postText){
         alert("Post text is required!");
         return 1;
