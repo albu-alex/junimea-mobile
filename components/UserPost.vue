@@ -18,23 +18,21 @@
         </touchable-opacity>
       </view>
       <text v-for="(file,index) in files">
-        <PinchGestureHandler>
-          <scroll-view :pinchGestureEnabled="true">
-            <animated:Image :source="{uri: String(file)}"
-                            :style="{width: pageWidth, marginBottom: 10,
-                            height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
-          </scroll-view>
-        </PinchGestureHandler>
+        <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1">
+          <animated:Image :source="{uri: String(file)}"
+                          :style="{width: pageWidth, marginBottom: 10,
+                          height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+        </scroll-view>
       </text>
     </view>
     <view class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <animated:Image class="upButton"
+        <Image class="upButton"
                :style="{width: 25, height:25}"
                :source="require('../assets/up-button.png')" />
       </touchable-opacity>
       <touchable-opacity :on-press="dislikePost">
-        <animated:Image class="upButton"
+        <Image class="upButton"
               :style="{width: 25, height:25, marginLeft: 20}"
               :source="require('../assets/down-button.png')" />
       </touchable-opacity>
@@ -47,7 +45,6 @@
 <!--TODO: To be moved into separate folder-->
 <script>
 import { Dimensions, Animated } from "react-native";
-import GestureHandler, {PinchGestureHandler} from 'react-native-gesture-handler'
 const win = Dimensions.get('window');
 import axios from 'axios';
 export default {
@@ -57,15 +54,12 @@ export default {
       pageWidth: win.width,
       pageHeight: win.height,
       //This variable keeps track of the zooming
-      zoomScale: 0.1,
+      zoomScale: 1,
       //As default comes the same as this.liked
       disliked: Boolean
     }
   },
   name: "UserPost",
-  components:{
-    PinchGestureHandler
-  },
   props:{
     userPostText: String,
     id: Number,
@@ -80,9 +74,6 @@ export default {
     this.disliked = this.liked;
   },
   methods:{
-    zoomImage(){
-      alert("Wait for implementation!")
-    },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
     },
