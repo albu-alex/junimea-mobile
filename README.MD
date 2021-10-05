@@ -655,7 +655,10 @@ This is the QR code to the app:
     Added a search icon placeholder    
 </li>
 <li>
-    Various bug fixes
+    Various tweaks
+</li>
+<li>
+    Fixed bug in which a guest could upload picture to the database
 </li>
 </uL>
 
