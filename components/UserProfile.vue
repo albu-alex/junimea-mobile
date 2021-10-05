@@ -1,9 +1,14 @@
 <template>
   <view class="profile" v-if="username !== ''">
-<!--    Have to figure out how to get user profile picture from API-->
-    <touchable-opacity :on-press="goToMainPage">
-      <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
-    </touchable-opacity>
+    <view class="profileHeader">
+      <touchable-opacity :on-press="goToMainPage">
+        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
+        <Image :source="require('../assets/three-dots.png')"
+               :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 3}" />
+      </touchable-opacity>
+    </view>
     <Image v-if="!profilePictureURL&&!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
@@ -53,6 +58,9 @@ export default {
     //This function sleeps the loading component, such that an actual loading is simulated
     sleep(ms){
       return new Promise(resolve => setTimeout(resolve, ms));
+    },
+    reportUser(){
+      alert("Wait")
     },
     //This function is used in order to upload the photo which the user has selected for profile picture
     async uploadFile(){
@@ -114,6 +122,10 @@ export default {
 </script>
 
 <style>
+.profileHeader{
+  flex-direction: row;
+  justify-content: space-between;
+}
 .profilePicture{
   align-self: center;
 }

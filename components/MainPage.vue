@@ -12,7 +12,8 @@
                   @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!waitingForPost" @addPost="addPost($event, 'top')" />
+    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
+                @addPost="addPost($event, 'top')" />
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>

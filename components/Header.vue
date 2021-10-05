@@ -2,22 +2,25 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view class="header">
-      <touchable-opacity id="homepageButton" :on-press="displaySettings">
+      <touchable-opacity id="homepageButton" :on-press="goToTop">
         <text class="headerText">juni.</text>
       </touchable-opacity>
-      <touchable-opacity id="junimeaLogoButton" :on-press="goToTop">
+      <touchable-opacity id="junimeaLogoButton" :on-press="displaySettings">
         <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
-<!--    Have to figure out how to get user profile picture from API-->
-    <touchable-opacity id="junimeaLogoButton" :on-press="goToProfile">
-      <Image v-if="profilePic === ''" class="profilePicture"
-             :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
-             :style="{width: 25, height:25, borderRadius: 50}" />
-      <Image v-else class="profilePicture"
-             :source="{uri: profilePic}"
-             :style="{width: 25, height:25, borderRadius: 50}" />
-    </touchable-opacity>
+      <touchable-opacity id="junimeaLogoButton" :on-press="searchPosts">
+        <Image class="searchIcon" :source="require('../assets/search-icon.png')"
+               :style="{width: 25, height:25}" />
+      </touchable-opacity>
+      <touchable-opacity id="junimeaLogoButton" :on-press="goToProfile">
+        <Image v-if="profilePic === ''" class="profilePicture"
+               :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+               :style="{width: 25, height:25, borderRadius: 50}" />
+        <Image v-else class="profilePicture"
+               :source="{uri: profilePic}"
+               :style="{width: 25, height:25, borderRadius: 50}" />
+      </touchable-opacity>
   </view>
 </template>
 
@@ -26,6 +29,9 @@
 export default {
   name: "Header",
   methods:{
+    searchPosts(){
+      alert("Function coming soon!")
+    },
     displaySettings(){
       this.$emit("displaySettings");
     },
@@ -57,9 +63,12 @@ export default {
   margin-left: 5%;
 }
 .junimeaLogo{
-  margin-left: 52%;
+  margin-left: 40%;
+}
+.searchIcon{
+  margin-left: -10%;
 }
 .profilePicture{
-  margin-left: 40%;
+  margin-left: 52%;
 }
 </style>
