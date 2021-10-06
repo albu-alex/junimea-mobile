@@ -20,6 +20,7 @@
 
 <script>
 import axios from 'axios'
+import {Alert} from "react-native";
 export default {
   name: "UpdateProfileForm",
   data() {
@@ -43,12 +44,32 @@ export default {
       })
       .then(function (response){
         if(response.status === 200){
-          alert("Your profile details have been updated successfully!")
+          Alert.alert("Success", "Profile updated",
+              [
+                {
+                  text: "Great",
+                  style: "cancel",
+                },
+              ],
+              {
+                cancelable: true,
+              }
+          );
         }
       })
       .catch(function (error){
         if(error.response){
-          alert(Object.values(error.response.data.errors)[0]);
+          Alert.alert("Error", String(Object.values(error.response.data.errors)[0]),
+              [
+                {
+                  text: "Try again",
+                  style: "cancel",
+                }
+              ],
+              {
+                cancelable: true,
+              }
+          );
         }
       });
       this.firstName = '';

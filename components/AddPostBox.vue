@@ -79,7 +79,17 @@ export default {
         height: pickerResult.height,
         width: pickerResult.width
       }
-      alert("Image added successfully!")
+      Alert.alert("Success", "Image added successfully",
+          [
+            {
+              text: "Great",
+              style: "cancel",
+            }
+          ],
+          {
+            cancelable: true,
+          }
+      );
       this.images.push(newImage)
     },
     addPost(){

@@ -37,6 +37,7 @@ import UserPost from "./UserPost";
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
+import {Alert} from "react-native";
 export default {
   data(){
     return{
@@ -98,10 +99,31 @@ export default {
       })
       .catch(function (error){
         if(error.response){
-          alert(Object.values(error.response.data.errors)[0]);
+          Alert.alert("Error", String(Object.values(error.response.data.errors)[0]),
+              [
+                {
+                  text: "Try again",
+                  style: "cancel",
+                }
+              ],
+              {
+                cancelable: true,
+              }
+          );
         }
       });
       if(newProfilePic){
+        Alert.alert("Success", "Profile picture updated successfully!",
+            [
+              {
+                text: "Great",
+                style: "cancel",
+              }
+            ],
+            {
+              cancelable: true,
+            }
+        );
         this.profilePictureURL = newProfilePic;
       }
     },
