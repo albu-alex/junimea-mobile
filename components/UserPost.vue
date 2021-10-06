@@ -62,8 +62,8 @@ export default {
       //As default comes the same as this.liked
       disliked: Boolean,
       //The next 3 variables are used in order to determine the double tap to like logic
-      startTime: Date,
-      endTime: Date,
+      startTime: Number,
+      endTime: Number,
       taps: Number
     }
   },
@@ -84,12 +84,23 @@ export default {
   },
   methods:{
     async doubleTapToLike(){
+      if(this.taps === 0){
+        this.taps = 1;
+        this.startTime = performance.now();
+        return;
+      }
+      this.endTime = performance.now();
+      if(this.endTime - this.startTime > 1000) {
+        this.taps = 0;
+        return;
+      }
+      alert(this.endTime - this.startTime)
       let newLikes;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/Post/Like`,
         data:{
-          "Value": value,
+          "Value": 1,
           "Id": this.id
         },
         timeout: 4000
@@ -102,6 +113,11 @@ export default {
       .catch(function(response){
         alert(response)
       });
+      if(newLikes !== undefined) {
+        this.likes = newLikes;
+        this.liked = !this.liked
+      }
+      this.taps = 0;
     },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
