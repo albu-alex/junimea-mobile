@@ -41,6 +41,11 @@
               :source="require('../assets/down-button.png')" />
       </touchable-opacity>
       <text class="likesText">{{likes}}</text>
+      <touchable-opacity :on-press="sharePost">
+        <Image class="upButton"
+               :style="{width: 25, height:25, marginLeft: 20}"
+               :source="require('../assets/share-button.png')" />
+      </touchable-opacity>
     </view>
   </view>
 </template>
@@ -83,6 +88,9 @@ export default {
     this.taps = 0;
   },
   methods:{
+    sharePost(){
+      alert("Not a way to implement this yet!")
+    },
     async doubleTapToLike(){
       if(this.taps === 0){
         this.taps = 1;
@@ -94,7 +102,6 @@ export default {
         this.taps = 0;
         return;
       }
-      alert(this.endTime - this.startTime)
       let newLikes;
       await axios({
         method: 'post',
@@ -218,8 +225,8 @@ export default {
   font-size: 24px;
   font-weight: 500;
   align-self: center;
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 15%;
+  margin-left: 15%;
 }
 .postText{
   color: #AAAAAA;
