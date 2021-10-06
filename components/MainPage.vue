@@ -2,9 +2,46 @@
 <!--After the Login component is done showing, the MainPage component is shown-->
 <!--Consists of: StatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
-  <view class="mainPage">
+  <view v-if="isDarkTheme" class="mainPageDark">
     <StatusBar/>
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed" class="settings" />
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
+              @changeViewMode="changeViewMode" class="settings" />
+    <Header @goToProfile="goToProfile" @goToTop="goToTop"
+            @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
+    <UserProfile v-if="profileDisplayed" :username="newUsername"
+                 :posts="posts" @goToMainPage="profileDisplayed = false"
+                 @refreshUserPosts="getInitialPosts('top')"
+                 :profilePicture="profilePicture" :isMainUser="true" />
+    <!--    Allows the user to make a new post and the post it after it passes validations-->
+    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
+                @addPost="addPost($event, 'top')" :username="newUsername" />
+    <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
+      <activity-indicator size="large" color="dimgrey" />
+    </view>
+    <scroll-view v-if="postProfileDisplayed">
+      <UserProfile :isMainUser="false"
+                   v-if="postProfileDisplayed" :username="postUsername"
+                   :posts="posts" @goToMainPage="postProfileDisplayed = false"
+                   @refreshUserPosts="getInitialPosts('top')"
+                   :profilePicture="postProfilePicture"></UserProfile>
+    </scroll-view>
+    <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
+    <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+                 v-if="!profileDisplayed&&!postProfileDisplayed" ref="pagePosts">
+      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id"
+                :userPostText="post.title" :id="post.id"
+                :dimensions="(post.dimensions) ? post.dimensions : []"
+                :files="post.files" :username="post.username" :profilePic="post.profilePic"
+                :likes="post.likes" @goToUser="goToUser" ></UserPost>
+      <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
+        <activity-indicator size="large" color="dimgrey" />
+      </view>
+    </scroll-view>
+  </view>
+  <view v-else class="mainPageLight">
+    <StatusBar/>
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
+              @changeViewMode="changeViewMode" class="settings" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
     <UserProfile v-if="profileDisplayed" :username="newUsername"
@@ -72,6 +109,7 @@ export default {
       postProfilePicture: "",
       //This variable holds the URL for the user profile picture
       profilePicture: "",
+      isDarkTheme: true
     }
   },
   async created(){
@@ -115,6 +153,9 @@ export default {
     newUsername: String
   },
   methods:{
+    changeViewMode(){
+      this.isDarkTheme = !this.isDarkTheme;
+    },
     async getInitialPosts(postPosition){
       let posts;
       await axios({
@@ -237,8 +278,12 @@ export default {
 .settings{
   height: 15%;
 }
-.mainPage{
+.mainPageDark{
   background-color: #252525;
+  flex: 1;
+}
+.mainPageLight{
+  background-color: #DADADA;
   flex: 1;
 }
 </style>

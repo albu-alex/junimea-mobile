@@ -41,7 +41,7 @@ export default {
       this.$emit("Logout");
     },
     changeViewMode(){
-      alert("New feature coming soon!");
+      this.$emit("changeViewMode")
     },
     async updateProfile(){
       if(!this.visiblePrompts){

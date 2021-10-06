@@ -86,8 +86,7 @@ export default {
       showPassword: false,
       //This variable keeps track of whether the user needs to register or not
       //Defaults to true
-      registeredUser: true,
-      color: '#212121'
+      registeredUser: true
     }
   },
   methods:{
@@ -243,7 +242,6 @@ export default {
 </script>
 
 <style>
-@import "../styles/darkStyle.css";
 .loginWithServices{
   margin-top: 4%;
   margin-bottom: 1%;
