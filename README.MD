@@ -723,9 +723,9 @@ This is the QR code to the app:
 </ul>
 
 ## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_3.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_4.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_5.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_4.gif" alt="Third video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_2.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_3.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_4.gif" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_5.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_4.gif" alt="Third video" height="50%" width=auto/>
