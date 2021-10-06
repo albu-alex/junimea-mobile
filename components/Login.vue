@@ -31,6 +31,20 @@
     <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButton" :on-press="loginAsGuest">
       <text class="loginButtonText">Login as guest</text>
     </touchable-opacity>
+    <view class="loginWithServices">
+      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
+        <Image :source="require('../assets/login-button-facebook.png')"
+               :style="{width: 124, height: 50}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
+        <Image :source="require('../assets/login-google-button.png')"
+               :style="{width: 124, height: 50}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
+        <Image :source="require('../assets/login-button-apple.png')"
+               :style="{width: 124, height: 50}" />
+      </touchable-opacity>
+    </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
       <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-colorat-cu-scris.gif')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
@@ -76,6 +90,15 @@ export default {
     }
   },
   methods:{
+    loginWithApple(){
+      alert("Apple register not available yet!")
+    },
+    loginWithGoogle(){
+      alert("Google register not available yet!")
+    },
+    loginWithFacebook(){
+      alert("Facebook register not available yet!")
+    },
     //This method redirects you to the junimea facebook page
     junimeaOnFacebook(){
       Linking.Linking.openURL("https://www.facebook.com/www.juni.ro/");
@@ -219,6 +242,11 @@ export default {
 </script>
 
 <style>
+.loginWithServices{
+  margin-top: 4%;
+  margin-bottom: 1%;
+  flex-direction: row;
+}
 .textInput{
   background-color: #505050;
   width: 90%;
