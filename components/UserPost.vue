@@ -21,7 +21,7 @@
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
                      :showsHorizontalScrollIndicator="false">
-          <touchable-opacity :on-press="likePost">
+          <touchable-opacity :on-press="doubleTapToLike" :activeOpacity="1">
             <animated:Image :source="{uri: String(file)}"
                             :style="{width: pageWidth, marginBottom: 10,
                             height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
@@ -60,7 +60,11 @@ export default {
       //This variable keeps track of the zooming
       zoomScale: 1,
       //As default comes the same as this.liked
-      disliked: Boolean
+      disliked: Boolean,
+      //The next 3 variables are used in order to determine the double tap to like logic
+      startTime: Date,
+      endTime: Date,
+      taps: Number
     }
   },
   name: "UserPost",
@@ -76,8 +80,29 @@ export default {
   },
   beforeMount(){
     this.disliked = this.liked;
+    this.taps = 0;
   },
   methods:{
+    async doubleTapToLike(){
+      let newLikes;
+      await axios({
+        method: 'post',
+        url: `http://52.57.118.176/Post/Like`,
+        data:{
+          "Value": value,
+          "Id": this.id
+        },
+        timeout: 4000
+      })
+      .then(function (response){
+        if(response.data.errorMessage === null){
+          newLikes = response.data.count;
+        }
+      })
+      .catch(function(response){
+        alert(response)
+      });
+    },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
     },
