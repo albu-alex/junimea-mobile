@@ -21,9 +21,11 @@
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
                      :showsHorizontalScrollIndicator="false">
-          <animated:Image :source="{uri: String(file)}"
-                          :style="{width: pageWidth, marginBottom: 10,
-                          height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+          <touchable-opacity :on-press="likePost">
+            <animated:Image :source="{uri: String(file)}"
+                            :style="{width: pageWidth, marginBottom: 10,
+                            height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+          </touchable-opacity>
         </scroll-view>
       </text>
     </view>
