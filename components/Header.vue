@@ -2,18 +2,18 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view class="header">
-      <touchable-opacity id="homepageButton" :on-press="goToTop">
+      <touchable-opacity :on-press="goToTop">
         <text class="headerText">juni.</text>
       </touchable-opacity>
-      <touchable-opacity id="junimeaLogoButton" :on-press="displaySettings">
+      <touchable-opacity :on-press="displaySettings">
         <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
-      <touchable-opacity id="junimeaLogoButton" :on-press="searchPosts">
+      <touchable-opacity :on-press="searchPosts">
         <Image class="searchIcon" :source="require('../assets/search-icon.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
-      <touchable-opacity id="junimeaLogoButton" :on-press="goToProfile">
+      <touchable-opacity :on-press="goToProfile">
         <Image v-if="profilePic === ''" class="profilePicture"
                :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
                :style="{width: 25, height:25, borderRadius: 50}" />
@@ -54,6 +54,7 @@ export default {
   background-color: black;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .headerText{
   font-size: 20px;
@@ -63,12 +64,12 @@ export default {
   margin-left: 5%;
 }
 .junimeaLogo{
-  margin-left: 40%;
+  margin-right: 1%;
 }
 .searchIcon{
-  margin-left: -10%;
+  margin-right: 8%;
 }
 .profilePicture{
-  margin-left: 52%;
+
 }
 </style>

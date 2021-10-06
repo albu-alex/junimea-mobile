@@ -38,11 +38,11 @@
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
         <Image :source="require('../assets/login-google-button.png')"
-               :style="{width: 124, height: 50}" />
+               :style="{width: 124, height: 50, marginLeft: 2}" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
         <Image :source="require('../assets/login-button-apple.png')"
-               :style="{width: 124, height: 50}" />
+               :style="{width: 124, height: 50, marginLeft: 2}" />
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
