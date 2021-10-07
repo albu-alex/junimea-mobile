@@ -3,7 +3,7 @@
 <!--Consists of: StatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
   <view v-if="isDarkTheme" class="mainPageDark">
-    <StatusBar/>
+    <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
@@ -40,7 +40,7 @@
     </scroll-view>
   </view>
   <view v-else class="mainPageLight">
-    <StatusBar/>
+    <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
