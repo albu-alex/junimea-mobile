@@ -1,5 +1,5 @@
 <template>
-  <view class="profile" v-if="username !== ''">
+  <view class="profile" v-if="username !== '' && isDarkTheme">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
         <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
@@ -15,17 +15,48 @@
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <text class="primaryText">{{username}}</text>
+    <text class="primaryTextDark">{{username}}</text>
     <touchable-opacity v-if="isMainUser"
-        :on-press="uploadProfilePicture" class="profilePictureButton">
-      <text class="profilePictureButtonText">Change profile picture</text>
+        :on-press="uploadProfilePicture" class="profilePictureButtonDark">
+      <text class="profilePictureButtonTextDark">Change profile picture</text>
     </touchable-opacity>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
-                   v-if="post.username === username"></UserPost>
+                   v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
+    <view v-if="isLoading" :style="{justifyContent: 'center'}">
+      <activity-indicator size="large" color="dimgrey" />
+    </view>
+  </view>
+  <view class="profile" v-else-if="username !== '' && !isDarkTheme">
+    <view class="profileHeader">
+      <touchable-opacity :on-press="goToMainPage">
+        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
+        <Image :source="require('../assets/three-dots.png')"
+               :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 3}" />
+      </touchable-opacity>
+    </view>
+    <Image v-if="!profilePictureURL&&!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+    <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
+           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+    <Image v-else :source="{uri: profilePicture}"
+           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+    <text class="primaryTextLight">{{username}}</text>
+    <touchable-opacity v-if="isMainUser"
+                       :on-press="uploadProfilePicture" class="profilePictureButtonLight">
+      <text class="profilePictureButtonTextLight">Change profile picture</text>
+    </touchable-opacity>
+    <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
+    <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
+      <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
+                :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
+                v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
+    </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
@@ -50,7 +81,8 @@ export default {
     username: String,
     posts: Array,
     profilePicture: String,
-    isMainUser: Boolean
+    isMainUser: Boolean,
+    isDarkTheme: Boolean
   },
   components:{
     UserPost
@@ -156,7 +188,7 @@ export default {
   align-self: center;
   margin-top: 5%;
 }
-.primaryText{
+.primaryTextDark{
   align-self: center;
   margin-top: 2%;
   margin-bottom: 5%;
@@ -164,15 +196,34 @@ export default {
   font-size: 20px;
   font-weight: 500;
 }
-.profilePictureButton{
+.primaryTextLight{
+  align-self: center;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  color: #555555;
+  font-size: 20px;
+  font-weight: 500;
+}
+.profilePictureButtonDark{
   align-self: center;
   background-color: #505050;
   width: 50%;
 }
-.profilePictureButtonText{
+.profilePictureButtonLight{
+  align-self: center;
+  background-color: #AFAFAF;
+  width: 50%;
+}
+.profilePictureButtonTextDark{
   align-self: center;
   font-size: 20px;
   font-weight: 400;
   color: ghostwhite;
+}
+.profilePictureButtonTextLight{
+  align-self: center;
+  font-size: 20px;
+  font-weight: 400;
+  color: #070700;
 }
 </style>

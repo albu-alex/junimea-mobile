@@ -11,7 +11,7 @@
     <UserProfile v-if="profileDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                  @refreshUserPosts="getInitialPosts('top')"
-                 :profilePicture="profilePicture" :isMainUser="true" />
+                 :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
     <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
                 :isDarkTheme="isDarkTheme" @addPost="addPost($event, 'top')"
@@ -24,7 +24,7 @@
                    v-if="postProfileDisplayed" :username="postUsername"
                    :posts="posts" @goToMainPage="postProfileDisplayed = false"
                    @refreshUserPosts="getInitialPosts('top')"
-                   :profilePicture="postProfilePicture"></UserProfile>
+                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
     </scroll-view>
     <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
@@ -48,7 +48,7 @@
     <UserProfile v-if="profileDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                   @refreshUserPosts="getInitialPosts('top')"
-                 :profilePicture="profilePicture" :isMainUser="true" />
+                 :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
                 @addPost="addPost($event, 'top')" :username="newUsername"
@@ -61,7 +61,7 @@
                     v-if="postProfileDisplayed" :username="postUsername"
                    :posts="posts" @goToMainPage="postProfileDisplayed = false"
                    @refreshUserPosts="getInitialPosts('top')"
-                   :profilePicture="postProfilePicture"></UserProfile>
+                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
     </scroll-view>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
