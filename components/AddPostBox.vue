@@ -1,14 +1,27 @@
 <template>
-  <view class="postBox">
-    <text-input v-model="postText" class="addNewPost" placeholder="What are you thinking about?"
+  <view v-if="isDarkTheme" class="postBox">
+    <text-input v-model="postText" class="addNewPostDark" placeholder="What are you thinking about?"
                 :multiline="true" keyboardAppearance="dark"/>
     <view class="postButtons">
-      <touchable-opacity :on-press="addPost" class="postButton">
-        <text class="postButtonText">Create new post</text>
+      <touchable-opacity :on-press="addPost" class="postButtonDark">
+        <text class="postButtonTextDark">Create new post</text>
       </touchable-opacity>
       <touchable-opacity :on-press="uploadFile" class="postPhoto">
         <Image :source="require('../assets/add_photo_icon.png')"
                 :style="{width: 25, height:25}" />
+      </touchable-opacity>
+    </view>
+  </view>
+  <view v-else class="postBox">
+    <text-input v-model="postText" class="addNewPostLight" placeholder="What are you thinking about?"
+                :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
+    <view class="postButtons">
+      <touchable-opacity :on-press="addPost" class="postButtonLight">
+        <text class="postButtonTextLight">Create new post</text>
+      </touchable-opacity>
+      <touchable-opacity :on-press="uploadFile" class="postPhoto">
+        <Image :source="require('../assets/add_photo_icon.png')"
+               :style="{width: 25, height:25}" />
       </touchable-opacity>
     </view>
   </view>
@@ -28,7 +41,8 @@ export default {
   },
   name: "AddPostBox",
   props:{
-    username: String
+    username: String,
+    isDarkTheme: Boolean
   },
   methods:{
     async uploadFile(){
@@ -136,7 +150,7 @@ export default {
   margin-top: 4%;
   margin-left: 6%;
 }
-.postButton{
+.postButtonDark{
   background-color: #AAAAAA;
   height: 25px;
   margin-top: 4%;
@@ -144,15 +158,37 @@ export default {
   justify-content: center;
   align-self: center;
 }
-.postButtonText{
+.postButtonLight{
+  background-color: #555555;
+  height: 25px;
+  margin-top: 4%;
+  margin-right: 6%;
+  justify-content: center;
+  align-self: center;
+}
+.postButtonTextDark{
   color: black;
   font-weight: 400;
   font-size: 14px;
 }
-.addNewPost{
+.postButtonTextLight{
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+}
+.addNewPostDark{
   align-self: center;
   background-color: ghostwhite;
   color: dimgrey;
+  width: 90%;
+  height: 50px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.addNewPostLight{
+  align-self: center;
+  background-color: #212121;
+  color: #969696;
   width: 90%;
   height: 50px;
   font-weight: 400;
