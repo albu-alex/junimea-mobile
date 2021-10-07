@@ -1,17 +1,17 @@
 <!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
-  <view class="post">
+  <view v-if="isDarkTheme" class="postDark">
     <touchable-opacity :on-press="redirectToUser">
       <view class="postHeader">
   <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
         <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
         <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
-        <text class="postHeaderText">{{username}}</text>
+        <text class="postHeaderTextDark">{{username}}</text>
       </view>
     </touchable-opacity>
     <view class="postContent">
       <view class="postContentHeader">
-        <text class="postText">{{userPostText}}</text>
+        <text class="postTextDark">{{userPostText}}</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
@@ -40,7 +40,55 @@
               :style="{width: 25, height:25, marginLeft: 20}"
               :source="require('../assets/down-button.png')" />
       </touchable-opacity>
-      <text class="likesText">{{likes}}</text>
+      <text class="likesTextDark">{{likes}}</text>
+      <touchable-opacity :on-press="sharePost">
+        <Image class="upButton"
+               :style="{width: 25, height:25, marginLeft: 20}"
+               :source="require('../assets/share-button.png')" />
+      </touchable-opacity>
+    </view>
+  </view>
+  <view v-else class="postLight">
+    <touchable-opacity :on-press="redirectToUser">
+      <view class="postHeader">
+        <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
+        <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
+        <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
+        <text class="postHeaderTextLight">{{username}}</text>
+      </view>
+    </touchable-opacity>
+    <view class="postContent">
+      <view class="postContentHeader">
+        <text class="postTextLight">{{userPostText}}</text>
+        <touchable-opacity :on-press="reportBug">
+          <Image :source="require('../assets/three-dots.png')"
+                 :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
+        </touchable-opacity>
+      </view>
+      <text v-for="(file,index) in files">
+        <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                     :showsVerticalScrollIndicator="false"
+                     :showsHorizontalScrollIndicator="false">
+          <touchable-opacity :on-press="doubleTapToLike" :activeOpacity="1">
+            <animated:Image :source="{uri: String(file)}"
+                            :style="{width: pageWidth, marginBottom: 10,
+                            height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
+          </touchable-opacity>
+        </scroll-view>
+      </text>
+    </view>
+    <view class="postFeedback">
+      <touchable-opacity :on-press="likePost">
+        <Image class="upButton"
+               :style="{width: 25, height:25}"
+               :source="require('../assets/up-button.png')" />
+      </touchable-opacity>
+      <touchable-opacity :on-press="dislikePost">
+        <Image class="upButton"
+               :style="{width: 25, height:25, marginLeft: 20}"
+               :source="require('../assets/down-button.png')" />
+      </touchable-opacity>
+      <text class="likesTextLight">{{likes}}</text>
       <touchable-opacity :on-press="sharePost">
         <Image class="upButton"
                :style="{width: 25, height:25, marginLeft: 20}"
@@ -81,7 +129,8 @@ export default {
     username: String,
     profilePic: String,
     likes: Number,
-    liked: Boolean
+    liked: Boolean,
+    isDarkTheme: Boolean
   },
   beforeMount(){
     this.disliked = this.liked;
@@ -209,18 +258,29 @@ export default {
   justify-content: center;
   margin: 5%;
 }
-.post{
+.postDark{
   margin-bottom: 5%;
   background-color: #151515;
 }
-.postHeaderText{
+.postLight{
+  margin-bottom: 5%;
+  background-color: #EAEAEA;
+}
+.postHeaderTextDark{
   color: #AAAAAA;
   font-size: 20px;
   font-weight: 500;
   align-self: flex-start;
   margin-left: 3%;
 }
-.likesText{
+.postHeaderTextLight{
+  color: #555555;
+  font-size: 20px;
+  font-weight: 500;
+  align-self: flex-start;
+  margin-left: 3%;
+}
+.likesTextDark{
   color: #AAAAAA;
   font-size: 24px;
   font-weight: 500;
@@ -228,8 +288,24 @@ export default {
   margin-right: 15%;
   margin-left: 15%;
 }
-.postText{
+.likesTextLight{
+  color: #555555;
+  font-size: 24px;
+  font-weight: 500;
+  align-self: center;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+.postTextDark{
   color: #AAAAAA;
+  font-size: 24px;
+  font-weight: 500;
+  align-self: flex-start;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+.postTextLight{
+  color: #555555;
   font-size: 24px;
   font-weight: 500;
   align-self: flex-start;

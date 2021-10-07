@@ -32,7 +32,7 @@
                 :userPostText="post.title" :id="post.id"
                 :dimensions="(post.dimensions) ? post.dimensions : []"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic"
-                :likes="post.likes" @goToUser="goToUser" ></UserPost>
+                :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
       <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
         <activity-indicator size="large" color="dimgrey" />
       </view>
@@ -68,7 +68,7 @@
                 :userPostText="post.title" :id="post.id"
                 :dimensions="(post.dimensions) ? post.dimensions : []"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic"
-                :likes="post.likes" @goToUser="goToUser" ></UserPost>
+                :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
       <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
         <activity-indicator size="large" color="dimgrey" />
       </view>
