@@ -1,19 +1,35 @@
 <!--Component displays all the settings that the user can access-->
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
-  <view class="settings">
-    <text class="textPrimary" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
-    <text class="textPrimary" v-else>Hey, guest!</text>
+  <view v-if="isDarkTheme" class="settingsDark">
+    <text class="textPrimaryDark" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
+    <text class="textPrimaryDark" v-else>Hey, guest!</text>
     <UpdateProfileForm v-if="visiblePrompts" />
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
-        <text class="textSecondary">Logout</text>
+        <text class="textSecondaryDark">Logout</text>
       </touchable-opacity>
       <touchable-opacity :on-press="changeViewMode">
-        <text class="textSecondary">Change view mode</text>
+        <text class="textSecondaryDark">Change view mode</text>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile">
-        <text class="textSecondary">Update your profile</text>
+        <text class="textSecondaryDark">Update your profile</text>
+      </touchable-opacity>
+    </view>
+  </view>
+  <view v-else class="settingsLight">
+    <text class="textPrimaryLight" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
+    <text class="textPrimaryLight" v-else>Hey, guest!</text>
+    <UpdateProfileForm v-if="visiblePrompts" />
+    <view class="settingsTab">
+      <touchable-opacity :on-press="logout">
+        <text class="textSecondaryLight">Logout</text>
+      </touchable-opacity>
+      <touchable-opacity :on-press="changeViewMode">
+        <text class="textSecondaryLight">Change view mode</text>
+      </touchable-opacity>
+      <touchable-opacity :on-press="updateProfile">
+        <text class="textSecondaryLight">Update your profile</text>
       </touchable-opacity>
     </view>
   </view>
@@ -30,7 +46,8 @@ export default {
     }
   },
   props:{
-    newUsername: String
+    newUsername: String,
+    isDarkTheme: Boolean
   },
   components:{
     UpdateProfileForm
@@ -55,20 +72,35 @@ export default {
 </script>
 
 <style>
-.settings{
+.settingsDark{
   background-color: #252525;
+}
+.settingsLight{
+  background-color: #DADADA;
 }
 .settingsTab{
   flex-direction: row;
   justify-content: space-between;
 }
-.textSecondary{
+.textSecondaryDark{
   color: #AAAAAA;
   font-size: 14px;
   font-weight: 200;
 }
-.textPrimary {
+.textSecondaryLight{
+  color: #555555;
+  font-size: 14px;
+  font-weight: 200;
+}
+.textPrimaryDark {
   color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 500;
+  align-self: center;
+  margin-bottom: 10px;
+}
+.textPrimaryLight {
+  color: #555555;
   font-size: 14px;
   font-weight: 500;
   align-self: center;

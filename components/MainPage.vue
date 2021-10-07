@@ -5,7 +5,7 @@
   <view v-if="isDarkTheme" class="mainPageDark">
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
-              @changeViewMode="changeViewMode" class="settings" />
+              @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
     <UserProfile v-if="profileDisplayed" :username="newUsername"
@@ -42,7 +42,7 @@
   <view v-else class="mainPageLight">
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
-              @changeViewMode="changeViewMode" class="settings" />
+              @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
     <UserProfile v-if="profileDisplayed" :username="newUsername"
