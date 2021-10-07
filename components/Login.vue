@@ -284,6 +284,7 @@ export default {
   color: #AAAAAA;
   margin-left: 1%;
   margin-right: 1%;
+  margin-top: 5%;
 }
 .userLogin{
   flex: 1;
