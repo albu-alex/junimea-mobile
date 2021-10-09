@@ -1,7 +1,8 @@
 <template>
   <view class="container">
     <Login v-if="!isLoggedIn" @verifyLogin="verifyLogin($event)" />
-    <MainPage v-if="isLoggedIn" @Logout="isLoggedIn = false" :newUsername="username" />
+    <MainPage v-if="isLoggedIn" @Logout="isLoggedIn = false" :newUsername="username"
+    @redirectToLogin="isLoggedIn = false" />
   </view>
 </template>
 
@@ -13,7 +14,7 @@ import Settings from "./components/Settings";
 export default {
   data(){
     return {
-      isLoggedIn: false,
+      isLoggedIn: true,
       username: "",
     }
   },

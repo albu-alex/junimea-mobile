@@ -15,7 +15,7 @@
     <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
                 :isDarkTheme="isDarkTheme" @addPost="addPost($event, 'top')"
-                :username="newUsername" />
+                :username="newUsername" @redirectToLogin="redirectToLogin" />
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
@@ -155,6 +155,9 @@ export default {
     newUsername: String
   },
   methods:{
+    redirectToLogin(){
+      this.$emit("redirectToLogin");
+    },
     changeViewMode(){
       this.isDarkTheme = !this.isDarkTheme;
     },

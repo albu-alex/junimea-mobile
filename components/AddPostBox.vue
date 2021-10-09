@@ -58,6 +58,7 @@ export default {
               cancelable: true,
             }
         );
+        this.$emit("redirectToLogin");
         return;
       }
       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -119,6 +120,7 @@ export default {
               cancelable: true,
             }
         );
+        this.$emit("redirectToLogin");
         return;
       }
       if(!this.postText){
