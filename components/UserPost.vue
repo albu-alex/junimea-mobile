@@ -153,7 +153,7 @@ export default {
         return;
       }
       let newLikes;
-      let loggingIn = false;
+      let showLogin = false;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/Post/Like`,
@@ -169,12 +169,20 @@ export default {
         }
       })
       .catch(function(){
+        showLogin = true;
+      });
+      if(newLikes !== undefined) {
+        this.likes = newLikes;
+        this.liked = !this.liked
+      }
+      this.taps = 0;
+      if(showLogin)
         Alert.alert("Error", "You are not logged in",
-                [
+            [
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => loggingIn = true
+                onPress: () => this.$emit("redirectToLogin")
               },
               {
                 text: "Continue as guest",
@@ -187,14 +195,6 @@ export default {
               onDismiss: () => alert(":(")
             }
         );
-      });
-      if(newLikes !== undefined) {
-        this.likes = newLikes;
-        this.liked = !this.liked
-      }
-      this.taps = 0;
-      if(loggingIn)
-        this.$emit("redirectToLogin")
     },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
@@ -206,7 +206,7 @@ export default {
     async dislikePost(){
       let newLikes;
       let value;
-      let loggingIn = false;
+      let showLogin = false;
       if(!this.disliked)
         value = -1;
       else
@@ -226,12 +226,19 @@ export default {
         }
       })
       .catch(function(){
+        showLogin = true;
+      });
+      if(newLikes !== undefined){
+        this.likes = newLikes;
+        this.disliked = !this.disliked
+      }
+      if(showLogin)
         Alert.alert("Error", "You are not logged in",
             [
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => loggingIn = true
+                onPress: () => this.$emit("redirectToLogin")
               },
               {
                 text: "Continue as guest",
@@ -244,16 +251,11 @@ export default {
               onDismiss: () => alert(":(")
             }
         );
-      });
-      if(newLikes !== undefined){
-        this.likes = newLikes;
-        this.disliked = !this.disliked
-      }
     },
     async likePost(){
       let newLikes;
       let value;
-      let loggingIn = false;
+      let showLogin = false;
       if(!this.liked)
         value = 1;
       else
@@ -273,12 +275,19 @@ export default {
         }
       })
       .catch(function(){
+        showLogin = true;
+      });
+      if(newLikes !== undefined){
+        this.likes = newLikes;
+        this.liked = !this.liked
+      }
+      if(showLogin)
         Alert.alert("Error", "You are not logged in",
             [
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => loggingIn = true
+                onPress: () => this.$emit("redirectToLogin")
               },
               {
                 text: "Continue as guest",
@@ -291,11 +300,6 @@ export default {
               onDismiss: () => alert(":(")
             }
         );
-      });
-      if(newLikes !== undefined){
-        this.likes = newLikes;
-        this.liked = !this.liked
-      }
     }
   },
 }
