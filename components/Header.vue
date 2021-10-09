@@ -27,7 +27,7 @@
       <text class="headerTextLight">juni.</text>
     </touchable-opacity>
     <touchable-opacity :on-press="displaySettings">
-      <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
+      <Image class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
              :style="{width: 25, height:25}" />
     </touchable-opacity>
     <touchable-opacity :on-press="searchPosts">
