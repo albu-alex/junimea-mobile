@@ -107,6 +107,7 @@ import axios from 'axios';
 export default {
   data(){
     return {
+      loggingIn: Boolean,
       //These variables are used to dynamically resize the photo on any device
       pageWidth: win.width,
       pageHeight: win.height,
@@ -152,6 +153,7 @@ export default {
         return;
       }
       let newLikes;
+      let loggingIn = false;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/Post/Like`,
@@ -172,7 +174,7 @@ export default {
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => alert("yay")
+                onPress: () => loggingIn = true
               },
               {
                 text: "Continue as guest",
@@ -191,6 +193,8 @@ export default {
         this.liked = !this.liked
       }
       this.taps = 0;
+      if(loggingIn)
+        this.$emit("redirectToLogin")
     },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
@@ -202,6 +206,7 @@ export default {
     async dislikePost(){
       let newLikes;
       let value;
+      let loggingIn = false;
       if(!this.disliked)
         value = -1;
       else
@@ -226,7 +231,7 @@ export default {
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => alert("yay")
+                onPress: () => loggingIn = true
               },
               {
                 text: "Continue as guest",
@@ -248,6 +253,7 @@ export default {
     async likePost(){
       let newLikes;
       let value;
+      let loggingIn = false;
       if(!this.liked)
         value = 1;
       else
@@ -272,7 +278,7 @@ export default {
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => alert("yay")
+                onPress: () => loggingIn = true
               },
               {
                 text: "Continue as guest",

@@ -30,7 +30,7 @@
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
                  v-if="!profileDisplayed&&!postProfileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id"
-                :userPostText="post.title" :id="post.id"
+                :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
                 :dimensions="(post.dimensions) ? post.dimensions : []"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic"
                 :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
@@ -52,7 +52,7 @@
 <!--    Allows the user to make a new post and the post it after it passes validations-->
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
                 @addPost="addPost($event, 'top')" :username="newUsername"
-                :isDarkTheme="isDarkTheme"/>
+                :isDarkTheme="isDarkTheme" @redirectToLogin="redirectToLogin"/>
     <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
@@ -67,12 +67,12 @@
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
                  v-if="!profileDisplayed&&!postProfileDisplayed" ref="pagePosts">
       <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id"
-                :userPostText="post.title" :id="post.id"
+                :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
                 :dimensions="(post.dimensions) ? post.dimensions : []"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic"
                 :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
       <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
-        <activity-indicator size="large" color="dimgrey" />
+        <activity-indicator size="large" color="#969696" />
       </view>
     </scroll-view>
   </view>
