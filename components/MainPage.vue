@@ -6,7 +6,7 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Header @goToProfile="goToProfile" @goToTop="goToTop"
+    <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
     <UserProfile v-if="profileDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
@@ -43,7 +43,7 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Header @goToProfile="goToProfile" @goToTop="goToTop"
+    <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
     <UserProfile v-if="profileDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
