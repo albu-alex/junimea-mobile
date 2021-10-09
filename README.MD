@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a> <a href="#twentyone"> Day 21 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a>
 
 
 This is the QR code to the app:
@@ -773,3 +773,51 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_3.jpg" alt="Third photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_4.jpg" alt="Fourth photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_5.gif" alt="First video" height="50%" width=auto/>
+
+# <a id="twentytwo">Day 22</a>
+
+## Major updates
+
+## Today I have done the following:
+<uL>
+<li>
+    Header is now available in light mode
+</li>
+<li>
+    When entering the app, the user is first shown the main page instead of the login component
+</li>
+<li>
+    Customized more alerts
+</li>
+<li>
+    When creating a new post as a guest, the user is directly taken to the login form
+</li>
+<li>
+    When interacting with a post, the user can decide if he wants to go to the login form or not
+</li>
+<li>
+    More styling changes for the header
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Change the text of the statusbar when app is in light mode
+    </li>
+    <li>
+        Make the login available in light mode
+    </li>
+    <li>
+        Add tags
+    </li>
+    <li>
+        Add a save post placeholder
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_2.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_3.gif" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_4.gif" alt="Third video" height="50%" width=auto/>
