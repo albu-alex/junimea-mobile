@@ -101,7 +101,7 @@
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import { Dimensions, Animated } from "react-native";
+import {Dimensions, Animated, Alert} from "react-native";
 const win = Dimensions.get('window');
 import axios from 'axios';
 export default {
@@ -166,8 +166,25 @@ export default {
           newLikes = response.data.count;
         }
       })
-      .catch(function(response){
-        alert(response)
+      .catch(function(){
+        Alert.alert("Error", "You are not logged in",
+                [
+              {
+                text: "Login",
+                style: "cancel",
+                onPress: () => alert("yay")
+              },
+              {
+                text: "Continue as guest",
+                style: "destructive",
+                onPress: () => alert(":(")
+              }
+            ],
+            {
+              cancelable: true,
+              onDismiss: () => alert(":(")
+            }
+        );
       });
       if(newLikes !== undefined) {
         this.likes = newLikes;
@@ -203,8 +220,25 @@ export default {
           newLikes = response.data.count;
         }
       })
-      .catch(function(response){
-        alert(response)
+      .catch(function(){
+        Alert.alert("Error", "You are not logged in",
+            [
+              {
+                text: "Login",
+                style: "cancel",
+                onPress: () => alert("yay")
+              },
+              {
+                text: "Continue as guest",
+                style: "destructive",
+                onPress: () => alert(":(")
+              }
+            ],
+            {
+              cancelable: true,
+              onDismiss: () => alert(":(")
+            }
+        );
       });
       if(newLikes !== undefined){
         this.likes = newLikes;
@@ -232,8 +266,25 @@ export default {
           newLikes = response.data.count;
         }
       })
-      .catch(function(response){
-        alert(response)
+      .catch(function(){
+        Alert.alert("Error", "You are not logged in",
+            [
+              {
+                text: "Login",
+                style: "cancel",
+                onPress: () => alert("yay")
+              },
+              {
+                text: "Continue as guest",
+                style: "destructive",
+                onPress: () => alert(":(")
+              }
+            ],
+            {
+              cancelable: true,
+              onDismiss: () => alert(":(")
+            }
+        );
       });
       if(newLikes !== undefined){
         this.likes = newLikes;

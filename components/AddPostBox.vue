@@ -86,8 +86,18 @@ export default {
           newUri = response.data.url
         }
       })
-      .catch(function (response){
-        alert(response);
+      .catch(function(){
+        Alert.alert("Oops", "Something went wrong",
+            [
+              {
+                text: "Try again",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
+            }
+        );
       });
       let newImage = {
         uri: newUri,
