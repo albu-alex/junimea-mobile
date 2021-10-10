@@ -6,37 +6,37 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
-    <UserProfile v-if="profileDisplayed" :username="newUsername"
+    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
+    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                  @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
     <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
+    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed&&!searchDisplayed"
                 :isDarkTheme="isDarkTheme" @addPost="addPost($event, 'top')"
                 :username="newUsername" @redirectToLogin="redirectToLogin" />
-    <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
+    <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <scroll-view v-if="postProfileDisplayed">
+    <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
       <UserProfile :isMainUser="false"
-                   v-if="postProfileDisplayed" :username="postUsername"
+                   v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
                    :posts="posts" @goToMainPage="postProfileDisplayed = false"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
     </scroll-view>
     <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
-                 v-if="!profileDisplayed&&!postProfileDisplayed" ref="pagePosts">
-      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id"
+                 v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
+      <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                 :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
                 :dimensions="(post.dimensions) ? post.dimensions : []"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic"
                 :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
-      <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
+      <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'flex-end'}">
         <activity-indicator size="large" color="dimgrey" />
       </view>
     </scroll-view>
@@ -45,37 +45,37 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed"/>
-    <UserProfile v-if="profileDisplayed" :username="newUsername"
+    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
+    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                   @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed"
+    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed&&!searchDisplayed"
                 @addPost="addPost($event, 'top')" :username="newUsername"
                 :isDarkTheme="isDarkTheme" @redirectToLogin="redirectToLogin"/>
-    <view v-if="waitingForPost" :style="{justifyContent: 'flex-start'}">
+    <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <scroll-view v-if="postProfileDisplayed">
+    <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
       <UserProfile :isMainUser="false"
-                    v-if="postProfileDisplayed" :username="postUsername"
+                    v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
                    :posts="posts" @goToMainPage="postProfileDisplayed = false"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
     </scroll-view>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
-                 v-if="!profileDisplayed&&!postProfileDisplayed" ref="pagePosts">
-      <UserPost v-if="!profileDisplayed" v-for="post in posts" :key="post.id"
+                 v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
+      <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                 :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
                 :dimensions="(post.dimensions) ? post.dimensions : []"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic"
                 :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
-      <view v-if="isLoading" :style="{justifyContent: 'flex-end'}">
+      <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'flex-end'}">
         <activity-indicator size="large" color="#969696" />
       </view>
     </scroll-view>
