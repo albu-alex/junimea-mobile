@@ -822,7 +822,7 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_3.gif" alt="Second video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_4.gif" alt="Third video" height="50%" width=auto/>
 
-# <a id="twentytwo">Day 2</a>
+# <a id="twentythree">Day 2</a>
 
 ## Today I have done the following:
 <uL>
