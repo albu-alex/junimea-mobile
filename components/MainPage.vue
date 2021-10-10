@@ -6,8 +6,10 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
+    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
+            @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
+            @displaySettings="settingsDisplayed = !settingsDisplayed" />
     <UserProfile v-if="profileDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                  @refreshUserPosts="getInitialPosts('top')"
@@ -43,8 +45,10 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
+    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" :profilePic="profilePicture" />
+            @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
+            @displaySettings="settingsDisplayed = !settingsDisplayed"/>
     <UserProfile v-if="profileDisplayed" :username="newUsername"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                   @refreshUserPosts="getInitialPosts('top')"
@@ -87,6 +91,7 @@ import AddPostBox from "./AddPostBox";
 import UserPost from "./UserPost";
 import UserProfile from "./UserProfile";
 import axios from "axios";
+import Search from "./Search";
 export default {
   name: "MainPage",
   data(){
@@ -111,7 +116,8 @@ export default {
       postProfilePicture: "",
       //This variable holds the URL for the user profile picture
       profilePicture: "",
-      isDarkTheme: true
+      isDarkTheme: true,
+      searchDisplayed: false
     }
   },
   async created(){
@@ -144,6 +150,7 @@ export default {
     this.isLoading = false;
   },
   components:{
+    Search,
     UserProfile,
     UserPost,
     StatusBar,

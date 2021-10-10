@@ -51,7 +51,7 @@ export default {
   name: "Header",
   methods:{
     searchPosts(){
-      alert("Function coming soon!")
+      this.$emit("searchDisplayed");
     },
     displaySettings(){
       this.$emit("displaySettings");
