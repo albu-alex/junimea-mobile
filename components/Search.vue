@@ -12,6 +12,9 @@
   <text class="primaryTextDark">
     Trending
   </text>
+  <text v-for="tag in tags" class="tagsDark">
+    {{tag}}
+  </text>
 </view>
 <view class="searchLight" v-else>
   <view class="searchHeader">
@@ -24,6 +27,9 @@
   </view>
   <text class="primaryTextLight">
     Trending
+  </text>
+  <text v-for="tag in tags" class="tagsLight">
+    {{tag}}
   </text>
 </view>
 </template>
@@ -40,6 +46,12 @@ export default {
   props:{
     isDarkTheme: Boolean,
   },
+  beforeMount(){
+    this.tags.push("#sarmale")
+    this.tags.push("#squid game")
+    this.tags.push("#junimea")
+    this.tags.push("#guie muvern")
+  },
   methods:{
     cancelSearch(){
       this.$emit("cancelSearch");
@@ -55,6 +67,18 @@ export default {
 </script>
 
 <style>
+.tagsDark{
+  color: #AAAAAA;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 5%;
+}
+.tagsLight{
+  color: #555555;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 5%;
+}
 .textInputDark{
   background-color: #505050;
   width: 75%;
@@ -87,14 +111,14 @@ export default {
   color: #AAAAAA;
   font-size: 20px;
   font-weight: 500;
-  margin-top: 7%;
+  margin-top: 9%;
   margin-right: 3%;
 }
 .buttonTextLight{
   color: #555555;
   font-size: 20px;
   font-weight: 500;
-  margin-top: 7%;
+  margin-top: 9%;
   margin-right: 3%;
 }
 .searchHeader{
