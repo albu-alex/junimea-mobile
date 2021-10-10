@@ -12,9 +12,11 @@
   <text class="primaryTextDark">
     Trending
   </text>
-  <text v-for="tag in tags" class="tagsDark">
-    {{tag}}
-  </text>
+  <scroll-view>
+    <text v-for="tag in tags" class="tagsDark">
+      {{tag}}
+    </text>
+  </scroll-view>
 </view>
 <view class="searchLight" v-else>
   <view class="searchHeader">
@@ -28,9 +30,11 @@
   <text class="primaryTextLight">
     Trending
   </text>
-  <text v-for="tag in tags" class="tagsLight">
-    {{tag}}
-  </text>
+  <scroll-view>
+    <text v-for="tag in tags" class="tagsLight">
+      {{tag}}
+    </text>
+  </scroll-view>
 </view>
 </template>
 
@@ -47,6 +51,7 @@ export default {
     isDarkTheme: Boolean,
   },
   beforeMount(){
+    //Currently just a mockup - actual version will use an API request
     this.tags.push("#sarmale")
     this.tags.push("#squid game")
     this.tags.push("#junimea")
