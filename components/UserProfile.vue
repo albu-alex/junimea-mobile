@@ -16,10 +16,16 @@
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryTextDark">{{username}}</text>
-    <touchable-opacity v-if="isMainUser"
-        :on-press="uploadProfilePicture" class="profilePictureButtonDark">
-      <text class="profilePictureButtonTextDark">Change profile picture</text>
-    </touchable-opacity>
+    <view :style="{flexDirection: 'row'}">
+      <touchable-opacity v-if="isMainUser"
+          :on-press="uploadProfilePicture" class="profilePictureButtonDark">
+        <text class="profilePictureButtonTextDark">Change picture</text>
+      </touchable-opacity>
+      <touchable-opacity v-if="isMainUser"
+                         :on-press="viewSavedPosts" class="profilePictureButtonDark">
+        <text class="profilePictureButtonTextDark">View saved posts</text>
+      </touchable-opacity>
+    </view>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
@@ -47,10 +53,16 @@
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryTextLight">{{username}}</text>
-    <touchable-opacity v-if="isMainUser"
-                       :on-press="uploadProfilePicture" class="profilePictureButtonLight">
-      <text class="profilePictureButtonTextLight">Change profile picture</text>
-    </touchable-opacity>
+    <view :style="{flexDirection: 'row'}">
+      <touchable-opacity v-if="isMainUser"
+                         :on-press="uploadProfilePicture" class="profilePictureButtonLight">
+        <text class="profilePictureButtonTextLight">Change picture</text>
+      </touchable-opacity>
+      <touchable-opacity v-if="isMainUser"
+                         :on-press="viewSavedPosts" class="profilePictureButtonLight">
+        <text class="profilePictureButtonTextLight">View saved posts</text>
+      </touchable-opacity>
+    </view>
     <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
     <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
       <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
@@ -88,6 +100,9 @@ export default {
     UserPost
   },
   methods: {
+    viewSavedPosts(){
+      alert("Not available yet!")
+    },
     //This function sleeps the loading component, such that an actual loading is simulated
     sleep(ms){
       return new Promise(resolve => setTimeout(resolve, ms));
@@ -160,7 +175,6 @@ export default {
       }
     },
     refreshList(event) {
-      // This feature will be implemented completely after the API is configured
       if(event.nativeEvent.contentOffset.y < 0){
         this.isLoading = true;
         this.$emit("refreshUserPosts");
@@ -207,23 +221,29 @@ export default {
 .profilePictureButtonDark{
   align-self: center;
   background-color: #505050;
-  width: 50%;
+  width: 40%;
+  height: 50%;
+  margin: 5%;
 }
 .profilePictureButtonLight{
   align-self: center;
   background-color: #AFAFAF;
-  width: 50%;
+  width: 40%;
+  height: 50%;
+  margin: 5%;
 }
 .profilePictureButtonTextDark{
   align-self: center;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: ghostwhite;
+  margin: 5%;
 }
 .profilePictureButtonTextLight{
   align-self: center;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #070700;
+  margin: 5%;
 }
 </style>
