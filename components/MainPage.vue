@@ -172,7 +172,7 @@ export default {
   },
   methods:{
     redirectToLogin(){
-      this.$emit("redirectToLogin");
+      this.$emit("redirectToLogin", this.isDarkTheme);
     },
     changeViewMode(){
       this.isDarkTheme = !this.isDarkTheme;
@@ -216,7 +216,7 @@ export default {
       }
     },
     Logout(){
-      this.$emit("Logout")
+      this.$emit("Logout", this.isDarkTheme)
     },
     showTags(){
       this.leftSideTags = !this.leftSideTags;

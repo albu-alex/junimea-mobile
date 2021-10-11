@@ -1,35 +1,35 @@
 <!--This component is used to validate the user name and password-->
 <!--It consists of two text inputs, a login button, a register button and a welcome message-->
 <template>
-  <view class="userLogin">
+  <view v-if="isDarkTheme" class="userLoginDark">
     <Loading v-if="isLoading"/>
     <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <text class="pageIntro" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
+    <text class="pageIntroDark" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Username" v-model="username" class="textInput"
+                placeholder="Username" v-model="username" class="textInputDark"
                 keyboardAppearance="dark" autoComplete="username"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
                 placeholderTextColor="ghostwhite" placeholder="Username or Email"
-                v-model="username" class="textInput" keyboardAppearance="dark"></text-input>
+                v-model="username" class="textInputDark" keyboardAppearance="dark"></text-input>
     <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="dark"
                 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Email Address" v-model="email" class="textInput"
+                placeholder="Email Address" v-model="email" class="textInputDark"
                 autoComplete="email"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
                 :secureTextEntry="!showPassword" placeholder="Password" v-model="password"
-                class="textInput" keyboardAppearance="dark" autoComplete="password"></text-input>
+                class="textInputDark" keyboardAppearance="dark" autoComplete="password"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
-      <touchable-opacity class="loginButton" :on-press="verifyLogin">
-        <text class="loginButtonText">Login</text>
+      <touchable-opacity class="loginButtonDark" :on-press="verifyLogin">
+        <text class="loginButtonTextDark">Login</text>
       </touchable-opacity>
-      <touchable-opacity class="loginButton" :on-press="registerNewUser">
-        <text class="loginButtonText">Register</text>
+      <touchable-opacity class="loginButtonDark" :on-press="registerNewUser">
+        <text class="loginButtonTextDark">Register</text>
       </touchable-opacity>
     </view>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButton" :on-press="loginAsGuest">
-      <text class="loginButtonText">Login as guest</text>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButtonDark" :on-press="loginAsGuest">
+      <text class="loginButtonTextDark">Login as guest</text>
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
@@ -50,7 +50,59 @@
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
     <touchable-opacity v-if="!waitingForSubmit" :on-press="reportBugs">
-      <text class="bugButtonText">Found any bugs? Report them!</text>
+      <text class="bugButtonTextDark">Found any bugs? Report them!</text>
+    </touchable-opacity>
+  </view>
+  <view v-else class="userLoginLight">
+    <Loading v-if="isLoading"/>
+    <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
+      <activity-indicator size="large" color="black" />
+    </view>
+    <text class="pageIntroLight" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
+    <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
+                placeholder="Username" v-model="username" class="textInputLight"
+                keyboardAppearance="light" autoComplete="username"></text-input>
+    <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
+                placeholderTextColor="#070700" placeholder="Username or Email"
+                v-model="username" class="textInputLight" keyboardAppearance="light"></text-input>
+    <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="light"
+                v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
+                placeholder="Email Address" v-model="email" class="textInputLight"
+                autoComplete="email"></text-input>
+    <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="#070700"
+                :secureTextEntry="!showPassword" placeholder="Password" v-model="password"
+                class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>
+    <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
+      <touchable-opacity class="loginButtonLight" :on-press="verifyLogin">
+        <text class="loginButtonTextLight">Login</text>
+      </touchable-opacity>
+      <touchable-opacity class="loginButtonLight" :on-press="registerNewUser">
+        <text class="loginButtonTextLight">Register</text>
+      </touchable-opacity>
+    </view>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButtonLight" :on-press="loginAsGuest">
+      <text class="loginButtonTextLight">Login as guest</text>
+    </touchable-opacity>
+    <view class="loginWithServices">
+      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
+        <Image :source="require('../assets/login-button-facebook.png')"
+               :style="{width: 124, height: 50}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
+        <Image :source="require('../assets/login-google-button.png')"
+               :style="{width: 124, height: 50, marginLeft: 2}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
+        <Image :source="require('../assets/login-button-apple.png')"
+               :style="{width: 124, height: 50, marginLeft: 2}" />
+      </touchable-opacity>
+    </view>
+    <touchable-opacity :on-press="junimeaOnFacebook">
+      <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-negru-cu-scris.png')"
+             :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
+    </touchable-opacity>
+    <touchable-opacity v-if="!waitingForSubmit" :on-press="reportBugs">
+      <text class="bugButtonTextLight">Found any bugs? Report them!</text>
     </touchable-opacity>
   </view>
 </template>
@@ -67,6 +119,9 @@ export default {
   name: "Login",
   components: {
     Loading
+  },
+  props:{
+    isDarkTheme: Boolean
   },
   async mounted(){
     await this.sleep(1000)
@@ -247,21 +302,38 @@ export default {
   margin-bottom: 1%;
   flex-direction: row;
 }
-.textInput{
+.textInputDark{
   background-color: #505050;
   width: 90%;
   height: 5%;
   margin-bottom: 5%;
   color: ghostwhite;
 }
-.pageIntro{
+.textInputLight{
+  background-color: #AFAFAF;
+  width: 90%;
+  height: 5%;
+  margin-bottom: 5%;
+  color: #070700;
+}
+.pageIntroDark{
   font-size: 32px;
   font-weight: 700;
   color: ghostwhite;
   margin-bottom: 15%;
 }
-.loginButton{
+.pageIntroLight{
+  font-size: 32px;
+  font-weight: 700;
+  color: #070700;
+  margin-bottom: 15%;
+}
+.loginButtonDark{
   background-color: #505050;
+  margin: 5%;
+}
+.loginButtonLight{
+  background-color: #AFAFAF;
   margin: 5%;
 }
 .loginButtons{
@@ -269,7 +341,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
 }
-.loginButtonText{
+.loginButtonTextDark{
   align-self: center;
   font-size: 20px;
   font-weight: 400;
@@ -277,7 +349,15 @@ export default {
   margin-left: 1%;
   margin-right: 1%;
 }
-.bugButtonText{
+.loginButtonTextLight{
+  align-self: center;
+  font-size: 20px;
+  font-weight: 400;
+  color: #070700;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.bugButtonTextDark{
   align-self: center;
   font-size: 16px;
   font-weight: 300;
@@ -286,9 +366,24 @@ export default {
   margin-right: 1%;
   margin-top: 5%;
 }
-.userLogin{
+.bugButtonTextLight{
+  align-self: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #555555;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 5%;
+}
+.userLoginDark{
   flex: 1;
   background-color: #212121;
+  align-items: center;
+  justify-content: center;
+}
+.userLoginLight{
+  flex: 1;
+  background-color: #DEDEDE;
   align-items: center;
   justify-content: center;
 }
