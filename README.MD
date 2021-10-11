@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a>
 
 
 This is the QR code to the app:
@@ -822,7 +822,7 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_3.gif" alt="Second video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_4.gif" alt="Third video" height="50%" width=auto/>
 
-# <a id="twentythree">Day 2</a>
+# <a id="twentythree">Day 23</a>
 
 ## Today I have done the following:
 <uL>
@@ -857,3 +857,46 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day23_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day23_2.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day23_3.jpg" alt="Second photo" height="50%" width=auto/>
+
+# <a id="twentyfour">Day 24</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Added a new Tags component + basic styling
+</li>
+<li>
+    Tags is available in light/dark mode
+</li>
+<li>
+    Login is available in light/dark mode
+</li>
+<li>
+    Fixed bug in which the theme would be reset to dark when logging in
+</li>
+<li>
+    Added a saved posts placeholder in UserProfile
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        User can automatically login; fix user to guest only when needed
+    </li>
+    <li>
+        Fix Tags component bugs
+    </li>
+    <li>
+        Make UpdateProfile available in light/dark mode
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_2.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_3.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_4.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_5.jpg" alt="Fourth photo" height="50%" width=auto/>
+
+
