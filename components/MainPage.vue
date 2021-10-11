@@ -22,8 +22,8 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
     <view class="posts">
-      <Tags v-if="leftSideTags" class="tags" />
-      <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
+      <Tags :isDarkTheme="isDarkTheme" v-if="leftSideTags" class="tags" />
+      <scroll-view :scrollEnabled="!leftSideTags" v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                      v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
                      :posts="posts" @goToMainPage="postProfileDisplayed = false"
@@ -31,7 +31,7 @@
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
       <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+      <scroll-view :scrollEnabled="!leftSideTags" :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
@@ -64,8 +64,8 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
     <view class="posts">
-      <Tags v-if="leftSideTags" class="tags" />
-      <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
+      <Tags :isDarkTheme="isDarkTheme" v-if="leftSideTags" class="tags" />
+      <scroll-view :scrollEnabled="!leftSideTags" v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                       v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
                      :posts="posts" @goToMainPage="postProfileDisplayed = false"
@@ -73,7 +73,7 @@
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
   <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+      <scroll-view :scrollEnabled="!leftSideTags" :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
@@ -301,7 +301,7 @@ export default {
 }
 .tags{
   height: 100%;
-  width: 30%;
+  width: 27%;
 }
 .mainPageDark{
   background-color: #252525;

@@ -27,7 +27,8 @@
     "react-native-webview": "11.6.2",
     "vue-native-core": "^0.3.1",
     "vue-native-helper": "^0.3.1",
-    "vue-pull-refresh": "^0.2.7"
+    "vue-pull-refresh": "^0.2.7",
+    "vue-simple-drawer": "^1.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
