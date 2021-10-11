@@ -153,6 +153,9 @@ export default {
     this.profilePicture = profilePicture;
   },
   async beforeMount(){
+    if(this.customTheme !== undefined){
+      this.isDarkTheme = this.customTheme;
+    }
     this.isLoading = true;
     await this.getInitialPosts('top');
     this.isLoading = false;
@@ -168,7 +171,8 @@ export default {
     Tags
   },
   props:{
-    newUsername: String
+    newUsername: String,
+    customTheme: Boolean
   },
   methods:{
     redirectToLogin(){
