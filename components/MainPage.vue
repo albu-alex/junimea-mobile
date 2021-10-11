@@ -6,7 +6,7 @@
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
+    <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
@@ -21,31 +21,34 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
-      <UserProfile :isMainUser="false"
-                   v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                   :posts="posts" @goToMainPage="postProfileDisplayed = false"
-                   @refreshUserPosts="getInitialPosts('top')"
-                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-    </scroll-view>
-    <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-    <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
-                 v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-      <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
-                :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
-                :dimensions="(post.dimensions) ? post.dimensions : []"
-                :files="post.files" :username="post.username" :profilePic="post.profilePic"
-                :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
-      <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'flex-end'}">
-        <activity-indicator size="large" color="dimgrey" />
-      </view>
-    </scroll-view>
+    <view class="posts">
+      <Tags v-if="leftSideTags" class="tags" />
+      <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
+        <UserProfile :isMainUser="false"
+                     v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
+                     :posts="posts" @goToMainPage="postProfileDisplayed = false"
+                     @refreshUserPosts="getInitialPosts('top')"
+                     :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
+      </scroll-view>
+      <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
+      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+                   v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
+        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
+                  :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
+                  :dimensions="(post.dimensions) ? post.dimensions : []"
+                  :files="post.files" :username="post.username" :profilePic="post.profilePic"
+                  :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
+        <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'flex-end'}">
+          <activity-indicator size="large" color="dimgrey" />
+        </view>
+      </scroll-view>
+    </view>
   </view>
   <view v-else class="mainPageLight">
     <StatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Header @goToProfile="goToProfile" @goToTop="goToTop" :isDarkTheme="isDarkTheme"
+    <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed"/>
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
@@ -60,25 +63,28 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
-      <UserProfile :isMainUser="false"
-                    v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                   :posts="posts" @goToMainPage="postProfileDisplayed = false"
-                   @refreshUserPosts="getInitialPosts('top')"
-                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-    </scroll-view>
-<!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-    <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
-                 v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-      <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
-                :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
-                :dimensions="(post.dimensions) ? post.dimensions : []"
-                :files="post.files" :username="post.username" :profilePic="post.profilePic"
-                :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
-      <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'flex-end'}">
-        <activity-indicator size="large" color="#969696" />
-      </view>
-    </scroll-view>
+    <view class="posts">
+      <Tags v-if="leftSideTags" class="tags" />
+      <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
+        <UserProfile :isMainUser="false"
+                      v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
+                     :posts="posts" @goToMainPage="postProfileDisplayed = false"
+                     @refreshUserPosts="getInitialPosts('top')"
+                     :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
+      </scroll-view>
+  <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
+      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+                   v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
+        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
+                  :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
+                  :dimensions="(post.dimensions) ? post.dimensions : []"
+                  :files="post.files" :username="post.username" :profilePic="post.profilePic"
+                  :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
+        <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'flex-end'}">
+          <activity-indicator size="large" color="#969696" />
+        </view>
+      </scroll-view>
+    </view>
   </view>
 </template>
 
@@ -92,6 +98,7 @@ import UserPost from "./UserPost";
 import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
+import Tags from "./Tags";
 export default {
   name: "MainPage",
   data(){
@@ -117,7 +124,8 @@ export default {
       //This variable holds the URL for the user profile picture
       profilePicture: "",
       isDarkTheme: true,
-      searchDisplayed: false
+      searchDisplayed: false,
+      leftSideTags: false,
     }
   },
   async created(){
@@ -156,7 +164,8 @@ export default {
     StatusBar,
     Header,
     Settings,
-    AddPostBox
+    AddPostBox,
+    Tags
   },
   props:{
     newUsername: String
@@ -209,11 +218,8 @@ export default {
     Logout(){
       this.$emit("Logout")
     },
-    goToTop(){
-      this.$refs.pagePosts.current?.scrollTo({
-        y: 0.0,
-        animated: true
-      });
+    showTags(){
+      this.leftSideTags = !this.leftSideTags;
     },
     goToProfile(){
       if(this.newUsername === ''){
@@ -287,8 +293,15 @@ export default {
 </script>
 
 <style>
+.posts{
+  flex-direction: row;
+}
 .settings{
   height: 15%;
+}
+.tags{
+  height: 100%;
+  width: 30%;
 }
 .mainPageDark{
   background-color: #252525;

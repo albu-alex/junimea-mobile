@@ -2,7 +2,7 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view v-if="isDarkTheme" class="headerDark">
-      <touchable-opacity :on-press="goToTop">
+      <touchable-opacity :on-press="showTags">
         <text class="headerTextDark">juni.</text>
       </touchable-opacity>
       <touchable-opacity :on-press="displaySettings">
@@ -23,7 +23,7 @@
       </touchable-opacity>
   </view>
   <view v-else class="headerLight">
-    <touchable-opacity :on-press="goToTop">
+    <touchable-opacity :on-press="showTags">
       <text class="headerTextLight">juni.</text>
     </touchable-opacity>
     <touchable-opacity :on-press="displaySettings">
@@ -56,8 +56,8 @@ export default {
     displaySettings(){
       this.$emit("displaySettings");
     },
-    goToTop(){
-      this.$emit("goToTop");
+    showTags(){
+      this.$emit("showTags");
     },
     goToProfile(){
       this.$emit("goToProfile");
