@@ -126,6 +126,7 @@ export default {
       isDarkTheme: true,
       searchDisplayed: false,
       leftSideTags: false,
+      updateProfile: false
     }
   },
   async created(){
@@ -303,7 +304,7 @@ export default {
   flex-direction: row;
 }
 .settings{
-  height: 15%;
+  height: 10%;
 }
 .tags{
   height: 100%;

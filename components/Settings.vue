@@ -4,7 +4,7 @@
   <view v-if="isDarkTheme" class="settingsDark">
     <text class="textPrimaryDark" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryDark" v-else>Hey, guest!</text>
-    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" />
+    <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm" />
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondaryDark">Logout</text>
@@ -20,7 +20,7 @@
   <view v-else class="settingsLight">
     <text class="textPrimaryLight" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryLight" v-else>Hey, guest!</text>
-    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" />
+    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm" />
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondaryLight">Logout</text>
@@ -60,18 +60,17 @@ export default {
     changeViewMode(){
       this.$emit("changeViewMode")
     },
-    async updateProfile(){
-      if(!this.visiblePrompts){
-        this.visiblePrompts = true;
-        return;
-      }
-      this.visiblePrompts = false;
+    updateProfile(){
+      this.visiblePrompts = !this.visiblePrompts;
     }
   }
 }
 </script>
 
 <style>
+.updateForm{
+  margin-bottom: 6%;
+}
 .settingsDark{
   background-color: #252525;
 }
