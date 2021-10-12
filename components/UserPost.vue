@@ -43,7 +43,7 @@
       <text class="likesTextDark">{{likes}}</text>
       <touchable-opacity :on-press="sharePost">
         <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 20}"
+               :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"
                :source="require('../assets/share-button.png')" />
       </touchable-opacity>
     </view>
@@ -91,7 +91,7 @@
       <text class="likesTextLight">{{likes}}</text>
       <touchable-opacity :on-press="sharePost">
         <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 20}"
+               :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"
                :source="require('../assets/share-button.png')" />
       </touchable-opacity>
     </view>

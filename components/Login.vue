@@ -224,7 +224,6 @@ export default {
       if(loggedIn)
         this.$emit('verifyLogin', this.username);
       //Data from the text-inputs is reset
-      this.username = "";
       this.password = "";
       this.waitingForSubmit = false;
     },
