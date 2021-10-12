@@ -16,7 +16,7 @@ export default {
     return {
       isLoggedIn: true,
       username: "",
-      isDarkTheme: Boolean,
+      isDarkTheme: true,
     }
   },
   name: "App",

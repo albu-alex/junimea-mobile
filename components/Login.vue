@@ -121,7 +121,7 @@ export default {
     Loading
   },
   props:{
-    isDarkTheme: Boolean
+    isDarkTheme: Boolean,
   },
   async mounted(){
     await this.sleep(1000)
