@@ -129,6 +129,8 @@ export default {
     }
   },
   async created(){
+    if(this.newUsername === "")
+      return;
     let postNumber = 10;
     let found = false;
     let profilePicture;
@@ -136,7 +138,7 @@ export default {
     while(!found){
       await axios({
         method: 'get',
-        url: `http://52.57.118.176/Post/List/${this.postNumber}`,
+        url: `http://52.57.118.176/Post/List/${postNumber}`,
         timeout: 4000
       })
       .then(function (response){

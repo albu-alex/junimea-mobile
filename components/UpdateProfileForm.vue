@@ -1,19 +1,36 @@
 <template>
-<view class="updateProfile">
+<view v-if="isDarkTheme" class="updateProfileDark">
   <text-input :autoCorrect="false"
               placeholderTextColor="ghostwhite" placeholder="First Name"
-              v-model="firstName" class="inputForm">
+              v-model="firstName" class="inputFormDark">
   </text-input>
   <text-input :autoCorrect="false"
               placeholderTextColor="ghostwhite" placeholder="Last Name"
-              v-model="lastName" class="inputForm">
+              v-model="lastName" class="inputFormDark">
   </text-input>
   <text-input :autoCorrect="false" keyboardType="email-address"
               placeholderTextColor="ghostwhite" placeholder="Email address"
-              v-model="emailAddress" class="inputForm">
+              v-model="emailAddress" class="inputFormDark">
   </text-input>
   <touchable-opacity :on-press="updateProfile">
-    <text class="sendButtonText">Send</text>
+    <text class="sendButtonTextDark">Send</text>
+  </touchable-opacity>
+</view>
+<view v-else class="updateProfileLight">
+  <text-input :autoCorrect="false"
+              placeholderTextColor="ghostwhite" placeholder="First Name"
+              v-model="firstName" class="inputFormLight">
+  </text-input>
+  <text-input :autoCorrect="false"
+              placeholderTextColor="ghostwhite" placeholder="Last Name"
+              v-model="lastName" class="inputFormLight">
+  </text-input>
+  <text-input :autoCorrect="false" keyboardType="email-address"
+              placeholderTextColor="ghostwhite" placeholder="Email address"
+              v-model="emailAddress" class="inputFormLight">
+  </text-input>
+  <touchable-opacity :on-press="updateProfile">
+    <text class="sendButtonTextLight">Send</text>
   </touchable-opacity>
 </view>
 </template>
@@ -29,6 +46,9 @@ export default {
       lastName: "",
       emailAddress: "",
     }
+  },
+  props:{
+    isDarkTheme: Boolean,
   },
   methods:{
     async updateProfile(){
@@ -81,21 +101,38 @@ export default {
 </script>
 
 <style>
-.updateProfile{
+.updateProfileDark{
   background-color: #252525;
   align-items: center;
   justify-content: center;
   flex: 1;
 }
-.inputForm{
+.updateProfileLight{
+  background-color: #DADADA;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.inputFormDark{
   background-color: #505050;
   width: 90%;
   margin-bottom: 1%;
   color: ghostwhite;
   font-weight: 200;
 }
-.sendButtonText{
+.inputFormLight{
+  background-color: #AFAFAF;
+  width: 90%;
+  margin-bottom: 1%;
+  color: ghostwhite;
+  font-weight: 200;
+}
+.sendButtonTextDark{
   color: #AAAAAA;
+  font-weight: 200;
+}
+.sendButtonTextLight{
+  color: #555555;
   font-weight: 200;
 }
 </style>

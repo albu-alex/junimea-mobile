@@ -4,7 +4,7 @@
   <view v-if="isDarkTheme" class="settingsDark">
     <text class="textPrimaryDark" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryDark" v-else>Hey, guest!</text>
-    <UpdateProfileForm v-if="visiblePrompts" />
+    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" />
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondaryDark">Logout</text>
@@ -20,7 +20,7 @@
   <view v-else class="settingsLight">
     <text class="textPrimaryLight" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryLight" v-else>Hey, guest!</text>
-    <UpdateProfileForm v-if="visiblePrompts" />
+    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" />
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondaryLight">Logout</text>
