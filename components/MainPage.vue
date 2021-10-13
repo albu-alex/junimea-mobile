@@ -103,7 +103,7 @@ import {Platform, StatusBar, Animated, Easing} from "react-native";
 export default {
   name: "MainPage",
   data(){
-    return{
+    return {
       // This variable is responsible for checking whether the creation of the post is occurring or not
       // Defaults to false
       waitingForPost: false,
@@ -131,8 +131,7 @@ export default {
       viewOpacity: 0,
       //This variable determines if the refresh should be allowed to be made or not
       refreshAllowed: true,
-      startTime: 0,
-      endTime: 0,
+      startTime: 0
     }
   },
   async created(){
