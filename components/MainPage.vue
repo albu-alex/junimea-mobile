@@ -128,7 +128,11 @@ export default {
       searchDisplayed: false,
       leftSideTags: false,
       updateProfile: false,
-      viewOpacity: 0
+      viewOpacity: 0,
+      //This variable determines if the refresh should be allowed to be made or not
+      refreshAllowed: true,
+      startTime: 0,
+      endTime: 0,
     }
   },
   async created(){
@@ -174,7 +178,7 @@ export default {
     await this.getInitialPosts('top');
     this.isLoading = false;
   },
-  mounted(){
+  async mounted(){
     this.animateView();
   },
   components:{
@@ -262,7 +266,16 @@ export default {
       }
       this.profileDisplayed = true
     },
-    refreshList(event) {
+    refreshList(event){
+      if(!this.refreshAllowed){
+        if(performance.now() - this.startTime <= 5000)
+          return;
+        this.refreshAllowed = true;
+      }
+      else{
+        this.startTime = performance.now();
+        this.refreshAllowed = false;
+      }
       let paddingToBottom = 1000;
       if(event.nativeEvent.contentOffset.y < 0){
         this.isLoading = true;
