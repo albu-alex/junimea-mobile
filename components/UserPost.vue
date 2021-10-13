@@ -41,6 +41,11 @@
               :source="require('../assets/down-button.png')" />
       </touchable-opacity>
       <text class="likesTextDark">{{likes}}</text>
+      <touchable-opacity :on-press="postComment">
+        <Image class="upButton"
+               :style="{width: 25, height:25, marginLeft: 5, marginRight:10, marginBottom: 5}"
+               :source="require('../assets/comment-icon.png')" />
+      </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
         <Image class="upButton"
                :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"
@@ -89,6 +94,11 @@
                :source="require('../assets/down-button.png')" />
       </touchable-opacity>
       <text class="likesTextLight">{{likes}}</text>
+      <touchable-opacity :on-press="postComment">
+        <Image class="upButton"
+               :style="{width: 25, height:25, marginLeft: 5, marginRight:10, marginBottom: 5}"
+               :source="require('../assets/comment-icon.png')" />
+      </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
         <Image class="upButton"
                :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"
@@ -118,7 +128,7 @@ export default {
       //The next 3 variables are used in order to determine the double tap to like logic
       startTime: Number,
       endTime: Number,
-      taps: Number
+      taps: 0
     }
   },
   name: "UserPost",
@@ -138,6 +148,9 @@ export default {
     this.taps = 0;
   },
   methods:{
+    postComment(){
+      alert("Not available yet!")
+    },
     sharePost(){
       alert("Not a way to implement this yet!")
     },
