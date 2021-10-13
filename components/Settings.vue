@@ -1,7 +1,7 @@
 <!--Component displays all the settings that the user can access-->
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
-  <view v-if="isDarkTheme" class="settingsDark">
+  <animated:view v-if="isDarkTheme" class="settingsDark" :style="{opacity: viewOpacity}">
     <text class="textPrimaryDark" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryDark" v-else>Hey, guest!</text>
     <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm" />
@@ -16,8 +16,8 @@
         <text class="textSecondaryDark">Update your profile</text>
       </touchable-opacity>
     </view>
-  </view>
-  <view v-else class="settingsLight">
+  </animated:view>
+  <animated:view v-else class="settingsLight" :style="{opacity: viewOpacity}">
     <text class="textPrimaryLight" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryLight" v-else>Hey, guest!</text>
     <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm" />
@@ -32,18 +32,26 @@
         <text class="textSecondaryLight">Update your profile</text>
       </touchable-opacity>
     </view>
-  </view>
+  </animated:view>
 </template>
 
 <script>
 import UpdateProfileForm from "./UpdateProfileForm";
+import {Animated, Easing} from "react-native";
 export default {
   name: "Settings",
   data(){
     return{
       //This variable keeps track of the visibility of the update profile prompts
-      visiblePrompts: false
+      visiblePrompts: false,
+      viewOpacity: 0
     }
+  },
+  created(){
+    this.viewOpacity = new Animated.Value(0)
+  },
+  mounted(){
+    this.animateView();
   },
   props:{
     newUsername: String,
@@ -53,6 +61,18 @@ export default {
     UpdateProfileForm
   },
   methods:{
+    animateView(){
+      this.viewOpacity.setValue(0);
+
+      Animated.timing(this.viewOpacity, {
+        toValue: 1,
+        duration: 200,
+        easing: Easing.linear,
+        useNativeDriver: false
+      }).start(() => {
+
+      });
+    },
     //This function emits a method in which the user is taken back to the login component
     logout(){
       this.$emit("Logout");

@@ -204,7 +204,7 @@ export default {
 
       Animated.timing(this.viewOpacity, {
         toValue: 1,
-        duration: 1000,
+        duration: 500,
         easing: Easing.linear,
         useNativeDriver: false
       }).start(() => {

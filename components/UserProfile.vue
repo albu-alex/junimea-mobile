@@ -1,5 +1,5 @@
 <template>
-  <view class="profile" v-if="username !== '' && isDarkTheme">
+  <animated:view class="profile" v-if="username !== '' && isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
         <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
@@ -35,8 +35,8 @@
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-  </view>
-  <view class="profile" v-else-if="username !== '' && !isDarkTheme">
+  </animated:view>
+  <animated:view class="profile" v-else-if="username !== '' && !isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
         <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
@@ -72,7 +72,7 @@
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-  </view>
+  </animated:view>
 </template>
 
 <script>
@@ -80,13 +80,20 @@ import UserPost from "./UserPost";
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
-import {Alert} from "react-native";
+import {Alert, Animated, Easing} from "react-native";
 export default {
   data(){
     return{
       isLoading: false,
-      profilePictureURL: ""
+      profilePictureURL: "",
+      viewOpacity: 0,
     }
+  },
+  created(){
+    this.viewOpacity = new Animated.Value(0)
+  },
+  mounted(){
+    this.animateView();
   },
   name: "UserProfile",
   props:{
@@ -128,6 +135,18 @@ export default {
       let filename = localUri.split('/').pop();
 
       return {localUri, filename};
+    },
+    animateView(){
+      this.viewOpacity.setValue(0);
+
+      Animated.timing(this.viewOpacity, {
+        toValue: 1,
+        duration: 500,
+        easing: Easing.linear,
+        useNativeDriver: false
+      }).start(() => {
+
+      });
     },
     //This functions uploads the picture selected by the user to replace the profile picture
     async uploadProfilePicture() {
