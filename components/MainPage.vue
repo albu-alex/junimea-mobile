@@ -2,7 +2,7 @@
 <!--After the Login component is done showing, the MainPage component is shown-->
 <!--Consists of: OwnStatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
-  <view v-if="isDarkTheme" class="mainPageDark">
+  <animated:view v-if="isDarkTheme" class="mainPageDark" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
@@ -43,8 +43,8 @@
         </view>
       </scroll-view>
     </view>
-  </view>
-  <view v-else class="mainPageLight">
+  </animated:view>
+  <animated:view v-else class="mainPageLight" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
@@ -85,7 +85,7 @@
         </view>
       </scroll-view>
     </view>
-  </view>
+  </animated:view>
 </template>
 
 <!--TODO: To be moved into separate folder-->
@@ -99,7 +99,7 @@ import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
-import {Platform, StatusBar} from "react-native";
+import {Platform, StatusBar, Animated, Easing} from "react-native";
 export default {
   name: "MainPage",
   data(){
@@ -127,10 +127,12 @@ export default {
       isDarkTheme: true,
       searchDisplayed: false,
       leftSideTags: false,
-      updateProfile: false
+      updateProfile: false,
+      viewOpacity: 0
     }
   },
   async created(){
+    this.viewOpacity = new Animated.Value(0)
     if(this.newUsername === "")
       return;
     let postNumber = 10;
@@ -172,6 +174,9 @@ export default {
     await this.getInitialPosts('top');
     this.isLoading = false;
   },
+  mounted(){
+    this.animateView();
+  },
   components:{
     Search,
     UserProfile,
@@ -192,6 +197,19 @@ export default {
     },
     changeViewMode(){
       this.isDarkTheme = !this.isDarkTheme;
+      this.animateView();
+    },
+    animateView(){
+      this.viewOpacity.setValue(0);
+
+      Animated.timing(this.viewOpacity, {
+        toValue: 1,
+        duration: 1000,
+        easing: Easing.linear,
+        useNativeDriver: false
+      }).start(() => {
+
+      });
     },
     async getInitialPosts(postPosition){
       let posts;
