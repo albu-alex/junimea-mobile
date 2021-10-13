@@ -9,7 +9,7 @@
 <!--Did not separate the script in another file for obvious reasons-->
 <script>
 export default {
-  name: "StatusBar",
+  name: "OwnStatusBar",
   props:{
     isDarkTheme: Boolean
   }
@@ -20,9 +20,11 @@ export default {
 .statusbarDark{
   height: 36px;
   background-color: black;
+  color: ghostwhite;
 }
 .statusbarLight{
   height: 36px;
-  background-color: #555555;
+  background-color: ghostwhite;
+  color: #070700;
 }
 </style>

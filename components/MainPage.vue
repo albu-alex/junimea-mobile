@@ -1,9 +1,9 @@
 <!--This component makes up the majority of what the user sees-->
 <!--After the Login component is done showing, the MainPage component is shown-->
-<!--Consists of: StatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
+<!--Consists of: OwnStatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
   <view v-if="isDarkTheme" class="mainPageDark">
-    <StatusBar :isDarkTheme="isDarkTheme"/>
+    <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
@@ -45,7 +45,7 @@
     </view>
   </view>
   <view v-else class="mainPageLight">
-    <StatusBar :isDarkTheme="isDarkTheme"/>
+    <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
@@ -90,7 +90,7 @@
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import StatusBar from "./StatusBar";
+import OwnStatusBar from "./StatusBar";
 import Header from "./Header";
 import Settings from "./Settings";
 import AddPostBox from "./AddPostBox";
@@ -99,6 +99,7 @@ import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
+import {Platform, StatusBar} from "react-native";
 export default {
   name: "MainPage",
   data(){
@@ -155,6 +156,14 @@ export default {
     }
     this.profilePicture = profilePicture;
   },
+  beforeUpdate(){
+    if (!this.isDarkTheme && Platform.OS === 'ios') {
+      StatusBar.setBarStyle('dark-content', true);
+    }
+    else if(this.isDarkTheme && Platform.OS === 'ios'){
+      StatusBar.setBarStyle('light-content', true);
+    }
+  },
   async beforeMount(){
     if(this.customTheme !== undefined){
       this.isDarkTheme = this.customTheme;
@@ -167,7 +176,7 @@ export default {
     Search,
     UserProfile,
     UserPost,
-    StatusBar,
+    OwnStatusBar,
     Header,
     Settings,
     AddPostBox,

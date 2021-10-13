@@ -744,7 +744,7 @@ This is the QR code to the app:
     AddPostBox is now available in light mode
 </li>
 <li>
-    StatusBar is now available in light mode
+    OwnStatusBar is now available in light mode
 </li>
 <li>
     Settings is now available in light mode    
