@@ -99,7 +99,7 @@ import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
-import {Platform, StatusBar, Animated, Easing} from "react-native";
+import {Platform, StatusBar, Animated, Easing, AsyncStorage} from "react-native";
 export default {
   name: "MainPage",
   data(){
@@ -173,6 +173,16 @@ export default {
     if(this.customTheme !== undefined){
       this.isDarkTheme = this.customTheme;
     }
+    if(this.token !== ""){
+      await AsyncStorage.setItem(
+          'user-token',
+          this.token
+      );
+    }
+    else{
+      this.token = await AsyncStorage.getItem('user-token');
+    }
+    alert(this.token);
     this.isLoading = true;
     await this.getInitialPosts('top');
     this.isLoading = false;
@@ -192,7 +202,8 @@ export default {
   },
   props:{
     newUsername: String,
-    customTheme: Boolean
+    customTheme: Boolean,
+    token: String,
   },
   methods:{
     redirectToLogin(){

@@ -2,7 +2,7 @@
   <view class="container">
     <Login :isDarkTheme="isDarkTheme" v-if="!isLoggedIn" @verifyLogin="verifyLogin($event)" />
     <MainPage v-if="isLoggedIn" @Logout="Logout" :newUsername="username" :customTheme="isDarkTheme"
-    @redirectToLogin="Logout"/>
+    @redirectToLogin="Logout" :token="token"/>
   </view>
 </template>
 
@@ -16,6 +16,7 @@ export default {
     return {
       isLoggedIn: true,
       username: "",
+      token: "",
       isDarkTheme: true,
     }
   },
@@ -28,7 +29,8 @@ export default {
   methods:{
     verifyLogin(newUsername){
       this.isLoggedIn = true
-      this.username = newUsername;
+      this.username = newUsername.username;
+      this.token = newUsername.token
     },
     Logout(isDarkTheme){
       this.isLoggedIn = false;

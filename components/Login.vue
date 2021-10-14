@@ -110,7 +110,7 @@
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import { Dimensions, Alert } from "react-native";
+import { Dimensions, Alert, AsyncStorage } from "react-native";
 const win = Dimensions.get('window');
 import Linking from "react-native";
 import axios from "axios";
@@ -171,6 +171,7 @@ export default {
       let loggedIn = false;
       let shownPassword = false;
       this.waitingForSubmit = true;
+      let userToken;
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Login',
@@ -184,6 +185,7 @@ export default {
       .then(function(response){
         if(response.data.statusCode === 200) {
           loggedIn = true;
+          userToken = response.data.token
         }
         else {
           shownPassword = true;
@@ -220,9 +222,18 @@ export default {
           );
         }
       });
+      // await AsyncStorage.setItem(
+      //     'user-token',
+      //     userToken
+      // );
+      // userToken = await AsyncStorage.getItem('TASKS');
+      // if(userToken !== null){
+      //   alert(userToken);
+      // }
       this.showPassword = shownPassword;
-      if(loggedIn)
-        this.$emit('verifyLogin', this.username);
+      if(loggedIn) {
+        this.$emit('verifyLogin', {username: this.username, token: userToken});
+      }
       //Data from the text-inputs is reset
       this.password = "";
       this.waitingForSubmit = false;
@@ -284,12 +295,12 @@ export default {
     // This function allow a new user to enter the feed of posts without making a new account
     // If user logs in as guest, he cannot make new post and cannot access his profile
     loginAsGuest(){
-      alert("Beware that if you continue as a guest, your experience will be limited")
+      alert("Beware that if you continue as a guest, your experience will be limited");
       this.$emit('verifyLogin', "");
     },
     //This function will consist in an email prompt in order to contact us regarding any bugs
     reportBugs(){
-      alert("New feature coming soon!")
+      alert("New feature coming soon!");
     }
   }
 }
