@@ -22,7 +22,7 @@
                      :showsVerticalScrollIndicator="false"
                      :showsHorizontalScrollIndicator="false">
           <touchable-opacity :on-press="doubleTapToLike" :activeOpacity="1">
-            <animated:Image :source="{uri: String(file)}"
+            <Image :source="{uri: String(file)}"
                             :style="{width: pageWidth, marginBottom: 10,
                             height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
           </touchable-opacity>
@@ -52,6 +52,9 @@
                :source="require('../assets/share-button.png')" />
       </touchable-opacity>
     </view>
+    <view v-if="showComments" class="postDark">
+      <Comments @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
+    </view>
   </view>
   <view v-else class="postLight">
     <touchable-opacity :on-press="redirectToUser">
@@ -75,7 +78,7 @@
                      :showsVerticalScrollIndicator="false"
                      :showsHorizontalScrollIndicator="false">
           <touchable-opacity :on-press="doubleTapToLike" :activeOpacity="1">
-            <animated:Image :source="{uri: String(file)}"
+            <Image :source="{uri: String(file)}"
                             :style="{width: pageWidth, marginBottom: 10,
                             height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
           </touchable-opacity>
@@ -105,16 +108,23 @@
                :source="require('../assets/share-button.png')" />
       </touchable-opacity>
     </view>
+    <view v-if="showComments" class="postDark">
+      <Comments @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
+    </view>
   </view>
 </template>
 
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import {Dimensions, Animated, Alert} from "react-native";
+import {Dimensions, Alert} from "react-native";
 const win = Dimensions.get('window');
 import axios from 'axios';
+import Comments from "./Comments";
 export default {
+  components: {
+    Comments
+  },
   data(){
     return {
       loggingIn: Boolean,
@@ -128,7 +138,9 @@ export default {
       //The next 3 variables are used in order to determine the double tap to like logic
       startTime: Number,
       endTime: Number,
-      taps: 0
+      taps: 0,
+      //This variable holds the responsibility of displaying the comments component
+      showComments: false,
     }
   },
   name: "UserPost",
@@ -149,7 +161,7 @@ export default {
   },
   methods:{
     postComment(){
-      alert("Not available yet!")
+      this.showComments = !this.showComments
     },
     sharePost(){
       alert("Not a way to implement this yet!")
