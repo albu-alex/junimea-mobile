@@ -153,6 +153,7 @@ export default {
 .postButtons{
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 3%;
 }
 .postBox{
   margin-top: 3%;
