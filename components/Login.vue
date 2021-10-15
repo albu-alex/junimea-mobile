@@ -8,17 +8,17 @@
     </view>
     <text class="pageIntroDark" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Username" v-model="username" class="textInputDark"
+                placeholder="Username" v-model="username" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 keyboardAppearance="dark" autoComplete="username"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
-                placeholderTextColor="ghostwhite" placeholder="Username or Email"
+                placeholderTextColor="ghostwhite" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 v-model="username" class="textInputDark" keyboardAppearance="dark"></text-input>
     <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="dark"
                 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Email Address" v-model="email" class="textInputDark"
+                placeholder="Email Address" v-model="email" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 autoComplete="email"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
-                :secureTextEntry="!showPassword" placeholder="Password" v-model="password"
+                :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 class="textInputDark" keyboardAppearance="dark" autoComplete="password"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
       <touchable-opacity class="loginButtonDark" :on-press="verifyLogin">
@@ -60,17 +60,17 @@
     </view>
     <text class="pageIntroLight" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
-                placeholder="Username" v-model="username" class="textInputLight"
+                placeholder="Username" v-model="username" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 keyboardAppearance="light" autoComplete="username"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
-                placeholderTextColor="#070700" placeholder="Username or Email"
+                placeholderTextColor="#070700" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 v-model="username" class="textInputLight" keyboardAppearance="light"></text-input>
     <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="light"
                 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
-                placeholder="Email Address" v-model="email" class="textInputLight"
+                placeholder="Email Address" v-model="email" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 autoComplete="email"></text-input>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="#070700"
-                :secureTextEntry="!showPassword" placeholder="Password" v-model="password"
+                :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
       <touchable-opacity class="loginButtonLight" :on-press="verifyLogin">
@@ -110,7 +110,7 @@
 
 <!--TODO: To be moved into separate folder-->
 <script>
-import { Dimensions, Alert, AsyncStorage } from "react-native";
+import { Dimensions, Alert} from "react-native";
 const win = Dimensions.get('window');
 import Linking from "react-native";
 import axios from "axios";
