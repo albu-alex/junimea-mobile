@@ -17,11 +17,11 @@
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryTextDark">{{username}}</text>
     <view :style="{flexDirection: 'row'}">
-      <touchable-opacity v-if="isMainUser"
+      <touchable-opacity :style="{borderRadius: 10}" v-if="isMainUser"
           :on-press="uploadProfilePicture" class="profilePictureButtonDark">
         <text class="profilePictureButtonTextDark">Change picture</text>
       </touchable-opacity>
-      <touchable-opacity v-if="isMainUser"
+      <touchable-opacity :style="{borderRadius: 10}" v-if="isMainUser"
                          :on-press="viewSavedPosts" class="profilePictureButtonDark">
         <text class="profilePictureButtonTextDark">View saved posts</text>
       </touchable-opacity>
@@ -54,11 +54,11 @@
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryTextLight">{{username}}</text>
     <view :style="{flexDirection: 'row'}">
-      <touchable-opacity v-if="isMainUser"
+      <touchable-opacity v-if="isMainUser" :style="{borderRadius: 10}"
                          :on-press="uploadProfilePicture" class="profilePictureButtonLight">
         <text class="profilePictureButtonTextLight">Change picture</text>
       </touchable-opacity>
-      <touchable-opacity v-if="isMainUser"
+      <touchable-opacity v-if="isMainUser" :style="{borderRadius: 10}"
                          :on-press="viewSavedPosts" class="profilePictureButtonLight">
         <text class="profilePictureButtonTextLight">View saved posts</text>
       </touchable-opacity>

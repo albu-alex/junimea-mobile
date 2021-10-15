@@ -1,14 +1,14 @@
 <template>
 <view v-if="isDarkTheme" class="updateProfileDark">
-  <text-input :autoCorrect="false"
+  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="First Name"
               v-model="firstName" class="inputFormDark">
   </text-input>
-  <text-input :autoCorrect="false"
+  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="Last Name"
               v-model="lastName" class="inputFormDark">
   </text-input>
-  <text-input :autoCorrect="false" keyboardType="email-address"
+  <text-input :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="Email address"
               v-model="emailAddress" class="inputFormDark">
   </text-input>
@@ -17,15 +17,15 @@
   </touchable-opacity>
 </view>
 <view v-else class="updateProfileLight">
-  <text-input :autoCorrect="false"
+  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="First Name"
               v-model="firstName" class="inputFormLight">
   </text-input>
-  <text-input :autoCorrect="false"
+  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="Last Name"
               v-model="lastName" class="inputFormLight">
   </text-input>
-  <text-input :autoCorrect="false" keyboardType="email-address"
+  <text-input :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="Email address"
               v-model="emailAddress" class="inputFormLight">
   </text-input>

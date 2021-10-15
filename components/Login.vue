@@ -21,14 +21,14 @@
                 :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 class="textInputDark" keyboardAppearance="dark" autoComplete="password"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
-      <touchable-opacity class="loginButtonDark" :on-press="verifyLogin">
+      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonDark" :on-press="verifyLogin">
         <text class="loginButtonTextDark">Login</text>
       </touchable-opacity>
-      <touchable-opacity class="loginButtonDark" :on-press="registerNewUser">
+      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonDark" :on-press="registerNewUser">
         <text class="loginButtonTextDark">Register</text>
       </touchable-opacity>
     </view>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButtonDark" :on-press="loginAsGuest">
+    <touchable-opacity :style="{borderRadius: 10}" v-if="!isLoading&&!waitingForSubmit" class="loginButtonDark" :on-press="loginAsGuest">
       <text class="loginButtonTextDark">Login as guest</text>
     </touchable-opacity>
     <view class="loginWithServices">
@@ -73,14 +73,14 @@
                 :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 7}"
                 class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>
     <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
-      <touchable-opacity class="loginButtonLight" :on-press="verifyLogin">
+      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonLight" :on-press="verifyLogin">
         <text class="loginButtonTextLight">Login</text>
       </touchable-opacity>
-      <touchable-opacity class="loginButtonLight" :on-press="registerNewUser">
+      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonLight" :on-press="registerNewUser">
         <text class="loginButtonTextLight">Register</text>
       </touchable-opacity>
     </view>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" class="loginButtonLight" :on-press="loginAsGuest">
+    <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 7}" v-if="!isLoading&&!waitingForSubmit" class="loginButtonLight" :on-press="loginAsGuest">
       <text class="loginButtonTextLight">Login as guest</text>
     </touchable-opacity>
     <view class="loginWithServices">

@@ -5,7 +5,7 @@
     <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 placeholder="Search Junimea" v-model="searchText" class="textInputDark"
                 keyboardAppearance="dark" :onKeyPress="search" :multiline="true"></text-input>
-    <touchable-opacity :on-press="cancelSearch">
+    <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
       <text class="buttonTextDark">Cancel</text>
     </touchable-opacity>
   </view>
@@ -23,7 +23,7 @@
     <text-input :autoCorrect="false" placeholderTextColor="black" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 placeholder="Search Junimea" v-model="searchText" class="textInputLight"
                 keyboardAppearance="light" :onKeyPress="search" :multiline="true"></text-input>
-    <touchable-opacity :on-press="cancelSearch">
+    <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
       <text class="buttonTextLight">Cancel</text>
     </touchable-opacity>
   </view>
