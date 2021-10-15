@@ -4,6 +4,8 @@
     <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
     <text class="headerTextDark">user</text>
+    <Image :source="require('../assets/three-dots.png')"
+           :style="{width: 25, height:10, marginTop: 5}" class="reportComment" />
   </view>
   <text class="primaryTextDark">comment</text>
 </view>
@@ -12,6 +14,8 @@
     <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
     <text class="headerTextLight">user</text>
+    <Image :source="require('../assets/three-dots.png')"
+           :style="{width: 25, height:10, marginTop: 5}" class="reportComment" />
   </view>
   <text class="primaryTextLight">comment</text>
 </view>
@@ -35,6 +39,9 @@ export default {
 </script>
 
 <style>
+.reportComment{
+  margin-left: 75%;
+}
 .commentsDark{
   background-color: #151515;
 }
