@@ -2,7 +2,7 @@
 <template>
 <view class="searchDark" v-if="isDarkTheme">
   <view class="searchHeader">
-    <text-input :autoCorrect="false" placeholderTextColor="ghostwhite"
+    <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 placeholder="Search Junimea" v-model="searchText" class="textInputDark"
                 keyboardAppearance="dark" :onKeyPress="search" :multiline="true"></text-input>
     <touchable-opacity :on-press="cancelSearch">
@@ -20,7 +20,7 @@
 </view>
 <view class="searchLight" v-else>
   <view class="searchHeader">
-    <text-input :autoCorrect="false" placeholderTextColor="black"
+    <text-input :autoCorrect="false" placeholderTextColor="black" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 placeholder="Search Junimea" v-model="searchText" class="textInputLight"
                 keyboardAppearance="light" :onKeyPress="search" :multiline="true"></text-input>
     <touchable-opacity :on-press="cancelSearch">

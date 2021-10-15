@@ -182,7 +182,6 @@ export default {
     else{
       this.token = await AsyncStorage.getItem('user-token');
     }
-    alert(this.token);
     this.isLoading = true;
     await this.getInitialPosts('top');
     this.isLoading = false;

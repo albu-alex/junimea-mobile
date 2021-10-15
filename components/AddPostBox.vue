@@ -1,7 +1,7 @@
 <template>
   <view v-if="isDarkTheme" class="postBox">
     <text-input v-model="postText" class="addNewPostDark" placeholder="What are you thinking about?"
-                :multiline="true" keyboardAppearance="dark"/>
+                :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
     <view class="postButtons">
       <touchable-opacity :on-press="addPost" class="postButtonDark">
         <text class="postButtonTextDark">Create new post</text>
@@ -13,7 +13,7 @@
     </view>
   </view>
   <view v-else class="postBox">
-    <text-input v-model="postText" class="addNewPostLight" placeholder="What are you thinking about?"
+    <text-input v-model="postText" class="addNewPostLight" placeholder="What are you thinking about?" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
     <view class="postButtons">
       <touchable-opacity :on-press="addPost" class="postButtonLight">
