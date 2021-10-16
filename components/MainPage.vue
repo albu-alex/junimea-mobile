@@ -358,6 +358,8 @@ export default {
 .tags{
   height: 100%;
   width: 27%;
+  position: relative;
+  z-index: 3;
 }
 .mainPageDark{
   background-color: #252525;
