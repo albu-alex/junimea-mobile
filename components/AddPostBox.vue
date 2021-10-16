@@ -200,7 +200,7 @@ export default {
 }
 .addNewPostLight{
   align-self: center;
-  background-color: #212121;
+  background-color: #555555;
   color: #969696;
   width: 90%;
   height: 50px;

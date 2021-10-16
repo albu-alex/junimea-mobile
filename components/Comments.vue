@@ -44,9 +44,13 @@ export default {
 }
 .commentsDark{
   background-color: #151515;
+  border-width: 1px;
+  border-color: #252525;
 }
 .commentsLight{
   background-color: #EAEAEA;
+  border-width: 1px;
+  border-color: #DADADA;
 }
 .headerTextDark{
   color: #AAAAAA;
