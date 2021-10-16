@@ -232,15 +232,11 @@ export default {
       let newLikes;
       let value;
       let showLogin = false;
-      if(!this.disliked)
-        value = -1;
-      else
-        value = 1;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/Post/Like`,
         data:{
-          "Value": value,
+          "Value": -1,
           "Id": this.id
         },
         timeout: 4000
@@ -281,15 +277,11 @@ export default {
       let newLikes;
       let value;
       let showLogin = false;
-      if(!this.liked)
-        value = 1;
-      else
-        value = -1;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/Post/Like`,
         data:{
-          "Value": value,
+          "Value": 1,
           "Id": this.id
         },
         timeout: 4000
