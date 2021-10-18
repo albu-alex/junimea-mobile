@@ -30,7 +30,7 @@
       <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
-                   v-if="post.userID === userID" :isDarkTheme="isDarkTheme"></UserPost>
+                   v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
@@ -67,7 +67,7 @@
     <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
       <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
-                v-if="post.userID === userID" :isDarkTheme="isDarkTheme"></UserPost>
+                v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
     </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />

@@ -10,7 +10,7 @@
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
-    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userId="userID"
+    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                  @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
@@ -52,7 +52,7 @@
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed"/>
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
-    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userId="userID"
+    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                   @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
@@ -191,6 +191,7 @@ export default {
   },
   async mounted(){
     this.animateView();
+    alert("hey")
   },
   components:{
     Search,
