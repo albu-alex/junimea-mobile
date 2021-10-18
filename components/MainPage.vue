@@ -136,30 +136,27 @@ export default {
   },
   async created(){
     this.viewOpacity = new Animated.Value(0)
-    if(this.newUsername === "")
-      return;
-    let postNumber = 10;
-    let found = false;
     let profilePicture;
-    let username = this.newUsername
-    while(!found){
-      await axios({
-        method: 'get',
-        url: `http://52.57.118.176/Post/List/${postNumber}`,
-        timeout: 4000
-      })
-      .then(function (response){
-        let posts = response.data
-        for(let i=0;i<posts.length;i++){
-          if(posts[i].userName === username){
-            profilePicture = posts[i].profilePicUrl;
-            found = true;
-          }
-        }
-      });
-      postNumber += 10;
+    let username;
+    await axios({
+      method: 'get',
+      url: `http://52.57.118.176/User/Self`,
+      timeout: 4000
+    })
+    .then(function (response){
+      if(response.status === 200){
+        profilePicture = response.data.profilePicUrl
+        username = response.data.email
+      }
+    })
+    .catch(function(){
+      profilePicture = "";
+      username = "";
+    });
+    if(profilePicture !== "") {
+      this.newUsername = username;
+      this.profilePicture = profilePicture;
     }
-    this.profilePicture = profilePicture;
   },
   beforeUpdate(){
     if (!this.isDarkTheme && Platform.OS === 'ios') {
