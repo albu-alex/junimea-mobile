@@ -191,7 +191,6 @@ export default {
   },
   async mounted(){
     this.animateView();
-    alert("hey")
   },
   components:{
     Search,
@@ -255,6 +254,7 @@ export default {
         }
       });
       if(posts) {
+        this.animateView();
         if(this.postNumber === 10)
           this.posts = posts;
         else {
@@ -281,7 +281,7 @@ export default {
     },
     refreshList(event){
       if(!this.refreshAllowed){
-        if(performance.now() - this.startTime <= 5000)
+        if(performance.now() - this.startTime <= 2500)
           return;
         this.refreshAllowed = true;
       }
