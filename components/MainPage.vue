@@ -10,7 +10,7 @@
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" />
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
-    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername"
+    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userId="userID"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                  @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
@@ -52,7 +52,7 @@
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed"/>
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
-    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername"
+    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userId="userID"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
                   @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
@@ -131,13 +131,16 @@ export default {
       viewOpacity: 0,
       //This variable determines if the refresh should be allowed to be made or not
       refreshAllowed: true,
-      startTime: 0
+      startTime: 0,
+      //This variable holds the unique ID of the user logged in
+      userID: ""
     }
   },
   async created(){
     this.viewOpacity = new Animated.Value(0)
     let profilePicture;
     let username;
+    let userID;
     await axios({
       method: 'get',
       url: `http://52.57.118.176/User/Self`,
@@ -147,15 +150,18 @@ export default {
       if(response.status === 200){
         profilePicture = response.data.profilePicUrl
         username = response.data.email
+        userID = response.data.id
       }
     })
     .catch(function(){
       profilePicture = "";
       username = "";
+      userID = "";
     });
     if(profilePicture !== "") {
       this.newUsername = username;
       this.profilePicture = profilePicture;
+      this.userID = userID;
     }
   },
   beforeUpdate(){
