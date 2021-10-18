@@ -62,6 +62,7 @@ export default {
   name: "Comments",
   props:{
     isDarkTheme: Boolean,
+    id: Number,
   },
   data(){
     return{
@@ -89,10 +90,11 @@ export default {
       let comment;
       await axios({
         method: 'post',
-        url: `http://52.57.118.176/Post/Like`,
+        url: `http://52.57.118.176/Comment/Add`,
         data:{
-          "Value": 1,
-          "Id": this.id
+          "Title": this.commentText,
+          "PostId": this.id,
+          "Files": []
         },
         timeout: 4000
       })
@@ -102,8 +104,13 @@ export default {
         }
       })
       .catch(function(){
-        alert("Error")
+        alert("You are not logged in")
       });
+      alert(comment)
+      if(comment){
+        this.comment = comment;
+      }
+      this.commentText = "";
     }
   }
 }

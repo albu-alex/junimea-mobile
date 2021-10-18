@@ -53,7 +53,7 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
+      <Comments @goBack="showComments = false" :isDarkTheme="isDarkTheme" :id="id" />
     </view>
   </view>
   <view v-else class="postLight">
