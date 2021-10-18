@@ -18,8 +18,13 @@
       <text class="secondaryTextDark">Reply</text>
     </touchable-opacity>
   </view>
-  <text-input v-model="commentText" class="addNewCommentDark" placeholder="Reply..." placeholderTextColor="dimgrey"
-              :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
+  <view class="commentFooter">
+    <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
+                :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
+    <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
+      <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
+    </touchable-opacity>
+  </view>
 </view>
 <view class="commentsLight" v-else>
   <view class="commentHeader">
@@ -31,7 +36,7 @@
              :style="{width: 20, height:10, marginTop: 5}" class="reportComment" />
     </touchable-opacity>
   </view>
-  <text :style="{marginLeft: 5}" class="primaryTextLight">comment</text>
+  <text :style="{marginLeft: 5}" class="primaryTextLight">{{comment}}</text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
       <text class="secondaryTextLight">Like</text>
@@ -40,12 +45,19 @@
       <text class="secondaryTextLight">Reply</text>
     </touchable-opacity>
   </view>
-  <text-input v-model="commentText" class="addNewCommentLight" placeholder="Reply..."
+  <view class="commentFooter">
+  <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..."
               :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft: 5}" />
+    <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
+      <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
+    </touchable-opacity>
+  </view>
 </view>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Comments",
   props:{
@@ -53,7 +65,8 @@ export default {
   },
   data(){
     return{
-      commentText: ""
+      commentText: "",
+      comment: "",
     }
   },
   async beforeMount(){
@@ -71,12 +84,35 @@ export default {
     },
     replyToComment(){
       alert("Reply not available yet")
+    },
+    async postComment(){
+      let comment;
+      await axios({
+        method: 'post',
+        url: `http://52.57.118.176/Post/Like`,
+        data:{
+          "Value": 1,
+          "Id": this.id
+        },
+        timeout: 4000
+      })
+      .then(function (response){
+        if(response.status === 200){
+          comment = response.data.text
+        }
+      })
+      .catch(function(){
+        alert("Error")
+      });
     }
   }
 }
 </script>
 
 <style>
+.commentFooter{
+  flex-direction: row;
+}
 .commentInteraction{
   flex-direction: row;
   justify-content: flex-start;

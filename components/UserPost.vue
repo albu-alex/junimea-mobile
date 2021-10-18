@@ -230,7 +230,6 @@ export default {
     },
     async dislikePost(){
       let newLikes;
-      let value;
       let showLogin = false;
       await axios({
         method: 'post',
@@ -275,7 +274,6 @@ export default {
     },
     async likePost(){
       let newLikes;
-      let value;
       let showLogin = false;
       await axios({
         method: 'post',
