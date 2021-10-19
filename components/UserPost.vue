@@ -53,7 +53,7 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" :id="id" />
+      <Comments :comments="comments" @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" :id="id" />
     </view>
   </view>
   <view v-else class="postLight">
@@ -109,7 +109,7 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
+      <Comments :comments="comments" @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
     </view>
   </view>
 </template>
@@ -152,7 +152,8 @@ export default {
     profilePic: String,
     likes: Number,
     liked: Boolean,
-    isDarkTheme: Boolean
+    isDarkTheme: Boolean,
+    comments: Array
   },
   beforeMount(){
     this.disliked = this.liked;

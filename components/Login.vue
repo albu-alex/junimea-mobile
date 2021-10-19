@@ -222,14 +222,6 @@ export default {
           );
         }
       });
-      // await AsyncStorage.setItem(
-      //     'user-token',
-      //     userToken
-      // );
-      // userToken = await AsyncStorage.getItem('TASKS');
-      // if(userToken !== null){
-      //   alert(userToken);
-      // }
       this.showPassword = shownPassword;
       if(loggedIn) {
         this.$emit('verifyLogin', {username: this.username, token: userToken});

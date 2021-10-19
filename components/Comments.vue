@@ -1,15 +1,15 @@
 <template>
 <view class="commentsDark" v-if="isDarkTheme">
-  <view class="commentHeader">
-    <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+  <view class="commentHeader" v-for="comment in comments">
+    <Image :source="{uri: comment.user.profilePicUrl}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
-    <text class="headerTextDark">user</text>
+    <text class="headerTextDark">{{comment.user.firstName}}</text>
     <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
              :style="{width: 20, height:10, marginTop: 5}" />
     </touchable-opacity>
   </view>
-  <text :style="{marginLeft: 5}" class="primaryTextDark">comment</text>
+  <text :style="{marginLeft: 5}" class="primaryTextDark">{{comment.text}}</text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
       <text class="secondaryTextDark">Like</text>
@@ -62,6 +62,7 @@ import {Alert} from "react-native";
 export default {
   name: "Comments",
   props:{
+    comments: Array,
     isDarkTheme: Boolean,
     id: Number,
   },
@@ -94,7 +95,7 @@ export default {
         method: 'post',
         url: `http://52.57.118.176/Comment/Add`,
         data:{
-          "Title": this.commentText,
+          "Text": this.commentText,
           "PostId": this.id,
           "Files": []
         },
@@ -108,7 +109,6 @@ export default {
       .catch(function(){
         showLogin = true;
       });
-      // alert(comment)
       if(!showLogin) {
         this.comment = comment;
         this.commentText = "";
