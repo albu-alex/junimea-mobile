@@ -18,8 +18,8 @@
       <text class="secondaryTextDark">Reply</text>
     </touchable-opacity>
   </view>
-  <view class="commentFooter">
-    <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
+  <view v-if="showReplyBox" class="commentFooter">
+    <text-input v-model="commentText" class="addNewCommentDark" placeholder="Reply..." placeholderTextColor="dimgrey"
                 :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
       <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
@@ -45,8 +45,8 @@
       <text class="secondaryTextLight">Reply</text>
     </touchable-opacity>
   </view>
-  <view class="commentFooter">
-  <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..."
+  <view v-if="showReplyBox" class="commentFooter">
+  <text-input v-model="commentText" class="addNewCommentLight" placeholder="Reply..."
               :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft: 5}" />
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
       <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
@@ -72,15 +72,10 @@ export default {
   data(){
     return{
       commentText: "",
+      showReplyBox: false
     }
   },
-  async beforeMount(){
-    await this.loadComments();
-  },
   methods:{
-    async loadComments(){
-      //This post will load the comments of the post when API will be deployed
-    },
     report(){
       alert("Not yet available");
     },
@@ -88,7 +83,13 @@ export default {
       alert("Like not available yet")
     },
     replyToComment(){
-      alert("Reply not available yet")
+      if(!this.showReplyBox){
+        this.showReplyBox = true;
+        return;
+      }
+      alert(this.commentText)
+      this.commentText = "";
+      this.showReplyBox = false;
     },
     async postComment(){
       let showLogin = false;
