@@ -4,7 +4,8 @@
   <animated:view v-if="isDarkTheme" class="settingsDark" :style="{opacity: viewOpacity}">
     <text class="textPrimaryDark" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryDark" v-else>Hey, guest!</text>
-    <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm" />
+    <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm"
+      @redirectToLogin="logout"/>
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondaryDark">Logout</text>
@@ -20,7 +21,8 @@
   <animated:view v-else class="settingsLight" :style="{opacity: viewOpacity}">
     <text class="textPrimaryLight" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
     <text class="textPrimaryLight" v-else>Hey, guest!</text>
-    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm" />
+    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm"
+       @redirectToLogin="logout"/>
     <view class="settingsTab">
       <touchable-opacity :on-press="logout">
         <text class="textSecondaryLight">Logout</text>

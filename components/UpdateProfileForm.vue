@@ -50,20 +50,21 @@ export default {
   props:{
     isDarkTheme: Boolean,
   },
-  methods:{
-    async updateProfile(){
+  methods: {
+    async updateProfile() {
+      let showLogin = false;
       await axios({
         method: 'post',
         url: `http://52.57.118.176/User/Update`,
-        data:{
-          "FirstName" : this.firstName,
-          "LastName" : this.lastName,
-          "Email" : this.emailAddress
+        data: {
+          "FirstName": this.firstName,
+          "LastName": this.lastName,
+          "Email": this.emailAddress
         },
         timeout: 4000
       })
-      .then(function (response){
-        if(response.status === 200){
+      .then(function (response) {
+        if (response.status === 200) {
           Alert.alert("Success", "Profile updated",
               [
                 {
@@ -77,24 +78,33 @@ export default {
           );
         }
       })
-      .catch(function (error){
-        if(error.response){
-          Alert.alert("Error", String(Object.values(error.response.data.errors)[0]),
-              [
-                {
-                  text: "Try again",
-                  style: "cancel",
-                }
-              ],
-              {
-                cancelable: true,
-              }
-          );
-        }
+      .catch(function () {
+        showLogin = true;
       });
-      this.firstName = '';
-      this.lastName = '';
-      this.emailAddress = '';
+      if(!showLogin){
+        this.firstName = '';
+        this.lastName = '';
+        this.emailAddress = '';
+        return;
+      }
+      Alert.alert("Error", "You are not logged in",
+          [
+            {
+              text: "Login",
+              style: "cancel",
+              onPress: () => this.$emit("redirectToLogin")
+            },
+            {
+              text: "Continue as guest",
+              style: "destructive",
+              onPress: () => alert(":(")
+            }
+          ],
+          {
+            cancelable: true,
+            onDismiss: () => alert(":(")
+          }
+      );
     }
   }
 }
