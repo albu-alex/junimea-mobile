@@ -53,7 +53,7 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments @goBack="showComments = false" :isDarkTheme="isDarkTheme" :id="id" />
+      <Comments @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" :id="id" />
     </view>
   </view>
   <view v-else class="postLight">
@@ -109,13 +109,12 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
+      <Comments @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
     </view>
   </view>
 </template>
 
 
-<!--TODO: To be moved into separate folder-->
 <script>
 import {Dimensions, Alert} from "react-native";
 const win = Dimensions.get('window');
@@ -165,6 +164,9 @@ export default {
     },
     sharePost(){
       alert("Not a way to implement this yet!")
+    },
+    redirectToLogin(){
+      this.$emit("redirectToLogin");
     },
     async doubleTapToLike(){
       if(this.taps === 0){

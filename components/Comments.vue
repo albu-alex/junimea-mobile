@@ -4,9 +4,9 @@
     <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
     <text class="headerTextDark">user</text>
-    <touchable-opacity :on-press="report">
+    <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
-             :style="{width: 20, height:10, marginTop: 5}" class="reportComment" />
+             :style="{width: 20, height:10, marginTop: 5}" />
     </touchable-opacity>
   </view>
   <text :style="{marginLeft: 5}" class="primaryTextDark">comment</text>
@@ -31,9 +31,9 @@
     <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
     <text class="headerTextLight">user</text>
-    <touchable-opacity :on-press="report">
+    <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
-             :style="{width: 20, height:10, marginTop: 5}" class="reportComment" />
+             :style="{width: 20, height:10, marginTop: 5}" />
     </touchable-opacity>
   </view>
   <text :style="{marginLeft: 5}" class="primaryTextLight">{{comment}}</text>
@@ -57,6 +57,7 @@
 
 <script>
 import axios from "axios";
+import {Alert} from "react-native";
 
 export default {
   name: "Comments",
@@ -87,6 +88,7 @@ export default {
       alert("Reply not available yet")
     },
     async postComment(){
+      let showLogin = false;
       let comment;
       await axios({
         method: 'post',
@@ -104,13 +106,32 @@ export default {
         }
       })
       .catch(function(){
-        alert("You are not logged in")
+        showLogin = true;
       });
-      alert(comment)
-      if(comment){
+      // alert(comment)
+      if(!showLogin) {
         this.comment = comment;
+        this.commentText = "";
+        return;
       }
-      this.commentText = "";
+      Alert.alert("Error", "You are not logged in",
+          [
+            {
+              text: "Login",
+              style: "cancel",
+              onPress: () => this.$emit("redirectToLogin")
+            },
+            {
+              text: "Continue as guest",
+              style: "destructive",
+              onPress: () => alert(":(")
+            }
+          ],
+          {
+            cancelable: true,
+            onDismiss: () => alert(":(")
+          }
+      );
     }
   }
 }
