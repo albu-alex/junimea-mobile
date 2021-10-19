@@ -167,7 +167,7 @@ export default {
   font-size: 14px;
 }
 .reportComment{
-  margin-left: 85%;
+  margin-left: 75%;
 }
 .commentsDark{
   background-color: #151515;

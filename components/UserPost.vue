@@ -1,6 +1,6 @@
 <!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
-  <view v-if="isDarkTheme" class="postDark">
+  <view v-if="isDarkTheme&&showPost" class="postDark">
     <touchable-opacity :on-press="redirectToUser">
       <view class="postHeader">
   <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
@@ -58,7 +58,7 @@
                   :firstName="comment.user.firstName"/>
     </view>
   </view>
-  <view v-else class="postLight">
+  <view v-else-if="!isDarkTheme&&showPost" class="postLight">
     <touchable-opacity :on-press="redirectToUser">
       <view class="postHeader">
         <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
@@ -145,6 +145,8 @@ export default {
       //This variable holds the responsibility of displaying the comments component
       showComments: false,
       comments: [],
+      //This variable is used for the hide post functionality
+      showPost: true
     }
   },
   name: "UserPost",
@@ -241,9 +243,41 @@ export default {
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
     },
+    hidePost(){
+      this.username = "";
+      this.profilePic = "";
+      this.files = [];
+      this.userPostText = "";
+    },
     //This function is supposed to let you report bugs and visibility options
     reportBug(){
-      alert("Not yet!")
+      Alert.alert("", "",
+          [
+            {
+              text: "Report post",
+              style: "cancel",
+              onPress: () => alert("report post")
+            },
+            {
+              text: "Report bug",
+              style: "cancel",
+              onPress: () => alert("report bug")
+            },
+            {
+              text: "Hide post",
+              style: "cancel",
+              onPress: this.hidePost
+            },
+            {
+              text: "Save post",
+              style: "cancel",
+              onPress: () => alert("save post")
+            }
+          ],
+          {
+            cancelable: true,
+          }
+      );
     },
     async dislikePost(){
       let newLikes;
