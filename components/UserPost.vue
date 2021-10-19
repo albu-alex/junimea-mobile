@@ -53,7 +53,9 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments :comments="comments" @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" :id="id" />
+        <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
+                  :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
+                  :firstName="comment.user.firstName"/>
     </view>
   </view>
   <view v-else class="postLight">
@@ -109,7 +111,9 @@
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
-      <Comments :comments="comments" @redirectToLogin="redirectToLogin" @goBack="showComments = false" :isDarkTheme="isDarkTheme" />
+      <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
+                :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
+                :firstName="comment.user.firstName" />
     </view>
   </view>
 </template>
@@ -140,6 +144,7 @@ export default {
       taps: 0,
       //This variable holds the responsibility of displaying the comments component
       showComments: false,
+      comments: [],
     }
   },
   name: "UserPost",
@@ -153,9 +158,18 @@ export default {
     likes: Number,
     liked: Boolean,
     isDarkTheme: Boolean,
-    comments: Array
   },
-  beforeMount(){
+  async beforeMount(){
+    let comments;
+    await axios({
+      method: 'get',
+      url: `http://52.57.118.176/Post/Get/${this.id}`,
+      timeout: 4000
+    })
+    .then(function (response){
+      comments = response.data.comments
+    });
+    this.comments = comments
     this.disliked = this.liked;
     this.taps = 0;
   },

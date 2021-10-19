@@ -35,7 +35,7 @@
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
-                  :dimensions="(post.dimensions) ? post.dimensions : []" :comments="post.comments"
+                  :dimensions="(post.dimensions) ? post.dimensions : []"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic"
                   :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
@@ -77,7 +77,7 @@
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
-                  :dimensions="(post.dimensions) ? post.dimensions : []" :comments="post.comments"
+                  :dimensions="(post.dimensions) ? post.dimensions : []"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic"
                   :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">

@@ -1,15 +1,15 @@
 <template>
 <view class="commentsDark" v-if="isDarkTheme">
-  <view class="commentHeader" v-for="comment in comments">
-    <Image :source="{uri: comment.user.profilePicUrl}"
-           :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
-    <text class="headerTextDark">{{comment.user.firstName}}</text>
+  <view class="commentHeader">
+    <Image :source="{uri: profilePicture}"
+           :style="{width: 20, height:20, borderRadius: 50, marginRight: 5, marginLeft: 5, marginTop: 2}" />
+    <text class="headerTextDark">{{firstName}}</text>
     <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
              :style="{width: 20, height:10, marginTop: 5}" />
     </touchable-opacity>
   </view>
-  <text :style="{marginLeft: 5}" class="primaryTextDark">{{comment.text}}</text>
+  <text :style="{marginLeft: 5}" class="primaryTextDark">{{comment}}</text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
       <text class="secondaryTextDark">Like</text>
@@ -28,9 +28,9 @@
 </view>
 <view class="commentsLight" v-else>
   <view class="commentHeader">
-    <Image :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
-           :style="{width: 20, height:20, borderRadius: 50, marginRight: 5}" />
-    <text class="headerTextLight">user</text>
+    <Image :source="{uri: profilePicture}"
+           :style="{width: 20, height:20, borderRadius: 50, marginRight: 5, marginLeft: 5, marginTop: 2}" />
+    <text class="headerTextLight">{{firstName}}</text>
     <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
              :style="{width: 20, height:10, marginTop: 5}" />
@@ -62,14 +62,16 @@ import {Alert} from "react-native";
 export default {
   name: "Comments",
   props:{
-    comments: Array,
     isDarkTheme: Boolean,
     id: Number,
+    comment: String,
+    profilePicture: String,
+    files: Array,
+    firstName: String
   },
   data(){
     return{
       commentText: "",
-      comment: "",
     }
   },
   async beforeMount(){
@@ -110,7 +112,6 @@ export default {
         showLogin = true;
       });
       if(!showLogin) {
-        this.comment = comment;
         this.commentText = "";
         return;
       }
@@ -195,6 +196,11 @@ export default {
 }
 .secondaryTextDark{
   color: #AAAAAA;
+  font-size: 12px;
+  font-weight: 600;
+}
+.secondaryTextLight{
+  color: #555555;
   font-size: 12px;
   font-weight: 600;
 }
