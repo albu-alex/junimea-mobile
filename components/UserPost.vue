@@ -56,6 +56,13 @@
         <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                   :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                   :firstName="comment.user.firstName"/>
+      <view class="addNewComment">
+      <text-input class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+        <touchable-opacity class="addNewCommentButton">
+          <text class="buttonTextDark">Send</text>
+        </touchable-opacity>
+      </view>
     </view>
   </view>
   <view v-else-if="!isDarkTheme&&showPost" class="postLight">
@@ -110,10 +117,17 @@
                :source="require('../assets/share-button.png')" />
       </touchable-opacity>
     </view>
-    <view v-if="showComments" class="postDark">
+    <view v-if="showComments" class="postLight">
       <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                 :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                 :firstName="comment.user.firstName" />
+      <view class="addNewComment">
+        <text-input class="addNewCommentLight" placeholder="Comment..." :multiline="true"
+                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+        <touchable-opacity class="addNewCommentButton">
+          <text class="buttonTextLight">Send</text>
+        </touchable-opacity>
+      </view>
     </view>
   </view>
 </template>
@@ -373,6 +387,43 @@ export default {
 
 
 <style>
+.buttonTextLight{
+  color: #555555;
+  font-size: 12px;
+  font-weight: 600;
+}
+.buttonTextDark{
+  color: #AAAAAA;
+  font-size: 12px;
+  font-weight: 600;
+}
+.addNewComment{
+  flex-direction: row;
+}
+.addNewCommentButton{
+  margin-top: 3%;
+  margin-left: 5%;
+}
+.addNewCommentDark{
+  align-self: flex-start;
+  background-color: #252525;
+  color: dimgrey;
+  width: 80%;
+  height: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 2%;
+}
+.addNewCommentLight{
+  align-self: flex-start;
+  background-color: #DADADA;
+  color: #969696;
+  width: 80%;
+  height: 25px;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 2%;
+}
 .postContentHeader{
   flex-direction: row;
   justify-content: space-between;
