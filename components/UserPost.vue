@@ -57,9 +57,9 @@
                   :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                   :firstName="comment.user.firstName"/>
       <view class="addNewComment">
-      <text-input class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
+      <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
-        <touchable-opacity class="addNewCommentButton">
+        <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
           <text class="buttonTextDark">Send</text>
         </touchable-opacity>
       </view>
@@ -122,9 +122,9 @@
                 :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                 :firstName="comment.user.firstName" />
       <view class="addNewComment">
-        <text-input class="addNewCommentLight" placeholder="Comment..." :multiline="true"
+        <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
                     keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
-        <touchable-opacity class="addNewCommentButton">
+        <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
           <text class="buttonTextLight">Send</text>
         </touchable-opacity>
       </view>
@@ -160,7 +160,9 @@ export default {
       showComments: false,
       comments: [],
       //This variable is used for the hide post functionality
-      showPost: true
+      showPost: true,
+      //This variable will be the model for the comment text
+      commentText: "",
     }
   },
   name: "UserPost",
@@ -190,6 +192,50 @@ export default {
     this.taps = 0;
   },
   methods:{
+    async createNewComment(){
+      let showLogin = false;
+      let comment;
+      await axios({
+        method: 'post',
+        url: `http://52.57.118.176/Comment/Add`,
+        data:{
+          "Text": this.commentText,
+          "PostId": this.id,
+          "Files": []
+        },
+        timeout: 4000
+      })
+      .then(function (response){
+        if(response.status === 200){
+          comment = response.data
+        }
+      })
+      .catch(function(){
+        showLogin = true;
+      });
+      if(!showLogin) {
+        this.comments.push(comment)
+        return;
+      }
+      Alert.alert("Error", "You are not logged in",
+          [
+            {
+              text: "Login",
+              style: "cancel",
+              onPress: () => this.$emit("redirectToLogin")
+            },
+            {
+              text: "Continue as guest",
+              style: "destructive",
+              onPress: () => alert(":(")
+            }
+          ],
+          {
+            cancelable: true,
+            onDismiss: () => alert(":(")
+          }
+      );
+    },
     postComment(){
       this.showComments = !this.showComments
     },
