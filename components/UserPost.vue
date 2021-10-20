@@ -134,7 +134,7 @@
 
 
 <script>
-import {Dimensions, Alert} from "react-native";
+import {Dimensions, Alert, AsyncStorage} from "react-native";
 const win = Dimensions.get('window');
 import axios from 'axios';
 import Comments from "./Comments";
@@ -303,6 +303,12 @@ export default {
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
     },
+    async savePost(){
+      await AsyncStorage.setItem(
+          'saved-posts',
+          this.id.toString()
+      );
+    },
     hidePost(){
       this.username = "";
       this.profilePic = "";
@@ -331,7 +337,7 @@ export default {
             {
               text: "Save post",
               style: "cancel",
-              onPress: () => alert("save post")
+              onPress: this.savePost
             }
           ],
           {
