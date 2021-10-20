@@ -58,7 +58,6 @@
 <script>
 import axios from "axios";
 import {Alert} from "react-native";
-
 export default {
   name: "Comments",
   props:{
@@ -108,48 +107,48 @@ export default {
       this.showReplyBox = false;
     },
     async postComment(){
-      let showLogin = false;
-      let comment;
-      await axios({
-        method: 'post',
-        url: `http://52.57.118.176/Comment/Add`,
-        data:{
-          "Text": this.commentText,
-          "PostId": this.id,
-          "Files": []
-        },
-        timeout: 4000
-      })
-      .then(function (response){
-        if(response.status === 200){
-          comment = response.data.text
-        }
-      })
-      .catch(function(){
-        showLogin = true;
-      });
-      if(!showLogin) {
-        this.commentText = "";
-        return;
-      }
-      Alert.alert("Error", "You are not logged in",
-          [
-            {
-              text: "Login",
-              style: "cancel",
-              onPress: () => this.$emit("redirectToLogin")
-            },
-            {
-              text: "Continue as guest",
-              style: "destructive",
-              onPress: () => alert(":(")
-            }
-          ],
-          {
-            cancelable: true,
-            onDismiss: () => alert(":(")
-          }
-      );
+      // let showLogin = false;
+      // let comment;
+      // await axios({
+      //   method: 'post',
+      //   url: `http://52.57.118.176/Comment/Add`,
+      //   data:{
+      //     "Text": this.commentText,
+      //     "PostId": this.id,
+      //     "Files": []
+      //   },
+      //   timeout: 4000
+      // })
+      // .then(function (response){
+      //   if(response.status === 200){
+      //     comment = response.data.text
+      //   }
+      // })
+      // .catch(function(){
+      //   showLogin = true;
+      // });
+      // if(!showLogin) {
+      //   this.commentText = "";
+      //   return;
+      // }
+      // Alert.alert("Error", "You are not logged in",
+      //     [
+      //       {
+      //         text: "Login",
+      //         style: "cancel",
+      //         onPress: () => this.$emit("redirectToLogin")
+      //       },
+      //       {
+      //         text: "Continue as guest",
+      //         style: "destructive",
+      //         onPress: () => alert(":(")
+      //       }
+      //     ],
+      //     {
+      //       cancelable: true,
+      //       onDismiss: () => alert(":(")
+      //     }
+      // );
     }
   }
 }
@@ -172,6 +171,7 @@ export default {
   height: 25px;
   font-weight: 500;
   font-size: 14px;
+  margin-bottom: 4%;
 }
 .addNewCommentDark{
   align-self: flex-start;
@@ -181,6 +181,7 @@ export default {
   height: 25px;
   font-weight: 500;
   font-size: 14px;
+  margin-bottom: 4%;
 }
 .reportComment{
   margin-left: 75%;
