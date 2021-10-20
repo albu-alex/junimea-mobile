@@ -116,7 +116,23 @@ export default {
       return new Promise(resolve => setTimeout(resolve, ms));
     },
     reportUser(){
-      alert("Wait")
+      Alert.alert("", "",
+          [
+            {
+              text: "Report user",
+              style: "cancel",
+              onPress: () => alert("report post")
+            },
+            {
+              text: "Report user bug",
+              style: "cancel",
+              onPress: () => alert("report user bug")
+            }
+          ],
+          {
+            cancelable: true,
+          }
+      );
     },
     //This function is used in order to upload the photo which the user has selected for profile picture
     async uploadFile(){

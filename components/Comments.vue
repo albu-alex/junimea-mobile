@@ -77,7 +77,23 @@ export default {
   },
   methods:{
     report(){
-      alert("Not yet available");
+      Alert.alert("", "",
+          [
+            {
+              text: "Report comment",
+              style: "cancel",
+              onPress: () => alert("report post")
+            },
+            {
+              text: "Report comment bug",
+              style: "cancel",
+              onPress: () => alert("report user bug")
+            }
+          ],
+          {
+            cancelable: true,
+          }
+      );
     },
     likeComment(){
       alert("Like not available yet")
