@@ -27,10 +27,15 @@
       </touchable-opacity>
     </view>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-      <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
+      <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
                    v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
+      </scroll-view>
+      <scroll-view v-else-if="!isLoading&&areSavedPosts">
+        <UserPost v-for="post in savedPosts" :key="post.id" :userPostText="post.title" :id="post.id"
+                  :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
+                  :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
@@ -64,10 +69,15 @@
       </touchable-opacity>
     </view>
     <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-    <scroll-view v-if="!isLoading" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
+    <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
       <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
                 v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
+    </scroll-view>
+    <scroll-view v-else-if="!isLoading&&areSavedPosts">
+      <UserPost v-for="post in savedPosts" :key="post.id" :userPostText="post.title" :id="post.id"
+                :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
+                :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
     </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
@@ -80,13 +90,15 @@ import UserPost from "./UserPost";
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
-import {Alert, Animated, Easing} from "react-native";
+import {Alert, Animated, AsyncStorage, Easing} from "react-native";
 export default {
   data(){
     return{
       isLoading: false,
       profilePictureURL: "",
       viewOpacity: 0,
+      areSavedPosts: false,
+      savedPosts: []
     }
   },
   created(){
@@ -94,6 +106,40 @@ export default {
   },
   mounted(){
     this.animateView();
+  },
+  async beforeMount(){
+    let postId = await AsyncStorage.getItem(
+        'saved-posts',
+    );
+    postId = parseInt(postId)
+    let post;
+    await axios({
+      method: 'get',
+      url: `http://52.57.118.176/Post/Get/${postId}`,
+      timeout: 4000
+    })
+    .then(function (response){
+      if(response.status === 200){
+        post = response.data
+        post["dimensions"] = []
+        const numberOfPhotos = post.files.length;
+        for(let j=0;j<numberOfPhotos;j++) {
+          post["dimensions"].push(
+              {
+                uri: "",
+                width: 300,
+                height: 300
+              }
+          )
+        }
+      }
+    })
+    .catch(function(){
+      alert("Something went wrong")
+    });
+    if(this.savedPosts.length === 0){
+      this.savedPosts.push(post);
+    }
   },
   name: "UserProfile",
   props:{
@@ -109,7 +155,7 @@ export default {
   },
   methods: {
     viewSavedPosts(){
-      alert("Not available yet!")
+      this.areSavedPosts = !this.areSavedPosts
     },
     //This function sleeps the loading component, such that an actual loading is simulated
     sleep(ms){

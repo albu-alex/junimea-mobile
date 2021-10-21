@@ -108,7 +108,4 @@ export default {
 .searchIcon{
   margin-right: 8%;
 }
-.profilePicture{
-
-}
 </style>
