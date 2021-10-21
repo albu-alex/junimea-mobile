@@ -2,7 +2,8 @@
   <animated:view class="profile" v-if="username !== '' && isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
-        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
+<!--        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />-->
+        <Ionicons name="ios-arrow-back" :size=30 color="#505050" />
       </touchable-opacity>
       <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
         <Image :source="require('../assets/three-dots.png')"
@@ -44,7 +45,8 @@
   <animated:view class="profile" v-else-if="username !== '' && !isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
-        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />
+<!--        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />-->
+        <Ionicons name="ios-arrow-back" :size=30 color="#AFAFAF" />
       </touchable-opacity>
       <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
         <Image :source="require('../assets/three-dots.png')"
@@ -91,6 +93,7 @@ import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
 import {Alert, Animated, AsyncStorage, Easing} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 export default {
   data(){
     return{
@@ -151,7 +154,8 @@ export default {
     isDarkTheme: Boolean
   },
   components:{
-    UserPost
+    UserPost,
+    Ionicons
   },
   methods: {
     viewSavedPosts(){
