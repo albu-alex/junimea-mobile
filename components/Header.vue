@@ -5,15 +5,15 @@
       <touchable-opacity :on-press="showTags">
         <text class="headerTextDark">juni.</text>
       </touchable-opacity>
-      <touchable-opacity :on-press="displaySettings">
+      <touchable-opacity class="headerButton" :on-press="displaySettings">
         <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
-      <touchable-opacity :on-press="searchPosts">
+      <touchable-opacity class="headerButton" :on-press="searchPosts">
         <Image class="searchIcon" :source="require('../assets/search-icon.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
-      <touchable-opacity :on-press="goToProfile">
+      <touchable-opacity class="headerButton" :on-press="goToProfile">
         <Image v-if="profilePic === ''" class="profilePicture"
                :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
                :style="{width: 25, height:25, borderRadius: 50}" />
@@ -26,15 +26,15 @@
     <touchable-opacity :on-press="showTags">
       <text class="headerTextLight">juni.</text>
     </touchable-opacity>
-    <touchable-opacity :on-press="displaySettings">
+    <touchable-opacity class="headerButton" :on-press="displaySettings">
       <Image class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
              :style="{width: 25, height:25}" />
     </touchable-opacity>
-    <touchable-opacity :on-press="searchPosts">
+    <touchable-opacity class="headerButton" :on-press="searchPosts">
       <Image class="searchIcon" :source="require('../assets/search-icon.png')"
              :style="{width: 25, height:25}" />
     </touchable-opacity>
-    <touchable-opacity :on-press="goToProfile">
+    <touchable-opacity class="headerButton" :on-press="goToProfile">
       <Image v-if="profilePic === ''" class="profilePicture"
              :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
              :style="{width: 25, height:25, borderRadius: 50}" />
@@ -71,15 +71,18 @@ export default {
 </script>
 
 <style>
+.headerButton{
+  margin-top: 2%;
+}
 .headerDark{
-  height: 4%;
+  height: 5%;
   background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .headerLight{
-  height: 4%;
+  height: 5%;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -89,14 +92,14 @@ export default {
   font-size: 20px;
   font-weight: 700;
   color: ghostwhite;
-  margin-top: 2.5%;
+  margin-top: 15%;
   margin-left: 5%;
 }
 .headerTextLight{
   font-size: 20px;
   font-weight: 700;
   color: #070700;
-  margin-top: 2.5%;
+  margin-top: 15%;
   margin-left: 5%;
 }
 .junimeaLogo{
