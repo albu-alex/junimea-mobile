@@ -10,6 +10,15 @@
     </touchable-opacity>
   </view>
   <text :style="{marginLeft: 5}" class="primaryTextDark">{{comment}}</text>
+  <text v-for="(file,index) in files">
+    <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                 :showsVerticalScrollIndicator="false"
+                 :showsHorizontalScrollIndicator="false">
+      <Image :source="{uri: String(file)}"
+             :style="{width: pageWidth, marginBottom: 10,
+                      height: (pageWidth/300)*300}" />
+    </scroll-view>
+  </text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
       <text class="secondaryTextDark">Like</text>
@@ -37,6 +46,15 @@
     </touchable-opacity>
   </view>
   <text :style="{marginLeft: 5}" class="primaryTextLight">{{comment}}</text>
+  <text v-for="(file,index) in files">
+    <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                 :showsVerticalScrollIndicator="false"
+                 :showsHorizontalScrollIndicator="false">
+      <Image :source="{uri: String(file)}"
+             :style="{width: pageWidth, marginBottom: 10,
+                      height: (pageWidth/300)*300}" />
+    </scroll-view>
+  </text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
       <text class="secondaryTextLight">Like</text>
@@ -57,7 +75,8 @@
 
 <script>
 import axios from "axios";
-import {Alert} from "react-native";
+import {Alert, Dimensions} from "react-native";
+const win = Dimensions.get('window');
 export default {
   name: "Comments",
   props:{
@@ -71,7 +90,10 @@ export default {
   data(){
     return{
       commentText: "",
-      showReplyBox: false
+      showReplyBox: false,
+      //These variables are used to dynamically resize the photo on any device
+      pageWidth: win.width,
+      pageHeight: win.height,
     }
   },
   methods:{
