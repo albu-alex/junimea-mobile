@@ -31,25 +31,20 @@
     </view>
     <view class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <Image class="upButton"
-               :style="{width: 25, height:25}"
-               :source="require('../assets/up-button.png')" />
+        <AntDesign :style="{marginRight: 25}" name="like1" :size=24 color="#AAAAAA" />
       </touchable-opacity>
       <touchable-opacity :on-press="dislikePost">
-        <Image class="upButton"
-              :style="{width: 25, height:25, marginLeft: 20}"
-              :source="require('../assets/down-button.png')" />
+        <AntDesign name="dislike1" :size=24 color="#AAAAAA" />
       </touchable-opacity>
       <text class="likesTextDark">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
-        <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 5, marginRight:10, marginBottom: 5}"
-               :source="require('../assets/comment-icon.png')" />
+        <FontAwesome name="comment" :size=24 color="#AAAAAA" :style="{marginLeft: 5, marginRight:10, marginBottom: 5}" />
       </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
-        <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"
-               :source="require('../assets/share-button.png')" />
+<!--        <Image class="upButton"-->
+<!--               :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"-->
+<!--               :source="require('../assets/share-button.png')" />-->
+        <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#AAAAAA" />
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postDark">
@@ -96,25 +91,17 @@
     </view>
     <view class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <Image class="upButton"
-               :style="{width: 25, height:25}"
-               :source="require('../assets/up-button.png')" />
+        <AntDesign :style="{marginRight: 25}" name="like1" :size=24 color="#555555" />
       </touchable-opacity>
       <touchable-opacity :on-press="dislikePost">
-        <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 20}"
-               :source="require('../assets/down-button.png')" />
+        <AntDesign name="dislike1" :size=24 color="#555555" />
       </touchable-opacity>
       <text class="likesTextLight">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
-        <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 5, marginRight:10, marginBottom: 5}"
-               :source="require('../assets/comment-icon.png')" />
+        <FontAwesome name="comment" :size=24 color="#555555" :style="{marginLeft: 5, marginRight:10, marginBottom: 5}" />
       </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
-        <Image class="upButton"
-               :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"
-               :source="require('../assets/share-button.png')" />
+        <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#555555" />
       </touchable-opacity>
     </view>
     <view v-if="showComments" class="postLight">
@@ -135,12 +122,16 @@
 
 <script>
 import {Dimensions, Alert, AsyncStorage} from "react-native";
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 const win = Dimensions.get('window');
 import axios from 'axios';
 import Comments from "./Comments";
 export default {
   components: {
-    Comments
+    Comments,
+    AntDesign,
+    FontAwesome
   },
   data(){
     return {
@@ -479,9 +470,6 @@ export default {
 .postContentHeader{
   flex-direction: row;
   justify-content: space-between;
-}
-.upButton{
-  margin-top: 6%;
 }
 .postHeader{
   flex-direction: row;

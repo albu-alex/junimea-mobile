@@ -2,7 +2,6 @@
   <animated:view class="profile" v-if="username !== '' && isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
-<!--        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />-->
         <Ionicons name="ios-arrow-back" :size=30 color="#505050" />
       </touchable-opacity>
       <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
@@ -45,7 +44,6 @@
   <animated:view class="profile" v-else-if="username !== '' && !isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
-<!--        <Image :source="require('../assets/back-button.png')" :style="{width: 35, height: 35}" />-->
         <Ionicons name="ios-arrow-back" :size=30 color="#AFAFAF" />
       </touchable-opacity>
       <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
