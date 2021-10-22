@@ -51,6 +51,9 @@
       <view class="addNewComment">
       <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+        <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+          <Ionicons name="image" :size=18 color="#AAAAAA" />
+        </touchable-opacity>
         <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
           <text class="buttonTextDark">Send</text>
         </touchable-opacity>
@@ -108,6 +111,9 @@
       <view class="addNewComment">
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
                     keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+        <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+          <Ionicons name="image" :size=18 color="#AAAAAA" />
+        </touchable-opacity>
         <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
           <text class="buttonTextLight">Send</text>
         </touchable-opacity>
@@ -121,14 +127,18 @@
 import {Dimensions, Alert, AsyncStorage} from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 const win = Dimensions.get('window');
 import axios from 'axios';
 import Comments from "./Comments";
+import * as ImagePicker from "expo-image-picker";
+import FormData from "form-data";
 export default {
   components: {
     Comments,
     AntDesign,
-    FontAwesome
+    FontAwesome,
+    Ionicons
   },
   data(){
     return {
@@ -151,6 +161,8 @@ export default {
       showPost: true,
       //This variable will be the model for the comment text
       commentText: "",
+      //This array will contain all the comment photos that will be added
+      images: []
     }
   },
   name: "UserPost",
@@ -189,7 +201,7 @@ export default {
         data:{
           "Text": this.commentText,
           "PostId": this.id,
-          "Files": []
+          "Files": this.photos
         },
         timeout: 4000
       })
@@ -226,6 +238,78 @@ export default {
     },
     postComment(){
       this.showComments = !this.showComments
+    },
+    async postPhoto(){
+      if(this.username === ""){
+        Alert.alert("Error", "Users can not create posts",
+            [
+              {
+                text: "Login first",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
+            }
+        );
+        this.$emit("redirectToLogin");
+        return;
+      }
+      let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+      if (permissionResult.granted === false) {
+        alert("Permission to access camera roll is required!");
+        return;
+      }
+
+      let pickerResult = await ImagePicker.launchImageLibraryAsync();
+      if (pickerResult.cancelled === true) {
+        return;
+      }
+      let localUri = pickerResult.uri;
+      let filename = localUri.split('/').pop();
+      let newUri;
+      let data = new FormData();
+      data.append('File', {uri: localUri, name: filename});
+      await axios.post('http://52.57.118.176/Post/AddFile', data, {
+        timeout: 4000,
+        headers: { "Content-Type": "multipart/form-data" }
+      })
+      .then(function (response){
+        if(response.status === 200){
+          newUri = response.data.url
+        }
+      })
+      .catch(function(){
+        Alert.alert("Oops", "Something went wrong",
+            [
+              {
+                text: "Try again",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
+            }
+        );
+      });
+      let newImage = {
+        uri: newUri,
+        height: pickerResult.height,
+        width: pickerResult.width
+      }
+      Alert.alert("Success", "Image added successfully",
+          [
+            {
+              text: "Great",
+              style: "cancel",
+            }
+          ],
+          {
+            cancelable: true,
+          }
+      );
+      this.images.push(newImage)
     },
     sharePost(){
       alert("Not a way to implement this yet!")
@@ -448,7 +532,7 @@ export default {
   align-self: flex-start;
   background-color: #252525;
   color: dimgrey;
-  width: 80%;
+  width: 70%;
   height: 25px;
   font-weight: 500;
   font-size: 14px;
@@ -458,7 +542,7 @@ export default {
   align-self: flex-start;
   background-color: #DADADA;
   color: #969696;
-  width: 80%;
+  width: 70%;
   height: 25px;
   font-weight: 500;
   font-size: 14px;
