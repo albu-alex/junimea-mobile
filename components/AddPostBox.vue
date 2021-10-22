@@ -7,8 +7,7 @@
         <text class="postButtonTextDark">Create new post</text>
       </touchable-opacity>
       <touchable-opacity :on-press="uploadFile" class="postPhoto">
-        <Image :source="require('../assets/add_photo_icon.png')"
-                :style="{width: 25, height:25}" />
+        <Ionicons name="image" :size=24 color="#AAAAAA" />
       </touchable-opacity>
     </view>
   </view>
@@ -20,8 +19,7 @@
         <text class="postButtonTextLight">Create new post</text>
       </touchable-opacity>
       <touchable-opacity :on-press="uploadFile" class="postPhoto">
-        <Image :source="require('../assets/add_photo_icon.png')"
-               :style="{width: 25, height:25}" />
+        <Ionicons name="image" :size=24 color="#555555" />
       </touchable-opacity>
     </view>
   </view>
@@ -32,12 +30,16 @@ import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
 import {Alert} from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 export default {
   data(){
     return{
       postText: "",
       images: [],
     }
+  },
+  components:{
+    Ionicons
   },
   name: "AddPostBox",
   props:{
@@ -152,7 +154,6 @@ export default {
 <style>
 .postButtons{
   flex-direction: row;
-  justify-content: center;
   margin-bottom: 3%;
 }
 .postBox{
@@ -161,23 +162,23 @@ export default {
 }
 .postPhoto{
   margin-top: 4%;
-  margin-left: 6%;
+  margin-left: 4%;
 }
 .postButtonDark{
   background-color: #AAAAAA;
   height: 25px;
+  margin-left: 24%;
   margin-top: 4%;
-  margin-right: 6%;
+  margin-right: 8%;
   justify-content: center;
-  align-self: center;
 }
 .postButtonLight{
   background-color: #555555;
   height: 25px;
+  margin-left: 24%;
   margin-top: 4%;
-  margin-right: 6%;
+  margin-right: 8%;
   justify-content: center;
-  align-self: center;
 }
 .postButtonTextDark{
   color: black;

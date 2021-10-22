@@ -41,9 +41,6 @@
         <FontAwesome name="comment" :size=24 color="#AAAAAA" :style="{marginLeft: 5, marginRight:10, marginBottom: 5}" />
       </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
-<!--        <Image class="upButton"-->
-<!--               :style="{width: 25, height:25, marginLeft: 20, marginBottom: 5}"-->
-<!--               :source="require('../assets/share-button.png')" />-->
         <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#AAAAAA" />
       </touchable-opacity>
     </view>
