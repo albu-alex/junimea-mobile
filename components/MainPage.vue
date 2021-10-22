@@ -208,7 +208,6 @@ export default {
     },
     animateView(){
       this.viewOpacity.setValue(0);
-
       Animated.timing(this.viewOpacity, {
         toValue: 1,
         duration: 500,

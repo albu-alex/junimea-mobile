@@ -109,10 +109,10 @@ export default {
     this.animateView();
   },
   async beforeMount(){
-    let postId = await AsyncStorage.getItem(
+    let posts = await AsyncStorage.getItem(
         'saved-posts',
     );
-    postId = parseInt(postId)
+    let postId = parseInt(JSON.parse(posts))
     let post;
     await axios({
       method: 'get',

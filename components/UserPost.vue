@@ -376,9 +376,25 @@ export default {
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
     },
     async savePost(){
+      let posts = await AsyncStorage.getItem(
+          'saved-posts',
+      );
+      if(posts === ""){
+        posts = []
+        posts.push(this.id.toString())
+        posts = JSON.stringify(posts)
+      }
+      else{
+        posts = JSON.parse(posts)
+        let newPosts = posts
+        // newPosts.push(posts)
+        newPosts.push(this.id)
+        posts = JSON.stringify(newPosts)
+        alert(posts)
+      }
       await AsyncStorage.setItem(
           'saved-posts',
-          this.id.toString()
+          posts
       );
     },
     hidePost(){
