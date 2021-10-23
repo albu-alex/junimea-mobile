@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a>
 
 
 This is the QR code to the app:
@@ -1291,3 +1291,35 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_2.jpg" alt="Second photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_3.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_4.jpg" alt="Third photo" height="50%" width=auto/>
+
+# <a id="thirtyfive">Day 35</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Fixed saved photos bugs
+</li>
+<li>
+    Fully implemented saved posts
+</li>
+<li>
+    Fixed API calling issues
+</li>
+<li>
+    Fixed key duplication issues
+</li>
+<li>
+    Comment header redirects user to user profile
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Fix Tags component
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day35_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day35_2.gif" alt="Second video" height="50%" width=auto/>
