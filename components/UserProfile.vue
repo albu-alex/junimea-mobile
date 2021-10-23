@@ -112,34 +112,37 @@ export default {
     let posts = await AsyncStorage.getItem(
         'saved-posts',
     );
-    let postId = parseInt(JSON.parse(posts))
-    let post;
-    await axios({
-      method: 'get',
-      url: `http://52.57.118.176/Post/Get/${postId}`,
-      timeout: 4000
-    })
-    .then(function (response){
-      if(response.status === 200){
-        post = response.data
-        post["dimensions"] = []
-        const numberOfPhotos = post.files.length;
-        for(let j=0;j<numberOfPhotos;j++) {
-          post["dimensions"].push(
-              {
-                uri: "",
-                width: 300,
-                height: 300
-              }
-          )
+    posts = JSON.parse(posts)
+    alert(posts)
+    for(let postId in posts){
+      let post;
+      await axios({
+        method: 'get',
+        url: `http://52.57.118.176/Post/Get/${postId}`,
+        timeout: 4000
+      })
+      .then(function (response) {
+        if (response.status === 200) {
+          post = response.data
+          post["dimensions"] = []
+          const numberOfPhotos = post.files.length;
+          for (let j = 0; j < numberOfPhotos; j++) {
+            post["dimensions"].push(
+                {
+                  uri: "",
+                  width: 300,
+                  height: 300
+                }
+            )
+          }
         }
-      }
-    })
-    .catch(function(){
-      alert("Something went wrong")
-    });
-    if(this.savedPosts.length === 0){
-      this.savedPosts.push(post);
+        post = false;
+      })
+      .catch(function () {
+        post = false;
+      });
+      if(post !== false)
+        this.savedPosts.push(post);
     }
   },
   name: "UserProfile",

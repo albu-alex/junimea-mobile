@@ -390,7 +390,6 @@ export default {
         // newPosts.push(posts)
         newPosts.push(this.id)
         posts = JSON.stringify(newPosts)
-        alert(posts)
       }
       await AsyncStorage.setItem(
           'saved-posts',
