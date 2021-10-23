@@ -3,7 +3,9 @@
   <view class="commentHeader">
     <Image :source="{uri: profilePicture}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5, marginLeft: 5, marginTop: 2}" />
-    <text class="headerTextDark">{{firstName}}</text>
+    <touchable-opacity :on-press="goToProfile">
+      <text class="headerTextDark">{{firstName}}</text>
+    </touchable-opacity>
     <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
              :style="{width: 20, height:10, marginTop: 5}" />
@@ -39,7 +41,9 @@
   <view class="commentHeader">
     <Image :source="{uri: profilePicture}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5, marginLeft: 5, marginTop: 2}" />
-    <text class="headerTextLight">{{firstName}}</text>
+    <touchable-opacity :on-press="goToProfile">
+      <text class="headerTextLight">{{firstName}}</text>
+    </touchable-opacity>
     <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
              :style="{width: 20, height:10, marginTop: 5}" />
@@ -124,9 +128,12 @@ export default {
         this.showReplyBox = true;
         return;
       }
-      alert(this.commentText)
+      // alert(this.commentText)
       this.commentText = "";
       this.showReplyBox = false;
+    },
+    goToProfile(){
+      this.$emit("goToProfile", {username: this.firstName, profilePicture: this.profilePicture})
     },
     async postComment(){
       // let showLogin = false;

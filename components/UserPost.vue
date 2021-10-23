@@ -47,7 +47,7 @@
     <view v-if="showComments" class="postDark">
         <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                   :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
-                  :firstName="comment.user.firstName"/>
+                  :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser"/>
       <view class="addNewComment">
       <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
@@ -107,7 +107,7 @@
     <view v-if="showComments" class="postLight">
       <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                 :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
-                :firstName="comment.user.firstName" />
+                :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser"/>
       <view class="addNewComment">
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
                     keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
@@ -374,6 +374,9 @@ export default {
     },
     redirectToUser(){
       this.$emit("goToUser",{username: this.username, profilePicture: this.profilePic})
+    },
+    redirectToCommentUser(userData){
+      this.$emit("goToUser", {username: userData.username, profilePicture: userData.profilePicture})
     },
     async savePost(){
       let posts = await AsyncStorage.getItem(
