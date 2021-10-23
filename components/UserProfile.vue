@@ -33,7 +33,7 @@
                    v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
       <scroll-view v-else-if="!isLoading&&areSavedPosts">
-        <UserPost v-for="post in savedPosts" :key="post.id" :userPostText="post.title" :id="post.id"
+        <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
                   :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
@@ -75,7 +75,7 @@
                 v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
     </scroll-view>
     <scroll-view v-else-if="!isLoading&&areSavedPosts">
-      <UserPost v-for="post in savedPosts" :key="post.id" :userPostText="post.title" :id="post.id"
+      <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
                 :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
                 :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
     </scroll-view>
@@ -109,12 +109,12 @@ export default {
     this.animateView();
   },
   async beforeMount(){
+    this.savedPosts = [];
     let posts = await AsyncStorage.getItem(
         'saved-posts',
     );
     posts = JSON.parse(posts)
-    alert(posts)
-    for(let postId in posts){
+    for(let postId of posts){
       let post;
       await axios({
         method: 'get',
@@ -136,7 +136,8 @@ export default {
             )
           }
         }
-        post = false;
+        else
+          post = false;
       })
       .catch(function () {
         post = false;
