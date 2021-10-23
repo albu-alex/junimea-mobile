@@ -33,7 +33,7 @@
       <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view :scrollEnabled="!leftSideTags" :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
+        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
                   :dimensions="(post.dimensions) ? post.dimensions : []"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic"
@@ -75,7 +75,7 @@
   <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view :scrollEnabled="!leftSideTags" :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
+        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
                   :dimensions="(post.dimensions) ? post.dimensions : []"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic"

@@ -76,10 +76,10 @@ export default {
       }
       let localUri = pickerResult.uri;
       let filename = localUri.split('/').pop();
-      let newUri;
+      let newUri = false;
       let data = new FormData();
       data.append('File', {uri: localUri, name: filename});
-      await axios.post('http://52.57.118.176/Post/AddFile', data, {
+      await axios.post('http://52.57.118.176/File/Add', data, {
         timeout: 4000,
         headers: { "Content-Type": "multipart/form-data" }
       })
@@ -101,6 +101,8 @@ export default {
             }
         );
       });
+      if(newUri === false)
+        return;
       let newImage = {
         uri: newUri,
         height: pickerResult.height,
