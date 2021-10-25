@@ -32,6 +32,9 @@
   <view v-if="showReplyBox" class="commentFooter">
     <text-input v-model="commentText" class="addNewCommentDark" placeholder="Reply..." placeholderTextColor="dimgrey"
                 :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
+    <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+      <Ionicons name="image" :size=18 color="#555555" />
+    </touchable-opacity>
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
       <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
     </touchable-opacity>
@@ -70,6 +73,9 @@
   <view v-if="showReplyBox" class="commentFooter">
   <text-input v-model="commentText" class="addNewCommentLight" placeholder="Reply..."
               :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft: 5}" />
+    <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+      <Ionicons name="image" :size=18 color="#AAAAAA" />
+    </touchable-opacity>
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
       <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
     </touchable-opacity>
@@ -80,6 +86,8 @@
 <script>
 import axios from "axios";
 import {Alert, Dimensions} from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import * as ImagePicker from "expo-image-picker";
 const win = Dimensions.get('window');
 export default {
   name: "Comments",
@@ -100,7 +108,23 @@ export default {
       pageHeight: win.height,
     }
   },
+  components:{
+    Ionicons
+  },
   methods:{
+    async postPhoto(){
+      let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+      if (permissionResult.granted === false) {
+        alert("Permission to access camera roll is required!");
+        return;
+      }
+
+      let pickerResult = await ImagePicker.launchImageLibraryAsync();
+      if (pickerResult.cancelled === true) {
+        return;
+      }
+    },
     report(){
       Alert.alert("", "",
           [
@@ -184,6 +208,10 @@ export default {
 </script>
 
 <style>
+.addNewCommentButton{
+  margin-left: 5%;
+  margin-top: 1%;
+}
 .commentFooter{
   flex-direction: row;
 }
