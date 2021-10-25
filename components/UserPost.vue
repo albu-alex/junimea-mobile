@@ -12,6 +12,7 @@
     <view class="postContent">
       <view class="postContentHeader">
         <text class="postTextDark">{{userPostText}}</text>
+        <text class="postTextDark" v-if="postHidden">This post is now hidden</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
@@ -72,6 +73,7 @@
     <view class="postContent">
       <view class="postContentHeader">
         <text class="postTextLight">{{userPostText}}</text>
+        <text class="postTextLight" v-if="postHidden">This post is now hidden</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
@@ -162,7 +164,9 @@ export default {
       //This variable will be the model for the comment text
       commentText: "",
       //This array will contain all the comment photos that will be added
-      images: []
+      images: [],
+      //This variable is responsible for hiding the post
+      postHidden: false
     }
   },
   name: "UserPost",
@@ -404,6 +408,7 @@ export default {
       this.profilePic = "";
       this.files = [];
       this.userPostText = "";
+      this.postHidden = true;
     },
     //This function is supposed to let you report bugs and visibility options
     reportBug(){
