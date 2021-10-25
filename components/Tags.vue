@@ -1,9 +1,9 @@
 <template>
-<view v-if="isDarkTheme">
+<view class="tagsDark" v-if="isDarkTheme">
   <text class="primaryTextDark">Trending</text>
   <text v-for="tag in tags" class="tagTextDark">{{tag}}</text>
 </view>
-<view v-else>
+<view class="tagsLight" v-else>
   <text class="primaryTextLight">Trending</text>
   <text v-for="tag in tags" class="tagTextLight">{{tag}}</text>
 </view>
@@ -32,6 +32,12 @@ export default {
 </script>
 
 <style>
+.tagsDark{
+  background-color: #252525
+}
+.tagsLight{
+  background-color: #DADADA;
+}
 .primaryTextDark{
   color: #AAAAAA;
   font-size: 24px;

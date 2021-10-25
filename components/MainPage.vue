@@ -351,8 +351,8 @@ export default {
 }
 .tags{
   height: 100%;
-  width: 27%;
-  position: relative;
+  width: 40%;
+  position: absolute;
   z-index: 3;
 }
 .mainPageDark{
