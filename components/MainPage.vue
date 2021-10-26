@@ -65,8 +65,10 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <view class="posts">
-<!--      <Tags :isDarkTheme="isDarkTheme" v-if="leftSideTags" class="tags" :style="{opacity: 0.8, width: tagsWidth}" />-->
+    <animated:view class="tags" v-if="leftSideTags" :style="{opacity: tagsOpacity}">
+      <Tags class="tags" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                       v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
@@ -86,7 +88,7 @@
           <activity-indicator size="large" color="#969696" />
         </view>
       </scroll-view>
-    </view>
+    </animated:view>
   </animated:view>
 </template>
 
@@ -222,6 +224,15 @@ export default {
       }).start(() => {
 
       });
+      this.postsOpacity.setValue(0.5);
+      Animated.timing(this.postsOpacity, {
+        toValue: 1,
+        duration: 500,
+        easing: Easing.linear,
+        useNativeDriver: false
+      }).start(() => {
+
+      });
     },
     async getInitialPosts(postPosition){
       let posts;
@@ -287,7 +298,10 @@ export default {
     },
     showTags(){
       this.leftSideTags = !this.leftSideTags;
-      this.animateTags();
+      if(this.leftSideTags)
+        this.animateTags();
+      else
+        this.animateView();
     },
     goToProfile(){
       if(this.newUsername === ''){
@@ -377,7 +391,7 @@ export default {
   height: 10%;
 }
 .tags{
-  margin-top: 14%;
+  margin-top: 13%;
   height: 93%;
   width: 70%;
   position: absolute;
