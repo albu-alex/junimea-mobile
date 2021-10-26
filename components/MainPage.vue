@@ -21,10 +21,10 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <view class="posts">
-      <animated:view class="tags" v-if="leftSideTags" :style="{opacity: viewOpacity}">
-        <Tags class="tags" :isDarkTheme="isDarkTheme"/>
-      </animated:view>
+    <animated:view class="tags" v-if="leftSideTags" :style="{opacity: tagsOpacity}">
+      <Tags class="tags" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                      v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
@@ -44,7 +44,7 @@
           <activity-indicator size="large" color="dimgrey" />
         </view>
       </scroll-view>
-    </view>
+    </animated:view>
   </animated:view>
   <animated:view v-else class="mainPageLight" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
@@ -132,6 +132,7 @@ export default {
       updateProfile: false,
       viewOpacity: 0,
       tagsOpacity: 0,
+      postsOpacity: 1,
       //This variable determines if the refresh should be allowed to be made or not
       refreshAllowed: true,
       startTime: 0,
@@ -141,6 +142,8 @@ export default {
   },
   async created(){
     this.viewOpacity = new Animated.Value(0)
+    this.tagsOpacity = new Animated.Value(0)
+    this.postsOpacity = new Animated.Value(1)
     let profilePicture;
     let username;
     let userID;
@@ -262,9 +265,29 @@ export default {
     Logout(){
       this.$emit("Logout", this.isDarkTheme)
     },
+    animateTags(){
+      this.postsOpacity.setValue(0);
+      Animated.timing(this.postsOpacity, {
+        toValue: 0.5,
+        duration: 500,
+        easing: Easing.linear,
+        useNativeDriver: false
+      }).start(() => {
+
+      });
+      this.tagsOpacity.setValue(0);
+      Animated.timing(this.tagsOpacity, {
+        toValue: 1,
+        duration: 500,
+        easing: Easing.linear,
+        useNativeDriver: false
+      }).start(() => {
+
+      });
+    },
     showTags(){
       this.leftSideTags = !this.leftSideTags;
-      this.animateView();
+      this.animateTags();
     },
     goToProfile(){
       if(this.newUsername === ''){
@@ -354,7 +377,8 @@ export default {
   height: 10%;
 }
 .tags{
-  height: 100%;
+  margin-top: 14%;
+  height: 93%;
   width: 70%;
   position: absolute;
   z-index: 3;
