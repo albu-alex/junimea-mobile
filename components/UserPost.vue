@@ -2,7 +2,7 @@
 <template>
   <view v-if="isDarkTheme&&showPost" class="postDark">
     <touchable-opacity :on-press="redirectToUser">
-      <view class="postHeader">
+      <view v-if="!postHidden" class="postHeader">
   <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
         <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
         <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
@@ -18,7 +18,7 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
-      <text v-for="(file,index) in files">
+      <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
                      :showsHorizontalScrollIndicator="false">
@@ -30,7 +30,7 @@
         </scroll-view>
       </text>
     </view>
-    <view class="postFeedback">
+    <view v-if="!postHidden" class="postFeedback">
       <touchable-opacity :on-press="likePost">
         <AntDesign :style="{marginRight: 25}" name="like1" :size=24 color="#AAAAAA" />
       </touchable-opacity>
@@ -63,7 +63,7 @@
   </view>
   <view v-else-if="!isDarkTheme&&showPost" class="postLight">
     <touchable-opacity :on-press="redirectToUser">
-      <view class="postHeader">
+      <view v-if="!postHidden" class="postHeader">
         <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
         <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
         <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
@@ -79,7 +79,7 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
-      <text v-for="(file,index) in files">
+      <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
                      :showsHorizontalScrollIndicator="false">
@@ -91,7 +91,7 @@
         </scroll-view>
       </text>
     </view>
-    <view class="postFeedback">
+    <view v-if="!postHidden" class="postFeedback">
       <touchable-opacity :on-press="likePost">
         <AntDesign :style="{marginRight: 25}" name="like1" :size=24 color="#555555" />
       </touchable-opacity>
@@ -394,7 +394,6 @@ export default {
       else{
         posts = JSON.parse(posts)
         let newPosts = posts
-        // newPosts.push(posts)
         newPosts.push(this.id)
         posts = JSON.stringify(newPosts)
       }
