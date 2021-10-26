@@ -22,7 +22,9 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
     <view class="posts">
-      <Tags :isDarkTheme="isDarkTheme" v-if="leftSideTags" class="tags" :style="{opacity: 0.8}" />
+      <animated:view class="tags" v-if="leftSideTags" :style="{opacity: viewOpacity}">
+        <Tags class="tags" :isDarkTheme="isDarkTheme"/>
+      </animated:view>
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                      v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
@@ -64,7 +66,7 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
     <view class="posts">
-      <Tags :isDarkTheme="isDarkTheme" v-if="leftSideTags" class="tags" :style="{opacity: 0.8}" />
+<!--      <Tags :isDarkTheme="isDarkTheme" v-if="leftSideTags" class="tags" :style="{opacity: 0.8, width: tagsWidth}" />-->
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                       v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
@@ -129,6 +131,7 @@ export default {
       leftSideTags: false,
       updateProfile: false,
       viewOpacity: 0,
+      tagsOpacity: 0,
       //This variable determines if the refresh should be allowed to be made or not
       refreshAllowed: true,
       startTime: 0,
@@ -261,6 +264,7 @@ export default {
     },
     showTags(){
       this.leftSideTags = !this.leftSideTags;
+      this.animateView();
     },
     goToProfile(){
       if(this.newUsername === ''){
@@ -351,7 +355,7 @@ export default {
 }
 .tags{
   height: 100%;
-  width: 40%;
+  width: 70%;
   position: absolute;
   z-index: 3;
 }
