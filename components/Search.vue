@@ -14,7 +14,9 @@
   </text>
   <scroll-view>
     <text v-for="tag in tags" class="tagsDark">
-      {{tag}}
+      <touchable-opacity>
+        <text class="tagsDark">{{tag}}</text>
+      </touchable-opacity>
     </text>
   </scroll-view>
 </view>
@@ -32,7 +34,9 @@
   </text>
   <scroll-view>
     <text v-for="tag in tags" class="tagsLight">
-      {{tag}}
+      <touchable-opacity>
+        <text class="tagsLight">{{tag}}</text>
+      </touchable-opacity>
     </text>
   </scroll-view>
 </view>
@@ -74,15 +78,17 @@ export default {
 <style>
 .tagsDark{
   color: #AAAAAA;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   margin-left: 5%;
+  margin-top: 2%;
 }
 .tagsLight{
   color: #555555;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   margin-left: 5%;
+  margin-top: 2%;
 }
 .textInputDark{
   background-color: #505050;
