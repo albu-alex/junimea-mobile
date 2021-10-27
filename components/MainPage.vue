@@ -224,15 +224,28 @@ export default {
       }).start(() => {
 
       });
-      this.postsOpacity.setValue(0.5);
-      Animated.timing(this.postsOpacity, {
-        toValue: 1,
-        duration: 500,
-        easing: Easing.linear,
-        useNativeDriver: false
-      }).start(() => {
+      if(!this.leftSideTags) {
+        this.postsOpacity.setValue(0.5);
+        Animated.timing(this.postsOpacity, {
+          toValue: 1,
+          duration: 500,
+          easing: Easing.linear,
+          useNativeDriver: false
+        }).start(() => {
 
-      });
+        });
+      }
+      else{
+        this.postsOpacity.setValue(0);
+        Animated.timing(this.postsOpacity, {
+          toValue: 0.5,
+          duration: 500,
+          easing: Easing.linear,
+          useNativeDriver: false
+        }).start(() => {
+
+        });
+      }
     },
     async getInitialPosts(postPosition){
       let posts;
