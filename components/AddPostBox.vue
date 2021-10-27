@@ -123,7 +123,7 @@ export default {
     },
     addPost(){
       if(this.username === ""){
-        Alert.alert("Error", "Users can not create posts",
+        Alert.alert("Error", "Guests can not create posts",
             [
               {
                 text: "Login first",

@@ -103,7 +103,7 @@ import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
-import {Platform, StatusBar, Animated, Easing, AsyncStorage} from "react-native";
+import {Platform, StatusBar, Animated, Easing, AsyncStorage, Alert} from "react-native";
 export default {
   name: "MainPage",
   data(){
@@ -318,7 +318,24 @@ export default {
     },
     goToProfile(){
       if(this.newUsername === ''){
-        alert("It looks like you are a guest! You must register to access this page!")
+        Alert.alert("Error", "It looks like you are a guest",
+            [
+              {
+                text: "Login first",
+                style: "cancel",
+                onPress: this.Logout
+              },
+              {
+                text: "Continue as guest",
+                style: "destructive",
+                onPress: () => alert(":(")
+              }
+            ],
+            {
+              cancelable: true,
+              onDismiss: () => alert(":(")
+            }
+        );
         return;
       }
       this.profileDisplayed = true
