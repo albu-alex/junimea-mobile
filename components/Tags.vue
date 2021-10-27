@@ -47,23 +47,27 @@ export default {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25%;
+  margin-left: 2%;
 }
 .primaryTextLight{
   color: #555555;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25%;
+  margin-left: 2%;
 }
 .tagTextDark{
   color: #AAAAAA;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 3%;
+  margin-left: 5%;
 }
 .tagTextLight{
   color: #555555;
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 3%;
+  margin-left: 5%;
 }
 </style>
