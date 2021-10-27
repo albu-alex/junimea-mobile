@@ -1,11 +1,15 @@
 <template>
 <view class="tagsDark" v-if="isDarkTheme">
   <text class="primaryTextDark">Trending</text>
-  <text v-for="tag in tags" class="tagTextDark">{{tag}}</text>
+  <scroll-view>
+    <text v-for="tag in tags" class="tagTextDark">{{tag}}</text>
+  </scroll-view>
 </view>
 <view class="tagsLight" v-else>
   <text class="primaryTextLight">Trending</text>
-  <text v-for="tag in tags" class="tagTextLight">{{tag}}</text>
+  <scroll-view>
+    <text v-for="tag in tags" class="tagTextLight">{{tag}}</text>
+  </scroll-view>
 </view>
 </template>
 
