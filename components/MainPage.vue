@@ -421,11 +421,11 @@ export default {
   height: 10%;
 }
 .tags{
-  margin-top: 13%;
-  height: 93%;
-  width: 70%;
+  margin-top: 12.5%;
+  height: 95%;
+  width: 80%;
   position: absolute;
-  z-index: 3;
+  z-index: 1;
 }
 .mainPageDark{
   background-color: #252525;
