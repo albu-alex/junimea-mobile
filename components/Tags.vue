@@ -2,13 +2,21 @@
 <view class="tagsDark" v-if="isDarkTheme">
   <text class="primaryTextDark">Trending</text>
   <scroll-view>
-    <text v-for="tag in tags" class="tagTextDark">{{tag}}</text>
+    <text v-for="tag in tags" class="tagTextDark">
+      <touchable-opacity>
+        <text class="tagTextDark">{{tag}}</text>
+      </touchable-opacity>
+    </text>
   </scroll-view>
 </view>
 <view class="tagsLight" v-else>
   <text class="primaryTextLight">Trending</text>
   <scroll-view>
-    <text v-for="tag in tags" class="tagTextLight">{{tag}}</text>
+    <text v-for="tag in tags" class="tagTextLight">
+      <touchable-opacity>
+        <text class="tagTextLight">{{tag}}</text>
+      </touchable-opacity>
+    </text>
   </scroll-view>
 </view>
 </template>
