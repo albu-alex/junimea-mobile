@@ -61,6 +61,15 @@ export default {
     this.tags.push("#junimea")
     this.tags.push("#guie muvern")
   },
+  //This lifecycle hook is used to match search string with the tags
+  beforeUpdate(){
+    let regularExpression = new RegExp(this.searchText, 'gi')
+    for(let i=0;i<this.tags.length;i++){
+      let result = this.tags[i].match(regularExpression)
+      if(result === null)
+        this.tags.splice(i, 1)
+    }
+  },
   methods:{
     cancelSearch(){
       this.$emit("cancelSearch");
