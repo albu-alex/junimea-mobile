@@ -21,8 +21,11 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <animated:view class="tags" v-if="leftSideTags" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed" :style="{opacity: tagsOpacity}">
+      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
@@ -65,8 +68,11 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <animated:view class="tags" v-if="leftSideTags" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed" :style="{opacity: tagsOpacity}">
+      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
@@ -423,6 +429,13 @@ export default {
 .tags{
   margin-top: 12.5%;
   height: 95%;
+  width: 80%;
+  position: absolute;
+  z-index: 1;
+}
+.tagsLower{
+  margin-top: 40%;
+  height: 85%;
   width: 80%;
   position: absolute;
   z-index: 1;

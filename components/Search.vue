@@ -69,7 +69,7 @@ export default {
       if(result === null)
         this.tags.splice(i, 1)
     }
-    //Need to reload the tags array with the tags when API is dontag
+    //Need to reload the tags array with the tags when API is done
   },
   methods:{
     cancelSearch(){
