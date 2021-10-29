@@ -109,7 +109,8 @@ import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
-import {Platform, StatusBar, Animated, Easing, AsyncStorage, Alert} from "react-native";
+import {Platform, StatusBar, Animated, Easing, Alert} from "react-native";
+// import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 export default {
   name: "MainPage",
   data(){
@@ -205,14 +206,31 @@ export default {
     Header,
     Settings,
     AddPostBox,
-    Tags
+    Tags,
+    // GestureRecognizer
   },
   props:{
     newUsername: String,
     customTheme: Boolean,
-    token: String,
   },
   methods:{
+    // onSwipe(gestureName) {
+    //   const {SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
+    //   switch (gestureName) {
+    //     case SWIPE_UP:
+    //       this.setState({backgroundColor: 'red'});
+    //       break;
+    //     case SWIPE_DOWN:
+    //       this.setState({backgroundColor: 'green'});
+    //       break;
+    //     case SWIPE_LEFT:
+    //       this.setState({backgroundColor: 'blue'});
+    //       break;
+    //     case SWIPE_RIGHT:
+    //       this.setState({backgroundColor: 'yellow'});
+    //       break;
+    //   }
+    // },
     redirectToLogin(){
       this.$emit("redirectToLogin", this.isDarkTheme);
     },

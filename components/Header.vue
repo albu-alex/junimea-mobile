@@ -2,7 +2,7 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view v-if="isDarkTheme" class="headerDark">
-      <touchable-opacity :on-press="showTags">
+      <touchable-opacity class="headerButton" :on-press="showTags">
         <text class="headerTextDark">juni.</text>
       </touchable-opacity>
       <touchable-opacity class="headerButton" :on-press="displaySettings">
@@ -10,8 +10,6 @@
                :style="{width: 25, height:25}" />
       </touchable-opacity>
       <touchable-opacity class="headerButton" :on-press="searchPosts">
-<!--        <Image class="searchIcon" :source="require('../assets/search-icon.png')"-->
-<!--               :style="{width: 25, height:25}" />-->
         <Ionicons name="ios-search-outline" :size=24 color="white" />
       </touchable-opacity>
       <touchable-opacity class="headerButton" :on-press="goToProfile">
@@ -98,14 +96,12 @@ export default {
   font-size: 20px;
   font-weight: 700;
   color: ghostwhite;
-  margin-top: 15%;
   margin-left: 5%;
 }
 .headerTextLight{
   font-size: 20px;
   font-weight: 700;
   color: #070700;
-  margin-top: 15%;
   margin-left: 5%;
 }
 .junimeaLogo{
