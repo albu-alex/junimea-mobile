@@ -30,8 +30,6 @@
              :style="{width: 25, height:25}" />
     </touchable-opacity>
     <touchable-opacity class="headerButton" :on-press="searchPosts">
-<!--      <Image class="searchIcon" :source="require('../assets/search-icon.png')"-->
-<!--             :style="{width: 25, height:25}" />-->
       <Ionicons name="ios-search-outline" :size=24 color="black" />
     </touchable-opacity>
     <touchable-opacity class="headerButton" :on-press="goToProfile">
