@@ -44,8 +44,6 @@ export default {
   name: "Settings",
   data(){
     return{
-      //This variable keeps track of the visibility of the update profile prompts
-      visiblePrompts: false,
       viewOpacity: 0
     }
   },
@@ -57,7 +55,9 @@ export default {
   },
   props:{
     newUsername: String,
-    isDarkTheme: Boolean
+    isDarkTheme: Boolean,
+    //This variable keeps track of the visibility of the update profile prompts
+    visiblePrompts: Boolean,
   },
   components:{
     UpdateProfileForm
@@ -82,14 +82,8 @@ export default {
     changeViewMode(){
       this.$emit("changeViewMode")
     },
-    emitVisiblePrompts(){
-      this.$emit("visiblePrompts")
-    },
     updateProfile(){
-      this.visiblePrompts = !this.visiblePrompts;
-      setTimeout(() => {
-        this.emitVisiblePrompts()
-      }, 1000);
+      this.$emit("visiblePrompts")
     }
   }
 }

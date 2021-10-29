@@ -4,9 +4,11 @@
 <template>
   <animated:view v-if="isDarkTheme" class="mainPageDark" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts" @visiblePrompts="visiblePrompts = !visiblePrompts"
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
+              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts" @visiblePrompts="visiblePrompts = !visiblePrompts"
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts"
+              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
               @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
@@ -53,8 +55,12 @@
   </animated:view>
   <animated:view v-else class="mainPageLight" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
+              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts"
+              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
+              @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}"/>
@@ -427,7 +433,7 @@ export default {
   flex-direction: row;
 }
 .settings{
-  height: 10%;
+  height: 7%;
 }
 .settingsExtended{
   height: 15%;
