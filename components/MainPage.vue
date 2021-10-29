@@ -4,8 +4,10 @@
 <template>
   <animated:view v-if="isDarkTheme" class="mainPageDark" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed"
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts" @visiblePrompts="visiblePrompts = !visiblePrompts"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts" @visiblePrompts="visiblePrompts = !visiblePrompts"
+              @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
@@ -146,7 +148,8 @@ export default {
       refreshAllowed: true,
       startTime: 0,
       //This variable holds the unique ID of the user logged in
-      userID: ""
+      userID: "",
+      visiblePrompts: false
     }
   },
   async created(){
@@ -425,6 +428,9 @@ export default {
 }
 .settings{
   height: 10%;
+}
+.settingsExtended{
+  height: 15%;
 }
 .tags{
   margin-top: 12.5%;

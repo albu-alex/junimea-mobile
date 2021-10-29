@@ -82,8 +82,14 @@ export default {
     changeViewMode(){
       this.$emit("changeViewMode")
     },
+    emitVisiblePrompts(){
+      this.$emit("visiblePrompts")
+    },
     updateProfile(){
       this.visiblePrompts = !this.visiblePrompts;
+      setTimeout(() => {
+        this.emitVisiblePrompts()
+      }, 1000);
     }
   }
 }
