@@ -8,7 +8,7 @@
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" />
+            @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
@@ -55,7 +55,7 @@
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
-            @displaySettings="settingsDisplayed = !settingsDisplayed"/>
+            @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}"/>
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="profileDisplayed = false"
@@ -139,6 +139,7 @@ export default {
       searchDisplayed: false,
       leftSideTags: false,
       updateProfile: false,
+      //This opacities are changed in animated values
       viewOpacity: 0,
       tagsOpacity: 0,
       postsOpacity: 1,

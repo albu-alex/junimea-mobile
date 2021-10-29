@@ -22,7 +22,7 @@
       </touchable-opacity>
   </view>
   <view v-else class="headerLight">
-    <touchable-opacity :on-press="showTags">
+    <touchable-opacity class="headerButton" :on-press="showTags">
       <text class="headerTextLight">juni.</text>
     </touchable-opacity>
     <touchable-opacity class="headerButton" :on-press="displaySettings">
