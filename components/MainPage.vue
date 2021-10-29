@@ -24,11 +24,9 @@
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <Swiper>
-      <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed" :style="{opacity: tagsOpacity}">
-        <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
-      </animated:view>
-    </Swiper>
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed" :style="{opacity: tagsOpacity}">
+      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
@@ -112,8 +110,6 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import {Platform, StatusBar, Animated, Easing, Alert} from "react-native";
-// import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
-import Swiper from 'react-native-web-swiper';
 export default {
   name: "MainPage",
   data(){
@@ -211,31 +207,12 @@ export default {
     Settings,
     AddPostBox,
     Tags,
-    Swiper
-    // GestureRecognizer
   },
   props:{
     newUsername: String,
     customTheme: Boolean,
   },
   methods:{
-    // onSwipe(gestureName) {
-    //   const {SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
-    //   switch (gestureName) {
-    //     case SWIPE_UP:
-    //       this.setState({backgroundColor: 'red'});
-    //       break;
-    //     case SWIPE_DOWN:
-    //       this.setState({backgroundColor: 'green'});
-    //       break;
-    //     case SWIPE_LEFT:
-    //       this.setState({backgroundColor: 'blue'});
-    //       break;
-    //     case SWIPE_RIGHT:
-    //       this.setState({backgroundColor: 'yellow'});
-    //       break;
-    //   }
-    // },
     redirectToLogin(){
       this.$emit("redirectToLogin", this.isDarkTheme);
     },

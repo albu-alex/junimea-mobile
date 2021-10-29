@@ -386,16 +386,17 @@ export default {
       let posts = await AsyncStorage.getItem(
           'saved-posts',
       );
-      if(posts === ""){
+      posts = JSON.parse(posts)
+      if(!Array.isArray(posts)){
         posts = []
         posts.push(this.id.toString())
         posts = JSON.stringify(posts)
       }
       else{
-        posts = JSON.parse(posts)
         let newPosts = posts
         newPosts.push(this.id)
         posts = JSON.stringify(newPosts)
+        // alert(posts)
       }
       await AsyncStorage.setItem(
           'saved-posts',
