@@ -15,7 +15,7 @@
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
-                 :posts="posts" @goToMainPage="profileDisplayed = false"
+                 :posts="posts" @goToMainPage="goToMainPage"
                  @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
     <!--    Allows the user to make a new post and the post it after it passes validations-->
@@ -35,7 +35,7 @@
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                      v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                     :posts="posts" @goToMainPage="postProfileDisplayed = false"
+                     :posts="posts" @goToMainPage="goToMainPage"
                      @refreshUserPosts="getInitialPosts('top')"
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
@@ -66,7 +66,7 @@
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}"/>
     <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
-                 :posts="posts" @goToMainPage="profileDisplayed = false"
+                 :posts="posts" @goToMainPage="goToMainPage"
                   @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
@@ -86,7 +86,7 @@
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
         <UserProfile :isMainUser="false"
                       v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                     :posts="posts" @goToMainPage="postProfileDisplayed = false"
+                     :posts="posts" @goToMainPage="goToMainPage"
                      @refreshUserPosts="getInitialPosts('top')"
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
@@ -222,6 +222,11 @@ export default {
     customTheme: Boolean,
   },
   methods:{
+    goToMainPage(event){
+      this.profileDisplayed = false;
+      this.postProfileDisplayed = false;
+      this.profilePicture = event
+    },
     redirectToLogin(){
       this.$emit("redirectToLogin", this.isDarkTheme);
     },

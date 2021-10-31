@@ -271,7 +271,7 @@ export default {
       }
     },
     goToMainPage(){
-      this.$emit("goToMainPage");
+      this.$emit("goToMainPage", this.profilePictureURL);
     }
   }
 }
