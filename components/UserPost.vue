@@ -1,7 +1,7 @@
 <!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
   <view v-if="isDarkTheme&&showPost" class="postDark">
-    <touchable-opacity :on-press="redirectToUser">
+    <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
       <view v-if="!postHidden" class="postHeader">
   <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
         <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
@@ -62,7 +62,7 @@
     </view>
   </view>
   <view v-else-if="!isDarkTheme&&showPost" class="postLight">
-    <touchable-opacity :on-press="redirectToUser">
+    <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
       <view v-if="!postHidden" class="postHeader">
         <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
         <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
@@ -577,8 +577,10 @@ export default {
 }
 .postHeader{
   flex-direction: row;
-  justify-content: center;
-  margin: 5%;
+  justify-content: flex-start;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 2%;
 }
 .postDark{
   margin-bottom: 5%;
