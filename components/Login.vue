@@ -239,6 +239,7 @@ export default {
       }
       this.waitingForSubmit = true;
       let isRegistered = false;
+      let userToken;
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Register',
@@ -252,6 +253,7 @@ export default {
       .then(function (response){
         if(response.status === 200){
           isRegistered = true;
+          userToken = response.data.token
         }
       })
       .catch(function (error){
@@ -281,14 +283,14 @@ export default {
           );
       });
       if(isRegistered)
-        this.$emit('verifyLogin', this.username);
+        this.$emit('verifyLogin', {username: this.username, token: userToken});
       this.waitingForSubmit = false;
     },
     // This function allow a new user to enter the feed of posts without making a new account
     // If user logs in as guest, he cannot make new post and cannot access his profile
     loginAsGuest(){
       alert("Beware that if you continue as a guest, your experience will be limited");
-      this.$emit('verifyLogin', "");
+      this.$emit('verifyLogin', {username: "", token: ""});
     },
     //This function will consist in an email prompt in order to contact us regarding any bugs
     reportBugs(){
