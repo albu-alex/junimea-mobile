@@ -32,9 +32,9 @@
     </view>
     <view v-if="!postHidden" class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start'}" name="like1" :size=24 color="#AAAAAA" />
+        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#AAAAAA" />
       </touchable-opacity>
-      <touchable-opacity :on-press="dislikePost">
+      <touchable-opacity :on-press="dislikePost" :style="{opacity: dislikeOpacity}">
         <AntDesign name="dislike1" :size=24 color="#AAAAAA" />
       </touchable-opacity>
       <text class="likesTextDark">{{likes}}</text>
@@ -93,9 +93,9 @@
     </view>
     <view v-if="!postHidden" class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start'}" name="like1" :size=24 color="#555555" />
+        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#555555" />
       </touchable-opacity>
-      <touchable-opacity :on-press="dislikePost">
+      <touchable-opacity :on-press="dislikePost" :style="{opacity: dislikeOpacity}">
         <AntDesign name="dislike1" :size=24 color="#555555" />
       </touchable-opacity>
       <text class="likesTextLight">{{likes}}</text>
@@ -166,7 +166,10 @@ export default {
       //This array will contain all the comment photos that will be added
       images: [],
       //This variable is responsible for hiding the post
-      postHidden: false
+      postHidden: false,
+      //This variables will change when a post is interacted with
+      likeOpacity: 1,
+      dislikeOpacity: 1
     }
   },
   name: "UserPost",
@@ -354,7 +357,12 @@ export default {
       if(newLikes !== undefined) {
         this.likes = newLikes;
         this.liked = !this.liked
+        if(this.liked)
+          this.likeOpacity = 0.4;
+        else
+          this.likeOpacity = 1;
       }
+      alert(this.likeOpacity)
       this.taps = 0;
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
@@ -463,6 +471,10 @@ export default {
       if(newLikes !== undefined){
         this.likes = newLikes;
         this.disliked = !this.disliked
+        if(this.disliked)
+          this.dislikeOpacity = 0.4;
+        else
+          this.dislikeOpacity = 1;
       }
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
@@ -507,6 +519,10 @@ export default {
       if(newLikes !== undefined){
         this.likes = newLikes;
         this.liked = !this.liked
+        if(this.liked)
+          this.likeOpacity = 0.4;
+        else
+          this.likeOpacity = 1;
       }
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
