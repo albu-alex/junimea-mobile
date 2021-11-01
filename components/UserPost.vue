@@ -365,15 +365,20 @@ export default {
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
             [
+              // {
+              //   text: "Login",
+              //   style: "cancel",
+              //   onPress: () => this.$emit("redirectToLogin")
+              // },
+              // {
+              //   text: "Continue as guest",
+              //   style: "destructive",
+              //   onPress: () => alert(":(")
+              // }
               {
-                text: "Login",
+                text: "Like",
                 style: "cancel",
-                onPress: () => this.$emit("redirectToLogin")
-              },
-              {
-                text: "Continue as guest",
-                style: "destructive",
-                onPress: () => alert(":(")
+                onPress: () => alert("Guest likes coming soon!")
               }
             ],
             {
@@ -523,15 +528,20 @@ export default {
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
             [
+              // {
+              //   text: "Login",
+              //   style: "cancel",
+              //   onPress: () => this.$emit("redirectToLogin")
+              // },
+              // {
+              //   text: "Continue as guest",
+              //   style: "destructive",
+              //   onPress: () => alert(":(")
+              // }
               {
-                text: "Login",
+                text: "Like",
                 style: "cancel",
-                onPress: () => this.$emit("redirectToLogin")
-              },
-              {
-                text: "Continue as guest",
-                style: "destructive",
-                onPress: () => alert(":(")
+                onPress: () => alert("Guest likes coming soon!")
               }
             ],
             {
