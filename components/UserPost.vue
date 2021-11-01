@@ -93,14 +93,14 @@
     </view>
     <view v-if="!postHidden" class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <AntDesign :style="{marginRight: 25}" name="like1" :size=24 color="#555555" />
+        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start'}" name="like1" :size=24 color="#555555" />
       </touchable-opacity>
       <touchable-opacity :on-press="dislikePost">
         <AntDesign name="dislike1" :size=24 color="#555555" />
       </touchable-opacity>
       <text class="likesTextLight">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
-        <FontAwesome name="comment" :size=24 color="#555555" :style="{marginLeft: 5, marginRight:10, marginBottom: 5}" />
+        <FontAwesome name="comment" :size=24 color="#555555" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
       </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
         <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#555555" />
