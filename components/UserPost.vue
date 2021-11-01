@@ -34,8 +34,8 @@
       <touchable-opacity :on-press="likePost">
         <AntDesign :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#AAAAAA" />
       </touchable-opacity>
-      <touchable-opacity :on-press="dislikePost" :style="{opacity: dislikeOpacity}">
-        <AntDesign name="dislike1" :size=24 color="#AAAAAA" />
+      <touchable-opacity :on-press="dislikePost">
+        <AntDesign name="dislike1" :size=24 color="#AAAAAA" :style="{opacity: dislikeOpacity}" />
       </touchable-opacity>
       <text class="likesTextDark">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
@@ -95,8 +95,8 @@
       <touchable-opacity :on-press="likePost">
         <AntDesign :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#555555" />
       </touchable-opacity>
-      <touchable-opacity :on-press="dislikePost" :style="{opacity: dislikeOpacity}">
-        <AntDesign name="dislike1" :size=24 color="#555555" />
+      <touchable-opacity :on-press="dislikePost">
+        <AntDesign name="dislike1" :size=24 color="#555555" :style="{opacity: dislikeOpacity}" />
       </touchable-opacity>
       <text class="likesTextLight">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
@@ -356,13 +356,11 @@ export default {
       });
       if(newLikes !== undefined) {
         this.likes = newLikes;
-        this.liked = !this.liked
-        if(this.liked)
-          this.likeOpacity = 0.4;
-        else
-          this.likeOpacity = 1;
+        this.liked = true;
+        this.disliked = false;
+        this.likeOpacity = 0.4;
+        this.dislikeOpacity = 1;
       }
-      alert(this.likeOpacity)
       this.taps = 0;
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
@@ -470,11 +468,10 @@ export default {
       });
       if(newLikes !== undefined){
         this.likes = newLikes;
-        this.disliked = !this.disliked
-        if(this.disliked)
-          this.dislikeOpacity = 0.4;
-        else
-          this.dislikeOpacity = 1;
+        this.liked = false;
+        this.disliked = true;
+        this.likeOpacity = 1;
+        this.dislikeOpacity = 0.4;
       }
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
@@ -518,11 +515,10 @@ export default {
       });
       if(newLikes !== undefined){
         this.likes = newLikes;
-        this.liked = !this.liked
-        if(this.liked)
-          this.likeOpacity = 0.4;
-        else
-          this.likeOpacity = 1;
+        this.liked = true;
+        this.disliked = false;
+        this.likeOpacity = 0.4;
+        this.dislikeOpacity = 1;
       }
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
