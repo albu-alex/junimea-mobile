@@ -162,6 +162,8 @@ export default {
     this.viewOpacity = new Animated.Value(0)
     this.tagsOpacity = new Animated.Value(0)
     this.postsOpacity = new Animated.Value(1)
+    if(this.newUsername === "")
+      return;
     let profilePicture;
     let username;
     let userID;
