@@ -28,8 +28,11 @@
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts" :style="{opacity: tagsOpacity}">
       <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts" :style="{opacity: tagsOpacity}">
+      <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
@@ -79,8 +82,11 @@
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts" :style="{opacity: tagsOpacity}">
       <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts" :style="{opacity: tagsOpacity}">
+      <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
       <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
@@ -451,8 +457,15 @@ export default {
   position: absolute;
   z-index: 1;
 }
+.tagsMiddle{
+  margin-top: 31%;
+  height: 95%;
+  width: 80%;
+  position: absolute;
+  z-index: 1;
+}
 .tagsLower{
-  margin-top: 40%;
+  margin-top: 52%;
   height: 85%;
   width: 80%;
   position: absolute;
