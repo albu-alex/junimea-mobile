@@ -183,6 +183,7 @@ export default {
     likes: Number,
     liked: Boolean,
     isDarkTheme: Boolean,
+    isGuest: Boolean
   },
   async beforeMount(){
     let comments;
@@ -257,19 +258,25 @@ export default {
       this.showComments = !this.showComments
     },
     async postPhoto(){
-      if(this.username === ""){
-        Alert.alert("Error", "Guests can not create posts",
+      if(this.isGuest){
+        Alert.alert("Error", "You are not logged in",
             [
               {
-                text: "Login first",
+                text: "Login",
                 style: "cancel",
+                onPress: () => this.$emit("redirectToLogin")
               },
+              {
+                text: "Continue as guest",
+                style: "destructive",
+                onPress: () => alert(":(")
+              }
             ],
             {
               cancelable: true,
+              onDismiss: () => alert(":(")
             }
         );
-        this.$emit("redirectToLogin");
         return;
       }
       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();

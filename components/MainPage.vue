@@ -44,7 +44,7 @@
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
-                  :dimensions="(post.dimensions) ? post.dimensions : []"
+                  :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic"
                   :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
@@ -95,7 +95,7 @@
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
                   :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
-                  :dimensions="(post.dimensions) ? post.dimensions : []"
+                  :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic"
                   :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
@@ -106,7 +106,6 @@
   </animated:view>
 </template>
 
-<!--TODO: To be moved into separate folder-->
 <script>
 import OwnStatusBar from "./StatusBar";
 import Header from "./Header";
