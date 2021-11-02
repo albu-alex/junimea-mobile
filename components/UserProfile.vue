@@ -271,7 +271,10 @@ export default {
       }
     },
     goToMainPage(){
-      this.$emit("goToMainPage", this.profilePicture);
+      if(this.isMainUser)
+        this.$emit("goToMainPage", this.profilePicture);
+      else
+        this.$emit("goToMainPage", "");
     }
   }
 }
