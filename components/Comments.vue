@@ -152,7 +152,6 @@ export default {
         this.showReplyBox = true;
         return;
       }
-      // alert(this.commentText)
       this.commentText = "";
       this.showReplyBox = false;
     },
