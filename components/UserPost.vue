@@ -186,6 +186,7 @@ export default {
   },
   async beforeMount(){
     let comments;
+    let liked;
     await axios({
       method: 'get',
       url: `http://52.57.118.176/Post/Get/${this.id}`,
@@ -193,7 +194,16 @@ export default {
     })
     .then(function (response){
       comments = response.data.comments
+      liked = response.data.liked
     });
+    if(liked){
+      this.likeOpacity = 0.4;
+      this.dislikeOpacity = 1;
+    }
+    else{
+      this.likeOpacity = 1;
+      this.dislikeOpacity = 0.4;
+    }
     this.comments = comments
     this.disliked = this.liked;
     this.taps = 0;
@@ -365,16 +375,6 @@ export default {
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
             [
-              // {
-              //   text: "Login",
-              //   style: "cancel",
-              //   onPress: () => this.$emit("redirectToLogin")
-              // },
-              // {
-              //   text: "Continue as guest",
-              //   style: "destructive",
-              //   onPress: () => alert(":(")
-              // }
               {
                 text: "Like",
                 style: "cancel",
@@ -528,16 +528,6 @@ export default {
       if(showLogin)
         Alert.alert("Error", "You are not logged in",
             [
-              // {
-              //   text: "Login",
-              //   style: "cancel",
-              //   onPress: () => this.$emit("redirectToLogin")
-              // },
-              // {
-              //   text: "Continue as guest",
-              //   style: "destructive",
-              //   onPress: () => alert(":(")
-              // }
               {
                 text: "Like",
                 style: "cancel",
