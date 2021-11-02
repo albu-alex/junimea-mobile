@@ -9,7 +9,7 @@
                :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 3}" />
       </touchable-opacity>
     </view>
-    <Image v-if="!profilePictureURL&&!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+    <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
@@ -51,7 +51,7 @@
                :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 3}" />
       </touchable-opacity>
     </view>
-    <Image v-if="!profilePictureURL&&!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+    <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
@@ -259,7 +259,7 @@ export default {
               cancelable: true,
             }
         );
-        this.profilePictureURL = newProfilePic;
+        this.profilePicture = newProfilePic;
       }
     },
     refreshList(event) {
@@ -271,7 +271,7 @@ export default {
       }
     },
     goToMainPage(){
-      this.$emit("goToMainPage", this.profilePictureURL);
+      this.$emit("goToMainPage", this.profilePicture);
     }
   }
 }
