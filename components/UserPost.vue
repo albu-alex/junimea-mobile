@@ -209,6 +209,32 @@ export default {
     this.disliked = this.liked;
     this.taps = 0;
   },
+  async created(){
+    let posts = await AsyncStorage.getItem(
+        'hidden-posts',
+    );
+    posts = JSON.parse(posts)
+    if(!Array.isArray(posts)){
+      if (this.id=== posts){
+        this.username = "";
+        this.profilePic = "";
+        this.files = [];
+        this.userPostText = "";
+        this.postHidden = true;
+      }
+    }
+    else{
+      let found = false;
+      found = posts.find(post => post === this.id);
+      if(!found)
+        return;
+      this.username = "";
+      this.profilePic = "";
+      this.files = [];
+      this.userPostText = "";
+      this.postHidden = true;
+    }
+  },
   methods:{
     async createNewComment(){
       let showLogin = false;
@@ -414,14 +440,31 @@ export default {
         let newPosts = posts
         newPosts.push(this.id)
         posts = JSON.stringify(newPosts)
-        // alert(posts)
       }
       await AsyncStorage.setItem(
           'saved-posts',
           posts
       );
     },
-    hidePost(){
+    async hidePost(){
+      let posts = await AsyncStorage.getItem(
+          'hidden-posts',
+      );
+      posts = JSON.parse(posts)
+      if(!Array.isArray(posts)){
+        posts = []
+        posts.push(this.id.toString())
+        posts = JSON.stringify(posts)
+      }
+      else{
+        let newPosts = posts
+        newPosts.push(this.id)
+        posts = JSON.stringify(newPosts)
+      }
+      await AsyncStorage.setItem(
+          'hidden-posts',
+          posts
+      );
       this.username = "";
       this.profilePic = "";
       this.files = [];
