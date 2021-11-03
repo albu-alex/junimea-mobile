@@ -25,13 +25,13 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
@@ -79,13 +79,13 @@
     <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts" :style="{opacity: tagsOpacity}">
+    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
