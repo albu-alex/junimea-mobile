@@ -97,7 +97,8 @@ export default {
     comment: String,
     profilePicture: String,
     files: Array,
-    firstName: String
+    firstName: String,
+    isGuest: Boolean
   },
   data(){
     return{
@@ -113,6 +114,9 @@ export default {
   },
   methods:{
     async postPhoto(){
+      if(this.isGuest){
+        return;
+      }
       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
       if (permissionResult.granted === false) {
