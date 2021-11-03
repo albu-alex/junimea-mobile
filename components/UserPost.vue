@@ -11,7 +11,7 @@
     </touchable-opacity>
     <view class="postContent">
       <view class="postContentHeader">
-        <text class="postTextDark">{{userPostText}}</text>
+        <text class="postTextDark" v-if="!postHidden">{{userPostText}}</text>
         <text class="postTextDark" v-if="postHidden">This post is now hidden</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
@@ -72,7 +72,7 @@
     </touchable-opacity>
     <view class="postContent">
       <view class="postContentHeader">
-        <text class="postTextLight">{{userPostText}}</text>
+        <text class="postTextLight" v-if="!postHidden">{{userPostText}}</text>
         <text class="postTextLight" v-if="postHidden">This post is now hidden</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
