@@ -115,6 +115,24 @@ export default {
   methods:{
     async postPhoto(){
       if(this.isGuest){
+        Alert.alert("Error", "You are not logged in",
+            [
+              {
+                text: "Login",
+                style: "cancel",
+                onPress: () => this.$emit("redirectToLogin")
+              },
+              {
+                text: "Continue as guest",
+                style: "destructive",
+                onPress: () => alert(":(")
+              }
+            ],
+            {
+              cancelable: true,
+              onDismiss: () => alert(":(")
+            }
+        );
         return;
       }
       let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
