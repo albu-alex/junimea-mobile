@@ -186,28 +186,7 @@ export default {
     isGuest: Boolean
   },
   async beforeMount(){
-    let comments;
-    let liked;
-    await axios({
-      method: 'get',
-      url: `http://52.57.118.176/Post/Get/${this.id}`,
-      timeout: 4000
-    })
-    .then(function (response){
-      comments = response.data.comments
-      liked = response.data.liked
-    });
-    if(liked){
-      this.likeOpacity = 0.4;
-      this.dislikeOpacity = 1;
-    }
-    else{
-      this.likeOpacity = 1;
-      this.dislikeOpacity = 0.4;
-    }
-    this.comments = comments
-    this.disliked = this.liked;
-    this.taps = 0;
+    await this.loadPost();
   },
   async created(){
     let posts = await AsyncStorage.getItem(
@@ -426,6 +405,42 @@ export default {
     redirectToCommentUser(userData){
       this.$emit("goToUser", {username: userData.username, profilePicture: userData.profilePicture})
     },
+    async loadPost(){
+      let comments;
+      let liked;
+      let files;
+      let title;
+      let username;
+      let profilePic;
+      await axios({
+        method: 'get',
+        url: `http://52.57.118.176/Post/Get/${this.id}`,
+        timeout: 4000
+      })
+      .then(function (response){
+        comments = response.data.comments
+        liked = response.data.liked
+        files = response.data.files;
+        title = response.data.title;
+        username = response.data.userName;
+        profilePic = response.data.profilePicUrl;
+      });
+      if(liked){
+        this.likeOpacity = 0.4;
+        this.dislikeOpacity = 1;
+      }
+      else{
+        this.likeOpacity = 1;
+        this.dislikeOpacity = 0.4;
+      }
+      this.comments = comments;
+      this.files = files;
+      this.userPostText = title;
+      this.username = username;
+      this.profilePic = profilePic;
+      this.disliked = this.liked;
+      this.taps = 0;
+    },
     async savePost(){
       let posts = await AsyncStorage.getItem(
           'saved-posts',
@@ -471,8 +486,58 @@ export default {
       this.userPostText = "";
       this.postHidden = true;
     },
+    async reShowPost(){
+      let posts = await AsyncStorage.getItem(
+          'hidden-posts',
+      );
+      posts = JSON.parse(posts)
+      if(!Array.isArray(posts)){
+        posts = []
+      }
+      else{
+        let index = posts.indexOf(this.id.toString());
+        posts.splice(index, 1)
+      }
+      posts = JSON.stringify(posts)
+      await AsyncStorage.setItem(
+          'hidden-posts',
+          posts
+      );
+      this.postHidden = false;
+      await this.loadPost();
+    },
     //This function is supposed to let you report bugs and visibility options
     reportBug(){
+      if(!this.postHidden) {
+        Alert.alert("", "",
+            [
+              {
+                text: "Report post",
+                style: "cancel",
+                onPress: () => alert("report post")
+              },
+              {
+                text: "Report bug",
+                style: "cancel",
+                onPress: () => alert("report bug")
+              },
+              {
+                text: "Hide post",
+                style: "cancel",
+                onPress: this.hidePost
+              },
+              {
+                text: "Save post",
+                style: "cancel",
+                onPress: this.savePost
+              }
+            ],
+            {
+              cancelable: true,
+            }
+        );
+        return;
+      }
       Alert.alert("", "",
           [
             {
@@ -486,9 +551,9 @@ export default {
               onPress: () => alert("report bug")
             },
             {
-              text: "Hide post",
+              text: "Show post",
               style: "cancel",
-              onPress: this.hidePost
+              onPress: this.reShowPost
             },
             {
               text: "Save post",
