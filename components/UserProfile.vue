@@ -32,11 +32,15 @@
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
                    v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
-      <scroll-view v-else-if="!isLoading&&areSavedPosts">
+      <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
                   :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
+    <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length === 0">
+      <MaterialIcons class="noMorePostsIcon" name="post-add" :size=100 color="#505050" />
+      <text class="primaryTextDark">There aren't any saved posts!</text>
+    </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
@@ -74,10 +78,14 @@
                 :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
                 v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
     </scroll-view>
-    <scroll-view v-else-if="!isLoading&&areSavedPosts">
+    <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
       <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
                 :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
                 :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
+    </scroll-view>
+    <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length === 0">
+      <MaterialIcons class="noMorePostsIcon" name="post-add" :size=100 color="#AFAFAF" />
+      <text class="primaryTextLight">There aren't any saved posts!</text>
     </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
@@ -91,7 +99,7 @@ import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
 import {Alert, Animated, AsyncStorage, Easing} from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 export default {
   data(){
     return{
@@ -157,7 +165,8 @@ export default {
   },
   components:{
     UserPost,
-    Ionicons
+    Ionicons,
+    MaterialIcons
   },
   methods: {
     viewSavedPosts(){
@@ -281,6 +290,11 @@ export default {
 </script>
 
 <style>
+.noMorePostsIcon{
+  margin-top: 20%;
+  justify-content: center;
+  align-self: center;
+}
 .profileHeader{
   flex-direction: row;
   justify-content: space-between;
