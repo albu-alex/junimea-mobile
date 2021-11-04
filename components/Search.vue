@@ -12,12 +12,16 @@
   <text class="primaryTextDark">
     Trending
   </text>
-  <scroll-view>
+  <scroll-view v-if="tags.length > 0">
     <text v-for="tag in tags" class="tagsDark">
       <touchable-opacity>
         <text class="tagsDark">{{tag}}</text>
       </touchable-opacity>
     </text>
+  </scroll-view>
+  <scroll-view v-else>
+    <MaterialIcons class="icon" name="do-not-touch" :size=54 color="#AAAAAA" />
+    <text class="tagsDark">Your search did not provide any results!</text>
   </scroll-view>
 </view>
 <view class="searchLight" v-else>
@@ -32,17 +36,22 @@
   <text class="primaryTextLight">
     Trending
   </text>
-  <scroll-view>
+  <scroll-view v-if="tags.length > 0">
     <text v-for="tag in tags" class="tagsLight">
       <touchable-opacity>
         <text class="tagsLight">{{tag}}</text>
       </touchable-opacity>
     </text>
   </scroll-view>
+  <scroll-view v-else>
+    <MaterialIcons class="icon" name="do-not-touch" :size=54 color="#555555" />
+    <text class="tagsLight">Your search did not provide any results!</text>
+  </scroll-view>
 </view>
 </template>
 
 <script>
+import { MaterialIcons } from '@expo/vector-icons';
 export default {
   name: "Search",
   data(){
@@ -54,6 +63,9 @@ export default {
   props:{
     isDarkTheme: Boolean,
   },
+  components:{
+    MaterialIcons
+  },
   beforeMount(){
     //Currently just a mockup - actual version will use an API request
     this.tags.push("#sarmale")
@@ -63,6 +75,9 @@ export default {
   },
   //This lifecycle hook is used to match search string with the tags
   beforeUpdate(){
+    if(this.tags.length === 0){
+      return;
+    }
     let regularExpression = new RegExp(this.searchText, 'gi')
     for(let i=0;i<this.tags.length;i++){
       let result = this.tags[i].match(regularExpression)
@@ -86,6 +101,11 @@ export default {
 </script>
 
 <style>
+.icon{
+  justify-content: center;
+  align-self: center;
+  margin-top: 35%;
+}
 .tagsDark{
   color: #AAAAAA;
   font-size: 20px;
