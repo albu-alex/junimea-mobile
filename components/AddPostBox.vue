@@ -1,14 +1,22 @@
 <template>
   <view v-if="isDarkTheme" class="postBox">
-    <text-input v-model="postText" class="addNewPostDark" placeholder="What are you thinking about?"
-                :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
-    <view class="postButtons">
-      <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPost" class="postButtonDark">
-        <text class="postButtonTextDark">Create new post</text>
-      </touchable-opacity>
-      <touchable-opacity :on-press="uploadFile" class="postPhoto">
-        <Ionicons name="image" :size=24 color="#AAAAAA" />
-      </touchable-opacity>
+    <touchable-opacity :on-press="addNewPost" :activeOpacity="0.6">
+      <view v-if="isDarkTheme&&!addPost">
+        <MaterialIcons name="add-circle" :size=40 color="#AAAAAA" />
+        <text class="postButtonTextDark">Create a new post</text>
+      </view>
+    </touchable-opacity>
+    <view v-if="isDarkTheme&&addPost">
+      <text-input v-model="postText" class="addNewPostDark" placeholder="What are you thinking about?"
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+      <view class="postButtons">
+        <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPost" class="postButtonDark">
+          <text class="postButtonTextDark">Create new post</text>
+        </touchable-opacity>
+        <touchable-opacity :on-press="uploadFile" class="postPhoto">
+          <Ionicons name="image" :size=24 color="#AAAAAA" />
+        </touchable-opacity>
+      </view>
     </view>
   </view>
   <view v-else class="postBox">
@@ -30,16 +38,18 @@ import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
 import {Alert} from "react-native";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 export default {
   data(){
     return{
       postText: "",
       images: [],
+      addPost: false
     }
   },
   components:{
-    Ionicons
+    Ionicons,
+    MaterialIcons
   },
   name: "AddPostBox",
   props:{
@@ -47,6 +57,9 @@ export default {
     isDarkTheme: Boolean
   },
   methods:{
+    addNewPost(){
+      this.addPost = true;
+    },
     async uploadFile(){
       if(this.username === ""){
         Alert.alert("Error", "Users can not create posts",
