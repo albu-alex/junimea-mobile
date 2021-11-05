@@ -2,8 +2,8 @@
   <view v-if="isDarkTheme" class="postBox">
     <touchable-opacity :on-press="addNewPost" :activeOpacity="0.6">
       <view v-if="isDarkTheme&&!addPost">
-        <MaterialIcons name="add-circle" :size=40 color="#AAAAAA" />
-        <text class="postButtonTextDark">Create a new post</text>
+        <MaterialIcons :style="{alignSelf: 'center', marginBottom: 5}" name="add-circle" :size=32 color="#AAAAAA" />
+        <text class="primaryTextDark">Create a new post</text>
       </view>
     </touchable-opacity>
     <view v-if="isDarkTheme&&addPost">
@@ -20,6 +20,13 @@
     </view>
   </view>
   <view v-else class="postBox">
+    <touchable-opacity :on-press="addNewPost" :activeOpacity="0.6">
+      <view v-if="!isDarkTheme&&!addPost">
+        <MaterialIcons :style="{alignSelf: 'center', marginBottom: 5}" name="add-circle" :size=32 color="#555555" />
+        <text class="primaryTextLight">Create a new post</text>
+      </view>
+    </touchable-opacity>
+    <view v-if="!isDarkTheme&&addPost">
     <text-input v-model="postText" class="addNewPostLight" placeholder="What are you thinking about?" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
     <view class="postButtons">
@@ -29,6 +36,7 @@
       <touchable-opacity :on-press="uploadFile" class="postPhoto">
         <Ionicons name="image" :size=24 color="#555555" />
       </touchable-opacity>
+    </view>
     </view>
   </view>
 </template>
@@ -167,6 +175,20 @@ export default {
 </script>
 
 <style>
+.primaryTextDark{
+  color: #AAAAAA;
+  font-size: 20px;
+  font-weight: 400;
+  align-self: center;
+  margin-bottom: 2%;
+}
+.primaryTextLight{
+  color: #555555;
+  font-size: 20px;
+  font-weight: 400;
+  align-self: center;
+  margin-bottom: 2%;
+}
 .postButtons{
   flex-direction: row;
   margin-bottom: 3%;
