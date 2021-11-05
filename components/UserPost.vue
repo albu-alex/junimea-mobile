@@ -45,7 +45,7 @@
         <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#AAAAAA" />
       </touchable-opacity>
     </view>
-    <view v-if="showComments" class="postDark">
+    <view v-if="showComments&&comments.length > 0" class="postDark">
         <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                   :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                   :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser" :isGuest="isGuest"/>
@@ -60,6 +60,20 @@
         </touchable-opacity>
       </view>
     </view>
+    <view v-if="showComments&&comments.length === 0" class="postDark">
+      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
+      <text class="postTextDark" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
+    <view class="addNewComment">
+      <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+      <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+        <Ionicons name="image" :size=18 color="#AAAAAA" />
+      </touchable-opacity>
+      <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
+        <text class="buttonTextDark">Send</text>
+      </touchable-opacity>
+    </view>
+  </view>
   </view>
   <view v-else-if="!isDarkTheme&&showPost" class="postLight">
     <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
@@ -106,10 +120,24 @@
         <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#555555" />
       </touchable-opacity>
     </view>
-    <view v-if="showComments" class="postLight">
+    <view v-if="showComments&&comments.length > 0" class="postLight">
       <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                 :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                 :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser" :isGuest="isGuest"/>
+      <view class="addNewComment">
+        <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
+                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+        <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+          <Ionicons name="image" :size=18 color="#AAAAAA" />
+        </touchable-opacity>
+        <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
+          <text class="buttonTextLight">Send</text>
+        </touchable-opacity>
+      </view>
+    </view>
+    <view v-if="showComments&&comments.length === 0" class="postLight">
+      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
+      <text class="postTextLight" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
       <view class="addNewComment">
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
                     keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
@@ -129,7 +157,7 @@
 import {Dimensions, Alert, AsyncStorage} from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 const win = Dimensions.get('window');
 import axios from 'axios';
 import Comments from "./Comments";
@@ -140,7 +168,8 @@ export default {
     Comments,
     AntDesign,
     FontAwesome,
-    Ionicons
+    Ionicons,
+    FontAwesome5
   },
   data(){
     return {
@@ -661,6 +690,11 @@ export default {
 
 
 <style>
+.icon{
+  justify-content: center;
+  align-self: center;
+  margin-top: 10%;
+}
 .buttonTextLight{
   color: #555555;
   font-size: 12px;
