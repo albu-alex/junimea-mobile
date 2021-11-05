@@ -1675,7 +1675,7 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day44_3.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day44_4.gif" alt="Second video" height="50%" width=auto/>
 
-# <a id="twentynine">Day 45</a>
+# <a id="fourtyfive">Day 45</a>
 ## Today I have done the following:
 <uL>
 <li>
