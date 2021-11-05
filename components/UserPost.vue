@@ -198,18 +198,18 @@ export default {
       postHidden: false,
       //This variables will change when a post is interacted with
       likeOpacity: 1,
-      dislikeOpacity: 1
+      dislikeOpacity: 1,
+      username: "",
+      userPostText: "",
+      files: [],
+      likes: 0
     }
   },
   name: "UserPost",
   props:{
-    userPostText: String,
     id: Number,
-    files: Array,
-    dimensions: Array,
-    username: String,
     profilePic: String,
-    likes: Number,
+    dimensions: Array,
     liked: Boolean,
     isDarkTheme: Boolean,
     isGuest: Boolean
@@ -223,7 +223,7 @@ export default {
     );
     posts = JSON.parse(posts)
     if(!Array.isArray(posts)){
-      if (this.id=== posts){
+      if (this.id === posts){
         this.username = "";
         this.profilePic = "";
         this.files = [];

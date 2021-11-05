@@ -46,10 +46,9 @@
       <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
-                  :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
+                  :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
-                  :files="post.files" :username="post.username" :profilePic="post.profilePic"
-                  :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
+                  @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
           <activity-indicator size="large" color="dimgrey" />
         </view>
@@ -100,10 +99,9 @@
       <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
-                  :userPostText="post.title" :id="post.id" @redirectToLogin="redirectToLogin"
+                  :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
-                  :files="post.files" :username="post.username" :profilePic="post.profilePic"
-                  :likes="post.likes" @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
+                  @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
           <activity-indicator size="large" color="#969696" />
         </view>
