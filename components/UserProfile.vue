@@ -30,7 +30,7 @@
       <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
-                   v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
+                   v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
       <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -76,7 +76,7 @@
     <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
       <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
-                v-if="post.userId === userID || post.userName === username" :isDarkTheme="isDarkTheme"></UserPost>
+                v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
     </scroll-view>
     <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
       <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
