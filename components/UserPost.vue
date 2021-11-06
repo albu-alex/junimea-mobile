@@ -136,7 +136,7 @@
       </view>
     </view>
     <view v-if="showComments&&comments.length === 0" class="postLight">
-      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
+      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#555555" />
       <text class="postTextLight" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
       <view class="addNewComment">
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"

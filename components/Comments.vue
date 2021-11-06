@@ -77,7 +77,7 @@
       <Ionicons name="image" :size=18 color="#AAAAAA" />
     </touchable-opacity>
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
-      <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
+      <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextLight">Send</text>
     </touchable-opacity>
   </view>
 </view>
