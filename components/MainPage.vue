@@ -232,7 +232,8 @@ export default {
     goToMainPage(event){
       this.profileDisplayed = false;
       this.postProfileDisplayed = false;
-      this.profilePicture = event
+      if(event !== "")
+        this.profilePicture = event
     },
     redirectToLogin(){
       this.$emit("redirectToLogin", this.isDarkTheme);
@@ -397,7 +398,7 @@ export default {
       let post;
       let newImages = [];
       newPost.images.forEach(image => newImages.push(image.uri))
-      let dimensions = [];
+      let dimensions = [{width: 300, height: 300}];
       newPost.images.forEach(image => dimensions.push(image))
       await axios({
         method: 'post',
@@ -423,7 +424,6 @@ export default {
         }
       });
       if(post){
-        this.profilePicture = post.profilePic
         if(postPosition === 'top')
           this.posts = [post].concat(this.posts)
         else
