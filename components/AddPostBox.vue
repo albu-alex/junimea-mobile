@@ -7,10 +7,13 @@
       </view>
     </touchable-opacity>
     <view v-if="isDarkTheme&&addPost">
-      <text-input v-model="postText" class="addNewPostDark" placeholder="What are you thinking about?"
+      <text-input v-model="postText" class="addNewPostDark" placeholder="Title"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+      <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+      <text class="primaryTextDark">{{images.length}} photos added</text>
       <view class="postButtons">
-        <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPost" class="postButtonDark">
+        <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonDark">
           <text class="postButtonTextDark">Create new post</text>
         </touchable-opacity>
         <touchable-opacity :on-press="uploadFile" class="postPhoto">
@@ -27,10 +30,13 @@
       </view>
     </touchable-opacity>
     <view v-if="!isDarkTheme&&addPost">
-    <text-input v-model="postText" class="addNewPostLight" placeholder="What are you thinking about?" :style="{borderRadius: 10, paddingHorizontal: 7}"
+    <text-input v-model="postText" class="addNewPostLight" placeholder="Title" :style="{borderRadius: 10, paddingHorizontal: 7}"
                 :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
+      <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
+                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+      <text class="primaryTextLight">{{images.length}} photos added</text>
     <view class="postButtons">
-      <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPost" class="postButtonLight">
+      <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonLight">
         <text class="postButtonTextLight">Create new post</text>
       </touchable-opacity>
       <touchable-opacity :on-press="uploadFile" class="postPhoto">
@@ -52,7 +58,8 @@ export default {
     return{
       postText: "",
       images: [],
-      addPost: false
+      addPost: false,
+      tags: ""
     }
   },
   components:{
@@ -142,7 +149,7 @@ export default {
       );
       this.images.push(newImage)
     },
-    addPost(){
+    addPostFunction(){
       if(this.username === ""){
         Alert.alert("Error", "Guests can not create posts",
             [
@@ -232,17 +239,19 @@ export default {
   background-color: ghostwhite;
   color: dimgrey;
   width: 90%;
-  height: 50px;
+  height: 40px;
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 5%;
 }
 .addNewPostLight{
   align-self: center;
   background-color: #555555;
   color: #969696;
   width: 90%;
-  height: 50px;
+  height: 40px;
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 5%;
 }
 </style>
