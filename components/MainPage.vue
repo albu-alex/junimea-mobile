@@ -45,10 +45,10 @@
       <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
+        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
-                  @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
+                  @goToUser="goToUser" :isDarkTheme="isDarkTheme"></UserPost>
         <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
           <activity-indicator size="large" color="dimgrey" />
         </view>
@@ -98,7 +98,7 @@
   <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
       <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts"
+        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
                   @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
@@ -286,7 +286,7 @@ export default {
         posts = response.data
         for(let i=0;i<posts.length;i++){
           const numberOfPhotos = posts[i].files.length;
-          posts[i]["dimensions"] = []
+          posts[i]["dimensions"] = [{uri: '', width: 300, height: 300}]
           for(let j=0;j<numberOfPhotos;j++) {
             posts[i]["dimensions"].push(
                 {
@@ -308,8 +308,10 @@ export default {
         else {
           if (postPosition === 'bottom' || !postPosition)
             posts.forEach(post => this.posts.push(post))
-          else
-            this.posts = posts.concat(this.posts)
+          else {
+            this.posts.forEach(post => posts.push(post));
+            this.posts = posts;
+          }
         }
         this.postNumber += 11;
       }
