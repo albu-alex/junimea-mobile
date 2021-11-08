@@ -62,7 +62,7 @@
     </view>
     <view v-if="showComments&&comments.length === 0" class="postDark">
       <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
-      <text class="postTextDark" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
+      <text class="commentsTextDark" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
     <view class="addNewComment">
       <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
@@ -137,7 +137,7 @@
     </view>
     <view v-if="showComments&&comments.length === 0" class="postLight">
       <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#555555" />
-      <text class="postTextLight" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
+      <text class="commentsTextLight" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
       <view class="addNewComment">
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
                     keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
@@ -795,6 +795,20 @@ export default {
   font-weight: 500;
   align-self: flex-start;
   margin-left: 2%;
+  margin-bottom: 2%;
+}
+.commentsTextDark{
+  color: #AAAAAA;
+  font-size: 16px;
+  font-weight: 400;
+  align-self: center;
+  margin-bottom: 2%;
+}
+.commentsTextLight{
+  color: #555555;
+  font-size: 16px;
+  font-weight: 400;
+  align-self: center;
   margin-bottom: 2%;
 }
 .postFeedback{
