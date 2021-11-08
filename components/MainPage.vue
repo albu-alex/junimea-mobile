@@ -284,6 +284,7 @@ export default {
       })
       .then(function (response){
         posts = response.data
+        // alert(response.data[0].id)
         for(let i=0;i<posts.length;i++){
           const numberOfPhotos = posts[i].files.length;
           posts[i]["dimensions"] = [{uri: '', width: 300, height: 300}]
@@ -313,7 +314,7 @@ export default {
             this.posts = posts;
           }
         }
-        this.postNumber += 11;
+        this.postNumber += 10;
       }
     },
     Logout(){
