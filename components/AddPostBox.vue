@@ -11,7 +11,7 @@
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
       <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
-      <text class="primaryTextDark">{{images.length}} photos added</text>
+      <text class="primaryTextDark">{{images.length}} {{photos}} added</text>
       <view class="postButtons">
         <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonDark">
           <text class="postButtonTextDark">Create new post</text>
@@ -34,7 +34,7 @@
                 :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
       <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
                   :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7}" />
-      <text class="primaryTextLight">{{images.length}} photos added</text>
+      <text class="primaryTextLight">{{images.length}} {{photos}} added</text>
     <view class="postButtons">
       <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonLight">
         <text class="postButtonTextLight">Create new post</text>
@@ -59,7 +59,8 @@ export default {
       postText: "",
       images: [],
       addPost: false,
-      tags: ""
+      tags: "",
+      photos: "",
     }
   },
   components:{
@@ -70,6 +71,13 @@ export default {
   props:{
     username: String,
     isDarkTheme: Boolean
+  },
+  beforeUpdate(){
+    if(this.images.length === 0 || this.images.length > 1){
+      this.photos = "photos"
+      return;
+    }
+    this.photos = "photo"
   },
   methods:{
     addNewPost(){
