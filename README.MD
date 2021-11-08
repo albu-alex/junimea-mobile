@@ -1746,3 +1746,45 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day46_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day46_2.gif" alt="First video" height="50%" width=auto/>
+
+# <a id="fourtyseven">Day 47</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Photos added text changes dynamically
+</li>
+<li>
+    Fixed minor post loading bug
+</li>
+<li>
+    Status bar changes color when view mode is changed on android
+</li>
+<li>
+    Over scrolled enabled but there are some bugs left(android)
+</li>
+<li>
+    No comment text restyling
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add no internet message
+    </li>
+    <li>
+        Change from scroll view to flat list to improve performance
+    </li>
+    <li>
+        Add search icon inside text input
+    </li>
+    <li>
+        Add other icons inside text inputs
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_2.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_3.jpg" alt="Second photo" height="50%" width=auto/>
