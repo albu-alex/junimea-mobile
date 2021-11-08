@@ -42,8 +42,7 @@
                      @refreshUserPosts="getInitialPosts('top')"
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
-      <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" overScrollMode="always"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
@@ -95,8 +94,7 @@
                      @refreshUserPosts="getInitialPosts('top')"
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
-  <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList"
+      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" overScrollMode="always"
                    v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
         <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
                   :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"

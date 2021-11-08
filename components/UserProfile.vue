@@ -27,7 +27,7 @@
       </touchable-opacity>
     </view>
 <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-      <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
+      <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts" overScrollMode="always">
         <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                   :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
                    v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
@@ -73,7 +73,7 @@
       </touchable-opacity>
     </view>
     <!--    scrollEventThrottle only works for iOS; have to come up with a solution for Android-->
-    <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts">
+    <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts" overScrollMode="always">
       <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
                 :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
                 v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
