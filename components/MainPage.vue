@@ -196,12 +196,11 @@ export default {
     }
   },
   beforeUpdate(){
-    if (!this.isDarkTheme && Platform.OS === 'ios') {
+    if (!this.isDarkTheme){
       StatusBar.setBarStyle('dark-content', true);
+      return;
     }
-    else if(this.isDarkTheme && Platform.OS === 'ios'){
       StatusBar.setBarStyle('light-content', true);
-    }
   },
   async beforeMount(){
     if(this.customTheme !== undefined){
