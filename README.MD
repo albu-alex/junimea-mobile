@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a><br> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a><br> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a><br> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a> <a href="#thirtysix"> Day 36 </a> <a href="#thirtyseven"> Day 37 </a> <a href="#thirtyeight"> Day 38 </a> <a href="#thirtynine"> Day 39 </a> <a href="#fourty"> Day 40 </a> <br> <a href="#fourtyone"> Day 41 </a> <a href="#fourtytwo"> Day 42 </a> <a href="#fourtythree"> Day 43 </a> <a href="#fourtyfour"> Day 44 </a> <a href="#fourtyfive"> Day 45 </a> <a href="#fourtysix"> Day 46 </a> <a href="#fourtyseven"> Day 47 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a><br> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a><br> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a><br> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a> <a href="#thirtysix"> Day 36 </a> <a href="#thirtyseven"> Day 37 </a> <a href="#thirtyeight"> Day 38 </a> <a href="#thirtynine"> Day 39 </a> <a href="#fourty"> Day 40 </a> <br> <a href="#fourtyone"> Day 41 </a> <a href="#fourtytwo"> Day 42 </a> <a href="#fourtythree"> Day 43 </a> <a href="#fourtyfour"> Day 44 </a> <a href="#fourtyfive"> Day 45 </a> <a href="#fourtysix"> Day 46 </a> <a href="#fourtyseven"> Day 47 </a> <a href="#fourtyeight"> Day 48 </a>
 
 
 This is the QR code to the app:
@@ -1169,7 +1169,7 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_3.png" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_3.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_4.gif" alt="Third video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_5.gif" alt="Fourth video" height="50%" width=auto/>
 
@@ -1788,3 +1788,45 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_1.gif" alt="First video" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_2.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_3.jpg" alt="Second photo" height="50%" width=auto/>
+
+# <a id="fourtyeight">Day 48</a>
+
+## Today I have done the following:
+<uL>
+<li>
+    Changed timeout of the post loading API call
+</li>
+<li>
+    Added the no internet component
+</li>
+<li>
+    Search icon inside search text input
+</li>
+<li>
+    Added icons inside the text inputs of Login
+</li>
+<li>
+    Added logos in login
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add more logos inside text inputs
+    </li>
+    <li>
+        Change from scroll view to flat list to improve performance
+    </li>
+    <li>
+        Keep styling the login component
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_3.jpg" alt="Third photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_4.jpg" alt="Fourth photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_5.jpg" alt="Fifth photo" height="50%" width=auto/>
+
