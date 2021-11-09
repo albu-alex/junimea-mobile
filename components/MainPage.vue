@@ -2,7 +2,7 @@
 <!--After the Login component is done showing, the MainPage component is shown-->
 <!--Consists of: OwnStatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
-  <animated:view v-if="isDarkTheme" class="mainPageDark" :style="{opacity: viewOpacity}">
+  <animated:view v-if="isDarkTheme&&!noConnection" class="mainPageDark" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
@@ -54,7 +54,10 @@
       </scroll-view>
     </animated:view>
   </animated:view>
-  <animated:view v-else class="mainPageLight" :style="{opacity: viewOpacity}">
+  <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
+    <NoConnection :isDarkTheme="isDarkTheme" />
+  </animated:view>
+  <animated:view v-else-if="!isDarkTheme&&!noConnection" class="mainPageLight" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
@@ -106,6 +109,9 @@
       </scroll-view>
     </animated:view>
   </animated:view>
+  <animated:view v-else-if="!isDarkTheme&&noConnection">
+    <NoConnection :isDarkTheme="isDarkTheme" />
+  </animated:view>
 </template>
 
 <script>
@@ -118,6 +124,7 @@ import UserProfile from "./UserProfile";
 import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
+import NoConnection from "./NoConnection";
 import {Platform, StatusBar, Animated, Easing, Alert} from "react-native";
 export default {
   name: "MainPage",
@@ -156,7 +163,8 @@ export default {
       startTime: 0,
       //This variable holds the unique ID of the user logged in
       userID: "",
-      visiblePrompts: false
+      visiblePrompts: false,
+      noConnection: false,
     }
   },
   async created(){
@@ -220,6 +228,7 @@ export default {
     Settings,
     AddPostBox,
     Tags,
+    NoConnection
   },
   props:{
     newUsername: String,
@@ -274,10 +283,11 @@ export default {
     },
     async getInitialPosts(postPosition){
       let posts;
+      let noConnection = false;
       await axios({
         method: 'get',
         url: `http://52.57.118.176/Post/List/${this.postNumber}`,
-        timeout: 4000
+        timeout: 10000
       })
       .then(function (response){
         posts = response.data
@@ -298,7 +308,14 @@ export default {
             posts[i]["profilePic"] = posts[i].profilePicUrl
           }
         }
+      })
+      .catch(function(){
+        noConnection = true;
       });
+      if(noConnection){
+        this.noConnection = true;
+        return;
+      }
       if(posts) {
         this.animateView();
         if(this.postNumber === 10)
@@ -441,6 +458,9 @@ export default {
 </script>
 
 <style>
+.noConnection{
+  align-self: center;
+}
 .posts{
   flex-direction: row;
 }
