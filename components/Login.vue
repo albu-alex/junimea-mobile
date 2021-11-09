@@ -41,16 +41,19 @@
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
-        <Image :source="require('../assets/login-button-facebook.png')"
-               :style="{width: 124, height: 50}" />
+<!--        <Image :source="require('../assets/login-button-facebook.png')"-->
+<!--               :style="{width: 124, height: 50}" />-->
+        <FontAwesome5 name="facebook" :size=60 color="blue" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
-        <Image :source="require('../assets/login-google-button.png')"
-               :style="{width: 124, height: 50, marginLeft: 2}" />
+<!--        <Image :source="require('../assets/login-google-button.png')"-->
+<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
+        <FontAwesome5 class="logoGoogle" name="google-plus-square" :size=60 color="red" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
-        <Image :source="require('../assets/login-button-apple.png')"
-               :style="{width: 124, height: 50, marginLeft: 2}" />
+<!--        <Image :source="require('../assets/login-button-apple.png')"-->
+<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
+        <FontAwesome5 name="apple" :size=60 color="ghostwhite" />
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
@@ -101,16 +104,19 @@
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
-        <Image :source="require('../assets/login-button-facebook.png')"
-               :style="{width: 124, height: 50}" />
+<!--        <Image :source="require('../assets/login-button-facebook.png')"-->
+<!--               :style="{width: 124, height: 50}" />-->
+        <FontAwesome5 name="facebook" :size=60 color="blue" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
-        <Image :source="require('../assets/login-google-button.png')"
-               :style="{width: 124, height: 50, marginLeft: 2}" />
+<!--        <Image :source="require('../assets/login-google-button.png')"-->
+<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
+        <FontAwesome5 class="logoGoogle"  name="google-plus-square" :size=60 color="red" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
-        <Image :source="require('../assets/login-button-apple.png')"
-               :style="{width: 124, height: 50, marginLeft: 2}" />
+<!--        <Image :source="require('../assets/login-button-apple.png')"-->
+<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
+        <FontAwesome5 name="apple" :size=60 color="#070700" />
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
@@ -324,6 +330,11 @@ export default {
   margin-top: 4%;
   margin-bottom: 1%;
   flex-direction: row;
+}
+.logoGoogle{
+  margin-left: 25%;
+  margin-right: 25%;
+  align-self: center;
 }
 .textInputDark{
   background-color: #505050;
