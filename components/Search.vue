@@ -2,7 +2,8 @@
 <template>
 <view class="searchDark" v-if="isDarkTheme">
   <view class="searchHeader">
-    <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{borderRadius: 10, paddingHorizontal: 7}"
+    <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="ghostwhite" />
+    <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
                 placeholder="Search Junimea" v-model="searchText" class="textInputDark"
                 keyboardAppearance="dark" :onKeyPress="search" :multiline="true"></text-input>
     <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
@@ -26,7 +27,8 @@
 </view>
 <view class="searchLight" v-else>
   <view class="searchHeader">
-    <text-input :autoCorrect="false" placeholderTextColor="black" :style="{borderRadius: 10, paddingHorizontal: 7}"
+    <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="black" />
+    <text-input :autoCorrect="false" placeholderTextColor="black" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
                 placeholder="Search Junimea" v-model="searchText" class="textInputLight"
                 keyboardAppearance="light" :onKeyPress="search" :multiline="true"></text-input>
     <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
@@ -51,7 +53,7 @@
 </template>
 
 <script>
-import { MaterialIcons } from '@expo/vector-icons';
+import {Ionicons, MaterialIcons} from '@expo/vector-icons';
 export default {
   name: "Search",
   data(){
@@ -64,7 +66,8 @@ export default {
     isDarkTheme: Boolean,
   },
   components:{
-    MaterialIcons
+    MaterialIcons,
+    Ionicons
   },
   beforeMount(){
     //Currently just a mockup - actual version will use an API request
