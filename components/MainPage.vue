@@ -230,8 +230,8 @@ export default {
       post = post.item
       return(
           <UserPost key={post.id} userPostText={post.title} id={post.id} dimensions={post.dimensions}
-                    files={post.files} username={post.username}  likes={post.likes}
-                    profilePic={post.profilePicUrl}  isDarkTheme={this.isDarkTheme} />
+                    files={post.files} username={post.username} likes={post.likes} redirectToLogin={this.redirectToLogin}
+                    profilePic={post.profilePicUrl} isDarkTheme={this.isDarkTheme} goToUser={this.goToUser} />
       );
     },
     goToMainPage(event){
