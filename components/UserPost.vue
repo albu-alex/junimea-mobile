@@ -441,6 +441,7 @@ export default {
       let title;
       let username;
       let profilePic;
+      let likes;
       await axios({
         method: 'get',
         url: `http://52.57.118.176/Post/Get/${this.id}`,
@@ -453,6 +454,7 @@ export default {
         title = response.data.title;
         username = response.data.userName;
         profilePic = response.data.profilePicUrl;
+        likes = response.data.likes;
       });
       if(liked){
         this.likeOpacity = 0.4;
@@ -462,6 +464,8 @@ export default {
         this.likeOpacity = 1;
         this.dislikeOpacity = 0.4;
       }
+      this.liked = liked;
+      this.likes = likes;
       this.comments = comments;
       this.files = files;
       this.userPostText = title;
