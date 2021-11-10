@@ -42,16 +42,11 @@
                      @refreshUserPosts="getInitialPosts('top')"
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
-      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" overScrollMode="always"
-                   v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
-                  :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
-                  :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
-                  @goToUser="goToUser" :isDarkTheme="isDarkTheme"></UserPost>
-        <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
-          <activity-indicator size="large" color="dimgrey" />
-        </view>
-      </scroll-view>
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
+                 :refreshing="false" ref="pagePosts" :onEndReached="({ distanceFromEnd }) => {
+                            if (distanceFromEnd < 0 || distanceFromEnd > 0.8) return;
+                            this.refreshListBottom()
+                        }" :onEndReachedTreshold="0.5" />
     </animated:view>
   </animated:view>
   <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
@@ -97,16 +92,11 @@
                      @refreshUserPosts="getInitialPosts('top')"
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
-      <scroll-view :scrollEventThrottle="0" :onScroll="refreshList" overScrollMode="always"
-                   v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed" ref="pagePosts">
-        <UserPost v-if="!profileDisplayed&&!searchDisplayed" v-for="post in posts" :key="post.id"
-                  :id="post.id" @redirectToLogin="redirectToLogin" :profilePic="post.profilePic"
-                  :dimensions="(post.dimensions) ? post.dimensions : []" :isGuest="newUsername === ''"
-                  @goToUser="goToUser" :isDarkTheme="isDarkTheme" ></UserPost>
-        <view v-if="isLoading&&!searchDisplayed" :style="{justifyContent: 'center'}">
-          <activity-indicator size="large" color="#969696" />
-        </view>
-      </scroll-view>
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
+                 :refreshing="false" ref="pagePosts" :onEndReached="({ distanceFromEnd }) => {
+                            if (distanceFromEnd < 0 || distanceFromEnd > 0.8) return;
+                            this.refreshListBottom()
+                        }" :onEndReachedTreshold="0.5" />
     </animated:view>
   </animated:view>
   <animated:view v-else-if="!isDarkTheme&&noConnection">
@@ -126,6 +116,7 @@ import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
 import {Platform, StatusBar, Animated, Easing, Alert} from "react-native";
+import React from "react";
 export default {
   name: "MainPage",
   data(){
@@ -235,6 +226,14 @@ export default {
     customTheme: Boolean,
   },
   methods:{
+    renderPosts(post){
+      post = post.item
+      return(
+          <UserPost key={post.id} userPostText={post.title} id={post.id} dimensions={post.dimensions}
+                    files={post.files} username={post.username}  likes={post.likes}
+                    profilePic={post.profilePicUrl}  isDarkTheme={this.isDarkTheme} />
+      );
+    },
     goToMainPage(event){
       this.profileDisplayed = false;
       this.postProfileDisplayed = false;
@@ -291,7 +290,6 @@ export default {
       })
       .then(function (response){
         posts = response.data
-        // alert(response.data[0].id)
         for(let i=0;i<posts.length;i++){
           const numberOfPhotos = posts[i].files.length;
           posts[i]["dimensions"] = [{uri: '', width: 300, height: 300}]
@@ -385,26 +383,11 @@ export default {
       }
       this.profileDisplayed = true
     },
-    refreshList(event){
-      if(!this.refreshAllowed){
-        if(performance.now() - this.startTime <= 2500)
-          return;
-        this.refreshAllowed = true;
-      }
-      else{
-        this.startTime = performance.now();
-        this.refreshAllowed = false;
-      }
-      let paddingToBottom = 1000;
-      if(event.nativeEvent.contentOffset.y < 0){
-        this.isLoading = true;
-        this.getInitialPosts("top");
-        return;
-      }
-      if(event.nativeEvent.contentOffset.y > (event.nativeEvent.contentSize.height - paddingToBottom)){
-        this.isLoading = true;
-        this.getInitialPosts("bottom");
-      }
+    refreshList(){
+      this.getInitialPosts("top");
+    },
+    refreshListBottom(){
+      this.getInitialPosts("bottom");
     },
     async addPost(newPost, postPosition){
       if(this.newUsername === ''){

@@ -259,7 +259,7 @@ export default {
           "PostId": this.id,
           "Files": this.photos
         },
-        timeout: 4000
+        timeout: 5000
       })
       .then(function (response){
         if(response.status === 200){
@@ -449,7 +449,7 @@ export default {
       await axios({
         method: 'get',
         url: `http://52.57.118.176/Post/Get/${this.id}`,
-        timeout: 4000
+        timeout: 10000
       })
       .then(function (response){
         comments = response.data.comments
