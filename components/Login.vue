@@ -28,16 +28,15 @@
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
                 :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30}"
                 class="textInputDark" keyboardAppearance="dark" autoComplete="password"></text-input>
-    <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
-      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonDark" :on-press="verifyLogin">
-        <text class="loginButtonTextDark">Login</text>
-      </touchable-opacity>
-      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonDark" :on-press="registerNewUser">
-        <text class="loginButtonTextDark">Register</text>
-      </touchable-opacity>
-    </view>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" class="loginButtonDark" :on-press="verifyLogin">
+      <text class="loginButtonTextDark">Login</text>
+    </touchable-opacity>
     <touchable-opacity :style="{borderRadius: 10}" v-if="!isLoading&&!waitingForSubmit" class="loginButtonDark" :on-press="loginAsGuest">
       <text class="loginButtonTextDark">Login as guest</text>
+    </touchable-opacity>
+    <text v-if="!isLoading&&!waitingForSubmit" class="bugButtonTextDark">Or you can sign up</text>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" class="loginButtonDark" :on-press="registerNewUser">
+      <text class="loginButtonTextDark">Register</text>
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
@@ -91,16 +90,15 @@
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="#070700"
                 :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30}"
                 class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>
-    <view v-if="!isLoading&&!waitingForSubmit" class="loginButtons">
-      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonLight" :on-press="verifyLogin">
-        <text class="loginButtonTextLight">Login</text>
-      </touchable-opacity>
-      <touchable-opacity :style="{borderRadius: 10}" class="loginButtonLight" :on-press="registerNewUser">
-        <text class="loginButtonTextLight">Register</text>
-      </touchable-opacity>
-    </view>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" class="loginButtonLight" :on-press="verifyLogin">
+      <text class="loginButtonTextLight">Login</text>
+    </touchable-opacity>
     <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 7}" v-if="!isLoading&&!waitingForSubmit" class="loginButtonLight" :on-press="loginAsGuest">
       <text class="loginButtonTextLight">Login as guest</text>
+    </touchable-opacity>
+    <text v-if="!isLoading&&!waitingForSubmit" class="bugButtonTextLight">Or you can sign up</text>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" class="loginButtonLight" :on-press="registerNewUser">
+      <text class="loginButtonTextLight">Register</text>
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
@@ -354,25 +352,28 @@ export default {
   font-size: 32px;
   font-weight: 700;
   color: ghostwhite;
-  margin-bottom: 15%;
+  margin-top: 10%;
+  margin-bottom: 5%;
 }
 .pageIntroLight{
   font-size: 32px;
   font-weight: 700;
   color: #070700;
-  margin-bottom: 15%;
+  margin-top: 10%;
+  margin-bottom: 5%;
 }
 .loginButtonDark{
   background-color: #505050;
   margin: 5%;
+  width: 90%;
 }
 .loginButtonLight{
   background-color: #AFAFAF;
   margin: 5%;
+  width: 90%;
 }
 .loginButtons{
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 .loginButtonTextDark{
@@ -380,16 +381,16 @@ export default {
   font-size: 20px;
   font-weight: 400;
   color: ghostwhite;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 .loginButtonTextLight{
   align-self: center;
   font-size: 20px;
   font-weight: 400;
   color: #070700;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 .bugButtonTextDark{
   align-self: center;
