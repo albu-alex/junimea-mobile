@@ -50,8 +50,9 @@
                   :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                   :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser" :isGuest="isGuest"/>
       <view class="addNewComment">
+      <FontAwesome5 name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
       <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
         <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
           <Ionicons name="image" :size=18 color="#AAAAAA" />
         </touchable-opacity>
@@ -64,8 +65,9 @@
       <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
       <text class="commentsTextDark" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
     <view class="addNewComment">
+      <FontAwesome5 name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
       <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
       <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
         <Ionicons name="image" :size=18 color="#AAAAAA" />
       </touchable-opacity>
@@ -125,8 +127,9 @@
                 :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                 :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser" :isGuest="isGuest"/>
       <view class="addNewComment">
+        <FontAwesome5 name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
-                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
         <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
           <Ionicons name="image" :size=18 color="#AAAAAA" />
         </touchable-opacity>
@@ -136,11 +139,12 @@
       </view>
     </view>
     <view v-if="showComments&&comments.length === 0" class="postLight">
-      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#555555" />
+      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
       <text class="commentsTextLight" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
       <view class="addNewComment">
+        <FontAwesome5 name="comment" :size=14 color="#AAAAAA" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
         <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
-                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:10}" />
+                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
         <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
           <Ionicons name="image" :size=18 color="#AAAAAA" />
         </touchable-opacity>
