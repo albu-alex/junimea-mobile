@@ -26,11 +26,13 @@
         <text class="profilePictureButtonTextDark">View saved posts</text>
       </touchable-opacity>
     </view>
-      <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts" overScrollMode="always">
-        <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"
-                  :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"
-                   v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>
-      </scroll-view>
+<!--      <scroll-view v-if="!isLoading&&!areSavedPosts" :scrollEventThrottle="0" :onScroll="refreshList" ref="pagePosts" overScrollMode="always">-->
+        <flat-list :data="posts" :render-item="(post) => renderPosts(post)">
+<!--        <UserPost v-for="post in posts" :key="post.id" :userPostText="post.title" :id="post.id" :dimensions="post.dimensions"-->
+<!--                  :files="post.files" :username="post.username" :profilePic="post.profilePic" :likes="post.likes"-->
+<!--                   v-if="post.username === username" :isDarkTheme="isDarkTheme"></UserPost>-->
+        </flat-list>
+<!--      </scroll-view>-->
       <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
                   :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
@@ -167,6 +169,11 @@ export default {
     MaterialIcons
   },
   methods: {
+    // renderPosts(post){
+    //   return(
+    //       <Text>{{}}</Text>
+    //   )
+    // },
     viewSavedPosts(){
       this.areSavedPosts = !this.areSavedPosts
     },
