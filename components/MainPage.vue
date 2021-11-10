@@ -398,7 +398,7 @@ export default {
       let post;
       let newImages = [];
       newPost.images.forEach(image => newImages.push(image.uri))
-      let dimensions = [{width: 300, height: 300}];
+      let dimensions = [];
       newPost.images.forEach(image => dimensions.push(image))
       await axios({
         method: 'post',
