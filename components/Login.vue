@@ -8,25 +8,25 @@
     </view>
     <text class="pageIntroDark" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
     <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="user" :size=16 color="ghostwhite"
-                  :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+                  class="logo"/>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Username" v-model="username" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30, zIndex: 1, position: 'absolute'}"
+                placeholder="Username" v-model="username" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 keyboardAppearance="dark" autoComplete="username"></text-input>
     <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&registeredUser" name="user" :size=16 color="ghostwhite"
-                  :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+                  class="logo"/>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
-                placeholderTextColor="ghostwhite" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30, zIndex: 1}"
+                placeholderTextColor="ghostwhite" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 v-model="username" class="textInputDark" keyboardAppearance="dark"></text-input>
     <Entypo v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="email" :size=16 color="ghostwhite"
-            :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+            class="logo"/>
     <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="dark"
                 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
-                placeholder="Email Address" v-model="email" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30, zIndex: 1}"
+                placeholder="Email Address" v-model="email" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 autoComplete="email"></text-input>
     <FontAwesome5 v-if="!isLoading&&!waitingForSubmit" name="lock" :size=16 color="ghostwhite"
-                  :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+                  class="logo"/>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
-                :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30, zIndex: 1}"
+                :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 class="textInputDark" keyboardAppearance="dark" autoComplete="password"></text-input>
     <touchable-opacity v-if="!isLoading&&!waitingForSubmit&&registeredUser" :style="{borderRadius: 10}" class="loginButtonDark" :on-press="verifyLogin">
       <text class="loginButtonTextDark">Login</text>
@@ -42,7 +42,7 @@
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
 <!--        <Image :source="require('../assets/login-button-facebook.png')"-->
 <!--               :style="{width: 124, height: 50}" />-->
-        <FontAwesome5 name="facebook" :size=60 color="blue" />
+        <FontAwesome5 name="facebook" :size=60 color="#0044FF" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
 <!--        <Image :source="require('../assets/login-google-button.png')"-->
@@ -70,25 +70,25 @@
     </view>
     <text class="pageIntroLight" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
     <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="user" :size=16 color="#070700"
-                  :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+                  class="logo"/>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
-                placeholder="Username" v-model="username" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30}"
+                placeholder="Username" v-model="username" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 keyboardAppearance="light" autoComplete="username"></text-input>
     <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&registeredUser" name="user" :size=16 color="#070700"
-                  :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+                  class="logo"/>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
-                placeholderTextColor="#070700" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30}"
+                placeholderTextColor="#070700" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 v-model="username" class="textInputLight" keyboardAppearance="light"></text-input>
     <Entypo v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="email" :size=16 color="#070700"
-            :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+            class="logo"/>
     <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="light"
                 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
-                placeholder="Email Address" v-model="email" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30}"
+                placeholder="Email Address" v-model="email" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 autoComplete="email"></text-input>
     <FontAwesome5 v-if="!isLoading&&!waitingForSubmit" name="lock" :size=16 color="#070700"
-                  :style="{zIndex: 2, paddingTop: 30, paddingRight: 320}"/>
+                  class="logo"/>
     <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="#070700"
-                :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25, marginTop: -30}"
+                :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25}"
                 class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>
     <touchable-opacity v-if="!isLoading&&!waitingForSubmit&&registeredUser" :style="{borderRadius: 10}" class="loginButtonLight" :on-press="verifyLogin">
       <text class="loginButtonTextLight">Login</text>
@@ -324,6 +324,11 @@ export default {
 </script>
 
 <style>
+.logo{
+  z-index: 2;
+  padding-top: 7%;
+  padding-right: 83%;
+}
 .loginWithServices{
   margin-top: 4%;
   margin-bottom: 1%;
@@ -340,6 +345,7 @@ export default {
   height: 5%;
   margin-bottom: 5%;
   color: ghostwhite;
+  margin-top: -7%;
 }
 .textInputLight{
   background-color: #AFAFAF;
@@ -347,6 +353,7 @@ export default {
   height: 5%;
   margin-bottom: 5%;
   color: #070700;
+  margin-top: -7%;
 }
 .pageIntroDark{
   font-size: 32px;
