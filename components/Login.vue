@@ -325,7 +325,6 @@ export default {
 
 <style>
 .logo{
-  z-index: 2;
   padding-top: 7%;
   padding-right: 83%;
 }
