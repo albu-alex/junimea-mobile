@@ -1916,5 +1916,5 @@ This is the QR code to the app:
 </ul>
 
 ## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day50_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day50.jpg" alt="First photo" height="50%" width=auto/>
 
