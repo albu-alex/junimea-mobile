@@ -43,10 +43,7 @@
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
       <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-                 :refreshing="false" ref="pagePosts" :onEndReached="({ distanceFromEnd }) => {
-                            if (distanceFromEnd < 0 || distanceFromEnd > 0.8) return;
-                            this.refreshListBottom()
-                        }" :onEndReachedTreshold="0.5" />
+                 :refreshing="false" ref="pagePosts" :onEndReached="refreshListBottom" :onEndReachedTreshold="2" />
     </animated:view>
   </animated:view>
   <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
@@ -93,10 +90,7 @@
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
       <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-                 :refreshing="false" ref="pagePosts" :onEndReached="({ distanceFromEnd }) => {
-                            if (distanceFromEnd < 0 || distanceFromEnd > 0.8) return;
-                            this.refreshListBottom()
-                        }" :onEndReachedTreshold="0.5" />
+                 :refreshing="false" ref="pagePosts" :onEndReached="refreshListBottom" :onEndReachedTreshold="2" />
     </animated:view>
   </animated:view>
   <animated:view v-else-if="!isDarkTheme&&noConnection">

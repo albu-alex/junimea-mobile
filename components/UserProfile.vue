@@ -26,8 +26,8 @@
         <text class="profilePictureButtonTextDark">View saved posts</text>
       </touchable-opacity>
     </view>
-    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="() => refreshList"
-    :refreshing="false" ref="pagePosts">
+    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
+    :refreshing="false">
     </flat-list>
       <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -69,8 +69,8 @@
         <text class="profilePictureButtonTextLight">View saved posts</text>
       </touchable-opacity>
     </view>
-    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="() => refreshList"
-               :refreshing="false" ref="pagePosts">
+    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
+               :refreshing="false">
     </flat-list>
     <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
       <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -275,13 +275,8 @@ export default {
         this.profilePicture = newProfilePic;
       }
     },
-    refreshList(event) {
-      if(event.nativeEvent.contentOffset.y < 0){
-        this.isLoading = true;
-        this.$emit("refreshUserPosts");
-        this.sleep(500);
-        this.isLoading = false;
-      }
+    refreshList() {
+      this.$emit("refreshUserPosts");
     },
     goToMainPage(){
       if(this.isMainUser)
