@@ -35,13 +35,11 @@
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
-      <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
-        <UserProfile :isMainUser="false"
-                     v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                     :posts="posts" @goToMainPage="goToMainPage"
-                     @refreshUserPosts="getInitialPosts('top')"
-                     :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      </scroll-view>
+      <UserProfile :isMainUser="false"
+                   v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
+                   :posts="posts" @goToMainPage="goToMainPage"
+                   @refreshUserPosts="getInitialPosts('top')"
+                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
                  :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="0" />
     </animated:view>
@@ -82,13 +80,11 @@
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="posts" :style="{opacity: postsOpacity}">
-      <scroll-view v-if="postProfileDisplayed&&!searchDisplayed">
-        <UserProfile :isMainUser="false"
-                      v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                     :posts="posts" @goToMainPage="goToMainPage"
-                     @refreshUserPosts="getInitialPosts('top')"
-                     :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      </scroll-view>
+      <UserProfile :isMainUser="false"
+                    v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
+                   :posts="posts" @goToMainPage="goToMainPage"
+                   @refreshUserPosts="getInitialPosts('top')"
+                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
                  :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="0" />
     </animated:view>
