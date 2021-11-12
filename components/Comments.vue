@@ -17,8 +17,8 @@
                  :showsVerticalScrollIndicator="false"
                  :showsHorizontalScrollIndicator="false">
       <Image :source="{uri: String(file)}"
-             :style="{width: pageWidth, marginBottom: 10,
-                      height: (pageWidth/300)*300}" />
+             :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 20,
+                      height: (pageWidth*0.8/300)*300}" />
     </scroll-view>
   </text>
   <view class="commentInteraction">
@@ -58,8 +58,8 @@
                  :showsVerticalScrollIndicator="false"
                  :showsHorizontalScrollIndicator="false">
       <Image :source="{uri: String(file)}"
-             :style="{width: pageWidth, marginBottom: 10,
-                      height: (pageWidth/300)*300}" />
+             :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 20,
+                      height: (pageWidth*0.8/300)*300}" />
     </scroll-view>
   </text>
   <view class="commentInteraction">
