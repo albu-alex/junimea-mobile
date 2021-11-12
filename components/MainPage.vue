@@ -43,7 +43,7 @@
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
       <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-                 :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="2" />
+                 :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="0" />
     </animated:view>
   </animated:view>
   <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
@@ -90,7 +90,7 @@
                      :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       </scroll-view>
       <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-                 :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="2" />
+                 :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="0" />
     </animated:view>
   </animated:view>
   <animated:view v-else-if="!isDarkTheme&&noConnection">

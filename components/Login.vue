@@ -6,7 +6,8 @@
     <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <text class="pageIntroDark" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
+    <text class="pageIntroDark" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios' ">Welcome to juni.</text>
+    <text class="pageIntroDarkAndroid" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'android' ">Welcome to juni.</text>
     <view :style="{flexDirection: 'row'}">
       <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="user" :size=16 color="ghostwhite"
                     class="logo"/>
@@ -64,11 +65,14 @@
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
-      <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-alb-cu-scris.png')"
+      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-alb-cu-scris.png')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
-    <touchable-opacity v-if="!waitingForSubmit" :on-press="reportBugs">
+    <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'ios'" :on-press="reportBugs">
       <text class="bugButtonTextDark">Found any bugs? Report them!</text>
+    </touchable-opacity>
+    <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'android'" :on-press="reportBugs">
+      <text class="bugButtonTextDarkAndroid">Found any bugs? Report them!</text>
     </touchable-opacity>
   </view>
   <view v-else class="userLoginLight">
@@ -76,7 +80,8 @@
     <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
       <activity-indicator size="large" color="black" />
     </view>
-    <text class="pageIntroLight" v-if="!isLoading&&!waitingForSubmit">Welcome to juni.</text>
+    <text class="pageIntroLight" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'">Welcome to juni.</text>
+    <text class="pageIntroLightAndroid" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'android'">Welcome to juni.</text>
     <view :style="{flexDirection: 'row'}">
       <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="user" :size=16 color="#070700"
                     class="logo"/>
@@ -104,7 +109,7 @@
                     class="logo"/>
       <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="#070700"
                   :secureTextEntry="!showPassword" placeholder="Password" v-model="password" :style="{borderRadius: 15, paddingHorizontal: 25}"
-                  class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>r
+                  class="textInputLight" keyboardAppearance="light" autoComplete="password"></text-input>
     </view>
     <touchable-opacity v-if="!isLoading&&!waitingForSubmit&&registeredUser" :style="{borderRadius: 10}" class="loginButtonLight" :on-press="verifyLogin">
       <text class="loginButtonTextLight">Login</text>
@@ -134,11 +139,14 @@
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
-      <Image v-if="!isLoading&&!waitingForSubmit" :source="require('../assets/unicorn-negru-cu-scris.png')"
+      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-negru-cu-scris.png')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
-    <touchable-opacity v-if="!waitingForSubmit" :on-press="reportBugs">
+    <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'ios'" :on-press="reportBugs">
       <text class="bugButtonTextLight">Found any bugs? Report them!</text>
+    </touchable-opacity>
+    <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'android'" :on-press="reportBugs">
+      <text class="bugButtonTextLightAndroid">Found any bugs? Report them!</text>
     </touchable-opacity>
   </view>
 </template>
@@ -148,7 +156,7 @@
 <script>
 import { Dimensions, Alert} from "react-native";
 const win = Dimensions.get('window');
-import Linking from "react-native";
+import {Linking, Platform} from "react-native";
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import axios from "axios";
 import Loading from "./Loading";
@@ -161,6 +169,10 @@ export default {
   },
   props:{
     isDarkTheme: Boolean,
+  },
+  beforeMount(){
+    this.operatingSystem = Platform.OS;
+    // alert(this.operatingSystem)
   },
   async mounted(){
     await this.sleep(1000)
@@ -180,7 +192,8 @@ export default {
       showPassword: false,
       //This variable keeps track of whether the user needs to register or not
       //Defaults to true
-      registeredUser: true
+      registeredUser: true,
+      operatingSystem: ""
     }
   },
   methods:{
@@ -375,7 +388,13 @@ export default {
   font-weight: 700;
   color: ghostwhite;
   margin-top: 10%;
-  margin-left: -5%;
+  margin-bottom: 5%;
+}
+.pageIntroDarkAndroid{
+  font-size: 32px;
+  font-weight: 700;
+  color: ghostwhite;
+  margin-top: 40%;
   margin-bottom: 5%;
 }
 .pageIntroLight{
@@ -383,6 +402,13 @@ export default {
   font-weight: 700;
   color: #070700;
   margin-top: 10%;
+  margin-bottom: 5%;
+}
+.pageIntroLightAndroid{
+  font-size: 32px;
+  font-weight: 700;
+  color: #070700;
+  margin-top: 40%;
   margin-bottom: 5%;
 }
 .loginButtonDark{
@@ -420,6 +446,16 @@ export default {
   margin-right: 1%;
   margin-top: 5%;
 }
+.bugButtonTextDarkAndroid{
+  align-self: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #AAAAAA;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 10%;
+  margin-bottom: 45%;
+}
 .bugButtonTextLight{
   align-self: center;
   font-size: 16px;
@@ -428,6 +464,16 @@ export default {
   margin-left: 1%;
   margin-right: 1%;
   margin-top: 5%;
+}
+.bugButtonTextLightAndroid{
+  align-self: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #555555;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 10%;
+  margin-bottom: 45%;
 }
 .userLoginDark{
   flex: 1;
