@@ -7,12 +7,16 @@
       </view>
     </touchable-opacity>
     <view v-if="isDarkTheme&&addPost">
-      <Ionicons name="text" :size=20 color="#AAAAAA" class="logo" />
-      <text-input v-model="postText" class="addNewPostDark" placeholder="Title"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-      <FontAwesome5 name="hashtag" :size=20 color="#AAAAAA" class="logo" />
-      <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      <view :style="{flexDirection: 'row'}">
+        <Ionicons name="text" :size=20 color="#AAAAAA" class="logo" />
+        <text-input v-model="postText" class="addNewPostDark" placeholder="Title"
+                    :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      </view>
+      <view :style="{flexDirection: 'row'}">
+        <FontAwesome5 name="hashtag" :size=20 color="#AAAAAA" class="logo" />
+        <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
+                    :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      </view>
       <text class="primaryTextDark">{{images.length}} {{photos}} added</text>
       <view class="postButtons">
         <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonDark">
@@ -32,12 +36,16 @@
       </view>
     </touchable-opacity>
     <view v-if="!isDarkTheme&&addPost">
-      <Ionicons name="text" :size=20 color="ghostwhite" class="logo" />
-      <text-input v-model="postText" class="addNewPostLight" placeholder="Title" :style="{borderRadius: 10, paddingHorizontal: 25}"
-                :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
-      <FontAwesome5 name="hashtag" :size=20 color="ghostwhite" class="logo" />
-      <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
-                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      <view :style="{flexDirection: 'row'}">
+        <Ionicons name="text" :size=20 color="ghostwhite" class="logo" />
+        <text-input v-model="postText" class="addNewPostLight" placeholder="Title" :style="{borderRadius: 10, paddingHorizontal: 25}"
+                  :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
+      </view>
+      <view :style="{flexDirection: 'row'}">
+        <FontAwesome5 name="hashtag" :size=20 color="ghostwhite" class="logo" />
+        <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
+                    :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      </view>
       <text class="primaryTextLight">{{images.length}} {{photos}} added</text>
     <view class="postButtons">
       <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonLight">
@@ -196,7 +204,7 @@ export default {
 
 <style>
 .logo{
-  padding-top: 7%;
+  padding-top: 1%;
   z-index: 2;
   padding-left: 6%;
 }
@@ -261,7 +269,7 @@ export default {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5%;
-  margin-top: -7%;
+  margin-left: -6%;
 }
 .addNewPostLight{
   align-self: center;
@@ -272,6 +280,6 @@ export default {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5%;
-  margin-top: -7%;
+  margin-left: -6%;
 }
 </style>
