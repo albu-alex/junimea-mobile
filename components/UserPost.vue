@@ -1,6 +1,6 @@
 <!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
-  <view v-if="isDarkTheme&&showPost" class="postDark">
+  <view v-if="isDarkTheme&&showPost&&loaded" class="postDark">
     <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
       <view v-if="!postHidden" class="postHeader">
   <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
@@ -77,7 +77,7 @@
     </view>
   </view>
   </view>
-  <view v-else-if="!isDarkTheme&&showPost" class="postLight">
+  <view v-else-if="!isDarkTheme&&showPost&&loaded" class="postLight">
     <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
       <view v-if="!postHidden" class="postHeader">
         <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
@@ -206,7 +206,9 @@ export default {
       username: "",
       userPostText: "",
       files: [],
-      likes: 0
+      likes: 0,
+      //This variable is used in order to render to component after the API call
+      loaded: false
     }
   },
   name: "UserPost",
@@ -460,6 +462,7 @@ export default {
         profilePic = response.data.profilePicUrl;
         likes = response.data.likes;
       });
+      this.loaded = true;
       if(liked){
         this.likeOpacity = 0.4;
         this.dislikeOpacity = 1;
