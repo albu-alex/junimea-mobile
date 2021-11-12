@@ -7,10 +7,12 @@
       </view>
     </touchable-opacity>
     <view v-if="isDarkTheme&&addPost">
+      <Ionicons name="text" :size=20 color="#AAAAAA" class="logo" />
       <text-input v-model="postText" class="addNewPostDark" placeholder="Title"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      <FontAwesome5 name="hashtag" :size=20 color="#AAAAAA" class="logo" />
       <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       <text class="primaryTextDark">{{images.length}} {{photos}} added</text>
       <view class="postButtons">
         <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonDark">
@@ -30,10 +32,12 @@
       </view>
     </touchable-opacity>
     <view v-if="!isDarkTheme&&addPost">
-    <text-input v-model="postText" class="addNewPostLight" placeholder="Title" :style="{borderRadius: 10, paddingHorizontal: 7}"
+      <Ionicons name="text" :size=20 color="ghostwhite" class="logo" />
+      <text-input v-model="postText" class="addNewPostLight" placeholder="Title" :style="{borderRadius: 10, paddingHorizontal: 25}"
                 :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
+      <FontAwesome5 name="hashtag" :size=20 color="ghostwhite" class="logo" />
       <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
-                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7}" />
+                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       <text class="primaryTextLight">{{images.length}} {{photos}} added</text>
     <view class="postButtons">
       <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" class="postButtonLight">
@@ -52,7 +56,7 @@ import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
 import {Alert} from "react-native";
-import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 export default {
   data(){
     return{
@@ -65,7 +69,8 @@ export default {
   },
   components:{
     Ionicons,
-    MaterialIcons
+    MaterialIcons,
+    FontAwesome5
   },
   name: "AddPostBox",
   props:{
@@ -190,6 +195,11 @@ export default {
 </script>
 
 <style>
+.logo{
+  padding-top: 7%;
+  z-index: 2;
+  padding-left: 6%;
+}
 .primaryTextDark{
   color: #AAAAAA;
   font-size: 20px;
@@ -251,6 +261,7 @@ export default {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5%;
+  margin-top: -7%;
 }
 .addNewPostLight{
   align-self: center;
@@ -261,5 +272,6 @@ export default {
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5%;
+  margin-top: -7%;
 }
 </style>
