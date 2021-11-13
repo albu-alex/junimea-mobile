@@ -37,8 +37,8 @@
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-                 :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="0" />
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)"
+                 :onEndReached="refreshListBottom" :onEndReachedTreshold="0" :refreshControl="renderRefreshDark()"/>
     </animated:view>
   </animated:view>
   <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
@@ -79,8 +79,8 @@
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-                 :refreshing="false" :onEndReached="refreshListBottom" :onEndReachedTreshold="0" />
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)"
+                 :onEndReached="refreshListBottom" :onEndReachedTreshold="0" :refreshControl="renderRefreshLight()"/>
     </animated:view>
   </animated:view>
   <animated:view v-else-if="!isDarkTheme&&noConnection">
@@ -99,7 +99,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {Platform, StatusBar, Animated, Easing, Alert} from "react-native";
+import {Platform, StatusBar, Animated, Easing, Alert, RefreshControl} from "react-native";
 import React from "react";
 export default {
   name: "MainPage",
@@ -203,13 +203,24 @@ export default {
     Settings,
     AddPostBox,
     Tags,
-    NoConnection
+    NoConnection,
+    RefreshControl
   },
   props:{
     newUsername: String,
     customTheme: Boolean,
   },
   methods:{
+    renderRefreshDark(){
+      return(
+          <RefreshControl tintColor="ghostwhite" colors={['#ghostwhite']} refreshing={false} onRefresh={this.refreshList}/>
+      )
+    },
+    renderRefreshLight(){
+      return(
+          <RefreshControl tintColor="#070000" colors={['#070000']} refreshing={false} onRefresh={this.refreshList}/>
+      )
+    },
     renderPosts(post){
       post = post.item
       return(
