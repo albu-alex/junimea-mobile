@@ -37,8 +37,8 @@
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)"
-                 :onEndReached="refreshListBottom" :onEndReachedTreshold="0" :refreshControl="renderRefreshDark()"/>
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id"
+                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshDark()"/>
     </animated:view>
   </animated:view>
   <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
@@ -79,8 +79,8 @@
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)"
-                 :onEndReached="refreshListBottom" :onEndReachedTreshold="0" :refreshControl="renderRefreshLight()"/>
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id"
+                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshLight()"/>
     </animated:view>
   </animated:view>
   <animated:view v-else-if="!isDarkTheme&&noConnection">
@@ -99,7 +99,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {Platform, StatusBar, Animated, Easing, Alert, RefreshControl} from "react-native";
+import {StatusBar, Animated, Easing, Alert, RefreshControl} from "react-native";
 import React from "react";
 export default {
   name: "MainPage",
@@ -140,6 +140,7 @@ export default {
       userID: "",
       visiblePrompts: false,
       noConnection: false,
+      lastRefresh: 0
     }
   },
   async created(){
@@ -224,7 +225,7 @@ export default {
     renderPosts(post){
       post = post.item
       return(
-          <UserPost key={post.id} userPostText={post.title} id={post.id} dimensions={post.dimensions}
+          <UserPost userPostText={post.title} id={post.id} dimensions={post.dimensions}
                     files={post.files} username={post.username} likes={post.likes} redirectToLogin={this.redirectToLogin}
                     profilePic={post.profilePicUrl} isDarkTheme={this.isDarkTheme} goToUser={this.goToUser} />
       );
@@ -287,7 +288,7 @@ export default {
         posts = response.data
         for(let i=0;i<posts.length;i++){
           const numberOfPhotos = posts[i].files.length;
-          posts[i]["dimensions"] = [{uri: '', width: 300, height: 300}]
+          posts[i]["dimensions"] = []
           for(let j=0;j<numberOfPhotos;j++) {
             posts[i]["dimensions"].push(
                 {
@@ -314,8 +315,9 @@ export default {
         if(this.postNumber === 10)
           this.posts = posts;
         else {
-          if (postPosition === 'bottom' || !postPosition)
-            posts.forEach(post => this.posts.push(post))
+          if (postPosition === 'bottom' || !postPosition) {
+            this.posts = this.posts.concat(posts)
+          }
           else {
             this.posts.forEach(post => posts.push(post));
             this.posts = posts;
@@ -382,8 +384,15 @@ export default {
     refreshList(){
       this.getInitialPosts("top");
     },
-    refreshListBottom(){
-      this.getInitialPosts("bottom");
+    async refreshListBottom(){
+      if(this.lastRefresh === 0){
+        this.lastRefresh = performance.now();
+        return;
+      }
+      if(performance.now() - this.lastRefresh < 50)
+        return;
+      this.lastRefresh = performance.now();
+      await this.getInitialPosts("bottom");
     },
     async addPost(newPost, postPosition){
       if(this.newUsername === ''){
