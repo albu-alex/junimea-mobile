@@ -214,12 +214,12 @@ export default {
   methods:{
     renderRefreshDark(){
       return(
-          <RefreshControl tintColor="ghostwhite" colors={['#ghostwhite']} refreshing={false} onRefresh={this.refreshList}/>
+          <RefreshControl tintColor="ghostwhite" refreshing={false} onRefresh={this.refreshList}/>
       )
     },
     renderRefreshLight(){
       return(
-          <RefreshControl tintColor="#070000" colors={['#070000']} refreshing={false} onRefresh={this.refreshList}/>
+          <RefreshControl tintColor="#070000" refreshing={false} onRefresh={this.refreshList}/>
       )
     },
     renderPosts(post){

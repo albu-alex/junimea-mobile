@@ -13,13 +13,16 @@
   </view>
   <text :style="{marginLeft: 5}" class="primaryTextDark">{{comment}}</text>
   <text v-for="(file,index) in files">
-    <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
-                 :showsVerticalScrollIndicator="false"
-                 :showsHorizontalScrollIndicator="false">
-      <Image :source="{uri: String(file)}"
-             :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 20,
-                      height: (pageWidth*0.8/300)*300}" />
-    </scroll-view>
+    <view :style="{flexDirection: 'row'}">
+      <view class="commentImageLineDark" />
+      <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                   :showsVerticalScrollIndicator="false"
+                   :showsHorizontalScrollIndicator="false">
+          <Image :source="{uri: String(file)}"
+                 :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 10,
+                          height: (pageWidth*0.8/300)*300}" />
+      </scroll-view>
+    </view>
   </text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
@@ -54,13 +57,16 @@
   </view>
   <text :style="{marginLeft: 5}" class="primaryTextLight">{{comment}}</text>
   <text v-for="(file,index) in files">
-    <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
-                 :showsVerticalScrollIndicator="false"
-                 :showsHorizontalScrollIndicator="false">
-      <Image :source="{uri: String(file)}"
-             :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 20,
-                      height: (pageWidth*0.8/300)*300}" />
-    </scroll-view>
+    <view :style="{flexDirection: 'row'}">
+      <view class="commentImageLineLight" />
+      <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                   :showsVerticalScrollIndicator="false"
+                   :showsHorizontalScrollIndicator="false">
+        <Image :source="{uri: String(file)}"
+               :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 10,
+                          height: (pageWidth*0.8/300)*300}" />
+      </scroll-view>
+    </view>
   </text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
@@ -229,6 +235,18 @@ export default {
 </script>
 
 <style>
+.commentImageLineDark{
+  height: 97%;
+  width: 1%;
+  background-color: #555555;
+  margin-left: 3%;
+}
+.commentImageLineLight{
+  height: 97%;
+  width: 1%;
+  background-color: #AAAAAA;
+  margin-left: 3%;
+}
 .addNewCommentButton{
   margin-left: 5%;
   margin-top: 1%;
