@@ -262,7 +262,7 @@ export default {
         data:{
           "Text": this.commentText,
           "PostId": this.id,
-          "Files": this.photos
+          "Files": this.images
         },
         timeout: 5000
       })
@@ -276,6 +276,8 @@ export default {
       });
       if(!showLogin) {
         this.comments.push(comment)
+        this.images = [];
+        this.commentText = "";
         return;
       }
       Alert.alert("Error", "You are not logged in",
@@ -376,7 +378,7 @@ export default {
             cancelable: true,
           }
       );
-      this.images.push(newImage)
+      this.images.push(newImage.uri)
     },
     sharePost(){
       alert("Not a way to implement this yet!")
