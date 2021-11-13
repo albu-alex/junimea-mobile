@@ -77,6 +77,9 @@
     </view>
   </view>
   </view>
+  <view v-else-if="!loaded">
+    <activity-indicator size="large" color="dimgrey" />
+  </view>
   <view v-else-if="!isDarkTheme&&showPost&&loaded" class="postLight">
     <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
       <view v-if="!postHidden" class="postHeader">

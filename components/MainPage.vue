@@ -22,9 +22,6 @@
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed&&!searchDisplayed"
                 :isDarkTheme="isDarkTheme" @addPost="addPost($event, 'top')"
                 :username="newUsername" @redirectToLogin="redirectToLogin" />
-    <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
-      <activity-indicator size="large" color="dimgrey" />
-    </view>
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
@@ -67,9 +64,6 @@
     <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed&&!searchDisplayed"
                 @addPost="addPost($event, 'top')" :username="newUsername"
                 :isDarkTheme="isDarkTheme" @redirectToLogin="redirectToLogin"/>
-    <view v-if="waitingForPost&&!searchDisplayed" :style="{justifyContent: 'flex-start'}">
-      <activity-indicator size="large" color="dimgrey" />
-    </view>
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
@@ -112,8 +106,8 @@ export default {
   data(){
     return {
       // This variable is responsible for checking whether the creation of the post is occurring or not
-      // Defaults to false
-      waitingForPost: false,
+      // Defaults to true
+      waitingForPost: true,
       //This variable is responsible for displaying the loading component
       isLoading: false,
       //Variable keeps track of the settings bar
@@ -193,9 +187,9 @@ export default {
     if(this.customTheme !== undefined){
       this.isDarkTheme = this.customTheme;
     }
-    this.isLoading = true;
+    this.waitingForPost = true;
     await this.getInitialPosts('top');
-    this.isLoading = false;
+    this.waitingForPost = false;
   },
   async mounted(){
     this.animateView();
@@ -318,6 +312,7 @@ export default {
         }
         this.postNumber += 10;
       }
+      // this.waitingForPost = false;
     },
     Logout(){
       this.$emit("Logout", this.isDarkTheme)
