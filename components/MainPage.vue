@@ -311,7 +311,6 @@ export default {
         return;
       }
       if(posts) {
-        this.animateView();
         if(this.postNumber === 10)
           this.posts = posts;
         else {
