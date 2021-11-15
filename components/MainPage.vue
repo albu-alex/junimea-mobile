@@ -37,7 +37,7 @@
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id"
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshDark()"/>
     </animated:view>
   </animated:view>
@@ -79,7 +79,7 @@
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id"
+      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshLight()"/>
     </animated:view>
   </animated:view>
