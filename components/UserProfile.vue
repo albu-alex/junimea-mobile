@@ -11,8 +11,6 @@
     </view>
     <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
-           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryTextDark">{{username}}</text>
@@ -27,7 +25,7 @@
       </touchable-opacity>
     </view>
     <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-    :refreshing="false">
+    :refreshing="false" :keyExtractor="post => post.id.toString()">
     </flat-list>
       <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -54,8 +52,6 @@
     </view>
     <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <Image v-else-if="profilePicture" :source="{uri: profilePicture}"
-           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <text class="primaryTextLight">{{username}}</text>
@@ -70,7 +66,7 @@
       </touchable-opacity>
     </view>
     <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-               :refreshing="false">
+               :refreshing="false" :keyExtractor="post => post.id.toString()">
     </flat-list>
     <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
       <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -102,7 +98,10 @@ export default {
       profilePictureURL: "",
       viewOpacity: 0,
       areSavedPosts: false,
-      savedPosts: []
+      savedPosts: [],
+      posts: [],
+      noConnection: false,
+      postNumber: 10
     }
   },
   created(){
@@ -148,11 +147,11 @@ export default {
       if(post !== false)
         this.savedPosts.push(post);
     }
+    await this.getInitialPosts('top');
   },
   name: "UserProfile",
   props:{
     username: String,
-    posts: Array,
     profilePicture: String,
     userID: String,
     isMainUser: Boolean,
@@ -275,15 +274,66 @@ export default {
         this.profilePicture = newProfilePic;
       }
     },
-    refreshList() {
-      this.$emit("refreshUserPosts");
+    async refreshList() {
+      await this.getInitialPosts("top");
     },
     goToMainPage(){
       if(this.isMainUser)
         this.$emit("goToMainPage", this.profilePicture);
       else
         this.$emit("goToMainPage", "");
-    }
+    },
+    async getInitialPosts(postPosition){
+      let posts;
+      let noConnection = false;
+      await axios({
+        method: 'get',
+        url: `http://52.57.118.176/Post/List/${this.postNumber}`,
+        timeout: 10000
+      })
+          .then(function (response){
+            posts = response.data
+            for(let i=0;i<posts.length;i++){
+              const numberOfPhotos = posts[i].files.length;
+              posts[i]["dimensions"] = []
+              for(let j=0;j<numberOfPhotos;j++) {
+                posts[i]["dimensions"].push(
+                    {
+                      uri: "",
+                      width: 300,
+                      height: 300
+                    }
+                )
+                //This is just to skip the refactor that is due to come
+                posts[i]["username"] = posts[i].userName
+                posts[i]["profilePic"] = posts[i].profilePicUrl
+              }
+            }
+          })
+          .catch(function(){
+            noConnection = true;
+          });
+      if(noConnection){
+        this.noConnection = true;
+        return;
+      }
+      if(posts) {
+        if(this.postNumber === 10)
+          this.posts = posts.filter(post => post.userId === this.userID);
+        else {
+          if (postPosition === 'bottom' || !postPosition) {
+            this.posts = this.posts.concat(posts)
+          }
+          else {
+            this.posts.forEach(post => posts.push(post));
+            posts = posts.filter(post => post.userId === this.userID);
+            this.posts = posts;
+          }
+        }
+        this.postNumber += 10;
+      }
+      // this.waitingForPost = false;
+    },
   }
 }
 </script>
