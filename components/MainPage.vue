@@ -99,7 +99,8 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl} from "react-native";
+import {StatusBar, Animated, Easing, Alert, RefreshControl, AsyncStorage} from "react-native";
+// import CookieManager from 'react-native-cookies';
 import React from "react";
 export default {
   name: "MainPage",
@@ -191,6 +192,8 @@ export default {
     this.waitingForPost = true;
     await this.getInitialPosts('top');
     this.waitingForPost = false;
+    // let posts = await AsyncStorage.getAllKeys();
+    // alert(posts[1])
   },
   async mounted(){
     this.animateView();
@@ -326,8 +329,9 @@ export default {
       }
       // this.waitingForPost = false;
     },
-    Logout(){
-      this.$emit("Logout", this.isDarkTheme)
+    async Logout(){
+      await AsyncStorage.clear();
+      this.$emit("Logout", this.isDarkTheme);
     },
     animateTags(){
       this.postsOpacity.setValue(0);
