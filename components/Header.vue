@@ -14,7 +14,7 @@
       </touchable-opacity>
       <touchable-opacity class="headerButton" :on-press="goToProfile">
         <Image v-if="profilePic === ''" class="profilePicture"
-               :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+               :source="require('../assets/avatar.png')"
                :style="{width: 25, height:25, borderRadius: 50}" />
         <Image v-else class="profilePicture"
                :source="{uri: profilePic}"
@@ -34,7 +34,7 @@
     </touchable-opacity>
     <touchable-opacity class="headerButton" :on-press="goToProfile">
       <Image v-if="profilePic === ''" class="profilePicture"
-             :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+             :source="require('../assets/avatar.png')"
              :style="{width: 25, height:25, borderRadius: 50}" />
       <Image v-else class="profilePicture"
              :source="{uri: profilePic}"
@@ -63,6 +63,9 @@ export default {
     },
     goToProfile(){
       this.$emit("goToProfile");
+    },
+    debug(e){
+      alert(e);
     }
   },
   props:{
