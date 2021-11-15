@@ -99,8 +99,8 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl, AsyncStorage} from "react-native";
-// import CookieManager from 'react-native-cookies';
+import {StatusBar, Animated, Easing, Alert, RefreshControl} from "react-native";
+const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking')
 import React from "react";
 export default {
   name: "MainPage",
@@ -330,7 +330,7 @@ export default {
       // this.waitingForPost = false;
     },
     async Logout(){
-      await AsyncStorage.clear();
+      RCTNetworking.clearCookies(() => { })
       this.$emit("Logout", this.isDarkTheme);
     },
     animateTags(){
