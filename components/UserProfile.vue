@@ -111,8 +111,10 @@ export default {
       postNumber: 10
     }
   },
-  created(){
-    this.viewOpacity = new Animated.Value(0)
+  async created(){
+    this.viewOpacity = new Animated.Value(0);
+    while(this.posts.length === 0)
+      await this.getInitialPosts('top');
   },
   mounted(){
     this.animateView();
@@ -157,7 +159,6 @@ export default {
       }
       this.noConnection = true;
     }
-    await this.getInitialPosts('top');
   },
   name: "UserProfile",
   props:{
@@ -190,7 +191,7 @@ export default {
       return(
           <UserPost key={post.id} userPostText={post.title} id={post.id} dimensions={post.dimensions}
                     files={post.files} username={post.username}  likes={post.likes}
-                    profilePic={post.profilePicUrl}  isDarkTheme={this.isDarkTheme}
+                    profilePic={post.profilePicUrl} isDarkTheme={this.isDarkTheme}
           />
       );
     },

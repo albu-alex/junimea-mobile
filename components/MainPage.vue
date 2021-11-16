@@ -31,13 +31,13 @@
     <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="posts" :style="{opacity: postsOpacity}">
+    <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"
                    v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
                    :posts="posts" @goToMainPage="goToMainPage"
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
+      <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshDark()"/>
     </animated:view>
   </animated:view>
@@ -192,8 +192,6 @@ export default {
     this.waitingForPost = true;
     await this.getInitialPosts('top');
     this.waitingForPost = false;
-    // let posts = await AsyncStorage.getAllKeys();
-    // alert(posts[1])
   },
   async mounted(){
     this.animateView();
@@ -230,7 +228,7 @@ export default {
       return(
           <UserPost userPostText={post.title} id={post.id} dimensions={post.dimensions}
                     files={post.files} username={post.username} likes={post.likes} redirectToLogin={this.redirectToLogin}
-                    profilePic={post.profilePicUrl} isDarkTheme={this.isDarkTheme} goToUser={this.goToUser} />
+                    profilePic={post.profilePicUrl} isDarkTheme={this.isDarkTheme} goToUser={() => alert("hey")} />
       );
     },
     goToMainPage(event){
