@@ -1,5 +1,5 @@
 <template>
-  <animated:view class="profile" v-if="username !== '' && isDarkTheme" :style="{opacity: viewOpacity}">
+  <animated:view class="profile" v-if="username !== '' && isDarkTheme&&!this.noConnection" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
         <Ionicons name="ios-arrow-back" :size=30 color="#505050" />
@@ -40,6 +40,9 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
   </animated:view>
+  <view v-else-if="isDarkTheme&&this.noConnection">
+    <NoConnection :isDarkTheme="isDarkTheme" />
+  </view>
   <animated:view class="profile" v-else-if="username !== '' && !isDarkTheme" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
@@ -81,11 +84,15 @@
       <activity-indicator size="large" color="dimgrey" />
     </view>
   </animated:view>
+  <view v-else-if="!isDarkTheme&&this.noConnection">
+    <NoConnection :isDarkTheme="isDarkTheme" />
+  </view>
 </template>
 
 <script>
 import React from 'react';
 import UserPost from "./UserPost";
+import NoConnection from "./NoConnection";
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
@@ -121,7 +128,7 @@ export default {
       await axios({
         method: 'get',
         url: `http://52.57.118.176/Post/Get/${postId}`,
-        timeout: 4000
+        timeout: 5000
       })
       .then(function (response) {
         if (response.status === 200) {
@@ -144,8 +151,11 @@ export default {
       .catch(function () {
         post = false;
       });
-      if(post !== false)
+      if(post !== false) {
         this.savedPosts.push(post);
+        return;
+      }
+      this.noConnection = true;
     }
     await this.getInitialPosts('top');
   },
@@ -159,6 +169,7 @@ export default {
   },
   components:{
     UserPost,
+    NoConnection,
     Ionicons,
     MaterialIcons
   },
