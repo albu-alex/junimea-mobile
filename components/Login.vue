@@ -172,7 +172,6 @@ export default {
   },
   beforeMount(){
     this.operatingSystem = Platform.OS;
-    // alert(this.operatingSystem)
   },
   async mounted(){
     await this.sleep(1000)
@@ -275,11 +274,12 @@ export default {
         }
       });
       this.showPassword = shownPassword;
+      //Data from the text-inputs is reset
+      this.username = "";
+      this.password = "";
       if(loggedIn) {
         this.$emit('verifyLogin', {username: this.username, token: userToken});
       }
-      //Data from the text-inputs is reset
-      this.password = "";
       this.waitingForSubmit = false;
     },
     //The registerNewUser method registers the user if he cannot be found in the database;

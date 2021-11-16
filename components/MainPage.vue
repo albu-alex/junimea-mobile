@@ -7,9 +7,12 @@
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts"
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem !== 'android'"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
               @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem === 'android'"
+              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
+              @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
@@ -49,9 +52,12 @@
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
               @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts"
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem !== 'android'"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
               @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
+    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem === 'android'"
+              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
+              @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}"/>
@@ -99,7 +105,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl} from "react-native";
+import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform} from "react-native";
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking')
 import React from "react";
 export default {
@@ -141,7 +147,8 @@ export default {
       userID: "",
       visiblePrompts: false,
       noConnection: false,
-      lastRefresh: 0
+      lastRefresh: 0,
+      operatingSystem: ""
     }
   },
   async created(){
@@ -192,6 +199,7 @@ export default {
     this.waitingForPost = true;
     await this.getInitialPosts('top');
     this.waitingForPost = false;
+    this.operatingSystem = Platform.OS;
   },
   async mounted(){
     this.animateView();
@@ -458,6 +466,9 @@ export default {
 }
 .settingsExtended{
   height: 15%;
+}
+.settingsExtendedAndroid{
+  height: 25%;
 }
 .tags{
   margin-top: 12.5%;
