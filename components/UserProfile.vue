@@ -24,8 +24,8 @@
         <text class="profilePictureButtonTextDark">View saved posts</text>
       </touchable-opacity>
     </view>
-    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-    :refreshing="false" :keyExtractor="post => post.id.toString()">
+    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)"
+               :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshDark()">
     </flat-list>
       <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -68,8 +68,8 @@
         <text class="profilePictureButtonTextLight">View saved posts</text>
       </touchable-opacity>
     </view>
-    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)" :onRefresh="refreshList"
-               :refreshing="false" :keyExtractor="post => post.id.toString()">
+    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)"
+               :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshLight()">
     </flat-list>
     <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
       <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -96,7 +96,7 @@ import NoConnection from "./NoConnection";
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
-import {Alert, Animated, AsyncStorage, Easing} from "react-native";
+import {Alert, Animated, AsyncStorage, Easing, RefreshControl} from "react-native";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 export default {
   data(){
@@ -171,9 +171,20 @@ export default {
     UserPost,
     NoConnection,
     Ionicons,
-    MaterialIcons
+    MaterialIcons,
+    RefreshControl
   },
   methods: {
+    renderRefreshDark(){
+      return(
+          <RefreshControl tintColor="ghostwhite" refreshing={false} onRefresh={this.refreshList}/>
+      )
+    },
+    renderRefreshLight(){
+      return(
+          <RefreshControl tintColor="#070000" refreshing={false} onRefresh={this.refreshList}/>
+      )
+    },
     renderPosts(post){
       post = post.item
       return(
