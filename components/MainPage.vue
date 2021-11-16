@@ -240,6 +240,7 @@ export default {
       );
     },
     goToMainPage(event){
+      this.animateView();
       this.profileDisplayed = false;
       this.postProfileDisplayed = false;
       if(event !== "")
