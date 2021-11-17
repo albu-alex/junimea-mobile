@@ -8,12 +8,14 @@
     </touchable-opacity>
     <view v-if="isDarkTheme&&addPost">
       <view :style="{flexDirection: 'row'}">
-        <Ionicons name="text" :size=20 color="#AAAAAA" class="logo" />
+        <Ionicons v-if="operatingSystem === 'ios'" name="text" :size=20 color="#AAAAAA" class="logo" />
+        <Ionicons v-else name="text" :size=20 color="#AAAAAA" class="logoAndroid" />
         <text-input v-model="postText" class="addNewPostDark" placeholder="Title"
                     :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
       <view :style="{flexDirection: 'row'}">
-        <FontAwesome5 name="hashtag" :size=20 color="#AAAAAA" class="logo" />
+        <FontAwesome5 v-if="operatingSystem === 'ios'" name="hashtag" :size=20 color="#AAAAAA" class="logo" />
+        <FontAwesome5 v-else name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
         <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
                     :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
@@ -37,12 +39,14 @@
     </touchable-opacity>
     <view v-if="!isDarkTheme&&addPost">
       <view :style="{flexDirection: 'row'}">
-        <Ionicons name="text" :size=20 color="ghostwhite" class="logo" />
+        <Ionicons v-if="operatingSystem === 'ios'" name="text" :size=20 color="ghostwhite" class="logo" />
+        <Ionicons v-else name="text" :size=20 color="ghostwhite" class="logoAndroid" />
         <text-input v-model="postText" class="addNewPostLight" placeholder="Title" :style="{borderRadius: 10, paddingHorizontal: 25}"
                   :multiline="true" keyboardAppearance="light" placeholderTextColor="ghostwhite"/>
       </view>
       <view :style="{flexDirection: 'row'}">
-        <FontAwesome5 name="hashtag" :size=20 color="ghostwhite" class="logo" />
+        <FontAwesome5 v-if="operatingSystem === 'ios'" name="hashtag" :size=20 color="ghostwhite" class="logo" />
+        <FontAwesome5 v-else name="hashtag" :size=20 color="ghostwhite" class="logoAndroid" />
         <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
                     :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
@@ -63,7 +67,7 @@
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
-import {Alert} from "react-native";
+import {Alert, Platform} from "react-native";
 import { Ionicons, MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 export default {
   data(){
@@ -73,6 +77,7 @@ export default {
       addPost: false,
       tags: "",
       photos: "",
+      operatingSystem: ""
     }
   },
   components:{
@@ -84,6 +89,9 @@ export default {
   props:{
     username: String,
     isDarkTheme: Boolean
+  },
+  beforeMount(){
+    this.operatingSystem = Platform.OS;
   },
   beforeUpdate(){
     if(this.images.length === 0 || this.images.length > 1){
@@ -205,6 +213,11 @@ export default {
 <style>
 .logo{
   padding-top: 1%;
+  z-index: 2;
+  padding-left: 6%;
+}
+.logoAndroid{
+  padding-top: 2%;
   z-index: 2;
   padding-left: 6%;
 }
