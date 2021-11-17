@@ -2,17 +2,35 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view v-if="isDarkTheme" class="headerDark">
-      <touchable-opacity class="headerButton" :on-press="showTags">
+      <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="showTags">
         <text class="headerTextDark">juni.</text>
       </touchable-opacity>
-      <touchable-opacity class="headerButton" :on-press="displaySettings">
+      <touchable-opacity v-else class="headerButtonAndroid" :on-press="showTags">
+        <text class="headerTextDark">juni.</text>
+      </touchable-opacity>
+      <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="displaySettings">
         <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
-      <touchable-opacity class="headerButton" :on-press="searchPosts">
+      <touchable-opacity v-else class="headerButtonAndroid" :on-press="displaySettings">
+        <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
+               :style="{width: 25, height:25}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="searchPosts">
         <Ionicons name="ios-search-outline" :size=24 color="white" />
       </touchable-opacity>
-      <touchable-opacity class="headerButton" :on-press="goToProfile">
+      <touchable-opacity v-else class="headerButtonAndroid" :on-press="searchPosts">
+        <Ionicons name="ios-search-outline" :size=24 color="white" />
+      </touchable-opacity>
+      <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="goToProfile">
+        <Image v-if="profilePic === ''" class="profilePicture"
+               :source="require('../assets/avatar.png')"
+               :style="{width: 25, height:25, borderRadius: 50}" />
+        <Image v-else class="profilePicture"
+               :source="{uri: profilePic}"
+               :style="{width: 25, height:25, borderRadius: 50}" />
+      </touchable-opacity>
+      <touchable-opacity v-else class="headerButtonAndroid" :on-press="goToProfile">
         <Image v-if="profilePic === ''" class="profilePicture"
                :source="require('../assets/avatar.png')"
                :style="{width: 25, height:25, borderRadius: 50}" />
@@ -22,17 +40,35 @@
       </touchable-opacity>
   </view>
   <view v-else class="headerLight">
-    <touchable-opacity class="headerButton" :on-press="showTags">
+    <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="showTags">
       <text class="headerTextLight">juni.</text>
     </touchable-opacity>
-    <touchable-opacity class="headerButton" :on-press="displaySettings">
+    <touchable-opacity v-else class="headerButtonAndroid" :on-press="showTags">
+      <text class="headerTextLight">juni.</text>
+    </touchable-opacity>
+    <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="displaySettings">
       <Image class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
              :style="{width: 25, height:25}" />
     </touchable-opacity>
-    <touchable-opacity class="headerButton" :on-press="searchPosts">
+    <touchable-opacity v-else class="headerButtonAndroid" :on-press="displaySettings">
+      <Image class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
+             :style="{width: 25, height:25}" />
+    </touchable-opacity>
+    <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="searchPosts">
       <Ionicons name="ios-search-outline" :size=24 color="black" />
     </touchable-opacity>
-    <touchable-opacity class="headerButton" :on-press="goToProfile">
+    <touchable-opacity v-else class="headerButtonAndroid" :on-press="searchPosts">
+      <Ionicons name="ios-search-outline" :size=24 color="black" />
+    </touchable-opacity>
+    <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="goToProfile">
+      <Image v-if="profilePic === ''" class="profilePicture"
+             :source="require('../assets/avatar.png')"
+             :style="{width: 25, height:25, borderRadius: 50}" />
+      <Image v-else class="profilePicture"
+             :source="{uri: profilePic}"
+             :style="{width: 25, height:25, borderRadius: 50}" />
+    </touchable-opacity>
+    <touchable-opacity v-else class="headerButtonAndroid" :on-press="goToProfile">
       <Image v-if="profilePic === ''" class="profilePicture"
              :source="require('../assets/avatar.png')"
              :style="{width: 25, height:25, borderRadius: 50}" />
@@ -46,10 +82,19 @@
 <!--Did not separate the script in another file for obvious reasons-->
 <script>
 import { Ionicons } from '@expo/vector-icons';
+import {Platform} from 'react-native';
 export default {
   name: "Header",
   components:{
     Ionicons
+  },
+  data(){
+    return {
+      operatingSystem: ""
+    };
+  },
+  beforeMount(){
+    this.operatingSystem = Platform.OS
   },
   methods:{
     searchPosts(){
@@ -78,6 +123,9 @@ export default {
 <style>
 .headerButton{
   margin-top: 2%;
+}
+.headerButtonAndroid{
+  margin-top: 1%;
 }
 .headerDark{
   height: 5%;
