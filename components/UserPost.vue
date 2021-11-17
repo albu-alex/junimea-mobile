@@ -161,7 +161,7 @@
 
 
 <script>
-import {Dimensions, Alert, AsyncStorage} from "react-native";
+import {Dimensions, Alert, AsyncStorage, Platform} from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
@@ -554,6 +554,57 @@ export default {
     //This function is supposed to let you report bugs and visibility options
     reportBug(){
       if(!this.postHidden) {
+        if(Platform.OS === 'ios')
+          Alert.alert("", "",
+              [
+                {
+                  text: "Report post",
+                  style: "cancel",
+                  onPress: () => alert("report post")
+                },
+                {
+                  text: "Report bug",
+                  style: "cancel",
+                  onPress: () => alert("report bug")
+                },
+                {
+                  text: "Hide post",
+                  style: "cancel",
+                  onPress: this.hidePost
+                },
+                {
+                  text: "Save post",
+                  style: "cancel",
+                  onPress: this.savePost
+                }
+              ]
+          );
+        else
+          Alert.alert("", "",
+              [
+                {
+                  text: "Report post",
+                  style: "cancel",
+                  onPress: () => alert("report post")
+                },
+                {
+                  text: "Hide post",
+                  style: "cancel",
+                  onPress: this.hidePost
+                },
+                {
+                  text: "Save post",
+                  style: "cancel",
+                  onPress: this.savePost
+                }
+              ],
+              {
+                cancelable: true,
+              }
+          );
+        return;
+      }
+      if(Platform.OS === 'ios')
         Alert.alert("", "",
             [
               {
@@ -567,9 +618,29 @@ export default {
                 onPress: () => alert("report bug")
               },
               {
-                text: "Hide post",
+                text: "Show post",
                 style: "cancel",
-                onPress: this.hidePost
+                onPress: this.reShowPost
+              },
+              {
+                text: "Save post",
+                style: "cancel",
+                onPress: this.savePost
+              }
+            ]
+        );
+      else
+        Alert.alert("", "",
+            [
+              {
+                text: "Report post",
+                style: "cancel",
+                onPress: () => alert("report post")
+              },
+              {
+                text: "Show post",
+                style: "cancel",
+                onPress: this.reShowPost
               },
               {
                 text: "Save post",
@@ -581,35 +652,6 @@ export default {
               cancelable: true,
             }
         );
-        return;
-      }
-      Alert.alert("", "",
-          [
-            {
-              text: "Report post",
-              style: "cancel",
-              onPress: () => alert("report post")
-            },
-            {
-              text: "Report bug",
-              style: "cancel",
-              onPress: () => alert("report bug")
-            },
-            {
-              text: "Show post",
-              style: "cancel",
-              onPress: this.reShowPost
-            },
-            {
-              text: "Save post",
-              style: "cancel",
-              onPress: this.savePost
-            }
-          ],
-          {
-            cancelable: true,
-          }
-      );
     },
     async dislikePost(){
       let newLikes;
