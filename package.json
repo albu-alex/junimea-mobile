@@ -33,7 +33,8 @@
     "vue-native-helper": "^0.3.1",
     "vue-native-router": "^0.2.1",
     "vue-pull-refresh": "^0.2.7",
-    "vue-simple-drawer": "^1.0.6"
+    "vue-simple-drawer": "^1.0.6",
+    "react-native-screens": "~3.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

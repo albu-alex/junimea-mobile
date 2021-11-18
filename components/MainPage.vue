@@ -219,6 +219,9 @@ export default {
   props:{
     newUsername: String,
     customTheme: Boolean,
+    navigation: {
+      type: Object
+    }
   },
   methods:{
     renderRefreshDark(){
@@ -247,7 +250,8 @@ export default {
         this.profilePicture = event
     },
     redirectToLogin(){
-      this.$emit("redirectToLogin", this.isDarkTheme);
+      // this.$emit("redirectToLogin", this.isDarkTheme);
+      this.navigation.navigate("Login");
     },
     changeViewMode(){
       this.isDarkTheme = !this.isDarkTheme;

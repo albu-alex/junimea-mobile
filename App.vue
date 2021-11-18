@@ -22,7 +22,11 @@ const StackNavigator = createStackNavigator(
       Login: Login,
     },
     {
-      initialRouteName: 'Home',
+      initialRouteName: 'Login',
+      headerMode: 'none',
+      navigationOptions: {
+        headerVisible: false,
+      }
     }
 );
 

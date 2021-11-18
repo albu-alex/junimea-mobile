@@ -169,6 +169,9 @@ export default {
   },
   props:{
     isDarkTheme: Boolean,
+    navigation: {
+      type: Object
+    }
   },
   beforeMount(){
     this.operatingSystem = Platform.OS;
@@ -342,7 +345,8 @@ export default {
     // If user logs in as guest, he cannot make new post and cannot access his profile
     loginAsGuest(){
       alert("Beware that if you continue as a guest, your experience will be limited");
-      this.$emit('verifyLogin', {username: "guest", token: ""});
+      // this.$emit('verifyLogin', {username: "guest", token: ""});
+      this.navigation.navigate("Home")
     },
     //This function will consist in an email prompt in order to contact us regarding any bugs
     reportBugs(){
