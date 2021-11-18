@@ -18,11 +18,11 @@ import {
 
 const StackNavigator = createStackNavigator(
     {
-      Home: MainPage,
+      MainPage: MainPage,
       Login: Login,
     },
     {
-      initialRouteName: 'Login',
+      initialRouteName: 'MainPage',
       headerMode: 'none',
       navigationOptions: {
         headerVisible: false,

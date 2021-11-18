@@ -346,7 +346,7 @@ export default {
     loginAsGuest(){
       alert("Beware that if you continue as a guest, your experience will be limited");
       // this.$emit('verifyLogin', {username: "guest", token: ""});
-      this.navigation.navigate("Home")
+      this.navigation.navigate("MainPage")
     },
     //This function will consist in an email prompt in order to contact us regarding any bugs
     reportBugs(){

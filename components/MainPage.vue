@@ -342,7 +342,8 @@ export default {
     },
     async Logout(){
       RCTNetworking.clearCookies(() => { })
-      this.$emit("Logout", this.isDarkTheme);
+      // this.$emit("Logout", this.isDarkTheme);
+      this.navigation.navigate("Login");
     },
     animateTags(){
       this.postsOpacity.setValue(0);
