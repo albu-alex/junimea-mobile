@@ -251,7 +251,7 @@ export default {
     },
     redirectToLogin(){
       // this.$emit("redirectToLogin", this.isDarkTheme);
-      this.navigation.navigate("Login");
+      this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     changeViewMode(){
       this.isDarkTheme = !this.isDarkTheme;
@@ -343,7 +343,7 @@ export default {
     async Logout(){
       RCTNetworking.clearCookies(() => { })
       // this.$emit("Logout", this.isDarkTheme);
-      this.navigation.navigate("Login");
+      this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     animateTags(){
       this.postsOpacity.setValue(0);

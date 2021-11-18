@@ -168,13 +168,13 @@ export default {
     Entypo
   },
   props:{
-    isDarkTheme: Boolean,
     navigation: {
       type: Object
     }
   },
   beforeMount(){
     this.operatingSystem = Platform.OS;
+    // alert(this.navigation.getParam('theme'))
   },
   async mounted(){
     await this.sleep(1000)
@@ -195,7 +195,8 @@ export default {
       //This variable keeps track of whether the user needs to register or not
       //Defaults to true
       registeredUser: true,
-      operatingSystem: ""
+      operatingSystem: "",
+      isDarkTheme: this.navigation.getParam('theme')
     }
   },
   methods:{
