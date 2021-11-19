@@ -281,7 +281,7 @@ export default {
       this.username = "";
       this.password = "";
       if(loggedIn) {
-        this.$emit('verifyLogin', {username: this.username, token: userToken});
+        this.navigation.navigate('MainPage', {username: this.username})
       }
       this.waitingForSubmit = false;
     },

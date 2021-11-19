@@ -148,7 +148,8 @@ export default {
       visiblePrompts: false,
       noConnection: false,
       lastRefresh: 0,
-      operatingSystem: ""
+      operatingSystem: "",
+      newUsername: this.navigation.getParam('username'),
     }
   },
   async created(){
@@ -217,7 +218,6 @@ export default {
     RefreshControl
   },
   props:{
-    newUsername: String,
     customTheme: Boolean,
     navigation: {
       type: Object
