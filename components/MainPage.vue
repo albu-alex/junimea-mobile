@@ -14,8 +14,8 @@
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
               @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
-            @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
-            @displaySettings="navigation.navigate('Search', {theme: isDarkTheme})" :style="{zIndex: 2}" />
+            @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
+            @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
 <!--    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />-->
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="goToMainPage"
@@ -155,11 +155,6 @@ export default {
     this.viewOpacity = new Animated.Value(0)
     this.tagsOpacity = new Animated.Value(0)
     this.postsOpacity = new Animated.Value(1)
-    if(this.newUsername === "guest"){
-      this.newUsername = ""
-      return;
-    }
-    await this.getSelf();
   },
   beforeUpdate(){
     if (!this.isDarkTheme){
@@ -174,6 +169,7 @@ export default {
     }
     await this.getInitialPosts('top');
     this.operatingSystem = Platform.OS;
+    await this.getSelf();
   },
   async mounted(){
     this.animateView();
@@ -207,23 +203,25 @@ export default {
         url: `http://52.57.118.176/User/Self`,
         timeout: 4000
       })
-          .then(function (response){
-            if(response.status === 200){
-              profilePicture = response.data.profilePicUrl
-              username = response.data.email
-              userID = response.data.id
-            }
-          })
-          .catch(function(){
-            profilePicture = "";
-            username = "";
-            userID = "";
-          });
+      .then(function (response){
+        if(response.status === 200){
+          profilePicture = response.data.profilePicUrl
+          username = response.data.email
+          userID = response.data.id
+        }
+      })
+      .catch(function(){
+        profilePicture = "";
+        username = "";
+        userID = "";
+      });
       if(profilePicture !== "") {
         this.newUsername = username;
         this.profilePicture = profilePicture;
         this.userID = userID;
       }
+      if(username === '')
+        this.newUsername = ''
     },
     renderRefreshDark(){
       return(
