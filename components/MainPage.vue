@@ -105,7 +105,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform, Image} from "react-native";
+import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform, Image, Dimensions} from "react-native";
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking')
 import React from "react";
 export default {
@@ -122,7 +122,7 @@ export default {
       settingsDisplayed: false,
       posts: [],
       //This variable keeps track of the number of posts displayed
-      postNumber: 10,
+      postNumber: 100,
       //Variable keeps track of the profile page
       //Defaults to false
       profileDisplayed: false,
@@ -302,20 +302,17 @@ export default {
           const numberOfPhotos = posts[i].files.length;
           posts[i]["dimensions"] = []
           for(let j=0;j<numberOfPhotos;j++) {
-            let width, height;
-            const getDimension = function(imageWidth, imageHeight){
-              width = imageWidth;
-              height = imageHeight;
+            const getDimensions = function(imageWidth, imageHeight){
+              const win = Dimensions.get('window');
+              posts[i]["dimensions"].push(
+                  {
+                    uri: "",
+                    width: win.width,
+                    height: (win.width/imageWidth) * imageHeight
+                  }
+              )
             }
-            Image.getSize(posts[i].files[j], (w, h) => getDimension(w, h));
-            alert(width)
-            posts[i]["dimensions"].push(
-                {
-                  uri: "",
-                  width: 300,
-                  height: 300
-                }
-            )
+            Image.getSize(posts[i].files[j], (w, h) => getDimensions(w, h));
             posts[i]["username"] = posts[i].userName
             posts[i]["profilePic"] = posts[i].profilePicUrl
           }

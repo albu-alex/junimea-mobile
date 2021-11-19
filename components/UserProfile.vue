@@ -108,7 +108,7 @@ export default {
       savedPosts: [],
       posts: [],
       noConnection: false,
-      postNumber: 10
+      postNumber: 100
     }
   },
   async created(){
