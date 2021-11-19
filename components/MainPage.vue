@@ -219,9 +219,9 @@ export default {
         this.newUsername = username;
         this.profilePicture = profilePicture;
         this.userID = userID;
+        return;
       }
-      if(username === '')
-        this.newUsername = ''
+      this.newUsername = ''
     },
     renderRefreshDark(){
       return(
@@ -302,14 +302,32 @@ export default {
           const numberOfPhotos = posts[i].files.length;
           posts[i]["dimensions"] = []
           for(let j=0;j<numberOfPhotos;j++) {
+            let width, height
+            let reader = new FileReader();
+
+            reader.readAsDataURL(posts[i].files[j]);
+            reader.onload = evt => {
+              let img = new Image();
+              img.onload = () => {
+                width = img.width;
+                height = img.height;
+              }
+              img.src = evt.target.result;
+            }
+
+            reader.onerror = evt => {
+              console.error(evt);
+            }
+            // actualImage.onerror = function(){
+            //   alert("Error")
+            // }
             posts[i]["dimensions"].push(
                 {
                   uri: "",
-                  width: 300,
-                  height: 300
+                  width: width,
+                  height: height
                 }
             )
-            //This is just to skip the refactor that is due to come
             posts[i]["username"] = posts[i].userName
             posts[i]["profilePic"] = posts[i].profilePicUrl
           }
@@ -336,7 +354,6 @@ export default {
         }
         this.postNumber += 10;
       }
-      // this.waitingForPost = false;
     },
     async Logout(){
       RCTNetworking.clearCookies(() => { })
