@@ -105,7 +105,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform} from "react-native";
+import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform, Image} from "react-native";
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking')
 import React from "react";
 export default {
@@ -302,30 +302,18 @@ export default {
           const numberOfPhotos = posts[i].files.length;
           posts[i]["dimensions"] = []
           for(let j=0;j<numberOfPhotos;j++) {
-            let width, height
-            let reader = new FileReader();
-
-            reader.readAsDataURL(posts[i].files[j]);
-            reader.onload = evt => {
-              let img = new Image();
-              img.onload = () => {
-                width = img.width;
-                height = img.height;
-              }
-              img.src = evt.target.result;
+            let width, height;
+            const getDimension = function(imageWidth, imageHeight){
+              width = imageWidth;
+              height = imageHeight;
             }
-
-            reader.onerror = evt => {
-              console.error(evt);
-            }
-            // actualImage.onerror = function(){
-            //   alert("Error")
-            // }
+            Image.getSize(posts[i].files[j], (w, h) => getDimension(w, h));
+            alert(width)
             posts[i]["dimensions"].push(
                 {
                   uri: "",
-                  width: width,
-                  height: height
+                  width: 300,
+                  height: 300
                 }
             )
             posts[i]["username"] = posts[i].userName
