@@ -15,8 +15,8 @@
               @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
-    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
+            @displaySettings="navigation.navigate('Search', {theme: isDarkTheme})" :style="{zIndex: 2}" />
+<!--    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />-->
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="goToMainPage"
                  @refreshUserPosts="getInitialPosts('top')"
@@ -59,9 +59,9 @@
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
               @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
-            @searchDisplayed="searchDisplayed = true" :profilePic="profilePicture"
+            @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}"/>
-    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />
+<!--    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />-->
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="goToMainPage"
                   @refreshUserPosts="getInitialPosts('top')"
@@ -250,7 +250,6 @@ export default {
         this.profilePicture = event
     },
     redirectToLogin(){
-      // this.$emit("redirectToLogin", this.isDarkTheme);
       this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     changeViewMode(){

@@ -1,6 +1,7 @@
 <!--This component is going to be used to search for posts by the tags that the post has-->
 <template>
 <view class="searchDark" v-if="isDarkTheme">
+  <OwnStatusBar :isDarkTheme="isDarkTheme"/>
   <view class="searchHeader">
     <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="ghostwhite" />
     <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
@@ -26,6 +27,7 @@
   </scroll-view>
 </view>
 <view class="searchLight" v-else>
+  <OwnStatusBar :isDarkTheme="isDarkTheme"/>
   <view class="searchHeader">
     <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="black" />
     <text-input :autoCorrect="false" placeholderTextColor="black" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
@@ -54,20 +56,25 @@
 
 <script>
 import {Ionicons, MaterialIcons} from '@expo/vector-icons';
+import OwnStatusBar from "./StatusBar"
 export default {
   name: "Search",
   data(){
     return{
       searchText: "",
-      tags: []
+      tags: [],
+      isDarkTheme: this.navigation.getParam('theme')
     }
   },
   props:{
-    isDarkTheme: Boolean,
+    navigation: {
+      type: Object
+    }
   },
   components:{
     MaterialIcons,
-    Ionicons
+    Ionicons,
+    OwnStatusBar
   },
   beforeMount(){
     //Currently just a mockup - actual version will use an API request
@@ -91,7 +98,7 @@ export default {
   },
   methods:{
     cancelSearch(){
-      this.$emit("cancelSearch");
+      this.navigation.navigate("MainPage");
     },
     search({ nativeEvent: { key: keyValue } }){
       if(keyValue === 'Enter'){
@@ -172,8 +179,10 @@ export default {
 }
 .searchDark{
   background-color: #252525;
+  flex: 1;
 }
 .searchLight{
   background-color: #DADADA;
+  flex: 1;
 }
 </style>

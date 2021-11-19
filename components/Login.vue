@@ -152,7 +152,6 @@
 </template>
 
 
-<!--TODO: To be moved into separate folder-->
 <script>
 import { Dimensions, Alert} from "react-native";
 const win = Dimensions.get('window');
