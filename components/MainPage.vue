@@ -119,7 +119,7 @@ export default {
       settingsDisplayed: false,
       posts: [],
       //This variable keeps track of the number of posts displayed
-      postNumber: 100,
+      postNumber: 200,
       //Variable keeps track of the profile page
       //Defaults to false
       profileDisplayed: false,
@@ -410,7 +410,6 @@ export default {
         alert("It looks like you are a guest! You must register before creating a post!")
         return;
       }
-      this.waitingForPost = true;
       let post;
       let newImages = [];
       newPost.images.forEach(image => newImages.push(image.uri))
@@ -445,7 +444,6 @@ export default {
         else
           this.posts.push(post)
       }
-      this.waitingForPost = false;
     },
     goToUser(event){
       this.postUsername = event.username
