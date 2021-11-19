@@ -22,7 +22,7 @@
                  @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
     <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed&&!searchDisplayed"
+    <AddPostBox v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed"
                 :isDarkTheme="isDarkTheme" @addPost="addPost($event, 'top')"
                 :username="newUsername" @redirectToLogin="redirectToLogin" />
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
@@ -67,7 +67,7 @@
                   @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
 <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!waitingForPost&&!postProfileDisplayed&&!searchDisplayed"
+    <AddPostBox v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed"
                 @addPost="addPost($event, 'top')" :username="newUsername"
                 :isDarkTheme="isDarkTheme" @redirectToLogin="redirectToLogin"/>
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
@@ -112,9 +112,6 @@ export default {
   name: "MainPage",
   data(){
     return {
-      // This variable is responsible for checking whether the creation of the post is occurring or not
-      // Defaults to true
-      waitingForPost: true,
       //This variable is responsible for displaying the loading component
       isLoading: false,
       //Variable keeps track of the settings bar
