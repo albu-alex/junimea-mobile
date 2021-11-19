@@ -149,7 +149,6 @@ export default {
       noConnection: false,
       lastRefresh: 0,
       operatingSystem: "",
-      newUsername: this.navigation.getParam('username'),
     }
   },
   async created(){
@@ -160,31 +159,7 @@ export default {
       this.newUsername = ""
       return;
     }
-    let profilePicture;
-    let username;
-    let userID;
-    await axios({
-      method: 'get',
-      url: `http://52.57.118.176/User/Self`,
-      timeout: 4000
-    })
-    .then(function (response){
-      if(response.status === 200){
-        profilePicture = response.data.profilePicUrl
-        username = response.data.email
-        userID = response.data.id
-      }
-    })
-    .catch(function(){
-      profilePicture = "";
-      username = "";
-      userID = "";
-    });
-    if(profilePicture !== "") {
-      this.newUsername = username;
-      this.profilePicture = profilePicture;
-      this.userID = userID;
-    }
+    await this.getSelf();
   },
   beforeUpdate(){
     if (!this.isDarkTheme){
@@ -197,9 +172,7 @@ export default {
     if(this.customTheme !== undefined){
       this.isDarkTheme = this.customTheme;
     }
-    this.waitingForPost = true;
     await this.getInitialPosts('top');
-    this.waitingForPost = false;
     this.operatingSystem = Platform.OS;
   },
   async mounted(){
@@ -218,12 +191,40 @@ export default {
     RefreshControl
   },
   props:{
+    newUsername: String,
     customTheme: Boolean,
     navigation: {
       type: Object
     }
   },
   methods:{
+    async getSelf(){
+      let profilePicture;
+      let username;
+      let userID;
+      await axios({
+        method: 'get',
+        url: `http://52.57.118.176/User/Self`,
+        timeout: 4000
+      })
+          .then(function (response){
+            if(response.status === 200){
+              profilePicture = response.data.profilePicUrl
+              username = response.data.email
+              userID = response.data.id
+            }
+          })
+          .catch(function(){
+            profilePicture = "";
+            username = "";
+            userID = "";
+          });
+      if(profilePicture !== "") {
+        this.newUsername = username;
+        this.profilePicture = profilePicture;
+        this.userID = userID;
+      }
+    },
     renderRefreshDark(){
       return(
           <RefreshControl tintColor="ghostwhite" refreshing={false} onRefresh={this.refreshList}/>
@@ -341,7 +342,6 @@ export default {
     },
     async Logout(){
       RCTNetworking.clearCookies(() => { })
-      // this.$emit("Logout", this.isDarkTheme);
       this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     animateTags(){

@@ -281,7 +281,7 @@ export default {
       this.username = "";
       this.password = "";
       if(loggedIn) {
-        this.navigation.navigate('MainPage', {username: this.username})
+        this.navigation.navigate('MainPage')
       }
       this.waitingForSubmit = false;
     },
@@ -346,7 +346,7 @@ export default {
     loginAsGuest(){
       alert("Beware that if you continue as a guest, your experience will be limited");
       // this.$emit('verifyLogin', {username: "guest", token: ""});
-      this.navigation.navigate("MainPage")
+      this.navigation.navigate('MainPage')
     },
     //This function will consist in an email prompt in order to contact us regarding any bugs
     reportBugs(){
