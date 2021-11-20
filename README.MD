@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a><br> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a><br> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a><br> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a> <a href="#thirtysix"> Day 36 </a> <a href="#thirtyseven"> Day 37 </a> <a href="#thirtyeight"> Day 38 </a> <a href="#thirtynine"> Day 39 </a> <a href="#fourty"> Day 40 </a> <br> <a href="#fourtyone"> Day 41 </a> <a href="#fourtytwo"> Day 42 </a> <a href="#fourtythree"> Day 43 </a> <a href="#fourtyfour"> Day 44 </a> <a href="#fourtyfive"> Day 45 </a> <a href="#fourtysix"> Day 46 </a> <a href="#fourtyseven"> Day 47 </a> <a href="#fourtyeight"> Day 48 </a> <a href="#fourtynine"> Day 49 </a> <a href="#fifty"> Day 50 </a> <br> <a href="#fiftyone"> Day 51 </a> <a href="#fiftytwo"> Day 52 </a> <a href="#fiftythree"> Day 53 </a> <a href="#fiftyfour"> Day 54 </a> <a href="#fiftyfive"> Day 55 </a> <a href="#fiftysix"> Day 56 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a><br> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a><br> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a><br> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a> <a href="#thirtysix"> Day 36 </a> <a href="#thirtyseven"> Day 37 </a> <a href="#thirtyeight"> Day 38 </a> <a href="#thirtynine"> Day 39 </a> <a href="#fourty"> Day 40 </a> <br> <a href="#fourtyone"> Day 41 </a> <a href="#fourtytwo"> Day 42 </a> <a href="#fourtythree"> Day 43 </a> <a href="#fourtyfour"> Day 44 </a> <a href="#fourtyfive"> Day 45 </a> <a href="#fourtysix"> Day 46 </a> <a href="#fourtyseven"> Day 47 </a> <a href="#fourtyeight"> Day 48 </a> <a href="#fourtynine"> Day 49 </a> <a href="#fifty"> Day 50 </a> <br> <a href="#fiftyone"> Day 51 </a> <a href="#fiftytwo"> Day 52 </a> <a href="#fiftythree"> Day 53 </a> <a href="#fiftyfour"> Day 54 </a> <a href="#fiftyfive"> Day 55 </a> <a href="#fiftysix"> Day 56 </a> <a href="#fiftyseven"> Day 57 </a>
 
 
 This is the QR code to the app:
@@ -2149,3 +2149,43 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day56_1.gif" alt="First video" height="50%" width=auto/>
 
+# <a id="fiftyseven">Day 57</a>
+
+## Major updates
+
+## Today I have done the following:
+<uL>
+<li>
+    Navigation between search and main page complete
+</li>
+<li>
+    Fixed navigating between login and main page
+</li>
+<li>
+    Fixed guest mode accessibility
+</li>
+<li>
+    Got proper image dimensions when loading them in the main page
+</li>
+<li>
+    Adjusted for corrupt DB posts
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add the theme when going back from search to main page
+    </li>
+    <li>
+        Fix incomming bugs
+    </li>
+    <li>
+        Keep implementing Navigator
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day57_1.gif" alt="First video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day57_2.gif" alt="Second video" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day57_3.gif" alt="Third video" height="50%" width=auto/>
