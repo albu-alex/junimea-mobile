@@ -173,7 +173,6 @@ export default {
   },
   beforeMount(){
     this.operatingSystem = Platform.OS;
-    // alert(this.navigation.getParam('theme'))
   },
   async mounted(){
     await this.sleep(1000)
