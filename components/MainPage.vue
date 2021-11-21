@@ -16,7 +16,6 @@
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
             @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
-<!--    <Search v-if="searchDisplayed" :isDarkTheme="isDarkTheme" @cancelSearch="searchDisplayed = false" />-->
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="goToMainPage"
                  @refreshUserPosts="getInitialPosts('top')"
@@ -164,6 +163,7 @@ export default {
     if(this.customTheme !== undefined){
       this.isDarkTheme = this.customTheme;
     }
+    this.isDarkTheme = this.navigation.getParam('theme');
     await this.getInitialPosts('top');
     this.operatingSystem = Platform.OS;
     await this.getSelf();
@@ -313,6 +313,13 @@ export default {
             posts[i]["username"] = posts[i].userName
             posts[i]["profilePic"] = posts[i].profilePicUrl
           }
+          posts[i]["dimensions"].push(
+              {
+                uri: "",
+                width: 300,
+                height: 300
+              }
+          )
         }
       })
       .catch(function(){

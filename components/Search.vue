@@ -98,7 +98,7 @@ export default {
   },
   methods:{
     cancelSearch(){
-      this.navigation.navigate("MainPage");
+      this.navigation.navigate("MainPage", {theme: this.isDarkTheme});
     },
     search({ nativeEvent: { key: keyValue } }){
       if(keyValue === 'Enter'){
