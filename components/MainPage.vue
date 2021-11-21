@@ -298,12 +298,11 @@ export default {
           posts[i]["dimensions"] = []
           for(let j=0;j<numberOfPhotos;j++) {
             const getDimensions = function(imageWidth, imageHeight){
-              const win = Dimensions.get('window');
               posts[i]["dimensions"].push(
                   {
                     uri: "",
-                    width: win.width,
-                    height: (win.width/imageWidth) * imageHeight
+                    width: imageWidth,
+                    height: imageHeight
                   }
               )
             }
