@@ -281,7 +281,7 @@ export default {
       this.username = "";
       this.password = "";
       if(loggedIn) {
-        this.navigation.navigate('MainPage')
+        this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
       }
       this.waitingForSubmit = false;
     },
@@ -338,14 +338,13 @@ export default {
           );
       });
       if(isRegistered)
-        this.$emit('verifyLogin', {username: this.username, token: userToken});
-      this.waitingForSubmit = false;
+        this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
     },
     // This function allow a new user to enter the feed of posts without making a new account
     // If user logs in as guest, he cannot make new post and cannot access his profile
     loginAsGuest(){
       alert("Beware that if you continue as a guest, your experience will be limited");
-      this.navigation.navigate('MainPage')
+      this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
     },
     //This function will consist in an email prompt in order to contact us regarding any bugs
     reportBugs(){

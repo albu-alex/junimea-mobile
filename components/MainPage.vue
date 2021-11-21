@@ -159,9 +159,6 @@ export default {
       StatusBar.setBarStyle('light-content', true);
   },
   async beforeMount(){
-    if(this.customTheme !== undefined){
-      this.isDarkTheme = this.customTheme;
-    }
     this.isDarkTheme = this.navigation.getParam('theme');
     if(this.isDarkTheme === undefined)
       this.isDarkTheme = true;

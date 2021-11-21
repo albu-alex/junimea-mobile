@@ -355,7 +355,6 @@ export default {
         }
         this.postNumber += 10;
       }
-      // this.waitingForPost = false;
     },
   }
 }
