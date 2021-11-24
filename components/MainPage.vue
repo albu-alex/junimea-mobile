@@ -416,17 +416,19 @@ export default {
       }
       let post;
       let newImages = [];
+      let newTags = [];
       newPost.images.forEach(image => newImages.push(image.uri))
       let dimensions = [];
       newPost.images.forEach(image => dimensions.push(image))
-      alert(newPost.tags)
+      if(newPost.tags)
+        newPost.tags.forEach(tag => newTags.push(tag))
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Post/Add',
         data:{
           "Title": newPost.text,
           "Files": newImages,
-          "Tags": newPost.tags
+          "Tags": newTags
         },
         timeout: 10000
       })

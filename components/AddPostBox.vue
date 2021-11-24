@@ -199,7 +199,8 @@ export default {
         alert("Post text is required!");
         return;
       }
-      this.tagsList = this.tags.split(",")
+      if(this.tags)
+        this.tagsList = this.tags.split(",")
       let post = {
           text: this.postText,
           images: this.images,
