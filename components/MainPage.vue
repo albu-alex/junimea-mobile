@@ -419,14 +419,16 @@ export default {
       newPost.images.forEach(image => newImages.push(image.uri))
       let dimensions = [];
       newPost.images.forEach(image => dimensions.push(image))
+      alert(newPost.tags)
       await axios({
         method: 'post',
         url: 'http://52.57.118.176/Post/Add',
         data:{
           "Title": newPost.text,
-          "Files": newImages
+          "Files": newImages,
+          "Tags": newPost.tags
         },
-        timeout: 4000
+        timeout: 10000
       })
       .then(function (response){
         if(response.status === 200){
@@ -438,9 +440,13 @@ export default {
             "profilePic": response.data.profilePicUrl,
             "likes": response.data.likes,
             "liked": response.data.liked,
-            "dimensions": dimensions
+            "dimensions": dimensions,
+            "tags": response.data.tags
           }
         }
+      })
+      .catch(function(error){
+        // alert(error.response.data.errorMessage)
       });
       if(post){
         if(postPosition === 'top')

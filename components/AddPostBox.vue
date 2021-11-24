@@ -76,6 +76,7 @@ export default {
       images: [],
       addPost: false,
       tags: "",
+      tagsList: [],
       photos: "",
       operatingSystem: ""
     }
@@ -196,15 +197,19 @@ export default {
       }
       if(!this.postText){
         alert("Post text is required!");
-        return 1;
+        return;
       }
+      this.tagsList = this.tags.split(",")
       let post = {
           text: this.postText,
           images: this.images,
+          tags: this.tagsList
       }
       this.$emit('addPost', post);
       this.postText = "";
       this.images = [];
+      this.tags = ""
+      this.tagsList = [];
     }
   }
 }
