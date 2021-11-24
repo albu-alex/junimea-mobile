@@ -16,7 +16,7 @@
       <view :style="{flexDirection: 'row'}">
         <FontAwesome5 v-if="operatingSystem === 'ios'" name="hashtag" :size=20 color="#AAAAAA" class="logo" />
         <FontAwesome5 v-else name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
-        <text-input v-model="tags" class="addNewPostDark" placeholder="Tags"
+        <text-input v-model="tags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)"
                     :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
       <text class="primaryTextDark">{{images.length}} {{photos}} added</text>
@@ -47,7 +47,7 @@
       <view :style="{flexDirection: 'row'}">
         <FontAwesome5 v-if="operatingSystem === 'ios'" name="hashtag" :size=20 color="ghostwhite" class="logo" />
         <FontAwesome5 v-else name="hashtag" :size=20 color="ghostwhite" class="logoAndroid" />
-        <text-input v-model="tags" class="addNewPostLight" placeholder="Tags" placeholderTextColor="ghostwhite"
+        <text-input v-model="tags" class="addNewPostLight" placeholder="Tag1, tag2...(optional)" placeholderTextColor="ghostwhite"
                     :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
       <text class="primaryTextLight">{{images.length}} {{photos}} added</text>
@@ -199,8 +199,31 @@ export default {
         alert("Post text is required!");
         return;
       }
-      if(this.tags)
-        this.tagsList = this.tags.split(",")
+      if(!this.tags) {
+        let addTags = true;
+        const setTags = function(){
+          addTags = false;
+        }
+        Alert.alert("No tags detected", "Post with tags get recommended more!",
+            [
+              {
+                text: "Add tags",
+                style: "cancel",
+              },
+              {
+                text: "Don't bother me",
+                style: "destructive",
+                onPress: setTags
+              }
+            ],
+            {
+              cancelable: true,
+            }
+        );
+        if(addTags)
+          return;
+      }
+      this.tagsList = this.tags.split(",")
       let post = {
           text: this.postText,
           images: this.images,
