@@ -78,7 +78,8 @@ export default {
       tags: "",
       tagsList: [],
       photos: "",
-      operatingSystem: ""
+      operatingSystem: "",
+      addTags: true
     }
   },
   components:{
@@ -102,6 +103,9 @@ export default {
     this.photos = "photo"
   },
   methods:{
+    doNotAddTags(){
+      this.addTags = false;
+    },
     addNewPost(){
       this.addPost = true;
     },
@@ -179,6 +183,20 @@ export default {
       );
       this.images.push(newImage)
     },
+    sendPost(){
+      if(this.tags)
+        this.tagsList = this.tags.split(",")
+      let post = {
+        text: this.postText,
+        images: this.images,
+        tags: this.tagsList
+      }
+      this.$emit('addPost', post);
+      this.postText = "";
+      this.images = [];
+      this.tags = ""
+      this.tagsList = [];
+    },
     addPostFunction(){
       if(this.username === ""){
         Alert.alert("Error", "Guests can not create posts",
@@ -193,17 +211,12 @@ export default {
             }
         );
         this.$emit("redirectToLogin");
-        return;
       }
       if(!this.postText){
         alert("Post text is required!");
         return;
       }
-      if(!this.tags) {
-        let addTags = true;
-        const setTags = function(){
-          addTags = false;
-        }
+      if(!this.tags)
         Alert.alert("No tags detected", "Post with tags get recommended more!",
             [
               {
@@ -213,27 +226,17 @@ export default {
               {
                 text: "Don't bother me",
                 style: "destructive",
-                onPress: setTags
+                onPress: this.doNotAddTags
               }
             ],
             {
               cancelable: true,
             }
         );
-        if(addTags)
-          return;
+      if(this.tags || !this.addTags) {
+        this.addTags = true;
+        this.sendPost();
       }
-      this.tagsList = this.tags.split(",")
-      let post = {
-          text: this.postText,
-          images: this.images,
-          tags: this.tagsList
-      }
-      this.$emit('addPost', post);
-      this.postText = "";
-      this.images = [];
-      this.tags = ""
-      this.tagsList = [];
     }
   }
 }
