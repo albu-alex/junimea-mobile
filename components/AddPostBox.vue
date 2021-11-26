@@ -105,6 +105,7 @@ export default {
   methods:{
     doNotAddTags(){
       this.addTags = false;
+      this.sendPost();
     },
     addNewPost(){
       this.addPost = true;
@@ -196,6 +197,7 @@ export default {
       this.images = [];
       this.tags = ""
       this.tagsList = [];
+      this.addTags = true;
     },
     addPostFunction(){
       if(this.username === ""){
@@ -234,7 +236,6 @@ export default {
             }
         );
       if(this.tags || !this.addTags) {
-        this.addTags = true;
         this.sendPost();
       }
     }
