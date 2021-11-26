@@ -49,23 +49,17 @@
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
-<!--        <Image :source="require('../assets/login-button-facebook.png')"-->
-<!--               :style="{width: 124, height: 50}" />-->
         <FontAwesome5 name="facebook" :size=60 color="#0044FF" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
-<!--        <Image :source="require('../assets/login-google-button.png')"-->
-<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
         <FontAwesome5 class="logoGoogle" name="google-plus-square" :size=60 color="red" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
-<!--        <Image :source="require('../assets/login-button-apple.png')"-->
-<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
         <FontAwesome5 name="apple" :size=60 color="ghostwhite" />
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
-      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-alb-cu-scris.png')"
+      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-alb-cu-scris-preview.png')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
     <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'ios'" :on-press="reportBugs">
@@ -123,23 +117,17 @@
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
-<!--        <Image :source="require('../assets/login-button-facebook.png')"-->
-<!--               :style="{width: 124, height: 50}" />-->
         <FontAwesome5 name="facebook" :size=60 color="blue" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
-<!--        <Image :source="require('../assets/login-google-button.png')"-->
-<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
         <FontAwesome5 class="logoGoogle"  name="google-plus-square" :size=60 color="red" />
       </touchable-opacity>
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
-<!--        <Image :source="require('../assets/login-button-apple.png')"-->
-<!--               :style="{width: 124, height: 50, marginLeft: 2}" />-->
         <FontAwesome5 name="apple" :size=60 color="#070700" />
       </touchable-opacity>
     </view>
     <touchable-opacity :on-press="junimeaOnFacebook">
-      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-negru-cu-scris.png')"
+      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-negru-cu-scris-preview.png')"
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
     <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'ios'" :on-press="reportBugs">
@@ -164,7 +152,7 @@ export default {
   components: {
     Loading,
     FontAwesome5,
-    Entypo
+    Entypo,
   },
   props:{
     navigation: {
