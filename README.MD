@@ -2249,7 +2249,7 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day59_2.jpg" alt="Second photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day59_3.gif" alt="First video" height="50%" width=auto/>
 
-# <a id="fiftynine">Day 59</a>
+# <a id="sixty">Day 60</a>
 ## Today I have done the following:
 <uL>
 <li>
