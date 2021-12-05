@@ -18,6 +18,7 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
+      <post-tag class="tag" tag="test_tag" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
       <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
@@ -98,6 +99,7 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
+      <post-tag class="tag" tag="test_tag" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
       <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
@@ -170,8 +172,10 @@ import axios from 'axios';
 import Comments from "./Comments";
 import * as ImagePicker from "expo-image-picker";
 import FormData from "form-data";
+import PostTag from "./PostTag";
 export default {
   components: {
+    PostTag,
     Comments,
     AntDesign,
     FontAwesome,
@@ -875,5 +879,8 @@ export default {
   align-content: space-between;
   margin-top: 2%;
   margin-bottom: 1%;
+}
+.tag{
+  margin-left: 2%;
 }
 </style>

@@ -19,19 +19,31 @@ export default {
 
 <style>
 .darkTag{
-  background-color: #151515;
+  background-color: #AAAAAA;
   border-width: 1px;
-  border-color: #AAAAAA;
+  border-color: #151515;
+  border-radius: 7px;
+  width: 100px;
+  margin-bottom: 10px;
 }
 .darkText{
-  color: #AAAAAA;
+  color: #151515;
+  font-size: 12px;
+  font-weight: 400;
+  align-self: center;
 }
 .lightTag{
-  background-color: #EAEAEA;
+  background-color: #555555;
   border-width: 1px;
-  border-color: #555555;
+  border-color: #EAEAEA;
+  border-radius: 7px;
+  width: 100px;
+  margin-bottom: 10px;
 }
 .lightText{
-  color: #555555;
+  color: #EAEAEA;
+  font-size: 12px;
+  font-weight: 400;
+  align-self: center;
 }
 </style>
