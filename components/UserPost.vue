@@ -18,7 +18,7 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
-      <view :style="{flexDirection: 'row'}">
+      <view :style="{flexDirection: 'row', flexWrap: 'wrap', flex: '1'}">
         <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
       </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
@@ -101,7 +101,7 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
-      <view :style="{flexDirection: 'row'}">
+      <view :style="{flexDirection: 'row', flexWrap: 'wrap', flex: '1'}">
         <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
       </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
@@ -890,5 +890,6 @@ export default {
 }
 .tag{
   margin-left: 2%;
+  flex-basis: 33%;
 }
 </style>
