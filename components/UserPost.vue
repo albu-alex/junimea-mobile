@@ -18,7 +18,11 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
-      <post-tag class="tag" tag="test_tag" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+      <view :style="{flexDirection: 'row'}">
+        <text v-for="tag in tags">
+          <post-tag class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+        </text>
+      </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
@@ -99,7 +103,11 @@
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
         </touchable-opacity>
       </view>
-      <post-tag class="tag" tag="test_tag" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+      <view :style="{flexDirection: 'row'}">
+        <text v-for="tag in tags">
+          <post-tag class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+        </text>
+      </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                      :showsVerticalScrollIndicator="false"
@@ -215,7 +223,8 @@ export default {
       files: [],
       likes: 0,
       //This variable is used in order to render to component after the API call
-      loaded: false
+      loaded: false,
+      tags: []
     }
   },
   name: "UserPost",
@@ -457,6 +466,7 @@ export default {
       let username;
       let profilePic;
       let likes;
+      let tags;
       await axios({
         method: 'get',
         url: `http://52.57.118.176/Post/Get/${this.id}`,
@@ -470,6 +480,7 @@ export default {
         username = response.data.userName;
         profilePic = response.data.profilePicUrl;
         likes = response.data.likes;
+        tags = response.data.tags;
       });
       this.loaded = true;
       if(liked){
@@ -487,6 +498,7 @@ export default {
       this.userPostText = title;
       this.username = username;
       this.profilePic = profilePic;
+      this.tags = tags;
       this.disliked = this.liked;
       this.taps = 0;
     },
