@@ -19,7 +19,9 @@
         </touchable-opacity>
       </view>
       <view :style="{flexDirection: 'row', flexWrap: 'wrap', flex: '1'}">
-        <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+        <touchable-opacity :activeOpacity="0.6">
+          <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+        </touchable-opacity>
       </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
@@ -102,7 +104,9 @@
         </touchable-opacity>
       </view>
       <view :style="{flexDirection: 'row', flexWrap: 'wrap', flex: '1'}">
-        <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+        <touchable-opacity :activeOpacity="0.6">
+          <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
+        </touchable-opacity>
       </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
         <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
