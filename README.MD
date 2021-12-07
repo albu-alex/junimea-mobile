@@ -2271,3 +2271,32 @@ This is the QR code to the app:
 ## Photos:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day61_1.jpg" alt="First photo" height="50%" width=auto/>
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day61_2.jpg" alt="Second photo" height="50%" width=auto/>
+
+# <a id="sixtytwo">Day 62</a>
+## Today I have done the following:
+<uL>
+<li>
+    Added the tags from the actual posts
+</li>
+<li>
+    Fixed post tags bug
+</li>
+<li>
+    Added a maximum of 2 tags per row
+</li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Make tags pressable and make them navigate to the search w/tag
+    </li>
+    <li>
+        Refactor code
+    </li>
+</ul>
+
+## Photos:
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_1.jpg" alt="First photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_2.jpg" alt="Second photo" height="50%" width=auto/>
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_3.jpg" alt="Third photo" height="50%" width=auto/>
