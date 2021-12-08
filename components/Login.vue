@@ -152,7 +152,7 @@ export default {
   components: {
     Loading,
     FontAwesome5,
-    Entypo,
+    Entypo
   },
   props:{
     navigation: {

@@ -1,8 +1,7 @@
 <!--This component should only be used for iOS users-->
 <!--Component changes the status bar color to black-->
 <template>
-  <view v-if="isDarkTheme" class="statusbarDark"></view>
-  <view v-else class="statusbarLight"></view>
+  <view :class="{ statusbarDark: (isDarkTheme), statusbarLight: (!isDarkTheme)}"></view>
 </template>
 
 
