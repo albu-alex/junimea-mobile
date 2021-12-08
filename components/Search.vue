@@ -1,55 +1,30 @@
 <!--This component is going to be used to search for posts by the tags that the post has-->
 <template>
-<view class="searchDark" v-if="isDarkTheme">
+<view :class="{ searchDark: (isDarkTheme), searchLight: (!isDarkTheme)}">
   <OwnStatusBar :isDarkTheme="isDarkTheme"/>
   <view class="searchHeader">
-    <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="ghostwhite" />
+    <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="ghostwhite"/>
     <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
-                placeholder="Search Junimea" v-model="searchText" class="textInputDark"
+                placeholder="Search Junimea" v-model="searchText" :class="{ textInputDark: (isDarkTheme), textInputLight: (!isDarkTheme)}"
                 keyboardAppearance="dark" :onKeyPress="search" :multiline="true"></text-input>
     <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
-      <text class="buttonTextDark">Cancel</text>
+      <text :class="{ buttonTextDark: (isDarkTheme), buttonTextLight: (!isDarkTheme)}">Cancel</text>
     </touchable-opacity>
   </view>
-  <text class="primaryTextDark">
+  <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">
     Trending
   </text>
   <scroll-view v-if="tags.length > 0">
-    <text v-for="tag in tags" class="tagsDark">
+    <text v-for="tag in tags" :class="{ tagsDark: (isDarkTheme), tagsLight: (!isDarkTheme)}">
       <touchable-opacity>
-        <text class="tagsDark">{{tag}}</text>
+        <text :class="{ tagsDark: (isDarkTheme), tagsLight: (!isDarkTheme)}">{{tag}}</text>
       </touchable-opacity>
     </text>
   </scroll-view>
   <scroll-view v-else>
-    <MaterialIcons class="icon" name="do-not-touch" :size=54 color="#AAAAAA" />
-    <text class="tagsDark">Your search did not provide any results!</text>
-  </scroll-view>
-</view>
-<view class="searchLight" v-else>
-  <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-  <view class="searchHeader">
-    <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="black" />
-    <text-input :autoCorrect="false" placeholderTextColor="black" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
-                placeholder="Search Junimea" v-model="searchText" class="textInputLight"
-                keyboardAppearance="light" :onKeyPress="search" :multiline="true"></text-input>
-    <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
-      <text class="buttonTextLight">Cancel</text>
-    </touchable-opacity>
-  </view>
-  <text class="primaryTextLight">
-    Trending
-  </text>
-  <scroll-view v-if="tags.length > 0">
-    <text v-for="tag in tags" class="tagsLight">
-      <touchable-opacity>
-        <text class="tagsLight">{{tag}}</text>
-      </touchable-opacity>
-    </text>
-  </scroll-view>
-  <scroll-view v-else>
-    <MaterialIcons class="icon" name="do-not-touch" :size=54 color="#555555" />
-    <text class="tagsLight">Your search did not provide any results!</text>
+    <MaterialIcons v-if="isDarkTheme" class="icon" name="do-not-touch" :size=54 color="#AAAAAA" />
+    <MaterialIcons v-else class="icon" name="do-not-touch" :size=54 color="#555555" />
+    <text :class="{ tagsDark: (isDarkTheme), tagsLight: (!isDarkTheme)}">Your search did not provide any results!</text>
   </scroll-view>
 </view>
 </template>
