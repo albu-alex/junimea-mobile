@@ -1,11 +1,8 @@
 <template>
-  <view class="noConnection" v-if="isDarkTheme">
-    <AntDesign name="wifi" :size=40 color="#AAAAAA" />
-    <text class="mainTextDark">You are not connected to the internet!</text>
-  </view>
-  <view class="noConnection" v-else>
-    <AntDesign name="wifi" :size=40 color="#555555" />
-    <text class="mainTextLight">You are not connected to the internet!</text>
+  <view class="noConnection">
+    <AntDesign v-if="isDarkTheme" name="wifi" :size=40 color="#AAAAAA" />
+    <AntDesign v-else name="wifi" :size=40 color="#555555" />
+    <text :class="{ mainTextDark: (isDarkTheme), mainTextLight: (!isDarkTheme)}">You are not connected to the internet!</text>
   </view>
 </template>
 
