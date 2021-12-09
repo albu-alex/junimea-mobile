@@ -1,20 +1,20 @@
 <template>
-<view class="commentsDark" v-if="isDarkTheme">
+<view :class="{ commentsDark: (isDarkTheme), commentsLight: (!isDarkTheme)}">
   <view class="commentHeader">
     <Image :source="{uri: profilePicture}"
            :style="{width: 20, height:20, borderRadius: 50, marginRight: 5, marginLeft: 5, marginTop: 2}" />
     <touchable-opacity :on-press="goToProfile">
-      <text class="headerTextDark">{{firstName}}</text>
+      <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">{{firstName}}</text>
     </touchable-opacity>
     <touchable-opacity :on-press="report" class="reportComment">
       <Image :source="require('../assets/three-dots.png')"
              :style="{width: 20, height:10, marginTop: 5}" />
     </touchable-opacity>
   </view>
-  <text :style="{marginLeft: 5}" class="primaryTextDark">{{comment}}</text>
+  <text :style="{marginLeft: 5}" :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">{{comment}}</text>
   <text v-for="(file,index) in files">
     <view :style="{flexDirection: 'row'}">
-      <view class="commentImageLineDark" />
+      <view :class="{ commentImageLineDark: (isDarkTheme), commentImageLineLight: (!isDarkTheme)}" />
       <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
                    :showsVerticalScrollIndicator="false"
                    :showsHorizontalScrollIndicator="false">
@@ -26,64 +26,21 @@
   </text>
   <view class="commentInteraction">
     <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
-      <text class="secondaryTextDark">Like</text>
+      <text :class="{ secondaryTextDark: (isDarkTheme), secondaryTextLight: (!isDarkTheme)}">Like</text>
     </touchable-opacity>
     <touchable-opacity :activeOpacity="1" :on-press="replyToComment">
-      <text class="secondaryTextDark">Reply</text>
+      <text :class="{ secondaryTextDark: (isDarkTheme), secondaryTextLight: (!isDarkTheme)}">Reply</text>
     </touchable-opacity>
   </view>
   <view v-if="showReplyBox" class="commentFooter">
-    <text-input v-model="commentText" class="addNewCommentDark" placeholder="Reply..." placeholderTextColor="dimgrey"
+    <text-input v-model="commentText" :class="{ addNewCommentDark: (isDarkTheme), addNewCommentLight: (!isDarkTheme)}" placeholder="Reply..." placeholderTextColor="dimgrey"
                 :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
     <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-      <Ionicons name="image" :size=18 color="#555555" />
+      <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#555555" />
+      <Ionicons v-else name="image" :size=18 color="#AAAAAA" />
     </touchable-opacity>
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
-      <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextDark">Send</text>
-    </touchable-opacity>
-  </view>
-</view>
-<view class="commentsLight" v-else>
-  <view class="commentHeader">
-    <Image :source="{uri: profilePicture}"
-           :style="{width: 20, height:20, borderRadius: 50, marginRight: 5, marginLeft: 5, marginTop: 2}" />
-    <touchable-opacity :on-press="goToProfile">
-      <text class="headerTextLight">{{firstName}}</text>
-    </touchable-opacity>
-    <touchable-opacity :on-press="report" class="reportComment">
-      <Image :source="require('../assets/three-dots.png')"
-             :style="{width: 20, height:10, marginTop: 5}" />
-    </touchable-opacity>
-  </view>
-  <text :style="{marginLeft: 5}" class="primaryTextLight">{{comment}}</text>
-  <text v-for="(file,index) in files">
-    <view :style="{flexDirection: 'row'}">
-      <view class="commentImageLineLight" />
-      <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
-                   :showsVerticalScrollIndicator="false"
-                   :showsHorizontalScrollIndicator="false">
-        <Image :source="{uri: String(file)}"
-               :style="{width: pageWidth*0.8, marginBottom: 10, marginLeft: 10,
-                          height: (pageWidth*0.8/300)*300}" />
-      </scroll-view>
-    </view>
-  </text>
-  <view class="commentInteraction">
-    <touchable-opacity :style="{marginLeft: 5, marginRight: 50}" :activeOpacity="1" :on-press="likeComment">
-      <text class="secondaryTextLight">Like</text>
-    </touchable-opacity>
-    <touchable-opacity :activeOpacity="1" :on-press="replyToComment">
-      <text class="secondaryTextLight">Reply</text>
-    </touchable-opacity>
-  </view>
-  <view v-if="showReplyBox" class="commentFooter">
-  <text-input v-model="commentText" class="addNewCommentLight" placeholder="Reply..."
-              :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft: 5}" />
-    <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-      <Ionicons name="image" :size=18 color="#AAAAAA" />
-    </touchable-opacity>
-    <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
-      <text :style="{marginLeft: 20, marginTop: 5}" class="secondaryTextLight">Send</text>
+      <text :style="{marginLeft: 20, marginTop: 5}" :class="{ secondaryTextDark: (isDarkTheme), secondaryTextLight: (!isDarkTheme)}">Send</text>
     </touchable-opacity>
   </view>
 </view>
