@@ -1,18 +1,18 @@
 <!--The UserPost component consists of all the information retrieved from the API when user triggers the add post event-->
 <template>
-  <view v-if="isDarkTheme&&showPost&&loaded" class="postDark">
+  <view v-if="showPost&&loaded" :class="{ postDark: (isDarkTheme), postLight: (!isDarkTheme)}">
     <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
       <view v-if="!postHidden" class="postHeader">
   <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
         <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
         <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
-        <text class="postHeaderTextDark">{{username}}</text>
+        <text :class="{ postHeaderTextDark: (isDarkTheme), postHeaderTextLight: (!isDarkTheme)}">{{username}}</text>
       </view>
     </touchable-opacity>
     <view class="postContent">
       <view class="postContentHeader">
-        <text class="postTextDark" v-if="!postHidden">{{userPostText}}</text>
-        <text class="postTextDark" v-if="postHidden">This post is now hidden</text>
+        <text :class="{ postTextDark: (isDarkTheme), postTextLight: (!isDarkTheme)}" v-if="!postHidden">{{userPostText}}</text>
+        <text :class="{ postTextDark: (isDarkTheme), postTextLight: (!isDarkTheme)}" v-else>This post is now hidden</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
                  :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
@@ -37,135 +37,64 @@
     </view>
     <view v-if="!postHidden" class="postFeedback">
       <touchable-opacity :on-press="likePost">
-        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#AAAAAA" />
+        <AntDesign v-if="isDarkTheme" :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#AAAAAA" />
+        <AntDesign v-else :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#555555" />
       </touchable-opacity>
       <touchable-opacity :on-press="dislikePost">
-        <AntDesign name="dislike1" :size=24 color="#AAAAAA" :style="{opacity: dislikeOpacity}" />
+        <AntDesign v-if="isDarkTheme" name="dislike1" :size=24 color="#AAAAAA" :style="{opacity: dislikeOpacity}" />
+        <AntDesign v-else name="dislike1" :size=24 color="#555555" :style="{opacity: dislikeOpacity}" />
       </touchable-opacity>
       <text class="likesTextDark">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
-        <FontAwesome name="comment" :size=24 color="#AAAAAA" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
+        <FontAwesome v-if="isDarkTheme" name="comment" :size=24 color="#AAAAAA" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
+        <FontAwesome v-else name="comment" :size=24 color="#555555" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
       </touchable-opacity>
       <touchable-opacity :on-press="sharePost">
-        <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#AAAAAA" />
+        <FontAwesome v-if="isDarkTheme" :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#AAAAAA" />
+        <FontAwesome v-else :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#555555" />
       </touchable-opacity>
     </view>
-    <view v-if="showComments&&comments.length > 0" class="postDark">
+    <view v-if="showComments&&comments.length > 0" :class="{ postDark: (isDarkTheme), postLight: (!isDarkTheme)}">
         <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
                   :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
                   :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser" :isGuest="isGuest"/>
       <view class="addNewComment">
-      <FontAwesome5 name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
-      <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
+      <FontAwesome5 v-if="isDarkTheme" name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
+      <FontAwesome5 v-else name="comment" :size=14 color="#AAAAAA" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
+      <text-input v-model="commentText" :class="{ addNewCommentDark: (isDarkTheme), addNewCommentLight: (!isDarkTheme)}"
+                  placeholder="Comment..." placeholderTextColor="dimgrey"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
         <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-          <Ionicons name="image" :size=18 color="#AAAAAA" />
+          <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#AAAAAA" />
+          <Ionicons v-else name="image" :size=18 color="#555555" />
         </touchable-opacity>
         <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
-          <text class="buttonTextDark">Send</text>
+          <text :class="{ buttonTextDark: (isDarkTheme), buttonTextLight: (!isDarkTheme)}">Send</text>
         </touchable-opacity>
       </view>
     </view>
-    <view v-if="showComments&&comments.length === 0" class="postDark">
-      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
-      <text class="commentsTextDark" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
-    <view class="addNewComment">
-      <FontAwesome5 name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
-      <text-input v-model="commentText" class="addNewCommentDark" placeholder="Comment..." placeholderTextColor="dimgrey"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
-      <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-        <Ionicons name="image" :size=18 color="#AAAAAA" />
-      </touchable-opacity>
-      <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
-        <text class="buttonTextDark">Send</text>
-      </touchable-opacity>
+    <view v-if="showComments&&comments.length === 0" :class="{ postDark: (isDarkTheme), postLight: (!isDarkTheme)}">
+      <FontAwesome5 v-if="isDarkTheme" class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
+      <FontAwesome5 v-else class="icon" name="comment-slash" :size=30 color="#555555" />
+      <text :class="{ commentsTextDark: (isDarkTheme), commentsTextLight: (!isDarkTheme)}" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
+      <view class="addNewComment">
+        <FontAwesome5 v-if="isDarkTheme" name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
+        <FontAwesome5 v-else name="comment" :size=14 color="#AAAAAA" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
+        <text-input v-model="commentText" :class="{ addNewCommentDark: (isDarkTheme), addNewCommentLight: (!isDarkTheme)}"
+                    placeholder="Comment..." placeholderTextColor="dimgrey"
+                    :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
+        <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
+          <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#AAAAAA" />
+          <Ionicons v-else name="image" :size=18 color="#555555" />
+        </touchable-opacity>
+        <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
+          <text :class="{ buttonTextDark: (isDarkTheme), buttonTextLight: (!isDarkTheme)}">Send</text>
+        </touchable-opacity>
+      </view>
     </view>
-  </view>
   </view>
   <view v-else-if="!loaded">
     <activity-indicator size="large" color="dimgrey" />
-  </view>
-  <view v-else-if="!isDarkTheme&&showPost&&loaded" class="postLight">
-    <touchable-opacity :on-press="redirectToUser" :activeOpacity="0.6">
-      <view v-if="!postHidden" class="postHeader">
-        <!--      An avatar image is displayed if the user does not have a profile picture, otherwise it will display the actual profile picture-->
-        <Image v-if="profilePic != null" :source="{uri: profilePic}" :style="{width: 25, height:25, borderRadius: 50}"/>
-        <Image v-else :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}" :style="{width: 25, height:25, borderRadius: 50}"/>
-        <text class="postHeaderTextLight">{{username}}</text>
-      </view>
-    </touchable-opacity>
-    <view class="postContent">
-      <view class="postContentHeader">
-        <text class="postTextLight" v-if="!postHidden">{{userPostText}}</text>
-        <text class="postTextLight" v-if="postHidden">This post is now hidden</text>
-        <touchable-opacity :on-press="reportBug">
-          <Image :source="require('../assets/three-dots.png')"
-                 :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
-        </touchable-opacity>
-      </view>
-      <view :style="{flexDirection: 'row', flexWrap: 'wrap', flex: '1'}">
-        <touchable-opacity :activeOpacity="0.6">
-          <post-tag v-for="tag in tags" class="tag" :tag="tag.name" :isDarkTheme="isDarkTheme" v-if="!postHidden"></post-tag>
-        </touchable-opacity>
-      </view>
-      <text v-if="!postHidden" v-for="(file,index) in files">
-        <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
-                     :showsVerticalScrollIndicator="false"
-                     :showsHorizontalScrollIndicator="false">
-          <touchable-opacity :on-press="doubleTapToLike" :activeOpacity="1">
-            <Image :source="{uri: String(file)}"
-                            :style="{width: pageWidth, marginBottom: 10,
-                            height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
-          </touchable-opacity>
-        </scroll-view>
-      </text>
-    </view>
-    <view v-if="!postHidden" class="postFeedback">
-      <touchable-opacity :on-press="likePost">
-        <AntDesign :style="{marginRight: 45, alignSelf:'flex-start', opacity: likeOpacity}" name="like1" :size=24 color="#555555" />
-      </touchable-opacity>
-      <touchable-opacity :on-press="dislikePost">
-        <AntDesign name="dislike1" :size=24 color="#555555" :style="{opacity: dislikeOpacity}" />
-      </touchable-opacity>
-      <text class="likesTextLight">{{likes}}</text>
-      <touchable-opacity :on-press="postComment">
-        <FontAwesome name="comment" :size=24 color="#555555" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
-      </touchable-opacity>
-      <touchable-opacity :on-press="sharePost">
-        <FontAwesome :style="{marginLeft: 20, marginBottom: 5}" name="share" :size=24 color="#555555" />
-      </touchable-opacity>
-    </view>
-    <view v-if="showComments&&comments.length > 0" class="postLight">
-      <Comments v-for="comment in comments" :comment="comment.text" @redirectToLogin="redirectToLogin" @goBack="showComments = false"
-                :isDarkTheme="isDarkTheme" :id="id" :profilePicture="comment.user.profilePicUrl" :files="comment.files"
-                :firstName="comment.user.firstName" @goToProfile="redirectToCommentUser" :isGuest="isGuest"/>
-      <view class="addNewComment">
-        <FontAwesome5 name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
-        <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
-                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
-        <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-          <Ionicons name="image" :size=18 color="#AAAAAA" />
-        </touchable-opacity>
-        <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
-          <text class="buttonTextLight">Send</text>
-        </touchable-opacity>
-      </view>
-    </view>
-    <view v-if="showComments&&comments.length === 0" class="postLight">
-      <FontAwesome5 class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
-      <text class="commentsTextLight" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
-      <view class="addNewComment">
-        <FontAwesome5 name="comment" :size=14 color="#AAAAAA" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
-        <text-input v-model="commentText" class="addNewCommentLight" placeholder="Comment..." :multiline="true"
-                    keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
-        <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-          <Ionicons name="image" :size=18 color="#AAAAAA" />
-        </touchable-opacity>
-        <touchable-opacity class="addNewCommentButton" :on-press="createNewComment">
-          <text class="buttonTextLight">Send</text>
-        </touchable-opacity>
-      </view>
-    </view>
   </view>
 </template>
 
