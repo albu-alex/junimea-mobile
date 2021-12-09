@@ -1,9 +1,6 @@
 <template>
-<view class="darkTag" v-if="isDarkTheme">
-  <text class="darkText">{{tag}}</text>
-</view>
-<view class="lightTag" v-else>
-  <text class="lightText">{{tag}}</text>
+<view :class="{ darkTag: (isDarkTheme), lightTag: (!isDarkTheme)}">
+  <text :class="{ darkText: (isDarkTheme), lightText: (!isDarkTheme)}">{{tag}}</text>
 </view>
 </template>
 
