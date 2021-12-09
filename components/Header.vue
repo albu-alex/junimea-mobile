@@ -1,26 +1,32 @@
 <!--Component contains all the categories that an user can access-->
 <!--Each category is under a button(touchable-opacity)-->
 <template>
-  <view v-if="isDarkTheme" class="headerDark">
+  <view :class="{ headerDark: (isDarkTheme), headerLight: (!isDarkTheme)}">
       <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="showTags">
-        <text class="headerTextDark">juni.</text>
+        <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">juni.</text>
       </touchable-opacity>
       <touchable-opacity v-else class="headerButtonAndroid" :on-press="showTags">
-        <text class="headerTextDark">juni.</text>
+        <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">juni.</text>
       </touchable-opacity>
       <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="displaySettings">
-        <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
+        <Image v-if="isDarkTheme" class="junimeaLogo" :source="require('../assets/unicorn.png')"
+               :style="{width: 25, height:25}" />
+        <Image v-else class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
       <touchable-opacity v-else class="headerButtonAndroid" :on-press="displaySettings">
-        <Image class="junimeaLogo" :source="require('../assets/unicorn.png')"
+        <Image v-if="isDarkTheme" class="junimeaLogo" :source="require('../assets/unicorn.png')"
+               :style="{width: 25, height:25}" />
+        <Image v-else class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
                :style="{width: 25, height:25}" />
       </touchable-opacity>
       <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="searchPosts">
-        <Ionicons name="ios-search-outline" :size=24 color="white" />
+        <Ionicons v-if="isDarkTheme" name="ios-search-outline" :size=24 color="white" />
+        <Ionicons v-else name="ios-search-outline" :size=24 color="black" />
       </touchable-opacity>
       <touchable-opacity v-else class="headerButtonAndroid" :on-press="searchPosts">
-        <Ionicons name="ios-search-outline" :size=24 color="white" />
+        <Ionicons v-if="isDarkTheme" name="ios-search-outline" :size=24 color="white" />
+        <Ionicons v-else name="ios-search-outline" :size=24 color="black" />
       </touchable-opacity>
       <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="goToProfile">
         <Image v-if="profilePic === ''" class="profilePicture"
@@ -38,44 +44,6 @@
                :source="{uri: profilePic}"
                :style="{width: 25, height:25, borderRadius: 50}" />
       </touchable-opacity>
-  </view>
-  <view v-else class="headerLight">
-    <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="showTags">
-      <text class="headerTextLight">juni.</text>
-    </touchable-opacity>
-    <touchable-opacity v-else class="headerButtonAndroid" :on-press="showTags">
-      <text class="headerTextLight">juni.</text>
-    </touchable-opacity>
-    <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="displaySettings">
-      <Image class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
-             :style="{width: 25, height:25}" />
-    </touchable-opacity>
-    <touchable-opacity v-else class="headerButtonAndroid" :on-press="displaySettings">
-      <Image class="junimeaLogo" :source="require('../assets/unicorn-negru-fara-scris.png')"
-             :style="{width: 25, height:25}" />
-    </touchable-opacity>
-    <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="searchPosts">
-      <Ionicons name="ios-search-outline" :size=24 color="black" />
-    </touchable-opacity>
-    <touchable-opacity v-else class="headerButtonAndroid" :on-press="searchPosts">
-      <Ionicons name="ios-search-outline" :size=24 color="black" />
-    </touchable-opacity>
-    <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="goToProfile">
-      <Image v-if="profilePic === ''" class="profilePicture"
-             :source="require('../assets/avatar.png')"
-             :style="{width: 25, height:25, borderRadius: 50}" />
-      <Image v-else class="profilePicture"
-             :source="{uri: profilePic}"
-             :style="{width: 25, height:25, borderRadius: 50}" />
-    </touchable-opacity>
-    <touchable-opacity v-else class="headerButtonAndroid" :on-press="goToProfile">
-      <Image v-if="profilePic === ''" class="profilePicture"
-             :source="require('../assets/avatar.png')"
-             :style="{width: 25, height:25, borderRadius: 50}" />
-      <Image v-else class="profilePicture"
-             :source="{uri: profilePic}"
-             :style="{width: 25, height:25, borderRadius: 50}" />
-    </touchable-opacity>
   </view>
 </template>
 
@@ -155,8 +123,5 @@ export default {
 }
 .junimeaLogo{
   margin-right: 1%;
-}
-.searchIcon{
-  margin-right: 8%;
 }
 </style>
