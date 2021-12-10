@@ -1,8 +1,9 @@
 <template>
-  <animated:view class="profile" v-if="username !== '' && isDarkTheme&&!this.noConnection" :style="{opacity: viewOpacity}">
+  <animated:view class="profile" v-if="username !== ''&&!this.noConnection" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
-        <Ionicons name="ios-arrow-back" :size=30 color="#505050" />
+        <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#505050" />
+        <Ionicons v-else name="ios-arrow-back" :size=30 color="#AFAFAF" />
       </touchable-opacity>
       <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
         <Image :source="require('../assets/three-dots.png')"
@@ -13,19 +14,22 @@
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
     <Image v-else :source="{uri: profilePicture}"
            :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <text class="primaryTextDark">{{username}}</text>
+    <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">{{username}}</text>
     <view :style="{flexDirection: 'row'}">
-      <touchable-opacity :style="{borderRadius: 10}" v-if="isMainUser"
-          :on-press="uploadProfilePicture" class="profilePictureButtonDark">
-        <text class="profilePictureButtonTextDark">Change picture</text>
+      <touchable-opacity :style="{borderRadius: 10}"
+          :on-press="uploadProfilePicture" :class="{ profilePictureButtonDark: (isDarkTheme), profilePictureButtonLight: (!isDarkTheme)}">
+        <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">Change picture</text>
       </touchable-opacity>
-      <touchable-opacity :style="{borderRadius: 10}" v-if="isMainUser"
-                         :on-press="viewSavedPosts" class="profilePictureButtonDark">
-        <text class="profilePictureButtonTextDark">View saved posts</text>
+      <touchable-opacity :style="{borderRadius: 10}"
+                         :on-press="viewSavedPosts" :class="{ profilePictureButtonDark: (isDarkTheme), profilePictureButtonLight: (!isDarkTheme)}">
+        <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">View saved posts</text>
       </touchable-opacity>
     </view>
-    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)"
+    <flat-list v-if="!isLoading&&!areSavedPosts&&isDarkTheme" :data="posts" :render-item="(post) => renderPosts(post)"
                :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshDark()">
+    </flat-list>
+    <flat-list v-if="!isLoading&&!areSavedPosts&&!isDarkTheme" :data="posts" :render-item="(post) => renderPosts(post)"
+               :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshLight()">
     </flat-list>
       <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
         <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
@@ -33,58 +37,15 @@
                   :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
       </scroll-view>
     <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length === 0">
-      <MaterialIcons class="noMorePostsIcon" name="post-add" :size=100 color="#505050" />
-      <text class="primaryTextDark">There aren't any saved posts!</text>
+      <MaterialIcons v-if="isDarkTheme" class="noMorePostsIcon" name="post-add" :size=100 color="#505050" />
+      <MaterialIcons v-else class="noMorePostsIcon" name="post-add" :size=100 color="#AFAFAF" />
+      <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">There aren't any saved posts!</text>
     </scroll-view>
     <view v-if="isLoading" :style="{justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
   </animated:view>
-  <view v-else-if="isDarkTheme&&this.noConnection">
-    <NoConnection :isDarkTheme="isDarkTheme" />
-  </view>
-  <animated:view class="profile" v-else-if="username !== '' && !isDarkTheme" :style="{opacity: viewOpacity}">
-    <view class="profileHeader">
-      <touchable-opacity :on-press="goToMainPage">
-        <Ionicons name="ios-arrow-back" :size=30 color="#AFAFAF" />
-      </touchable-opacity>
-      <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
-        <Image :source="require('../assets/three-dots.png')"
-               :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 3}" />
-      </touchable-opacity>
-    </view>
-    <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
-           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <Image v-else :source="{uri: profilePicture}"
-           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <text class="primaryTextLight">{{username}}</text>
-    <view :style="{flexDirection: 'row'}">
-      <touchable-opacity v-if="isMainUser" :style="{borderRadius: 10}"
-                         :on-press="uploadProfilePicture" class="profilePictureButtonLight">
-        <text class="profilePictureButtonTextLight">Change picture</text>
-      </touchable-opacity>
-      <touchable-opacity v-if="isMainUser" :style="{borderRadius: 10}"
-                         :on-press="viewSavedPosts" class="profilePictureButtonLight">
-        <text class="profilePictureButtonTextLight">View saved posts</text>
-      </touchable-opacity>
-    </view>
-    <flat-list v-if="!isLoading&&!areSavedPosts" :data="posts" :render-item="(post) => renderPosts(post)"
-               :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshLight()">
-    </flat-list>
-    <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length > 0">
-      <UserPost v-for="post in savedPosts" :userPostText="post.title" :id="post.id"
-                :dimensions="(post.dimensions) ? post.dimensions : []" :files="post.files" :username="post.userName"
-                :profilePic="post.profilePicUrl" :likes="post.likes" :isDarkTheme="isDarkTheme"></UserPost>
-    </scroll-view>
-    <scroll-view v-else-if="!isLoading&&areSavedPosts&&savedPosts.length === 0">
-      <MaterialIcons class="noMorePostsIcon" name="post-add" :size=100 color="#AFAFAF" />
-      <text class="primaryTextLight">There aren't any saved posts!</text>
-    </scroll-view>
-    <view v-if="isLoading" :style="{justifyContent: 'center'}">
-      <activity-indicator size="large" color="dimgrey" />
-    </view>
-  </animated:view>
-  <view v-else-if="!isDarkTheme&&this.noConnection">
+  <view v-else-if="this.noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
   </view>
 </template>
