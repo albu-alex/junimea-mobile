@@ -103,7 +103,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform, Image, Dimensions} from "react-native";
+import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform, Image, Appearance} from "react-native";
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking')
 import React from "react";
 export default {
@@ -160,8 +160,9 @@ export default {
   },
   async beforeMount(){
     this.isDarkTheme = this.navigation.getParam('theme');
+    alert(Appearance.getColorScheme())
     if(this.isDarkTheme === undefined)
-      this.isDarkTheme = true;
+      this.isDarkTheme = Appearance.getColorScheme() === "dark"
     await this.getInitialPosts('top');
     this.operatingSystem = Platform.OS;
     await this.getSelf();
