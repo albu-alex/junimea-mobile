@@ -160,7 +160,7 @@ export default {
   },
   async beforeMount(){
     this.isDarkTheme = this.navigation.getParam('theme');
-    alert(Appearance.getColorScheme())
+    // alert(Appearance.getColorScheme())
     if(this.isDarkTheme === undefined)
       this.isDarkTheme = Appearance.getColorScheme() === "dark"
     await this.getInitialPosts('top');
