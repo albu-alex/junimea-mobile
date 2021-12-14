@@ -366,7 +366,6 @@ export default {
         return;
       this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
       posts = JSON.stringify(posts)
-      // alert(posts)
       await AsyncStorage.setItem(
           'posts',
           posts
