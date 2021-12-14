@@ -103,7 +103,17 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import {StatusBar, Animated, Easing, Alert, RefreshControl, Platform, Image, Appearance} from "react-native";
+import {
+  StatusBar,
+  Animated,
+  Easing,
+  Alert,
+  RefreshControl,
+  Platform,
+  Image,
+  Appearance,
+  AsyncStorage
+} from "react-native";
 const RCTNetworking = require('react-native/Libraries/Network/RCTNetworking')
 import React from "react";
 export default {
@@ -328,8 +338,10 @@ export default {
         return;
       }
       if(posts) {
-        if(this.postNumber === 10)
+        if(this.postNumber === 10) {
           this.posts = posts;
+          await this.storePosts()
+        }
         else {
           if (postPosition === 'bottom' || !postPosition) {
             this.posts = this.posts.concat(posts)
@@ -345,6 +357,20 @@ export default {
     async Logout(){
       RCTNetworking.clearCookies(() => { })
       this.navigation.navigate("Login", {theme: this.isDarkTheme});
+    },
+    async storePosts(){
+      let posts = await AsyncStorage.getItem(
+          'posts',
+      );
+      posts = JSON.parse(posts)
+      if(!Array.isArray(posts))
+        posts = []
+      this.posts.forEach(post => posts.push(post.id.toString()))
+      posts = JSON.stringify(posts)
+      await AsyncStorage.setItem(
+          'saved-posts',
+          posts
+      );
     },
     animateTags(){
       this.postsOpacity.setValue(0);
