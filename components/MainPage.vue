@@ -173,7 +173,15 @@ export default {
     // alert(Appearance.getColorScheme())
     if(this.isDarkTheme === undefined)
       this.isDarkTheme = Appearance.getColorScheme() === "dark"
-    await this.getInitialPosts('top');
+    let posts = await AsyncStorage.getItem(
+        'posts',
+    );
+    posts = JSON.parse(posts)
+    alert(posts)
+    if(posts === null)
+      await this.getInitialPosts('top');
+    else
+      this.posts = posts
     this.operatingSystem = Platform.OS;
     await this.getSelf();
   },
@@ -242,9 +250,7 @@ export default {
     renderPosts(post){
       post = post.item
       return(
-          <UserPost userPostText={post.title} id={post.id} dimensions={post.dimensions}
-                    files={post.files} username={post.username} likes={post.likes} redirectToLogin={this.redirectToLogin}
-                    profilePic={post.profilePicUrl} isDarkTheme={this.isDarkTheme} goToUser={() => alert("hey")} />
+          <UserPost id={post.id} dimensions={post.dimensions} />
       );
     },
     goToMainPage(event){
@@ -318,8 +324,6 @@ export default {
               )
             }
             Image.getSize(posts[i].files[j], (w, h) => getDimensions(w, h));
-            posts[i]["username"] = posts[i].userName
-            posts[i]["profilePic"] = posts[i].profilePicUrl
           }
           posts[i]["dimensions"].push(
               {
@@ -337,22 +341,15 @@ export default {
         this.noConnection = true;
         return;
       }
-      if(posts) {
-        if(this.postNumber === 10) {
-          this.posts = posts;
-          await this.storePosts()
-        }
-        else {
-          if (postPosition === 'bottom' || !postPosition) {
-            this.posts = this.posts.concat(posts)
-          }
-          else {
-            this.posts.forEach(post => posts.push(post));
-            this.posts = posts;
-          }
-        }
-        this.postNumber += 10;
+      if (postPosition === 'bottom' || !postPosition) {
+        this.posts = this.posts.concat(posts)
       }
+      else {
+        this.posts.forEach(post => posts.push(post));
+        this.posts = posts;
+      }
+      await this.storePosts()
+      this.postNumber += 10;
     },
     async Logout(){
       RCTNetworking.clearCookies(() => { })
@@ -365,10 +362,11 @@ export default {
       posts = JSON.parse(posts)
       if(!Array.isArray(posts))
         posts = []
-      this.posts.forEach(post => posts.push(post.id.toString()))
+      this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
       posts = JSON.stringify(posts)
+      // alert(posts)
       await AsyncStorage.setItem(
-          'saved-posts',
+          'posts',
           posts
       );
     },
