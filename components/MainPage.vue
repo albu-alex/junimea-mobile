@@ -176,12 +176,12 @@ export default {
     let posts = await AsyncStorage.getItem(
         'posts',
     );
-    posts = JSON.parse(posts)
-    alert(posts)
     if(posts === null)
       await this.getInitialPosts('top');
-    else
+    else {
+      posts = JSON.parse(posts)
       this.posts = posts
+    }
     this.operatingSystem = Platform.OS;
     await this.getSelf();
   },
@@ -362,6 +362,8 @@ export default {
       posts = JSON.parse(posts)
       if(!Array.isArray(posts))
         posts = []
+      if(posts.length > 10)
+        return;
       this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
       posts = JSON.stringify(posts)
       // alert(posts)
