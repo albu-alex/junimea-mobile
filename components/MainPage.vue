@@ -176,7 +176,7 @@ export default {
     let posts = await AsyncStorage.getItem(
         'posts',
     );
-    if(posts === null)
+    if(posts === '[]')
       await this.getInitialPosts('top');
     else {
       posts = JSON.parse(posts)
@@ -362,8 +362,9 @@ export default {
       posts = JSON.parse(posts)
       if(!Array.isArray(posts))
         posts = []
-      if(posts.length > 10)
+      if(posts !== [])
         return;
+      // alert(posts)
       this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
       posts = JSON.stringify(posts)
       await AsyncStorage.setItem(
