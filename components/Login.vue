@@ -142,7 +142,7 @@
 
 <script>
 import { Dimensions, Alert} from "react-native";
-// import { GoogleSignin } from 'react-native-google-signin';
+import * as GoogleSignIn from 'expo-google-sign-in';
 const win = Dimensions.get('window');
 import {Linking, Platform} from "react-native";
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
@@ -192,7 +192,15 @@ export default {
       alert("Apple register not available yet!")
     },
     async loginWithGoogle(){
-      alert("Google register not available yet!")
+      try {
+        await GoogleSignIn.askForPlayServicesAsync();
+        const { type, user } = await GoogleSignIn.signInAsync();
+        if (type === 'success') {
+          alert("Logged in!")
+        }
+      } catch ({ message }) {
+        alert('login: Error:' + message);
+      }
     },
     loginWithFacebook(){
       alert("Facebook register not available yet!")
