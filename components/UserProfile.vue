@@ -81,45 +81,8 @@ export default {
     this.animateView();
   },
   async beforeMount(){
-    this.savedPosts = [];
-    let posts = await AsyncStorage.getItem(
-        'saved-posts',
-    );
-    posts = JSON.parse(posts)
-    for(let postId of posts){
-      let post;
-      await axios({
-        method: 'get',
-        url: `http://52.57.118.176/Post/Get/${postId}`,
-        timeout: 5000
-      })
-      .then(function (response) {
-        if (response.status === 200) {
-          post = response.data
-          post["dimensions"] = []
-          const numberOfPhotos = post.files.length;
-          for (let j = 0; j < numberOfPhotos; j++) {
-            post["dimensions"].push(
-                {
-                  uri: "",
-                  width: 300,
-                  height: 300
-                }
-            )
-          }
-        }
-        else
-          post = false;
-      })
-      .catch(function () {
-        post = false;
-      });
-      if(post !== false) {
-        this.savedPosts.push(post);
-        return;
-      }
-      this.noConnection = true;
-    }
+    await this.getUserPosts();
+    await this.getSavedPosts();
   },
   name: "UserProfile",
   props:{
@@ -158,6 +121,54 @@ export default {
     },
     viewSavedPosts(){
       this.areSavedPosts = !this.areSavedPosts
+    },
+    async getUserPosts(){
+      let posts = await AsyncStorage.getItem(
+          'posts',
+      );
+      posts = JSON.parse(posts)
+      alert(posts)
+    },
+    async getSavedPosts(){
+      this.savedPosts = [];
+      let posts = await AsyncStorage.getItem(
+          'saved-posts',
+      );
+      posts = JSON.parse(posts)
+      for(let postId of posts){
+        let post;
+        await axios({
+          method: 'get',
+          url: `http://52.57.118.176/Post/Get/${postId}`,
+          timeout: 5000
+        })
+            .then(function (response) {
+              if (response.status === 200) {
+                post = response.data
+                post["dimensions"] = []
+                const numberOfPhotos = post.files.length;
+                for (let j = 0; j < numberOfPhotos; j++) {
+                  post["dimensions"].push(
+                      {
+                        uri: "",
+                        width: 300,
+                        height: 300
+                      }
+                  )
+                }
+              }
+              else
+                post = false;
+            })
+            .catch(function () {
+              post = false;
+            });
+        if(post !== false) {
+          this.savedPosts.push(post);
+          return;
+        }
+        this.noConnection = true;
+      }
     },
     //This function sleeps the loading component, such that an actual loading is simulated
     sleep(ms){

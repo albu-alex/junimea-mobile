@@ -319,7 +319,8 @@ export default {
       posts = JSON.parse(posts)
       if(!Array.isArray(posts))
         posts = []
-      if(posts !== [])
+      alert(posts)
+      if(posts !== undefined)
         return;
       // alert(posts)
       this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
