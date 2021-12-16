@@ -2,7 +2,8 @@
 <!--After the Login component is done showing, the MainPage component is shown-->
 <!--Consists of: OwnStatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
-  <animated:view v-if="isDarkTheme&&!noConnection" class="mainPageDark" :style="{opacity: viewOpacity}">
+  <animated:view v-if="!noConnection" :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
+                 :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
               @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
@@ -40,54 +41,10 @@
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
-                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshDark()"/>
+                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
     </animated:view>
   </animated:view>
-  <animated:view class="noConnection" v-else-if="isDarkTheme&&noConnection">
-    <NoConnection :isDarkTheme="isDarkTheme" />
-  </animated:view>
-  <animated:view v-else-if="!isDarkTheme&&!noConnection" class="mainPageLight" :style="{opacity: viewOpacity}">
-    <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
-              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
-              @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem !== 'android'"
-              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
-              @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem === 'android'"
-              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
-              @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
-    <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
-            @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}"/>
-    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
-                 :posts="posts" @goToMainPage="goToMainPage"
-                  @refreshUserPosts="getInitialPosts('top')"
-                 :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
-<!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed"
-                @addPost="addPost($event, 'top')" :username="newUsername"
-                :isDarkTheme="isDarkTheme" @redirectToLogin="redirectToLogin"/>
-    <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
-      <Tags class="tags" :isDarkTheme="isDarkTheme"/>
-    </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
-      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
-    </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
-      <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
-    </animated:view>
-    <animated:view class="posts" :style="{opacity: postsOpacity}">
-      <UserProfile :isMainUser="false"
-                    v-if="postProfileDisplayed&&!searchDisplayed" :username="postUsername"
-                   :posts="posts" @goToMainPage="goToMainPage"
-                   @refreshUserPosts="getInitialPosts('top')"
-                   :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
-      <flat-list v-if="!profileDisplayed&&!searchDisplayed" :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
-                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefreshLight()"/>
-    </animated:view>
-  </animated:view>
-  <animated:view v-else-if="!isDarkTheme&&noConnection">
+  <animated:view v-else class="noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
   </animated:view>
 </template>
@@ -237,12 +194,12 @@ export default {
       }
       this.newUsername = ''
     },
-    renderRefreshDark(){
-      return(
-          <RefreshControl tintColor="ghostwhite" refreshing={false} onRefresh={this.refreshList}/>
-      )
-    },
-    renderRefreshLight(){
+    renderRefresh(){
+      if(this.isDarkTheme) {
+        return (
+            <RefreshControl tintColor="ghostwhite" refreshing={false} onRefresh={this.refreshList}/>
+        )
+      }
       return(
           <RefreshControl tintColor="#070000" refreshing={false} onRefresh={this.refreshList}/>
       )
@@ -250,7 +207,7 @@ export default {
     renderPosts(post){
       post = post.item
       return(
-          <UserPost id={post.id} dimensions={post.dimensions} />
+          <UserPost id={post.id} dimensions={post.dimensions} isDarkTheme={this.isDarkTheme} />
       );
     },
     goToMainPage(event){
