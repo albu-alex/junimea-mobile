@@ -317,12 +317,12 @@ export default {
           'posts',
       );
       posts = JSON.parse(posts)
-      if(!Array.isArray(posts))
+      if(posts.result === undefined) {
         posts = []
-      alert(posts)
-      if(posts !== undefined)
+      }
+      // alert(posts.length)
+      if(posts.length !== 0)
         return;
-      // alert(posts)
       this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
       posts = JSON.stringify(posts)
       await AsyncStorage.setItem(
