@@ -74,8 +74,8 @@ export default {
   },
   async created(){
     this.viewOpacity = new Animated.Value(0);
-    while(this.posts.length === 0)
-      await this.getInitialPosts('top');
+    // while(this.posts.length === 0)
+    //   await this.getInitialPosts('top');
   },
   mounted(){
     this.animateView();
@@ -127,7 +127,40 @@ export default {
           'posts',
       );
       posts = JSON.parse(posts)
-      alert(posts)
+      for(let postId of posts){
+        let post;
+        await axios({
+          method: 'get',
+          url: `http://52.57.118.176/Post/Get/${postId}`,
+          timeout: 5000
+        })
+            .then(function (response) {
+              if (response.status === 200) {
+                post = response.data
+                post["dimensions"] = []
+                const numberOfPhotos = post.files.length;
+                for (let j = 0; j < numberOfPhotos; j++) {
+                  post["dimensions"].push(
+                      {
+                        uri: "",
+                        width: 300,
+                        height: 300
+                      }
+                  )
+                }
+              }
+              else
+                post = false;
+            })
+            .catch(function () {
+              post = false;
+            });
+        if(post !== false) {
+          this.posts.push(post);
+          return;
+        }
+        this.noConnection = true;
+      }
     },
     async getSavedPosts(){
       this.savedPosts = [];
@@ -135,8 +168,9 @@ export default {
           'saved-posts',
       );
       posts = JSON.parse(posts)
-      for(let postId of posts){
+      for(let currentPost of posts){
         let post;
+        let postId = currentPost.id
         await axios({
           method: 'get',
           url: `http://52.57.118.176/Post/Get/${postId}`,
