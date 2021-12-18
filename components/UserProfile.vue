@@ -127,8 +127,10 @@ export default {
           'posts',
       );
       posts = JSON.parse(posts)
-      for(let postId of posts){
+      // alert(posts)
+      for(let currentPost of posts){
         let post;
+        let postId = currentPost.id
         await axios({
           method: 'get',
           url: `http://52.57.118.176/Post/Get/${postId}`,
@@ -168,9 +170,8 @@ export default {
           'saved-posts',
       );
       posts = JSON.parse(posts)
-      for(let currentPost of posts){
+      for(let postId of posts){
         let post;
-        let postId = currentPost.id
         await axios({
           method: 'get',
           url: `http://52.57.118.176/Post/Get/${postId}`,
