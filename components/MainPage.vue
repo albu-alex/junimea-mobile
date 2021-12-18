@@ -298,6 +298,13 @@ export default {
         this.noConnection = true;
         return;
       }
+      if(this.posts.length >= 10) {
+        const lastTen = this.posts.slice(-10)
+        for (let i = 0; i < 10; i++) {
+          if (posts[i].id === lastTen[i].id)
+            return;
+        }
+      }
       if (postPosition === 'bottom' || !postPosition) {
         this.posts = this.posts.concat(posts)
       }
