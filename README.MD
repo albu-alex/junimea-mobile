@@ -25,9 +25,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day1_2.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="two">Day 2</a>
 
@@ -61,10 +58,6 @@ This is the QR code to the app:
         Implement the settings bar
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day2_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day2_2.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="three">Day 3</a>
 
@@ -105,12 +98,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day3_4.jpg" alt="Fourth photo" height="50%" width=auto/>
-
 ## Day 3.5
 ## Made actual register requests to the API and validated them. Also, refactoring in validation of input(status code instead of message)
 
@@ -137,11 +124,6 @@ This is the QR code to the app:
         Add the feature in which the user can choose which photo to upload
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day4_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day4-2.jpg" alt="Second photo" height="50%" width=auto/>
-
 
 # <a id="five">Day 5</a>
 ## Today I have done the following:
@@ -173,10 +155,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day5_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day5-2.jpg" alt="Second photo" height="50%" width=auto/>
-
 # <a id="six">Day 6</a>
 ## Today I have done the following:
 <uL>
@@ -200,11 +178,6 @@ This is the QR code to the app:
         Create a UserProfile component
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day6_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day6_2.jpg" alt="Second photo" height="50%" width=auto/>
-
 
 # <a id="seven">Day 7</a>
 
@@ -242,12 +215,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_3.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_4.jpg" alt="Fourth photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day7_5.jpg" alt="Fifth photo" height="50%" width=auto/>
 
 # <a id="eight">Day 8</a>
 
@@ -280,11 +247,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day8_4.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="nine">Day 9</a>
 
@@ -320,10 +282,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day9_3.jpg" alt="First photo" height="50%" width=auto/>
 
 # <a id="ten">Day 10</a>
 
@@ -364,14 +322,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_3.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_4.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_6.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day10_5.jpg" alt="Fourth photo" height="50%" width=auto/>
-
 # <a id="eleven">Day 11</a>
 ## Today I have done the following:
 <uL>
@@ -388,11 +338,6 @@ This is the QR code to the app:
         Fix an android bug which spams the database with posts on pull to refresh or on infinite loading
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day11_3.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="twelve">Day 12</a>
 ## Today I have done the following:
@@ -421,11 +366,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day12_3.jpg" alt="First photo" height="50%" width=auto/>
-
 # <a id="thirteen">Day 13</a>
 ## Today I have done the following:
 <uL>
@@ -453,9 +393,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day13_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day13_2.jpg" alt="Second video" height="50%" width=auto/>
 
 # <a id="fourteen">Day 14</a>
 ## Today I have done the following:
@@ -478,8 +415,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day14_1.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="fifteen">Day 15</a>
 
@@ -517,10 +452,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day15_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day15_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day15_3.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="sixteen">Day 16</a>
 
@@ -558,13 +489,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day16_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day16_2.gif" alt="Second vided" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day16_3.gif" alt="Third video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day16_4.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day16_5.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day16_6.jpg" alt="Third photo" height="50%" width=auto/>
 
 # <a id="seventeen">Day 17</a>
 ## Today I have done the following:
@@ -588,10 +512,6 @@ This is the QR code to the app:
         Style the alerts
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day17_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day17_2.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="eighteen">Day 18</a>
 
@@ -627,11 +547,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day18_4.jpg" alt="Fourth photo" height="50%" width=auto/>
 
 # <a id="nineteen">Day 19</a>
 
@@ -681,13 +596,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_4.jpg" alt="Fourth photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day19_5.gif" alt="First video" height="50%" width=auto/>
-
 # <a id="twenty">Day 20</a>
 
 ## Today I have done the following:
@@ -721,14 +629,6 @@ This is the QR code to the app:
         When user enters the app, direct him to the main page
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_3.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_4.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_5.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day20_4.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="twentyone">Day 21</a>
 
@@ -767,12 +667,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_4.jpg" alt="Fourth photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day21_5.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="twentytwo">Day 22</a>
 
@@ -816,12 +710,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_3.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day22_4.gif" alt="Third video" height="50%" width=auto/>
-
 # <a id="twentythree">Day 23</a>
 
 ## Today I have done the following:
@@ -852,11 +740,6 @@ This is the QR code to the app:
         Add a save post placeholder
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day23_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day23_2.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day23_3.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="twentyfour">Day 24</a>
 
@@ -892,12 +775,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_2.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_3.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_4.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day24_5.jpg" alt="Fourth photo" height="50%" width=auto/>
 
 # <a id="twentyfive">Day 25</a>
 ## Today I have done the following:
@@ -932,10 +809,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day25_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day25_2.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day25_3.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="twentysix">Day 26</a>
 
@@ -973,11 +846,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day26_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day26_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day26_3.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day26_4.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="twentyseven">Day 27</a>
 ## Today I have done the following:
@@ -1002,11 +870,6 @@ This is the QR code to the app:
         Fix the Tags component
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day27_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day27_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day27_3.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="twentyeight">Day 28</a>
 
@@ -1044,10 +907,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day28_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day28_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day28_3.jpg" alt="Third photo" height="50%" width=auto/>
 
 # <a id="twentynine">Day 29</a>
 ## Today I have done the following:
@@ -1079,10 +938,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day29_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day29_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day29_3.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="thirty">Day 30</a>
 
@@ -1120,12 +975,6 @@ This is the QR code to the app:
         Add alerts for posting comment as a guest
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day30_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day30_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day30_3.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day30_4.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="thirtyone">Day 31</a>
 
@@ -1166,13 +1015,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_3.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_4.gif" alt="Third video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day31_5.gif" alt="Fourth video" height="50%" width=auto/>
-
 # <a id="thirtytwo">Day 32</a>
 
 ## Today I have done the following:
@@ -1210,11 +1052,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day32_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day32_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day32_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day32_4.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="thirtythree">Day 33</a>
 
@@ -1247,10 +1084,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day33_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day33_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day33_3.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="thirtyfour">Day 34</a>
 
@@ -1286,11 +1119,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_3.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day34_4.jpg" alt="Third photo" height="50%" width=auto/>
 
 # <a id="thirtyfive">Day 35</a>
 
@@ -1320,10 +1148,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day35_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day35_2.gif" alt="Second video" height="50%" width=auto/>
-
 # <a id="thirtysix">Day 36</a>
 
 ## Today I have done the following:
@@ -1351,10 +1175,6 @@ This is the QR code to the app:
         Improve the hidden post
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day36_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day36_2.jpg" alt="First photo" height="50%" width=auto/>
 
 # <a id="thirtyseven">Day 37</a>
 ## Today I have done the following:
@@ -1389,10 +1209,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day37_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day37_2.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day37_3.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="thirtyeight">Day 38</a>
 
@@ -1430,11 +1246,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day38_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day38_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day38_3.gif" alt="Third video" height="50%" width=auto/>
-
 # <a id="thirtynine">Day 39</a>
 
 ## Today I have done the following:
@@ -1469,10 +1280,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day39_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day39_2.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day39_3.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="fourty">Day 40</a>
 
@@ -1506,10 +1313,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day40_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day40_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day40_3.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="fourtyone">Day 41</a>
 
@@ -1552,11 +1355,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day41_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day41_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day41_3.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day41_4.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="fourtytwo">Day 42</a>
 
@@ -1598,11 +1396,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day42_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day42_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day42_3.gif" alt="Third video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day42_4.gif" alt="Fourth video" height="50%" width=auto/>
 
 # <a id="fourtythree">Day 43</a>
 
@@ -1638,10 +1431,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day43_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day43_2.gif" alt="Second video" height="50%" width=auto/>
-
 # <a id="fourtyfour">Day 44</a>
 
 ## Today I have done the following:
@@ -1669,11 +1458,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day44_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day44_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day44_3.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day44_4.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="fourtyfive">Day 45</a>
 ## Today I have done the following:
@@ -1702,10 +1486,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day45_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day45_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day45_3.jpg" alt="First photo" height="50%" width=auto/>
 
 # <a id="fourtysix">Day 46</a>
 ## Today I have done the following
@@ -1742,10 +1522,6 @@ This is the QR code to the app:
         Adjust text gramatically in add post box
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day46_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day46_2.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="fourtyseven">Day 47</a>
 
@@ -1784,10 +1560,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_2.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day47_3.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="fourtyeight">Day 48</a>
 
@@ -1823,12 +1595,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_4.jpg" alt="Fourth photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day48_5.jpg" alt="Fifth photo" height="50%" width=auto/>
 
 # <a id="fourtynine">Day 49</a>
 
@@ -1875,11 +1641,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day49_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day49_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day49_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day49_4.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="fifty">Day 50</a>
 
@@ -1914,9 +1675,6 @@ This is the QR code to the app:
         Keep adding icons inside text inputs
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day_50.jpg" alt="First photo" height="50%" width=auto/>
 
 # <a id="fiftyone">Day 51</a>
 
@@ -1966,12 +1724,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day51_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day51_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day51_3.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day51_4.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day51_5.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="fiftytwo">Day 52</a>
 
@@ -2010,12 +1762,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day52_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day52_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day52_3.gif" alt="Third video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day52_4.gif" alt="Fourth video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day52_5.gif" alt="Fifth video" height="50%" width=auto/>
 
 # <a id="fiftythree">Day 53</a>
 
@@ -2059,10 +1805,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day53_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day53_2.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day53_3.gif" alt="Second video" height="50%" width=auto/>
 
 # <a id="fiftyfour">Day 54</a>
 
@@ -2098,10 +1840,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day54_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day54_2.jpg" alt="First photo" height="50%" width=auto/>
-
 # <a id="fiftyfive">Day 55</a>
 ## Today I have done the following:
 <uL>
@@ -2123,11 +1861,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day55_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day55_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day55_3.jpg" alt="Third photo" height="50%" width=auto/>
-
 # <a id="fiftysix">Day 56</a>
 ## Today I have done the following:
 <uL>
@@ -2146,8 +1879,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day56_1.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="fiftyseven">Day 57</a>
 
@@ -2185,10 +1916,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day57_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day57_2.gif" alt="Second video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day57_3.gif" alt="Third video" height="50%" width=auto/>
 
 # <a id="fiftyeight">Day 58</a>
 ## Today I have done the following:
@@ -2215,10 +1942,6 @@ This is the QR code to the app:
 </li>
 </uL>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day58_1.gif" alt="First video" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day58_2.gif" alt="Second video" height="50%" width=auto/>
-
 
 # <a id="fiftynine">Day 59</a>
 ## Today I have done the following:
@@ -2244,11 +1967,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day59_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day59_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day59_3.gif" alt="First video" height="50%" width=auto/>
-
 # <a id="sixty">Day 60</a>
 ## Today I have done the following:
 <uL>
@@ -2267,10 +1985,6 @@ This is the QR code to the app:
     Added tags
 </li>
 </uL>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day61_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day61_2.jpg" alt="Second photo" height="50%" width=auto/>
 
 # <a id="sixtytwo">Day 62</a>
 ## Today I have done the following:
@@ -2296,11 +2010,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_1.jpg" alt="First photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_2.jpg" alt="Second photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_3.jpg" alt="Third photo" height="50%" width=auto/>
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day62_4.jpg" alt="Fourth photo" height="50%" width=auto/>
 
 # <a id="sixtythree">Day 63</a>
 ## Today I have done the following:
@@ -2322,9 +2031,6 @@ This is the QR code to the app:
         Refactor code
     </li>
 </ul>
-
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day63_1.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="sixtyfour">Day 64</a>
 # <a id="sixtyfive">Day 65</a>
@@ -2350,8 +2056,6 @@ This is the QR code to the app:
     </li>
 </ul>
 
-## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day66_1.gif" alt="First video" height="50%" width=auto/>
 
 # <a id="sixtyseven">Day 67</a>
 # <a id="sixtyeight">Day 68</a>
