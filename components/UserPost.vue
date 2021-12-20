@@ -44,7 +44,7 @@
         <AntDesign v-if="isDarkTheme" name="dislike1" :size=24 color="#AAAAAA" :style="{opacity: dislikeOpacity}" />
         <AntDesign v-else name="dislike1" :size=24 color="#555555" :style="{opacity: dislikeOpacity}" />
       </touchable-opacity>
-      <text class="likesTextDark">{{likes}}</text>
+      <text :class="{ likesTextDark: (isDarkTheme), likesTextLight: (!isDarkTheme)}">{{likes}}</text>
       <touchable-opacity :on-press="postComment">
         <FontAwesome v-if="isDarkTheme" name="comment" :size=24 color="#AAAAAA" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
         <FontAwesome v-else name="comment" :size=24 color="#555555" :style="{marginLeft: 15, marginRight:25, marginBottom: 5}" />
