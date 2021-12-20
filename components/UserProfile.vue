@@ -20,9 +20,13 @@
           :on-press="uploadProfilePicture" :class="{ profilePictureButtonDark: (isDarkTheme), profilePictureButtonLight: (!isDarkTheme)}">
         <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">Change picture</text>
       </touchable-opacity>
-      <touchable-opacity :style="{borderRadius: 10}"
+      <touchable-opacity v-if="!areSavedPosts" :style="{borderRadius: 10}"
                          :on-press="viewSavedPosts" :class="{ profilePictureButtonDark: (isDarkTheme), profilePictureButtonLight: (!isDarkTheme)}">
         <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">View saved posts</text>
+      </touchable-opacity>
+      <touchable-opacity v-else :style="{borderRadius: 10}"
+                         :on-press="viewSavedPosts" :class="{ profilePictureButtonDark: (isDarkTheme), profilePictureButtonLight: (!isDarkTheme)}">
+        <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">View user posts</text>
       </touchable-opacity>
     </view>
     <flat-list v-if="!isLoading&&!areSavedPosts&&isDarkTheme" :data="posts" :render-item="(post) => renderPosts(post)"
