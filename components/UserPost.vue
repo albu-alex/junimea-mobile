@@ -163,7 +163,10 @@ export default {
     dimensions: Array,
     liked: Boolean,
     isDarkTheme: Boolean,
-    isGuest: Boolean
+    isGuest: Boolean,
+    navigation: {
+      type: Object
+    }
   },
   async beforeMount(){
     await this.loadPost();
@@ -227,7 +230,7 @@ export default {
             {
               text: "Login",
               style: "cancel",
-              onPress: () => this.$emit("redirectToLogin")
+              onPress: this.signIn
             },
             {
               text: "Continue as guest",
@@ -243,6 +246,9 @@ export default {
     },
     postComment(){
       this.showComments = !this.showComments
+    },
+    signIn(){
+      this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     async postPhoto(){
       if(this.isGuest){
@@ -326,7 +332,7 @@ export default {
       alert("Not a way to implement this yet!")
     },
     redirectToLogin(){
-      this.$emit("redirectToLogin");
+      this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     async doubleTapToLike(){
       if(this.taps === 0){
@@ -631,7 +637,7 @@ export default {
               {
                 text: "Login",
                 style: "cancel",
-                onPress: () => this.$emit("redirectToLogin")
+                onPress: this.redirectToLogin
               },
               {
                 text: "Continue as guest",
