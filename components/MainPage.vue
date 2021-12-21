@@ -123,7 +123,7 @@ export default {
       StatusBar.setBarStyle('dark-content', true);
       return;
     }
-      StatusBar.setBarStyle('light-content', true);
+    StatusBar.setBarStyle('light-content', true);
   },
   async beforeMount(){
     this.isDarkTheme = this.navigation.getParam('theme');
@@ -133,10 +133,6 @@ export default {
     let posts = await AsyncStorage.getItem(
         'posts',
     );
-    // await AsyncStorage.setItem(
-    //     'posts',
-    //     '[]'
-    // );
     if(posts === '[]')
       await this.getInitialPosts('top');
     else {
@@ -178,18 +174,18 @@ export default {
         url: `http://52.57.118.176/User/Self`,
         timeout: 4000
       })
-      .then(function (response){
-        if(response.status === 200){
-          profilePicture = response.data.profilePicUrl
-          username = response.data.email
-          userID = response.data.id
-        }
-      })
-      .catch(function(){
-        profilePicture = "";
-        username = "";
-        userID = "";
-      });
+          .then(function (response){
+            if(response.status === 200){
+              profilePicture = response.data.profilePicUrl
+              username = response.data.email
+              userID = response.data.id
+            }
+          })
+          .catch(function(){
+            profilePicture = "";
+            username = "";
+            userID = "";
+          });
       if(profilePicture !== "") {
         this.newUsername = username;
         this.profilePicture = profilePicture;
@@ -236,7 +232,6 @@ export default {
         easing: Easing.linear,
         useNativeDriver: false
       }).start(() => {
-
       });
       if(!this.leftSideTags) {
         this.postsOpacity.setValue(0.5);
@@ -246,7 +241,6 @@ export default {
           easing: Easing.linear,
           useNativeDriver: false
         }).start(() => {
-
         });
       }
       else{
@@ -257,7 +251,6 @@ export default {
           easing: Easing.linear,
           useNativeDriver: false
         }).start(() => {
-
         });
       }
     },
@@ -269,35 +262,35 @@ export default {
         url: `http://52.57.118.176/Post/List/${this.postNumber}`,
         timeout: 10000
       })
-      .then(function (response){
-        posts = response.data
-        for(let i=0;i<posts.length;i++){
-          const numberOfPhotos = posts[i].files.length;
-          posts[i]["dimensions"] = []
-          for(let j=0;j<numberOfPhotos;j++) {
-            const getDimensions = function(imageWidth, imageHeight){
+          .then(function (response){
+            posts = response.data
+            for(let i=0;i<posts.length;i++){
+              const numberOfPhotos = posts[i].files.length;
+              posts[i]["dimensions"] = []
+              for(let j=0;j<numberOfPhotos;j++) {
+                const getDimensions = function(imageWidth, imageHeight){
+                  posts[i]["dimensions"].push(
+                      {
+                        uri: "",
+                        width: imageWidth,
+                        height: imageHeight
+                      }
+                  )
+                }
+                Image.getSize(posts[i].files[j], (w, h) => getDimensions(w, h));
+              }
               posts[i]["dimensions"].push(
                   {
                     uri: "",
-                    width: imageWidth,
-                    height: imageHeight
+                    width: 300,
+                    height: 300
                   }
               )
             }
-            Image.getSize(posts[i].files[j], (w, h) => getDimensions(w, h));
-          }
-          posts[i]["dimensions"].push(
-              {
-                uri: "",
-                width: 300,
-                height: 300
-              }
-          )
-        }
-      })
-      .catch(function(){
-        noConnection = true;
-      });
+          })
+          .catch(function(){
+            noConnection = true;
+          });
       if(noConnection){
         this.noConnection = true;
         return;
@@ -331,11 +324,11 @@ export default {
       if(posts.result === undefined) {
         posts = []
       }
+      // alert(posts.length)
       if(posts.length !== 0)
         return;
-      this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
-      if(posts.length >= 20)
-        posts = posts.slice(-10)
+      // this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
+      posts = this.posts.slice(-10)
       posts = JSON.stringify(posts)
       await AsyncStorage.setItem(
           'posts',
@@ -350,7 +343,6 @@ export default {
         easing: Easing.linear,
         useNativeDriver: false
       }).start(() => {
-
       });
       this.tagsOpacity.setValue(0);
       Animated.timing(this.tagsOpacity, {
@@ -359,7 +351,6 @@ export default {
         easing: Easing.linear,
         useNativeDriver: false
       }).start(() => {
-
       });
     },
     showTags(){
@@ -429,24 +420,24 @@ export default {
         },
         timeout: 10000
       })
-      .then(function (response){
-        if(response.status === 200){
-          post = {
-            "id": response.data.id,
-            "title": response.data.title,
-            "files": response.data.files,
-            "username": response.data.userName,
-            "profilePic": response.data.profilePicUrl,
-            "likes": response.data.likes,
-            "liked": response.data.liked,
-            "dimensions": dimensions,
-            "tags": response.data.tags
-          }
-        }
-      })
-      .catch(function(error){
-        // alert(error.response.data.errorMessage)
-      });
+          .then(function (response){
+            if(response.status === 200){
+              post = {
+                "id": response.data.id,
+                "title": response.data.title,
+                "files": response.data.files,
+                "username": response.data.userName,
+                "profilePic": response.data.profilePicUrl,
+                "likes": response.data.likes,
+                "liked": response.data.liked,
+                "dimensions": dimensions,
+                "tags": response.data.tags
+              }
+            }
+          })
+          .catch(function(error){
+            // alert(error.response.data.errorMessage)
+          });
       if(post){
         if(postPosition === 'top')
           this.posts = [post].concat(this.posts)
