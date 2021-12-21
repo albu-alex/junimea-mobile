@@ -133,6 +133,10 @@ export default {
     let posts = await AsyncStorage.getItem(
         'posts',
     );
+    // await AsyncStorage.setItem(
+    //     'posts',
+    //     '[]'
+    // );
     if(posts === '[]')
       await this.getInitialPosts('top');
     else {
@@ -327,10 +331,11 @@ export default {
       if(posts.result === undefined) {
         posts = []
       }
-      // alert(posts.length)
       if(posts.length !== 0)
         return;
       this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
+      if(posts.length >= 20)
+        posts = posts.slice(-10)
       posts = JSON.stringify(posts)
       await AsyncStorage.setItem(
           'posts',
