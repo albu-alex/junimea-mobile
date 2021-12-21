@@ -7,7 +7,7 @@
 import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import Search from "./components/Search";
-import UserPost from "./components/UserPost";
+// import UserPost from "./components/UserPost";
 import {
   createAppContainer,
   createSwitchNavigator,
@@ -18,7 +18,7 @@ const StackNavigator = createSwitchNavigator(
       MainPage: MainPage,
       Login: Login,
       Search: Search,
-      UserPost: UserPost
+      // UserPost: UserPost
     },
     {
       initialRouteName: 'MainPage',

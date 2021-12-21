@@ -163,10 +163,7 @@ export default {
     dimensions: Array,
     liked: Boolean,
     isDarkTheme: Boolean,
-    isGuest: Boolean,
-    navigation: {
-      type: Object
-    }
+    isGuest: Boolean
   },
   async beforeMount(){
     await this.loadPost();
@@ -248,7 +245,7 @@ export default {
       this.showComments = !this.showComments
     },
     signIn(){
-      this.navigation.navigate("Login", {theme: this.isDarkTheme});
+      this.$emit("redirectToLogin")
     },
     async postPhoto(){
       if(this.isGuest){
