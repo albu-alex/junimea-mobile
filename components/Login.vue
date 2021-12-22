@@ -161,7 +161,6 @@ export default {
     }
   },
   beforeMount(){
-    // GoogleSignin.configure();
     this.operatingSystem = Platform.OS;
   },
   async mounted(){

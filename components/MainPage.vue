@@ -127,7 +127,6 @@ export default {
   },
   async beforeMount(){
     this.isDarkTheme = this.navigation.getParam('theme');
-    // alert(Appearance.getColorScheme())
     if(this.isDarkTheme === undefined)
       this.isDarkTheme = Appearance.getColorScheme() === "dark"
     let posts = await AsyncStorage.getItem(
