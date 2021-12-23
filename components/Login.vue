@@ -1,51 +1,72 @@
 <!--This component is used to validate the user name and password-->
 <!--It consists of two text inputs, a login button, a register button and a welcome message-->
 <template>
-  <view v-if="isDarkTheme" class="userLoginDark">
+  <view :class="{ userLoginDark: (isDarkTheme), userLoginLight: (!isDarkTheme)}">
     <Loading v-if="isLoading"/>
     <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
       <activity-indicator size="large" color="dimgrey" />
     </view>
-    <text class="pageIntroDark" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios' ">Welcome to juni.</text>
-    <text class="pageIntroDarkAndroid" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'android' ">Welcome to juni.</text>
+    <text :class="{ pageIntroDark: (isDarkTheme), pageIntroLight: (!isDarkTheme)}" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios' ">Welcome to juni.</text>
+    <text :class="{ pageIntroDarkAndroid: (isDarkTheme), pageIntroLightAndroid: (!isDarkTheme)}" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'android' ">Welcome to juni.</text>
     <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="user" :size=16 color="ghostwhite"
+      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&isDarkTheme" name="user" :size=16 color="ghostwhite"
                     class="logo"/>
-      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
+      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&!isDarkTheme" name="user" :size=16 color="#070000"
+                    class="logo"/>
+      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&isDarkTheme" placeholderTextColor="ghostwhite"
                   placeholder="Username" :default-value="username" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 25}"
                   keyboardAppearance="dark" autoComplete="username" :on-change-text="onChangeUsername"></text-input>
+      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&!isDarkTheme" placeholderTextColor="#070700"
+                  placeholder="Username" :default-value="username" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25}"
+                  keyboardAppearance="light" autoComplete="username" :on-change-text="onChangeUsername"></text-input>
     </view>
     <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&registeredUser" name="user" :size=16 color="ghostwhite"
+      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&registeredUser&&isDarkTheme" name="user" :size=16 color="ghostwhite"
                     class="logo"/>
-      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
+      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&registeredUser&&!isDarkTheme" name="user" :size=16 color="#070000"
+                    class="logo"/>
+      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser&&isDarkTheme"
                   placeholderTextColor="ghostwhite" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25}"
                   :default-value="username" class="textInputDark" keyboardAppearance="dark" :on-change-text="onChangeUsername"></text-input>
+      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser&&!isDarkTheme"
+                  placeholderTextColor="#070700" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25}"
+                  :default-value="username" class="textInputLight" keyboardAppearance="light" :on-change-text="onChangeUsername"></text-input>
     </view>
     <view :style="{flexDirection: 'row'}">
-      <Entypo v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="email" :size=16 color="ghostwhite"
+      <Entypo v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&isDarkTheme" name="email" :size=16 color="ghostwhite"
+              class="logo"/>
+      <Entypo v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&!isDarkTheme" name="email" :size=16 color="#070000"
               class="logo"/>
       <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="dark"
-                  v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="ghostwhite"
+                  v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&isDarkTheme" placeholderTextColor="ghostwhite"
                   placeholder="Email Address" :default-value="email" class="textInputDark" :style="{borderRadius: 15, paddingHorizontal: 25}"
+                  autoComplete="email" :on-change-text="onChangeEmail"></text-input>
+      <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="light"
+                  v-if="!isLoading&&!waitingForSubmit&&!registeredUser&&!isDarkTheme" placeholderTextColor="#070700"
+                  placeholder="Email Address" :default-value="email" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25}"
                   autoComplete="email" :on-change-text="onChangeEmail"></text-input>
     </view>
     <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit" name="lock" :size=16 color="ghostwhite"
+      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&isDarkTheme" name="lock" :size=16 color="ghostwhite"
                     class="logo"/>
-      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="ghostwhite"
+      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!isDarkTheme" name="lock" :size=16 color="#070000"
+                    class="logo"/>
+      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&isDarkTheme" placeholderTextColor="ghostwhite"
                   :secureTextEntry="!showPassword" placeholder="Password" :default-value="password" :style="{borderRadius: 15, paddingHorizontal: 25}"
                   class="textInputDark" keyboardAppearance="dark" autoComplete="password" :on-change-text="onChangePassword"></text-input>
+      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!isDarkTheme" placeholderTextColor="#070700"
+                  :secureTextEntry="!showPassword" placeholder="Password" :default-value="password" :style="{borderRadius: 15, paddingHorizontal: 25}"
+                  class="textInputLight" keyboardAppearance="light" autoComplete="password" :on-change-text="onChangePassword"></text-input>
     </view>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit&&registeredUser" :style="{borderRadius: 10}" class="loginButtonDark" :on-press="verifyLogin">
-      <text class="loginButtonTextDark">Login</text>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit&&registeredUser" :style="{borderRadius: 10}" :class="{ loginButtonDark: (isDarkTheme), loginButtonLight: (!isDarkTheme)}" :on-press="verifyLogin">
+      <text :class="{ loginButtonTextDark: (isDarkTheme), loginButtonTextLight: (!isDarkTheme)}">Login</text>
     </touchable-opacity>
-    <touchable-opacity :style="{borderRadius: 10}" v-if="!isLoading&&!waitingForSubmit&&registeredUser" class="loginButtonDark" :on-press="loginAsGuest">
-      <text class="loginButtonTextDark">Login as guest</text>
+    <touchable-opacity :style="{borderRadius: 10}" v-if="!isLoading&&!waitingForSubmit&&registeredUser" :class="{ loginButtonDark: (isDarkTheme), loginButtonLight: (!isDarkTheme)}" :on-press="loginAsGuest">
+      <text :class="{ loginButtonTextDark: (isDarkTheme), loginButtonTextLight: (!isDarkTheme)}">Login as guest</text>
     </touchable-opacity>
-    <text v-if="!isLoading&&!waitingForSubmit&&registeredUser" class="bugButtonTextDark">Or you can sign up</text>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" class="loginButtonDark" :on-press="registerNewUser">
-      <text class="loginButtonTextDark">Register</text>
+    <text v-if="!isLoading&&!waitingForSubmit&&registeredUser" :class="{ bugButtonTextDark: (isDarkTheme), bugButtonTextLight: (!isDarkTheme)}">Or you can sign up</text>
+    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" :class="{ loginButtonDark: (isDarkTheme), loginButtonLight: (!isDarkTheme)}" :on-press="registerNewUser">
+      <text :class="{ loginButtonTextDark: (isDarkTheme), loginButtonTextLight: (!isDarkTheme)}">Register</text>
     </touchable-opacity>
     <view class="loginWithServices">
       <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
@@ -63,78 +84,10 @@
              :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
     </touchable-opacity>
     <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'ios'" :on-press="reportBugs">
-      <text class="bugButtonTextDark">Found any bugs? Report them!</text>
+      <text :class="{ bugButtonTextDark: (isDarkTheme), bugButtonTextLight: (!isDarkTheme)}">Found any bugs? Report them!</text>
     </touchable-opacity>
     <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'android'" :on-press="reportBugs">
-      <text class="bugButtonTextDarkAndroid">Found any bugs? Report them!</text>
-    </touchable-opacity>
-  </view>
-  <view v-else class="userLoginLight">
-    <Loading v-if="isLoading"/>
-    <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
-      <activity-indicator size="large" color="black" />
-    </view>
-    <text class="pageIntroLight" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'">Welcome to juni.</text>
-    <text class="pageIntroLightAndroid" v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'android'">Welcome to juni.</text>
-    <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="user" :size=16 color="#070700"
-                    class="logo"/>
-      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
-                  placeholder="Username" :default-value="username" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25}"
-                  keyboardAppearance="light" autoComplete="username" :on-change-text="onChangeUsername"></text-input>
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit&&registeredUser" name="user" :size=16 color="#070700"
-                    class="logo"/>
-      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit&&registeredUser"
-                  placeholderTextColor="#070700" placeholder="Username or Email" :style="{borderRadius: 15, paddingHorizontal: 25}"
-                  :default-value="username" class="textInputLight" keyboardAppearance="light" :on-change-text="onChangeUsername"></text-input>
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <Entypo v-if="!isLoading&&!waitingForSubmit&&!registeredUser" name="email" :size=16 color="#070700"
-              class="logo"/>
-      <text-input :autoCorrect="false" keyboardType="email-address" keyboardAppearance="light"
-                  v-if="!isLoading&&!waitingForSubmit&&!registeredUser" placeholderTextColor="#070700"
-                  placeholder="Email Address" :default-value="email" class="textInputLight" :style="{borderRadius: 15, paddingHorizontal: 25}"
-                  autoComplete="email" :on-change-text="onChangeEmail"></text-input>
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="!isLoading&&!waitingForSubmit" name="lock" :size=16 color="#070700"
-                    class="logo"/>
-      <text-input :autoCorrect="false" v-if="!isLoading&&!waitingForSubmit" placeholderTextColor="#070700"
-                  :secureTextEntry="!showPassword" placeholder="Password" :default-value="password" :style="{borderRadius: 15, paddingHorizontal: 25}"
-                  class="textInputLight" keyboardAppearance="light" autoComplete="password" :on-change-text="onChangePassword"></text-input>
-    </view>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit&&registeredUser" :style="{borderRadius: 10}" class="loginButtonLight" :on-press="verifyLogin">
-      <text class="loginButtonTextLight">Login</text>
-    </touchable-opacity>
-    <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 7}" v-if="!isLoading&&!waitingForSubmit&&registeredUser" class="loginButtonLight" :on-press="loginAsGuest">
-      <text class="loginButtonTextLight">Login as guest</text>
-    </touchable-opacity>
-    <text v-if="!isLoading&&!waitingForSubmit&&registeredUser" class="bugButtonTextLight">Or you can sign up</text>
-    <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :style="{borderRadius: 10}" class="loginButtonLight" :on-press="registerNewUser">
-      <text class="loginButtonTextLight">Register</text>
-    </touchable-opacity>
-    <view class="loginWithServices">
-      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithFacebook">
-        <FontAwesome5 name="facebook" :size=60 color="blue" />
-      </touchable-opacity>
-      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithGoogle">
-        <FontAwesome5 class="logoGoogle"  name="google-plus-square" :size=60 color="red" />
-      </touchable-opacity>
-      <touchable-opacity v-if="!isLoading&&!waitingForSubmit" :on-press="loginWithApple">
-        <FontAwesome5 name="apple" :size=60 color="#070700" />
-      </touchable-opacity>
-    </view>
-    <touchable-opacity :on-press="junimeaOnFacebook">
-      <Image v-if="!isLoading&&!waitingForSubmit&&operatingSystem === 'ios'" :source="require('../assets/unicorn-negru-cu-scris-preview.png')"
-             :style="{width: pageWidth/2, height: (pageWidth/1335)*1335/2}" />
-    </touchable-opacity>
-    <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'ios'" :on-press="reportBugs">
-      <text class="bugButtonTextLight">Found any bugs? Report them!</text>
-    </touchable-opacity>
-    <touchable-opacity v-if="!waitingForSubmit&&operatingSystem === 'android'" :on-press="reportBugs">
-      <text class="bugButtonTextLightAndroid">Found any bugs? Report them!</text>
+      <text :class="{ bugButtonTextDarkAndroid: (isDarkTheme), bugButtonTextLightAndroid: (!isDarkTheme)}">Found any bugs? Report them!</text>
     </touchable-opacity>
   </view>
 </template>
