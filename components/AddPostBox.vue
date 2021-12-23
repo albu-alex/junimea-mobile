@@ -13,16 +13,20 @@
         <Ionicons v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="text" :size=20 color="#555555" class="logo" />
         <Ionicons v-else-if="operatingSystem === 'android'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logoAndroid" />
         <Ionicons v-else name="text" :size=20 color="#555555" class="logoAndroid" />
-        <text-input v-model="postText" class="addNewPostDark" placeholder="Title"
+        <text-input v-model="postText" class="addNewPost" placeholder="Title" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"
                     :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+        <text-input v-model="postText" class="addNewPost" placeholder="Title" v-else placeholderTextColor="#555555"
+                    :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
       <view :style="{flexDirection: 'row'}">
         <FontAwesome5 v-if="operatingSystem === 'ios'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logo" />
         <FontAwesome5 v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="hashtag" :size=20 color="#555555" class="logo" />
         <FontAwesome5 v-else-if="operatingSystem === 'android'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
         <FontAwesome5 v-else name="hashtag" :size=20 color="#555555" class="logoAndroid" />
-        <text-input v-model="tags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)"
+        <text-input v-model="tags" class="addNewPost" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"
                     :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+        <text-input v-model="tags" class="addNewPost" placeholder="Tag1, tag2...(optional)" v-else placeholderTextColor="#555555"
+                    :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
       </view>
       <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">{{images.length}} {{photos}} added</text>
       <view class="postButtons">
@@ -281,21 +285,10 @@ export default {
   font-weight: 400;
   font-size: 14px;
 }
-.addNewPostDark{
+.addNewPost{
   align-self: center;
   background-color: ghostwhite;
   color: dimgrey;
-  width: 90%;
-  height: 40px;
-  font-weight: 400;
-  font-size: 18px;
-  margin-bottom: 5%;
-  margin-left: -6%;
-}
-.addNewPostLight{
-  align-self: center;
-  background-color: #555555;
-  color: #969696;
   width: 90%;
   height: 40px;
   font-weight: 400;
