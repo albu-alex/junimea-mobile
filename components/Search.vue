@@ -3,10 +3,14 @@
 <view :class="{ searchDark: (isDarkTheme), searchLight: (!isDarkTheme)}">
   <OwnStatusBar :isDarkTheme="isDarkTheme"/>
   <view class="searchHeader">
-    <Ionicons :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="ghostwhite"/>
+    <Ionicons v-if="isDarkTheme" :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="ghostwhite"/>
+    <Ionicons v-else :style="{paddingLeft: 15, zIndex: 2, paddingTop: 5}" name="ios-search-outline" :size=24 color="#070000"/>
     <text-input :autoCorrect="false" placeholderTextColor="ghostwhite" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
-                placeholder="Search Junimea" v-model="searchText" :class="{ textInputDark: (isDarkTheme), textInputLight: (!isDarkTheme)}"
+                placeholder="Search Junimea" v-model="searchText" class="textInputDark" v-if="isDarkTheme"
                 keyboardAppearance="dark" :onKeyPress="search" :multiline="true"></text-input>
+    <text-input :autoCorrect="false" placeholderTextColor="#070000" :style="{paddingTop: 10, borderRadius: 10, paddingHorizontal: 25, marginLeft: -30}"
+                placeholder="Search Junimea" v-model="searchText" class="textInputLight" v-else
+                keyboardAppearance="light" :onKeyPress="search" :multiline="true"></text-input>
     <touchable-opacity :style="{borderRadius: 10}" :on-press="cancelSearch">
       <text :class="{ buttonTextDark: (isDarkTheme), buttonTextLight: (!isDarkTheme)}">Cancel</text>
     </touchable-opacity>
