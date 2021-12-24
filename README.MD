@@ -2186,7 +2186,7 @@ This is the QR code to the app:
 </ul>
 
 # <a id="seventyseven">Day 77</a>
-# <a id="seventysix">Day 78</a>
+# <a id="seventyeight">Day 78</a>
 
 ## Today I have done the following:
 <uL>
