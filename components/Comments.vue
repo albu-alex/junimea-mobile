@@ -33,11 +33,13 @@
     </touchable-opacity>
   </view>
   <view v-if="showReplyBox" class="commentFooter">
-    <text-input v-model="commentText" :class="{ addNewCommentDark: (isDarkTheme), addNewCommentLight: (!isDarkTheme)}" placeholder="Reply..." placeholderTextColor="dimgrey"
+    <text-input v-model="commentText" class="addNewCommentDark" placeholder="Reply..." placeholderTextColor="#555555" v-if="isDarkTheme"
                 :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
+    <text-input v-model="commentText" class="addNewCommentLight" placeholder="Reply..." placeholderTextColor="#AAAAAA" v-else
+                :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 7, marginLeft:5}"/>
     <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
-      <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#555555" />
-      <Ionicons v-else name="image" :size=18 color="#AAAAAA" />
+      <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#AAAAAA" />
+      <Ionicons v-else name="image" :size=18 color="#555555" />
     </touchable-opacity>
     <touchable-opacity :activeOpacity="0.85" :onPress="postComment">
       <text :style="{marginLeft: 20, marginTop: 5}" :class="{ secondaryTextDark: (isDarkTheme), secondaryTextLight: (!isDarkTheme)}">Send</text>
