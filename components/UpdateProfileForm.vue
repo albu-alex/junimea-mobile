@@ -18,15 +18,15 @@
 </view>
 <view v-else class="updateProfileLight">
   <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
-              placeholderTextColor="ghostwhite" placeholder="First Name"
+              placeholderTextColor="#070000" placeholder="First Name"
               v-model="firstName" class="inputFormLight">
   </text-input>
   <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
-              placeholderTextColor="ghostwhite" placeholder="Last Name"
+              placeholderTextColor="#070000" placeholder="Last Name"
               v-model="lastName" class="inputFormLight">
   </text-input>
   <text-input :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
-              placeholderTextColor="ghostwhite" placeholder="Email address"
+              placeholderTextColor="#070000" placeholder="Email address"
               v-model="emailAddress" class="inputFormLight">
   </text-input>
   <touchable-opacity :on-press="updateProfile">
