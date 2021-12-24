@@ -61,9 +61,12 @@
       <view class="addNewComment">
       <FontAwesome5 v-if="isDarkTheme" name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
       <FontAwesome5 v-else name="comment" :size=14 color="#AAAAAA" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
-      <text-input v-model="commentText" :class="{ addNewCommentDark: (isDarkTheme), addNewCommentLight: (!isDarkTheme)}"
-                  placeholder="Comment..." placeholderTextColor="dimgrey"
+      <text-input v-model="commentText" class="addNewCommentDark" v-if="isDarkTheme"
+                  placeholder="Comment..." placeholderTextColor="#555555"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
+      <text-input v-model="commentText" class="addNewCommentLight"
+                  placeholder="Comment..." placeholderTextColor="#AAAAAA" v-else
+                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
         <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
           <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#AAAAAA" />
           <Ionicons v-else name="image" :size=18 color="#555555" />
@@ -80,9 +83,12 @@
       <view class="addNewComment">
         <FontAwesome5 v-if="isDarkTheme" name="comment" :size=14 color="#555555" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
         <FontAwesome5 v-else name="comment" :size=14 color="#AAAAAA" :style="{zIndex: 2, marginTop: 14, marginLeft: 16}" />
-        <text-input v-model="commentText" :class="{ addNewCommentDark: (isDarkTheme), addNewCommentLight: (!isDarkTheme)}"
-                    placeholder="Comment..." placeholderTextColor="dimgrey"
+        <text-input v-model="commentText" class="addNewCommentDark" v-if="isDarkTheme"
+                    placeholder="Comment..." placeholderTextColor="#555555"
                     :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
+        <text-input v-model="commentText" class="addNewCommentLight"
+                    placeholder="Comment..." placeholderTextColor="#AAAAAA" v-else
+                    :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 18, marginLeft: -16}" />
         <touchable-opacity class="addNewCommentButton" :on-press="postPhoto">
           <Ionicons v-if="isDarkTheme" name="image" :size=18 color="#AAAAAA" />
           <Ionicons v-else name="image" :size=18 color="#555555" />
