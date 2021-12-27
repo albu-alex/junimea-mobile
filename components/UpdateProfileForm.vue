@@ -1,36 +1,31 @@
 <template>
-<view v-if="isDarkTheme" class="updateProfileDark">
-  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
+<view :class="{ updateProfileDark: (isDarkTheme), updateProfileLight: (!isDarkTheme)}">
+  <text-input v-if="isDarkTheme" :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="ghostwhite" placeholder="First Name"
               v-model="firstName" class="inputFormDark">
   </text-input>
-  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
-              placeholderTextColor="ghostwhite" placeholder="Last Name"
-              v-model="lastName" class="inputFormDark">
-  </text-input>
-  <text-input :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
-              placeholderTextColor="ghostwhite" placeholder="Email address"
-              v-model="emailAddress" class="inputFormDark">
-  </text-input>
-  <touchable-opacity :on-press="updateProfile">
-    <text class="sendButtonTextDark">Send</text>
-  </touchable-opacity>
-</view>
-<view v-else class="updateProfileLight">
-  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
+  <text-input v-else :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="#070000" placeholder="First Name"
               v-model="firstName" class="inputFormLight">
   </text-input>
-  <text-input :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
+  <text-input v-if="isDarkTheme" :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
+              placeholderTextColor="ghostwhite" placeholder="Last Name"
+              v-model="lastName" class="inputFormDark">
+  </text-input>
+  <text-input v-else :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="#070000" placeholder="Last Name"
               v-model="lastName" class="inputFormLight">
   </text-input>
-  <text-input :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
+  <text-input v-if="isDarkTheme" :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
+              placeholderTextColor="ghostwhite" placeholder="Email address"
+              v-model="emailAddress" class="inputFormDark">
+  </text-input>
+  <text-input v-else :autoCorrect="false" keyboardType="email-address" :style="{borderRadius: 10, paddingHorizontal: 2}"
               placeholderTextColor="#070000" placeholder="Email address"
               v-model="emailAddress" class="inputFormLight">
   </text-input>
   <touchable-opacity :on-press="updateProfile">
-    <text class="sendButtonTextLight">Send</text>
+    <text :class="{ sendButtonTextDark: (isDarkTheme), sendButtonTextLight: (!isDarkTheme)}">Send</text>
   </touchable-opacity>
 </view>
 </template>
