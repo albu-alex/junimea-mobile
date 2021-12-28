@@ -2224,8 +2224,8 @@ This is the QR code to the app:
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day78_1.gif" width="50%" height=auto />
 <img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day78_2.gif" width="50%" height=auto />
 
-# <a id="seventyseven">Day 77</a>
-# <a id="seventyeight">Day 78</a>
+# <a id="seventynine">Day 77</a>
+# <a id="eighty">Day 78</a>
 
 ## Today I have done the following:
 <uL>
