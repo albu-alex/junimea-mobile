@@ -310,6 +310,10 @@ export default {
       }
       await this.storePosts()
       this.postNumber += 10;
+      await AsyncStorage.setItem(
+          'post-number',
+          this.postNumber.toString()
+      )
     },
     async Logout(){
       RCTNetworking.clearCookies(() => { })
