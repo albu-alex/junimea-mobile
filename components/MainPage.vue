@@ -43,7 +43,8 @@
       <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
     </animated:view>
-    <FAB buttonColor="red" iconTextColor="white" />
+    <FAB buttonColor="#555555" iconTextColor="white" v-if="isDarkTheme" />
+    <FAB buttonColor="#AAAAAA" iconTextColor="black" v-else />
   </animated:view>
   <animated:view v-else class="noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
