@@ -43,8 +43,7 @@
       <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
     </animated:view>
-    <FAB buttonColor="#555555" iconTextColor="white" v-if="isDarkTheme" />
-    <FAB buttonColor="#AAAAAA" iconTextColor="black" v-else />
+    <FloatingActionButton :isDarkTheme="isDarkTheme" />
   </animated:view>
   <animated:view v-else class="noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
@@ -62,7 +61,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
-import FAB from 'react-native-fab';
+import FloatingActionButton from "./FloatingActionButton";
 import {
   StatusBar,
   Animated,
@@ -158,7 +157,7 @@ export default {
     Tags,
     NoConnection,
     RefreshControl,
-    FAB
+    FloatingActionButton
   },
   props:{
     newUsername: String,
