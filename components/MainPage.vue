@@ -43,6 +43,7 @@
       <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
     </animated:view>
+    <FAB buttonColor="red" iconTextColor="white" />
   </animated:view>
   <animated:view v-else class="noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
@@ -60,6 +61,7 @@ import axios from "axios";
 import Search from "./Search";
 import Tags from "./Tags";
 import NoConnection from "./NoConnection";
+import FAB from 'react-native-fab';
 import {
   StatusBar,
   Animated,
@@ -154,7 +156,8 @@ export default {
     AddPostBox,
     Tags,
     NoConnection,
-    RefreshControl
+    RefreshControl,
+    FAB
   },
   props:{
     newUsername: String,
@@ -327,10 +330,8 @@ export default {
       if(posts.result === undefined) {
         posts = []
       }
-      // alert(posts.length)
       if(posts.length !== 0)
         return;
-      // this.posts.forEach(post => posts.push({id: post.id,dimensions: post.dimensions}))
       posts = this.posts.slice(-10)
       posts = JSON.stringify(posts)
       await AsyncStorage.setItem(
