@@ -99,9 +99,6 @@
       </view>
     </view>
   </view>
-  <view v-else-if="!loaded">
-    <activity-indicator size="large" color="dimgrey" />
-  </view>
 </template>
 
 
@@ -405,6 +402,7 @@ export default {
       let profilePic;
       let likes;
       let tags;
+      let loaded = false;
       await axios({
         method: 'get',
         url: `http://52.57.118.176/Post/Get/${this.id}`,
@@ -419,8 +417,12 @@ export default {
         profilePic = response.data.profilePicUrl;
         likes = response.data.likes;
         tags = response.data.tags;
+        loaded = true;
+      })
+      .catch(function(){
+        loaded = false;
       });
-      this.loaded = true;
+      this.loaded = loaded
       if(liked){
         this.likeOpacity = 0.4;
         this.dislikeOpacity = 1;
