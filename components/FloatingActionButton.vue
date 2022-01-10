@@ -1,6 +1,6 @@
 <template>
-  <FAB buttonColor="#555555" iconTextColor="white" v-if="isDarkTheme" />
-  <FAB buttonColor="#AAAAAA" iconTextColor="black" v-else />
+  <FAB buttonColor="#555555" iconTextColor="white" :onClickAction="goToAddPost" v-if="isDarkTheme" />
+  <FAB buttonColor="#AAAAAA" iconTextColor="black" :onClickAction="goToAddPost" v-else />
 </template>
 
 <script>
@@ -12,6 +12,9 @@ export default {
   },
   components:{
     FAB
+  },
+  methods:{
+
   }
 }
 </script>
