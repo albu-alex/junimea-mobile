@@ -14,7 +14,7 @@ import {
   createSwitchNavigator,
 } from "vue-native-router";
 
-const StackNavigator = createSwitchNavigator(
+const SwitchNavigator = createSwitchNavigator(
     {
       MainPage: MainPage,
       Login: Login,
@@ -31,7 +31,7 @@ const StackNavigator = createSwitchNavigator(
     }
 );
 
-const AppNavigator = createAppContainer(StackNavigator);
+const AppNavigator = createAppContainer(SwitchNavigator);
 
 export default {
   components:{
