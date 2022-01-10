@@ -14,7 +14,9 @@ export default {
     FAB
   },
   methods:{
-
+    goToAddPost(){
+      this.$emit("goToAddPost")
+    }
   }
 }
 </script>

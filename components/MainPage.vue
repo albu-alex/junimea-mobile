@@ -40,7 +40,7 @@
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
     </animated:view>
     <activity-indicator size="large" color="dimgrey" />
-    <FloatingActionButton :isDarkTheme="isDarkTheme" />
+    <FloatingActionButton @goToAddPost="goToAddPost" :isDarkTheme="isDarkTheme" />
   </animated:view>
   <animated:view v-else class="noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
@@ -213,6 +213,9 @@ export default {
       this.postProfileDisplayed = false;
       if(event !== "")
         this.profilePicture = event
+    },
+    goToAddPost(){
+      this.navigation.navigate("AddPost");
     },
     redirectToLogin(){
       this.navigation.navigate("Login", {theme: this.isDarkTheme});
