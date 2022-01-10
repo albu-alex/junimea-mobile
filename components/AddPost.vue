@@ -66,7 +66,7 @@ export default {
     MaterialIcons,
     FontAwesome5
   },
-  name: "AddPostBox",
+  name: "AddPost",
   props:{
     username: String,
     isDarkTheme: Boolean

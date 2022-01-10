@@ -21,10 +21,6 @@
                  :posts="posts" @goToMainPage="goToMainPage"
                  @refreshUserPosts="getInitialPosts('top')"
                  :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
-    <!--    Allows the user to make a new post and the post it after it passes validations-->
-    <AddPostBox v-if="!profileDisplayed&&!postProfileDisplayed&&!searchDisplayed"
-                :isDarkTheme="isDarkTheme" @addPost="addPost($event, 'top')"
-                :username="newUsername" @redirectToLogin="redirectToLogin" />
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
@@ -55,7 +51,6 @@
 import OwnStatusBar from "./StatusBar";
 import Header from "./Header";
 import Settings from "./Settings";
-import AddPostBox from "./AddPost";
 import UserPost from "./UserPost";
 import UserProfile from "./UserProfile";
 import axios from "axios";
@@ -154,7 +149,6 @@ export default {
     OwnStatusBar,
     Header,
     Settings,
-    AddPostBox,
     Tags,
     NoConnection,
     RefreshControl,

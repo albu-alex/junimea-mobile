@@ -7,6 +7,8 @@
 import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import Search from "./components/Search";
+import FloatingActionButton from "./components/FloatingActionButton";
+import AddPost from "./components/AddPost";
 import {
   createAppContainer,
   createSwitchNavigator,
@@ -17,6 +19,8 @@ const StackNavigator = createSwitchNavigator(
       MainPage: MainPage,
       Login: Login,
       Search: Search,
+      FloatingActionButton: FloatingActionButton,
+      AddPost: AddPost
     },
     {
       initialRouteName: 'MainPage',
