@@ -58,7 +58,8 @@ export default {
       tagsList: [],
       photos: "",
       operatingSystem: "",
-      addTags: true
+      addTags: true,
+      isDarkTheme: this.navigation.getParam('theme')
     }
   },
   components:{
@@ -69,7 +70,9 @@ export default {
   name: "AddPost",
   props:{
     username: String,
-    isDarkTheme: Boolean
+    navigation:{
+      type: Object
+    }
   },
   beforeMount(){
     this.operatingSystem = Platform.OS;

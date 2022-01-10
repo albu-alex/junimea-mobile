@@ -215,7 +215,7 @@ export default {
         this.profilePicture = event
     },
     goToAddPost(){
-      this.navigation.navigate("AddPost");
+      this.navigation.navigate("AddPost", {theme: this.isDarkTheme});
     },
     redirectToLogin(){
       this.navigation.navigate("Login", {theme: this.isDarkTheme});
