@@ -1,15 +1,35 @@
 <template>
   <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-if="!addPost">
-    <OwnStatusBar :isDarkTheme="isDarkTheme" />
+    <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '25%'}" />
     <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}" v-if="!addPost">
         <touchable-opacity :on-press="uploadFile" :active-opacity="0.6" :style="{borderRadius: 10}"
-                           class="optionButton">
+                           :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
           <view :style="{flexDirection: 'row', justifyContent: 'center'}">
                 <MaterialIcons v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="camera" :size=32 color="#AAAAAA" />
                 <MaterialIcons v-else :style="{alignSelf: 'center', marginBottom: 5}" name="camera" :size=32 color="#555555" />
                 <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">Choose media from gallery</text>
           </view>
         </touchable-opacity>
+    </view>
+    <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}" v-if="!addPost">
+      <touchable-opacity :on-press="takePicture" :active-opacity="0.6" :style="{borderRadius: 10}"
+                         :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Ionicons v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="ios-camera" :size=32 color="#AAAAAA" />
+          <Ionicons v-else :style="{alignSelf: 'center', marginBottom: 5}" name="ios-camera" :size=32 color="#555555" />
+          <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">Take a picture</text>
+        </view>
+      </touchable-opacity>
+    </view>
+    <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}" v-if="!addPost">
+      <touchable-opacity :on-press="uploadFile" :active-opacity="0.6" :style="{borderRadius: 10}"
+                         :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <FontAwesome5 v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="link" :size=32 color="#AAAAAA" />
+          <FontAwesome5 v-else :style="{alignSelf: 'center', marginBottom: 5}" name="link" :size=32 color="#555555" />
+          <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">Copy a picture URL</text>
+        </view>
+      </touchable-opacity>
     </view>
   </view>
   <view v-else>
@@ -172,6 +192,80 @@ export default {
       );
       this.images.push(newImage)
     },
+    async takePicture(){
+      if(this.username === ""){
+        Alert.alert("Error", "Users can not create posts",
+            [
+              {
+                text: "Login first",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
+            }
+        );
+        this.$emit("redirectToLogin");
+        return;
+      }
+      let permissionResult = await ImagePicker.requestCameraPermissionsAsync();
+
+      if (permissionResult.granted === false) {
+        alert("Permission to access camera roll is required!");
+        return;
+      }
+
+      let pickerResult = await ImagePicker.launchCameraAsync();
+      if (pickerResult.cancelled === true) {
+        return;
+      }
+      let localUri = pickerResult.uri;
+      let filename = localUri.split('/').pop();
+      let newUri = false;
+      let data = new FormData();
+      data.append('File', {uri: localUri, name: filename});
+      await axios.post('http://52.57.118.176/File/Add', data, {
+        timeout: 4000,
+        headers: { "Content-Type": "multipart/form-data" }
+      })
+          .then(function (response){
+            if(response.status === 200){
+              newUri = response.data.url
+            }
+          })
+          .catch(function(){
+            Alert.alert("Oops", "Something went wrong",
+                [
+                  {
+                    text: "Try again",
+                    style: "cancel",
+                  },
+                ],
+                {
+                  cancelable: true,
+                }
+            );
+          });
+      if(newUri === false)
+        return;
+      let newImage = {
+        uri: newUri,
+        height: pickerResult.height,
+        width: pickerResult.width
+      }
+      Alert.alert("Success", "Image added successfully",
+          [
+            {
+              text: "Great",
+              style: "cancel",
+            }
+          ],
+          {
+            cancelable: true,
+          }
+      );
+      this.images.push(newImage)
+    },
     sendPost(){
       if(this.tags)
         this.tagsList = this.tags.split(",")
@@ -292,10 +386,10 @@ export default {
   margin-right: 8%;
   justify-content: center;
 }
-.optionButton{
+.buttonDark{
   justify-content: center;
   border-width: 2px;
-  border-color: #000000;
+  border-color: #353535;
   width: 80%;
 }
 .postButtonLight{
@@ -305,6 +399,12 @@ export default {
   margin-top: 4%;
   margin-right: 8%;
   justify-content: center;
+}
+.buttonLight{
+  justify-content: center;
+  border-width: 2px;
+  border-color: #EAEAEA;
+  width: 80%;
 }
 .postButtonTextDark{
   color: black;
