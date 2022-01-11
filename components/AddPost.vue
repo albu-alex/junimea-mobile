@@ -1,7 +1,7 @@
 <template>
   <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-if="!addPost">
     <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
-    <touchable-opacity :on-press="() => navigation.navigate('MainPage')"
+    <touchable-opacity :on-press="() => navigation.navigate('MainPage', {theme: isDarkTheme})"
                        :active-opacity="0.6" :style="{alignSelf: 'flex-end', marginBottom: '20%', marginRight: '2%'}">
       <Feather v-if="isDarkTheme" name="x" :size=28 color="#AAAAAA"/>
       <Feather v-else name="x" :size=28 color="#555555"/>
@@ -36,6 +36,9 @@
         </view>
       </touchable-opacity>
     </view>
+    <text v-if="photos.length > 0" :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">
+      {{images.length}} {{photos}} added
+    </text>
   </view>
   <view v-else>
     <view :style="{flexDirection: 'row'}">
