@@ -39,6 +39,8 @@
     <text v-if="photos.length > 0" :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" :style="{marginTop: '7%'}">
       {{images.length}} {{photos}} added
     </text>
+    <FAB v-if="isDarkTheme" buttonColor="#555555" iconTextColor="#FFFFFF" :onClickAction="addNewPost"/>
+    <FAB v-else buttonColor="#AAAAAA" iconTextColor="#000000" :onClickAction="addNewPost"/>
   </view>
   <view v-else>
     <view :style="{flexDirection: 'row'}">
@@ -81,6 +83,7 @@ import FormData from "form-data";
 import {Alert, Platform} from "react-native";
 import { Ionicons, MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons';
 import OwnStatusBar from "./StatusBar";
+import FAB from 'react-native-fab';
 export default {
   data(){
     return{
@@ -100,6 +103,7 @@ export default {
     MaterialIcons,
     FontAwesome5,
     Feather,
+    FAB,
     OwnStatusBar
   },
   name: "AddPost",
