@@ -1,6 +1,11 @@
 <template>
   <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-if="!addPost">
-    <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '25%'}" />
+    <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
+    <touchable-opacity :on-press="() => navigation.navigate('MainPage')"
+                       :active-opacity="0.6" :style="{alignSelf: 'flex-end', marginBottom: '20%', marginRight: '2%'}">
+      <Feather v-if="isDarkTheme" name="x" :size=28 color="#AAAAAA"/>
+      <Feather v-else name="x" :size=28 color="#555555"/>
+    </touchable-opacity>
     <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}" v-if="!addPost">
         <touchable-opacity :on-press="uploadFile" :active-opacity="0.6" :style="{borderRadius: 10}"
                            :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
@@ -22,7 +27,7 @@
       </touchable-opacity>
     </view>
     <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}" v-if="!addPost">
-      <touchable-opacity :on-press="uploadFile" :active-opacity="0.6" :style="{borderRadius: 10}"
+      <touchable-opacity :on-press="shareLink" :active-opacity="0.6" :style="{borderRadius: 10}"
                          :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
         <view :style="{flexDirection: 'row', justifyContent: 'center'}">
           <FontAwesome5 v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="link" :size=32 color="#AAAAAA" />
@@ -71,7 +76,7 @@ import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
 import {Alert, Platform} from "react-native";
-import { Ionicons, MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons';
 import OwnStatusBar from "./StatusBar";
 export default {
   data(){
@@ -91,6 +96,7 @@ export default {
     Ionicons,
     MaterialIcons,
     FontAwesome5,
+    Feather,
     OwnStatusBar
   },
   name: "AddPost",
@@ -265,6 +271,9 @@ export default {
           }
       );
       this.images.push(newImage)
+    },
+    shareLink(){
+      alert("Function coming soon!")
     },
     sendPost(){
       if(this.tags)
