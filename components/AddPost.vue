@@ -36,7 +36,7 @@
         </view>
       </touchable-opacity>
     </view>
-    <text v-if="photos.length > 0" :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">
+    <text v-if="photos.length > 0" :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" :style="{marginTop: '7%'}">
       {{images.length}} {{photos}} added
     </text>
   </view>
