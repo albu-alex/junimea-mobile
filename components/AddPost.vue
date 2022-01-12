@@ -69,9 +69,11 @@
       <Ionicons v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="text" :size=20 color="#555555" class="logo" />
       <Ionicons v-else-if="operatingSystem === 'android'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logoAndroid" />
       <Ionicons v-else name="text" :size=20 color="#555555" class="logoAndroid" />
-      <text-input v-model="postText" class="addNewPostDark" placeholder="Title" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"
+      <text-input :on-change-text="onChangePost" class="addNewPostDark" placeholder="Title" v-if="isDarkTheme"
+                  placeholderTextColor="#AAAAAA" :default-value="postText"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-      <text-input v-model="postText" class="addNewPostLight" placeholder="Title" v-else placeholderTextColor="#555555"
+      <text-input :on-change-text="onChangePost" class="addNewPostLight" placeholder="Title" v-else
+                  placeholderTextColor="#555555" :default-value="postText"
                   :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
     </view>
     <view :style="{flexDirection: 'row'}">
@@ -79,9 +81,11 @@
       <FontAwesome5 v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="hashtag" :size=20 color="#555555" class="logo" />
       <FontAwesome5 v-else-if="operatingSystem === 'android'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
       <FontAwesome5 v-else name="hashtag" :size=20 color="#555555" class="logoAndroid" />
-      <text-input v-model="tags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"
+      <text-input :on-change-text="onChangeTags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme"
+                  placeholderTextColor="#AAAAAA" :default-value="tags"
                   :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-      <text-input v-model="tags" class="addNewPostLight" placeholder="Tag1, tag2...(optional)" v-else placeholderTextColor="#555555"
+      <text-input :on-change-text="onChangeTags" class="addNewPostLight" placeholder="Tag1, tag2...(optional)" v-else
+                  placeholderTextColor="#555555" :default-value="tags"
                   :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
     </view>
     <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}">
@@ -145,6 +149,12 @@ export default {
     this.photos = "photo"
   },
   methods:{
+    onChangePost(newText){
+      this.postText = newText;
+    },
+    onChangeTags(newText){
+      this.tags = newText;
+    },
     doNotAddTags(){
       this.addTags = false;
       this.sendPost();
