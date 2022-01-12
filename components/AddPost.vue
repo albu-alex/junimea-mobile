@@ -56,36 +56,44 @@
         <Feather v-else name="x" :size=28 color="#555555"/>
       </touchable-opacity>
     </view>
-<!--    <view :style="{flexDirection: 'row'}">-->
-<!--      <Ionicons v-if="operatingSystem === 'ios'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logo" />-->
-<!--      <Ionicons v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="text" :size=20 color="#555555" class="logo" />-->
-<!--      <Ionicons v-else-if="operatingSystem === 'android'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logoAndroid" />-->
-<!--      <Ionicons v-else name="text" :size=20 color="#555555" class="logoAndroid" />-->
-<!--      <text-input v-model="postText" class="addNewPost" placeholder="Title" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"-->
-<!--                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />-->
-<!--      <text-input v-model="postText" class="addNewPost" placeholder="Title" v-else placeholderTextColor="#555555"-->
-<!--                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />-->
-<!--    </view>-->
-<!--    <view :style="{flexDirection: 'row'}">-->
-<!--      <FontAwesome5 v-if="operatingSystem === 'ios'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logo" />-->
-<!--      <FontAwesome5 v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="hashtag" :size=20 color="#555555" class="logo" />-->
-<!--      <FontAwesome5 v-else-if="operatingSystem === 'android'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />-->
-<!--      <FontAwesome5 v-else name="hashtag" :size=20 color="#555555" class="logoAndroid" />-->
-<!--      <text-input v-model="tags" class="addNewPost" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"-->
-<!--                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />-->
-<!--      <text-input v-model="tags" class="addNewPost" placeholder="Tag1, tag2...(optional)" v-else placeholderTextColor="#555555"-->
-<!--                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />-->
-<!--    </view>-->
-<!--    <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">{{images.length}} {{photos}} added</text>-->
-<!--    <view class="postButtons">-->
-<!--      <touchable-opacity :style="{borderRadius: 10, paddingHorizontal: 2}" :on-press="addPostFunction" :class="{ postButtonDark: (isDarkTheme), postButtonLight: (!isDarkTheme)}">-->
-<!--        <text :class="{ postButtonTextDark: (isDarkTheme), postButtonTextLight: (!isDarkTheme)}">Create new post</text>-->
-<!--      </touchable-opacity>-->
-<!--      <touchable-opacity :on-press="uploadFile" class="postPhoto">-->
-<!--        <Ionicons v-if="isDarkTheme" name="image" :size=24 color="#AAAAAA" />-->
-<!--        <Ionicons v-else name="image" :size=24 color="#555555" />-->
-<!--      </touchable-opacity>-->
-<!--    </view>-->
+    <view :style="{marginBottom: '15%'}">
+      <scroll-view :horizontal="true" :contentContainerStyle="{paddingHorizontal: '2%'}">
+        <Image :source="require('../assets/unicorn-negru-fara-scris.png')"
+             :style="{width: 250, height:250, alignSelf: 'center'}" />
+        <Image :source="require('../assets/unicorn-negru-cu-scris.png')"
+               :style="{width: 250, height:250, alignSelf: 'center'}" />
+      </scroll-view>
+    </view>
+    <view :style="{flexDirection: 'row'}">
+      <Ionicons v-if="operatingSystem === 'ios'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logo" />
+      <Ionicons v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="text" :size=20 color="#555555" class="logo" />
+      <Ionicons v-else-if="operatingSystem === 'android'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logoAndroid" />
+      <Ionicons v-else name="text" :size=20 color="#555555" class="logoAndroid" />
+      <text-input v-model="postText" class="addNewPostDark" placeholder="Title" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      <text-input v-model="postText" class="addNewPostLight" placeholder="Title" v-else placeholderTextColor="#555555"
+                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+    </view>
+    <view :style="{flexDirection: 'row'}">
+      <FontAwesome5 v-if="operatingSystem === 'ios'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logo" />
+      <FontAwesome5 v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="hashtag" :size=20 color="#555555" class="logo" />
+      <FontAwesome5 v-else-if="operatingSystem === 'android'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
+      <FontAwesome5 v-else name="hashtag" :size=20 color="#555555" class="logoAndroid" />
+      <text-input v-model="tags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme" placeholderTextColor="#AAAAAA"
+                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      <text-input v-model="tags" class="addNewPostLight" placeholder="Tag1, tag2...(optional)" v-else placeholderTextColor="#555555"
+                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+    </view>
+    <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}">
+      <touchable-opacity :on-press="addPostFunction" :active-opacity="0.6" :style="{borderRadius: 10}"
+                         :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Feather v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="check" :size=32 color="#AAAAAA" />
+          <Feather v-else :style="{alignSelf: 'center', marginBottom: 5}" name="check" :size=32 color="#555555" />
+          <text :class="{ postButtonTextDark: (isDarkTheme), postButtonTextLight: (!isDarkTheme)}">Add post</text>
+        </view>
+      </touchable-opacity>
+    </view>
   </view>
 </template>
 
@@ -379,10 +387,6 @@ export default {
   align-self: center;
   margin-bottom: 2%;
 }
-.postButtons{
-  flex-direction: row;
-  margin-bottom: 3%;
-}
 .optionButtonDark{
   margin-top: 5%;
   justify-content: center;
@@ -403,31 +407,11 @@ export default {
   flex: 1;
   background-color: #DADADA;
 }
-.postPhoto{
-  margin-top: 4%;
-  margin-left: 4%;
-}
-.postButtonDark{
-  background-color: #AAAAAA;
-  height: 25px;
-  margin-left: 24%;
-  margin-top: 4%;
-  margin-right: 8%;
-  justify-content: center;
-}
 .buttonDark{
   justify-content: center;
   border-width: 2px;
   border-color: #353535;
   width: 80%;
-}
-.postButtonLight{
-  background-color: #555555;
-  height: 25px;
-  margin-left: 24%;
-  margin-top: 4%;
-  margin-right: 8%;
-  justify-content: center;
 }
 .buttonLight{
   justify-content: center;
@@ -436,24 +420,43 @@ export default {
   width: 80%;
 }
 .postButtonTextDark{
-  color: black;
-  font-weight: 400;
-  font-size: 14px;
+  color: #AAAAAA;
+  font-weight: 600;
+  font-size: 20px;
+  align-self: center;
+  margin-bottom: 2%;
 }
 .postButtonTextLight{
-  color: white;
-  font-weight: 400;
-  font-size: 14px;
+  color: #555555;
+  font-weight: 600;
+  font-size: 20px;
+  align-self: center;
+  margin-bottom: 2%;
 }
-.addNewPost{
+.addNewPostLight{
   align-self: center;
   background-color: ghostwhite;
   color: dimgrey;
   width: 90%;
-  height: 40px;
+  height: 100px;
   font-weight: 400;
   font-size: 18px;
   margin-bottom: 5%;
   margin-left: -6%;
+  border-color: #555555;
+  border-width: 1px;
+}
+.addNewPostDark{
+  align-self: center;
+  background-color: ghostwhite;
+  color: dimgrey;
+  width: 90%;
+  height: 100px;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 5%;
+  margin-left: -6%;
+  border-color: #AAAAAA;
+  border-width: 1px;
 }
 </style>
