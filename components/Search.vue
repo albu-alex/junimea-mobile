@@ -138,18 +138,18 @@ export default {
   margin-left: 2%;
 }
 .buttonTextDark{
-  color: #AAAAAA;
   font-size: 20px;
   font-weight: 500;
-  margin-top: 9%;
+  margin-top: 14%;
   margin-right: 3%;
+  color: #e34234;
 }
 .buttonTextLight{
-  color: #555555;
   font-size: 20px;
   font-weight: 500;
-  margin-top: 9%;
+  margin-top: 14%;
   margin-right: 3%;
+  color: #e34234;
 }
 .searchHeader{
   margin-top: 5%;
