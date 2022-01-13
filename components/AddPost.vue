@@ -56,13 +56,9 @@
         <Feather v-else name="x" :size=28 color="#555555"/>
       </touchable-opacity>
     </view>
-    <view :style="{marginBottom: '15%'}">
-      <scroll-view :horizontal="true" :contentContainerStyle="{paddingHorizontal: '2%'}">
-        <Image :source="require('../assets/unicorn-negru-fara-scris.png')"
-             :style="{width: 250, height:250, alignSelf: 'center'}" />
-        <Image :source="require('../assets/unicorn-negru-cu-scris.png')"
-               :style="{width: 250, height:250, alignSelf: 'center'}" />
-      </scroll-view>
+    <view :style="{marginBottom: '15%', alignSelf: 'center'}">
+      <Image :source="require('../assets/unicorn-negru-cu-scris.png')"
+                 :style="{width: 250, height:250}" />
     </view>
     <view :style="{flexDirection: 'row'}">
       <Ionicons v-if="operatingSystem === 'ios'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logo" />
