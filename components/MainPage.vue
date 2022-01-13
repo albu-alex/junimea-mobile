@@ -39,7 +39,7 @@
       <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
                  :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
     </animated:view>
-    <activity-indicator size="large" color="dimgrey" />
+    <activity-indicator size="large" color="dimgrey" :style="{marginTop: '5%'}" />
     <FloatingActionButton @goToAddPost="goToAddPost" :isDarkTheme="isDarkTheme" />
   </animated:view>
   <animated:view v-else class="noConnection">
