@@ -2,12 +2,12 @@
 <!--Each category is under a button(touchable-opacity)-->
 <template>
   <view :class="{ headerDark: (isDarkTheme), headerLight: (!isDarkTheme)}">
-      <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="showTags">
-        <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">juni.</text>
-      </touchable-opacity>
-      <touchable-opacity v-else class="headerButtonAndroid" :on-press="showTags">
-        <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">juni.</text>
-      </touchable-opacity>
+<!--      <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="showTags">-->
+<!--        <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">juni.</text>-->
+<!--      </touchable-opacity>-->
+<!--      <touchable-opacity v-else class="headerButtonAndroid" :on-press="showTags">-->
+<!--        <text :class="{ headerTextDark: (isDarkTheme), headerTextLight: (!isDarkTheme)}">juni.</text>-->
+<!--      </touchable-opacity>-->
       <touchable-opacity v-if="operatingSystem ==='ios'" class="headerButton" :on-press="displaySettings">
         <Image v-if="isDarkTheme" class="junimeaLogo" :source="require('../assets/unicorn.png')"
                :style="{width: 25, height:25}" />
@@ -43,6 +43,14 @@
         <Image v-else class="profilePicture"
                :source="{uri: profilePic}"
                :style="{width: 25, height:25, borderRadius: 50}" />
+      </touchable-opacity>
+      <touchable-opacity v-if="operatingSystem === 'ios'" class="headerButton" :on-press="searchPosts">
+        <Ionicons v-if="isDarkTheme" name="settings-outline" :size=24 color="white" />
+        <Ionicons v-else name="settings-outline" :size=24 color="black" />
+      </touchable-opacity>
+      <touchable-opacity v-else class="headerButtonAndroid" :on-press="searchPosts">
+        <Ionicons v-if="isDarkTheme" name="settings-outline" :size=24 color="white" />
+        <Ionicons v-else name="settings-outline" :size=24 color="black" />
       </touchable-opacity>
   </view>
 </template>
