@@ -5,18 +5,18 @@
   <animated:view v-if="!noConnection" :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
                  :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"
-              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"
-              @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem !== 'android'"
-              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
-              @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />
-    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem === 'android'"
-              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"
-              @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />
+<!--    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"-->
+<!--              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"-->
+<!--              @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />-->
+<!--    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem !== 'android'"-->
+<!--              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"-->
+<!--              @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />-->
+<!--    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem === 'android'"-->
+<!--              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"-->
+<!--              @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />-->
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
-            @displaySettings="settingsDisplayed = !settingsDisplayed" :style="{zIndex: 2}" />
+            @displaySettings="showSettings" :style="{zIndex: 2}" />
     <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
                  :posts="posts" @goToMainPage="goToMainPage"
                  @refreshUserPosts="getInitialPosts('top')"
@@ -29,6 +29,10 @@
     </animated:view>
     <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
+    </animated:view>
+    <!--    Momentary settings display-->
+    <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}">
+      <Tags class="newSettings" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"
@@ -362,6 +366,13 @@ export default {
       else
         this.animateView();
     },
+    showSettings(){
+      this.settingsDisplayed = !this.settingsDisplayed;
+      if(this.settingsDisplayed)
+        this.animateTags();
+      else
+        this.animateView()
+    },
     goToProfile(){
       if(this.newUsername === ''){
         Alert.alert("Error", "It looks like you are a guest",
@@ -471,6 +482,14 @@ export default {
 }
 .settingsExtendedAndroid{
   height: 25%;
+}
+.newSettings{
+  margin-top: 12.5%;
+  height: 95%;
+  width: 55%;
+  position: absolute;
+  z-index: 1;
+  align-self: flex-end;
 }
 .tags{
   margin-top: 12.5%;
