@@ -102,12 +102,12 @@ export default {
 .textSecondaryDark{
   color: #AAAAAA;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 600;
 }
 .textSecondaryLight{
   color: #555555;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 600;
 }
 .textPrimaryDark {
   color: #AAAAAA;
