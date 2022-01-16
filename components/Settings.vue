@@ -9,7 +9,7 @@
         <text class="textSecondaryDark">Logout</text>
       </touchable-opacity>
       <touchable-opacity :on-press="changeViewMode">
-        <text class="textSecondaryDark">Change view mode</text>
+        <text class="textSecondaryDark">Dark mode</text>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile">
         <text class="textSecondaryDark">Update your profile</text>
@@ -24,7 +24,7 @@
         <text class="textSecondaryLight">Logout</text>
       </touchable-opacity>
       <touchable-opacity :on-press="changeViewMode">
-        <text class="textSecondaryLight">Change view mode</text>
+        <text class="textSecondaryLight">Light mode</text>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile">
         <text class="textSecondaryLight">Update your profile</text>
