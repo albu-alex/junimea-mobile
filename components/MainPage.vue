@@ -31,8 +31,8 @@
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <!--    Momentary settings display-->
-    <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}">
-      <Tags class="newSettings" :isDarkTheme="isDarkTheme"/>
+    <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
+      <Settings class="newSettings" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"

@@ -2,8 +2,6 @@
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
   <animated:view v-if="isDarkTheme" class="settingsDark" :style="{opacity: viewOpacity}">
-    <text class="textPrimaryDark" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
-    <text class="textPrimaryDark" v-else>Hey, guest!</text>
     <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm"
       @redirectToLogin="logout"/>
     <view class="settingsTab">
