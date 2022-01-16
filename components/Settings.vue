@@ -5,13 +5,13 @@
     <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm"
       @redirectToLogin="logout"/>
     <view class="settingsTab">
-      <touchable-opacity :on-press="logout">
+      <touchable-opacity :on-press="logout" class="buttonDark">
         <text class="textSecondaryDark">Logout</text>
       </touchable-opacity>
-      <touchable-opacity :on-press="changeViewMode">
+      <touchable-opacity :on-press="changeViewMode" class="buttonDark">
         <text class="textSecondaryDark">Dark mode</text>
       </touchable-opacity>
-      <touchable-opacity :on-press="updateProfile">
+      <touchable-opacity :on-press="updateProfile" class="buttonDark">
         <text class="textSecondaryDark">Update profile</text>
       </touchable-opacity>
     </view>
@@ -20,13 +20,13 @@
     <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm"
        @redirectToLogin="logout"/>
     <view class="settingsTab">
-      <touchable-opacity :on-press="logout">
+      <touchable-opacity :on-press="logout" class="buttonLight">
         <text class="textSecondaryLight">Logout</text>
       </touchable-opacity>
-      <touchable-opacity :on-press="changeViewMode">
+      <touchable-opacity :on-press="changeViewMode" class="buttonLight">
         <text class="textSecondaryLight">Light mode</text>
       </touchable-opacity>
-      <touchable-opacity :on-press="updateProfile">
+      <touchable-opacity :on-press="updateProfile" class="buttonLight">
         <text class="textSecondaryLight">Update profile</text>
       </touchable-opacity>
     </view>
@@ -96,19 +96,36 @@ export default {
   background-color: #DADADA;
 }
 .settingsTab{
-  justify-content: space-between;
-  height: 50%;
+  height: 80%;
   margin-top: 50%;
 }
 .textSecondaryDark{
   color: #AAAAAA;
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
 }
 .textSecondaryLight{
   color: #555555;
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+}
+.buttonDark{
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-color: rgba(218,218,218,60);
+  height: 33%;
+  justify-content: center;
+}
+.buttonLight{
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-color: rgba(25,25,25,60);
+  height: 33%;
+  justify-content: center;
 }
 .textPrimaryDark {
   color: #AAAAAA;
