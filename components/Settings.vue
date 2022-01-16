@@ -17,8 +17,6 @@
     </view>
   </animated:view>
   <animated:view v-else class="settingsLight" :style="{opacity: viewOpacity}">
-    <text class="textPrimaryLight" v-if="newUsername !== '' ">Hello, {{newUsername}}!</text>
-    <text class="textPrimaryLight" v-else>Hey, guest!</text>
     <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm"
        @redirectToLogin="logout"/>
     <view class="settingsTab">
@@ -98,8 +96,8 @@ export default {
   background-color: #DADADA;
 }
 .settingsTab{
-  flex-direction: row;
   justify-content: space-between;
+  height: 50%;
 }
 .textSecondaryDark{
   color: #AAAAAA;

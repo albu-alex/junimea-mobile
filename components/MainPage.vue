@@ -30,9 +30,8 @@
     <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <!--    Momentary settings display-->
     <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
-      <Settings class="newSettings" :isDarkTheme="isDarkTheme"/>
+      <Settings class="newSettings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"/>
     </animated:view>
     <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"
