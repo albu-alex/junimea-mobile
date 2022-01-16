@@ -12,7 +12,7 @@
         <text class="textSecondaryDark">Dark mode</text>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile">
-        <text class="textSecondaryDark">Update your profile</text>
+        <text class="textSecondaryDark">Update profile</text>
       </touchable-opacity>
     </view>
   </animated:view>
@@ -27,7 +27,7 @@
         <text class="textSecondaryLight">Light mode</text>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile">
-        <text class="textSecondaryLight">Update your profile</text>
+        <text class="textSecondaryLight">Update profile</text>
       </touchable-opacity>
     </view>
   </animated:view>
@@ -98,6 +98,7 @@ export default {
 .settingsTab{
   justify-content: space-between;
   height: 50%;
+  margin-top: 50%;
 }
 .textSecondaryDark{
   color: #AAAAAA;
