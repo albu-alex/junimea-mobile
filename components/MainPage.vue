@@ -40,7 +40,8 @@
                    @refreshUserPosts="getInitialPosts('top')"
                    :profilePicture="postProfilePicture" :isDarkTheme="isDarkTheme"></UserProfile>
       <flat-list :data="posts" :render-item="(post) => renderPosts(post)" :keyExtractor="post => post.id.toString()"
-                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"/>
+                 :onEndReached="refreshListBottom" :onEndReachedTreshold="100" :refreshControl="renderRefresh()"
+                  ref="scrollRef"/>
     </animated:view>
     <activity-indicator size="large" color="dimgrey" :style="{marginTop: '5%'}" />
     <FloatingActionButton @goToAddPost="goToAddPost" :isDarkTheme="isDarkTheme" />
@@ -347,6 +348,8 @@ export default {
     },
     showSettings(){
       this.settingsDisplayed = !this.settingsDisplayed;
+      if(this.operatingSystem === 'android')
+        this.$refs.scrollRef.scrollToIndex({ index: 0,viewPosition: 0, animated: true })
       if(this.settingsDisplayed)
         this.animateTags();
       else
