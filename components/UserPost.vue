@@ -15,7 +15,7 @@
         <text :class="{ postTextDark: (isDarkTheme), postTextLight: (!isDarkTheme)}" v-else>This post is now hidden</text>
         <touchable-opacity :on-press="reportBug">
           <Image :source="require('../assets/three-dots.png')"
-                 :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 5}" />
+                 :style="{width: 25, height:10, alignSelf: 'flex-end'}" />
         </touchable-opacity>
       </view>
       <view :style="{flexDirection: 'row', flexWrap: 'wrap', flex: '1'}">
