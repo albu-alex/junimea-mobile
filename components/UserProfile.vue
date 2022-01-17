@@ -2,8 +2,8 @@
   <animated:view class="profile" v-if="username !== ''&&!this.noConnection" :style="{opacity: viewOpacity}">
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
-        <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#505050" />
-        <Ionicons v-else name="ios-arrow-back" :size=30 color="#AFAFAF" />
+        <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
+        <Ionicons v-else name="ios-arrow-back" :size=30 color="#505050"/>
       </touchable-opacity>
       <touchable-opacity v-if="!isMainUser" :on-press="reportUser">
         <Image :source="require('../assets/three-dots.png')"
