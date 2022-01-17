@@ -2525,5 +2525,5 @@ This is the QR code to the app:
 
 
 ## Photos:
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day84_1.jpg" width="50%" height=auto />
-<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day84_2.gif" width="50%" height=auto />
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day88_1.jpg" width="50%" height=auto />
+<img src="https://github.com/albu-alex/junimea-mobile/blob/main/assets/day88_2.gif" width="50%" height=auto />
