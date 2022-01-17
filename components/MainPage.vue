@@ -217,7 +217,6 @@ export default {
     },
     changeViewMode(){
       this.isDarkTheme = !this.isDarkTheme;
-      this.animateView();
     },
     animateView(){
       this.viewOpacity.setValue(0);
@@ -464,9 +463,9 @@ export default {
   height: 25%;
 }
 .newSettings{
-  margin-top: 12.5%;
-  height: 95%;
-  width: 55%;
+  margin-top: 80%;
+  height: 50%;
+  width: 100%;
   position: absolute;
   z-index: 1;
   align-self: flex-end;
