@@ -2,8 +2,8 @@
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
   <animated:view v-if="isDarkTheme" class="settingsDark" :style="{opacity: viewOpacity}">
-    <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm"
-      @redirectToLogin="logout"/>
+<!--    <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm"-->
+<!--      @redirectToLogin="logout"/>-->
     <view class="settingsTab">
       <touchable-opacity :on-press="logout" class="buttonDark">
         <text class="textSecondaryDark">Logout</text>
@@ -17,8 +17,8 @@
     </view>
   </animated:view>
   <animated:view v-else class="settingsLight" :style="{opacity: viewOpacity}">
-    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm"
-       @redirectToLogin="logout"/>
+<!--    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm"-->
+<!--       @redirectToLogin="logout"/>-->
     <view class="settingsTab">
       <touchable-opacity :on-press="logout" class="buttonLight">
         <text class="textSecondaryLight">Logout</text>
@@ -96,8 +96,7 @@ export default {
   background-color: #DADADA;
 }
 .settingsTab{
-  height: 80%;
-  margin-top: 50%;
+  height: 100%;
 }
 .textSecondaryDark{
   color: #AAAAAA;
@@ -114,7 +113,6 @@ export default {
 .buttonDark{
   border-bottom-width: 1px;
   border-top-width: 1px;
-  border-left-width: 1px;
   border-color: rgba(218,218,218,60);
   height: 33%;
   justify-content: center;
@@ -122,7 +120,6 @@ export default {
 .buttonLight{
   border-bottom-width: 1px;
   border-top-width: 1px;
-  border-left-width: 1px;
   border-color: rgba(25,25,25,60);
   height: 33%;
   justify-content: center;
