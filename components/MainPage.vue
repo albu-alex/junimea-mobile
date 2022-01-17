@@ -130,15 +130,7 @@ export default {
     this.isDarkTheme = this.navigation.getParam('theme');
     if(this.isDarkTheme === undefined)
       this.isDarkTheme = Appearance.getColorScheme() === "dark"
-    let posts = await AsyncStorage.getItem(
-        'posts',
-    );
-    if(posts === '[]')
-      await this.getInitialPosts('top');
-    else {
-      posts = JSON.parse(posts)
-      this.posts = posts
-    }
+    await this.getInitialPosts('top');
     this.operatingSystem = Platform.OS;
     await this.getSelf();
   },
@@ -298,13 +290,6 @@ export default {
         this.noConnection = true;
         return;
       }
-      if(this.posts.length >= 10) {
-        const lastTen = this.posts.slice(-10)
-        for (let i = 0; i < 10; i++) {
-          if (posts[i].id === lastTen[i].id)
-            return;
-        }
-      }
       if (postPosition === 'bottom' || !postPosition) {
         this.posts = this.posts.concat(posts)
       }
@@ -312,12 +297,8 @@ export default {
         this.posts.forEach(post => posts.push(post));
         this.posts = posts;
       }
-      await this.storePosts()
+      // alert(postPosition)
       this.postNumber += 10;
-      await AsyncStorage.setItem(
-          'post-number',
-          this.postNumber.toString()
-      )
     },
     async Logout(){
       RCTNetworking.clearCookies(() => { })
