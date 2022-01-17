@@ -24,12 +24,12 @@
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
-      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>
-    </animated:view>
-    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">
-      <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>
-    </animated:view>
+<!--    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">-->
+<!--      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>-->
+<!--    </animated:view>-->
+<!--    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">-->
+<!--      <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>-->
+<!--    </animated:view>-->
     <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
       <Settings class="newSettings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"/>
     </animated:view>
@@ -471,22 +471,8 @@ export default {
   align-self: flex-end;
 }
 .tags{
-  margin-top: 12.5%;
+  margin-top: 11%;
   height: 95%;
-  width: 80%;
-  position: absolute;
-  z-index: 1;
-}
-.tagsMiddle{
-  margin-top: 31%;
-  height: 95%;
-  width: 80%;
-  position: absolute;
-  z-index: 1;
-}
-.tagsLower{
-  margin-top: 52%;
-  height: 85%;
   width: 80%;
   position: absolute;
   z-index: 1;
