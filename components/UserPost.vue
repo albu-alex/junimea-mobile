@@ -758,10 +758,12 @@ export default {
   margin-left: 2%;
 }
 .postDark{
+  margin-top: 2%;
   margin-bottom: 5%;
   background-color: #151515;
 }
 .postLight{
+  margin-top: 2%;
   margin-bottom: 5%;
   background-color: #EAEAEA;
 }
