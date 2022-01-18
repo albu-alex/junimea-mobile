@@ -5,15 +5,6 @@
   <animated:view v-if="!noConnection" :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
                  :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-<!--    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&!visiblePrompts"-->
-<!--              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="false"-->
-<!--              @changeViewMode="changeViewMode" class="settings" :isDarkTheme="isDarkTheme" />-->
-<!--    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem !== 'android'"-->
-<!--              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"-->
-<!--              @changeViewMode="changeViewMode" class="settingsExtended" :isDarkTheme="isDarkTheme" />-->
-<!--    <Settings @Logout="Logout" :newUsername="newUsername" v-if="settingsDisplayed&&visiblePrompts&&operatingSystem === 'android'"-->
-<!--              @visiblePrompts="visiblePrompts = !visiblePrompts" :visiblePrompts="true"-->
-<!--              @changeViewMode="changeViewMode" class="settingsExtendedAndroid" :isDarkTheme="isDarkTheme" />-->
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
             @displaySettings="showSettings" :style="{zIndex: 2}" />
@@ -24,8 +15,8 @@
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-    <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
-      <Settings class="newSettings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"/>
+    <animated:view class="settings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
+      <Settings class="settings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"/>
     </animated:view>
     <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"
@@ -452,15 +443,6 @@ export default {
   flex-direction: row;
 }
 .settings{
-  height: 7%;
-}
-.settingsExtended{
-  height: 15%;
-}
-.settingsExtendedAndroid{
-  height: 25%;
-}
-.newSettings{
   margin-top: 80%;
   height: 50%;
   width: 100%;
