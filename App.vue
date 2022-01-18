@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import Search from "./components/Search";
 import AddPost from "./components/AddPost";
+import UserProfile from "./components/UserProfile";
 import {
   createAppContainer,
   createStackNavigator,
@@ -18,7 +19,8 @@ const StackNavigator = createStackNavigator(
       MainPage: MainPage,
       Login: Login,
       Search: Search,
-      AddPost: AddPost
+      AddPost: AddPost,
+      UserProfile: UserProfile
     },
     {
       initialRouteName: 'MainPage',

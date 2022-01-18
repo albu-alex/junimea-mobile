@@ -71,15 +71,18 @@ export default {
       viewOpacity: 0,
       areSavedPosts: false,
       savedPosts: [],
-      posts: [],
+      posts: this.navigation.getParam('posts'),
       noConnection: false,
-      postNumber: 200
+      postNumber: 200,
+      isDarkTheme: this.navigation.getParam('theme'),
+      username: this.navigation.getParam('username'),
+      profilePicture: this.navigation.getParam('profilePicture'),
+      userID: this.navigation.getParam('userID'),
+      isMainUser: this.navigation.getParam('isMainUser')
     }
   },
   async created(){
     this.viewOpacity = new Animated.Value(0);
-    // while(this.posts.length === 0)
-    //   await this.getInitialPosts('top');
   },
   mounted(){
     this.animateView();
@@ -90,11 +93,9 @@ export default {
   },
   name: "UserProfile",
   props:{
-    username: String,
-    profilePicture: String,
-    userID: String,
-    isMainUser: Boolean,
-    isDarkTheme: Boolean
+    navigation: {
+      type: Object
+    }
   },
   components:{
     UserPost,

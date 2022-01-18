@@ -17,19 +17,13 @@
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
             @displaySettings="showSettings" :style="{zIndex: 2}" />
-    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"
-                 :posts="posts" @goToMainPage="goToMainPage"
-                 @refreshUserPosts="getInitialPosts('top')"
-                 :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />
+<!--    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"-->
+<!--                 :posts="posts" @goToMainPage="goToMainPage"-->
+<!--                 @refreshUserPosts="getInitialPosts('top')"-->
+<!--                 :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />-->
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
-<!--    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">-->
-<!--      <Tags class="tagsLower" :isDarkTheme="isDarkTheme"/>-->
-<!--    </animated:view>-->
-<!--    <animated:view class="tags" v-if="leftSideTags&&settingsDisplayed&&!visiblePrompts&&!searchDisplayed" :style="{opacity: tagsOpacity}">-->
-<!--      <Tags class="tagsMiddle" :isDarkTheme="isDarkTheme"/>-->
-<!--    </animated:view>-->
     <animated:view class="newSettings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
       <Settings class="newSettings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"/>
     </animated:view>
@@ -377,7 +371,8 @@ export default {
         );
         return;
       }
-      this.profileDisplayed = true
+      this.navigation.navigate('UserProfile', {theme: this.isDarkTheme, posts: this.posts, username: this.newUsername,
+      userID: this.userID, profilePicture: this.profilePicture, isMainUser: true});
     },
     refreshList(){
       this.getInitialPosts("top");
