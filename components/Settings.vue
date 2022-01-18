@@ -6,13 +6,22 @@
 <!--      @redirectToLogin="logout"/>-->
     <view class="settingsTab">
       <touchable-opacity :on-press="logout" class="buttonDark">
-        <text class="textSecondaryDark">Logout</text>
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Ionicons name="log-out-outline" :size=24 color="#AAAAAA" />
+          <text class="textSecondaryDark">Logout</text>
+        </view>
       </touchable-opacity>
       <touchable-opacity :on-press="changeViewMode" class="buttonDark">
-        <text class="textSecondaryDark">Dark mode</text>
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Ionicons name="moon-sharp" :size=24 color="#AAAAAA" />
+          <text class="textSecondaryDark">Dark mode</text>
+        </view>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile" class="buttonDark">
-        <text class="textSecondaryDark">Update profile</text>
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <AntDesign name="profile" :size=24 color="#AAAAAA" />
+          <text class="textSecondaryDark">Update profile</text>
+        </view>
       </touchable-opacity>
     </view>
   </animated:view>
@@ -21,13 +30,22 @@
 <!--       @redirectToLogin="logout"/>-->
     <view class="settingsTab">
       <touchable-opacity :on-press="logout" class="buttonLight">
-        <text class="textSecondaryLight">Logout</text>
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Ionicons name="log-out-outline" :size=24 color="#555555" />
+          <text class="textSecondaryLight">Logout</text>
+        </view>
       </touchable-opacity>
       <touchable-opacity :on-press="changeViewMode" class="buttonLight">
-        <text class="textSecondaryLight">Light mode</text>
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Ionicons name="sunny-sharp" :size=24 color="#555555" />
+          <text class="textSecondaryLight">Light mode</text>
+        </view>
       </touchable-opacity>
       <touchable-opacity :on-press="updateProfile" class="buttonLight">
-        <text class="textSecondaryLight">Update profile</text>
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <AntDesign name="profile" :size=24 color="#555555" />
+          <text class="textSecondaryLight">Update profile</text>
+        </view>
       </touchable-opacity>
     </view>
   </animated:view>
@@ -36,6 +54,7 @@
 <script>
 import UpdateProfileForm from "./UpdateProfileForm";
 import {Animated, Easing} from "react-native";
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 export default {
   name: "Settings",
   data(){
@@ -56,7 +75,9 @@ export default {
     visiblePrompts: Boolean,
   },
   components:{
-    UpdateProfileForm
+    UpdateProfileForm,
+    Ionicons,
+    AntDesign
   },
   methods:{
     animateView(){
@@ -103,12 +124,14 @@ export default {
   font-size: 14px;
   font-weight: 600;
   text-align: center;
+  margin-top: 1%;
 }
 .textSecondaryLight{
   color: #555555;
   font-size: 14px;
   font-weight: 600;
   text-align: center;
+  margin-top: 1%;
 }
 .buttonDark{
   border-bottom-width: 1px;
