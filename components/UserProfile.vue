@@ -1,5 +1,6 @@
 <template>
   <animated:view class="profile" v-if="username !== ''&&!this.noConnection" :style="{opacity: viewOpacity}">
+    <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <view class="profileHeader">
       <touchable-opacity :on-press="goToMainPage">
         <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
@@ -58,6 +59,7 @@
 import React from 'react';
 import UserPost from "./UserPost";
 import NoConnection from "./NoConnection";
+import OwnStatusBar from "./StatusBar"
 import axios from "axios";
 import * as ImagePicker from 'expo-image-picker';
 import FormData from 'form-data'
@@ -100,6 +102,7 @@ export default {
   components:{
     UserPost,
     NoConnection,
+    OwnStatusBar,
     Ionicons,
     MaterialIcons,
     RefreshControl
@@ -313,10 +316,7 @@ export default {
       await this.getInitialPosts("top");
     },
     goToMainPage(){
-      if(this.isMainUser)
-        this.$emit("goToMainPage", this.profilePicture);
-      else
-        this.$emit("goToMainPage", "");
+      this.navigation.goBack()
     },
     async getInitialPosts(postPosition){
       let posts;
