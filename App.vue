@@ -10,10 +10,10 @@ import Search from "./components/Search";
 import AddPost from "./components/AddPost";
 import {
   createAppContainer,
-  createSwitchNavigator,
+  createStackNavigator,
 } from "vue-native-router";
 
-const SwitchNavigator = createSwitchNavigator(
+const StackNavigator = createStackNavigator(
     {
       MainPage: MainPage,
       Login: Login,
@@ -29,7 +29,7 @@ const SwitchNavigator = createSwitchNavigator(
     }
 );
 
-const AppNavigator = createAppContainer(SwitchNavigator);
+const AppNavigator = createAppContainer(StackNavigator);
 
 export default {
   components:{
