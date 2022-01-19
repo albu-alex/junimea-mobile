@@ -239,7 +239,7 @@ export default {
       this.username = "";
       this.password = "";
       if(loggedIn) {
-        this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
+        this.navigation.reset()
       }
       this.waitingForSubmit = false;
     },
@@ -296,7 +296,7 @@ export default {
           );
       });
       if(isRegistered)
-        this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
+        this.navigation.reset()
     },
     // This function allow a new user to enter the feed of posts without making a new account
     // If user logs in as guest, he cannot make new post and cannot access his profile

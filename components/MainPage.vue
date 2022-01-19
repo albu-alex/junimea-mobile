@@ -97,7 +97,7 @@ export default {
       visiblePrompts: false,
       noConnection: false,
       lastRefresh: 0,
-      operatingSystem: "",
+      operatingSystem: ""
     }
   },
   async created(){
