@@ -48,9 +48,6 @@
       <MaterialIcons v-else class="noMorePostsIcon" name="post-add" :size=100 color="#AFAFAF" />
       <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">There aren't any saved posts!</text>
     </scroll-view>
-    <view v-if="isLoading" :style="{justifyContent: 'center'}">
-      <activity-indicator size="large" color="dimgrey" />
-    </view>
   </animated:view>
   <view v-else-if="this.noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
