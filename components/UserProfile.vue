@@ -1,7 +1,7 @@
 <template>
-  <animated:view class="profile" v-if="username !== ''&&!this.noConnection" :style="{opacity: viewOpacity}">
+  <animated:view :class="{profileDark: (isDarkTheme), profileLight: (!isDarkTheme)}" v-if="username !== ''&&!this.noConnection" :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
-    <view class="profileHeader">
+    <view :class="{profileHeaderDark: (isDarkTheme), profileHeaderLight: (!isDarkTheme)}">
       <touchable-opacity :on-press="goToMainPage">
         <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
         <Ionicons v-else name="ios-arrow-back" :size=30 color="#505050"/>
@@ -11,12 +11,14 @@
                :style="{width: 25, height:10, alignSelf: 'flex-end', marginTop: 3}" />
       </touchable-opacity>
     </view>
-    <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
-           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <Image v-else :source="{uri: profilePicture}"
-           :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
-    <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">{{username}}</text>
-    <view :style="{flexDirection: 'row'}">
+    <view :class="{darkBackground: (isDarkTheme), lightBackground: (!isDarkTheme)}">
+      <Image v-if="!profilePicture" :source="{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}"
+             :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+      <Image v-else :source="{uri: profilePicture}"
+             :style="{width: 75, height: 75, borderRadius: 50}" class="profilePicture" />
+      <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">{{username}}</text>
+    </view>
+    <view :style="{flexDirection: 'row'}" :class="{darkBackground: (isDarkTheme), lightBackground: (!isDarkTheme)}">
       <touchable-opacity :style="{borderRadius: 10}"
           :on-press="uploadProfilePicture" :class="{ profilePictureButtonDark: (isDarkTheme), profilePictureButtonLight: (!isDarkTheme)}">
         <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">Change picture</text>
@@ -378,17 +380,36 @@ export default {
   justify-content: center;
   align-self: center;
 }
-.profileHeader{
+.profileHeaderDark{
   flex-direction: row;
   justify-content: space-between;
+  background-color: #252525;
+  margin-top: 2%;
+}
+.profileHeaderLight{
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #DADADA;
+  margin-top: 2%;
 }
 .profilePicture{
   align-self: center;
 }
-.profile{
+.profileDark{
   flex: 1;
   align-self: center;
-  margin-top: 5%;
+  background-color: #252525;
+}
+.profileLight{
+  flex: 1;
+  align-self: center;
+  background-color: #DADADA;
+}
+.lightBackground{
+  background-color: #DADADA;
+}
+.darkBackground{
+  background-color: #252525;
 }
 .primaryTextDark{
   align-self: center;
