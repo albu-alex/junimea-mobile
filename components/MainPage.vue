@@ -8,15 +8,12 @@
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
             @searchDisplayed="navigation.navigate('Search', {theme: isDarkTheme})" :profilePic="profilePicture"
             @displaySettings="showSettings" :style="{zIndex: 2}" />
-<!--    <UserProfile v-if="profileDisplayed&&!searchDisplayed" :username="newUsername" :userID="userID"-->
-<!--                 :posts="posts" @goToMainPage="goToMainPage"-->
-<!--                 @refreshUserPosts="getInitialPosts('top')"-->
-<!--                 :profilePicture="profilePicture" :isMainUser="true" :isDarkTheme="isDarkTheme" />-->
     <animated:view class="tags" v-if="leftSideTags&&!settingsDisplayed&&!searchDisplayed" :style="{opacity: tagsOpacity}">
       <Tags class="tags" :isDarkTheme="isDarkTheme"/>
     </animated:view>
     <animated:view class="settings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
-      <Settings class="settings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"/>
+      <Settings class="settings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"
+                @updateProfile="updateProfile"/>
     </animated:view>
     <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"
@@ -84,7 +81,6 @@ export default {
       isDarkTheme: true,
       searchDisplayed: false,
       leftSideTags: false,
-      updateProfile: false,
       //This opacities are changed in animated values
       viewOpacity: 0,
       tagsOpacity: 0,
@@ -187,6 +183,9 @@ export default {
       return(
           <UserPost id={post.id} dimensions={post.dimensions} isDarkTheme={this.isDarkTheme} />
       );
+    },
+    updateProfile(){
+      this.navigation.navigate("UpdateProfileForm", {theme: this.isDarkTheme})
     },
     goToMainPage(event){
       this.animateView();

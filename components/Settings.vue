@@ -100,7 +100,7 @@ export default {
       this.$emit("changeViewMode")
     },
     updateProfile(){
-      this.$emit("visiblePrompts")
+      this.$emit("updateProfile")
     }
   }
 }

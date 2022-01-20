@@ -40,10 +40,13 @@ export default {
       firstName: "",
       lastName: "",
       emailAddress: "",
+      isDarkTheme: this.navigation.getParam('theme')
     }
   },
   props:{
-    isDarkTheme: Boolean,
+    navigation:{
+      type: Object
+    }
   },
   methods: {
     async updateProfile() {
