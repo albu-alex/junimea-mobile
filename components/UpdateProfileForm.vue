@@ -1,6 +1,10 @@
 <template>
 <view :class="{ updateProfileDark: (isDarkTheme), updateProfileLight: (!isDarkTheme)}">
   <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{zIndex: 2}"/>
+  <touchable-opacity :on-press="goToMainPage">
+    <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
+    <Ionicons v-else name="ios-arrow-back" :size=30 color="#505050"/>
+  </touchable-opacity>
   <view :style="{alignSelf: 'center', marginTop: '45%', flex: 1}">
     <text-input v-if="isDarkTheme" :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 5}"
                 placeholderTextColor="ghostwhite" placeholder="First Name"
@@ -35,8 +39,9 @@
 
 <script>
 import OwnStatusBar from "./StatusBar";
-import axios from 'axios'
+import axios from 'axios';
 import {Alert} from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 export default {
   name: "UpdateProfileForm",
   data() {
@@ -53,9 +58,13 @@ export default {
     }
   },
   components:{
-    OwnStatusBar
+    OwnStatusBar,
+    Ionicons
   },
   methods: {
+    goToMainPage(){
+      this.navigation.goBack();
+    },
     async updateProfile() {
       let showLogin = false;
       await axios({
