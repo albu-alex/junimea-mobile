@@ -2,8 +2,6 @@
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
   <animated:view v-if="isDarkTheme" class="settingsDark" :style="{opacity: viewOpacity}">
-<!--    <UpdateProfileForm v-if="visiblePrompts" :isDarkTheme="isDarkTheme" class="updateForm"-->
-<!--      @redirectToLogin="logout"/>-->
     <view class="settingsTab">
       <touchable-opacity :on-press="logout" class="buttonDark">
         <view :style="{flexDirection: 'row', justifyContent: 'center'}">
@@ -26,8 +24,6 @@
     </view>
   </animated:view>
   <animated:view v-else class="settingsLight" :style="{opacity: viewOpacity}">
-<!--    <UpdateProfileForm :isDarkTheme="isDarkTheme" v-if="visiblePrompts" class="updateForm"-->
-<!--       @redirectToLogin="logout"/>-->
     <view class="settingsTab">
       <touchable-opacity :on-press="logout" class="buttonLight">
         <view :style="{flexDirection: 'row', justifyContent: 'center'}">
@@ -70,9 +66,7 @@ export default {
   },
   props:{
     newUsername: String,
-    isDarkTheme: Boolean,
-    //This variable keeps track of the visibility of the update profile prompts
-    visiblePrompts: Boolean,
+    isDarkTheme: Boolean
   },
   components:{
     UpdateProfileForm,
