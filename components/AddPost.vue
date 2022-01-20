@@ -42,66 +42,69 @@
     <FAB v-if="isDarkTheme" buttonColor="#555555" iconTextColor="#FFFFFF" :onClickAction="togglePost"/>
     <FAB v-else buttonColor="#AAAAAA" iconTextColor="#000000" :onClickAction="togglePost"/>
   </view>
-  <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-else>
-    <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
-    <view :style="{flexDirection: 'row', marginBottom: '20%', display: 'flex', justifyContent: 'space-between'}">
-      <touchable-opacity :on-press="togglePost"
-                         :active-opacity="0.6" :style="{alignSelf: 'flex-start', marginLeft: '2%'}">
-        <Feather v-if="isDarkTheme" name="arrow-left" :size=28 color="#AAAAAA" />
-        <Feather v-else name="arrow-left" :size=28 color="#555555"/>
-      </touchable-opacity>
-      <touchable-opacity :on-press="() => navigation.navigate('MainPage', {theme: isDarkTheme})"
-                         :active-opacity="0.6" :style="{alignSelf: 'flex-end', marginRight: '2%'}">
-        <Feather v-if="isDarkTheme" name="x" :size=28 color="#AAAAAA"/>
-        <Feather v-else name="x" :size=28 color="#555555"/>
-      </touchable-opacity>
+  <touchable-opacity :on-press="keyboardDismiss" :active-opacity="1"
+                     :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-else>
+    <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}">
+      <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
+      <view :style="{flexDirection: 'row', marginBottom: '20%', display: 'flex', justifyContent: 'space-between'}">
+        <touchable-opacity :on-press="togglePost"
+                           :active-opacity="0.6" :style="{alignSelf: 'flex-start', marginLeft: '2%'}">
+          <Feather v-if="isDarkTheme" name="arrow-left" :size=28 color="#AAAAAA" />
+          <Feather v-else name="arrow-left" :size=28 color="#555555"/>
+        </touchable-opacity>
+        <touchable-opacity :on-press="() => navigation.navigate('MainPage', {theme: isDarkTheme})"
+                           :active-opacity="0.6" :style="{alignSelf: 'flex-end', marginRight: '2%'}">
+          <Feather v-if="isDarkTheme" name="x" :size=28 color="#AAAAAA"/>
+          <Feather v-else name="x" :size=28 color="#555555"/>
+        </touchable-opacity>
+      </view>
+      <view :style="{marginBottom: '15%', alignSelf: 'center'}">
+        <Image :source="require('../assets/unicorn-negru-cu-scris.png')"
+                   :style="{width: 250, height:250}" />
+      </view>
+      <view :style="{flexDirection: 'row'}">
+        <Ionicons v-if="operatingSystem === 'ios'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logo" />
+        <Ionicons v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="text" :size=20 color="#555555" class="logo" />
+        <Ionicons v-else-if="operatingSystem === 'android'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logoAndroid" />
+        <Ionicons v-else name="text" :size=20 color="#555555" class="logoAndroid" />
+        <text-input :on-change-text="onChangePost" class="addNewPostDark" placeholder="Title" v-if="isDarkTheme"
+                    placeholderTextColor="#AAAAAA" :default-value="postText"
+                    :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+        <text-input :on-change-text="onChangePost" class="addNewPostLight" placeholder="Title" v-else
+                    placeholderTextColor="#555555" :default-value="postText"
+                    :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      </view>
+      <view :style="{flexDirection: 'row'}">
+        <FontAwesome5 v-if="operatingSystem === 'ios'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logo" />
+        <FontAwesome5 v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="hashtag" :size=20 color="#555555" class="logo" />
+        <FontAwesome5 v-else-if="operatingSystem === 'android'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
+        <FontAwesome5 v-else name="hashtag" :size=20 color="#555555" class="logoAndroid" />
+        <text-input :on-change-text="onChangeTags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme"
+                    placeholderTextColor="#AAAAAA" :default-value="tags"
+                    :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+        <text-input :on-change-text="onChangeTags" class="addNewPostLight" placeholder="Tag1, tag2...(optional)" v-else
+                    placeholderTextColor="#555555" :default-value="tags"
+                    :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
+      </view>
+      <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}">
+        <touchable-opacity :on-press="addPostFunction" :active-opacity="0.6" :style="{borderRadius: 10}"
+                           :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
+          <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+            <Feather v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="check" :size=32 color="#AAAAAA" />
+            <Feather v-else :style="{alignSelf: 'center', marginBottom: 5}" name="check" :size=32 color="#555555" />
+            <text :class="{ postButtonTextDark: (isDarkTheme), postButtonTextLight: (!isDarkTheme)}">Add post</text>
+          </view>
+        </touchable-opacity>
+      </view>
     </view>
-    <view :style="{marginBottom: '15%', alignSelf: 'center'}">
-      <Image :source="require('../assets/unicorn-negru-cu-scris.png')"
-                 :style="{width: 250, height:250}" />
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <Ionicons v-if="operatingSystem === 'ios'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logo" />
-      <Ionicons v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="text" :size=20 color="#555555" class="logo" />
-      <Ionicons v-else-if="operatingSystem === 'android'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logoAndroid" />
-      <Ionicons v-else name="text" :size=20 color="#555555" class="logoAndroid" />
-      <text-input :on-change-text="onChangePost" class="addNewPostDark" placeholder="Title" v-if="isDarkTheme"
-                  placeholderTextColor="#AAAAAA" :default-value="postText"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-      <text-input :on-change-text="onChangePost" class="addNewPostLight" placeholder="Title" v-else
-                  placeholderTextColor="#555555" :default-value="postText"
-                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <FontAwesome5 v-if="operatingSystem === 'ios'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logo" />
-      <FontAwesome5 v-else-if="operatingSystem === 'ios'&&!isDarkTheme" name="hashtag" :size=20 color="#555555" class="logo" />
-      <FontAwesome5 v-else-if="operatingSystem === 'android'&&isDarkTheme" name="hashtag" :size=20 color="#AAAAAA" class="logoAndroid" />
-      <FontAwesome5 v-else name="hashtag" :size=20 color="#555555" class="logoAndroid" />
-      <text-input :on-change-text="onChangeTags" class="addNewPostDark" placeholder="Tag1, tag2...(optional)" v-if="isDarkTheme"
-                  placeholderTextColor="#AAAAAA" :default-value="tags"
-                  :multiline="true" keyboardAppearance="dark" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-      <text-input :on-change-text="onChangeTags" class="addNewPostLight" placeholder="Tag1, tag2...(optional)" v-else
-                  placeholderTextColor="#555555" :default-value="tags"
-                  :multiline="true" keyboardAppearance="light" :style="{borderRadius: 10, paddingHorizontal: 25}" />
-    </view>
-    <view :class="{ optionButtonDark: (isDarkTheme), optionButtonLight: (!isDarkTheme)}">
-      <touchable-opacity :on-press="addPostFunction" :active-opacity="0.6" :style="{borderRadius: 10}"
-                         :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
-        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <Feather v-if="isDarkTheme" :style="{alignSelf: 'center', marginBottom: 5}" name="check" :size=32 color="#AAAAAA" />
-          <Feather v-else :style="{alignSelf: 'center', marginBottom: 5}" name="check" :size=32 color="#555555" />
-          <text :class="{ postButtonTextDark: (isDarkTheme), postButtonTextLight: (!isDarkTheme)}">Add post</text>
-        </view>
-      </touchable-opacity>
-    </view>
-  </view>
+  </touchable-opacity>
 </template>
 
 <script>
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
-import {Alert, Platform} from "react-native";
+import {Alert, Platform, Keyboard} from "react-native";
 import { Ionicons, MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons';
 import OwnStatusBar from "./StatusBar";
 import FAB from 'react-native-fab';
@@ -120,6 +123,7 @@ export default {
     }
   },
   components:{
+    Keyboard,
     Ionicons,
     MaterialIcons,
     FontAwesome5,
@@ -231,6 +235,9 @@ export default {
           }
       );
       this.images.push(newImage)
+    },
+    keyboardDismiss(){
+      Keyboard.dismiss();
     },
     async takePicture(){
       if(this.username === ""){
