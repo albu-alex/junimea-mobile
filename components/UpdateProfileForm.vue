@@ -139,15 +139,15 @@ export default {
   height: 50px;
   margin-bottom: 3%;
   color: ghostwhite;
-  font-weight: 200;
+  font-weight: 300;
 }
 .inputFormLight{
   background-color: #AFAFAF;
   width: 325px;
   height: 50px;
   margin-bottom: 3%;
-  color: ghostwhite;
-  font-weight: 200;
+  color: #070000;
+  font-weight: 300;
 }
 .sendButtonTextDark{
   color: #4191e1;
