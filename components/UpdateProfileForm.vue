@@ -1,7 +1,7 @@
 <template>
 <view :class="{ updateProfileDark: (isDarkTheme), updateProfileLight: (!isDarkTheme)}">
   <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{zIndex: 2}"/>
-  <touchable-opacity :on-press="goToMainPage">
+  <touchable-opacity :on-press="goToMainPage" :style="{marginTop: '3%', marginLeft: '1%'}">
     <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
     <Ionicons v-else name="ios-arrow-back" :size=30 color="#505050"/>
   </touchable-opacity>
@@ -150,13 +150,13 @@ export default {
   font-weight: 200;
 }
 .sendButtonTextDark{
-  color: #AAAAAA;
+  color: #4191e1;
   font-weight: 600;
   font-size: 20px;
   align-self: center;
 }
 .sendButtonTextLight{
-  color: #555555;
+  color: #415ce1;
   font-weight: 600;
   font-size: 20px;
   align-self: center;
