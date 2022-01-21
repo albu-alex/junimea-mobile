@@ -781,7 +781,7 @@ This is the QR code to the app:
 ## Today I have done the following:
 <uL>
 <li>
-    UpdateProfileForm is now available in light/dark mode
+    UpdateProfile is now available in light/dark mode
 </li>
 <li>
     Fixed a MainPage bug related to user finding
@@ -887,7 +887,7 @@ This is the QR code to the app:
         AddPostBox component styling(text-input and buttons)
     </li>
     <li>
-        UpdateProfileForm component styling(text-input)
+        UpdateProfile component styling(text-input)
     </li>
     <li>
         UserProfile component styling(buttons)
@@ -1297,10 +1297,10 @@ This is the QR code to the app:
     Fixed saved posts bug
 </li>
 <li>
-    Fixed UpdateProfileForm bugs
+    Fixed UpdateProfile bugs
 </li>
 <li>
-    Settings rezises when UpdateProfileForm is present
+    Settings rezises when UpdateProfile is present
 </li>
 </uL>
 
@@ -1821,7 +1821,7 @@ This is the QR code to the app:
     Posts in user profile automatically load(small bug fix)
 </li>
 <li>
-    Changed styling for UpdateProfileForm inside settings for android
+    Changed styling for UpdateProfile inside settings for android
 </li>
 <li>
     Fixed posts opacity after coming from UserProfile
@@ -2207,14 +2207,14 @@ This is the QR code to the app:
         Fixed text-input bugs in Comments
     </li>
     <li>
-        Fixed text-input bugs in UpdateProfileForm
+        Fixed text-input bugs in UpdateProfile
     </li>
 </uL>
 
 ## Things to improve upon:
 <ul>
     <li>
-        Add conditional css rendering to UpdateProfileForm component
+        Add conditional css rendering to UpdateProfile component
     </li>
     <li>
         (Optional)Store the post number in AsyncStorage
@@ -2227,7 +2227,7 @@ This is the QR code to the app:
 ## Today I have done the following:
 <uL>
     <li>
-        Added conditional css rendering to UpdateProfileForm component
+        Added conditional css rendering to UpdateProfile component
     </li>
     <li>
         Stored the post number in AsyncStorage
@@ -2519,7 +2519,7 @@ This is the QR code to the app:
         Change Settings component
     </li>
     <li>
-        Change UpdateProfileForm component
+        Change UpdateProfile component
     </li>
 </ul>
 
@@ -2552,7 +2552,7 @@ This is the QR code to the app:
 ## Things to improve upon:
 <ul>
     <li>
-        Change UpdateProfileForm component
+        Change UpdateProfile component
     </li>
     <li>
         Fix UserProfile component
@@ -2577,7 +2577,7 @@ This is the QR code to the app:
 ## Things to improve upon:
 <ul>
     <li>
-        Change UpdateProfileForm component
+        Change UpdateProfile component
     </li>
     <li>
         Fix theme not kept bug in transition
@@ -2589,13 +2589,13 @@ This is the QR code to the app:
 ## Today I have done the following:
 <uL>
     <li>
-        Access to UpdateProfileForm through Navigation API
+        Access to UpdateProfile through Navigation API
     </li>
     <li>
-        Basic UpdateProfileForm styling
+        Basic UpdateProfile styling
     </li>
     <li>
-        Added go back button to UpdateProfileForm
+        Added go back button to UpdateProfile
     </li>
     <li>
         Changed send button color
@@ -2604,7 +2604,7 @@ This is the QR code to the app:
         Changed text-input text color and bold
     </li>
     <li>
-        Keyboard dismiss on press in UpdateProfileForm
+        Keyboard dismiss on press in UpdateProfile
     </li>
     <li>
         Settings refactor
@@ -2620,10 +2620,10 @@ This is the QR code to the app:
         Exit AddPost after posting
     </li>
     <li>
-        Add logos to UpdateProfileForm
+        Add logos to UpdateProfile
     </li>
     <li>
-        Refactor UpdateProfileForm
+        Refactor UpdateProfile
     </li>
     <li>
         Add conditional CSS rendering to Settings

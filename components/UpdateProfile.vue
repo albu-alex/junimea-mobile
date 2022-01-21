@@ -43,7 +43,7 @@ import axios from 'axios';
 import {Alert} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 export default {
-  name: "UpdateProfileForm",
+  name: "UpdateProfile",
   data() {
     return {
       firstName: "",

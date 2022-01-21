@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import UpdateProfileForm from "./UpdateProfileForm";
+import UpdateProfile from "./UpdateProfile";
 import {Animated, Easing} from "react-native";
 import { Ionicons, AntDesign } from '@expo/vector-icons';
 export default {
@@ -69,7 +69,7 @@ export default {
     isDarkTheme: Boolean
   },
   components:{
-    UpdateProfileForm,
+    UpdateProfile,
     Ionicons,
     AntDesign
   },

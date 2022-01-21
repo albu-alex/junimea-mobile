@@ -9,7 +9,7 @@ import MainPage from "./components/MainPage";
 import Search from "./components/Search";
 import AddPost from "./components/AddPost";
 import UserProfile from "./components/UserProfile";
-import UpdateProfileForm from "./components/UpdateProfileForm";
+import UpdateProfile from "./components/UpdateProfile";
 import {
   createAppContainer,
   createStackNavigator,
@@ -22,7 +22,7 @@ const StackNavigator = createStackNavigator(
       Search: Search,
       AddPost: AddPost,
       UserProfile: UserProfile,
-      UpdateProfileForm: UpdateProfileForm
+      UpdateProfileForm: UpdateProfile
     },
     {
       initialRouteName: 'MainPage',
