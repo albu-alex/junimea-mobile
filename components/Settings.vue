@@ -1,46 +1,28 @@
 <!--Component displays all the settings that the user can access-->
 <!--Contains a greeting message with the username and all of the options that the user is allowed to access-->
 <template>
-  <animated:view v-if="isDarkTheme" class="settingsDark" :style="{opacity: viewOpacity}">
+  <animated:view :class="{ settingsDark: (isDarkTheme), settingsLight: (!isDarkTheme)}" :style="{opacity: viewOpacity}">
     <view class="settingsTab">
-      <touchable-opacity :on-press="logout" class="buttonDark">
+      <touchable-opacity :on-press="logout" :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
         <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <Ionicons name="log-out-outline" :size=24 color="#AAAAAA" />
-          <text class="textSecondaryDark">Logout</text>
+          <Ionicons v-if="isDarkTheme" name="log-out-outline" :size=24 color="#AAAAAA" />
+          <Ionicons v-else name="log-out-outline" :size=24 color="#555555" />
+          <text :class="{ textSecondaryDark: (isDarkTheme), textSecondaryLight: (!isDarkTheme)}">Logout</text>
         </view>
       </touchable-opacity>
-      <touchable-opacity :on-press="changeViewMode" class="buttonDark">
+      <touchable-opacity :on-press="changeViewMode" :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
         <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <Ionicons name="moon-sharp" :size=24 color="#AAAAAA" />
-          <text class="textSecondaryDark">Dark mode</text>
+          <Ionicons v-if="isDarkTheme" name="moon-sharp" :size=24 color="#AAAAAA" />
+          <Ionicons v-else name="sunny-sharp" :size=24 color="#555555" />
+          <text v-if="isDarkTheme" class="textSecondaryDark">Dark mode</text>
+          <text v-else class="textSecondaryLight">Light mode</text>
         </view>
       </touchable-opacity>
-      <touchable-opacity :on-press="updateProfile" class="buttonDark">
+      <touchable-opacity :on-press="updateProfile" :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
         <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <AntDesign name="profile" :size=24 color="#AAAAAA" />
-          <text class="textSecondaryDark">Update profile</text>
-        </view>
-      </touchable-opacity>
-    </view>
-  </animated:view>
-  <animated:view v-else class="settingsLight" :style="{opacity: viewOpacity}">
-    <view class="settingsTab">
-      <touchable-opacity :on-press="logout" class="buttonLight">
-        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <Ionicons name="log-out-outline" :size=24 color="#555555" />
-          <text class="textSecondaryLight">Logout</text>
-        </view>
-      </touchable-opacity>
-      <touchable-opacity :on-press="changeViewMode" class="buttonLight">
-        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <Ionicons name="sunny-sharp" :size=24 color="#555555" />
-          <text class="textSecondaryLight">Light mode</text>
-        </view>
-      </touchable-opacity>
-      <touchable-opacity :on-press="updateProfile" class="buttonLight">
-        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
-          <AntDesign name="profile" :size=24 color="#555555" />
-          <text class="textSecondaryLight">Update profile</text>
+          <AntDesign v-if="isDarkTheme" name="profile" :size=24 color="#AAAAAA" />
+          <AntDesign v-else name="profile" :size=24 color="#555555" />
+          <text :class="{ textSecondaryDark: (isDarkTheme), textSecondaryLight: (!isDarkTheme)}">Update profile</text>
         </view>
       </touchable-opacity>
     </view>
