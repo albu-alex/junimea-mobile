@@ -83,6 +83,9 @@ export default {
     goToMainPage(){
       this.navigation.goBack();
     },
+    goToLogin(){
+      this.navigation.navigate("Login", {theme: this.isDarkTheme})
+    },
     async updateProfile() {
       let showLogin = false;
       await axios({
@@ -124,7 +127,7 @@ export default {
             {
               text: "Login",
               style: "cancel",
-              onPress: () => this.$emit("redirectToLogin")
+              onPress: this.goToLogin
             },
             {
               text: "Continue as guest",
