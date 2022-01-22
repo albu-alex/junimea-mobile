@@ -94,10 +94,9 @@
 
 
 <script>
-import { Dimensions, Alert} from "react-native";
 import * as GoogleSignIn from 'expo-google-sign-in';
 const win = Dimensions.get('window');
-import {Linking, Platform} from "react-native";
+import {Linking, Platform, Keyboard, Dimensions, Alert} from "react-native";
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import axios from "axios";
 import Loading from "./Loading";
