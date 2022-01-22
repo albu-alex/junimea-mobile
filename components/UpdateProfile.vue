@@ -1,62 +1,64 @@
 <template>
-<view :class="{ updateProfileDark: (isDarkTheme), updateProfileLight: (!isDarkTheme)}">
-  <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{zIndex: 2}"/>
-  <touchable-opacity :on-press="goToMainPage" :style="{marginTop: '3%', marginLeft: '1%'}">
-    <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
-    <Ionicons v-else name="ios-arrow-back" :size=30 color="#505050"/>
-  </touchable-opacity>
-  <view :style="{alignSelf: 'center', marginTop: '45%', flex: 1}">
-    <view :style="{flexDirection: 'row'}">
-      <FontAwesome v-if="isDarkTheme" name="id-card-o" :size=16 color="ghostwhite" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
-      <FontAwesome v-else name="id-card-o" :size=16 color="#070000" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
-      <text-input v-if="isDarkTheme" :autoCorrect="false"
-                  :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
-                  placeholderTextColor="ghostwhite" placeholder="First Name"
-                  v-model="firstName" class="inputFormDark">
-      </text-input>
-      <text-input v-else :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
-                  placeholderTextColor="#070000" placeholder="First Name"
-                  v-model="firstName" class="inputFormLight">
-      </text-input>
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <FontAwesome v-if="isDarkTheme" name="id-card-o" :size=16 color="ghostwhite" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
-      <FontAwesome v-else name="id-card-o" :size=16 color="#070000" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
-      <text-input v-if="isDarkTheme" :autoCorrect="false"
-                  :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
-                  placeholderTextColor="ghostwhite" placeholder="Last Name"
-                  v-model="lastName" class="inputFormDark">
-      </text-input>
-      <text-input v-else :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
-                  placeholderTextColor="#070000" placeholder="Last Name"
-                  v-model="lastName" class="inputFormLight">
-      </text-input>
-    </view>
-    <view :style="{flexDirection: 'row'}">
-      <Entypo v-if="isDarkTheme" name="email" :size=16 color="ghostwhite" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
-      <Entypo v-else name="email" :size=16 color="#070000" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
-      <text-input v-if="isDarkTheme" :autoCorrect="false" keyboardType="email-address"
-                  :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
-                  placeholderTextColor="ghostwhite" placeholder="Email address"
-                  v-model="emailAddress" class="inputFormDark">
-      </text-input>
-      <text-input v-else :autoCorrect="false" keyboardType="email-address"
-                  :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
-                  placeholderTextColor="#070000" placeholder="Email address"
-                  v-model="emailAddress" class="inputFormLight">
-      </text-input>
-    </view>
-    <touchable-opacity :on-press="updateProfile" :style="{marginTop: '25%'}">
-      <text :class="{ sendButtonTextDark: (isDarkTheme), sendButtonTextLight: (!isDarkTheme)}">Send</text>
+<touchable-opacity :on-press="keyboardDismiss" :active-opacity="1" :style="{flex: 1}">
+  <view :class="{ updateProfileDark: (isDarkTheme), updateProfileLight: (!isDarkTheme)}">
+    <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{zIndex: 2}"/>
+    <touchable-opacity :on-press="goToMainPage" :style="{marginTop: '3%', marginLeft: '1%'}">
+      <Ionicons v-if="isDarkTheme" name="ios-arrow-back" :size=30 color="#AFAFAF"/>
+      <Ionicons v-else name="ios-arrow-back" :size=30 color="#505050"/>
     </touchable-opacity>
+    <view :style="{alignSelf: 'center', marginTop: '45%', flex: 1}">
+      <view :style="{flexDirection: 'row'}">
+        <FontAwesome v-if="isDarkTheme" name="id-card-o" :size=16 color="ghostwhite" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
+        <FontAwesome v-else name="id-card-o" :size=16 color="#070000" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
+        <text-input v-if="isDarkTheme" :autoCorrect="false"
+                    :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
+                    placeholderTextColor="ghostwhite" placeholder="First Name"
+                    v-model="firstName" class="inputFormDark">
+        </text-input>
+        <text-input v-else :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
+                    placeholderTextColor="#070000" placeholder="First Name"
+                    v-model="firstName" class="inputFormLight">
+        </text-input>
+      </view>
+      <view :style="{flexDirection: 'row'}">
+        <FontAwesome v-if="isDarkTheme" name="id-card-o" :size=16 color="ghostwhite" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
+        <FontAwesome v-else name="id-card-o" :size=16 color="#070000" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
+        <text-input v-if="isDarkTheme" :autoCorrect="false"
+                    :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
+                    placeholderTextColor="ghostwhite" placeholder="Last Name"
+                    v-model="lastName" class="inputFormDark">
+        </text-input>
+        <text-input v-else :autoCorrect="false" :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
+                    placeholderTextColor="#070000" placeholder="Last Name"
+                    v-model="lastName" class="inputFormLight">
+        </text-input>
+      </view>
+      <view :style="{flexDirection: 'row'}">
+        <Entypo v-if="isDarkTheme" name="email" :size=16 color="ghostwhite" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
+        <Entypo v-else name="email" :size=16 color="#070000" :style="{zIndex: 2, marginTop: '5%', marginLeft: '2%'}" />
+        <text-input v-if="isDarkTheme" :autoCorrect="false" keyboardType="email-address"
+                    :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
+                    placeholderTextColor="ghostwhite" placeholder="Email address"
+                    v-model="emailAddress" class="inputFormDark">
+        </text-input>
+        <text-input v-else :autoCorrect="false" keyboardType="email-address"
+                    :style="{borderRadius: 10, paddingHorizontal: 25, marginLeft: '-7%'}"
+                    placeholderTextColor="#070000" placeholder="Email address"
+                    v-model="emailAddress" class="inputFormLight">
+        </text-input>
+      </view>
+      <touchable-opacity :on-press="updateProfile" :style="{marginTop: '25%'}">
+        <text :class="{ sendButtonTextDark: (isDarkTheme), sendButtonTextLight: (!isDarkTheme)}">Send</text>
+      </touchable-opacity>
+    </view>
   </view>
-</view>
+</touchable-opacity>
 </template>
 
 <script>
 import OwnStatusBar from "./StatusBar";
 import axios from 'axios';
-import {Alert} from "react-native";
+import {Alert, Keyboard} from "react-native";
 import { Ionicons, Entypo, FontAwesome } from "@expo/vector-icons";
 export default {
   name: "UpdateProfile",
@@ -80,6 +82,9 @@ export default {
     FontAwesome
   },
   methods: {
+    keyboardDismiss(){
+      Keyboard.dismiss();
+    },
     goToMainPage(){
       this.navigation.goBack();
     },
