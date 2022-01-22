@@ -1,6 +1,7 @@
 <!--This component is used to validate the user name and password-->
 <!--It consists of two text inputs, a login button, a register button and a welcome message-->
 <template>
+<touchable-opacity :on-press="keyboardDismiss" :active-opacity="1" :style="{flex: 1}">
   <view :class="{ userLoginDark: (isDarkTheme), userLoginLight: (!isDarkTheme)}">
     <Loading v-if="isLoading"/>
     <view v-if="waitingForSubmit" :style="{flex: 1, justifyContent: 'center'}">
@@ -90,6 +91,7 @@
       <text :class="{ bugButtonTextDarkAndroid: (isDarkTheme), bugButtonTextLightAndroid: (!isDarkTheme)}">Found any bugs? Report them!</text>
     </touchable-opacity>
   </view>
+</touchable-opacity>
 </template>
 
 
@@ -139,6 +141,9 @@ export default {
     }
   },
   methods:{
+    keyboardDismiss(){
+      Keyboard.dismiss();
+    },
     onChangeUsername(newText){
       this.username = newText;
     },
