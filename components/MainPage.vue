@@ -377,54 +377,6 @@ export default {
       this.lastRefresh = performance.now();
       await this.getInitialPosts("bottom");
     },
-    async addPost(newPost, postPosition){
-      if(this.newUsername === ''){
-        alert("It looks like you are a guest! You must register before creating a post!")
-        return;
-      }
-      let post;
-      let newImages = [];
-      let newTags = [];
-      newPost.images.forEach(image => newImages.push(image.uri))
-      let dimensions = [];
-      newPost.images.forEach(image => dimensions.push(image))
-      if(newPost.tags)
-        newPost.tags.forEach(tag => newTags.push(tag))
-      await axios({
-        method: 'post',
-        url: 'http://52.57.118.176/Post/Add',
-        data:{
-          "Title": newPost.text,
-          "Files": newImages,
-          "Tags": newTags
-        },
-        timeout: 10000
-      })
-          .then(function (response){
-            if(response.status === 200){
-              post = {
-                "id": response.data.id,
-                "title": response.data.title,
-                "files": response.data.files,
-                "username": response.data.userName,
-                "profilePic": response.data.profilePicUrl,
-                "likes": response.data.likes,
-                "liked": response.data.liked,
-                "dimensions": dimensions,
-                "tags": response.data.tags
-              }
-            }
-          })
-          .catch(function(error){
-            // alert(error.response.data.errorMessage)
-          });
-      if(post){
-        if(postPosition === 'top')
-          this.posts = [post].concat(this.posts)
-        else
-          this.posts.push(post)
-      }
-    },
     goToUser(event){
       this.postUsername = event.username
       this.postProfilePicture = event.profilePicture

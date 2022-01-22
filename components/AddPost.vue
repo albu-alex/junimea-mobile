@@ -42,9 +42,10 @@
     <FAB v-if="isDarkTheme" buttonColor="#555555" iconTextColor="#FFFFFF" :onClickAction="togglePost"/>
     <FAB v-else buttonColor="#AAAAAA" iconTextColor="#000000" :onClickAction="togglePost"/>
   </view>
+  <scroll-view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" :scrollEnabled="false"
+               ref="secondPhaseScreen" :scrollToOverflowEnabled="true" v-else>
   <touchable-opacity :on-press="keyboardDismiss" :active-opacity="1"
-                     :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-else>
-    <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}">
+                     :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}">
       <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
       <view :style="{flexDirection: 'row', marginBottom: '20%', display: 'flex', justifyContent: 'space-between'}">
         <touchable-opacity :on-press="togglePost"
@@ -96,8 +97,8 @@
           </view>
         </touchable-opacity>
       </view>
-    </view>
   </touchable-opacity>
+  </scroll-view>
 </template>
 
 <script>
@@ -154,6 +155,14 @@ export default {
     },
     onChangeTags(newText){
       this.tags = newText;
+      this.scrollTags();
+    },
+    scrollTags(){
+      alert('muie')
+      this.$refs.secondPhaseScreen.current?.scrollTo({
+        y: 50,
+        animated: true,
+      });
     },
     doNotAddTags(){
       this.addTags = false;
@@ -324,12 +333,61 @@ export default {
         images: this.images,
         tags: this.tagsList
       }
-      this.$emit('addPost', post);
+      this.createPost(post, 'top')
       this.postText = "";
       this.images = [];
       this.tags = ""
       this.tagsList = [];
       this.addTags = true;
+    },
+    async createPost(newPost, postPosition){
+      if(this.newUsername === ''){
+        alert("It looks like you are a guest! You must register before creating a post!")
+        return;
+      }
+      let post;
+      let newImages = [];
+      let newTags = [];
+      newPost.images.forEach(image => newImages.push(image.uri))
+      let dimensions = [];
+      newPost.images.forEach(image => dimensions.push(image))
+      if(newPost.tags)
+        newPost.tags.forEach(tag => newTags.push(tag))
+      await axios({
+        method: 'post',
+        url: 'http://52.57.118.176/Post/Add',
+        data:{
+          "Title": newPost.text,
+          "Files": newImages,
+          "Tags": newTags
+        },
+        timeout: 10000
+      })
+          .then(function (response){
+            if(response.status === 200){
+              post = {
+                "id": response.data.id,
+                "title": response.data.title,
+                "files": response.data.files,
+                "username": response.data.userName,
+                "profilePic": response.data.profilePicUrl,
+                "likes": response.data.likes,
+                "liked": response.data.liked,
+                "dimensions": dimensions,
+                "tags": response.data.tags
+              }
+            }
+          })
+          .catch(function(error){
+            // alert(error.response.data.errorMessage)
+          });
+      if(post){
+        if(postPosition === 'top')
+          this.posts = [post].concat(this.posts)
+        else
+          this.posts.push(post)
+      }
+      this.navigation.goBack()
     },
     addPostFunction(){
       if(this.username === ""){
