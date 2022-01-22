@@ -158,7 +158,6 @@ export default {
       this.scrollTags();
     },
     scrollTags(){
-      alert('muie')
       this.$refs.secondPhaseScreen.current?.scrollTo({
         y: 50,
         animated: true,
@@ -379,7 +378,7 @@ export default {
             }
           })
           .catch(function(error){
-            // alert(error.response.data.errorMessage)
+            alert("There was an error adding your post!")
           });
       if(post){
         if(postPosition === 'top')
