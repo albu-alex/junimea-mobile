@@ -77,6 +77,8 @@
       </view>
     </view>
     <view v-if="showComments&&comments.length === 0" :class="{ postDark: (isDarkTheme), postLight: (!isDarkTheme)}">
+      <view v-if="isDarkTheme" :style="{height: 1, width: '100%', backgroundColor: '#252525'}"></view>
+      <view v-else :style="{height: 1, width: '100%', backgroundColor: '#DADADA'}"></view>
       <FontAwesome5 v-if="isDarkTheme" class="icon" name="comment-slash" :size=30 color="#AAAAAA" />
       <FontAwesome5 v-else class="icon" name="comment-slash" :size=30 color="#555555" />
       <text :class="{ commentsTextDark: (isDarkTheme), commentsTextLight: (!isDarkTheme)}" :style="{marginBottom: 20}">There aren't any comments as of now! Be the first!</text>
