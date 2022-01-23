@@ -42,8 +42,8 @@
     <FAB v-if="isDarkTheme" buttonColor="#555555" iconTextColor="#FFFFFF" :onClickAction="togglePost"/>
     <FAB v-else buttonColor="#AAAAAA" iconTextColor="#000000" :onClickAction="togglePost"/>
   </view>
-  <scroll-view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" :scrollEnabled="false"
-               ref="secondPhaseScreen" :scrollToOverflowEnabled="true" v-else>
+  <keyboard-avoiding-view :keyboardVerticalOffset="36"
+                          :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-else>
   <touchable-opacity :on-press="keyboardDismiss" :active-opacity="1"
                      :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}">
       <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
@@ -98,14 +98,14 @@
         </touchable-opacity>
       </view>
   </touchable-opacity>
-  </scroll-view>
+  </keyboard-avoiding-view>
 </template>
 
 <script>
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
-import {Alert, Platform, Keyboard} from "react-native";
+import { Alert, Platform, Keyboard, KeyboardAvoidingView } from "react-native";
 import { Ionicons, MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons';
 import OwnStatusBar from "./StatusBar";
 import FAB from 'react-native-fab';
@@ -125,6 +125,7 @@ export default {
   },
   components:{
     Keyboard,
+    KeyboardAvoidingView,
     Ionicons,
     MaterialIcons,
     FontAwesome5,
@@ -155,13 +156,6 @@ export default {
     },
     onChangeTags(newText){
       this.tags = newText;
-      this.scrollTags();
-    },
-    scrollTags(){
-      this.$refs.secondPhaseScreen.current?.scrollTo({
-        y: 50,
-        animated: true,
-      });
     },
     doNotAddTags(){
       this.addTags = false;
