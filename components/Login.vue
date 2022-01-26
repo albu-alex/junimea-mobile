@@ -102,7 +102,6 @@ import {Linking, Platform, Keyboard, Dimensions, Alert} from "react-native";
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import axios from "axios";
 import Loading from "./Loading";
-import { CommonActions } from '@react-navigation/native';
 export default {
   name: "Login",
   components: {
@@ -117,6 +116,7 @@ export default {
   },
   beforeMount(){
     this.operatingSystem = Platform.OS;
+    this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
   },
   async mounted(){
     await this.sleep(1000)
