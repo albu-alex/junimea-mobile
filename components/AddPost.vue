@@ -60,7 +60,7 @@
         </touchable-opacity>
       </view>
       <view :style="{marginBottom: '15%', alignSelf: 'center'}">
-        <Image :source="require('../assets/unicorn-negru-cu-scris.png')"
+        <Image :source="{uri: String(images[0].uri)}"
                    :style="{width: 250, height:250}" />
       </view>
       <view :style="{flexDirection: 'row'}">
