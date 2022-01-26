@@ -60,8 +60,11 @@
         </touchable-opacity>
       </view>
       <view :style="{marginBottom: '15%', alignSelf: 'center'}">
-        <Image :source="{uri: String(images[0].uri)}"
+        <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
                    :style="{width: 250, height:250}" />
+        <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" v-else>
+          You haven't added any photo
+        </text>
       </view>
       <view :style="{flexDirection: 'row'}">
         <Ionicons v-if="operatingSystem === 'ios'&&isDarkTheme" name="text" :size=20 color="#AAAAAA" class="logo" />
@@ -356,24 +359,24 @@ export default {
         },
         timeout: 10000
       })
-          .then(function (response){
-            if(response.status === 200){
-              post = {
-                "id": response.data.id,
-                "title": response.data.title,
-                "files": response.data.files,
-                "username": response.data.userName,
-                "profilePic": response.data.profilePicUrl,
-                "likes": response.data.likes,
-                "liked": response.data.liked,
-                "dimensions": dimensions,
-                "tags": response.data.tags
-              }
-            }
-          })
-          .catch(function(error){
-            alert("There was an error adding your post!")
-          });
+      .then(function (response){
+        if(response.status === 200){
+          post = {
+            "id": response.data.id,
+            "title": response.data.title,
+            "files": response.data.files,
+            "username": response.data.userName,
+            "profilePic": response.data.profilePicUrl,
+            "likes": response.data.likes,
+            "liked": response.data.liked,
+            "dimensions": dimensions,
+            "tags": response.data.tags
+          }
+        }
+      })
+      .catch(function(error){
+        alert("There was an error adding your post!")
+      });
       if(post){
         if(postPosition === 'top')
           this.posts = [post].concat(this.posts)
