@@ -102,6 +102,7 @@ import {Linking, Platform, Keyboard, Dimensions, Alert} from "react-native";
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import axios from "axios";
 import Loading from "./Loading";
+import { CommonActions } from '@react-navigation/native';
 export default {
   name: "Login",
   components: {
@@ -243,7 +244,7 @@ export default {
       this.username = "";
       this.password = "";
       if(loggedIn) {
-        this.navigation.reset()
+        this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
       }
       this.waitingForSubmit = false;
     },
@@ -300,7 +301,7 @@ export default {
           );
       });
       if(isRegistered)
-        this.navigation.reset()
+        this.navigation.navigate('MainPage', {theme: this.isDarkTheme})
     },
     // This function allow a new user to enter the feed of posts without making a new account
     // If user logs in as guest, he cannot make new post and cannot access his profile

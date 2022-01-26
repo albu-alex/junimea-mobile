@@ -285,7 +285,7 @@ export default {
       this.postNumber += 10;
     },
     async Logout(){
-      RCTNetworking.clearCookies(() => { })
+      await RCTNetworking.clearCookies(() => { })
       this.navigation.navigate("Login", {theme: this.isDarkTheme});
     },
     async storePosts(){

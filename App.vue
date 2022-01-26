@@ -25,7 +25,7 @@ const StackNavigator = createStackNavigator(
       UpdateProfileForm: UpdateProfile
     },
     {
-      initialRouteName: 'MainPage',
+      initialRouteName: 'Login',
       headerMode: 'none',
       navigationOptions: {
         headerVisible: false,
