@@ -395,7 +395,7 @@ export default {
               cancelable: true,
             }
         );
-        this.$emit("redirectToLogin");
+        this.navigation.goBack()
       }
       if(!this.postText){
         alert("Post text is required!");
