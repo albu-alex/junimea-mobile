@@ -121,6 +121,10 @@ export default {
   async mounted(){
     await this.sleep(1000)
     this.isLoading = false;
+    while(!this.isLoading){
+      await this.sleep(1000)
+      this.isDarkTheme = this.navigation.getParam('theme')
+    }
   },
   data(){
     return {
