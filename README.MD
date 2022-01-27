@@ -1,4 +1,4 @@
-<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a><br> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a><br> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a><br> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a> <a href="#thirtysix"> Day 36 </a> <a href="#thirtyseven"> Day 37 </a> <a href="#thirtyeight"> Day 38 </a> <a href="#thirtynine"> Day 39 </a> <a href="#fourty"> Day 40 </a> <br> <a href="#fourtyone"> Day 41 </a> <a href="#fourtytwo"> Day 42 </a> <a href="#fourtythree"> Day 43 </a> <a href="#fourtyfour"> Day 44 </a> <a href="#fourtyfive"> Day 45 </a> <a href="#fourtysix"> Day 46 </a> <a href="#fourtyseven"> Day 47 </a> <a href="#fourtyeight"> Day 48 </a> <a href="#fourtynine"> Day 49 </a> <a href="#fifty"> Day 50 </a> <br> <a href="#fiftyone"> Day 51 </a> <a href="#fiftytwo"> Day 52 </a> <a href="#fiftythree"> Day 53 </a> <a href="#fiftyfour"> Day 54 </a> <a href="#fiftyfive"> Day 55 </a> <a href="#fiftysix"> Day 56 </a> <a href="#fiftyseven"> Day 57 </a> <a href="#fiftyeight"> Day 58 </a> <a href="#fiftynine"> Day 59 </a> <a href="#sixty"> Day 60 </a> <br><a href="#sixtyone"> Day 61 </a><a href="#sixtytwo"> Day 62 </a><a href="#sixtythree"> Day 63 </a><a href="#sixtyfour"> Day 64 </a> <a href="#sixtyfive"> Day 65 </a> <a href="#sixtysix"> Day 66 </a> <a href="#sixtyseven"> Day 67 </a> <a href="#sixtyeight"> Day 68 </a><a href="#sixtynine"> Day 69 </a><a href="#seventy"> Day 70 </a><br><a href="#seventyone"> Day 71 </a><a href="#seventytwo"> Day 72 </a><a href="#seventythree"> Day 73 </a><a href="#seventyfour"> Day 74 </a><a href="#seventyfive"> Day 75 </a><a href="#seventysix"> Day 76 </a><a href="#seventyseven"> Day 77 </a><a href="#seventyeight"> Day 78 </a><a href="#seventynine"> Day 79 </a><a href="#eighty"> Day 80 </a><br><a href="#eightyone"> Day 81 </a><a href="#eightytwo"> Day 82 </a><a href="#eightythree"> Day 83 </a><a href="#eightyfour"> Day 84 </a><a href="#eightyfive"> Day 85 </a><a href="#eightysix"> Day 86 </a><a href="#eightyseven"> Day 87 </a><a href="#eightyeight"> Day 88 </a><a href="#eightynine"> Day 89 </a><a href="#ninety"> Day 90 </a><br><a href="#ninetyone"> Day 91 </a><a href="#ninetytwo"> Day 92 </a><a href="#ninetythree"> Day 93 </a><a href="#ninetyfour"> Day 94 </a><a href="#ninetyfive"> Day 95 </a>
+<a href="#one"> Day 1 </a> <a href="#two"> Day 2 </a> <a href="#three"> Day 3 </a> <a href="#four"> Day 4 </a> <a href="#five"> Day 5 </a> <a href="#six"> Day 6 </a><a href="#seven"> Day 7 </a> <a href="#eight"> Day 8 </a> <a href="#nine"> Day 9 </a> <a href="#ten"> Day 10 </a><br> <a href="#eleven"> Day 11 </a> <a href="#twelve"> Day 12 </a> <a href="#thirteen"> Day 13 </a> <a href="#fourteen"> Day 14 </a> <a href="#fifteen"> Day 15 </a> <a href="#sixteen"> Day 16 </a> <a href="#seventeen"> Day 17 </a> <a href="#eighteen"> Day 18 </a> <a href="#nineteen"> Day 19 </a> <a href="#twenty"> Day 20 </a><br> <a href="#twentyone"> Day 21 </a> <a href="#twentytwo"> Day 22 </a> <a href="#twentythree"> Day 23 </a> <a href="#twentyfour"> Day 24 </a> <a href="#twentyfive">  Day 25 </a> <a href="#twentysix"> Day 26 </a> <a href="#twentyseven"> Day 27 </a> <a href="#twentyeight"> Day 28 </a> <a href="#twentynine"> Day 29 </a> <a href="#thirty"> Day 30 </a><br> <a href="#thirtyone"> Day 31 </a> <a href="#thirtytwo"> Day 32 </a> <a href="#thirtythree"> Day 33 </a> <a href="#thirtyfour"> Day 34 </a> <a href="#thirtyfive"> Day 35 </a> <a href="#thirtysix"> Day 36 </a> <a href="#thirtyseven"> Day 37 </a> <a href="#thirtyeight"> Day 38 </a> <a href="#thirtynine"> Day 39 </a> <a href="#fourty"> Day 40 </a> <br> <a href="#fourtyone"> Day 41 </a> <a href="#fourtytwo"> Day 42 </a> <a href="#fourtythree"> Day 43 </a> <a href="#fourtyfour"> Day 44 </a> <a href="#fourtyfive"> Day 45 </a> <a href="#fourtysix"> Day 46 </a> <a href="#fourtyseven"> Day 47 </a> <a href="#fourtyeight"> Day 48 </a> <a href="#fourtynine"> Day 49 </a> <a href="#fifty"> Day 50 </a> <br> <a href="#fiftyone"> Day 51 </a> <a href="#fiftytwo"> Day 52 </a> <a href="#fiftythree"> Day 53 </a> <a href="#fiftyfour"> Day 54 </a> <a href="#fiftyfive"> Day 55 </a> <a href="#fiftysix"> Day 56 </a> <a href="#fiftyseven"> Day 57 </a> <a href="#fiftyeight"> Day 58 </a> <a href="#fiftynine"> Day 59 </a> <a href="#sixty"> Day 60 </a> <br><a href="#sixtyone"> Day 61 </a><a href="#sixtytwo"> Day 62 </a><a href="#sixtythree"> Day 63 </a><a href="#sixtyfour"> Day 64 </a> <a href="#sixtyfive"> Day 65 </a> <a href="#sixtysix"> Day 66 </a> <a href="#sixtyseven"> Day 67 </a> <a href="#sixtyeight"> Day 68 </a><a href="#sixtynine"> Day 69 </a><a href="#seventy"> Day 70 </a><br><a href="#seventyone"> Day 71 </a><a href="#seventytwo"> Day 72 </a><a href="#seventythree"> Day 73 </a><a href="#seventyfour"> Day 74 </a><a href="#seventyfive"> Day 75 </a><a href="#seventysix"> Day 76 </a><a href="#seventyseven"> Day 77 </a><a href="#seventyeight"> Day 78 </a><a href="#seventynine"> Day 79 </a><a href="#eighty"> Day 80 </a><br><a href="#eightyone"> Day 81 </a><a href="#eightytwo"> Day 82 </a><a href="#eightythree"> Day 83 </a><a href="#eightyfour"> Day 84 </a><a href="#eightyfive"> Day 85 </a><a href="#eightysix"> Day 86 </a><a href="#eightyseven"> Day 87 </a><a href="#eightyeight"> Day 88 </a><a href="#eightynine"> Day 89 </a><a href="#ninety"> Day 90 </a><br><a href="#ninetyone"> Day 91 </a><a href="#ninetytwo"> Day 92 </a><a href="#ninetythree"> Day 93 </a><a href="#ninetyfour"> Day 94 </a><a href="#ninetyfive"> Day 95 </a><a href="#ninetysix"> Day 96 </a>
 
 
 
@@ -2748,5 +2748,51 @@ This is the QR code to the app:
     </li>
     <li>
         Add +1 more... in AddPost
+    </li>
+</ul>
+
+# <a id="ninetysix">Day 96</a>
+
+## Today I have done the following:
+<uL>
+    <li>
+        Added +1 more.. text
+    </li>
+    <li>
+        Refactor
+    </li>
+    <li>
+        Styled text
+    </li>
+    <li>
+        Fixed minor bug + align content
+    </li>
+    <li>
+        Fixed other users' posts shown on different profile + add suggestive text
+    </li>
+     <li>
+        Styled no posts text
+    </li>
+    <li>
+        Fixed no posts shown twice bug
+    </li>
+    <li>
+        Removed keyboard avoiding view
+    </li>
+</uL>
+
+## Things to improve upon:
+<ul>
+    <li>
+        Add zoom functionality for Android
+    </li>
+    <li>
+        Fix no zoom in AddPost bug on iOS
+    </li>
+    <li>
+        Exit Settings on press
+    </li>
+    <li>
+        Exit Tags on press
     </li>
 </ul>
