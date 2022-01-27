@@ -42,8 +42,7 @@
     <FAB v-if="isDarkTheme" buttonColor="#555555" iconTextColor="#FFFFFF" :onClickAction="togglePost"/>
     <FAB v-else buttonColor="#AAAAAA" iconTextColor="#000000" :onClickAction="togglePost"/>
   </view>
-  <keyboard-avoiding-view :keyboardVerticalOffset="36"
-                          :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-else>
+  <view :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}" v-else>
   <touchable-opacity :on-press="keyboardDismiss" :active-opacity="1"
                      :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}">
       <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
@@ -61,8 +60,12 @@
       </view>
       <view :style="{marginBottom: '15%', alignSelf: 'center'}">
         <view :style="{flexDirection: 'row'}">
-          <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
-                     :style="{width: 250, height:250}" />
+          <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                       :showsVerticalScrollIndicator="false"
+                       :showsHorizontalScrollIndicator="false">
+                      <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
+                                  :style="{width: 250, height:250}" />
+          </scroll-view>
           <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}"
                 v-if="images.length - 1 > 0">
             + {{images.length - 1}} more
@@ -107,14 +110,14 @@
         </touchable-opacity>
       </view>
   </touchable-opacity>
-  </keyboard-avoiding-view>
+  </view>
 </template>
 
 <script>
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import FormData from "form-data";
-import { Alert, Platform, Keyboard, KeyboardAvoidingView } from "react-native";
+import { Alert, Platform, Keyboard } from "react-native";
 import { Ionicons, MaterialIcons, FontAwesome5, Feather } from '@expo/vector-icons';
 import OwnStatusBar from "./StatusBar";
 import FAB from 'react-native-fab';
@@ -134,7 +137,6 @@ export default {
   },
   components:{
     Keyboard,
-    KeyboardAvoidingView,
     Ionicons,
     MaterialIcons,
     FontAwesome5,
