@@ -47,7 +47,7 @@
   <touchable-opacity :on-press="keyboardDismiss" :active-opacity="1"
                      :class="{ wrapperDark: (isDarkTheme), wrapperLight: (!isDarkTheme)}">
       <OwnStatusBar :isDarkTheme="isDarkTheme" :style="{marginBottom: '5%'}" />
-      <view :style="{flexDirection: 'row', marginBottom: '20%', display: 'flex', justifyContent: 'space-between'}">
+      <view :style="{flexDirection: 'row', marginBottom: '10%', display: 'flex', justifyContent: 'space-between'}">
         <touchable-opacity :on-press="togglePost"
                            :active-opacity="0.6" :style="{alignSelf: 'flex-start', marginLeft: '2%'}">
           <Feather v-if="isDarkTheme" name="arrow-left" :size=28 color="#AAAAAA" />
@@ -68,7 +68,7 @@
             + {{images.length - 1}} more
           </text>
         </view>
-        <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" v-else>
+        <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" v-if="images.length === 0">
           You haven't added any photo
         </text>
       </view>
