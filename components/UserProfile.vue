@@ -32,6 +32,9 @@
         <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">View user posts</text>
       </touchable-opacity>
     </view>
+    <MaterialIcons :style="{alignSelf: 'center'}" v-if="isDarkTheme&&!hasPosts" class="icon" name="do-not-touch" :size=54 color="#AAAAAA" />
+    <MaterialIcons :style="{alignSelf: 'center'}" v-if="!isDarkTheme&&!hasPosts" class="icon" name="do-not-touch" :size=54 color="#555555" />
+    <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">This user has not posted yet!</text>
     <flat-list v-if="!isLoading&&!areSavedPosts&&isDarkTheme" :data="posts" :render-item="(post) => renderPosts(post)"
                :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshDark()">
     </flat-list>
@@ -79,7 +82,8 @@ export default {
       username: this.navigation.getParam('username'),
       profilePicture: this.navigation.getParam('profilePicture'),
       userID: this.navigation.getParam('userID'),
-      isMainUser: this.navigation.getParam('isMainUser')
+      isMainUser: this.navigation.getParam('isMainUser'),
+      hasPosts: false
     }
   },
   async created(){
@@ -119,6 +123,9 @@ export default {
     },
     renderPosts(post){
       post = post.item
+      if(post.username !== this.username)
+        return;
+      this.hasPosts = true;
       return(
           <UserPost key={post.id} userPostText={post.title} id={post.id} dimensions={post.dimensions}
                     files={post.files} username={post.username}  likes={post.likes}
