@@ -32,9 +32,9 @@
         <text :class="{ profilePictureButtonTextDark: (isDarkTheme), profilePictureButtonTextLight: (!isDarkTheme)}">View user posts</text>
       </touchable-opacity>
     </view>
-    <MaterialIcons class="noMorePostsIcon" v-if="isDarkTheme&&!hasPosts" name="post-add" :size=100 color="#505050" />
-    <MaterialIcons class="noMorePostsIcon" v-if="!isDarkTheme&&!hasPosts" name="post-add" :size=100 color="#AFAFAF" />
-    <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">This user has not posted yet!</text>
+    <MaterialIcons class="noMorePostsIcon" v-if="isDarkTheme&&!hasPosts&&!areSavedPosts" name="post-add" :size=100 color="#505050" />
+    <MaterialIcons class="noMorePostsIcon" v-if="!isDarkTheme&&!hasPosts&&!areSavedPosts" name="post-add" :size=100 color="#AFAFAF" />
+    <text v-if="!areSavedPosts" :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}">This user has not posted yet!</text>
     <flat-list v-if="!isLoading&&!areSavedPosts&&isDarkTheme" :data="posts" :render-item="(post) => renderPosts(post)"
                :keyExtractor="post => post.id.toString()" :refreshControl="renderRefreshDark()">
     </flat-list>
