@@ -60,8 +60,11 @@
         </touchable-opacity>
       </view>
       <view :style="{marginBottom: '15%', alignSelf: 'center'}">
-        <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
-                   :style="{width: 250, height:250}" />
+        <view :style="{flexDirection: 'row'}">
+          <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
+                     :style="{width: 250, height:250}" />
+          <text v-if="images.length - 1 > 0">+ {{images.length - 1}} more</text>
+        </view>
         <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" v-else>
           You haven't added any photo
         </text>
@@ -257,7 +260,7 @@ export default {
               cancelable: true,
             }
         );
-        this.$emit("redirectToLogin");
+        this.navigation.goBack();
         return;
       }
       let permissionResult = await ImagePicker.requestCameraPermissionsAsync();
@@ -280,24 +283,24 @@ export default {
         timeout: 4000,
         headers: { "Content-Type": "multipart/form-data" }
       })
-          .then(function (response){
-            if(response.status === 200){
-              newUri = response.data.url
+      .then(function (response){
+        if(response.status === 200){
+          newUri = response.data.url
+        }
+      })
+      .catch(function(){
+        Alert.alert("Oops", "Something went wrong",
+            [
+              {
+                text: "Try again",
+                style: "cancel",
+              },
+            ],
+            {
+              cancelable: true,
             }
-          })
-          .catch(function(){
-            Alert.alert("Oops", "Something went wrong",
-                [
-                  {
-                    text: "Try again",
-                    style: "cancel",
-                  },
-                ],
-                {
-                  cancelable: true,
-                }
-            );
-          });
+        );
+      });
       if(newUri === false)
         return;
       let newImage = {
@@ -374,7 +377,7 @@ export default {
           }
         }
       })
-      .catch(function(error){
+      .catch(function(){
         alert("There was an error adding your post!")
       });
       if(post){
