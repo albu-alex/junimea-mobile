@@ -63,7 +63,10 @@
         <view :style="{flexDirection: 'row'}">
           <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
                      :style="{width: 250, height:250}" />
-          <text v-if="images.length - 1 > 0">+ {{images.length - 1}} more</text>
+          <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}"
+                v-if="images.length - 1 > 0">
+            + {{images.length - 1}} more
+          </text>
         </view>
         <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}" v-else>
           You haven't added any photo
