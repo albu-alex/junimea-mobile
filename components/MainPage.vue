@@ -5,7 +5,7 @@
   <touchable-opacity v-if="!noConnection" :active-opacity="1" :on-press="dismissTagsAndSettings"
                      :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
                      :style="{opacity: viewOpacity}">
-  <animated:view :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
+  <animated:view :class="{mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
                  :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
