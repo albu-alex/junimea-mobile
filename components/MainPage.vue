@@ -13,7 +13,7 @@
     </animated:view>
     <animated:view class="settings" v-if="settingsDisplayed" :style="{opacity: tagsOpacity}" :newUsername="newUsername">
       <Settings class="settings" :isDarkTheme="isDarkTheme" @changeViewMode="changeViewMode" @Logout="Logout"
-                @updateProfile="updateProfile"/>
+                @updateProfile="updateProfile" @closeSettings="showSettings"/>
     </animated:view>
     <animated:view v-if="!profileDisplayed&&!searchDisplayed" class="posts" :style="{opacity: postsOpacity}">
       <UserProfile :isMainUser="false"
@@ -394,7 +394,7 @@ export default {
   flex-direction: row;
 }
 .settings{
-  margin-top: 80%;
+  margin-top: 70%;
   height: 50%;
   width: 100%;
   position: absolute;

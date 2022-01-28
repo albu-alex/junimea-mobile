@@ -25,6 +25,13 @@
           <text :class="{ textSecondaryDark: (isDarkTheme), textSecondaryLight: (!isDarkTheme)}">Update profile</text>
         </view>
       </touchable-opacity>
+      <touchable-opacity :on-press="closeSettings" :class="{ buttonDark: (isDarkTheme), buttonLight: (!isDarkTheme)}">
+        <view :style="{flexDirection: 'row', justifyContent: 'center'}">
+          <Ionicons v-if="isDarkTheme" name="exit" :size=24 color="#AAAAAA" />
+          <Ionicons v-else name="exit" :size=24 color="#555555" />
+          <text :class="{ textSecondaryDark: (isDarkTheme), textSecondaryLight: (!isDarkTheme)}">Close settings</text>
+        </view>
+      </touchable-opacity>
     </view>
   </animated:view>
 </template>
@@ -77,6 +84,9 @@ export default {
     },
     updateProfile(){
       this.$emit("updateProfile")
+    },
+    closeSettings(){
+      this.$emit("closeSettings")
     }
   }
 }
