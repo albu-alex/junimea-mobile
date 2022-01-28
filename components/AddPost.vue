@@ -61,11 +61,15 @@
       <view :style="{marginBottom: '15%', alignSelf: 'center'}">
         <view :style="{flexDirection: 'row'}">
           <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
-                       :showsVerticalScrollIndicator="false"
+                       :showsVerticalScrollIndicator="false" v-if="operatingSystem === 'ios'"
                        :showsHorizontalScrollIndicator="false">
                       <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
                                   :style="{width: 250, height:250}" />
           </scroll-view>
+          <touchable-opacity v-else :on-press="zoomPhoto" :active-opacity="1">
+            <Image v-if="images.length > 0" :source="{uri: String(images[0].uri)}"
+                   :style="{width: 250*zoomMultiplier, height:250*zoomMultiplier}" />
+          </touchable-opacity>
           <text :class="{ primaryTextDark: (isDarkTheme), primaryTextLight: (!isDarkTheme)}"
                 v-if="images.length - 1 > 0">
             + {{images.length - 1}} more
@@ -132,7 +136,8 @@ export default {
       photos: "",
       operatingSystem: "",
       addTags: true,
-      isDarkTheme: this.navigation.getParam('theme')
+      isDarkTheme: this.navigation.getParam('theme'),
+      zoomMultiplier: 1
     }
   },
   components:{
@@ -162,6 +167,13 @@ export default {
     this.photos = "photo"
   },
   methods:{
+    zoomPhoto(){
+      if(this.zoomMultiplier === 1) {
+        this.zoomMultiplier = 1.75;
+        return;
+      }
+      this.zoomMultiplier = 1;
+    },
     onChangePost(newText){
       this.postText = newText;
     },
