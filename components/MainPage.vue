@@ -2,7 +2,10 @@
 <!--After the Login component is done showing, the MainPage component is shown-->
 <!--Consists of: OwnStatusBar, Settings, Header, AddPostBox, UserProfile and UserPost components-->
 <template>
-  <animated:view v-if="!noConnection" :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
+  <touchable-opacity v-if="!noConnection" :active-opacity="1" :on-press="dismissTagsAndSettings"
+                     :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
+                     :style="{opacity: viewOpacity}">
+  <animated:view :class="{ mainPageDark: (isDarkTheme), mainPageLight: (!isDarkTheme)}"
                  :style="{opacity: viewOpacity}">
     <OwnStatusBar :isDarkTheme="isDarkTheme"/>
     <Header @goToProfile="goToProfile" @showTags="showTags" :isDarkTheme="isDarkTheme"
@@ -28,6 +31,7 @@
     <activity-indicator size="large" color="dimgrey" :style="{marginTop: '5%'}" />
     <FloatingActionButton @goToAddPost="goToAddPost" :isDarkTheme="isDarkTheme" />
   </animated:view>
+  </touchable-opacity>
   <animated:view v-else class="noConnection">
     <NoConnection :isDarkTheme="isDarkTheme" />
   </animated:view>
@@ -322,6 +326,12 @@ export default {
         useNativeDriver: false
       }).start(() => {
       });
+    },
+    dismissTagsAndSettings(){
+      if(this.leftSideTags)
+        this.showTags()
+      if(this.settingsDisplayed)
+        this.showSettings()
     },
     showTags(){
       this.leftSideTags = !this.leftSideTags;
