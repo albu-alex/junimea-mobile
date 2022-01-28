@@ -394,8 +394,8 @@ export default {
   flex-direction: row;
 }
 .settings{
-  margin-top: 70%;
-  height: 50%;
+  margin-top: 73%;
+  height: 55%;
   width: 100%;
   position: absolute;
   z-index: 1;

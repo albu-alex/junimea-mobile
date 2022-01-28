@@ -123,14 +123,14 @@ export default {
   border-bottom-width: 1px;
   border-top-width: 1px;
   border-color: rgba(218,218,218,60);
-  height: 33%;
+  height: 25%;
   justify-content: center;
 }
 .buttonLight{
   border-bottom-width: 1px;
   border-top-width: 1px;
   border-color: rgba(25,25,25,60);
-  height: 33%;
+  height: 25%;
   justify-content: center;
 }
 .textPrimaryDark {
