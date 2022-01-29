@@ -32,7 +32,6 @@
                             :style="{width: pageWidth, marginBottom: 10,
                             height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
           </touchable-opacity>
-        </scroll-view>
       </text>
     </view>
     <view v-if="!postHidden" class="postFeedback">
