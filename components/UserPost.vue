@@ -24,11 +24,15 @@
         </touchable-opacity>
       </view>
       <text v-if="!postHidden" v-for="(file,index) in files">
+        <scroll-view :pinchGestureEnabled="true" :maximumZoomScale="3" :minimumZoomScale="1"
+                     :showsVerticalScrollIndicator="false"
+                     :showsHorizontalScrollIndicator="false">
           <touchable-opacity :on-press="doubleTapToLike" :activeOpacity="1">
-            <PhotoView :source="{uri: String(file)}" :maximumZoomScale="3" :minimumZoomScale="1"
+            <Image :source="{uri: String(file)}"
                             :style="{width: pageWidth, marginBottom: 10,
                             height: (pageWidth/dimensions[index].width)*dimensions[index].height}" />
           </touchable-opacity>
+        </scroll-view>
       </text>
     </view>
     <view v-if="!postHidden" class="postFeedback">
@@ -105,7 +109,6 @@ import {Dimensions, Alert, AsyncStorage, Platform} from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
-import PhotoView from 'react-native-photo-view';
 const win = Dimensions.get('window');
 import axios from 'axios';
 import Comments from "./Comments";
@@ -119,8 +122,7 @@ export default {
     AntDesign,
     FontAwesome,
     Ionicons,
-    FontAwesome5,
-    PhotoView
+    FontAwesome5
   },
   data(){
     return {

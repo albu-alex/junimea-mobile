@@ -26,7 +26,6 @@
     "react-native-image-picker": "^4.0.6",
     "react-native-input-prompt": "^1.0.0",
     "react-native-paper": "^4.9.2",
-    "react-native-photo-view": "^1.5.2",
     "react-native-photo-zoom": "^1.1.4",
     "react-native-prompt": "^1.0.0",
     "react-native-reanimated": "^2.2.2",
@@ -44,6 +43,7 @@
     "@babel/core": "^7.0.0",
     "axios": "^0.21.4",
     "nativescript-imagepicker": "^7.1.0",
+    "react-native-photo-view": "^1.5.2",
     "react-native-svg": "^12.1.1",
     "react-native-web-swiper": "^2.2.1",
     "vue-native-scripts": "^0.3.1"
