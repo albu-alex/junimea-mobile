@@ -28,7 +28,7 @@ const StackNavigator = createStackNavigator(
       initialRouteName: 'Login',
       headerMode: 'none',
       navigationOptions: {
-        headerVisible: false,
+        headerVisible: false
       }
     }
 );
