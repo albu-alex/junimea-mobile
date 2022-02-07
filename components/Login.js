@@ -1,12 +1,18 @@
+//npm imports
 import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, Image,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, Dimensions } from 'react-native';
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { styles } from "../styles/LoginStyles";
-import { verifyLogin } from "../methods/Login/verifyLogin";
 
-export default function Login(){
+//css stylesheet import
+import { styles } from "../styles/LoginStyles";
+
+//custom components import
+import { verifyLogin } from "../methods/Login/verifyLogin";
+import { loginAsGuest } from "../methods/Login/loginAsGuest";
+
+export default function Login({ navigation }){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     return(
@@ -30,7 +36,7 @@ export default function Login(){
                         <TouchableOpacity activeOpacity={0.6} onPress={() => verifyLogin(username, password)} style={styles.loginButton}>
                             <Text style={styles.buttonText}>Login</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.6} onPress={() => null} style={styles.loginButton}>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => loginAsGuest(navigation)} style={styles.loginButton}>
                             <Text style={styles.buttonText}>Login as guest</Text>
                         </TouchableOpacity>
                         <Text style={styles.secondaryText}>Or you can register</Text>
