@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, Image,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, Dimensions } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {styles} from "../styles/LoginStyles"
+import { styles } from "../styles/LoginStyles";
+import { verifyLogin } from "../methods/Login/verifyLogin";
 
 export default function Login(){
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -17,13 +20,14 @@ export default function Login(){
                         <View style={{flexDirection: 'row'}}>
                             <Icon style={styles.inputIcon} name="user" size={28} color={"#070700"} />
                             <TextInput autoCorrect={false} autoComplete={'email'} style={styles.textInput} placeholder={"Username or Email"}
-                                       placeholderTextColor={'#070000'} />
+                                       placeholderTextColor={'#070000'} onChangeText={newUsername => setUsername(newUsername)} defaultValue={username} />
                         </View>
                         <View style={{flexDirection: 'row'}}>
                             <Icon style={styles.inputIcon} name="lock" size={28} color={"#070700"} />
-                            <TextInput autoCorrect={false} secureTextEntry={true} style={styles.textInput} placeholder={"Password"} placeholderTextColor={'#070000'} />
+                            <TextInput autoCorrect={false} secureTextEntry={true} style={styles.textInput} placeholder={"Password"} placeholderTextColor={'#070000'}
+                                       onChangeText={newPassword => setPassword(newPassword)} defaultValue={password}/>
                         </View>
-                        <TouchableOpacity activeOpacity={0.6} onPress={() => null} style={styles.loginButton}>
+                        <TouchableOpacity activeOpacity={0.6} onPress={() => verifyLogin(username, password)} style={styles.loginButton}>
                             <Text style={styles.buttonText}>Login</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.6} onPress={() => null} style={styles.loginButton}>
