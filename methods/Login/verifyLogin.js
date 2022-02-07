@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Alert } from 'react-native';
 
-export async function verifyLogin(username, password){
+export async function verifyLogin(username, password, navigation){
     let loggedIn = false;
     let shownPassword = false;
     let userToken;
@@ -56,7 +56,6 @@ export async function verifyLogin(username, password){
         }
     });
     if(loggedIn) {
-        return true;
+        navigation.navigate("MainPage");
     }
-    return false;
 }
