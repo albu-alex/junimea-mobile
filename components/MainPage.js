@@ -58,7 +58,7 @@ export default function MainPage({ navigation }){
                     <FlatList
                         data={DATA}
                         renderItem={renderItem}
-                        // keyExtractor={item => item.id}
+                        keyExtractor={item => item.id}
                         refreshControl={
                             <RefreshControl
                                 refreshing={refreshing}

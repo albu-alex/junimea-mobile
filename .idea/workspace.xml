@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Implement getSelf in MainPage">
-      <change afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add UserPost component to MainPage + UserPost header complete + UserPost styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,7 @@
       <workItem from="1642414841992" duration="49000" />
       <workItem from="1644144618292" duration="917000" />
       <workItem from="1644225801557" duration="12806000" />
-      <workItem from="1644316344588" duration="9556000" />
+      <workItem from="1644316344588" duration="12738000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -242,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644322749878</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add UserPost component to MainPage + UserPost header complete + UserPost styling">
+      <created>1644329054817</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1644329054817</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +286,8 @@
     <MESSAGE value="Add Home icon to navigation tab" />
     <MESSAGE value="Add MainPageStyles + add FlatList support" />
     <MESSAGE value="Implement getSelf in MainPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement getSelf in MainPage" />
+    <MESSAGE value="Add UserPost component to MainPage + UserPost header complete + UserPost styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add UserPost component to MainPage + UserPost header complete + UserPost styling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
