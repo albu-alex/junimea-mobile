@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 //css stylesheet import
 import { styles } from "../styles/LoginStyles";
 
-//custom components import
+//custom methods import
 import { verifyLogin } from "../methods/Login/verifyLogin";
 import { loginAsGuest } from "../methods/Login/loginAsGuest";
 import { verifyRegister } from "../methods/Login/verifyRegister";

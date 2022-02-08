@@ -7,6 +7,9 @@ import { StatusBar } from 'expo-status-bar';
 //css stylesheet import
 import { styles } from "../styles/MainPageStyles";
 
+//custom methods import
+import { getSelf } from "../methods/MainPage/getSelf"
+
 const DATA = [
     {
         id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -30,7 +33,10 @@ const Item = ({ title }) => (
 
 
 export default function MainPage({ navigation }){
-    const [refreshing, setRefreshing] = useState(false);
+    const [profilePicture, setProfilePicture] = useState('');
+    const [username, setUsername] = useState('');
+    const [userID, setUserID] = useState('');
+    const {refreshing, setRefreshing} = useState(false);
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         wait(500).then(() => setRefreshing(false));
@@ -38,6 +44,12 @@ export default function MainPage({ navigation }){
     const renderItem = ({ item }) => (
         <Item title={item.title} />
     );
+    useEffect(async () => {
+        const [newProfilePicture, newUsermane, newUserID] = await getSelf();
+        setProfilePicture(newProfilePicture)
+        setUsername(newUsermane)
+        setUserID(newUserID)
+    });
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
