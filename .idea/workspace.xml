@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/methods/Login/verifyRegister.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/Login/loginAsGuest.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/Login/loginAsGuest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/methods/Login/verifyLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/Login/verifyLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/Login/verifyRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/Login/verifyRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +41,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
@@ -102,6 +108,7 @@
       <workItem from="1642414841992" duration="49000" />
       <workItem from="1644144618292" duration="917000" />
       <workItem from="1644225801557" duration="12806000" />
+      <workItem from="1644316344588" duration="2183000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>

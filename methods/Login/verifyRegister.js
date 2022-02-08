@@ -47,5 +47,5 @@ export async function verifyRegister(email ,username, password){
             );
     });
     if(isRegistered)
-        this.navigation.navigate('MainPage')
+        this.navigation.navigate('Main')
 }

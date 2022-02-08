@@ -56,6 +56,6 @@ export async function verifyLogin(username, password, navigation){
         }
     });
     if(loggedIn) {
-        navigation.navigate("MainPage");
+        navigation.navigate("Main");
     }
 }
