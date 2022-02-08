@@ -1,5 +1,5 @@
 //npm imports
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, Image,
+import { Text, View, KeyboardAvoidingView, TouchableOpacity, Image,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, Dimensions } from 'react-native';
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';

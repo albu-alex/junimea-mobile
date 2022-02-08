@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add MainPage + bottom/top tab navigation to app">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add Home icon to navigation tab">
+      <change afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/LoginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/LoginStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -102,7 +106,7 @@
       <workItem from="1642414841992" duration="49000" />
       <workItem from="1644144618292" duration="917000" />
       <workItem from="1644225801557" duration="12806000" />
-      <workItem from="1644316344588" duration="2882000" />
+      <workItem from="1644316344588" duration="4410000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -216,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644318851615</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add Home icon to navigation tab">
+      <created>1644319368800</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644319368800</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +261,8 @@
     <MESSAGE value="Add verifyLogin function to Login component" />
     <MESSAGE value="Add loginAsGuest method" />
     <MESSAGE value="Add MainPage + bottom/top tab navigation to app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add MainPage + bottom/top tab navigation to app" />
+    <MESSAGE value="Add Home icon to navigation tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Home icon to navigation tab" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
