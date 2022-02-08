@@ -8,7 +8,8 @@ import { StatusBar } from 'expo-status-bar';
 import { styles } from "../styles/MainPageStyles";
 
 //custom methods import
-import { getSelf } from "../methods/MainPage/getSelf"
+import { getSelf } from "../methods/MainPage/getSelf";
+import UserPost from "./UserPost"
 
 const DATA = [
     {
@@ -25,24 +26,21 @@ const DATA = [
     },
 ];
 
-const Item = ({ title }) => (
-    <View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
-    </View>
-);
-
+const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export default function MainPage({ navigation }){
     const [profilePicture, setProfilePicture] = useState('');
     const [username, setUsername] = useState('');
     const [userID, setUserID] = useState('');
-    const {refreshing, setRefreshing} = useState(false);
+    const [refreshing, setRefreshing] = useState(false);
     const onRefresh = useCallback(() => {
         setRefreshing(true);
-        wait(500).then(() => setRefreshing(false));
+        sleep(500).then(() => setRefreshing(false));
     }, []);
     const renderItem = ({ item }) => (
-        <Item title={item.title} />
+        <UserPost />
     );
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -60,7 +58,7 @@ export default function MainPage({ navigation }){
                     <FlatList
                         data={DATA}
                         renderItem={renderItem}
-                        keyExtractor={item => item.id}
+                        // keyExtractor={item => item.id}
                         refreshControl={
                             <RefreshControl
                                 refreshing={refreshing}
