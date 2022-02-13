@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Style &amp; add post footer">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add basic pinch to zoom support" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +103,7 @@
       <workItem from="1644144618292" duration="917000" />
       <workItem from="1644225801557" duration="12806000" />
       <workItem from="1644316344588" duration="12774000" />
-      <workItem from="1644785341731" duration="2285000" />
+      <workItem from="1644785341731" duration="2727000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -257,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644332259775</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add basic pinch to zoom support">
+      <created>1644788042686</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1644788042686</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +298,8 @@
     <MESSAGE value="Implement getSelf in MainPage" />
     <MESSAGE value="Add UserPost component to MainPage + UserPost header complete + UserPost styling" />
     <MESSAGE value="Style &amp; add post footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Style &amp; add post footer" />
+    <MESSAGE value="Add basic pinch to zoom support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic pinch to zoom support" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -11,7 +11,7 @@ import { styles } from "../styles/UserPostStyles";
 export default function UserPost(){
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
-    const handlePinch = Animated.event([{nativeEvent: {scale}}]);
+    const handlePinch = Animated.event([{nativeEvent: {scale}}], {useNativeDriver: true});
     const handlePan = Animated.event([
         {
             nativeEvent: {
