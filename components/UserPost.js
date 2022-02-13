@@ -1,13 +1,28 @@
 //npm import
 import { Text, View, TouchableOpacity, Image, TextInput, ScrollView,
-    Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import React from 'react';
+    Platform, TouchableWithoutFeedback, Keyboard, Animated } from 'react-native';
+import React, {useRef} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
 
 //css stylesheet import
 import { styles } from "../styles/UserPostStyles";
 
 export default function UserPost(){
+    const scale = useRef(new Animated.Value(1)).current;
+    const translateX = useRef(new Animated.Value(0)).current;
+    const handlePinch = Animated.event([{nativeEvent: {scale}}]);
+    const handlePan = Animated.event([
+        {
+            nativeEvent: {
+                translationX: translateX
+            }
+        }
+    ],
+        {
+            useNativeDriver: true
+        }
+    )
     return(
         <View style={styles.container}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
@@ -29,14 +44,14 @@ export default function UserPost(){
                         <Text>tag</Text>
                     </TouchableOpacity>
                 </View>
-                <ScrollView pinchGestureEnabled={true} maximumZoomScale={3} minimumZoomScale={0.5}
-                            showsVerticalScrollIndicator={false}
-                            showHorizontalScrollIndicator={false}>
-                    <TouchableOpacity onPress={() => null} activeOpacity={1}>
-                        <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
-                               style={{width: 300, height: 300, marginBottom: 10}} />
-                    </TouchableOpacity>
-                </ScrollView>
+                <PanGestureHandler onGestureEvent={handlePan}>
+                <Animated.View>
+                    <PinchGestureHandler onGestureEvent={handlePinch}>
+                            <Animated.Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
+                                   style={{width: 300, height: 300, marginBottom: 10, transform: [{scale}, {translateX}]}} />
+                    </PinchGestureHandler>
+                </Animated.View>
+                </PanGestureHandler>
             </View>
             <View style={styles.feedback}>
                 <TouchableOpacity onPress={() => null}>
