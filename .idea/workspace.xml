@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add postLoading conditional rendering + styling">
-      <change afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/SearchStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-    </list>
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Init Search component &amp; Add Search to Navigation API" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +115,7 @@
       <workItem from="1644225801557" duration="12806000" />
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
-      <workItem from="1644832887141" duration="7419000" />
+      <workItem from="1644832887141" duration="7723000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -319,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644850923459</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Init Search component &amp; Add Search to Navigation API">
+      <created>1644852541431</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1644852541431</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +338,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Temporary settings placement" />
     <MESSAGE value="Remove &quot;hey, guest&quot; text from Settings" />
     <MESSAGE value="Align settings buttons" />
     <MESSAGE value="Add custom theme text" />
@@ -362,7 +362,8 @@
     <MESSAGE value="TabBarNavigation styling" />
     <MESSAGE value="Add togglePost function" />
     <MESSAGE value="Add postLoading conditional rendering + styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add postLoading conditional rendering + styling" />
+    <MESSAGE value="Init Search component &amp; Add Search to Navigation API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init Search component &amp; Add Search to Navigation API" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
