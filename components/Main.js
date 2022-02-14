@@ -17,6 +17,9 @@ export default function Main() {
             <Tab.Screen name="MainPage" component={MainPage}
                         options={{
                             tabBarLabel: 'Home',
+                            tabBarActiveTintColor: "#555555",
+                            tabBarActiveBackgroundColor: '#F4F4FF',
+                            tabBarStyle: {backgroundColor: 'ghostwhite'},
                             tabBarIcon: () => (
                                 <Icon name="home" color={'black'} size={26} />
                             ),
