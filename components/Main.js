@@ -13,13 +13,12 @@ const Tab = (Platform.OS === 'ios') ? createBottomTabNavigator() : createMateria
 
 export default function Main() {
     return (
-        <Tab.Navigator initialRouteName="MainPage" screenOptions={{headerShown: false}}>
+        <Tab.Navigator initialRouteName="MainPage" screenOptions={{headerShown: false, tabBarStyle: {backgroundColor: 'ghostwhite'}}}>
             <Tab.Screen name="MainPage" component={MainPage}
                         options={{
                             tabBarLabel: 'Home',
                             tabBarActiveTintColor: "#555555",
                             tabBarActiveBackgroundColor: '#F4F4FF',
-                            tabBarStyle: {backgroundColor: 'ghostwhite'},
                             tabBarIcon: () => (
                                 <Icon name="home" color={'black'} size={26} />
                             ),

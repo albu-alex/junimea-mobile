@@ -8,8 +8,17 @@ import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-han
 //css stylesheet import
 import { styles } from "../styles/UserPostStyles";
 
+//custom methods import
+import { reportBug } from "../methods/UserPost/reportBug";
+
 export default function UserPost(){
     const [showComments, setshowComments] = useState(false);
+    const [postHidden, setPostHidden] = useState(false);
+    const togglePost = async () => {
+        let toggle = await reportBug(postHidden);
+        // alert(toggle)
+        await setPostHidden(toggle);
+    }
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
     const handlePinch = Animated.event([{nativeEvent: {scale}}], {useNativeDriver: true});
@@ -36,7 +45,7 @@ export default function UserPost(){
             <View>
                 <View style={styles.contentHeader}>
                     <Text style={styles.primaryText}>ALE ALE ALE OOOO GALERIA DINAMO</Text>
-                    <TouchableOpacity style={{marginRight: '2%'}} onPress={() => null}>
+                    <TouchableOpacity style={{marginRight: '2%'}} onPress={togglePost}>
                         <Icon name='ellipsis-h' size={20} color={'#555555'}></Icon>
                     </TouchableOpacity>
                 </View>
