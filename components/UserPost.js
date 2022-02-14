@@ -1,7 +1,7 @@
 //npm import
 import { Text, View, TouchableOpacity, Image, TextInput, ScrollView,
     Platform, TouchableWithoutFeedback, Keyboard, Animated, Dimensions } from 'react-native';
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
 
@@ -9,6 +9,7 @@ import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-han
 import { styles } from "../styles/UserPostStyles";
 
 export default function UserPost(){
+    const [showComments, setshowComments] = useState(false);
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
     const handlePinch = Animated.event([{nativeEvent: {scale}}], {useNativeDriver: true});
@@ -62,13 +63,30 @@ export default function UserPost(){
                     <Icon style={styles.logo} name='thumbs-down' size={24} color={'#555555'} />
                 </TouchableOpacity>
                 <Text style={styles.likeCount}>0</Text>
-                <TouchableOpacity onPress={() => null}>
+                <TouchableOpacity onPress={() => setshowComments(!showComments)}>
                     <Icon style={styles.logo} name='comment' size={24} color={'#555555'} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => null}>
                     <Icon style={styles.logo} name='share' size={24} color={'#555555'} />
                 </TouchableOpacity>
             </View>
+            {showComments &&
+                <View style={styles.commentSection}>
+                    {/*this is where comments are supposed to show*/}
+                    <Text>Comentariu</Text>
+                    <View style={styles.addNewComment}>
+                        <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}></Icon>
+                        <TextInput style={styles.textInput} placeholderTextColor={"#AAAAAA"}
+                                   multiline={true} placeholder={'Add new comment...'}></TextInput>
+                        <TouchableOpacity onPress={() => null} style={styles.addNewCommentButton}>
+                            <Icon name='image' size={18} color={"#555555"} />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => null} style={styles.addNewCommentButton}>
+                            <Text>Send</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            }
         </View>
     )
 }

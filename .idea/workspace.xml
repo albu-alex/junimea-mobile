@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Current app works in production mode">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Minor UserPost styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <workItem from="1644225801557" duration="12806000" />
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
-      <workItem from="1644832887141" duration="328000" />
+      <workItem from="1644832887141" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644788372740</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Minor UserPost styling">
+      <created>1644833471141</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1644833471141</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +319,8 @@
     <MESSAGE value="Style &amp; add post footer" />
     <MESSAGE value="Add basic pinch to zoom support" />
     <MESSAGE value="Current app works in production mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Current app works in production mode" />
+    <MESSAGE value="Minor UserPost styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor UserPost styling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

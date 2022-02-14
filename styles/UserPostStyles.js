@@ -54,6 +54,30 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         marginLeft: '7%',
         marginRight: '15%'
+    },
+    inputIcon:{
+        zIndex: 2,
+        marginLeft: '6%',
+        marginTop: '3%'
+    },
+    textInput:{
+        backgroundColor: '#DADADA',
+        width: '70%',
+        height: 25,
+        marginTop: '2%',
+        marginLeft: '-6%',
+        color: "#969696",
+        borderRadius: 15,
+        paddingHorizontal: 25,
+    },
+    addNewComment:{
+        flexDirection: 'row',
+        display: 'flex',
+        marginBottom: '2%'
+    },
+    addNewCommentButton:{
+        marginTop: '3%',
+        marginLeft: '5%'
     }
 });
 
