@@ -1,6 +1,6 @@
 //npm import
 import { Text, View, TouchableOpacity, Image, TextInput, ScrollView,
-    Platform, TouchableWithoutFeedback, Keyboard, Animated } from 'react-native';
+    Platform, TouchableWithoutFeedback, Keyboard, Animated, Dimensions } from 'react-native';
 import React, {useRef} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
@@ -48,7 +48,8 @@ export default function UserPost(){
                 <Animated.View>
                     <PinchGestureHandler onGestureEvent={handlePinch}>
                             <Animated.Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
-                                   style={{width: 300, height: 300, marginBottom: 10, transform: [{scale}, {translateX}]}} />
+                                   style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
+                                       marginBottom: 10, transform: [{scale}, {translateX}]}} />
                     </PinchGestureHandler>
                 </Animated.View>
                 </PanGestureHandler>

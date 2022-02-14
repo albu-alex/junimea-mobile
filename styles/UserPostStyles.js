@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     tags:{
         flexDirection: 'row',
         flexWrap: 'wrap',
-        flex: 1
+        flex: 1,
+        marginBottom: '3%'
     },
     feedback:{
         alignSelf: 'center',
