@@ -18,6 +18,7 @@ export default function UserPost(){
     const [postDetails, setPostDetails] = useState({});
     const togglePost = async () => {
         let toggle = await reportBug(postHidden);
+        // minor bug here
         // alert(toggle)
         await setPostHidden(toggle);
     }
@@ -88,7 +89,7 @@ export default function UserPost(){
                 <TouchableOpacity onPress={() => null}>
                     <Icon style={styles.logo} name='thumbs-down' size={24} color={'#555555'} />
                 </TouchableOpacity>
-                <Text style={styles.likeCount}>0</Text>
+                <Text style={styles.likeCount}>{postDetails.likes}</Text>
                 <TouchableOpacity onPress={() => setshowComments(!showComments)}>
                     <Icon style={styles.logo} name='comment' size={24} color={'#555555'} />
                 </TouchableOpacity>

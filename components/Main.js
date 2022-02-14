@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 //custom component import
 import MainPage from "./MainPage";
+import Search from "./Search";
 
 const Tab = (Platform.OS === 'ios') ? createBottomTabNavigator() : createMaterialTopTabNavigator();
 
@@ -18,9 +19,19 @@ export default function Main() {
                         options={{
                             tabBarLabel: 'Home',
                             tabBarActiveTintColor: "#555555",
-                            tabBarActiveBackgroundColor: '#F4F4FF',
+                            tabBarActiveBackgroundColor: '#F0F0FF',
                             tabBarIcon: () => (
                                 <Icon name="home" color={'black'} size={26} />
+                            ),
+                        }}
+            />
+            <Tab.Screen name="Search" component={Search}
+                        options={{
+                            tabBarLabel: 'Search',
+                            tabBarActiveTintColor: "#555555",
+                            tabBarActiveBackgroundColor: '#F0F0FF',
+                            tabBarIcon: () => (
+                                <Icon name="search" color={'black'} size={26} />
                             ),
                         }}
             />

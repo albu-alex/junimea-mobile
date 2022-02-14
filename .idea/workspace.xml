@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add togglePost function">
-      <change afterPath="$PROJECT_DIR$/methods/UserPost/loadPost.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add postLoading conditional rendering + styling">
+      <change afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/SearchStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -67,6 +70,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -117,7 +121,7 @@
       <workItem from="1644225801557" duration="12806000" />
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
-      <workItem from="1644832887141" duration="5893000" />
+      <workItem from="1644832887141" duration="7419000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -308,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644849405551</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add postLoading conditional rendering + styling">
+      <created>1644850923459</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1644850923459</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +337,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Resize light mode juni logo" />
     <MESSAGE value="Temporary settings placement" />
     <MESSAGE value="Remove &quot;hey, guest&quot; text from Settings" />
     <MESSAGE value="Align settings buttons" />
@@ -351,7 +361,8 @@
     <MESSAGE value="Add new comment section" />
     <MESSAGE value="TabBarNavigation styling" />
     <MESSAGE value="Add togglePost function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add togglePost function" />
+    <MESSAGE value="Add postLoading conditional rendering + styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add postLoading conditional rendering + styling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
