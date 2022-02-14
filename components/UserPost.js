@@ -1,7 +1,7 @@
 //npm import
-import { Text, View, TouchableOpacity, Image, TextInput, ScrollView,
+import { Text, View, TouchableOpacity, Image, TextInput, ScrollView, ActivityIndicator,
     Platform, TouchableWithoutFeedback, Keyboard, Animated, Dimensions } from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
 
@@ -10,10 +10,12 @@ import { styles } from "../styles/UserPostStyles";
 
 //custom methods import
 import { reportBug } from "../methods/UserPost/reportBug";
+import { loadPost } from "../methods/UserPost/loadPost";
 
 export default function UserPost(){
     const [showComments, setshowComments] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
+    const [postDetails, setPostDetails] = useState({});
     const togglePost = async () => {
         let toggle = await reportBug(postHidden);
         // alert(toggle)
@@ -33,18 +35,28 @@ export default function UserPost(){
             useNativeDriver: true
         }
     )
+    useEffect(async () => {
+        let details = await loadPost(200);
+        setPostDetails(details);
+    });
     return(
         <View style={styles.container}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
                 <View style={styles.postHeader}>
-                    <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
-                           style={{width: 25, height: 25, borderRadius: 50}} />
-                    <Text style={styles.headerText}>test user</Text>
+                    {!postDetails.profilePicUrl &&
+                        <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
+                        style={{width: 25, height: 25, borderRadius: 50}} />
+                    }
+                    {postDetails.profilePicUrl &&
+                        <Image source={{uri: postDetails.profilePicUrl}}
+                               style={{width: 25, height: 25, borderRadius: 50}} />
+                    }
+                    <Text style={styles.headerText}>{postDetails.userName}</Text>
                 </View>
             </TouchableOpacity>
             <View>
                 <View style={styles.contentHeader}>
-                    <Text style={styles.primaryText}>ALE ALE ALE OOOO GALERIA DINAMO</Text>
+                    <Text style={styles.primaryText}>{postDetails.title}</Text>
                     <TouchableOpacity style={{marginRight: '2%'}} onPress={togglePost}>
                         <Icon name='ellipsis-h' size={20} color={'#555555'}></Icon>
                     </TouchableOpacity>
@@ -54,15 +66,20 @@ export default function UserPost(){
                         <Text>tag</Text>
                     </TouchableOpacity>
                 </View>
-                <PanGestureHandler onGestureEvent={handlePan}>
-                <Animated.View>
-                    <PinchGestureHandler onGestureEvent={handlePinch}>
-                            <Animated.Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
-                                   style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
-                                       marginBottom: 10, transform: [{scale}, {translateX}]}} />
-                    </PinchGestureHandler>
-                </Animated.View>
-                </PanGestureHandler>
+                {!postDetails.files &&
+                    <ActivityIndicator size='large' color='#070700' />
+                }
+                {postDetails.files && postDetails.files.map((object, i) =>
+                    <PanGestureHandler onGestureEvent={handlePan}>
+                    <Animated.View>
+                        <PinchGestureHandler onGestureEvent={handlePinch}>
+                            <Animated.Image source={{uri: object}}
+                                            style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
+                                            marginBottom: 10, transform: [{scale}, {translateX}]}} />
+                        </PinchGestureHandler>
+                    </Animated.View>
+                    </PanGestureHandler>
+                )}
             </View>
             <View style={styles.feedback}>
                 <TouchableOpacity onPress={() => null}>
