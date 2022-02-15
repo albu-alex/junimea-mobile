@@ -21,7 +21,7 @@ export default function Search({ navigation }){
                         <TextInput autoCorrect={false} placeholderTextColor={'#070700'} placeholder={'Search Junimea'}
                                    onChangeText={newSearchText => setSearchText(newSearchText)}
                                    defaultValue={searchText} style={styles.textInput} />
-                        <TouchableOpacity style={{borderRadius: 10}} onPress={() => null}>
+                        <TouchableOpacity style={{borderRadius: 10}} onPress={() => navigation.navigate("MainPage")}>
                             <Text style={styles.buttonText}>Cancel</Text>
                         </TouchableOpacity>
                     </View>

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Init Search component &amp; Add Search to Navigation API">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Remove redundant imports">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/SearchStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SearchStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +46,7 @@
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
@@ -122,7 +121,7 @@
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
       <workItem from="1644832887141" duration="7767000" />
-      <workItem from="1644911596112" duration="2447000" />
+      <workItem from="1644911596112" duration="3351000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -334,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644852646920</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Finish Search component styling">
+      <created>1644914082095</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1644914082095</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Remove redundant imports">
+      <created>1644914193092</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1644914193092</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,8 +365,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove &quot;hey, guest&quot; text from Settings" />
-    <MESSAGE value="Align settings buttons" />
     <MESSAGE value="Add custom theme text" />
     <MESSAGE value="Style button text" />
     <MESSAGE value="Align settings tab" />
@@ -377,7 +388,9 @@
     <MESSAGE value="Add togglePost function" />
     <MESSAGE value="Add postLoading conditional rendering + styling" />
     <MESSAGE value="Init Search component &amp; Add Search to Navigation API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init Search component &amp; Add Search to Navigation API" />
+    <MESSAGE value="Finish Search component styling" />
+    <MESSAGE value="Remove redundant imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove redundant imports" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
