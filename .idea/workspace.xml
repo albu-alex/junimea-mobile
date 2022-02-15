@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Init Search component &amp; Add Search to Navigation API" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Init Search component &amp; Add Search to Navigation API">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/SearchStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SearchStyles.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,9 +48,11 @@
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
   </component>
@@ -115,7 +121,8 @@
       <workItem from="1644225801557" duration="12806000" />
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
-      <workItem from="1644832887141" duration="7723000" />
+      <workItem from="1644832887141" duration="7767000" />
+      <workItem from="1644911596112" duration="2447000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -320,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644852541431</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Init Search component &amp; Add Search to Navigation API">
+      <created>1644852646920</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1644852646920</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
