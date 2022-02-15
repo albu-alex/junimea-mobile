@@ -1,6 +1,6 @@
 //npm import
-import { Text, View, TouchableOpacity, Image, TextInput, ScrollView, ActivityIndicator,
-    Platform, TouchableWithoutFeedback, Keyboard, Animated, Dimensions } from 'react-native';
+import { Text, View, TouchableOpacity, Image, TextInput,
+    ActivityIndicator, Animated, Dimensions } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';

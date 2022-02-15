@@ -1,7 +1,7 @@
 //npm import
 import { Text, View, TouchableOpacity, ScrollView,
-    TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
-import React, {useState, useCallback, useEffect} from 'react';
+    TextInput, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
