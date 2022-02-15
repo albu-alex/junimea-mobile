@@ -102,9 +102,9 @@ export default function UserPost(){
                     {/*this is where comments are supposed to show*/}
                     <Text>Comentariu</Text>
                     <View style={styles.addNewComment}>
-                        <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}></Icon>
+                        <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}/>
                         <TextInput style={styles.textInput} placeholderTextColor={"#AAAAAA"}
-                                   multiline={true} placeholder={'Add new comment...'}></TextInput>
+                                    multiline={true} placeholder={'Add new comment...'}/>
                         <TouchableOpacity onPress={() => null} style={styles.addNewCommentButton}>
                             <Icon name='image' size={18} color={"#555555"} />
                         </TouchableOpacity>

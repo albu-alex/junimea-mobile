@@ -73,7 +73,13 @@ const styles = StyleSheet.create({
     addNewComment:{
         flexDirection: 'row',
         display: 'flex',
-        marginBottom: '2%'
+        marginBottom: '2%',
+        borderTopWidth: 0.8,
+        borderTopColor: "#070700",
+    },
+    commentSection:{
+        borderTopWidth: 0.8,
+        borderTopColor: "#070700"
     },
     addNewCommentButton:{
         marginTop: '3%',
