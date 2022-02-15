@@ -37,7 +37,7 @@ export default function UserPost(){
         }
     )
     useEffect(async () => {
-        let details = await loadPost(200);
+        let details = await loadPost(1539);
         setPostDetails(details);
     });
     return(
@@ -63,9 +63,12 @@ export default function UserPost(){
                     </TouchableOpacity>
                 </View>
                 <View style={styles.tags}>
-                    <TouchableOpacity activeOpacity={0.6}>
-                        <Text>tag</Text>
-                    </TouchableOpacity>
+                    {postDetails.tags &&postDetails.tags.map((object, i) =>
+                        <TouchableOpacity style={styles.tagBackground} activeOpacity={0.6}>
+                                <Text style={styles.tag}>{object}</Text>
+                        </TouchableOpacity>
+                        )
+                    }
                 </View>
                 {!postDetails.files &&
                     <ActivityIndicator size='large' color='#070700' />

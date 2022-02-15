@@ -27,7 +27,7 @@ export default function Search({ navigation }){
                     </View>
                     <Text style={styles.primaryText}>Trending</Text>
                     <ScrollView>
-                        <TouchableOpacity onPress={() => null}>
+                        <TouchableOpacity onPress={() => null} activeOpacity={0.8}>
                             <Text style={styles.tags}>Steaua</Text>
                         </TouchableOpacity>
                         <Text style={styles.tags}>Dinamo</Text>

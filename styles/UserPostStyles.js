@@ -38,6 +38,22 @@ const styles = StyleSheet.create({
         flex: 1,
         marginBottom: '3%'
     },
+    tag:{
+      color: "#EAEAEA",
+      fontSize: 12,
+      fontWeight: "400",
+      alignSelf: "center"
+    },
+    tagBackground:{
+      marginLeft: "2%",
+      flexBasis: "33%",
+      backgroundColor: "#555555",
+      borderWidth: 1,
+      borderColor: "#EAEAEA",
+      borderRadius: 7,
+      width: 100,
+      marginBottom: 10
+    },
     feedback:{
         alignSelf: 'center',
         flexDirection: 'row',

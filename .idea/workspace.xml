@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add cancel button functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add border to comment section">
+      <change beforePath="$PROJECT_DIR$/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
     </list>
@@ -122,7 +122,7 @@
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
       <workItem from="1644832887141" duration="7767000" />
-      <workItem from="1644911596112" duration="4009000" />
+      <workItem from="1644911596112" duration="4878000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -355,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644914985854</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Add border to comment section">
+      <created>1644915682439</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1644915682439</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +380,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Style button text" />
     <MESSAGE value="Align settings tab" />
     <MESSAGE value="Basic settings styling" />
     <MESSAGE value="Create basic Stack Navigator &amp; Login component" />
@@ -398,7 +404,8 @@
     <MESSAGE value="Finish Search component styling" />
     <MESSAGE value="Remove redundant imports" />
     <MESSAGE value="Add cancel button functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add cancel button functionality" />
+    <MESSAGE value="Add border to comment section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add border to comment section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
