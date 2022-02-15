@@ -100,6 +100,13 @@ const styles = StyleSheet.create({
     addNewCommentButton:{
         marginTop: '3%',
         marginLeft: '5%'
+    },
+    modal:{
+        display: 'flex',
+        flex: 1,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignContent: 'center'
     }
 });
 

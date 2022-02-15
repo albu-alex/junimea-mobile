@@ -1,6 +1,6 @@
 //npm import
 import { Text, View, TouchableOpacity, Image, TextInput,
-    ActivityIndicator, Animated, Dimensions } from 'react-native';
+    ActivityIndicator, Animated, Dimensions, Modal } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
@@ -14,6 +14,7 @@ import { loadPost } from "../methods/UserPost/loadPost";
 
 export default function UserPost(){
     const [showComments, setshowComments] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
     const [postDetails, setPostDetails] = useState({});
     const togglePost = async () => {
@@ -73,16 +74,25 @@ export default function UserPost(){
                 {!postDetails.files &&
                     <ActivityIndicator size='large' color='#070700' />
                 }
-                {postDetails.files && postDetails.files.map((object, i) =>
-                    <PanGestureHandler onGestureEvent={handlePan}>
-                    <Animated.View>
-                        <PinchGestureHandler onGestureEvent={handlePinch}>
-                            <Animated.Image source={{uri: object}}
-                                            style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
+                {postDetails.files && !showModal && postDetails.files.map((object, i) =>
+                    <TouchableOpacity activeOpacity={0.6} onPress={() => setShowModal(true)}>
+                        <Animated.Image source={{uri: object}}
+                                        style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
                                             marginBottom: 10, transform: [{scale}, {translateX}]}} />
-                        </PinchGestureHandler>
-                    </Animated.View>
-                    </PanGestureHandler>
+                    </TouchableOpacity>
+                )}
+                {postDetails.files && showModal && postDetails.files.map((object, i) =>
+                    <Modal animationType={'slide'} onRequestClose={() => setShowModal(false)} transparent={false}>
+                        <PanGestureHandler onGestureEvent={handlePan}>
+                        <Animated.View style={styles.modal}>
+                            <PinchGestureHandler onGestureEvent={handlePinch}>
+                                <Animated.Image source={{uri: object}}
+                                                style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
+                                                marginBottom: 10, transform: [{scale}, {translateX}]}} />
+                            </PinchGestureHandler>
+                        </Animated.View>
+                        </PanGestureHandler>
+                    </Modal>
                 )}
             </View>
             <View style={styles.feedback}>
