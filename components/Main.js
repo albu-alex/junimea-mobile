@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 //custom component import
 import MainPage from "./MainPage";
 import Search from "./Search";
+import UserProfile from "./UserProfile"
 
 const Tab = (Platform.OS === 'ios') ? createBottomTabNavigator() : createMaterialTopTabNavigator();
 
@@ -32,6 +33,16 @@ export default function Main() {
                             tabBarActiveBackgroundColor: '#F0F0FF',
                             tabBarIcon: () => (
                                 <Icon name="search" color={'black'} size={26} />
+                            ),
+                        }}
+            />
+            <Tab.Screen name="UserProfile" component={UserProfile}
+                        options={{
+                            tabBarLabel: 'Profile',
+                            tabBarActiveTintColor: "#555555",
+                            tabBarActiveBackgroundColor: '#F0F0FF',
+                            tabBarIcon: () => (
+                                <Icon name="user" color={'black'} size={26} />
                             ),
                         }}
             />

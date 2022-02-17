@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add tag rendering and styling">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add Modal support to UserPost">
+      <change afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/UserProfileStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +123,8 @@
       <workItem from="1644316344588" duration="12774000" />
       <workItem from="1644785341731" duration="2998000" />
       <workItem from="1644832887141" duration="7767000" />
-      <workItem from="1644911596112" duration="6095000" />
+      <workItem from="1644911596112" duration="6582000" />
+      <workItem from="1645089673486" duration="2169000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -368,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644916817255</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add Modal support to UserPost">
+      <created>1644918127584</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1644918127584</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,7 +396,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basic settings styling" />
     <MESSAGE value="Create basic Stack Navigator &amp; Login component" />
     <MESSAGE value="Finish styling Login page for light mode" />
     <MESSAGE value="Organize styles and components" />
@@ -411,7 +420,8 @@
     <MESSAGE value="Add cancel button functionality" />
     <MESSAGE value="Add border to comment section" />
     <MESSAGE value="Add tag rendering and styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tag rendering and styling" />
+    <MESSAGE value="Add Modal support to UserPost" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Modal support to UserPost" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
