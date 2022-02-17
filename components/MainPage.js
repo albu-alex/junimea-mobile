@@ -9,24 +9,10 @@ import { styles } from "../styles/MainPageStyles";
 
 //custom methods import
 import { getSelf } from "../methods/MainPage/getSelf";
+import { getInitialPosts } from "../methods/MainPage/getInitialPosts"
 
 //custom components import
 import UserPost from "./UserPost"
-
-const DATA = [
-    {
-        id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-        title: 'First Item',
-    },
-    {
-        id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-        title: 'Second Item',
-    },
-    {
-        id: '58694a0f-3da1-471f-bd96-145571e29d72',
-        title: 'Third Item',
-    },
-];
 
 const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -37,6 +23,7 @@ export default function MainPage({ navigation }){
     const [username, setUsername] = useState('');
     const [userID, setUserID] = useState('');
     const [refreshing, setRefreshing] = useState(false);
+    const [data, setData] = useState([]);
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         sleep(500).then(() => setRefreshing(false));
@@ -49,6 +36,9 @@ export default function MainPage({ navigation }){
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
+        //200 magic number to be changed
+        const initialData = await getInitialPosts(200)
+        setData(initialData)
     });
     return(
         <KeyboardAvoidingView
@@ -57,17 +47,19 @@ export default function MainPage({ navigation }){
             <StatusBar style="auto"/>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.inner}>
-                    <FlatList
-                        data={DATA}
-                        renderItem={renderItem}
-                        keyExtractor={item => item.id}
-                        refreshControl={
-                            <RefreshControl
-                                refreshing={refreshing}
-                                onRefresh={onRefresh}
-                            />
-                        }
-                    />
+                    {data !== [] &&
+                        <FlatList
+                            data={data}
+                            renderItem={renderItem}
+                            keyExtractor={item => item.id}
+                            refreshControl={
+                                <RefreshControl
+                                    refreshing={refreshing}
+                                    onRefresh={onRefresh}
+                                />
+                            }
+                        />
+                    }
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>

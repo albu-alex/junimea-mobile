@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix AsyncStorage bugs + Retrieve user details in UserProfile">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Update npm and versions of dependencies">
+      <change afterPath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
@@ -127,7 +128,7 @@
       <workItem from="1644832887141" duration="7767000" />
       <workItem from="1644911596112" duration="6582000" />
       <workItem from="1645089673486" duration="6290000" />
-      <workItem from="1645112229511" duration="315000" />
+      <workItem from="1645112229511" duration="1644000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -416,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645098365310</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Update npm and versions of dependencies">
+      <created>1645112684492</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1645112684492</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +442,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add MainPage + bottom/top tab navigation to app" />
     <MESSAGE value="Add Home icon to navigation tab" />
     <MESSAGE value="Add MainPageStyles + add FlatList support" />
     <MESSAGE value="Implement getSelf in MainPage" />
@@ -459,7 +466,8 @@
     <MESSAGE value="Add AsyncStorage to project + store user details in AsyncStorage" />
     <MESSAGE value="Create getUserDetails method &amp; Add to UserProfile" />
     <MESSAGE value="Fix AsyncStorage bugs + Retrieve user details in UserProfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix AsyncStorage bugs + Retrieve user details in UserProfile" />
+    <MESSAGE value="Update npm and versions of dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update npm and versions of dependencies" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
