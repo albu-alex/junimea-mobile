@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add AsyncStorage to project + store user details in AsyncStorage">
-      <change afterPath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Create getUserDetails method &amp; Add to UserProfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/MainPage/getSelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/MainPage/getSelf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
@@ -125,7 +127,7 @@
       <workItem from="1644785341731" duration="2998000" />
       <workItem from="1644832887141" duration="7767000" />
       <workItem from="1644911596112" duration="6582000" />
-      <workItem from="1645089673486" duration="5109000" />
+      <workItem from="1645089673486" duration="6254000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -400,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645094174002</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Create getUserDetails method &amp; Add to UserProfile">
+      <created>1645094844584</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1645094844584</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +427,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add verifyLogin function to Login component" />
     <MESSAGE value="Add loginAsGuest method" />
     <MESSAGE value="Add MainPage + bottom/top tab navigation to app" />
     <MESSAGE value="Add Home icon to navigation tab" />
@@ -443,7 +451,8 @@
     <MESSAGE value="Basic UserProfile styling + Add to Navigation API" />
     <MESSAGE value="Finish UserProfile header" />
     <MESSAGE value="Add AsyncStorage to project + store user details in AsyncStorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AsyncStorage to project + store user details in AsyncStorage" />
+    <MESSAGE value="Create getUserDetails method &amp; Add to UserProfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create getUserDetails method &amp; Add to UserProfile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

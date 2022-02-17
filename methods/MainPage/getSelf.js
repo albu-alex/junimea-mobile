@@ -22,7 +22,7 @@ export async function getSelf(){
         username = "";
         userID = "";
     });
-    async () => {
+    const userDetails = async () => {
         try{
             let jsonValue = JSON.stringify(profilePicture)
             await AsyncStorage.setItem('profilePicture', jsonValue)
@@ -34,5 +34,6 @@ export async function getSelf(){
             alert("There was an error storing the values!")
         }
     }
+    await userDetails()
     return [profilePicture, username, userID];
 }

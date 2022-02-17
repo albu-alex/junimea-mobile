@@ -4,7 +4,7 @@ export async function getUserDetails(){
     let profilePicture
     let username
     let userID
-    async () => {
+    const userDetails = async () => {
         try {
             let jsonValue = await AsyncStorage.getItem('profilePicture')
             profilePicture = JSON.parse(jsonValue) !== null ? JSON.parse(jsonValue) : null
@@ -16,5 +16,6 @@ export async function getUserDetails(){
             alert("Error while reading local storage")
         }
     }
+    await userDetails()
     return[profilePicture, username, userID]
 }
