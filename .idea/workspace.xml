@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Finish UserProfile header">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/MainPage/getSelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/MainPage/getSelf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add AsyncStorage to project + store user details in AsyncStorage">
+      <change afterPath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +45,17 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -125,7 +125,7 @@
       <workItem from="1644785341731" duration="2998000" />
       <workItem from="1644832887141" duration="7767000" />
       <workItem from="1644911596112" duration="6582000" />
-      <workItem from="1645089673486" duration="4432000" />
+      <workItem from="1645089673486" duration="5109000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -393,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645093291994</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Add AsyncStorage to project + store user details in AsyncStorage">
+      <created>1645094174002</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1645094174002</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +418,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Organize styles and components" />
     <MESSAGE value="Add verifyLogin function to Login component" />
     <MESSAGE value="Add loginAsGuest method" />
     <MESSAGE value="Add MainPage + bottom/top tab navigation to app" />
@@ -436,7 +442,8 @@
     <MESSAGE value="Add Modal support to UserPost" />
     <MESSAGE value="Basic UserProfile styling + Add to Navigation API" />
     <MESSAGE value="Finish UserProfile header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish UserProfile header" />
+    <MESSAGE value="Add AsyncStorage to project + store user details in AsyncStorage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add AsyncStorage to project + store user details in AsyncStorage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

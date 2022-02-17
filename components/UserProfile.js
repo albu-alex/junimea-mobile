@@ -8,7 +8,19 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 //css stylesheet import
 import {styles} from "../styles/UserProfileStyles"
 
+//custom methods import
+import { getUserDetails } from "../methods/UserProfile/getUserDetails";
+
 export default function UserProfile({ navigation }){
+    const [profilePicture, setProfilePicture] = useState('');
+    const [username, setUsername] = useState('');
+    const [userID, setUserID] = useState('');
+    useEffect(async () => {
+        const [newProfilePicture, newUsermane, newUserID] = await getUserDetails();
+        setProfilePicture(newProfilePicture)
+        setUsername(newUsermane)
+        setUserID(newUserID)
+    });
     return(
         <View style={styles.container}>
             <StatusBar style='auto' />

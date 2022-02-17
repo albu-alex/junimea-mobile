@@ -9,6 +9,8 @@ import { styles } from "../styles/MainPageStyles";
 
 //custom methods import
 import { getSelf } from "../methods/MainPage/getSelf";
+
+//custom components import
 import UserPost from "./UserPost"
 
 const DATA = [
