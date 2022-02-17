@@ -1,4 +1,5 @@
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export async function getSelf(){
     let profilePicture;
@@ -21,5 +22,17 @@ export async function getSelf(){
         username = "";
         userID = "";
     });
+    async () => {
+        try{
+            let jsonValue = JSON.stringify(profilePicture)
+            await AsyncStorage.setItem('profilePicture', jsonValue)
+            jsonValue = JSON.stringify(username)
+            await AsyncStorage.setItem('username', jsonValue)
+            jsonValue = JSON.stringify(userID)
+            await AsyncStorage.setItem('userID', jsonValue)
+        } catch{
+            alert("There was an error storing the values!")
+        }
+    }
     return [profilePicture, username, userID];
 }
