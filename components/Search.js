@@ -19,7 +19,7 @@ export default function Search({ navigation }){
                     <View style={styles.header}>
                         <Icon style={styles.searchIcon} name='search' size={24} color={'#070700'}/>
                         <TextInput autoCorrect={false} placeholderTextColor={'#070700'} placeholder={'Search Junimea'}
-                                   onChangeText={newSearchText => setSearchText(newSearchText)}
+                                   onChangeText={newSearchText => setSearchText(newSearchText)} multiline={true}
                                    defaultValue={searchText} style={styles.textInput} />
                         <TouchableOpacity style={{borderRadius: 10}} onPress={() => navigation.navigate("MainPage")}>
                             <Text style={styles.buttonText}>Cancel</Text>
