@@ -29,7 +29,7 @@ export default function MainPage({ navigation }){
         sleep(500).then(() => setRefreshing(false));
     }, []);
     const renderItem = ({ item }) => (
-        <UserPost />
+        <UserPost key={item.id} id={item.id} />
     );
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -51,7 +51,7 @@ export default function MainPage({ navigation }){
                         <FlatList
                             data={data}
                             renderItem={renderItem}
-                            keyExtractor={item => item.id}
+                            keyExtractor={item => item.id.toString()}
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}

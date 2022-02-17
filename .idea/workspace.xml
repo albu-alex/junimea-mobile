@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Update npm and versions of dependencies">
-      <change afterPath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Retrieving post IDs from API">
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +128,7 @@
       <workItem from="1644832887141" duration="7767000" />
       <workItem from="1644911596112" duration="6582000" />
       <workItem from="1645089673486" duration="6290000" />
-      <workItem from="1645112229511" duration="1644000" />
+      <workItem from="1645112229511" duration="2352000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -424,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645112684492</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Retrieving post IDs from API">
+      <created>1645114051802</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1645114051802</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Home icon to navigation tab" />
     <MESSAGE value="Add MainPageStyles + add FlatList support" />
     <MESSAGE value="Implement getSelf in MainPage" />
     <MESSAGE value="Add UserPost component to MainPage + UserPost header complete + UserPost styling" />
@@ -467,7 +473,8 @@
     <MESSAGE value="Create getUserDetails method &amp; Add to UserProfile" />
     <MESSAGE value="Fix AsyncStorage bugs + Retrieve user details in UserProfile" />
     <MESSAGE value="Update npm and versions of dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update npm and versions of dependencies" />
+    <MESSAGE value="Retrieving post IDs from API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Retrieving post IDs from API" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

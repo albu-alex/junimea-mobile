@@ -12,7 +12,7 @@ import { styles } from "../styles/UserPostStyles";
 import { reportBug } from "../methods/UserPost/reportBug";
 import { loadPost } from "../methods/UserPost/loadPost";
 
-export default function UserPost(){
+export default function UserPost(props){
     const [showComments, setshowComments] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
@@ -38,7 +38,7 @@ export default function UserPost(){
         }
     )
     useEffect(async () => {
-        let details = await loadPost(1539);
+        let details = await loadPost(props.id);
         setPostDetails(details);
     });
     return(
