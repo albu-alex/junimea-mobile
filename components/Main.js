@@ -15,7 +15,8 @@ const Tab = (Platform.OS === 'ios') ? createBottomTabNavigator() : createMateria
 
 export default function Main() {
     return (
-        <Tab.Navigator initialRouteName="MainPage" screenOptions={{headerShown: false, tabBarStyle: {backgroundColor: 'ghostwhite'}}}>
+        <Tab.Navigator initialRouteName="MainPage" screenOptions={{headerShown: false, tabBarStyle: {backgroundColor: 'ghostwhite',
+                marginTop: (Platform.OS === 'android') ? 30 : 0}}}>
             <Tab.Screen name="MainPage" component={MainPage}
                         options={{
                             tabBarLabel: 'Home',
