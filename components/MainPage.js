@@ -3,6 +3,7 @@ import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
 import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //css stylesheet import
 import { styles } from "../styles/MainPageStyles";
@@ -31,6 +32,14 @@ export default function MainPage({ navigation }){
     const renderItem = ({ item }) => (
         <UserPost key={item.id} id={item.id} />
     );
+    const setPosts = async () => {
+        try {
+            let jsonValue = JSON.stringify(data)
+            await AsyncStorage.setItem('posts', jsonValue)
+        }catch{
+            alert("Error")
+        }
+    }
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
         setProfilePicture(newProfilePicture)
@@ -39,6 +48,7 @@ export default function MainPage({ navigation }){
         //200 magic number to be changed
         const initialData = await getInitialPosts(200)
         setData(initialData)
+        setPosts()
     });
     return(
         <KeyboardAvoidingView

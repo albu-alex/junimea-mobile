@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Complete retrieving initial posts from API + prodcution app works">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add marginTop to Android TabBar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +129,8 @@
       <workItem from="1644911596112" duration="6582000" />
       <workItem from="1645089673486" duration="6290000" />
       <workItem from="1645112229511" duration="2513000" />
-      <workItem from="1645131295913" duration="1701000" />
+      <workItem from="1645131295913" duration="1787000" />
+      <workItem from="1645263881141" duration="1695000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -438,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645114739676</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Add marginTop to Android TabBar">
+      <created>1645133076045</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1645133076045</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implement getSelf in MainPage" />
     <MESSAGE value="Add UserPost component to MainPage + UserPost header complete + UserPost styling" />
     <MESSAGE value="Style &amp; add post footer" />
     <MESSAGE value="Add basic pinch to zoom support" />
@@ -481,7 +489,8 @@
     <MESSAGE value="Update npm and versions of dependencies" />
     <MESSAGE value="Retrieving post IDs from API" />
     <MESSAGE value="Complete retrieving initial posts from API + prodcution app works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete retrieving initial posts from API + prodcution app works" />
+    <MESSAGE value="Add marginTop to Android TabBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add marginTop to Android TabBar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

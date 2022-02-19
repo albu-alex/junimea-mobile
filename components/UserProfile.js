@@ -4,6 +4,7 @@ import { Text, View, Image, TouchableOpacity, FlatList,
 import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //css stylesheet import
 import {styles} from "../styles/UserProfileStyles"
@@ -11,16 +12,43 @@ import {styles} from "../styles/UserProfileStyles"
 //custom methods import
 import { getUserDetails } from "../methods/UserProfile/getUserDetails";
 
+//custom components import
+import UserPost from "./UserPost"
+
+const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 export default function UserProfile({ navigation }){
     const [profilePicture, setProfilePicture] = useState('');
     const [username, setUsername] = useState('');
     const [userID, setUserID] = useState('');
+    const [data, setData] = useState([]);
+    const [refreshing, setRefreshing] = useState(false);
+    const getPosts = async () =>{
+        try {
+            let jsonValue = await AsyncStorage.getItem('posts')
+            posts = JSON.parse(jsonValue) !== null ? JSON.parse(jsonValue) : null
+            setData(posts)
+        }
+        catch{
+            alert("Error")
+        }
+    }
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
+        getPosts()
     });
+    const onRefresh = useCallback(() => {
+        setRefreshing(true);
+        sleep(500).then(() => setRefreshing(false));
+    }, []);
+    const renderItem = ({ item }) => (
+        <UserPost key={item.id} id={item.id} />
+    );
     return(
         <View style={styles.container}>
             <StatusBar style='auto' />
@@ -56,6 +84,17 @@ export default function UserProfile({ navigation }){
                     <Text style={styles.buttonText}>View saved posts</Text>
                 </TouchableOpacity>
             </View>
+            <FlatList
+                data={data}
+                renderItem={renderItem}
+                keyExtractor={item => item.id.toString()}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                    />
+                }
+            />
         </View>
     )
 }
