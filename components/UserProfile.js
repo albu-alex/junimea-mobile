@@ -4,13 +4,13 @@ import { Text, View, Image, TouchableOpacity, FlatList,
 import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //css stylesheet import
 import {styles} from "../styles/UserProfileStyles"
 
 //custom methods import
 import { getUserDetails } from "../methods/UserProfile/getUserDetails";
+import { getPosts } from "../methods/UserProfile/getPosts"
 
 //custom components import
 import UserPost from "./UserPost"
@@ -25,22 +25,13 @@ export default function UserProfile({ navigation }){
     const [userID, setUserID] = useState('');
     const [data, setData] = useState([]);
     const [refreshing, setRefreshing] = useState(false);
-    const getPosts = async () =>{
-        try {
-            let jsonValue = await AsyncStorage.getItem('posts')
-            posts = JSON.parse(jsonValue) !== null ? JSON.parse(jsonValue) : null
-            setData(posts)
-        }
-        catch{
-            alert("Error")
-        }
-    }
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
-        getPosts()
+        let posts = await getPosts()
+        setData(posts)
     });
     const onRefresh = useCallback(() => {
         setRefreshing(true);
