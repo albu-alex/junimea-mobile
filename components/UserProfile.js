@@ -38,7 +38,9 @@ export default function UserProfile({ navigation }){
         sleep(500).then(() => setRefreshing(false));
     }, []);
     const renderItem = ({ item }) => (
-        <UserPost key={item.id} id={item.id} />
+        (userID === item.userId) ?
+            <UserPost key={item.id} id={item.id} />
+            : null
     );
     return(
         <View style={styles.container}>

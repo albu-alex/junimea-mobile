@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add UserPosts to UserProfile">
-      <change afterPath="$PROJECT_DIR$/methods/MainPage/setPosts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methods/UserProfile/getPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Move getPosts and setPosts methods to their respective folders">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,7 @@
       <workItem from="1645089673486" duration="6290000" />
       <workItem from="1645112229511" duration="2513000" />
       <workItem from="1645131295913" duration="1787000" />
-      <workItem from="1645263881141" duration="2340000" />
+      <workItem from="1645263881141" duration="3006000" />
     </task>
     <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
       <created>1642182892842</created>
@@ -455,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645265771488</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Move getPosts and setPosts methods to their respective folders">
+      <created>1645266272602</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1645266272602</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Style &amp; add post footer" />
     <MESSAGE value="Add basic pinch to zoom support" />
     <MESSAGE value="Current app works in production mode" />
     <MESSAGE value="Minor UserPost styling" />
@@ -498,7 +503,8 @@
     <MESSAGE value="Complete retrieving initial posts from API + prodcution app works" />
     <MESSAGE value="Add marginTop to Android TabBar" />
     <MESSAGE value="Add UserPosts to UserProfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add UserPosts to UserProfile" />
+    <MESSAGE value="Move getPosts and setPosts methods to their respective folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move getPosts and setPosts methods to their respective folders" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
