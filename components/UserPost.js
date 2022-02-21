@@ -83,8 +83,8 @@ export default function UserPost(props){
                 )}
                 {postDetails.files && showModal && postDetails.files.map((object, i) =>
                     <Modal animationType={'slide'} onRequestClose={() => setShowModal(false)} transparent={false}>
-                        <TouchableOpacity onPress={() => setShowModal(false)}>
-                            <Text style={{marginTop: 50}} >Close modal</Text>
+                        <TouchableOpacity style={styles.modalButton} onPress={() => setShowModal(false)}>
+                            <Text style={styles.modalButtonText}>Close</Text>
                         </TouchableOpacity>
                         <PanGestureHandler onGestureEvent={handlePan}>
                         <Animated.View style={styles.modal}>

@@ -38,9 +38,7 @@ export default function MainPage({ navigation }){
         setPostNumber(postNumber + 10)
     }, []);
     const renderItem = ({ item }) => (
-        !data.includes(item.id) ?
-            <UserPost key={item.key} id={item.id} /> :
-            console.log('duplicate')
+        <UserPost key={item.key} id={item.id} />
     );
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -64,7 +62,7 @@ export default function MainPage({ navigation }){
                             windowSize={10}
                             removeClippedSubviews={true}
                             data={data}
-                            extraData={this.state}
+                            // extraData={this.state}
                             renderItem={renderItem}
                             keyExtractor={(item, index) => {
                                 return item.key

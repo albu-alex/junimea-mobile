@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="UseEffect runs only once">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Working on duplicate key fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,14 +133,8 @@
       <workItem from="1645131295913" duration="1787000" />
       <workItem from="1645263881141" duration="3051000" />
       <workItem from="1645432008321" duration="1372000" />
-      <workItem from="1645435381353" duration="7547000" />
-    </task>
-    <task id="LOCAL-00005" summary="Remove &quot;hey, guest&quot; text from Settings">
-      <created>1642351889397</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1642351889397</updated>
+      <workItem from="1645435381353" duration="7690000" />
+      <workItem from="1645476631044" duration="724000" />
     </task>
     <task id="LOCAL-00006" summary="Align settings buttons">
       <created>1642352202454</created>
@@ -477,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645440827221</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Working on duplicate key fix">
+      <created>1645459646976</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1645459646976</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add postLoading conditional rendering + styling" />
     <MESSAGE value="Init Search component &amp; Add Search to Navigation API" />
     <MESSAGE value="Finish Search component styling" />
     <MESSAGE value="Remove redundant imports" />
@@ -520,7 +521,8 @@
     <MESSAGE value="Add close modal button + trying to fix FlatList rendering" />
     <MESSAGE value="Still fixing rendering of FlatList" />
     <MESSAGE value="UseEffect runs only once" />
-    <option name="LAST_COMMIT_MESSAGE" value="UseEffect runs only once" />
+    <MESSAGE value="Working on duplicate key fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on duplicate key fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

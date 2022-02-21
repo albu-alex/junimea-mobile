@@ -107,6 +107,20 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         justifyContent: 'center',
         alignContent: 'center'
+    },
+    modalButton:{
+        marginRight: '4%',
+        marginTop: '10%',
+        backgroundColor: "#F0F0FF",
+        borderRadius: 15,
+        width: '20%',
+        height: '3%',
+        justifyContent: 'center',
+        alignSelf: 'flex-end'
+    },
+    modalButtonText:{
+        color: 'red',
+        alignSelf: 'center',
     }
 });
 
