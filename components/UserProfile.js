@@ -25,6 +25,7 @@ export default function UserProfile({ navigation }){
     const [userID, setUserID] = useState('');
     const [data, setData] = useState([]);
     const [refreshing, setRefreshing] = useState(false);
+    const [postNumber, setPostNumber] = useState(200)
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)
@@ -35,7 +36,13 @@ export default function UserProfile({ navigation }){
     });
     const onRefresh = useCallback(() => {
         setRefreshing(true);
-        sleep(500).then(() => setRefreshing(false));
+        sleep(200).then(async () => {
+            const newData = await getInitialPosts(postNumber)
+            let newPosts = newData.concat(data)
+            setPostNumber(postNumber + 10)
+            setData(newPosts)
+            setRefreshing(false)
+        });
     }, []);
     const renderItem = ({ item }) => (
         (userID === item.userId) ?

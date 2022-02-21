@@ -44,7 +44,7 @@ export default function MainPage({ navigation }){
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
-        //200 magic number to be changed
+
         const initialData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         setData(initialData)
