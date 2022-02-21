@@ -42,7 +42,7 @@ export default function UserPost(props){
         setPostDetails(details);
     });
     return(
-        <View style={styles.container} key={props.id.toString()}>
+        <View style={styles.container} key={props.id}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
                 <View style={styles.postHeader}>
                     {!postDetails.profilePicUrl && postDetails.profilePicUrl !== null &&

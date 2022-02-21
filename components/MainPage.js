@@ -29,7 +29,7 @@ export default function MainPage({ navigation }){
     const onRefresh = useCallback(() => {
         setRefreshing(true);
         let newPosts
-        sleep(100).then(async () => {
+        sleep(1).then(async () => {
             const newData = await getInitialPosts(postNumber)
             newPosts = newData.concat(data)
             setData(newPosts)
@@ -38,7 +38,9 @@ export default function MainPage({ navigation }){
         setPostNumber(postNumber + 10)
     }, []);
     const renderItem = ({ item }) => (
-        <UserPost id={item.id} />
+        <View key={item.id.toString()}>
+            <UserPost id={item.id} />
+        </View>
     );
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -64,7 +66,10 @@ export default function MainPage({ navigation }){
                         <FlatList
                             data={data}
                             renderItem={renderItem}
-                            keyExtractor={(item) => item.id.toString()}
+                            keyExtractor={(item, index) => {
+                                console.log(item.id.toString())
+                                return item.id.toString()
+                            }}
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}
