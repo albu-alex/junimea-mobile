@@ -45,7 +45,7 @@ export default function UserPost(props){
         <View style={styles.container}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
                 <View style={styles.postHeader}>
-                    {!postDetails.profilePicUrl &&
+                    {!postDetails.profilePicUrl && postDetails.profilePicUrl !== null &&
                         <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
                         style={{width: 25, height: 25, borderRadius: 50}} />
                     }

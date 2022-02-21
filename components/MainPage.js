@@ -25,9 +25,16 @@ export default function MainPage({ navigation }){
     const [userID, setUserID] = useState('');
     const [refreshing, setRefreshing] = useState(false);
     const [data, setData] = useState([]);
+    const [postNumber, setPostNumber] = useState(200);
     const onRefresh = useCallback(() => {
         setRefreshing(true);
-        sleep(500).then(() => setRefreshing(false));
+        sleep(100).then(async () => {
+            const newData = await getInitialPosts(postNumber)
+            let newPosts = newData.concat(data)
+            setPostNumber(postNumber + 10)
+            setData(newPosts)
+            setRefreshing(false)
+        });
     }, []);
     const renderItem = ({ item }) => (
         <UserPost key={item.id} id={item.id} />
@@ -38,7 +45,8 @@ export default function MainPage({ navigation }){
         setUsername(newUsermane)
         setUserID(newUserID)
         //200 magic number to be changed
-        const initialData = await getInitialPosts(200)
+        const initialData = await getInitialPosts(postNumber)
+        setPostNumber(postNumber + 10)
         setData(initialData)
         setPosts(data)
     });
