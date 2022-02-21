@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add pull to refresh + fix bug in UserPost">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add pull to refresh to UserProfile, need to add post number in async storage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,14 +131,8 @@
       <workItem from="1645112229511" duration="2513000" />
       <workItem from="1645131295913" duration="1787000" />
       <workItem from="1645263881141" duration="3051000" />
-      <workItem from="1645432008321" duration="1338000" />
-    </task>
-    <task id="LOCAL-00001" summary="Add settings icon &amp; remove &quot;juni.&quot; icon">
-      <created>1642182892842</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1642182892842</updated>
+      <workItem from="1645432008321" duration="1372000" />
+      <workItem from="1645435381353" duration="3693000" />
     </task>
     <task id="LOCAL-00002" summary="Fix button actions bugs">
       <created>1642183074361</created>
@@ -475,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645432862198</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Add pull to refresh to UserProfile, need to add post number in async storage">
+      <created>1645433377524</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1645433377524</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minor UserPost styling" />
     <MESSAGE value="Add new comment section" />
     <MESSAGE value="TabBarNavigation styling" />
     <MESSAGE value="Add togglePost function" />
@@ -518,7 +519,8 @@
     <MESSAGE value="Move getPosts and setPosts methods to their respective folders" />
     <MESSAGE value="Render UserPost in UserProfile only if userIds match" />
     <MESSAGE value="Add pull to refresh + fix bug in UserPost" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add pull to refresh + fix bug in UserPost" />
+    <MESSAGE value="Add pull to refresh to UserProfile, need to add post number in async storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add pull to refresh to UserProfile, need to add post number in async storage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

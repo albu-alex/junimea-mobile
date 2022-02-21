@@ -42,7 +42,7 @@ export default function UserPost(props){
         setPostDetails(details);
     });
     return(
-        <View style={styles.container}>
+        <View style={styles.container} key={props.id.toString()}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
                 <View style={styles.postHeader}>
                     {!postDetails.profilePicUrl && postDetails.profilePicUrl !== null &&
@@ -83,6 +83,9 @@ export default function UserPost(props){
                 )}
                 {postDetails.files && showModal && postDetails.files.map((object, i) =>
                     <Modal animationType={'slide'} onRequestClose={() => setShowModal(false)} transparent={false}>
+                        <TouchableOpacity onPress={() => setShowModal(false)}>
+                            <Text style={{marginTop: 50}} >Close modal</Text>
+                        </TouchableOpacity>
                         <PanGestureHandler onGestureEvent={handlePan}>
                         <Animated.View style={styles.modal}>
                             <PinchGestureHandler onGestureEvent={handlePinch}>

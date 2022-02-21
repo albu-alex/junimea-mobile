@@ -28,16 +28,17 @@ export default function MainPage({ navigation }){
     const [postNumber, setPostNumber] = useState(200);
     const onRefresh = useCallback(() => {
         setRefreshing(true);
+        let newPosts
         sleep(100).then(async () => {
             const newData = await getInitialPosts(postNumber)
-            let newPosts = newData.concat(data)
-            setPostNumber(postNumber + 10)
+            newPosts = newData.concat(data)
             setData(newPosts)
             setRefreshing(false)
         });
+        setPostNumber(postNumber + 10)
     }, []);
     const renderItem = ({ item }) => (
-        <UserPost key={item.id} id={item.id} />
+        <UserPost id={item.id} />
     );
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -45,6 +46,8 @@ export default function MainPage({ navigation }){
         setUsername(newUsermane)
         setUserID(newUserID)
 
+        if(postNumber !== 200)
+            return
         const initialData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         setData(initialData)
@@ -61,7 +64,7 @@ export default function MainPage({ navigation }){
                         <FlatList
                             data={data}
                             renderItem={renderItem}
-                            keyExtractor={item => item.id.toString()}
+                            keyExtractor={(item) => item.id.toString()}
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}
