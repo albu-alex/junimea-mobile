@@ -48,13 +48,11 @@ export default function MainPage({ navigation }){
         setUsername(newUsermane)
         setUserID(newUserID)
 
-        if(postNumber !== 200)
-            return
         const initialData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         setData(initialData)
-        setPosts(data)
-    });
+        // alert(data.length)
+    }, []);
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
