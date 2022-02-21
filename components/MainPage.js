@@ -38,9 +38,9 @@ export default function MainPage({ navigation }){
         setPostNumber(postNumber + 10)
     }, []);
     const renderItem = ({ item }) => (
-        <View key={item.id.toString()}>
-            <UserPost id={item.id} />
-        </View>
+        !data.includes(item.id) ?
+            <UserPost key={item.key} id={item.id} /> :
+            console.log('duplicate')
     );
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -51,7 +51,6 @@ export default function MainPage({ navigation }){
         const initialData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         setData(initialData)
-        // alert(data.length)
     }, []);
     return(
         <KeyboardAvoidingView
@@ -60,13 +59,15 @@ export default function MainPage({ navigation }){
             <StatusBar style="auto"/>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={styles.inner}>
-                    {data !== [] &&
+                    {data !== [] && data.length % 10 === 0 &&
                         <FlatList
+                            windowSize={10}
+                            removeClippedSubviews={true}
                             data={data}
+                            extraData={this.state}
                             renderItem={renderItem}
                             keyExtractor={(item, index) => {
-                                console.log(item.id.toString())
-                                return item.id.toString()
+                                return item.key
                             }}
                             refreshControl={
                                 <RefreshControl

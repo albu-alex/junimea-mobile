@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Still fixing rendering of FlatList">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="UseEffect runs only once">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,14 +132,7 @@
       <workItem from="1645131295913" duration="1787000" />
       <workItem from="1645263881141" duration="3051000" />
       <workItem from="1645432008321" duration="1372000" />
-      <workItem from="1645435381353" duration="4780000" />
-    </task>
-    <task id="LOCAL-00004" summary="Temporary settings placement">
-      <created>1642270576866</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1642270576867</updated>
+      <workItem from="1645435381353" duration="7547000" />
     </task>
     <task id="LOCAL-00005" summary="Remove &quot;hey, guest&quot; text from Settings">
       <created>1642351889397</created>
@@ -475,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645440484107</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="UseEffect runs only once">
+      <created>1645440827221</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1645440827221</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add togglePost function" />
     <MESSAGE value="Add postLoading conditional rendering + styling" />
     <MESSAGE value="Init Search component &amp; Add Search to Navigation API" />
     <MESSAGE value="Finish Search component styling" />
@@ -518,7 +519,8 @@
     <MESSAGE value="Add pull to refresh to UserProfile, need to add post number in async storage" />
     <MESSAGE value="Add close modal button + trying to fix FlatList rendering" />
     <MESSAGE value="Still fixing rendering of FlatList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still fixing rendering of FlatList" />
+    <MESSAGE value="UseEffect runs only once" />
+    <option name="LAST_COMMIT_MESSAGE" value="UseEffect runs only once" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
