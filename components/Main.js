@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import MainPage from "./MainPage";
 import Search from "./Search";
 import UserProfile from "./UserProfile"
+import Settings from "./Settings"
 
 const Tab = (Platform.OS === 'ios') ? createBottomTabNavigator() : createMaterialTopTabNavigator();
 
@@ -44,6 +45,16 @@ export default function Main() {
                             tabBarActiveBackgroundColor: '#F0F0FF',
                             tabBarIcon: () => (
                                 <Icon name="user" color={'black'} size={26} />
+                            ),
+                        }}
+            />
+            <Tab.Screen name="Settings" component={Settings}
+                        options={{
+                            tabBarLabel: 'Settings',
+                            tabBarActiveTintColor: "#555555",
+                            tabBarActiveBackgroundColor: '#F0F0FF',
+                            tabBarIcon: () => (
+                                <Icon name="cob" color={'black'} size={26} />
                             ),
                         }}
             />
