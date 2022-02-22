@@ -23,7 +23,9 @@ export default function MainPage({ navigation }){
     const [data, setData] = useState([]);
     const [postNumber, setPostNumber] = useState(100);
     const renderItem = ({ item }) => (
-        <UserPost key={item.id.toString()} id={item.id} />
+        <View key={item.id.toString()}>
+            <UserPost key={item.id.toString()} id={item.id} />
+        </View>
     );
     const fetchPosts = async () => {
         const initialData = await getInitialPosts(postNumber)
