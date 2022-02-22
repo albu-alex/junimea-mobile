@@ -15,10 +15,6 @@ import { setPosts } from "../methods/MainPage/setPosts"
 //custom components import
 import UserPost from "./UserPost"
 
-const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export default function MainPage({ navigation }){
     const [profilePicture, setProfilePicture] = useState('');
     const [username, setUsername] = useState('');
@@ -26,25 +22,13 @@ export default function MainPage({ navigation }){
     const [refreshing, setRefreshing] = useState(false);
     const [data, setData] = useState([]);
     const [postNumber, setPostNumber] = useState(100);
-    const onRefresh = useCallback(async() => {
-        setRefreshing(true);
-        // let newPosts
-        // const newData = await getInitialPosts(postNumber)
-        // newPosts = newData.concat(data)
-        // setData(newPosts)
-        // setRefreshing(false)
-        // setPostNumber(postNumber + 10)
-        await fetchPosts()
-        console.log(postNumber)
-        setRefreshing(false)
-    }, []);
     const renderItem = ({ item }) => (
         <UserPost key={item.id.toString()} id={item.id} />
-        // <Text>{item.id}</Text>
     );
     const fetchPosts = async () => {
         const initialData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
+        const newData = initialData.concat(data)
         setData(initialData)
     }
     useEffect(async () => {
@@ -71,7 +55,7 @@ export default function MainPage({ navigation }){
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}
-                                    onRefresh={onRefresh}
+                                    onRefresh={fetchPosts}
                                 />
                             }
                         />
