@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         paddingTop: '10%',
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'ghostwhite',
+        backgroundColor: '#DADADA',
     },
     buttons:{
         height: '35%',
@@ -19,10 +19,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'center',
-        justifyContent: 'space-around',
-        paddingLeft: '20%',
-        paddingRight: '20%',
+        justifyContent: 'flex-start',
         borderWidth: 1,
+        backgroundColor: 'ghostwhite',
         borderColor: "#A7A7A7",
         borderRadius: 10,
         height: 40,
@@ -34,6 +33,11 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         alignSelf: 'center',
         marginBottom: 6
+    },
+    icon:{
+        marginTop: 3,
+        marginRight: '3%',
+        marginLeft: '30%'
     }
 });
 

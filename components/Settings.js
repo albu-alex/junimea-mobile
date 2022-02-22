@@ -18,19 +18,19 @@ export default function Settings({navigation}){
                 <View style={styles.inner}>
                     <View style={styles.buttons}>
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
-                            <Icon style={{marginTop: 4}} name='sign-out' size={24} color={"#555555"}></Icon>
+                            <Icon style={styles.icon} name='sign-out' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Logout</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.button} onPress={() => alert("change theme")}>
-                            <Icon style={{marginTop: 4}} name='moon-o' size={24} color={"#555555"}></Icon>
+                            <Icon style={styles.icon} name='moon-o' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Dark mode</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.button} onPress={() => alert("update profile")}>
-                            <Icon style={{marginTop: 4}} name='user' size={24} color={"#555555"}></Icon>
+                            <Icon style={styles.icon} name='user' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Update profile</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("MainPage")}>
-                            <Icon style={{marginTop: 3}} name='close' size={24} color={"#555555"}></Icon>
+                            <Icon style={styles.icon} name='close' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Close settings</Text>
                         </TouchableOpacity>
                     </View>
