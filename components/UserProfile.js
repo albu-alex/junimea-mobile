@@ -64,7 +64,7 @@ export default function UserProfile({ navigation }){
                            style={styles.profilePicture} />
                 }
                 {username === '' &&
-                    <Text style={styles.primaryText}>Loading...</Text>
+                    <Text style={styles.primaryText}>Guest</Text>
                 }
                 {username !== '' &&
                     <Text style={styles.primaryText}>{username}</Text>
