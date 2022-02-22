@@ -10,8 +10,7 @@ export async function getInitialPosts(postNumber){
     })
     .then(function(response){
         for(let i=0;i<response.data.length;i++)
-            posts.push({key: response.data[i].id.toString(),
-                        id: response.data[i].id,
+            posts.push({id: response.data[i].id,
                         userId: response.data[i].userId})
     })
     .catch(function(){

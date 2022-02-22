@@ -27,6 +27,7 @@ export async function loadPost(id){
         // tags = response.data.tags;
         // loaded = true;
         post = response.data;
+        delete post.id
     })
     .catch(function(){
         loaded = false;

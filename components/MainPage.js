@@ -25,30 +25,35 @@ export default function MainPage({ navigation }){
     const [userID, setUserID] = useState('');
     const [refreshing, setRefreshing] = useState(false);
     const [data, setData] = useState([]);
-    const [postNumber, setPostNumber] = useState(200);
-    const onRefresh = useCallback(() => {
+    const [postNumber, setPostNumber] = useState(100);
+    const onRefresh = useCallback(async() => {
         setRefreshing(true);
-        let newPosts
-        sleep(1).then(async () => {
-            const newData = await getInitialPosts(postNumber)
-            newPosts = newData.concat(data)
-            setData(newPosts)
-            setRefreshing(false)
-        });
-        setPostNumber(postNumber + 10)
+        // let newPosts
+        // const newData = await getInitialPosts(postNumber)
+        // newPosts = newData.concat(data)
+        // setData(newPosts)
+        // setRefreshing(false)
+        // setPostNumber(postNumber + 10)
+        await fetchPosts()
+        console.log(postNumber)
+        setRefreshing(false)
     }, []);
     const renderItem = ({ item }) => (
-        <UserPost key={item.key} id={item.id} />
+        <UserPost key={item.id.toString()} id={item.id} />
+        // <Text>{item.id}</Text>
     );
+    const fetchPosts = async () => {
+        const initialData = await getInitialPosts(postNumber)
+        setPostNumber(postNumber + 10)
+        setData(initialData)
+    }
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
 
-        const initialData = await getInitialPosts(postNumber)
-        setPostNumber(postNumber + 10)
-        setData(initialData)
+        await fetchPosts()
     }, []);
     return(
         <KeyboardAvoidingView
@@ -59,14 +64,10 @@ export default function MainPage({ navigation }){
                 <View style={styles.inner}>
                     {data !== [] && data.length % 10 === 0 &&
                         <FlatList
-                            windowSize={10}
+                            windowSize={20}
                             removeClippedSubviews={true}
                             data={data}
-                            // extraData={this.state}
                             renderItem={renderItem}
-                            keyExtractor={(item, index) => {
-                                return item.key
-                            }}
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}
