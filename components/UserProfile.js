@@ -31,19 +31,13 @@ export default function UserProfile({ navigation }){
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
+
+        await fetchPosts()
+    });
+    const fetchPosts = async() => {
         let posts = await getPosts()
         setData(posts)
-    });
-    const onRefresh = useCallback(() => {
-        setRefreshing(true);
-        sleep(200).then(async () => {
-            const newData = await getInitialPosts(postNumber)
-            let newPosts = newData.concat(data)
-            setPostNumber(postNumber + 10)
-            setData(newPosts)
-            setRefreshing(false)
-        });
-    }, []);
+    }
     const renderItem = ({ item }) => (
         (userID === item.userId) ?
             <UserPost key={item.id} id={item.id} />
@@ -85,13 +79,14 @@ export default function UserProfile({ navigation }){
                 </TouchableOpacity>
             </View>
             <FlatList
+                windowSize={20}
+                removeClippedSubviews={true}
                 data={data}
                 renderItem={renderItem}
-                keyExtractor={item => item.id.toString()}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
-                        onRefresh={onRefresh}
+                        onRefresh={fetchPosts}
                     />
                 }
             />
