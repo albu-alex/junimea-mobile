@@ -54,7 +54,7 @@ export default function Main() {
                             tabBarActiveTintColor: "#555555",
                             tabBarActiveBackgroundColor: '#F0F0FF',
                             tabBarIcon: () => (
-                                <Icon name="cob" color={'black'} size={26} />
+                                <Icon name="cog" color={'black'} size={26} />
                             ),
                         }}
             />

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Simplify pull to refresh in UserProfile">
-      <change afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="init Settings component">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +137,8 @@
       <workItem from="1645435381353" duration="7690000" />
       <workItem from="1645476631044" duration="943000" />
       <workItem from="1645526556614" duration="2565000" />
-      <workItem from="1645532069185" duration="1461000" />
-    </task>
-    <task id="LOCAL-00011" summary="Create basic Stack Navigator &amp; Login component">
-      <created>1644228609458</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1644228609458</updated>
+      <workItem from="1645532069185" duration="1480000" />
+      <workItem from="1645556832865" duration="1629000" />
     </task>
     <task id="LOCAL-00012" summary="Finish styling Login page for light mode">
       <created>1644234280662</created>
@@ -481,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645533227796</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="init Settings component">
+      <created>1645533548715</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1645533548715</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add tag rendering and styling" />
     <MESSAGE value="Add Modal support to UserPost" />
     <MESSAGE value="Basic UserProfile styling + Add to Navigation API" />
     <MESSAGE value="Finish UserProfile header" />
@@ -524,7 +525,8 @@
     <MESSAGE value="Remove sleep promise &amp; simplify pull to refresh" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Simplify pull to refresh in UserProfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplify pull to refresh in UserProfile" />
+    <MESSAGE value="init Settings component" />
+    <option name="LAST_COMMIT_MESSAGE" value="init Settings component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
