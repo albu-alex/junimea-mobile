@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix minor bug &amp; add onEndReached listener" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Follow PureComponent practices improving app performance">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,14 +137,7 @@
       <workItem from="1645532069185" duration="1480000" />
       <workItem from="1645556832865" duration="2665000" />
       <workItem from="1645867973872" duration="85000" />
-      <workItem from="1645880483288" duration="2115000" />
-    </task>
-    <task id="LOCAL-00018" summary="Add MainPageStyles + add FlatList support">
-      <created>1644320936199</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1644320936199</updated>
+      <workItem from="1645880483288" duration="2972000" />
     </task>
     <task id="LOCAL-00019" summary="Implement getSelf in MainPage">
       <created>1644322749878</created>
@@ -480,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645882593372</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Follow PureComponent practices improving app performance">
+      <created>1645882934967</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1645882934967</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix AsyncStorage bugs + Retrieve user details in UserProfile" />
     <MESSAGE value="Update npm and versions of dependencies" />
     <MESSAGE value="Retrieving post IDs from API" />
     <MESSAGE value="Complete retrieving initial posts from API + prodcution app works" />
@@ -523,7 +524,8 @@
     <MESSAGE value="Slight refactor" />
     <MESSAGE value="Styling update" />
     <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix minor bug &amp; add onEndReached listener" />
+    <MESSAGE value="Follow PureComponent practices improving app performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Follow PureComponent practices improving app performance" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
