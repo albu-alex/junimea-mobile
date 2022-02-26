@@ -28,9 +28,14 @@ export default function MainPage({ navigation }){
         </View>
     );
     const fetchPosts = async () => {
-        const initialData = await getInitialPosts(postNumber)
+        const fetchedData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
-        const newData = initialData.concat(data)
+        setData(fetchedData)
+    }
+    const loadPosts = async () => {
+        const fetchedData = await getInitialPosts(postNumber)
+        setPostNumber(postNumber + 10)
+        const newData = data.concat(fetchedData)
         setData(newData)
     }
     useEffect(async () => {
@@ -50,12 +55,13 @@ export default function MainPage({ navigation }){
                 <View style={styles.inner}>
                     {data !== [] && data.length % 10 === 0 &&
                         <FlatList
-                            windowSize={20}
+                            windowSize={60}
+                            initialNumToRender={10}
                             removeClippedSubviews={true}
                             data={data}
                             renderItem={renderItem}
                             onEndReachedThreshold={0.5}
-                            onEndReached={fetchPosts}
+                            onEndReached={loadPosts}
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}

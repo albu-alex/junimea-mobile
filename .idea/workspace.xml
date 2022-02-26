@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Styling update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix minor bug &amp; add onEndReached listener">
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,14 +137,7 @@
       <workItem from="1645532069185" duration="1480000" />
       <workItem from="1645556832865" duration="2665000" />
       <workItem from="1645867973872" duration="85000" />
-      <workItem from="1645880483288" duration="1276000" />
-    </task>
-    <task id="LOCAL-00016" summary="Add MainPage + bottom/top tab navigation to app">
-      <created>1644318851615</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1644318851615</updated>
+      <workItem from="1645880483288" duration="1660000" />
     </task>
     <task id="LOCAL-00017" summary="Add Home icon to navigation tab">
       <created>1644319368800</created>
@@ -483,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645559297068</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Fix minor bug &amp; add onEndReached listener">
+      <created>1645881932985</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1645881932985</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create getUserDetails method &amp; Add to UserProfile" />
     <MESSAGE value="Fix AsyncStorage bugs + Retrieve user details in UserProfile" />
     <MESSAGE value="Update npm and versions of dependencies" />
     <MESSAGE value="Retrieving post IDs from API" />
@@ -526,7 +524,8 @@
     <MESSAGE value="Add functionality to Logout and Close settings buttons" />
     <MESSAGE value="Slight refactor" />
     <MESSAGE value="Styling update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styling update" />
+    <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix minor bug &amp; add onEndReached listener" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
