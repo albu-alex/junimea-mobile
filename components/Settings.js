@@ -5,10 +5,14 @@ import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+//custom method import
+import setupUpdateProfileModal from "../methods/Settings/setupUpdateProfileModal";
+
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
 
 export default function Settings({navigation}){
+    const [showModal, setShowModal] = useState(false)
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -25,7 +29,7 @@ export default function Settings({navigation}){
                             <Icon style={styles.icon} name='moon-o' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Dark mode</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button} onPress={() => alert("update profile")}>
+                        <TouchableOpacity style={styles.button} onPress={() => setShowModal(true)}>
                             <Icon style={styles.icon} name='user' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Update profile</Text>
                         </TouchableOpacity>
@@ -33,6 +37,9 @@ export default function Settings({navigation}){
                             <Icon style={styles.icon} name='close' size={24} color={"#555555"}></Icon>
                             <Text style={styles.buttonText}>Close settings</Text>
                         </TouchableOpacity>
+                        {showModal &&
+                            setupUpdateProfileModal()
+                        }
                     </View>
                 </View>
             </TouchableWithoutFeedback>

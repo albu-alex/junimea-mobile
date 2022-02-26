@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works great in production mode">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Profile icon changes with user profile picture with small performance problems">
+      <change afterPath="$PROJECT_DIR$/methods/Settings/setupUpdateProfileModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,7 @@
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Settings/setupUpdateProfileModal.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
@@ -138,14 +140,8 @@
       <workItem from="1645532069185" duration="1480000" />
       <workItem from="1645556832865" duration="2665000" />
       <workItem from="1645867973872" duration="85000" />
-      <workItem from="1645880483288" duration="3685000" />
-    </task>
-    <task id="LOCAL-00020" summary="Add UserPost component to MainPage + UserPost header complete + UserPost styling">
-      <created>1644329054817</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1644329054817</updated>
+      <workItem from="1645880483288" duration="4398000" />
+      <workItem from="1645900179255" duration="1232000" />
     </task>
     <task id="LOCAL-00021" summary="Style &amp; add post footer">
       <created>1644332259775</created>
@@ -483,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645883618117</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Profile icon changes with user profile picture with small performance problems">
+      <created>1645888930404</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1645888930407</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Retrieving post IDs from API" />
     <MESSAGE value="Complete retrieving initial posts from API + prodcution app works" />
     <MESSAGE value="Add marginTop to Android TabBar" />
     <MESSAGE value="Add UserPosts to UserProfile" />
@@ -526,7 +528,8 @@
     <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
     <MESSAGE value="Follow PureComponent practices improving app performance" />
     <MESSAGE value="App works great in production mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="App works great in production mode" />
+    <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profile icon changes with user profile picture with small performance problems" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
