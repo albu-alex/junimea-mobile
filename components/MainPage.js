@@ -31,7 +31,7 @@ export default function MainPage({ navigation }){
         const initialData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         const newData = initialData.concat(data)
-        setData(initialData)
+        setData(newData)
     }
     useEffect(async () => {
         const [newProfilePicture, newUsermane, newUserID] = await getSelf();
@@ -54,6 +54,8 @@ export default function MainPage({ navigation }){
                             removeClippedSubviews={true}
                             data={data}
                             renderItem={renderItem}
+                            onEndReachedThreshold={0.5}
+                            onEndReached={fetchPosts}
                             refreshControl={
                                 <RefreshControl
                                     refreshing={refreshing}

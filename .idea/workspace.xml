@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Slight refactor">
-      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Styling update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,14 +136,9 @@
       <workItem from="1645476631044" duration="943000" />
       <workItem from="1645526556614" duration="2565000" />
       <workItem from="1645532069185" duration="1480000" />
-      <workItem from="1645556832865" duration="2429000" />
-    </task>
-    <task id="LOCAL-00015" summary="Add loginAsGuest method">
-      <created>1644266023755</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1644266023755</updated>
+      <workItem from="1645556832865" duration="2665000" />
+      <workItem from="1645867973872" duration="85000" />
+      <workItem from="1645880483288" duration="1276000" />
     </task>
     <task id="LOCAL-00016" summary="Add MainPage + bottom/top tab navigation to app">
       <created>1644318851615</created>
@@ -481,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645558893569</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Styling update">
+      <created>1645559297067</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1645559297068</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add AsyncStorage to project + store user details in AsyncStorage" />
     <MESSAGE value="Create getUserDetails method &amp; Add to UserProfile" />
     <MESSAGE value="Fix AsyncStorage bugs + Retrieve user details in UserProfile" />
     <MESSAGE value="Update npm and versions of dependencies" />
@@ -524,7 +525,8 @@
     <MESSAGE value="Settings component styling" />
     <MESSAGE value="Add functionality to Logout and Close settings buttons" />
     <MESSAGE value="Slight refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slight refactor" />
+    <MESSAGE value="Styling update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Styling update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
