@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Follow PureComponent practices improving app performance">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works great in production mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,14 +138,7 @@
       <workItem from="1645532069185" duration="1480000" />
       <workItem from="1645556832865" duration="2665000" />
       <workItem from="1645867973872" duration="85000" />
-      <workItem from="1645880483288" duration="2972000" />
-    </task>
-    <task id="LOCAL-00019" summary="Implement getSelf in MainPage">
-      <created>1644322749878</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1644322749878</updated>
+      <workItem from="1645880483288" duration="3685000" />
     </task>
     <task id="LOCAL-00020" summary="Add UserPost component to MainPage + UserPost header complete + UserPost styling">
       <created>1644329054817</created>
@@ -482,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645882934967</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="App works great in production mode">
+      <created>1645883618117</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1645883618117</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +501,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update npm and versions of dependencies" />
     <MESSAGE value="Retrieving post IDs from API" />
     <MESSAGE value="Complete retrieving initial posts from API + prodcution app works" />
     <MESSAGE value="Add marginTop to Android TabBar" />
@@ -525,7 +525,8 @@
     <MESSAGE value="Styling update" />
     <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
     <MESSAGE value="Follow PureComponent practices improving app performance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Follow PureComponent practices improving app performance" />
+    <MESSAGE value="App works great in production mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="App works great in production mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
