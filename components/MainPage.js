@@ -59,6 +59,7 @@ export default function MainPage({ navigation }){
                             initialNumToRender={10}
                             removeClippedSubviews={true}
                             data={data}
+                            extraData={this.state}
                             renderItem={renderItem}
                             onEndReachedThreshold={0.5}
                             onEndReached={loadPosts}

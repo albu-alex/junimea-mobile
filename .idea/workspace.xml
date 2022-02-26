@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix minor bug &amp; add onEndReached listener">
-      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-    </list>
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix minor bug &amp; add onEndReached listener" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,14 +135,7 @@
       <workItem from="1645532069185" duration="1480000" />
       <workItem from="1645556832865" duration="2665000" />
       <workItem from="1645867973872" duration="85000" />
-      <workItem from="1645880483288" duration="1660000" />
-    </task>
-    <task id="LOCAL-00017" summary="Add Home icon to navigation tab">
-      <created>1644319368800</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1644319368800</updated>
+      <workItem from="1645880483288" duration="2115000" />
     </task>
     <task id="LOCAL-00018" summary="Add MainPageStyles + add FlatList support">
       <created>1644320936199</created>
@@ -482,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645881932985</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Fix minor bug &amp; add onEndReached listener">
+      <created>1645882593372</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1645882593372</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
