@@ -36,11 +36,35 @@ export default function Settings({navigation}){
                         </TouchableOpacity>
                         {showModal &&
                             <Modal animationType={'slide'} transparent={false}>
-                                <View style={styles.container}>
-                                    <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowModal(false)}>
-                                        <Icon name="close" color="black" size={30}/>
-                                    </TouchableOpacity>
-                                </View>
+                                <KeyboardAvoidingView
+                                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                                    style={styles.container}>
+                                    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                                        <View style={styles.container}>
+                                            <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowModal(false)}>
+                                                <Icon name="close" color="black" size={30}/>
+                                            </TouchableOpacity>
+                                            <View style={styles.inputsContainer}>
+                                                <View style={{flexDirection: 'row'}}>
+                                                    <Icon name="id-card-o" size={16} color={"#070700"} style={styles.modalIcon} />
+                                                    <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'First Name'} />
+                                                </View>
+                                            </View>
+                                            <View style={styles.inputsContainer}>
+                                                <View style={{flexDirection: 'row'}}>
+                                                    <Icon name="id-card-o" size={16} color={"#070700"} style={styles.modalIcon} />
+                                                    <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Last Name'} />
+                                                </View>
+                                            </View>
+                                            <View style={styles.inputsContainer}>
+                                                <View style={{flexDirection: 'row'}}>
+                                                    <Icon name="envelope" size={16} color={"#070700"} style={styles.modalIcon} />
+                                                    <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Email'} />
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </TouchableWithoutFeedback>
+                                </KeyboardAvoidingView>
                             </Modal>
                         }
                     </View>

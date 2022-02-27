@@ -40,9 +40,29 @@ const styles = StyleSheet.create({
         marginLeft: '30%'
     },
     closeModalButton:{
-        marginTop: '10%',
+        marginTop: '15%',
+        marginRight: '3%',
         alignSelf: 'flex-end'
-    }
+    },
+    inputsContainer:{
+        alignSelf: 'center',
+        marginTop: '20%'
+    },
+    modalIcon:{
+        marginTop: '5%',
+        marginLeft: '10%',
+        zIndex: 2
+    },
+    textInput:{
+        backgroundColor: '#AFAFAF',
+        width: '85%',
+        height: 40,
+        marginTop: '2%',
+        marginLeft: '-6%',
+        color: "#969696",
+        borderRadius: 15,
+        paddingHorizontal: 25,
+    },
 });
 
 export {styles}
