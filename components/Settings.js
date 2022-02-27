@@ -13,8 +13,11 @@ import { styles } from "../styles/SettingsStyles";
 
 export default function Settings({navigation}){
     const [showModal, setShowModal] = useState(false)
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
     const submitUpdateProfile = async () =>{
-        await updateProfile("a", "b", "c")
+        await updateProfile(firstName, lastName, email)
         setShowModal(false)
     }
     return(
@@ -54,19 +57,22 @@ export default function Settings({navigation}){
                                             <View style={styles.inputsContainer}>
                                                 <View style={{flexDirection: 'row'}}>
                                                     <Icon name="id-card-o" size={16} color={"#070700"} style={styles.modalIcon} />
-                                                    <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'First Name'} />
+                                                    <TextInput onChangeText={newFirstName => setFirstName(newFirstName)} defaultValue={firstName}
+                                                        style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'First Name'} />
                                                 </View>
                                             </View>
                                             <View style={styles.inputsContainer}>
                                                 <View style={{flexDirection: 'row'}}>
                                                     <Icon name="id-card-o" size={16} color={"#070700"} style={styles.modalIcon} />
-                                                    <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Last Name'} />
+                                                    <TextInput onChangeText={newLastName => setLastName(newLastName)} defaultValue={lastName}
+                                                        style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Last Name'} />
                                                 </View>
                                             </View>
                                             <View style={styles.inputsContainer}>
                                                 <View style={{flexDirection: 'row'}}>
                                                     <Icon name="envelope" size={16} color={"#070700"} style={styles.modalIcon} />
-                                                    <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Email'} />
+                                                    <TextInput onChangeText={newEmail => setEmail(newEmail)} defaultValue={email}
+                                                        style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Email'} />
                                                 </View>
                                             </View>
                                             <TouchableOpacity style={styles.updateProfileButton} onPress={submitUpdateProfile}>
