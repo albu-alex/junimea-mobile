@@ -1,12 +1,9 @@
 //npm import
-import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList,
+import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList, Modal,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
 import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-//custom method import
-import setupUpdateProfileModal from "../methods/Settings/setupUpdateProfileModal";
 
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
@@ -38,7 +35,13 @@ export default function Settings({navigation}){
                             <Text style={styles.buttonText}>Close settings</Text>
                         </TouchableOpacity>
                         {showModal &&
-                            setupUpdateProfileModal()
+                            <Modal animationType={'slide'} transparent={false}>
+                                <View style={styles.container}>
+                                    <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowModal(false)}>
+                                        <Icon name="close" color="black" size={30}/>
+                                    </TouchableOpacity>
+                                </View>
+                            </Modal>
                         }
                     </View>
                 </View>

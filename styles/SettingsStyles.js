@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
         marginTop: 3,
         marginRight: '3%',
         marginLeft: '30%'
+    },
+    closeModalButton:{
+        marginTop: '10%',
+        alignSelf: 'flex-end'
     }
 });
 
