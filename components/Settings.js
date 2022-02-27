@@ -16,7 +16,7 @@ export default function Settings({navigation}){
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
-    const submitUpdateProfile = async () =>{
+    const submitUpdateProfile = async () => {
         await updateProfile(firstName, lastName, email)
         setShowModal(false)
     }
