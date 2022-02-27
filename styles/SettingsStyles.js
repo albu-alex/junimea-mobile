@@ -59,10 +59,27 @@ const styles = StyleSheet.create({
         height: 40,
         marginTop: '2%',
         marginLeft: '-6%',
-        color: "#969696",
+        color: "#070700",
         borderRadius: 15,
         paddingHorizontal: 25,
     },
+    submitButtonText:{
+        color: "#070700",
+        fontSize: 20,
+        fontWeight: '500',
+        alignSelf: 'center',
+        marginTop: '2%'
+    },
+    updateProfileButton:{
+        marginTop: '25%',
+        alignSelf: 'center',
+        backgroundColor: '#AFAFAF',
+        width: '85%',
+        height: 40,
+        color: "#969696",
+        borderRadius: 15,
+        paddingHorizontal: 25,
+    }
 });
 
 export {styles}

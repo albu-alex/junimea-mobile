@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Change UpdateProfile modal implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Basic update profile modal styling">
       <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
     </list>
@@ -142,14 +141,7 @@
       <workItem from="1645867973872" duration="85000" />
       <workItem from="1645880483288" duration="4398000" />
       <workItem from="1645900179255" duration="1523000" />
-      <workItem from="1645970916044" duration="3070000" />
-    </task>
-    <task id="LOCAL-00023" summary="Current app works in production mode">
-      <created>1644788372740</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1644788372740</updated>
+      <workItem from="1645970916044" duration="3586000" />
     </task>
     <task id="LOCAL-00024" summary="Minor UserPost styling">
       <created>1644833471141</created>
@@ -487,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645972720780</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Basic update profile modal styling">
+      <created>1645974035641</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1645974035641</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add UserPosts to UserProfile" />
     <MESSAGE value="Move getPosts and setPosts methods to their respective folders" />
     <MESSAGE value="Render UserPost in UserProfile only if userIds match" />
     <MESSAGE value="Add pull to refresh + fix bug in UserPost" />
@@ -530,7 +528,8 @@
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
     <MESSAGE value="Setup update profile modal" />
     <MESSAGE value="Change UpdateProfile modal implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change UpdateProfile modal implementation" />
+    <MESSAGE value="Basic update profile modal styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic update profile modal styling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

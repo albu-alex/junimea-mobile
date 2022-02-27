@@ -62,6 +62,9 @@ export default function Settings({navigation}){
                                                     <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Email'} />
                                                 </View>
                                             </View>
+                                            <TouchableOpacity style={styles.updateProfileButton} onPress={() => setShowModal(false)}>
+                                                <Text style={styles.submitButtonText}>Submit changes</Text>
+                                            </TouchableOpacity>
                                         </View>
                                     </TouchableWithoutFeedback>
                                 </KeyboardAvoidingView>
