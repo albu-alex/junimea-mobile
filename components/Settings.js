@@ -5,11 +5,18 @@ import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+//custom method import
+import { updateProfile } from "../methods/Settings/updateProfile"
+
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
 
 export default function Settings({navigation}){
     const [showModal, setShowModal] = useState(false)
+    const submitUpdateProfile = async () =>{
+        await updateProfile("a", "b", "c")
+        setShowModal(false)
+    }
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -62,7 +69,7 @@ export default function Settings({navigation}){
                                                     <TextInput style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Email'} />
                                                 </View>
                                             </View>
-                                            <TouchableOpacity style={styles.updateProfileButton} onPress={() => setShowModal(false)}>
+                                            <TouchableOpacity style={styles.updateProfileButton} onPress={submitUpdateProfile}>
                                                 <Text style={styles.submitButtonText}>Submit changes</Text>
                                             </TouchableOpacity>
                                         </View>

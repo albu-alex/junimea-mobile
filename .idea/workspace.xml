@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Basic update profile modal styling">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Update profile modal styling complete">
+      <change afterPath="$PROJECT_DIR$/methods/Settings/updateProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +53,7 @@
     <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
@@ -141,14 +142,7 @@
       <workItem from="1645867973872" duration="85000" />
       <workItem from="1645880483288" duration="4398000" />
       <workItem from="1645900179255" duration="1523000" />
-      <workItem from="1645970916044" duration="3586000" />
-    </task>
-    <task id="LOCAL-00024" summary="Minor UserPost styling">
-      <created>1644833471141</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1644833471141</updated>
+      <workItem from="1645970916044" duration="4041000" />
     </task>
     <task id="LOCAL-00025" summary="Add new comment section">
       <created>1644835253867</created>
@@ -486,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645974035641</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Update profile modal styling complete">
+      <created>1645974666338</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1645974666338</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Move getPosts and setPosts methods to their respective folders" />
     <MESSAGE value="Render UserPost in UserProfile only if userIds match" />
     <MESSAGE value="Add pull to refresh + fix bug in UserPost" />
     <MESSAGE value="Add pull to refresh to UserProfile, need to add post number in async storage" />
@@ -529,7 +529,8 @@
     <MESSAGE value="Setup update profile modal" />
     <MESSAGE value="Change UpdateProfile modal implementation" />
     <MESSAGE value="Basic update profile modal styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic update profile modal styling" />
+    <MESSAGE value="Update profile modal styling complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update profile modal styling complete" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
