@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works in production mode">
-      <change afterPath="$PROJECT_DIR$/methods/UserPost/dislikePost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methods/UserPost/likePost.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add like post and dislike post functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +50,7 @@
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
@@ -80,6 +80,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -149,14 +150,7 @@
       <workItem from="1645970916044" duration="4974000" />
       <workItem from="1646048109119" duration="771000" />
       <workItem from="1646061165979" duration="69000" />
-      <workItem from="1646067012791" duration="869000" />
-    </task>
-    <task id="LOCAL-00028" summary="Add postLoading conditional rendering + styling">
-      <created>1644850923459</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1644850923459</updated>
+      <workItem from="1646067012791" duration="3888000" />
     </task>
     <task id="LOCAL-00029" summary="Init Search component &amp; Add Search to Navigation API">
       <created>1644852541431</created>
@@ -494,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645975907357</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Add like post and dislike post functionality">
+      <created>1646068165876</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1646068165876</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add close modal button + trying to fix FlatList rendering" />
     <MESSAGE value="Still fixing rendering of FlatList" />
     <MESSAGE value="UseEffect runs only once" />
     <MESSAGE value="Working on duplicate key fix" />
@@ -537,7 +537,8 @@
     <MESSAGE value="Create updateProfile method" />
     <MESSAGE value="Add TextInput functionalities" />
     <MESSAGE value="App works in production mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="App works in production mode" />
+    <MESSAGE value="Add like post and dislike post functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add like post and dislike post functionality" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity, Image, TextInput,
     ActivityIndicator, Animated, Dimensions, Modal } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import PhotoView from 'react-native-photo-view';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
 
 //css stylesheet import
@@ -70,7 +71,7 @@ export default function UserPost(props){
                 <View style={styles.contentHeader}>
                     <Text style={styles.primaryText}>{postDetails.title}</Text>
                     <TouchableOpacity style={{marginRight: '2%'}} onPress={togglePost}>
-                        <Icon name='ellipsis-h' size={20} color={'#555555'}></Icon>
+                        <Icon name='ellipsis-h' size={20} color={'#555555'}/>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.tags}>
@@ -86,9 +87,8 @@ export default function UserPost(props){
                 }
                 {postDetails.files && !showModal && postDetails.files.map((object, i) =>
                     <TouchableOpacity activeOpacity={0.6} onPress={() => setShowModal(true)}>
-                        <Animated.Image source={{uri: object}}
-                                        style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300,
-                                            marginBottom: 10, transform: [{scale}, {translateX}]}} />
+                        <Image source={{uri: object}}
+                               style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300}}/>
                     </TouchableOpacity>
                 )}
                 {postDetails.files && showModal && postDetails.files.map((object, i) =>
