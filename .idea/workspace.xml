@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add like post and dislike post functionality">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix image out of bounds bug">
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -50,7 +48,7 @@
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
@@ -150,14 +148,7 @@
       <workItem from="1645970916044" duration="4974000" />
       <workItem from="1646048109119" duration="771000" />
       <workItem from="1646061165979" duration="69000" />
-      <workItem from="1646067012791" duration="3888000" />
-    </task>
-    <task id="LOCAL-00029" summary="Init Search component &amp; Add Search to Navigation API">
-      <created>1644852541431</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1644852541431</updated>
+      <workItem from="1646067012791" duration="4254000" />
     </task>
     <task id="LOCAL-00030" summary="Init Search component &amp; Add Search to Navigation API">
       <created>1644852646920</created>
@@ -495,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646068165876</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Fix image out of bounds bug">
+      <created>1646071112959</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1646071112959</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +511,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Still fixing rendering of FlatList" />
     <MESSAGE value="UseEffect runs only once" />
     <MESSAGE value="Working on duplicate key fix" />
     <MESSAGE value="Style close modal button" />
@@ -538,7 +535,8 @@
     <MESSAGE value="Add TextInput functionalities" />
     <MESSAGE value="App works in production mode" />
     <MESSAGE value="Add like post and dislike post functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add like post and dislike post functionality" />
+    <MESSAGE value="Fix image out of bounds bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix image out of bounds bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,7 +3,6 @@ import { Text, View, TouchableOpacity, Image, TextInput,
     ActivityIndicator, Animated, Dimensions, Modal } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import PhotoView from 'react-native-photo-view';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
 
 //css stylesheet import
