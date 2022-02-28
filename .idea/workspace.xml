@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add TextInput functionalities">
-      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works in production mode">
+      <change afterPath="$PROJECT_DIR$/methods/UserPost/dislikePost.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methods/UserPost/likePost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +54,11 @@
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
@@ -86,7 +91,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -141,14 +146,10 @@
       <workItem from="1645867973872" duration="85000" />
       <workItem from="1645880483288" duration="4398000" />
       <workItem from="1645900179255" duration="1523000" />
-      <workItem from="1645970916044" duration="4791000" />
-    </task>
-    <task id="LOCAL-00027" summary="Add togglePost function">
-      <created>1644849405551</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1644849405551</updated>
+      <workItem from="1645970916044" duration="4974000" />
+      <workItem from="1646048109119" duration="771000" />
+      <workItem from="1646061165979" duration="69000" />
+      <workItem from="1646067012791" duration="869000" />
     </task>
     <task id="LOCAL-00028" summary="Add postLoading conditional rendering + styling">
       <created>1644850923459</created>
@@ -486,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645975374401</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="App works in production mode">
+      <created>1645975907357</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1645975907357</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add pull to refresh to UserProfile, need to add post number in async storage" />
     <MESSAGE value="Add close modal button + trying to fix FlatList rendering" />
     <MESSAGE value="Still fixing rendering of FlatList" />
     <MESSAGE value="UseEffect runs only once" />
@@ -529,7 +536,8 @@
     <MESSAGE value="Update profile modal styling complete" />
     <MESSAGE value="Create updateProfile method" />
     <MESSAGE value="Add TextInput functionalities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add TextInput functionalities" />
+    <MESSAGE value="App works in production mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="App works in production mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

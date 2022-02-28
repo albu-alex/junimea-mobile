@@ -11,6 +11,8 @@ import { styles } from "../styles/UserPostStyles";
 //custom methods import
 import { reportBug } from "../methods/UserPost/reportBug";
 import { loadPost } from "../methods/UserPost/loadPost";
+import { likePost } from "../methods/UserPost/likePost";
+import { dislikePost } from "../methods/UserPost/dislikePost";
 
 export default function UserPost(props){
     const [showComments, setshowComments] = useState(false);
@@ -22,6 +24,14 @@ export default function UserPost(props){
         // minor bug here
         // alert(toggle)
         await setPostHidden(toggle);
+    }
+    const setLikes = async (isLike) => {
+        if(isLike)
+            await likePost(props.id)
+        else
+            await dislikePost(props.id)
+        let details = await loadPost(props.id);
+        setPostDetails(details);
     }
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
@@ -99,10 +109,10 @@ export default function UserPost(props){
                 )}
             </View>
             <View style={styles.feedback}>
-                <TouchableOpacity onPress={() => null}>
+                <TouchableOpacity onPress={() => setLikes(true)}>
                     <Icon style={styles.logo} name='thumbs-up' size={24} color={'#555555'} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => null}>
+                <TouchableOpacity onPress={() => setLikes(false)}>
                     <Icon style={styles.logo} name='thumbs-down' size={24} color={'#555555'} />
                 </TouchableOpacity>
                 <Text style={styles.likeCount}>{postDetails.likes}</Text>
