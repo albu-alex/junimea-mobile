@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works fine in production mode">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix UserPost buttons alignment issues">
+      <change afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/CommentStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
@@ -151,14 +155,7 @@
       <workItem from="1646067012791" duration="4501000" />
       <workItem from="1646139698880" duration="2000" />
       <workItem from="1646145727289" duration="34000" />
-      <workItem from="1646164788737" duration="303000" />
-    </task>
-    <task id="LOCAL-00031" summary="Finish Search component styling">
-      <created>1644914082095</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1644914082095</updated>
+      <workItem from="1646164788737" duration="3903000" />
     </task>
     <task id="LOCAL-00032" summary="Remove redundant imports">
       <created>1644914193092</created>
@@ -496,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646071525877</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fix UserPost buttons alignment issues">
+      <created>1646165296904</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1646165296905</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working on duplicate key fix" />
     <MESSAGE value="Style close modal button" />
     <MESSAGE value="Switching useState to useEffect for postNumber" />
     <MESSAGE value="Remove sleep promise &amp; simplify pull to refresh" />
@@ -539,7 +542,8 @@
     <MESSAGE value="Add like post and dislike post functionality" />
     <MESSAGE value="Fix image out of bounds bug" />
     <MESSAGE value="App works fine in production mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="App works fine in production mode" />
+    <MESSAGE value="Fix UserPost buttons alignment issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix UserPost buttons alignment issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

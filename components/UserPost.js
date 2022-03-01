@@ -8,6 +8,9 @@ import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-han
 //css stylesheet import
 import { styles } from "../styles/UserPostStyles";
 
+//custom component import
+import Comment from "../components/Comment"
+
 //custom methods import
 import { reportBug } from "../methods/UserPost/reportBug";
 import { loadPost } from "../methods/UserPost/loadPost";
@@ -50,7 +53,7 @@ export default function UserPost(props){
     useEffect(async () => {
         let details = await loadPost(props.id);
         setPostDetails(details);
-    });
+    }, []);
     return(
         <View style={styles.container}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
@@ -124,8 +127,12 @@ export default function UserPost(props){
             </View>
             {showComments &&
                 <View style={styles.commentSection}>
-                    {/*this is where comments are supposed to show*/}
-                    <Text>Comentariu</Text>
+                    {!postDetails.comments &&
+                        <ActivityIndicator size='large' color='#070700' />
+                    }
+                    {postDetails.comments && postDetails.comments.map((object, i) =>
+                        <Comment commentDetails={object} />
+                    )}
                     <View style={styles.addNewComment}>
                         <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}/>
                         <TextInput style={styles.textInput} placeholderTextColor={"#AAAAAA"}
