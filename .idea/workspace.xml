@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix UserPost buttons alignment issues">
-      <change afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/CommentStyles.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Create Comment header">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/CommentStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/CommentStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,14 +154,7 @@
       <workItem from="1646067012791" duration="4501000" />
       <workItem from="1646139698880" duration="2000" />
       <workItem from="1646145727289" duration="34000" />
-      <workItem from="1646164788737" duration="3903000" />
-    </task>
-    <task id="LOCAL-00032" summary="Remove redundant imports">
-      <created>1644914193092</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1644914193092</updated>
+      <workItem from="1646164788737" duration="4764000" />
     </task>
     <task id="LOCAL-00033" summary="Add cancel button functionality">
       <created>1644914985853</created>
@@ -500,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646165296905</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Create Comment header">
+      <created>1646168747836</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1646168747837</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Style close modal button" />
     <MESSAGE value="Switching useState to useEffect for postNumber" />
     <MESSAGE value="Remove sleep promise &amp; simplify pull to refresh" />
     <MESSAGE value="Refactoring" />
@@ -543,7 +541,8 @@
     <MESSAGE value="Fix image out of bounds bug" />
     <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Fix UserPost buttons alignment issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix UserPost buttons alignment issues" />
+    <MESSAGE value="Create Comment header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Comment header" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

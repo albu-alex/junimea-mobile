@@ -19,13 +19,12 @@ export default function Comment(props){
                     <Image source={{uri: props.commentDetails.user.profilePicUrl}}
                            style={{width: 20, height: 20, borderRadius: 50}} />
                 }
-                {!props.commentDetails.user.firstName &&
-                    <Text style={styles.headerText}>Guest</Text>
-                }
-                {props.commentDetails.user.firstName &&
-                    <Text style={styles.headerText}>{props.commentDetails.user.firstName}</Text>
-                }
+                <Text style={styles.headerText}>{props.commentDetails.user.firstName}</Text>
+                <TouchableOpacity style={{marginLeft: '60%'}} onPress={() => null}>
+                    <Icon name='ellipsis-h' size={16} color={'#555555'}/>
+                </TouchableOpacity>
             </View>
+            <Text style={styles.primaryText}>{props.commentDetails.text}</Text>
         </View>
     )
 }
