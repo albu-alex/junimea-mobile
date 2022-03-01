@@ -109,17 +109,17 @@ export default function UserPost(props){
             </View>
             <View style={styles.feedback}>
                 <TouchableOpacity onPress={() => setLikes(true)}>
-                    <Icon style={styles.logo} name='thumbs-up' size={24} color={'#555555'} />
+                    <Icon name='thumbs-up' size={24} color={'#555555'} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setLikes(false)}>
-                    <Icon style={styles.logo} name='thumbs-down' size={24} color={'#555555'} />
+                    <Icon name='thumbs-down' size={24} color={'#555555'} />
                 </TouchableOpacity>
                 <Text style={styles.likeCount}>{postDetails.likes}</Text>
                 <TouchableOpacity onPress={() => setshowComments(!showComments)}>
-                    <Icon style={styles.logo} name='comment' size={24} color={'#555555'} />
+                    <Icon name='comment' size={24} color={'#555555'} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => null}>
-                    <Icon style={styles.logo} name='share' size={24} color={'#555555'} />
+                    <Icon name='share' size={24} color={'#555555'} />
                 </TouchableOpacity>
             </View>
             {showComments &&

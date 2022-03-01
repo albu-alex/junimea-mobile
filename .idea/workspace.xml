@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix image out of bounds bug">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works fine in production mode">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,14 +148,10 @@
       <workItem from="1645970916044" duration="4974000" />
       <workItem from="1646048109119" duration="771000" />
       <workItem from="1646061165979" duration="69000" />
-      <workItem from="1646067012791" duration="4254000" />
-    </task>
-    <task id="LOCAL-00030" summary="Init Search component &amp; Add Search to Navigation API">
-      <created>1644852646920</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1644852646920</updated>
+      <workItem from="1646067012791" duration="4501000" />
+      <workItem from="1646139698880" duration="2000" />
+      <workItem from="1646145727289" duration="34000" />
+      <workItem from="1646164788737" duration="303000" />
     </task>
     <task id="LOCAL-00031" summary="Finish Search component styling">
       <created>1644914082095</created>
@@ -493,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646071112959</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="App works fine in production mode">
+      <created>1646071525877</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1646071525877</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +514,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="UseEffect runs only once" />
     <MESSAGE value="Working on duplicate key fix" />
     <MESSAGE value="Style close modal button" />
     <MESSAGE value="Switching useState to useEffect for postNumber" />
@@ -536,7 +538,8 @@
     <MESSAGE value="App works in production mode" />
     <MESSAGE value="Add like post and dislike post functionality" />
     <MESSAGE value="Fix image out of bounds bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix image out of bounds bug" />
+    <MESSAGE value="App works fine in production mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="App works fine in production mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

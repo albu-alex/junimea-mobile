@@ -55,21 +55,17 @@ const styles = StyleSheet.create({
       marginBottom: 10
     },
     feedback:{
-        alignSelf: 'center',
+        justifyContent: 'space-between',
+        display: 'flex',
         flexDirection: 'row',
+        paddingHorizontal: '4%',
         marginTop: '2%',
         marginBottom: '1%'
-    },
-    logo:{
-        marginLeft: '5%',
-        marginRight: '5%',
     },
     likeCount:{
         color: "#555555",
         fontSize: 24,
         fontWeight: '500',
-        marginLeft: '7%',
-        marginRight: '15%'
     },
     inputIcon:{
         zIndex: 2,
