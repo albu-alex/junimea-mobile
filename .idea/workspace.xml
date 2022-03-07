@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Render actual photos inside comments">
-      <change afterPath="$PROJECT_DIR$/methods/Comment/likeComment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Change photo press opacity when pressed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,21 +159,7 @@
       <workItem from="1646600569840" duration="5000" />
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
-      <workItem from="1646680111370" duration="1313000" />
-    </task>
-    <task id="LOCAL-00037" summary="Basic UserProfile styling + Add to Navigation API">
-      <created>1645092097360</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1645092097360</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Finish UserProfile header">
-      <created>1645093291994</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1645093291994</updated>
+      <workItem from="1646680111370" duration="2251000" />
     </task>
     <task id="LOCAL-00039" summary="Add AsyncStorage to project + store user details in AsyncStorage">
       <created>1645094174002</created>
@@ -502,7 +490,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646680985971</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Add functionalities to like and reply in comment">
+      <created>1646681718119</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1646681718119</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Change photo press opacity when pressed">
+      <created>1646681937328</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1646681937328</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,8 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init Settings component" />
-    <MESSAGE value="Settings component styling" />
     <MESSAGE value="Add functionality to Logout and Close settings buttons" />
     <MESSAGE value="Slight refactor" />
     <MESSAGE value="Styling update" />
@@ -545,7 +545,9 @@
     <MESSAGE value="Add no comment icon to comment section" />
     <MESSAGE value="Add image and interaction to comment" />
     <MESSAGE value="Render actual photos inside comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Render actual photos inside comments" />
+    <MESSAGE value="Add functionalities to like and reply in comment" />
+    <MESSAGE value="Change photo press opacity when pressed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change photo press opacity when pressed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

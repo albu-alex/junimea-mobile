@@ -15,10 +15,6 @@ import { getPosts } from "../methods/UserProfile/getPosts"
 //custom components import
 import UserPost from "./UserPost"
 
-const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export default function UserProfile({ navigation }){
     const [profilePicture, setProfilePicture] = useState('');
     const [username, setUsername] = useState('');
