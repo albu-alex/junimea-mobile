@@ -88,7 +88,7 @@ export default function UserPost(props){
                     <ActivityIndicator size='large' color='#070700' />
                 }
                 {postDetails.files && !showModal && postDetails.files.map((object, i) =>
-                    <TouchableOpacity activeOpacity={0.6} onPress={() => setShowModal(true)}>
+                    <TouchableOpacity activeOpacity={0.9} onPress={() => setShowModal(true)}>
                         <Image source={{uri: object}}
                                style={{width: Dimensions.get('window').width, height: (Dimensions.get('window').width/300)*300}}/>
                     </TouchableOpacity>
