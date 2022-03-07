@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Styling and add comment text">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add no comment icon to comment section">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserPost/loadPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/loadPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/CommentStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/CommentStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +157,7 @@
       <workItem from="1646164788737" duration="4888000" />
       <workItem from="1646600569840" duration="5000" />
       <workItem from="1646655218611" duration="681000" />
-      <workItem from="1646661702478" duration="996000" />
-    </task>
-    <task id="LOCAL-00034" summary="Add border to comment section">
-      <created>1644915682439</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1644915682439</updated>
+      <workItem from="1646661702478" duration="3355000" />
     </task>
     <task id="LOCAL-00035" summary="Add tag rendering and styling">
       <created>1644916817255</created>
@@ -503,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646169615487</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Add no comment icon to comment section">
+      <created>1646662741211</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1646662741211</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove sleep promise &amp; simplify pull to refresh" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Simplify pull to refresh in UserProfile" />
     <MESSAGE value="init Settings component" />
@@ -546,7 +544,8 @@
     <MESSAGE value="Fix UserPost buttons alignment issues" />
     <MESSAGE value="Create Comment header" />
     <MESSAGE value="Styling and add comment text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styling and add comment text" />
+    <MESSAGE value="Add no comment icon to comment section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add no comment icon to comment section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

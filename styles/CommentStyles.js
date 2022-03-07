@@ -24,6 +24,19 @@ const styles = StyleSheet.create({
         fontWeight: "400",
         marginBottom: "2%",
         marginLeft: "4%"
+    },
+    commentInteraction:{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingHorizontal: '10%',
+        marginBottom: '4%',
+        marginRight: '35%'
+    },
+    secondaryText:{
+        color: "#555555",
+        fontSize: 12,
+        fontWeight: '600'
     }
 })
 
