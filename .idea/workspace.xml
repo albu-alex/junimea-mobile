@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add image and interaction to comment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Render actual photos inside comments">
+      <change afterPath="$PROJECT_DIR$/methods/Comment/likeComment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -157,14 +157,7 @@
       <workItem from="1646600569840" duration="5000" />
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
-      <workItem from="1646680111370" duration="621000" />
-    </task>
-    <task id="LOCAL-00036" summary="Add Modal support to UserPost">
-      <created>1644918127584</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1644918127584</updated>
+      <workItem from="1646680111370" duration="1313000" />
     </task>
     <task id="LOCAL-00037" summary="Basic UserProfile styling + Add to Navigation API">
       <created>1645092097360</created>
@@ -502,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646665292841</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Render actual photos inside comments">
+      <created>1646680985970</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1646680985971</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Simplify pull to refresh in UserProfile" />
     <MESSAGE value="init Settings component" />
     <MESSAGE value="Settings component styling" />
     <MESSAGE value="Add functionality to Logout and Close settings buttons" />
@@ -545,7 +544,8 @@
     <MESSAGE value="Styling and add comment text" />
     <MESSAGE value="Add no comment icon to comment section" />
     <MESSAGE value="Add image and interaction to comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add image and interaction to comment" />
+    <MESSAGE value="Render actual photos inside comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Render actual photos inside comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

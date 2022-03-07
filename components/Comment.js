@@ -4,10 +4,14 @@ import { Text, View, TouchableOpacity, Image, TextInput,
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+//custom method import
+import { likeComment } from "../methods/Comment/likeComment"
+
 //css stylesheet import
 import { styles } from "../styles/CommentStyles";
 
 export default function Comment(props){
+    const [isReply, setIsReply] = useState(false)
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -33,10 +37,10 @@ export default function Comment(props){
                 )}
             </View>
             <View style={styles.commentInteraction}>
-                <TouchableOpacity activeOpacity={0.4} onPress={() => null}>
+                <TouchableOpacity activeOpacity={0.4} onPress={likeComment}>
                     <Text style={styles.secondaryText}>Like</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.4} onPress={() => null}>
+                <TouchableOpacity activeOpacity={0.4} onPress={() => setIsReply(!isReply)}>
                     <Text style={styles.secondaryText}>Reply</Text>
                 </TouchableOpacity>
             </View>
