@@ -26,9 +26,11 @@ export default function Comment(props){
             </View>
             <Text style={styles.primaryText}>{props.commentDetails.text}</Text>
             <View>
-                <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
-                             style={{width: Dimensions.get('window').width*0.8,
-                                 height: (Dimensions.get('window').width*0.8/300)*300}} />
+                {props.commentDetails.files.map((object, i) =>
+                    <Image source={{uri: object}}
+                                 style={{width: Dimensions.get('window').width*0.8,
+                                     height: (Dimensions.get('window').width*0.8/300)*300}} />
+                )}
             </View>
             <View style={styles.commentInteraction}>
                 <TouchableOpacity activeOpacity={0.4} onPress={() => null}>
