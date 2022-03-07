@@ -9,8 +9,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {styles} from "../styles/UserProfileStyles"
 
 //custom methods import
-import { getUserDetails } from "../methods/UserProfile/getUserDetails";
+import { getUserDetails } from "../methods/UserProfile/getUserDetails"
 import { getPosts } from "../methods/UserProfile/getPosts"
+import { uploadProfilePicture } from "../methods/UserProfile/uploadProfilePicture"
 
 //custom components import
 import UserPost from "./UserPost"
@@ -67,8 +68,8 @@ export default function UserProfile({ navigation }){
                 }
             </View>
             <View style={{flexDirection: 'row', borderBottomWidth: 0.6, borderBottomColor: '#070700'}}>
-                <TouchableOpacity style={styles.profileButton}>
-                    <Text style={styles.buttonText} onPress={() => alert("Change picture")}>Change picture</Text>
+                <TouchableOpacity onPress={uploadProfilePicture} style={styles.profileButton}>
+                    <Text style={styles.buttonText}>Change picture</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.profileButton} onPress={() => alert("View saved posts")}>
                     <Text style={styles.buttonText}>View saved posts</Text>
