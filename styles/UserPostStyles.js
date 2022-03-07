@@ -114,9 +114,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignSelf: 'flex-end'
     },
-    modalButtonText:{
+    modalButtonText: {
         color: 'red',
         alignSelf: 'center',
+    },
+    noComment: {
+        justifyContent: 'center',
+        alignSelf: 'center',
+        marginTop: '2%',
+        marginBottom: '2%'
     }
 });
 

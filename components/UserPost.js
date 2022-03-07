@@ -130,6 +130,12 @@ export default function UserPost(props){
                     {!postDetails.comments &&
                         <ActivityIndicator size='large' color='#070700' />
                     }
+                    {postDetails.comments.length === 0 &&
+                        <View style={styles.noComment}>
+                            <Icon style={{alignSelf: 'center'}} name='hand-stop-o' size={40} color={"#070700"} />
+                            <Text style={styles.headerText}>Be the first to comment on this post</Text>
+                        </View>
+                    }
                     {postDetails.comments && postDetails.comments.map((object, i) =>
                         <Comment commentDetails={object} />
                     )}
