@@ -158,7 +158,7 @@ export default function UserPost(props){
                     )}
                     <View style={styles.addNewComment}>
                         <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}/>
-                        <TextInput style={styles.textInput} placeholderTextColor={"#AAAAAA"}
+                        <TextInput style={styles.textInput} placeholderTextColor={"#070700"}
                                     multiline={true} placeholder={'Add new comment...'}
                                    onChangeText={newCommentText => setCommentText(newCommentText)}
                                    defaultValue={commentText}/>

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add postPhoto method">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add photos to comments" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,13 +172,6 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-    </task>
-    <task id="LOCAL-00042" summary="Update npm and versions of dependencies">
-      <created>1645112684492</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1645112684492</updated>
     </task>
     <task id="LOCAL-00043" summary="Retrieving post IDs from API">
       <created>1645114051802</created>
@@ -518,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647191057663</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Add photos to comments">
+      <created>1647193876426</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1647193876426</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +535,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
     <MESSAGE value="Follow PureComponent practices improving app performance" />
     <MESSAGE value="App works great in production mode" />
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
@@ -562,7 +559,8 @@
     <MESSAGE value="Add expo-image-picker + refactor" />
     <MESSAGE value="Add new comment method without photos" />
     <MESSAGE value="Add postPhoto method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add postPhoto method" />
+    <MESSAGE value="Add photos to comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add photos to comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
