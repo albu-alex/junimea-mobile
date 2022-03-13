@@ -16,12 +16,14 @@ import { reportBug } from "../methods/UserPost/reportBug";
 import { loadPost } from "../methods/UserPost/loadPost";
 import { likePost } from "../methods/UserPost/likePost";
 import { dislikePost } from "../methods/UserPost/dislikePost";
+import { createNewComment } from "../methods/UserPost/createNewComment";
 
 export default function UserPost(props){
     const [showComments, setshowComments] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
     const [postDetails, setPostDetails] = useState({});
+    const [commentText, setCommentText] = useState('');
     const togglePost = async () => {
         let toggle = await reportBug(postHidden);
         // minor bug here
@@ -29,12 +31,20 @@ export default function UserPost(props){
         await setPostHidden(toggle);
     }
     const setLikes = async (isLike) => {
-        if(isLike)
+        if (isLike)
             await likePost(props.id)
         else
             await dislikePost(props.id)
-        let details = await loadPost(props.id);
-        setPostDetails(details);
+        resetPostDetails()
+    }
+    const addComment = async () => {
+        await createNewComment(commentText, props.id, [])
+        setCommentText("")
+        resetPostDetails()
+    }
+    const resetPostDetails = async () => {
+        let details = await loadPost(props.id)
+        setPostDetails(details)
     }
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
@@ -142,11 +152,13 @@ export default function UserPost(props){
                     <View style={styles.addNewComment}>
                         <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}/>
                         <TextInput style={styles.textInput} placeholderTextColor={"#AAAAAA"}
-                                    multiline={true} placeholder={'Add new comment...'}/>
+                                    multiline={true} placeholder={'Add new comment...'}
+                                   onChangeText={newCommentText => setCommentText(newCommentText)}
+                                   defaultValue={commentText}/>
                         <TouchableOpacity onPress={() => null} style={styles.addNewCommentButton}>
                             <Icon name='image' size={18} color={"#555555"} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => null} style={styles.addNewCommentButton}>
+                        <TouchableOpacity onPress={() => addComment()} style={styles.addNewCommentButton}>
                             <Text>Send</Text>
                         </TouchableOpacity>
                     </View>
