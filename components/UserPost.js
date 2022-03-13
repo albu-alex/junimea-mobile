@@ -25,6 +25,7 @@ export default function UserPost(props){
     const [postHidden, setPostHidden] = useState(false);
     const [postDetails, setPostDetails] = useState({});
     const [commentText, setCommentText] = useState('');
+    const [photos, setPhotos] = useState([]);
     const togglePost = async () => {
         let toggle = await reportBug(postHidden);
         // minor bug here
@@ -39,13 +40,18 @@ export default function UserPost(props){
         resetPostDetails()
     }
     const addComment = async () => {
-        await createNewComment(commentText, props.id, [])
+        await createNewComment(commentText, props.id, photos)
         setCommentText("")
+        setPhotos([])
         resetPostDetails()
     }
     const resetPostDetails = async () => {
         let details = await loadPost(props.id)
         setPostDetails(details)
+    }
+    const addPhoto = async () => {
+        let photo = await postPhoto()
+        setPhotos(photo.push(photo))
     }
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
@@ -156,7 +162,7 @@ export default function UserPost(props){
                                     multiline={true} placeholder={'Add new comment...'}
                                    onChangeText={newCommentText => setCommentText(newCommentText)}
                                    defaultValue={commentText}/>
-                        <TouchableOpacity onPress={() => postPhoto()} style={styles.addNewCommentButton}>
+                        <TouchableOpacity onPress={() => addPhoto()} style={styles.addNewCommentButton}>
                             <Icon name='image' size={18} color={"#555555"} />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => addComment()} style={styles.addNewCommentButton}>
