@@ -17,6 +17,7 @@ import { loadPost } from "../methods/UserPost/loadPost";
 import { likePost } from "../methods/UserPost/likePost";
 import { dislikePost } from "../methods/UserPost/dislikePost";
 import { createNewComment } from "../methods/UserPost/createNewComment";
+import { postPhoto } from "../methods/UserPost/postPhoto";
 
 export default function UserPost(props){
     const [showComments, setshowComments] = useState(false);
@@ -155,7 +156,7 @@ export default function UserPost(props){
                                     multiline={true} placeholder={'Add new comment...'}
                                    onChangeText={newCommentText => setCommentText(newCommentText)}
                                    defaultValue={commentText}/>
-                        <TouchableOpacity onPress={() => null} style={styles.addNewCommentButton}>
+                        <TouchableOpacity onPress={() => postPhoto()} style={styles.addNewCommentButton}>
                             <Icon name='image' size={18} color={"#555555"} />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => addComment()} style={styles.addNewCommentButton}>

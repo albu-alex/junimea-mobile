@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add expo-image-picker + refactor">
-      <change afterPath="$PROJECT_DIR$/methods/UserPost/createNewComment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add new comment method without photos">
+      <change afterPath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,13 +175,6 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-    </task>
-    <task id="LOCAL-00040" summary="Create getUserDetails method &amp; Add to UserProfile">
-      <created>1645094844584</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1645094844584</updated>
     </task>
     <task id="LOCAL-00041" summary="Fix AsyncStorage bugs + Retrieve user details in UserProfile">
       <created>1645098365310</created>
@@ -521,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646682414513</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Add new comment method without photos">
+      <created>1647190414472</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1647190414473</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +538,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Slight refactor" />
     <MESSAGE value="Styling update" />
     <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
     <MESSAGE value="Follow PureComponent practices improving app performance" />
@@ -565,7 +562,8 @@
     <MESSAGE value="Add functionalities to like and reply in comment" />
     <MESSAGE value="Change photo press opacity when pressed" />
     <MESSAGE value="Add expo-image-picker + refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add expo-image-picker + refactor" />
+    <MESSAGE value="Add new comment method without photos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new comment method without photos" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
