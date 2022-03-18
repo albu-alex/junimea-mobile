@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Style changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/CommentStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/CommentStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserPost/createNewComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/createNewComment.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,14 +165,7 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-      <workItem from="1647584298583" duration="819000" />
-    </task>
-    <task id="LOCAL-00044" summary="Complete retrieving initial posts from API + prodcution app works">
-      <created>1645114739676</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1645114739676</updated>
+      <workItem from="1647584298583" duration="1562000" />
     </task>
     <task id="LOCAL-00045" summary="Add marginTop to Android TabBar">
       <created>1645133076045</created>
@@ -510,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647194232307</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Style changes">
+      <created>1647585416790</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1647585416791</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

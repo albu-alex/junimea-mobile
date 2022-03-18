@@ -23,7 +23,9 @@ export async function createNewComment(commentText, id, images){
                 {
                     text: "Login",
                     style: "cancel",
-                    onPress: () => alert(":)")
+                    onPress: () => {
+                        return false
+                    }
                 },
                 {
                     text: "Continue as guest",

@@ -1,6 +1,8 @@
 //npm import
-import { Text, View, TouchableOpacity, Image, TextInput,
-    ActivityIndicator, Animated, Dimensions, Modal } from 'react-native';
+import {
+    Text, View, TouchableOpacity, Image, TextInput,
+    ActivityIndicator, Animated, Dimensions, Modal, Alert
+} from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
@@ -40,7 +42,21 @@ export default function UserPost(props){
         resetPostDetails()
     }
     const addComment = async () => {
-        await createNewComment(commentText, props.id, photos)
+        let result = await createNewComment(commentText, props.id, photos)
+        if (!result) {
+            Alert.alert("Logout", "In order to post a comment",
+                [
+                    {
+                        text: "Settings -> Logout",
+                        style: "destructive"
+                    }
+                ],
+                {
+                    cancelable: true,
+                    onDismiss: () => alert(":(")
+                }
+            )
+        }
         setCommentText("")
         setPhotos([])
         resetPostDetails()
