@@ -20,7 +20,6 @@ export async function postPhoto() {
     data.append('File', {uri: localUri, name: filename});
     await axios.post('http://52.57.118.176/File/Add', data, {
         timeout: 4000,
-        headers: { "Content-Type": "multipart/form-data" }
     })
     .then(function (response){
         if(response.status === 200){
