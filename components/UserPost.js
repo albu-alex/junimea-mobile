@@ -43,20 +43,6 @@ export default function UserPost(props){
     }
     const addComment = async () => {
         let result = await createNewComment(commentText, props.id, photos)
-        if (!result) {
-            Alert.alert("Logout", "In order to post a comment",
-                [
-                    {
-                        text: "Settings -> Logout",
-                        style: "destructive"
-                    }
-                ],
-                {
-                    cancelable: true,
-                    onDismiss: () => alert(":(")
-                }
-            )
-        }
         setCommentText("")
         setPhotos([])
         resetPostDetails()

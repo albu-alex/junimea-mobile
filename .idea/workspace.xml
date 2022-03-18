@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fixing upload file bug" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix axios requests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,14 +161,7 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-      <workItem from="1647584298583" duration="3351000" />
-    </task>
-    <task id="LOCAL-00047" summary="Move getPosts and setPosts methods to their respective folders">
-      <created>1645266272602</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1645266272602</updated>
+      <workItem from="1647584298583" duration="3698000" />
     </task>
     <task id="LOCAL-00048" summary="Render UserPost in UserProfile only if userIds match">
       <created>1645266942552</created>
@@ -506,7 +499,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647587660216</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Fix axios requests">
+      <created>1647587976788</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1647587976788</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +525,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Setup update profile modal" />
     <MESSAGE value="Change UpdateProfile modal implementation" />
     <MESSAGE value="Basic update profile modal styling" />
     <MESSAGE value="Update profile modal styling complete" />
@@ -550,7 +549,8 @@
     <MESSAGE value="Style changes" />
     <MESSAGE value="Logout alert if user not logged in" />
     <MESSAGE value="Fixing upload file bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing upload file bug" />
+    <MESSAGE value="Fix axios requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix axios requests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

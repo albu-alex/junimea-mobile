@@ -24,7 +24,18 @@ export async function createNewComment(commentText, id, images){
                     text: "Login",
                     style: "cancel",
                     onPress: () => {
-                        return false
+                        Alert.alert("Logout", "In order to post a comment",
+                            [
+                                {
+                                    text: "Settings -> Logout",
+                                    style: "destructive"
+                                }
+                            ],
+                            {
+                                cancelable: true,
+                                onDismiss: () => alert(":(")
+                            }
+                        )
                     }
                 },
                 {
