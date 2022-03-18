@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Style changes">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Logout alert if user not logged in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserPost/createNewComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/createNewComment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,14 +166,7 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-      <workItem from="1647584298583" duration="1562000" />
-    </task>
-    <task id="LOCAL-00045" summary="Add marginTop to Android TabBar">
-      <created>1645133076045</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1645133076045</updated>
+      <workItem from="1647584298583" duration="3036000" />
     </task>
     <task id="LOCAL-00046" summary="Add UserPosts to UserProfile">
       <created>1645265771488</created>
@@ -510,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647585416791</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Logout alert if user not logged in">
+      <created>1647585892570</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1647585892570</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +530,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="App works great in production mode" />
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
     <MESSAGE value="Setup update profile modal" />
     <MESSAGE value="Change UpdateProfile modal implementation" />
@@ -554,7 +554,8 @@
     <MESSAGE value="Add postPhoto method" />
     <MESSAGE value="Add photos to comments" />
     <MESSAGE value="Style changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Style changes" />
+    <MESSAGE value="Logout alert if user not logged in" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logout alert if user not logged in" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

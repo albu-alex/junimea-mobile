@@ -1,4 +1,5 @@
-import * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from 'expo-image-picker'
+import { uploadProfilePicture } from "./uploadProfilePicture";
 
 //This function is used in order to upload the photo which the user has selected for profile picture
 export async function uploadFile(){
@@ -14,5 +15,7 @@ export async function uploadFile(){
     // ImagePicker saves the taken photo to disk and returns a local URI to it
     let localUri = pickerResult.uri
     let filename = localUri.split('/').pop()
-    return {localUri, filename}
+    if (localUri && filename) {
+        uploadProfilePicture({localUri, filename})
+    }
 }

@@ -1,16 +1,14 @@
-import { uploadFile } from "./uploadFile"
+import React from "react";
 import FormData from 'form-data'
 import axios from 'axios'
 import { Alert } from 'react-native'
 
-export async function uploadProfilePicture() {
-    let profilePicture = await uploadFile()
+export async function uploadProfilePicture(profilePicture) {
     let data = new FormData();
     data.append('Pic', {uri: profilePicture.localUri, name: profilePicture.filename});
     let newProfilePic;
     await axios.post('http://52.57.118.176/User/ProfilePic', data, {
         timeout: 4000,
-        headers: { "Content-Type": "multipart/form-data" }
     })
     .then(function (response){
         if(response.status === 200){

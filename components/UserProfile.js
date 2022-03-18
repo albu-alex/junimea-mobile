@@ -12,6 +12,7 @@ import {styles} from "../styles/UserProfileStyles"
 import { getUserDetails } from "../methods/UserProfile/getUserDetails"
 import { getPosts } from "../methods/UserProfile/getPosts"
 import { uploadProfilePicture } from "../methods/UserProfile/uploadProfilePicture"
+import { uploadFile } from "../methods/UserProfile/uploadFile";
 
 //custom components import
 import UserPost from "./UserPost"
@@ -31,6 +32,9 @@ export default function UserProfile({ navigation }){
 
         await fetchPosts()
     });
+    const changeProfilePicture = async() => {
+        let picture = await uploadFile()
+    }
     const fetchPosts = async() => {
         let posts = await getPosts()
         setData(posts)
@@ -68,7 +72,7 @@ export default function UserProfile({ navigation }){
                 }
             </View>
             <View style={{flexDirection: 'row', borderBottomWidth: 0.6, borderBottomColor: '#070700'}}>
-                <TouchableOpacity onPress={uploadProfilePicture} style={styles.profileButton}>
+                <TouchableOpacity onPress={changeProfilePicture} style={styles.profileButton}>
                     <Text style={styles.buttonText}>Change picture</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.profileButton} onPress={() => alert("View saved posts")}>
