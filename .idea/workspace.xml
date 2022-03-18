@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add photos to comments" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Style changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/CommentStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/CommentStyles.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,31 +44,31 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,6 +84,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -94,22 +99,10 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -172,13 +165,7 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-    </task>
-    <task id="LOCAL-00043" summary="Retrieving post IDs from API">
-      <created>1645114051802</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1645114051802</updated>
+      <workItem from="1647584298583" duration="819000" />
     </task>
     <task id="LOCAL-00044" summary="Complete retrieving initial posts from API + prodcution app works">
       <created>1645114739676</created>
@@ -516,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647193876426</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Style changes">
+      <created>1647194232307</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1647194232307</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +529,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Follow PureComponent practices improving app performance" />
     <MESSAGE value="App works great in production mode" />
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
     <MESSAGE value="Setup update profile modal" />
@@ -560,7 +553,8 @@
     <MESSAGE value="Add new comment method without photos" />
     <MESSAGE value="Add postPhoto method" />
     <MESSAGE value="Add photos to comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add photos to comments" />
+    <MESSAGE value="Style changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Style changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

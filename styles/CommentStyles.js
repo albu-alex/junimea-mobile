@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
         marginBottom: "3%",
     },
     header:{
-        justifyContent: 'flex-start',
         flexDirection: 'row',
         display: 'flex'
     },
@@ -28,10 +27,10 @@ const styles = StyleSheet.create({
     commentInteraction:{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        paddingHorizontal: '10%',
-        marginBottom: '4%',
-        marginRight: '35%'
+        justifyContent: 'space-between',
+        paddingLeft: '10%',
+        paddingRight: '50%',
+        marginBottom: '4%'
     },
     secondaryText:{
         color: "#555555",
