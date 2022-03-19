@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Could not fix; try changing image picker">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix styling bug in Comment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -163,21 +163,7 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-      <workItem from="1647697439681" duration="5388000" />
-    </task>
-    <task id="LOCAL-00041" summary="Fix AsyncStorage bugs + Retrieve user details in UserProfile">
-      <created>1645098365310</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1645098365310</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Update npm and versions of dependencies">
-      <created>1645112684492</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1645112684492</updated>
+      <workItem from="1647697439681" duration="7509000" />
     </task>
     <task id="LOCAL-00043" summary="Retrieving post IDs from API">
       <created>1645114051802</created>
@@ -508,7 +494,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647701301256</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Could not fix; try changing image picker">
+      <created>1647702877118</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1647702877119</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Fix styling bug in Comment">
+      <created>1647703176989</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1647703176989</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
     <MESSAGE value="Follow PureComponent practices improving app performance" />
     <MESSAGE value="App works great in production mode" />
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
@@ -551,7 +550,8 @@
     <MESSAGE value="Add expo-image-picker + refactor" />
     <MESSAGE value="Update expo + try to fix image picker issues" />
     <MESSAGE value="Could not fix; try changing image picker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Could not fix; try changing image picker" />
+    <MESSAGE value="Fix styling bug in Comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix styling bug in Comment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
