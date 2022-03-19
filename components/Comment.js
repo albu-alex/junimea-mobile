@@ -15,16 +15,18 @@ export default function Comment(props){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
-                {!props.commentDetails.user.profilePicUrl && props.commentDetails.user.profilePicUrl !== null &&
-                    <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
-                           style={{width: 20, height: 20, borderRadius: 50}} />
-                }
-                {props.commentDetails.user.profilePicUrl &&
-                    <Image source={{uri: props.commentDetails.user.profilePicUrl}}
-                           style={{width: 20, height: 20, borderRadius: 50}} />
-                }
-                <Text style={styles.headerText}>{props.commentDetails.user.firstName}</Text>
-                <TouchableOpacity style={{marginLeft: '60%'}} onPress={() => null}>
+                <View style={{justifyContent: 'flex-start', display: 'flex', flexDirection: 'row'}}>
+                    {!props.commentDetails.user.profilePicUrl && props.commentDetails.user.profilePicUrl !== null &&
+                        <Image source={{uri: 'https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png'}}
+                               style={{width: 20, height: 20, borderRadius: 50}} />
+                    }
+                    {props.commentDetails.user.profilePicUrl &&
+                        <Image source={{uri: props.commentDetails.user.profilePicUrl}}
+                               style={{width: 20, height: 20, borderRadius: 50}} />
+                    }
+                    <Text style={styles.headerText}>{props.commentDetails.user.firstName}</Text>
+                </View>
+                <TouchableOpacity onPress={() => null}>
                     <Icon name='ellipsis-h' size={16} color={'#555555'}/>
                 </TouchableOpacity>
             </View>
