@@ -7,8 +7,9 @@ export async function uploadProfilePicture(profilePicture) {
     let data = new FormData();
     data.append('Pic', {
         uri: profilePicture.localUri,
-        type: 'image/jpeg',
-        name: profilePicture.filename});
+        name: profilePicture.filename,
+        type: 'image/jpeg'
+    });
     let newProfilePic;
     await axios.post('http://52.57.118.176/User/ProfilePic', data, {
         timeout: 4000,
