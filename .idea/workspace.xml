@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works in production mode">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Could not fix; try changing image picker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -162,14 +163,7 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-      <workItem from="1647697439681" duration="3710000" />
-    </task>
-    <task id="LOCAL-00040" summary="Create getUserDetails method &amp; Add to UserProfile">
-      <created>1645094844584</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1645094844584</updated>
+      <workItem from="1647697439681" duration="5388000" />
     </task>
     <task id="LOCAL-00041" summary="Fix AsyncStorage bugs + Retrieve user details in UserProfile">
       <created>1645098365310</created>
@@ -507,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646682414513</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Update expo + try to fix image picker issues">
+      <created>1647701301256</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1647701301256</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,8 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Slight refactor" />
-    <MESSAGE value="Styling update" />
     <MESSAGE value="Fix minor bug &amp; add onEndReached listener" />
     <MESSAGE value="Follow PureComponent practices improving app performance" />
     <MESSAGE value="App works great in production mode" />
@@ -550,7 +549,9 @@
     <MESSAGE value="Add functionalities to like and reply in comment" />
     <MESSAGE value="Change photo press opacity when pressed" />
     <MESSAGE value="Add expo-image-picker + refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add expo-image-picker + refactor" />
+    <MESSAGE value="Update expo + try to fix image picker issues" />
+    <MESSAGE value="Could not fix; try changing image picker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Could not fix; try changing image picker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

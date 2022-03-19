@@ -15,6 +15,7 @@ export async function uploadFile(){
     // ImagePicker saves the taken photo to disk and returns a local URI to it
     let localUri = pickerResult.uri
     let filename = localUri.split('/').pop()
+    // localUri = localUri.replace("file://", "")
     if (localUri && filename) {
         uploadProfilePicture({localUri, filename})
     }

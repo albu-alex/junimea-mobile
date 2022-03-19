@@ -5,6 +5,7 @@ import { Alert } from 'react-native'
 
 export async function uploadProfilePicture(profilePicture) {
     let data = new FormData();
+    console.log(profilePicture.localUri)
     data.append('Pic', {
         uri: profilePicture.localUri,
         name: profilePicture.filename,
@@ -13,6 +14,9 @@ export async function uploadProfilePicture(profilePicture) {
     let newProfilePic;
     await axios.post('http://52.57.118.176/User/ProfilePic', data, {
         timeout: 4000,
+        header: {
+            "Content-Type": "multipart/form-data"
+        }
     })
     .then(function (response){
         if(response.status === 200){
