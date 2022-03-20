@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix styling bug in Comment">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add change theme support to app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +81,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../xampp/htdocs/cbpos" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -163,14 +159,8 @@
       <workItem from="1646655218611" duration="681000" />
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
-      <workItem from="1647697439681" duration="7509000" />
-    </task>
-    <task id="LOCAL-00043" summary="Retrieving post IDs from API">
-      <created>1645114051802</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1645114051802</updated>
+      <workItem from="1647697439681" duration="7849000" />
+      <workItem from="1647767231778" duration="32000" />
     </task>
     <task id="LOCAL-00044" summary="Complete retrieving initial posts from API + prodcution app works">
       <created>1645114739676</created>
@@ -508,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647703176989</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Add change theme support to app">
+      <created>1647706090607</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1647706090608</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Follow PureComponent practices improving app performance" />
     <MESSAGE value="App works great in production mode" />
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
     <MESSAGE value="Setup update profile modal" />
@@ -551,7 +547,8 @@
     <MESSAGE value="Update expo + try to fix image picker issues" />
     <MESSAGE value="Could not fix; try changing image picker" />
     <MESSAGE value="Fix styling bug in Comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix styling bug in Comment" />
+    <MESSAGE value="Add change theme support to app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add change theme support to app" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

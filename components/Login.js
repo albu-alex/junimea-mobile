@@ -1,7 +1,7 @@
 //npm imports
 import { Text, View, KeyboardAvoidingView, TouchableOpacity, Image,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, Dimensions } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -17,7 +17,10 @@ export default function Login({ navigation }){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
-    const [register, setRegister] = useState(false);
+    const [register, setRegister] = useState(false)
+    useEffect(async () => {
+        navigation.navigate("Main")
+    }, []);
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
