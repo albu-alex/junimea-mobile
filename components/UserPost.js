@@ -6,6 +6,7 @@ import {
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { PinchGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
+import { useColorScheme } from "react-native-appearance";
 
 //css stylesheet import
 import { styles } from "../styles/UserPostStyles";
@@ -73,8 +74,12 @@ export default function UserPost(props){
         let details = await loadPost(props.id);
         setPostDetails(details);
     }, []);
+    const scheme = useColorScheme()
     return(
-        <View style={styles.container}>
+        <View style={[styles.container,
+            scheme === "dark"
+                ? { backgroundColor: "#151515" }
+                : { backgroundColor: '#EAEAEA'} ]}>
             <TouchableOpacity onPress={() => null} activeOpacity={0.6}>
                 <View style={styles.postHeader}>
                     {!postDetails.profilePicUrl && postDetails.profilePicUrl !== null &&
@@ -85,25 +90,45 @@ export default function UserPost(props){
                         <Image source={{uri: postDetails.profilePicUrl}}
                                style={{width: 25, height: 25, borderRadius: 50}} />
                     }
-                    <Text style={styles.headerText}>{postDetails.userName}</Text>
+                    <Text style={[styles.headerText,
+                        scheme === "dark"
+                            ? { color: '#AAAAAA' }
+                            : { color: '#555555'}]}>{postDetails.userName}</Text>
                 </View>
             </TouchableOpacity>
             <View>
                 <View style={styles.contentHeader}>
-                    <Text style={styles.primaryText}>{postDetails.title}</Text>
+                    <Text style={[styles.primaryText,
+                        scheme === "dark"
+                            ? { color: '#AAAAAA' }
+                            : { color: '#555555'}]}>{postDetails.title}</Text>
                     <TouchableOpacity style={{marginRight: '2%'}} onPress={togglePost}>
-                        <Icon name='ellipsis-h' size={20} color={'#555555'}/>
+                        {scheme === 'dark' &&
+                            <Icon name='ellipsis-h' size={20} color={'#AAAAAA'}/>
+                        }
+                        {scheme === 'light' &&
+                            <Icon name='ellipsis-h' size={20} color={'#555555'}/>
+                        }
                     </TouchableOpacity>
                 </View>
                 <View style={styles.tags}>
                     {postDetails.tags &&postDetails.tags.map((object, i) =>
-                        <TouchableOpacity style={styles.tagBackground} activeOpacity={0.6}>
-                                <Text style={styles.tag}>{object}</Text>
+                        <TouchableOpacity style={[styles.tagBackground,
+                                                scheme === 'dark'
+                                                ? { backgroundColor: '#AAAAAA', borderColor: '#151515' }
+                                                : { backgroundColor: '#555555', borderColor: '#EAEAEA' }]} activeOpacity={0.6}>
+                                <Text style={[styles.tag,
+                                            scheme === 'dark'
+                                            ? { color: "#151515" }
+                                            : { color: "#EAEAEA"}]}>{object}</Text>
                         </TouchableOpacity>
                         )
                     }
                 </View>
-                {!postDetails.files &&
+                {!postDetails.files && scheme === 'dark' &&
+                    <ActivityIndicator size='large' color='ghostwhite' />
+                }
+                {!postDetails.files && scheme === 'light' &&
                     <ActivityIndicator size='large' color='#070700' />
                 }
                 {postDetails.files && !showModal && postDetails.files.map((object, i) =>
@@ -131,44 +156,108 @@ export default function UserPost(props){
             </View>
             <View style={styles.feedback}>
                 <TouchableOpacity onPress={() => setLikes(true)}>
-                    <Icon name='thumbs-up' size={24} color={'#555555'} />
+                    {scheme === 'dark' &&
+                        <Icon name='thumbs-up' size={24} color={'#AAAAAA'}/>
+                    }
+                    {scheme === 'light' &&
+                        <Icon name='thumbs-up' size={24} color={'#555555'}/>
+                    }
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setLikes(false)}>
-                    <Icon name='thumbs-down' size={24} color={'#555555'} />
+                    {scheme === 'dark' &&
+                        < Icon name='thumbs-down' size={24} color={'#AAAAAA'} />
+                    }
+                    {scheme === 'light' &&
+                        < Icon name='thumbs-down' size={24} color={'#555555'} />
+                    }
                 </TouchableOpacity>
-                <Text style={styles.likeCount}>{postDetails.likes}</Text>
+                <Text style={[styles.likeCount,
+                            scheme === 'dark'
+                            ? {color: "#AAAAAA"}
+                            : {color: "#555555"}]}>{postDetails.likes}</Text>
                 <TouchableOpacity onPress={() => setshowComments(!showComments)}>
-                    <Icon name='comment' size={24} color={'#555555'} />
+                    {scheme === 'dark' &&
+                        <Icon name='comment' size={24} color={'#AAAAAA'}/>
+                    }
+                    {scheme === 'light' &&
+                        <Icon name='comment' size={24} color={'#555555'}/>
+                    }
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => null}>
-                    <Icon name='share' size={24} color={'#555555'} />
+                    {scheme === 'dark' &&
+                        <Icon name='share' size={24} color={'#AAAAAA'}/>
+                    }
+                    {scheme === 'light' &&
+                        <Icon name='share' size={24} color={'#555555'}/>
+                    }
                 </TouchableOpacity>
             </View>
             {showComments &&
-                <View style={styles.commentSection}>
-                    {!postDetails.comments &&
+                <View style={[styles.commentSection,
+                            scheme === 'dark'
+                            ? { borderTopColor: "ghostwhite" }
+                            : { borderTopColor: "#070700" }]}>
+                    {!postDetails.comments && scheme === 'dark' &&
+                        <ActivityIndicator size='large' color='ghostwhite' />
+                    }
+                    {!postDetails.comments && scheme === 'light' &&
                         <ActivityIndicator size='large' color='#070700' />
                     }
                     {postDetails.comments.length === 0 &&
                         <View style={styles.noComment}>
-                            <Icon style={{alignSelf: 'center'}} name='hand-stop-o' size={40} color={"#070700"} />
-                            <Text style={styles.headerText}>Be the first to comment on this post</Text>
+                            {scheme === 'dark' &&
+                                <Icon style={{alignSelf: 'center'}} name='hand-stop-o' size={40} color={"ghostwhite"}/>
+                            }
+                            {scheme === 'light' &&
+                                <Icon style={{alignSelf: 'center'}} name='hand-stop-o' size={40} color={"#070700"}/>
+                            }
+                            <Text style={[styles.headerText,
+                                    scheme === "dark"
+                                    ? { color: '#AAAAAA' }
+                                    : { color: '#555555'}]}>Be the first to comment on this post</Text>
                         </View>
                     }
                     {postDetails.comments && postDetails.comments.map((object, i) =>
                         <Comment commentDetails={object} />
                     )}
-                    <View style={styles.addNewComment}>
-                        <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}/>
-                        <TextInput style={styles.textInput} placeholderTextColor={"#070700"}
-                                    multiline={true} placeholder={'Add new comment...'}
-                                   onChangeText={newCommentText => setCommentText(newCommentText)}
-                                   defaultValue={commentText}/>
-                        <TouchableOpacity onPress={() => addPhoto()} style={styles.addNewCommentButton}>
-                            <Icon name='image' size={18} color={"#555555"} />
-                        </TouchableOpacity>
+                    <View style={[styles.addNewComment,
+                                scheme === 'dark'
+                                ? { borderTopColor: "ghostwhite" }
+                                : { borderTopColor: "#070700"}]}>
+                        {scheme === 'dark' &&
+                            <Icon name='comment' size={14} color={"#555555"} style={styles.inputIcon}/>
+                        }
+                        {scheme === 'light' &&
+                            <Icon name='comment' size={14} color={"#AAAAAA"} style={styles.inputIcon}/>
+                        }
+                        {scheme === 'dark' &&
+                            <TextInput style={[styles.textInput, { backgroundColor: '#252525', color: "ghostwhite" }]}
+                                       placeholderTextColor={"ghostwhite"}
+                                       multiline={true} placeholder={'Add new comment...'}
+                                       onChangeText={newCommentText => setCommentText(newCommentText)}
+                                       defaultValue={commentText}/>
+                        }
+                        {scheme === 'light' &&
+                            <TextInput style={[styles.textInput, { backgroundColor: '#DADADA', color: "#070700" }]}
+                                       placeholderTextColor={"#070700"}
+                                       multiline={true} placeholder={'Add new comment...'}
+                                       onChangeText={newCommentText => setCommentText(newCommentText)}
+                                       defaultValue={commentText}/>
+                        }
+                        {scheme === 'dark' &&
+                            <TouchableOpacity onPress={() => addPhoto()} style={styles.addNewCommentButton}>
+                                <Icon name='image' size={18} color={"#AAAAAA"}/>
+                            </TouchableOpacity>
+                        }
+                        {scheme === 'light' &&
+                            <TouchableOpacity onPress={() => addPhoto()} style={styles.addNewCommentButton}>
+                                <Icon name='image' size={18} color={"#555555"}/>
+                            </TouchableOpacity>
+                        }
                         <TouchableOpacity onPress={() => addComment()} style={styles.addNewCommentButton}>
-                            <Text>Send</Text>
+                            <Text style={scheme === 'dark' ? {color: "ghostwhite"} : {color: "#070700"}}>
+                                Send
+                            </Text>
                         </TouchableOpacity>
                     </View>
                 </View>

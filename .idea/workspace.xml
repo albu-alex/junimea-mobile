@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App starts in Main Page">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add light/dark mode support to Main Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/UserPostStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserPostStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,14 +164,7 @@
       <workItem from="1647697439681" duration="7849000" />
       <workItem from="1647767231778" duration="32000" />
       <workItem from="1647784984936" duration="1364000" />
-      <workItem from="1647846561777" duration="449000" />
-    </task>
-    <task id="LOCAL-00045" summary="Add marginTop to Android TabBar">
-      <created>1645133076045</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1645133076045</updated>
+      <workItem from="1647846561777" duration="2805000" />
     </task>
     <task id="LOCAL-00046" summary="Add UserPosts to UserProfile">
       <created>1645265771488</created>
@@ -509,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647785275848</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Add light/dark mode support to Main Page">
+      <created>1647847123938</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1647847123943</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
     <MESSAGE value="Setup update profile modal" />
     <MESSAGE value="Change UpdateProfile modal implementation" />
     <MESSAGE value="Basic update profile modal styling" />
@@ -552,7 +551,8 @@
     <MESSAGE value="Fix styling bug in Comment" />
     <MESSAGE value="Add change theme support to app" />
     <MESSAGE value="App starts in Main Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="App starts in Main Page" />
+    <MESSAGE value="Add light/dark mode support to Main Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add light/dark mode support to Main Page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

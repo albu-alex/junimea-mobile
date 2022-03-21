@@ -4,7 +4,6 @@ const styles = StyleSheet.create({
     container: {
         marginTop: '2%',
         marginBottom: '5%',
-        backgroundColor: '#EAEAEA'
     },
     postHeader: {
         flexDirection: 'row',
@@ -14,7 +13,6 @@ const styles = StyleSheet.create({
         marginLeft: '2%'
     },
     headerText: {
-        color: '#555555',
         fontSize: 20,
         fontWeight: '500',
         alignSelf: 'flex-start',
@@ -25,7 +23,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     primaryText:{
-        color: "#555555",
         fontSize: 24,
         fontWeight: '500',
         alignSelf: 'flex-start',
@@ -39,7 +36,6 @@ const styles = StyleSheet.create({
         marginBottom: '3%'
     },
     tag:{
-      color: "#EAEAEA",
       fontSize: 12,
       fontWeight: "400",
       alignSelf: "center"
@@ -47,9 +43,7 @@ const styles = StyleSheet.create({
     tagBackground:{
       marginLeft: "2%",
       flexBasis: "33%",
-      backgroundColor: "#555555",
       borderWidth: 1,
-      borderColor: "#EAEAEA",
       borderRadius: 7,
       width: 100,
       marginBottom: 10
@@ -63,7 +57,6 @@ const styles = StyleSheet.create({
         marginBottom: '1%'
     },
     likeCount:{
-        color: "#555555",
         fontSize: 24,
         fontWeight: '500',
     },
@@ -73,12 +66,10 @@ const styles = StyleSheet.create({
         marginTop: '3%'
     },
     textInput:{
-        backgroundColor: '#DADADA',
         width: '70%',
         height: 25,
         marginTop: '2%',
         marginLeft: '-6%',
-        color: "#070700",
         borderRadius: 15,
         paddingHorizontal: 25,
     },
@@ -86,12 +77,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         display: 'flex',
         marginBottom: '2%',
-        borderTopWidth: 0.8,
-        borderTopColor: "#070700",
+        borderTopWidth: 0.8
     },
     commentSection:{
         borderTopWidth: 0.8,
-        borderTopColor: "#070700"
     },
     addNewCommentButton:{
         marginTop: '3%',
