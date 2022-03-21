@@ -3,6 +3,7 @@ import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList,
     TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
 import React, {useState, useCallback, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useColorScheme } from "react-native-appearance";
 
 //css stylesheet import
 import { styles } from "../styles/MainPageStyles";
@@ -43,16 +44,19 @@ export default function MainPage({ navigation }){
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
         setUserID(newUserID)
-
         await fetchPosts()
     }, []);
+    const scheme = useColorScheme()
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}>
             <StatusBar style="auto"/>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View style={styles.inner}>
+                <View style={[styles.inner,
+                    scheme === "dark"
+                        ? { backgroundColor: "#252525" }
+                        : { backgroundColor: '#DADADA'} ]}>
                     {data !== [] && data.length % 10 === 0 &&
                         <FlatList
                             windowSize={60}

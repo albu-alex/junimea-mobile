@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add change theme support to app">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App starts in Main Page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
     <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
@@ -161,13 +163,8 @@
       <workItem from="1646680111370" duration="5001000" />
       <workItem from="1647697439681" duration="7849000" />
       <workItem from="1647767231778" duration="32000" />
-    </task>
-    <task id="LOCAL-00044" summary="Complete retrieving initial posts from API + prodcution app works">
-      <created>1645114739676</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1645114739676</updated>
+      <workItem from="1647784984936" duration="1364000" />
+      <workItem from="1647846561777" duration="449000" />
     </task>
     <task id="LOCAL-00045" summary="Add marginTop to Android TabBar">
       <created>1645133076045</created>
@@ -505,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647706090608</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="App starts in Main Page">
+      <created>1647785275848</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1647785275848</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="App works great in production mode" />
     <MESSAGE value="Profile icon changes with user profile picture with small performance problems" />
     <MESSAGE value="Setup update profile modal" />
     <MESSAGE value="Change UpdateProfile modal implementation" />
@@ -548,7 +551,8 @@
     <MESSAGE value="Could not fix; try changing image picker" />
     <MESSAGE value="Fix styling bug in Comment" />
     <MESSAGE value="Add change theme support to app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add change theme support to app" />
+    <MESSAGE value="App starts in Main Page" />
+    <option name="LAST_COMMIT_MESSAGE" value="App starts in Main Page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
