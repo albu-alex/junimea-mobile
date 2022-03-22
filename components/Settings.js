@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 //custom method import
 import { updateProfile } from "../methods/Settings/updateProfile"
+import {getUserDetails} from "../methods/UserProfile/getUserDetails"
 
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
@@ -16,10 +17,15 @@ export default function Settings({navigation}){
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
+    const [userID, setUserID] = useState("")
     const submitUpdateProfile = async () => {
         await updateProfile(firstName, lastName, email)
         setShowModal(false)
     }
+    useEffect(async () => {
+        const [_, __, newUserID] = await getUserDetails();
+        setUserID(newUserID)
+    });
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -30,7 +36,7 @@ export default function Settings({navigation}){
                     <View style={styles.buttons}>
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
                             <Icon style={styles.icon} name='sign-out' size={24} color={"#555555"}></Icon>
-                            <Text style={styles.buttonText}>Logout</Text>
+                            <Text style={styles.buttonText}>{userID === '' ? "Login" : "Logout"}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.button} onPress={() => alert("change theme")}>
                             <Icon style={styles.icon} name='moon-o' size={24} color={"#555555"}></Icon>
