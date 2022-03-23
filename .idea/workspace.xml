@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix comment posting">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Login/Logout text change if user is already logged in or not">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/Login/verifyRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/Login/verifyRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,14 +166,8 @@
       <workItem from="1646661702478" duration="3395000" />
       <workItem from="1646680111370" duration="5001000" />
       <workItem from="1647584298583" duration="3698000" />
-      <workItem from="1647975844228" duration="141000" />
-    </task>
-    <task id="LOCAL-00048" summary="Render UserPost in UserProfile only if userIds match">
-      <created>1645266942552</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1645266942552</updated>
+      <workItem from="1647975844228" duration="361000" />
+      <workItem from="1648018095360" duration="248000" />
     </task>
     <task id="LOCAL-00049" summary="Add pull to refresh + fix bug in UserPost">
       <created>1645432862198</created>
@@ -511,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647587976788</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Login/Logout text change if user is already logged in or not">
+      <created>1647976194029</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1647976194029</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +531,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change UpdateProfile modal implementation" />
     <MESSAGE value="Basic update profile modal styling" />
     <MESSAGE value="Update profile modal styling complete" />
     <MESSAGE value="Create updateProfile method" />
@@ -555,7 +555,8 @@
     <MESSAGE value="Logout alert if user not logged in" />
     <MESSAGE value="Fixing upload file bug" />
     <MESSAGE value="Fix axios requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix axios requests" />
+    <MESSAGE value="Login/Logout text change if user is already logged in or not" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login/Logout text change if user is already logged in or not" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

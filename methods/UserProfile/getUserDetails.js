@@ -17,5 +17,5 @@ export async function getUserDetails(){
         }
     }
     await userDetails()
-    return[profilePicture, username, userID]
+    return [profilePicture, username, userID]
 }

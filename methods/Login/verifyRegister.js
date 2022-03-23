@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { Alert } from 'react-native';
 
-export async function verifyRegister(email ,username, password){
+export async function verifyRegister(email ,username, password, navigation){
     let isRegistered = false;
-    let userToken;
     await axios({
         method: 'post',
         url: 'http://52.57.118.176/Auth/Register',
@@ -17,7 +16,6 @@ export async function verifyRegister(email ,username, password){
     .then(function (response){
         if(response.status === 200){
             isRegistered = true;
-            userToken = response.data.token
         }
     })
     .catch(function (error){
@@ -47,5 +45,5 @@ export async function verifyRegister(email ,username, password){
             );
     });
     if(isRegistered)
-        this.navigation.navigate('Main')
+        navigation.navigate('Main')
 }
