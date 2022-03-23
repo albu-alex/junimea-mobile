@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Login/Logout text change if user is already logged in or not">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/Login/verifyRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/Login/verifyRegister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +42,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
@@ -168,6 +166,7 @@
       <workItem from="1647584298583" duration="3698000" />
       <workItem from="1647975844228" duration="361000" />
       <workItem from="1648018095360" duration="248000" />
+      <workItem from="1648018736765" duration="796000" />
     </task>
     <task id="LOCAL-00049" summary="Add pull to refresh + fix bug in UserPost">
       <created>1645432862198</created>
