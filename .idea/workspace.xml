@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Bug fixing + live theme updates">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Added light/dark theme support to Settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,14 +178,7 @@
       <workItem from="1647975844228" duration="361000" />
       <workItem from="1648018095360" duration="248000" />
       <workItem from="1648018736765" duration="1074000" />
-      <workItem from="1648200055503" duration="4136000" />
-    </task>
-    <task id="LOCAL-00052" summary="Still fixing rendering of FlatList">
-      <created>1645440484107</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1645440484107</updated>
+      <workItem from="1648200055503" duration="5323000" />
     </task>
     <task id="LOCAL-00053" summary="UseEffect runs only once">
       <created>1645440827221</created>
@@ -525,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648203570537</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Added light/dark theme support to Settings">
+      <created>1648205157132</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1648205157132</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +542,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add TextInput functionalities" />
     <MESSAGE value="App works in production mode" />
     <MESSAGE value="Add like post and dislike post functionality" />
     <MESSAGE value="Fix image out of bounds bug" />
@@ -569,7 +566,8 @@
     <MESSAGE value="Theme change also implemented in Main" />
     <MESSAGE value="Refactor code + add color scheme to local storage" />
     <MESSAGE value="Bug fixing + live theme updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixing + live theme updates" />
+    <MESSAGE value="Added light/dark theme support to Settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added light/dark theme support to Settings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
