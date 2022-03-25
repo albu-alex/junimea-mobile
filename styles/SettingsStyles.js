@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
         paddingTop: '10%',
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#DADADA',
     },
     buttons:{
         height: '35%',
@@ -21,14 +20,12 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         justifyContent: 'flex-start',
         borderWidth: 1,
-        backgroundColor: 'ghostwhite',
         borderColor: "#A7A7A7",
         borderRadius: 10,
         height: 40,
         width: '75%'
     },
     buttonText:{
-        color: "#555555",
         fontSize: 14,
         fontWeight: '500',
         alignSelf: 'center',

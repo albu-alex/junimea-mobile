@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Theme change also implemented in Main">
-      <change afterPath="$PROJECT_DIR$/methods/App/getScheme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methods/App/storeScheme.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Bug fixing + live theme updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,21 +180,7 @@
       <workItem from="1647975844228" duration="361000" />
       <workItem from="1648018095360" duration="248000" />
       <workItem from="1648018736765" duration="1074000" />
-      <workItem from="1648200055503" duration="2741000" />
-    </task>
-    <task id="LOCAL-00050" summary="Add pull to refresh to UserProfile, need to add post number in async storage">
-      <created>1645433377524</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1645433377524</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Add close modal button + trying to fix FlatList rendering">
-      <created>1645439669349</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1645439669349</updated>
+      <workItem from="1648200055503" duration="4136000" />
     </task>
     <task id="LOCAL-00052" summary="Still fixing rendering of FlatList">
       <created>1645440484107</created>
@@ -527,7 +511,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648019797821</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Refactor code + add color scheme to local storage">
+      <created>1648203184442</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1648203184443</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Bug fixing + live theme updates">
+      <created>1648203570537</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1648203570537</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,8 +544,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update profile modal styling complete" />
-    <MESSAGE value="Create updateProfile method" />
     <MESSAGE value="Add TextInput functionalities" />
     <MESSAGE value="App works in production mode" />
     <MESSAGE value="Add like post and dislike post functionality" />
@@ -571,7 +567,9 @@
     <MESSAGE value="Fix axios requests" />
     <MESSAGE value="Login/Logout text change if user is already logged in or not" />
     <MESSAGE value="Theme change also implemented in Main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Theme change also implemented in Main" />
+    <MESSAGE value="Refactor code + add color scheme to local storage" />
+    <MESSAGE value="Bug fixing + live theme updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixing + live theme updates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

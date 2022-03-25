@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 //custom method import
 import { updateProfile } from "../methods/Settings/updateProfile"
 import {getUserDetails} from "../methods/UserProfile/getUserDetails"
+import {getScheme} from "../methods/App/getScheme";
 
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
@@ -18,6 +19,9 @@ export default function Settings({navigation}){
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [userID, setUserID] = useState("")
+    const [backgroundColor, setBackgroundColor] = useState("")
+    const [buttonBackgroundColor, setButtonBackgroundColor] = useState("")
+    const [buttonTextColor, setButtonTextColor] = useState("")
     const submitUpdateProfile = async () => {
         await updateProfile(firstName, lastName, email)
         setShowModal(false)
@@ -25,6 +29,10 @@ export default function Settings({navigation}){
     useEffect(async () => {
         const [_, __, newUserID] = await getUserDetails();
         setUserID(newUserID)
+        const scheme = await getScheme()
+        setBackgroundColor((scheme === 'dark') ? '#252525' : '#DADADA')
+        setButtonBackgroundColor((scheme === 'dark') ? '#070700' : "ghostwhite")
+        setButtonTextColor((scheme === "dark") ? '#AAAAAA' : '#555555')
     });
     return(
         <KeyboardAvoidingView
@@ -32,23 +40,32 @@ export default function Settings({navigation}){
             style={styles.container}>
             <StatusBar style="auto"/>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <View style={styles.inner}>
+                <View style={[styles.inner,
+                            {backgroundColor: backgroundColor}]}>
                     <View style={styles.buttons}>
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Login")}>
-                            <Icon style={styles.icon} name='sign-out' size={24} color={"#555555"}></Icon>
-                            <Text style={styles.buttonText}>{userID === '' ? "Login" : "Logout"}</Text>
+                        <TouchableOpacity style={[styles.button,
+                            {backgroundColor: buttonBackgroundColor}]} onPress={() => navigation.navigate("Login")}>
+                            <Icon style={styles.icon} name='sign-out' size={24} color={buttonTextColor}></Icon>
+                            <Text style={[styles.buttonText,
+                                {color: buttonTextColor}]}>{userID === '' ? "Login" : "Logout"}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button} onPress={() => alert("change theme")}>
-                            <Icon style={styles.icon} name='moon-o' size={24} color={"#555555"}></Icon>
-                            <Text style={styles.buttonText}>Dark mode</Text>
+                        <TouchableOpacity style={[styles.button,
+                            {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("change theme")}>
+                            <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
+                            <Text style={[styles.buttonText,
+                                {color: buttonTextColor}]}>Dark mode</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button} onPress={() => setShowModal(true)}>
-                            <Icon style={styles.icon} name='user' size={24} color={"#555555"}></Icon>
-                            <Text style={styles.buttonText}>Update profile</Text>
+                        <TouchableOpacity style={[styles.button,
+                            {backgroundColor: buttonBackgroundColor}]} onPress={() => setShowModal(true)}>
+                            <Icon style={styles.icon} name='user' size={24} color={buttonTextColor}></Icon>
+                            <Text style={[styles.buttonText,
+                                {color: buttonTextColor}]}>Update profile</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("MainPage")}>
-                            <Icon style={styles.icon} name='close' size={24} color={"#555555"}></Icon>
-                            <Text style={styles.buttonText}>Close settings</Text>
+                        <TouchableOpacity style={[styles.button,
+                            {backgroundColor: buttonBackgroundColor}]} onPress={() => navigation.navigate("MainPage")}>
+                            <Icon style={styles.icon} name='close' size={24} color={buttonTextColor}></Icon>
+                            <Text style={[styles.buttonText,
+                                {color: buttonTextColor}]}>Close settings</Text>
                         </TouchableOpacity>
                         {showModal &&
                             <Modal animationType={'slide'} transparent={false}>
