@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Login/Logout text change if user is already logged in or not">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Theme change also implemented in Main">
+      <change afterPath="$PROJECT_DIR$/methods/App/getScheme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methods/App/storeScheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +105,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -166,14 +181,8 @@
       <workItem from="1647584298583" duration="3698000" />
       <workItem from="1647975844228" duration="361000" />
       <workItem from="1648018095360" duration="248000" />
-      <workItem from="1648018736765" duration="796000" />
-    </task>
-    <task id="LOCAL-00049" summary="Add pull to refresh + fix bug in UserPost">
-      <created>1645432862198</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1645432862198</updated>
+      <workItem from="1648018736765" duration="1074000" />
+      <workItem from="1648200055503" duration="2741000" />
     </task>
     <task id="LOCAL-00050" summary="Add pull to refresh to UserProfile, need to add post number in async storage">
       <created>1645433377524</created>
@@ -511,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647976194029</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Theme change also implemented in Main">
+      <created>1648019797821</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1648019797821</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +546,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Basic update profile modal styling" />
     <MESSAGE value="Update profile modal styling complete" />
     <MESSAGE value="Create updateProfile method" />
     <MESSAGE value="Add TextInput functionalities" />
@@ -555,7 +570,8 @@
     <MESSAGE value="Fixing upload file bug" />
     <MESSAGE value="Fix axios requests" />
     <MESSAGE value="Login/Logout text change if user is already logged in or not" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login/Logout text change if user is already logged in or not" />
+    <MESSAGE value="Theme change also implemented in Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Theme change also implemented in Main" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
