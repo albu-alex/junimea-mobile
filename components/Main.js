@@ -34,7 +34,7 @@ export default function Main() {
         if (newProfilePicture !== profilePicture)
             setProfilePicture(newProfilePicture)
         setUserIcon((profilePicture !== ''))
-    }, [])
+    })
     return (
         <Tab.Navigator initialRouteName="MainPage" screenOptions={{headerShown: false, tabBarStyle:
                 { backgroundColor: backgroundColor,
