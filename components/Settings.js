@@ -22,6 +22,8 @@ export default function Settings({navigation}){
     const [backgroundColor, setBackgroundColor] = useState("")
     const [buttonBackgroundColor, setButtonBackgroundColor] = useState("")
     const [buttonTextColor, setButtonTextColor] = useState("")
+    const [inputBackgroundColor, setInputBackgroundColor] = useState("")
+    const [scheme, setScheme] = useState("")
     const submitUpdateProfile = async () => {
         await updateProfile(firstName, lastName, email)
         setShowModal(false)
@@ -29,15 +31,17 @@ export default function Settings({navigation}){
     useEffect(async () => {
         const [_, __, newUserID] = await getUserDetails();
         setUserID(newUserID)
-        const scheme = await getScheme()
+        setScheme(await getScheme())
         setBackgroundColor((scheme === 'dark') ? '#252525' : '#DADADA')
         setButtonBackgroundColor((scheme === 'dark') ? '#070700' : "ghostwhite")
         setButtonTextColor((scheme === "dark") ? '#AAAAAA' : '#555555')
+        setInputBackgroundColor((scheme === 'dark') ? '#AFAFAF' : '#505050')
     });
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
+            style={[styles.container,
+                {backgroundColor: backgroundColor}]}>
             <StatusBar style="auto"/>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={[styles.inner,
@@ -71,35 +75,53 @@ export default function Settings({navigation}){
                             <Modal animationType={'slide'} transparent={false}>
                                 <KeyboardAvoidingView
                                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                                    style={styles.container}>
+                                    style={[styles.container,
+                                        {backgroundColor: backgroundColor}]}>
                                     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                                        <View style={styles.container}>
+                                        <View style={[styles.container,
+                                            {backgroundColor: backgroundColor}]}>
                                             <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowModal(false)}>
-                                                <Icon name="close" color="black" size={30}/>
+                                                {scheme === 'dark' &&
+                                                    <Icon name="close" color="white" size={30}/>
+                                                }
+                                                {scheme === 'light' &&
+                                                    <Icon name="close" color="black" size={30}/>
+                                                }
                                             </TouchableOpacity>
                                             <View style={styles.inputsContainer}>
                                                 <View style={{flexDirection: 'row'}}>
-                                                    <Icon name="id-card-o" size={16} color={"#070700"} style={styles.modalIcon} />
+                                                    <Icon name="id-card-o" size={16} color={buttonBackgroundColor} style={styles.modalIcon} />
                                                     <TextInput onChangeText={newFirstName => setFirstName(newFirstName)} defaultValue={firstName}
-                                                        style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'First Name'} />
+                                                        style={[styles.textInput,
+                                                            {backgroundColor: inputBackgroundColor,
+                                                            color: backgroundColor}]}
+                                                               placeholderTextColor={buttonBackgroundColor} placeholder={'First Name'} />
                                                 </View>
                                             </View>
                                             <View style={styles.inputsContainer}>
                                                 <View style={{flexDirection: 'row'}}>
-                                                    <Icon name="id-card-o" size={16} color={"#070700"} style={styles.modalIcon} />
+                                                    <Icon name="id-card-o" size={16} color={buttonBackgroundColor} style={styles.modalIcon} />
                                                     <TextInput onChangeText={newLastName => setLastName(newLastName)} defaultValue={lastName}
-                                                        style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Last Name'} />
+                                                               style={[styles.textInput,
+                                                                   {backgroundColor: inputBackgroundColor,
+                                                                   color: backgroundColor}]}
+                                                                    placeholderTextColor={buttonBackgroundColor} placeholder={'Last Name'} />
                                                 </View>
                                             </View>
                                             <View style={styles.inputsContainer}>
                                                 <View style={{flexDirection: 'row'}}>
-                                                    <Icon name="envelope" size={16} color={"#070700"} style={styles.modalIcon} />
+                                                    <Icon name="envelope" size={16} color={buttonBackgroundColor} style={styles.modalIcon} />
                                                     <TextInput onChangeText={newEmail => setEmail(newEmail)} defaultValue={email}
-                                                        style={styles.textInput} placeholderTextColor={"#070700"} placeholder={'Email'} />
+                                                               style={[styles.textInput,
+                                                                   {backgroundColor: inputBackgroundColor,
+                                                                   color: backgroundColor}]}
+                                                                    placeholderTextColor={buttonBackgroundColor} placeholder={'Email'} />
                                                 </View>
                                             </View>
-                                            <TouchableOpacity style={styles.updateProfileButton} onPress={submitUpdateProfile}>
-                                                <Text style={styles.submitButtonText}>Submit changes</Text>
+                                            <TouchableOpacity style={[styles.updateProfileButton,
+                                                {backgroundColor: inputBackgroundColor}]} onPress={submitUpdateProfile}>
+                                                <Text style={[styles.submitButtonText,
+                                                    {color: buttonBackgroundColor}]}>Submit changes</Text>
                                             </TouchableOpacity>
                                         </View>
                                     </TouchableWithoutFeedback>

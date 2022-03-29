@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#DADADA'
     },
     inner: {
         paddingTop: '10%',
@@ -51,17 +50,14 @@ const styles = StyleSheet.create({
         zIndex: 2
     },
     textInput:{
-        backgroundColor: '#AFAFAF',
         width: '85%',
         height: 40,
         marginTop: '2%',
         marginLeft: '-6%',
-        color: "#070700",
         borderRadius: 15,
         paddingHorizontal: 25,
     },
     submitButtonText:{
-        color: "#070700",
         fontSize: 20,
         fontWeight: '500',
         alignSelf: 'center',
@@ -70,10 +66,8 @@ const styles = StyleSheet.create({
     updateProfileButton:{
         marginTop: '25%',
         alignSelf: 'center',
-        backgroundColor: '#AFAFAF',
         width: '75%',
         height: 40,
-        color: "#969696",
         borderRadius: 15,
         paddingHorizontal: 25,
     }

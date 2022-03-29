@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Added light/dark theme support to Settings">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works fine in production mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/SettingsStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/SettingsStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,17 +103,6 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -178,14 +169,8 @@
       <workItem from="1647975844228" duration="361000" />
       <workItem from="1648018095360" duration="248000" />
       <workItem from="1648018736765" duration="1074000" />
-      <workItem from="1648200055503" duration="5323000" />
-    </task>
-    <task id="LOCAL-00053" summary="UseEffect runs only once">
-      <created>1645440827221</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1645440827221</updated>
+      <workItem from="1648200055503" duration="6191000" />
+      <workItem from="1648586465873" duration="1111000" />
     </task>
     <task id="LOCAL-00054" summary="Working on duplicate key fix">
       <created>1645459646976</created>
@@ -523,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648205157132</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="App works fine in production mode">
+      <created>1648208561180</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1648208561180</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +537,6 @@
     <MESSAGE value="App works in production mode" />
     <MESSAGE value="Add like post and dislike post functionality" />
     <MESSAGE value="Fix image out of bounds bug" />
-    <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Fix UserPost buttons alignment issues" />
     <MESSAGE value="Create Comment header" />
     <MESSAGE value="Styling and add comment text" />
@@ -567,7 +558,8 @@
     <MESSAGE value="Refactor code + add color scheme to local storage" />
     <MESSAGE value="Bug fixing + live theme updates" />
     <MESSAGE value="Added light/dark theme support to Settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added light/dark theme support to Settings" />
+    <MESSAGE value="App works fine in production mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="App works fine in production mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
