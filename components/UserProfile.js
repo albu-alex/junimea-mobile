@@ -33,7 +33,7 @@ export default function UserProfile({ navigation }){
         await fetchPosts()
     });
     const changeProfilePicture = async() => {
-        let picture = await uploadFile()
+        await uploadFile()
     }
     const fetchPosts = async() => {
         let posts = await getPosts()

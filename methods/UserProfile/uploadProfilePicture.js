@@ -1,26 +1,29 @@
 import React from "react";
-import FormData from 'form-data'
 import axios from 'axios'
 import { Alert } from 'react-native'
 
 export async function uploadProfilePicture(profilePicture) {
-    let data = new FormData();
-    data.append('Pic', profilePicture);
-    console.log(profilePicture)
-    let newProfilePic;
+    const data = new FormData()
+    data.append("Pic", profilePicture)
     await axios.post('http://52.57.118.176/User/ProfilePic', data, {
-        timeout: 4000,
-        headers: {
-            "Accept" : "multipart/form-data"
-        }
+        timeout: 4000
     })
     .then(function (response){
         if(response.status === 200){
-            newProfilePic = response.data.url
+            Alert.alert("Success", "Profile picture updated successfully!",
+                [
+                    {
+                        text: "Great",
+                        style: "cancel",
+                    }
+                ],
+                {
+                    cancelable: true,
+                }
+            );
         }
     })
     .catch(function (error){
-        console.log(error.response)
         if(error.response){
             Alert.alert("Error", String(Object.values(error.response.data.errors)[0]),
                 [
@@ -35,18 +38,4 @@ export async function uploadProfilePicture(profilePicture) {
             );
         }
     });
-    if(newProfilePic){
-        Alert.alert("Success", "Profile picture updated successfully!",
-            [
-                {
-                    text: "Great",
-                    style: "cancel",
-                }
-            ],
-            {
-                cancelable: true,
-            }
-        );
-        return newProfilePic;
-    }
 }

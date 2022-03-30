@@ -16,7 +16,7 @@ export async function uploadFile(){
         return
     }
 
-    pickerResult.uri = pickerResult.uri.replace(":///", "://")
+    // pickerResult.uri = pickerResult.uri.replace(":///", "://")
     pickerResult.name = pickerResult.uri.split('/').pop()
 
     if (pickerResult) {

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works as it should in production mode">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Still fixing image picker related issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
@@ -174,14 +176,7 @@
       <workItem from="1648200055503" duration="6191000" />
       <workItem from="1648586465873" duration="1266000" />
       <workItem from="1648623022918" duration="6201000" />
-      <workItem from="1648667327238" duration="1851000" />
-    </task>
-    <task id="LOCAL-00060" summary="init Settings component">
-      <created>1645533548715</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1645533548715</updated>
+      <workItem from="1648667327238" duration="3923000" />
     </task>
     <task id="LOCAL-00061" summary="Settings component styling">
       <created>1645558490994</created>
@@ -519,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648631452283</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Still fixing image picker related issues">
+      <created>1648669390956</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1648669390957</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +540,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Styling and add comment text" />
     <MESSAGE value="Add no comment icon to comment section" />
     <MESSAGE value="Add image and interaction to comment" />
     <MESSAGE value="Render actual photos inside comments" />
@@ -563,7 +564,8 @@
     <MESSAGE value="Weird image picker issues" />
     <MESSAGE value="Add full light/dark mode support for Search" />
     <MESSAGE value="App works as it should in production mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="App works as it should in production mode" />
+    <MESSAGE value="Still fixing image picker related issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Still fixing image picker related issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
