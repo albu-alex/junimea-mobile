@@ -13,7 +13,7 @@ import MainPage from "./MainPage";
 import Search from "./Search";
 import UserProfile from "./UserProfile"
 import Settings from "./Settings"
-import {getScheme} from "../methods/App/getScheme";
+import { getScheme } from "../methods/App/getScheme";
 
 const Tab = (Platform.OS === 'ios') ? createBottomTabNavigator() : createMaterialTopTabNavigator();
 

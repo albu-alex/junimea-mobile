@@ -7,8 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 //custom method import
 import { updateProfile } from "../methods/Settings/updateProfile"
-import {getUserDetails} from "../methods/UserProfile/getUserDetails"
-import {getScheme} from "../methods/App/getScheme";
+import { getUserDetails } from "../methods/UserProfile/getUserDetails"
+import { getScheme } from "../methods/App/getScheme";
 
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
