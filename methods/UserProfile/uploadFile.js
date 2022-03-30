@@ -15,7 +15,11 @@ export async function uploadFile(){
     if (pickerResult.cancelled === true) {
         return
     }
+
+    pickerResult.uri = pickerResult.uri.replace(":///", "://")
+    pickerResult.name = pickerResult.uri.split('/').pop()
+
     if (pickerResult) {
-        uploadProfilePicture(pickerResult)
+        await uploadProfilePicture(pickerResult)
     }
 }

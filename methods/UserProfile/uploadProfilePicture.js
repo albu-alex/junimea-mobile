@@ -6,6 +6,7 @@ import { Alert } from 'react-native'
 export async function uploadProfilePicture(profilePicture) {
     let data = new FormData();
     data.append('Pic', profilePicture);
+    console.log(profilePicture)
     let newProfilePic;
     await axios.post('http://52.57.118.176/User/ProfilePic', data, {
         timeout: 4000,
@@ -19,6 +20,7 @@ export async function uploadProfilePicture(profilePicture) {
         }
     })
     .catch(function (error){
+        console.log(error.response)
         if(error.response){
             Alert.alert("Error", String(Object.values(error.response.data.errors)[0]),
                 [

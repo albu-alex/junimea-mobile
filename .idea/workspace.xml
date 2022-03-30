@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works as it should in production mode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
     <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
@@ -169,14 +173,8 @@
       <workItem from="1648018736765" duration="1074000" />
       <workItem from="1648200055503" duration="6191000" />
       <workItem from="1648586465873" duration="1266000" />
-      <workItem from="1648623022918" duration="5590000" />
-    </task>
-    <task id="LOCAL-00059" summary="Simplify pull to refresh in UserProfile">
-      <created>1645533227796</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1645533227796</updated>
+      <workItem from="1648623022918" duration="6201000" />
+      <workItem from="1648667327238" duration="1851000" />
     </task>
     <task id="LOCAL-00060" summary="init Settings component">
       <created>1645533548715</created>
@@ -514,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648628654564</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="App works as it should in production mode">
+      <created>1648631452283</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1648631452283</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
