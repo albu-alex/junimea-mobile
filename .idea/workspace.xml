@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Weird image picker issues" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="App works as it should in production mode">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,21 +169,7 @@
       <workItem from="1648018736765" duration="1074000" />
       <workItem from="1648200055503" duration="6191000" />
       <workItem from="1648586465873" duration="1266000" />
-      <workItem from="1648623022918" duration="4848000" />
-    </task>
-    <task id="LOCAL-00057" summary="Remove sleep promise &amp; simplify pull to refresh">
-      <created>1645532543118</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1645532543118</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Refactoring">
-      <created>1645532813225</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1645532813225</updated>
+      <workItem from="1648623022918" duration="5590000" />
     </task>
     <task id="LOCAL-00059" summary="Simplify pull to refresh in UserProfile">
       <created>1645533227796</created>
@@ -512,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648627902039</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Add full light/dark mode support for Search">
+      <created>1648628634626</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1648628634626</updated>
+    </task>
+    <task id="LOCAL-00107" summary="App works as it should in production mode">
+      <created>1648628654564</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1648628654564</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,8 +533,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix UserPost buttons alignment issues" />
-    <MESSAGE value="Create Comment header" />
     <MESSAGE value="Styling and add comment text" />
     <MESSAGE value="Add no comment icon to comment section" />
     <MESSAGE value="Add image and interaction to comment" />
@@ -556,7 +556,9 @@
     <MESSAGE value="Full dark theme support for settings" />
     <MESSAGE value="Small refactor" />
     <MESSAGE value="Weird image picker issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weird image picker issues" />
+    <MESSAGE value="Add full light/dark mode support for Search" />
+    <MESSAGE value="App works as it should in production mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="App works as it should in production mode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
