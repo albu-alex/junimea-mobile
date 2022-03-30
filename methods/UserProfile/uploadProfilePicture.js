@@ -1,12 +1,15 @@
 import React from "react";
-import axios from 'axios'
 import { Alert } from 'react-native'
 
 export async function uploadProfilePicture(profilePicture) {
     const data = new FormData()
     data.append("Pic", profilePicture)
-    await axios.post('http://52.57.118.176/User/ProfilePic', data, {
-        timeout: 4000
+    await fetch('http://52.57.118.176/User/ProfilePic', {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'multipart/form-data'
+        },
+        body: data
     })
     .then(function (response){
         if(response.status === 200){
@@ -37,5 +40,5 @@ export async function uploadProfilePicture(profilePicture) {
                 }
             );
         }
-    });
+    })
 }

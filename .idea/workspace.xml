@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Still fixing image picker related issues">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Code refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,14 +171,7 @@
       <workItem from="1648200055503" duration="6191000" />
       <workItem from="1648586465873" duration="1266000" />
       <workItem from="1648623022918" duration="6201000" />
-      <workItem from="1648667327238" duration="3923000" />
-    </task>
-    <task id="LOCAL-00061" summary="Settings component styling">
-      <created>1645558490994</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1645558490995</updated>
+      <workItem from="1648667327238" duration="4545000" />
     </task>
     <task id="LOCAL-00062" summary="Add functionality to Logout and Close settings buttons">
       <created>1645558686840</created>
@@ -521,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648669390957</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Code refactor">
+      <created>1648671586529</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1648671586529</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +535,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add no comment icon to comment section" />
     <MESSAGE value="Add image and interaction to comment" />
     <MESSAGE value="Render actual photos inside comments" />
     <MESSAGE value="Add functionalities to like and reply in comment" />
@@ -565,7 +559,8 @@
     <MESSAGE value="Add full light/dark mode support for Search" />
     <MESSAGE value="App works as it should in production mode" />
     <MESSAGE value="Still fixing image picker related issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still fixing image picker related issues" />
+    <MESSAGE value="Code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
