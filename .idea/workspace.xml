@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Full dark theme support for settings" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Small refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,13 +171,7 @@
       <workItem from="1648018736765" duration="1074000" />
       <workItem from="1648200055503" duration="6191000" />
       <workItem from="1648586465873" duration="1266000" />
-    </task>
-    <task id="LOCAL-00055" summary="Style close modal button">
-      <created>1645477575264</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1645477575265</updated>
+      <workItem from="1648623022918" duration="4543000" />
     </task>
     <task id="LOCAL-00056" summary="Switching useState to useEffect for postNumber">
       <created>1645529134586</created>
@@ -511,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648587605474</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Small refactor">
+      <created>1648623253456</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1648623253456</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +535,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add like post and dislike post functionality" />
     <MESSAGE value="Fix image out of bounds bug" />
     <MESSAGE value="Fix UserPost buttons alignment issues" />
     <MESSAGE value="Create Comment header" />
@@ -555,7 +559,8 @@
     <MESSAGE value="Added light/dark theme support to Settings" />
     <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Full dark theme support for settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full dark theme support for settings" />
+    <MESSAGE value="Small refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small refactor" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

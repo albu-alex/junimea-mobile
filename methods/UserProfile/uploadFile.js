@@ -8,15 +8,14 @@ export async function uploadFile(){
         alert("Permission to access camera roll is required!");
         return
     }
-    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+    let pickerResult = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        quality: 1
+    });
     if (pickerResult.cancelled === true) {
         return
     }
-    // ImagePicker saves the taken photo to disk and returns a local URI to it
-    let localUri = pickerResult.uri
-    let filename = localUri.split('/').pop()
-    // localUri = localUri.replace("file://", "")
-    if (localUri && filename) {
-        uploadProfilePicture({localUri, filename})
+    if (pickerResult) {
+        uploadProfilePicture(pickerResult)
     }
 }
