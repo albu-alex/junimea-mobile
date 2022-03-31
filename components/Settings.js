@@ -84,7 +84,7 @@ export default function Settings({navigation}){
                                                 {scheme === 'dark' &&
                                                     <Icon name="close" color="white" size={30}/>
                                                 }
-                                                {scheme === 'light' &&
+                                                {scheme !== 'dark' &&
                                                     <Icon name="close" color="black" size={30}/>
                                                 }
                                             </TouchableOpacity>

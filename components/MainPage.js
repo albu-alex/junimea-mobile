@@ -1,6 +1,6 @@
 //npm import
-import { Text, View, KeyboardAvoidingView, FlatList,
-    Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
+import { View, KeyboardAvoidingView, FlatList, Platform,
+    TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from "react-native-appearance";
@@ -10,17 +10,12 @@ import { FAB } from 'react-native-elements';
 import { styles } from "../styles/MainPageStyles";
 
 //custom methods import
-import { getSelf } from "../methods/MainPage/getSelf";
 import { getInitialPosts } from "../methods/MainPage/getInitialPosts"
-import { setPosts } from "../methods/MainPage/setPosts"
 
 //custom components import
 import UserPost from "./UserPost"
 
-export default function MainPage({ navigation }){
-    const [profilePicture, setProfilePicture] = useState('');
-    const [username, setUsername] = useState('');
-    const [userID, setUserID] = useState('');
+export default function MainPage({_}){
     const [refreshing, setRefreshing] = useState(false);
     const [data, setData] = useState([]);
     const [postNumber, setPostNumber] = useState(100);
@@ -41,10 +36,6 @@ export default function MainPage({ navigation }){
         setData(newData)
     }
     useEffect(async () => {
-        const [newProfilePicture, newUsername, newUserID] = await getSelf();
-        setProfilePicture(newProfilePicture)
-        setUsername(newUsername)
-        setUserID(newUserID)
         await fetchPosts()
     }, []);
     const scheme = useColorScheme()
@@ -57,7 +48,7 @@ export default function MainPage({ navigation }){
                 <View style={[styles.inner,
                     scheme === "dark"
                         ? { backgroundColor: "#252525" }
-                        : { backgroundColor: '#DADADA'} ]}>
+                        : { backgroundColor: '#DADADA' }]}>
                     {data !== [] && data.length % 10 === 0 &&
                         <FlatList
                             windowSize={60}

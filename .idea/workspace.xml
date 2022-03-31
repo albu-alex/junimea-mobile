@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fixed photo upload issues">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Refactor + add floating action button in main page">
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,14 +172,7 @@
       <workItem from="1648586465873" duration="1266000" />
       <workItem from="1648623022918" duration="6201000" />
       <workItem from="1648667327238" duration="4649000" />
-      <workItem from="1648710174609" duration="1161000" />
-    </task>
-    <task id="LOCAL-00063" summary="Slight refactor">
-      <created>1645558893569</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1645558893569</updated>
+      <workItem from="1648710174609" duration="1603000" />
     </task>
     <task id="LOCAL-00064" summary="Styling update">
       <created>1645559297067</created>
@@ -519,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648671932510</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Refactor + add floating action button in main page">
+      <created>1648711434437</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1648711434438</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +536,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Render actual photos inside comments" />
     <MESSAGE value="Add functionalities to like and reply in comment" />
     <MESSAGE value="Change photo press opacity when pressed" />
     <MESSAGE value="Add expo-image-picker + refactor" />
@@ -563,7 +560,8 @@
     <MESSAGE value="Still fixing image picker related issues" />
     <MESSAGE value="Code refactor" />
     <MESSAGE value="Fixed photo upload issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed photo upload issues" />
+    <MESSAGE value="Refactor + add floating action button in main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor + add floating action button in main page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
