@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Code refactor">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fixed photo upload issues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
@@ -171,14 +173,8 @@
       <workItem from="1648200055503" duration="6191000" />
       <workItem from="1648586465873" duration="1266000" />
       <workItem from="1648623022918" duration="6201000" />
-      <workItem from="1648667327238" duration="4545000" />
-    </task>
-    <task id="LOCAL-00062" summary="Add functionality to Logout and Close settings buttons">
-      <created>1645558686840</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1645558686840</updated>
+      <workItem from="1648667327238" duration="4649000" />
+      <workItem from="1648710174609" duration="1161000" />
     </task>
     <task id="LOCAL-00063" summary="Slight refactor">
       <created>1645558893569</created>
@@ -516,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648671586529</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Fixed photo upload issues">
+      <created>1648671932510</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1648671932510</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -535,7 +538,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add image and interaction to comment" />
     <MESSAGE value="Render actual photos inside comments" />
     <MESSAGE value="Add functionalities to like and reply in comment" />
     <MESSAGE value="Change photo press opacity when pressed" />
@@ -560,7 +562,8 @@
     <MESSAGE value="App works as it should in production mode" />
     <MESSAGE value="Still fixing image picker related issues" />
     <MESSAGE value="Code refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code refactor" />
+    <MESSAGE value="Fixed photo upload issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed photo upload issues" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

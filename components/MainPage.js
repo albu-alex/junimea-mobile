@@ -1,9 +1,10 @@
 //npm import
-import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList,
-    TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
-import React, {useState, useCallback, useEffect} from 'react';
+import { Text, View, KeyboardAvoidingView, FlatList,
+    Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
+import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from "react-native-appearance";
+import { FAB } from 'react-native-elements';
 
 //css stylesheet import
 import { styles } from "../styles/MainPageStyles";
@@ -40,9 +41,9 @@ export default function MainPage({ navigation }){
         setData(newData)
     }
     useEffect(async () => {
-        const [newProfilePicture, newUsermane, newUserID] = await getSelf();
+        const [newProfilePicture, newUsername, newUserID] = await getSelf();
         setProfilePicture(newProfilePicture)
-        setUsername(newUsermane)
+        setUsername(newUsername)
         setUserID(newUserID)
         await fetchPosts()
     }, []);
@@ -75,6 +76,9 @@ export default function MainPage({ navigation }){
                             }
                         />
                     }
+                    <FAB placement='right' size='large'
+                        icon={{name: 'add', color: (scheme === 'dark') ? 'white' : 'black'}}
+                        color={(scheme === 'dark') ? '#555555' : '#AAAAAA'}/>
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
