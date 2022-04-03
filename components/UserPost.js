@@ -54,7 +54,9 @@ export default function UserPost(props){
     }
     const addPhoto = async () => {
         let photo = await postPhoto()
-        setPhotos(photos.push(photo))
+        let newPhotos = photos
+        newPhotos.push(photo)
+        setPhotos(newPhotos)
     }
     const scale = useRef(new Animated.Value(1)).current;
     const translateX = useRef(new Animated.Value(0)).current;
