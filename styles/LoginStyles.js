@@ -3,19 +3,16 @@ import { StyleSheet, Dimensions } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#DEDEDE'
     },
     inner: {
         paddingTop: '10%',
         flex: 1,
         justifyContent: 'flex-start',
-        backgroundColor: 'ghostwhite'
     },
     introText:{
         textAlign: 'center',
         fontSize: 32,
         fontWeight: 'bold',
-        color: '#070000',
         marginTop: '10%',
         marginBottom: '5%'
     },

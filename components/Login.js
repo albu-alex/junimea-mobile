@@ -12,23 +12,33 @@ import { styles } from "../styles/LoginStyles";
 import { verifyLogin } from "../methods/Login/verifyLogin";
 import { loginAsGuest } from "../methods/Login/loginAsGuest";
 import { verifyRegister } from "../methods/Login/verifyRegister";
+import { getScheme } from "../methods/App/getScheme";
 
 export default function Login({ navigation }){
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
     const [register, setRegister] = useState(false)
+    const [scheme, setScheme] = useState("")
+    const [backgroundColor, setBackgroundColor] = useState("")
+    const [textColor, setTextColor] = useState("")
     useEffect(async () => {
+        setScheme(await getScheme())
+        setBackgroundColor((scheme === 'dark') ? '#070700' : 'ghostwhite')
+        setTextColor((scheme === 'dark') ? 'ghostwhite' : '#070700')
         navigation.navigate("Main")
     }, []);
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}>
+            style={[styles.container,
+                {backgroundColor: backgroundColor}]}>
                 <StatusBar style="auto"/>
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                    <View style={styles.inner}>
-                        <Text style={styles.introText}>Welcome to juni.</Text>
+                    <View style={[styles.inner,
+                        {backgroundColor: backgroundColor}]}>
+                        <Text style={[styles.introText,
+                            {color: textColor}]}>Welcome to juni.</Text>
                         {!register &&
                             <View style={{flexDirection: 'row'}}>
                                 <Icon style={styles.inputIcon} name="user" size={28} color={"#070700"}/>
