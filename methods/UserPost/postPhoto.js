@@ -1,5 +1,4 @@
 import * as ImagePicker from 'expo-image-picker'
-import axios from 'axios'
 import { Alert } from 'react-native'
 
 export async function postPhoto() {
@@ -12,17 +11,18 @@ export async function postPhoto() {
     if (pickerResult.cancelled === true) {
         return;
     }
-    let localUri = pickerResult.uri;
-    let filename = localUri.split('/').pop();
     let newUri;
     let data = new FormData();
-    data.append('File', {uri: localUri, name: filename});
-    await axios.post('http://52.57.118.176/File/Add', data, {
-        timeout: 4000,
-        headers: { "Content-Type": "multipart/form-data" }
+    data.append('File', pickerResult)
+    await fetch('http://52.57.118.176/File/Add', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "multipart/form-data"
+        },
+        body: data
     })
     .then(function (response){
-        if(response.status === 200){
+        if(response.status === 200) {
             newUri = response.data.url
             let newImage = {
                 uri: newUri,
