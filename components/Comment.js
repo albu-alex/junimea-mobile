@@ -6,14 +6,25 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 //custom method import
 import { likeComment } from "../methods/Comment/likeComment"
+import { getScheme } from "../methods/App/getScheme"
 
 //css stylesheet import
-import { styles } from "../styles/CommentStyles";
+import { styles } from "../styles/CommentStyles"
 
 export default function Comment(props){
     const [isReply, setIsReply] = useState(false)
+    const [scheme, setScheme] = useState("")
+    const [backgroundColor, setBackgroundColor] = useState("")
+    const [textColor, setTextColor] = useState("")
+
+    useEffect(async () => {
+        setScheme(await getScheme())
+        setBackgroundColor((scheme === 'dark') ? '#151515' : '#EAEAEA')
+        setTextColor((scheme === 'dark') ? '#AAAAAA' : '#555555')
+    })
     return(
-        <View style={styles.container}>
+        <View style={[styles.container,
+            {backgroundColor: backgroundColor}]}>
             <View style={styles.header}>
                 <View style={{justifyContent: 'flex-start', display: 'flex', flexDirection: 'row'}}>
                     {!props.commentDetails.user.profilePicUrl && props.commentDetails.user.profilePicUrl !== null &&
@@ -24,13 +35,15 @@ export default function Comment(props){
                         <Image source={{uri: props.commentDetails.user.profilePicUrl}}
                                style={{width: 20, height: 20, borderRadius: 50}} />
                     }
-                    <Text style={styles.headerText}>{props.commentDetails.user.firstName}</Text>
+                    <Text style={[styles.headerText,
+                        {color: textColor}]}>{props.commentDetails.user.firstName}</Text>
                 </View>
                 <TouchableOpacity onPress={() => null}>
-                    <Icon name='ellipsis-h' size={16} color={'#555555'}/>
+                    <Icon name='ellipsis-h' size={16} color={textColor}/>
                 </TouchableOpacity>
             </View>
-            <Text style={styles.primaryText}>{props.commentDetails.text}</Text>
+            <Text style={[styles.primaryText,
+                {color: textColor}]}>{props.commentDetails.text}</Text>
             <View>
                 {props.commentDetails.files.map((object, i) =>
                     <Image source={{uri: object}}
@@ -40,10 +53,12 @@ export default function Comment(props){
             </View>
             <View style={styles.commentInteraction}>
                 <TouchableOpacity activeOpacity={0.4} onPress={likeComment}>
-                    <Text style={styles.secondaryText}>Like</Text>
+                    <Text style={[styles.secondaryText,
+                        {color: textColor}]}>Like</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.4} onPress={() => setIsReply(!isReply)}>
-                    <Text style={styles.secondaryText}>Reply</Text>
+                    <Text style={[styles.secondaryText,
+                        {color: textColor}]}>Reply</Text>
                 </TouchableOpacity>
             </View>
         </View>
