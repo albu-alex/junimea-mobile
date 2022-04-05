@@ -26,6 +26,8 @@ export default function Login({ navigation }){
         setScheme(await getScheme())
         setBackgroundColor((scheme === 'dark') ? '#070700' : 'ghostwhite')
         setTextColor((scheme === 'dark') ? 'ghostwhite' : '#070700')
+    });
+    useEffect(async () => {
         navigation.navigate("Main")
     }, []);
     return(

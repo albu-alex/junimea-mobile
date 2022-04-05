@@ -7,7 +7,6 @@
     <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix photo array addition bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/LoginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/LoginStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,30 +44,30 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -175,6 +174,7 @@
       <workItem from="1648667327238" duration="4649000" />
       <workItem from="1648710174609" duration="1634000" />
       <workItem from="1649010627492" duration="2189000" />
+      <workItem from="1649181868491" duration="453000" />
     </task>
     <task id="LOCAL-00067" summary="Follow PureComponent practices improving app performance">
       <created>1645882934967</created>
