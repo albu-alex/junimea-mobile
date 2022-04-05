@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix scheme not updating in login">
-      <change afterPath="$PROJECT_DIR$/assets/unicorn-alb-cu-scris-preview.png" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Full light and dark mode support for Comment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/LoginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/LoginStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,21 +178,7 @@
       <workItem from="1648710174609" duration="1634000" />
       <workItem from="1649010627492" duration="2189000" />
       <workItem from="1649181868491" duration="1179000" />
-      <workItem from="1649183463528" duration="1197000" />
-    </task>
-    <task id="LOCAL-00068" summary="App works great in production mode">
-      <created>1645883618117</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1645883618117</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Profile icon changes with user profile picture with small performance problems">
-      <created>1645888930404</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1645888930407</updated>
+      <workItem from="1649183463528" duration="2925000" />
     </task>
     <task id="LOCAL-00070" summary="Setup update profile modal">
       <created>1645901444785</created>
@@ -526,7 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649182436237</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Full light and dark mode support for Login">
+      <created>1649184685477</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1649184685478</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Full light and dark mode support for Comment">
+      <created>1649186511991</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1649186511991</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,8 +543,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add postPhoto method" />
-    <MESSAGE value="Add photos to comments" />
     <MESSAGE value="Style changes" />
     <MESSAGE value="Logout alert if user not logged in" />
     <MESSAGE value="Fixing upload file bug" />
@@ -571,7 +566,9 @@
     <MESSAGE value="Fix comment file upload" />
     <MESSAGE value="Fix photo array addition bug" />
     <MESSAGE value="Fix scheme not updating in login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix scheme not updating in login" />
+    <MESSAGE value="Full light and dark mode support for Login" />
+    <MESSAGE value="Full light and dark mode support for Comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full light and dark mode support for Comment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
