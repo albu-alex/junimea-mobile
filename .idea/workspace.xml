@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix photo array addition bug">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix scheme not updating in login">
+      <change afterPath="$PROJECT_DIR$/assets/unicorn-alb-cu-scris-preview.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/LoginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/LoginStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +75,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23XmPDxBrJmWgXKFDCfIM3fOrft" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -174,14 +180,8 @@
       <workItem from="1648667327238" duration="4649000" />
       <workItem from="1648710174609" duration="1634000" />
       <workItem from="1649010627492" duration="2189000" />
-      <workItem from="1649181868491" duration="453000" />
-    </task>
-    <task id="LOCAL-00067" summary="Follow PureComponent practices improving app performance">
-      <created>1645882934967</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1645882934967</updated>
+      <workItem from="1649181868491" duration="1179000" />
+      <workItem from="1649183463528" duration="1197000" />
     </task>
     <task id="LOCAL-00068" summary="App works great in production mode">
       <created>1645883618117</created>
@@ -519,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649011962865</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Fix scheme not updating in login">
+      <created>1649182436237</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1649182436237</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +545,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add new comment method without photos" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add postPhoto method" />
     <MESSAGE value="Add photos to comments" />
     <MESSAGE value="Style changes" />
@@ -563,7 +570,8 @@
     <MESSAGE value="Refactor code in main page and settings" />
     <MESSAGE value="Fix comment file upload" />
     <MESSAGE value="Fix photo array addition bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix photo array addition bug" />
+    <MESSAGE value="Fix scheme not updating in login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix scheme not updating in login" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

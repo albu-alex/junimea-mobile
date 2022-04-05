@@ -22,10 +22,12 @@ export default function Login({ navigation }){
     const [scheme, setScheme] = useState("")
     const [backgroundColor, setBackgroundColor] = useState("")
     const [textColor, setTextColor] = useState("")
+    const [inputBackgroundColor, setInputBackgroundColor] = useState("")
     useEffect(async () => {
         setScheme(await getScheme())
         setBackgroundColor((scheme === 'dark') ? '#070700' : 'ghostwhite')
         setTextColor((scheme === 'dark') ? 'ghostwhite' : '#070700')
+        setInputBackgroundColor((scheme === 'dark') ? '#505050' : '#AFAFAF')
     });
     useEffect(async () => {
         navigation.navigate("Main")
@@ -43,78 +45,91 @@ export default function Login({ navigation }){
                             {color: textColor}]}>Welcome to juni.</Text>
                         {!register &&
                             <View style={{flexDirection: 'row'}}>
-                                <Icon style={styles.inputIcon} name="user" size={28} color={"#070700"}/>
-                                <TextInput autoCorrect={false} autoComplete={'email'} style={styles.textInput}
+                                <Icon style={styles.inputIcon} name="user" size={28} color={textColor}/>
+                                <TextInput autoCorrect={false} autoComplete={'email'} style={[styles.textInput,
+                                                                    {backgroundColor: inputBackgroundColor, color: textColor}]}
                                            placeholder={"Username or Email"}
-                                           placeholderTextColor={'#070000'}
+                                           placeholderTextColor={textColor}
                                            onChangeText={newUsername => setUsername(newUsername)}
                                            defaultValue={username}/>
                             </View>
                         }
                         {register &&
                             <View style={{flexDirection: 'row'}}>
-                                <Icon style={styles.inputIcon} name="envelope" size={20} color={"#070700"}/>
-                                <TextInput autoCorrect={false} autoComplete={'email'} style={styles.textInput}
+                                <Icon style={styles.inputIcon} name="envelope" size={20} color={textColor}/>
+                                <TextInput autoCorrect={false} autoComplete={'email'} style={[styles.textInput,
+                                                                    {backgroundColor: inputBackgroundColor, color: textColor}]}
                                            placeholder={"Email"}
-                                           placeholderTextColor={'#070000'}
+                                           placeholderTextColor={textColor}
                                            onChangeText={newEmail => setEmail(newEmail)}
                                            defaultValue={email}/>
                             </View>
                         }
                         {register &&
                             <View style={{flexDirection: 'row'}}>
-                                <Icon style={styles.inputIcon} name="user" size={28} color={"#070700"}/>
-                                <TextInput autoCorrect={false} style={styles.textInput}
+                                <Icon style={styles.inputIcon} name="user" size={28} color={textColor}/>
+                                <TextInput autoCorrect={false} style={[styles.textInput,
+                                                                {backgroundColor: inputBackgroundColor, color: textColor}]}
                                            placeholder={"Username"}
-                                           placeholderTextColor={'#070000'}
+                                           placeholderTextColor={textColor}
                                            onChangeText={newUsername => setUsername(newUsername)}
                                            defaultValue={username}/>
                             </View>
                         }
                         {!register &&
                             <View style={{flexDirection: 'row'}}>
-                                <Icon style={styles.inputIcon} name="lock" size={28} color={"#070700"}/>
-                                <TextInput autoCorrect={false} secureTextEntry={true} style={styles.textInput}
-                                           placeholder={"Password"} placeholderTextColor={'#070000'}
+                                <Icon style={styles.inputIcon} name="lock" size={28} color={textColor}/>
+                                <TextInput autoCorrect={false} secureTextEntry={true} style={[styles.textInput,
+                                                            {backgroundColor: inputBackgroundColor, color: textColor}]}
+                                           placeholder={"Password"} placeholderTextColor={textColor}
                                            onChangeText={newPassword => setPassword(newPassword)}
                                            defaultValue={password}/>
                             </View>
                         }
                         {register &&
                             <View style={{flexDirection: 'row'}}>
-                                <Icon style={styles.inputIcon} name="lock" size={28} color={"#070700"}/>
-                                <TextInput autoCorrect={false} secureTextEntry={true} style={styles.textInput}
-                                           placeholder={"Password"} placeholderTextColor={'#070000'}
+                                <Icon style={styles.inputIcon} name="lock" size={28} color={textColor}/>
+                                <TextInput autoCorrect={false} secureTextEntry={true} style={[styles.textInput,
+                                                            {backgroundColor: inputBackgroundColor, color: textColor}]}
+                                           placeholder={"Password"} placeholderTextColor={textColor}
                                            onChangeText={newPassword => setPassword(newPassword)}
                                            defaultValue={password}/>
                             </View>
                         }
                         {!register &&
                             <TouchableOpacity activeOpacity={0.6} onPress={() => verifyLogin(username, password, navigation)}
-                                              style={styles.loginButton}>
-                                <Text style={styles.buttonText}>Login</Text>
+                                              style={[styles.loginButton,
+                                                  {backgroundColor: inputBackgroundColor}]}>
+                                <Text style={[styles.buttonText,
+                                    {color: textColor}]}>Login</Text>
                             </TouchableOpacity>
                         }
                         {!register &&
                             <TouchableOpacity activeOpacity={0.6} onPress={() => loginAsGuest(navigation)}
-                                              style={styles.loginButton}>
-                                <Text style={styles.buttonText}>Login as guest</Text>
+                                              style={[styles.loginButton,
+                                                  {backgroundColor: inputBackgroundColor}]}>
+                                <Text style={[styles.buttonText,
+                                    {color: textColor}]}>Login as guest</Text>
                             </TouchableOpacity>
                         }
                         {!register &&
                             <Text style={styles.secondaryText}>Or you can register</Text>
                         }
                         {!register &&
-                            <TouchableOpacity activeOpacity={0.6} onPress={() => setRegister(true)} style={styles.loginButton}>
-                                <Text style={styles.buttonText}>Register</Text>
+                            <TouchableOpacity activeOpacity={0.6} onPress={() => setRegister(true)} style={[styles.loginButton,
+                                {backgroundColor: inputBackgroundColor}]}>
+                                <Text style={[styles.buttonText,
+                                    {color: textColor}]}>Register</Text>
                             </TouchableOpacity>
                         }
                         {register &&
-                            <TouchableOpacity activeOpacity={0.6} onPress={() => verifyRegister(email ,username, password, navigation)} style={styles.loginButton}>
-                                <Text style={styles.buttonText}>Register</Text>
+                            <TouchableOpacity activeOpacity={0.6} onPress={() => verifyRegister(email ,username, password, navigation)} style={[styles.loginButton,
+                                {backgroundColor: inputBackgroundColor}]}>
+                                <Text style={[styles.buttonText,
+                                    {color: textColor}]}>Register</Text>
                             </TouchableOpacity>
                         }
-                        <Image source={require('../assets/unicorn-negru-fara-scris.png')}
+                        <Image source={(scheme === 'dark') ? require('../assets/unicorn-alb-cu-scris-preview.png') : require('../assets/unicorn-negru-fara-scris.png')}
                                 style={styles.logo} />
                         <TouchableOpacity activeOpacity={0.5} onPress={() => null}>
                             <Text style={styles.secondaryText}>Found any bugs? Report them!</Text>
