@@ -12,6 +12,7 @@ import { styles } from "../styles/MainPageStyles";
 //custom methods import
 import { getInitialPosts } from "../methods/MainPage/getInitialPosts"
 import { getSelf } from "../methods/MainPage/getSelf"
+import { setPosts } from "../methods/MainPage/setPosts";
 
 //custom components import
 import UserPost from "./UserPost"
@@ -29,12 +30,14 @@ export default function MainPage({_}){
         const fetchedData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         setData(fetchedData)
+        await setPosts(fetchedData)
     }
     const loadPosts = async () => {
         const fetchedData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         const newData = data.concat(fetchedData)
         setData(newData)
+        await setPosts(fetchedData)
     }
     useEffect(async () => {
         await fetchPosts()

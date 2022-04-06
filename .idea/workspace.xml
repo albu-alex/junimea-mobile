@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Full light and dark mode support for Comment">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Full light/dark theme support for UserProfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/UserProfileStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/UserProfileStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserProfile/getPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserProfile/getPosts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
@@ -181,14 +182,7 @@
       <workItem from="1649010627492" duration="2189000" />
       <workItem from="1649181868491" duration="1179000" />
       <workItem from="1649183463528" duration="2925000" />
-      <workItem from="1649262369306" duration="761000" />
-    </task>
-    <task id="LOCAL-00070" summary="Setup update profile modal">
-      <created>1645901444785</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1645901444785</updated>
+      <workItem from="1649262369306" duration="1746000" />
     </task>
     <task id="LOCAL-00071" summary="Change UpdateProfile modal implementation">
       <created>1645972720780</created>
@@ -526,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649186511991</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="Full light/dark theme support for UserProfile">
+      <created>1649263398891</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1649263398891</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Style changes" />
     <MESSAGE value="Logout alert if user not logged in" />
     <MESSAGE value="Fixing upload file bug" />
     <MESSAGE value="Fix axios requests" />
@@ -571,7 +571,8 @@
     <MESSAGE value="Fix scheme not updating in login" />
     <MESSAGE value="Full light and dark mode support for Login" />
     <MESSAGE value="Full light and dark mode support for Comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full light and dark mode support for Comment" />
+    <MESSAGE value="Full light/dark theme support for UserProfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full light/dark theme support for UserProfile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

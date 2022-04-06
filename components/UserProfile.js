@@ -41,15 +41,17 @@ export default function UserProfile({ navigation }){
         setIconColor((scheme === 'dark') ? '#AFAFAF': '#505050')
         setTextColor((scheme === 'dark') ? '#AAAAAA' : '#555555')
         setButtonTextColor((scheme === 'dark') ? 'ghostwhite' : '#070700')
-
-        await fetchPosts()
     })
+
+    useEffect(async () => {
+        await fetchPosts()
+    }, [])
 
     const changeProfilePicture = async() => {
         await uploadFile()
     }
 
-    const fetchPosts = async() => {
+    const fetchPosts = async () => {
         let posts = await getPosts()
         setData(posts)
     }
