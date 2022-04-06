@@ -11,6 +11,7 @@ import { styles } from "../styles/MainPageStyles";
 
 //custom methods import
 import { getInitialPosts } from "../methods/MainPage/getInitialPosts"
+import { getSelf } from "../methods/MainPage/getSelf"
 
 //custom components import
 import UserPost from "./UserPost"
@@ -37,6 +38,7 @@ export default function MainPage({_}){
     }
     useEffect(async () => {
         await fetchPosts()
+        await getSelf()
     }, []);
     const scheme = useColorScheme()
     return(

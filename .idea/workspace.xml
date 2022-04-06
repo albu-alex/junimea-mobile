@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Full light and dark mode support for Comment">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,29 +44,29 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -105,6 +107,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="junimea-mobile-react" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="junimea-mobile-react" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -539,7 +554,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
