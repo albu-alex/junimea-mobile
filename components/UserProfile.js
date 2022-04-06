@@ -11,7 +11,6 @@ import {styles} from "../styles/UserProfileStyles"
 //custom methods import
 import { getUserDetails } from "../methods/UserProfile/getUserDetails"
 import { getPosts } from "../methods/UserProfile/getPosts"
-import { uploadProfilePicture } from "../methods/UserProfile/uploadProfilePicture"
 import { uploadFile } from "../methods/UserProfile/uploadFile";
 import { getScheme } from "../methods/App/getScheme";
 
@@ -27,10 +26,12 @@ export default function UserProfile({ navigation }){
     const [postNumber, setPostNumber] = useState(200)
     const [backgroundColor, setBackgroundColor] = useState("")
     const [iconColor, setIconColor] = useState("")
-
-    const scheme = getScheme()
+    const [textColor, setTextColor] = useState("")
+    const [buttonTextColor, setButtonTextColor] = useState("")
 
     useEffect(async () => {
+        const scheme = await getScheme()
+
         const [newProfilePicture, newUsermane, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)
         setUsername(newUsermane)
@@ -38,6 +39,8 @@ export default function UserProfile({ navigation }){
 
         setBackgroundColor((scheme === 'dark') ? '#252525' : '#DADADA')
         setIconColor((scheme === 'dark') ? '#AFAFAF': '#505050')
+        setTextColor((scheme === 'dark') ? '#AAAAAA' : '#555555')
+        setButtonTextColor((scheme === 'dark') ? 'ghostwhite' : '#070700')
 
         await fetchPosts()
     })
@@ -77,28 +80,31 @@ export default function UserProfile({ navigation }){
                            style={styles.profilePicture} />
                 }
                 {username === '' &&
-                    <Text style={styles.primaryText}>Guest</Text>
+                    <Text style={[styles.primaryText,
+                        {color: textColor}]}>Guest</Text>
                 }
                 {username !== '' &&
-                    <Text style={styles.primaryText}>{username}</Text>
+                    <Text style={[styles.primaryText,
+                        {color: textColor}]}>{username}</Text>
                 }
             </View>
-            <View style={{flexDirection: 'row', borderBottomWidth: 0.6, borderBottomColor: '#070700'}}>
-                <TouchableOpacity onPress={changeProfilePicture} style={styles.profileButton}>
-                    <Text style={styles.buttonText}>Change picture</Text>
+            <View style={{flexDirection: 'row', borderBottomWidth: 0.6, borderBottomColor: buttonTextColor}}>
+                <TouchableOpacity onPress={changeProfilePicture} style={[styles.profileButton,
+                                                                        {backgroundColor: iconColor}]}>
+                    <Text style={[styles.buttonText,
+                        {color: buttonTextColor}]}>Change picture</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.profileButton} onPress={() => alert("View saved posts")}>
-                    <Text style={styles.buttonText}>View saved posts</Text>
+                <TouchableOpacity style={[styles.profileButton,
+                    {backgroundColor: iconColor}]} onPress={() => alert("View saved posts")}>
+                    <Text style={[styles.buttonText,
+                        {color: buttonTextColor}]}>View saved posts</Text>
                 </TouchableOpacity>
             </View>
             <FlatList
-                windowSize={60}
-                initialNumToRender={10}
+                windowSize={20}
                 removeClippedSubviews={true}
                 data={data}
-                extraData={this.state}
                 renderItem={renderItem}
-                onEndReachedThreshold={0.5}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
