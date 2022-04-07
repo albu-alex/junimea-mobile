@@ -27,17 +27,21 @@ export default function MainPage({_}){
         </View>
     );
     const fetchPosts = async () => {
+        setRefreshing(true)
         const fetchedData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         setData(fetchedData)
         await setPosts(fetchedData)
+        setRefreshing(false)
     }
     const loadPosts = async () => {
+        setRefreshing(true)
         const fetchedData = await getInitialPosts(postNumber)
         setPostNumber(postNumber + 10)
         const newData = data.concat(fetchedData)
         setData(newData)
         await setPosts(fetchedData)
+        setRefreshing(false)
     }
     useEffect(async () => {
         await fetchPosts()

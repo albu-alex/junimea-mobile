@@ -23,7 +23,7 @@ export default function UserProfile({ navigation }){
     const [userID, setUserID] = useState('')
     const [data, setData] = useState([])
     const [refreshing, setRefreshing] = useState(false)
-    const [postNumber, setPostNumber] = useState(200)
+    const [postNumber, setPostNumber] = useState(100)
     const [backgroundColor, setBackgroundColor] = useState("")
     const [iconColor, setIconColor] = useState("")
     const [textColor, setTextColor] = useState("")
