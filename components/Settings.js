@@ -57,13 +57,13 @@ export default function Settings({navigation}){
                             {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("change theme")}>
                             <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
                             <Text style={[styles.buttonText,
-                                {color: buttonTextColor}]}>Dark mode</Text>
+                                {color: buttonTextColor}]}>{scheme === 'dark' ? 'Dark mode' : 'Light mode'}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,
                             {backgroundColor: buttonBackgroundColor}]} onPress={() => setShowModal(true)}>
                             <Icon style={styles.icon} name='user' size={24} color={buttonTextColor}></Icon>
                             <Text style={[styles.buttonText,
-                                {color: buttonTextColor}]}>Update profile</Text>
+                                {color: buttonTextColor}]}>Update Profile</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,
                             {backgroundColor: buttonBackgroundColor}]} onPress={() => navigation.navigate("MainPage")}>
