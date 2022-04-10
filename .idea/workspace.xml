@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Change alert text">
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix scheme related bugs + incoming change to redux">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,13 +182,6 @@
       <workItem from="1649183463528" duration="2925000" />
       <workItem from="1649262369306" duration="2379000" />
       <workItem from="1649312706330" duration="645000" />
-    </task>
-    <task id="LOCAL-00074" summary="Create updateProfile method">
-      <created>1645975025443</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975025443</updated>
     </task>
     <task id="LOCAL-00075" summary="Add TextInput functionalities">
       <created>1645975374401</created>
@@ -526,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649604389181</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Fix scheme related bugs + incoming change to redux">
+      <created>1649604764530</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1649604764530</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Login/Logout text change if user is already logged in or not" />
     <MESSAGE value="Theme change also implemented in Main" />
     <MESSAGE value="Refactor code + add color scheme to local storage" />
     <MESSAGE value="Bug fixing + live theme updates" />
@@ -571,7 +570,8 @@
     <MESSAGE value="Fix not rendering posts in UserProfile" />
     <MESSAGE value="Settings shows in which mode you are currently on(light/dark)" />
     <MESSAGE value="Change alert text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change alert text" />
+    <MESSAGE value="Fix scheme related bugs + incoming change to redux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix scheme related bugs + incoming change to redux" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

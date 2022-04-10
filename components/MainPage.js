@@ -20,7 +20,8 @@ import UserPost from "./UserPost"
 export default function MainPage({_}){
     const [refreshing, setRefreshing] = useState(false);
     const [data, setData] = useState([]);
-    const [postNumber, setPostNumber] = useState(100);
+    const [postNumber, setPostNumber] = useState(-1);
+    const [showModal, setShowModal] = useState(false)
     const renderItem = ({ item }) => (
         <View key={item.id.toString()}>
             <UserPost key={item.id.toString()} id={item.id} />
@@ -29,7 +30,13 @@ export default function MainPage({_}){
     const fetchPosts = async () => {
         setRefreshing(true)
         const fetchedData = await getInitialPosts(postNumber)
-        setPostNumber(postNumber + 10)
+        if(postNumber === -1) {
+            setPostNumber(fetchedData[fetchedData.length - 1].id)
+        }
+        else {
+            setPostNumber(postNumber - 10)
+        }
+        alert(postNumber)
         setData(fetchedData)
         await setPosts(fetchedData)
         setRefreshing(false)
@@ -37,7 +44,7 @@ export default function MainPage({_}){
     const loadPosts = async () => {
         setRefreshing(true)
         const fetchedData = await getInitialPosts(postNumber)
-        setPostNumber(postNumber + 10)
+        setPostNumber(postNumber - 10)
         const newData = data.concat(fetchedData)
         setData(newData)
         await setPosts(fetchedData)
@@ -78,7 +85,8 @@ export default function MainPage({_}){
                     }
                     <FAB placement='right' size='large'
                         icon={{name: 'add', color: (scheme === 'dark') ? 'white' : 'black'}}
-                        color={(scheme === 'dark') ? '#555555' : '#AAAAAA'}/>
+                        color={(scheme === 'dark') ? '#555555' : '#AAAAAA'}
+                        onPress={() => null}/>
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
