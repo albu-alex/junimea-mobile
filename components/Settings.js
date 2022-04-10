@@ -54,7 +54,7 @@ export default function Settings({navigation}){
                                 {color: buttonTextColor}]}>{userID === '' ? "Login" : "Logout"}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,
-                            {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("change theme")}>
+                            {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("Feature coming soon!")}>
                             <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
                             <Text style={[styles.buttonText,
                                 {color: buttonTextColor}]}>{scheme === 'dark' ? 'Dark mode' : 'Light mode'}</Text>
