@@ -21,7 +21,8 @@ export default function Search({ navigation }){
     const [iconColor, setIconColor] = useState("")
     useEffect(async () => {
         setScheme(await getScheme())
-        setBackgroundColor((scheme === 'dark') ? '#252525' : '#DADADA')
+        const newBackgroundColor = (scheme === 'dark') ? '#252525' : '#DADADA'
+        setBackgroundColor(newBackgroundColor)
         setInputBackgroundColor((scheme === 'dark') ? '#AFAFAF' : '#505050')
         setTextColor((scheme === "dark") ? '#AAAAAA' : '#555555')
         setIconColor((scheme === 'dark') ? '#070700' : "ghostwhite")

@@ -9,6 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { updateProfile } from "../methods/Settings/updateProfile"
 import { getUserDetails } from "../methods/UserProfile/getUserDetails"
 import { getScheme } from "../methods/App/getScheme";
+import { storeScheme } from "../methods/App/storeScheme";
 
 //css stylesheet import
 import { styles } from "../styles/SettingsStyles";
@@ -37,6 +38,17 @@ export default function Settings({navigation}){
         setButtonTextColor((scheme === "dark") ? '#AAAAAA' : '#555555')
         setInputBackgroundColor((scheme === 'dark') ? '#AFAFAF' : '#505050')
     });
+
+    const changeTheme = async () => {
+        if(scheme === 'dark') {
+            await storeScheme('light')
+            setScheme('light')
+        }
+        else {
+            await storeScheme('dark')
+            setScheme('dark')
+        }
+    }
     return(
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -53,12 +65,22 @@ export default function Settings({navigation}){
                             <Text style={[styles.buttonText,
                                 {color: buttonTextColor}]}>{userID === '' ? "Login" : "Logout"}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={[styles.button,
-                            {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("change theme")}>
-                            <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
-                            <Text style={[styles.buttonText,
-                                {color: buttonTextColor}]}>Dark mode</Text>
-                        </TouchableOpacity>
+                        {scheme === 'dark' &&
+                            <TouchableOpacity style={[styles.button,
+                                {backgroundColor: buttonBackgroundColor}]} onPress={changeTheme}>
+                                <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
+                                <Text style={[styles.buttonText,
+                                    {color: buttonTextColor}]}>Dark mode</Text>
+                            </TouchableOpacity>
+                        }
+                        {scheme !== 'dark' &&
+                            <TouchableOpacity style={[styles.button,
+                                {backgroundColor: buttonBackgroundColor}]} onPress={changeTheme}>
+                                <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
+                                <Text style={[styles.buttonText,
+                                    {color: buttonTextColor}]}>Light mode</Text>
+                            </TouchableOpacity>
+                        }
                         <TouchableOpacity style={[styles.button,
                             {backgroundColor: buttonBackgroundColor}]} onPress={() => setShowModal(true)}>
                             <Icon style={styles.icon} name='user' size={24} color={buttonTextColor}></Icon>
