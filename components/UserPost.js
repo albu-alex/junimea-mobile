@@ -114,7 +114,7 @@ export default function UserPost(props){
                     </TouchableOpacity>
                 </View>
                 <View style={styles.tags}>
-                    {postDetails.tags &&postDetails.tags.map((object, i) =>
+                    {postDetails.tags && postDetails.tags.map((object, i) =>
                         <TouchableOpacity style={[styles.tagBackground,
                                                 scheme === 'dark'
                                                 ? { backgroundColor: '#AAAAAA', borderColor: '#151515' }
@@ -122,7 +122,7 @@ export default function UserPost(props){
                                 <Text style={[styles.tag,
                                             scheme === 'dark'
                                             ? { color: "#151515" }
-                                            : { color: "#EAEAEA"}]}>{object}</Text>
+                                            : { color: "#EAEAEA"}]}>{object.name}</Text>
                         </TouchableOpacity>
                         )
                     }
