@@ -1,12 +1,11 @@
 //npm imports
-import { Text, View, Image, TouchableOpacity, FlatList,
-    TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
-import React, {useState, useCallback, useEffect} from 'react';
+import { Text, View, Image, TouchableOpacity, FlatList, RefreshControl } from 'react-native';
+import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 //css stylesheet import
-import {styles} from "../styles/UserProfileStyles"
+import { styles } from "../styles/UserProfileStyles"
 
 //custom methods import
 import { getUserDetails } from "../methods/UserProfile/getUserDetails"
@@ -23,18 +22,21 @@ export default function UserProfile({ navigation }){
     const [userID, setUserID] = useState('')
     const [data, setData] = useState([])
     const [refreshing, setRefreshing] = useState(false)
-    const [postNumber, setPostNumber] = useState(100)
     const [backgroundColor, setBackgroundColor] = useState("")
     const [iconColor, setIconColor] = useState("")
     const [textColor, setTextColor] = useState("")
     const [buttonTextColor, setButtonTextColor] = useState("")
+    const [scheme, setScheme] = useState("")
 
     useEffect(async () => {
-        const scheme = await getScheme()
+        const newScheme = await getScheme()
+        setScheme(newScheme)
+        if(newScheme !== scheme)
+            this.forceUpdate();
 
-        const [newProfilePicture, newUsermane, newUserID] = await getUserDetails();
+        const [newProfilePicture, newUsername, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)
-        setUsername(newUsermane)
+        setUsername(newUsername)
         setUserID(newUserID)
 
         setBackgroundColor((scheme === 'dark') ? '#252525' : '#DADADA')
@@ -63,7 +65,7 @@ export default function UserProfile({ navigation }){
     )
     return(
         <View style={[styles.container, {backgroundColor: backgroundColor}]}>
-            <StatusBar style='auto' />
+            <StatusBar style={(scheme === 'dark') ? 'light' : 'dark'} />
             <View style={[styles.header, {backgroundColor: backgroundColor}]}>
                 <TouchableOpacity onPress={() => navigation.navigate("MainPage")}>
                     <Icon name='arrow-left' size={30} color={iconColor} />
