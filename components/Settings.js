@@ -54,7 +54,7 @@ export default function Settings({navigation}){
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={[styles.container,
                 {backgroundColor: backgroundColor}]}>
-            <StatusBar style="auto"/>
+            <StatusBar style={(scheme === 'dark') ? 'light' : 'dark'}/>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <View style={[styles.inner,
                             {backgroundColor: backgroundColor}]}>

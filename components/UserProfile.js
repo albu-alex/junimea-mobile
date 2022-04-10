@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 //css stylesheet import
-import {styles} from "../styles/UserProfileStyles"
+import { styles } from "../styles/UserProfileStyles"
 
 //custom methods import
 import { getUserDetails } from "../methods/UserProfile/getUserDetails"
@@ -29,7 +29,10 @@ export default function UserProfile({ navigation }){
     const [scheme, setScheme] = useState("")
 
     useEffect(async () => {
-        setScheme(await getScheme())
+        const newScheme = await getScheme()
+        setScheme(newScheme)
+        if(newScheme !== scheme)
+            this.forceUpdate();
 
         const [newProfilePicture, newUsername, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)
@@ -62,7 +65,7 @@ export default function UserProfile({ navigation }){
     )
     return(
         <View style={[styles.container, {backgroundColor: backgroundColor}]}>
-            <StatusBar style='auto' />
+            <StatusBar style={(scheme === 'dark') ? 'light' : 'dark'} />
             <View style={[styles.header, {backgroundColor: backgroundColor}]}>
                 <TouchableOpacity onPress={() => navigation.navigate("MainPage")}>
                     <Icon name='arrow-left' size={30} color={iconColor} />
