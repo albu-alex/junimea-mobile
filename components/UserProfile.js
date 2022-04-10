@@ -31,8 +31,6 @@ export default function UserProfile({ navigation }){
     useEffect(async () => {
         const newScheme = await getScheme()
         setScheme(newScheme)
-        if(newScheme !== scheme)
-            this.forceUpdate();
 
         const [newProfilePicture, newUsername, newUserID] = await getUserDetails();
         setProfilePicture(newProfilePicture)

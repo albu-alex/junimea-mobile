@@ -13,13 +13,9 @@ import { getScheme } from "./methods/App/getScheme";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-    const [scheme, setScheme] = useState("")
+    const scheme = useColorScheme()
     useEffect(async () => {
-        const scheme = useColorScheme()
         await storeScheme(scheme)
-    }, []);
-    useEffect(async () => {
-        await setScheme(await getScheme())
     });
     return (
         <AppearanceProvider>
