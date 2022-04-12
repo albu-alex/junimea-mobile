@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         backgroundColor: 'ghostwhite',
     },
+    closeModalButton:{
+        marginTop: '15%',
+        marginRight: '3%',
+        alignSelf: 'flex-end'
+    }
 });
 
 export {styles}

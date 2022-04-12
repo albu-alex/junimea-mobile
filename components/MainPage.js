@@ -1,10 +1,13 @@
 //npm import
-import { View, KeyboardAvoidingView, FlatList, Platform,
-    TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
+import {
+    View, KeyboardAvoidingView, FlatList, Platform,
+    TouchableWithoutFeedback, Keyboard, RefreshControl, Modal, TouchableOpacity
+} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from "react-native-appearance";
 import { FAB } from 'react-native-elements';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 //css stylesheet import
 import { styles } from "../styles/MainPageStyles";
@@ -86,7 +89,33 @@ export default function MainPage({_}){
                     <FAB placement='right' size='large'
                         icon={{name: 'add', color: (scheme === 'dark') ? 'white' : 'black'}}
                         color={(scheme === 'dark') ? '#555555' : '#AAAAAA'}
-                        onPress={() => null}/>
+                        onPress={() => setShowModal(true)}/>
+                    {showModal &&
+                        <Modal animationType={'slide'} transparent={false}>
+                            <KeyboardAvoidingView
+                                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                                style={[styles.container,
+                                    scheme === "dark"
+                                        ? { backgroundColor: "#252525" }
+                                        : { backgroundColor: '#DADADA' }]}>
+                                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                                    <View style={[styles.inner,
+                                        scheme === "dark"
+                                            ? { backgroundColor: "#252525" }
+                                            : { backgroundColor: '#DADADA' }]}>
+                                        <TouchableOpacity style={styles.closeModalButton} onPress={() => setShowModal(false)}>
+                                            {scheme === 'dark' &&
+                                                <Icon name="close" color="white" size={30}/>
+                                            }
+                                            {scheme !== 'dark' &&
+                                                <Icon name="close" color="black" size={30}/>
+                                            }
+                                        </TouchableOpacity>
+                                    </View>
+                                </TouchableWithoutFeedback>
+                            </KeyboardAvoidingView>
+                        </Modal>
+                    }
                 </View>
             </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
