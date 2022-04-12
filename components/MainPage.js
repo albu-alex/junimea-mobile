@@ -91,7 +91,7 @@ export default function MainPage({_}){
                         color={(scheme === 'dark') ? '#555555' : '#AAAAAA'}
                         onPress={() => setShowModal(true)}/>
                     {showModal &&
-                        <Modal animationType={'slide'} transparent={false}>
+                        <Modal animationType={'slide'} transparent={true}>
                             <KeyboardAvoidingView
                                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                                 style={[styles.container,

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix bug when displaying posts with tags">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Opening modal on fab press">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,14 +182,8 @@
       <workItem from="1649183463528" duration="2925000" />
       <workItem from="1649262369306" duration="2379000" />
       <workItem from="1649312706330" duration="645000" />
-      <workItem from="1649788289883" duration="1211000" />
-    </task>
-    <task id="LOCAL-00077" summary="Add like post and dislike post functionality">
-      <created>1646068165876</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1646068165876</updated>
+      <workItem from="1649788289883" duration="1234000" />
+      <workItem from="1649796801402" duration="363000" />
     </task>
     <task id="LOCAL-00078" summary="Fix image out of bounds bug">
       <created>1646071112959</created>
@@ -528,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649605929772</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Opening modal on fab press">
+      <created>1649789525732</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1649789525732</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +548,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Bug fixing + live theme updates" />
     <MESSAGE value="Added light/dark theme support to Settings" />
     <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Full dark theme support for settings" />
@@ -573,7 +572,8 @@
     <MESSAGE value="Fix scheme related bugs + incoming change to redux" />
     <MESSAGE value="Posts now get loaded from last to first" />
     <MESSAGE value="Fix bug when displaying posts with tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug when displaying posts with tags" />
+    <MESSAGE value="Opening modal on fab press" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opening modal on fab press" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
