@@ -1,7 +1,7 @@
 //npm import
 import {
     View, KeyboardAvoidingView, FlatList, Platform,
-    TouchableWithoutFeedback, Keyboard, RefreshControl, Modal, TouchableOpacity
+    TouchableWithoutFeedback, Keyboard, RefreshControl, Modal, TouchableOpacity, TextInput
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
@@ -25,6 +25,8 @@ export default function MainPage({_}){
     const [data, setData] = useState([]);
     const [postNumber, setPostNumber] = useState(-1);
     const [showModal, setShowModal] = useState(false)
+    const [title, setTitle] = useState("")
+    const [tags, setTags] = useState("")
     const renderItem = ({ item }) => (
         <View key={item.id.toString()}>
             <UserPost key={item.id.toString()} id={item.id} />
@@ -111,6 +113,20 @@ export default function MainPage({_}){
                                                 <Icon name="close" color="black" size={30}/>
                                             }
                                         </TouchableOpacity>
+                                        <View style={styles.postForm}>
+                                            <TextInput onChangeText={newTitle => setTitle(newTitle)} defaultValue={title}
+                                            style={[styles.textInput,
+                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050',
+                                            color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}
+                                            placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
+                                            placeholder={'Enter the title of the post'} />
+                                            <TextInput onChangeText={newTags => setTags(newTags)} defaultValue={tags}
+                                            style={[styles.textInput,
+                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050',
+                                             color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}
+                                            placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
+                                            placeholder={'tag1, tag2, ...'} />
+                                        </View>
                                     </View>
                                 </TouchableWithoutFeedback>
                             </KeyboardAvoidingView>

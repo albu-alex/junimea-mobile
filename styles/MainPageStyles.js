@@ -10,10 +10,18 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         backgroundColor: 'ghostwhite',
     },
-    closeModalButton:{
+    closeModalButton: {
         marginTop: '15%',
         marginRight: '3%',
         alignSelf: 'flex-end'
+    },
+    postForm: {
+        marginTop: '5%',
+        display: 'flex',
+        width: '100%',
+        height: '35%',
+        justifyContent: 'space-between',
+        alignContent: 'center'
     }
 });
 

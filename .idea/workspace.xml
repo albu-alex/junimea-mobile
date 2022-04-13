@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Opening modal on fab press">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Made modal transparent">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,14 +184,8 @@
       <workItem from="1649262369306" duration="2379000" />
       <workItem from="1649312706330" duration="645000" />
       <workItem from="1649788289883" duration="1234000" />
-      <workItem from="1649796801402" duration="363000" />
-    </task>
-    <task id="LOCAL-00078" summary="Fix image out of bounds bug">
-      <created>1646071112959</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1646071112959</updated>
+      <workItem from="1649796801402" duration="418000" />
+      <workItem from="1649835480935" duration="1176000" />
     </task>
     <task id="LOCAL-00079" summary="App works fine in production mode">
       <created>1646071525877</created>
@@ -528,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649789525732</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Made modal transparent">
+      <created>1649797216275</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1649797216276</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added light/dark theme support to Settings" />
     <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Full dark theme support for settings" />
     <MESSAGE value="Small refactor" />
@@ -573,7 +574,8 @@
     <MESSAGE value="Posts now get loaded from last to first" />
     <MESSAGE value="Fix bug when displaying posts with tags" />
     <MESSAGE value="Opening modal on fab press" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opening modal on fab press" />
+    <MESSAGE value="Made modal transparent" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made modal transparent" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
