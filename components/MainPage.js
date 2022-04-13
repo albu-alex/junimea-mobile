@@ -127,15 +127,26 @@ export default function MainPage({_}){
                                             placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
                                             placeholder={'tag1, tag2, ...'} />
                                         </View>
-                                        <Text>Mock text please ignore</Text>
+                                        <View>
+                                            <Text style={[styles.primaryText,
+                                            {color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}>
+                                                No photos added
+                                            </Text>
+                                        </View>
                                         <View style={styles.submitButtons}>
                                             <TouchableOpacity style={[styles.button,
                                             {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={() => null}>
-                                                <Text>Create Post</Text>
+                                                <Text style={[styles.buttonText,
+                                                {color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}>
+                                                    Create Post
+                                                </Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity style={[styles.button,
                                             {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={() => null}>
-                                                <Text>Add photo</Text>
+                                                <Text style={[styles.buttonText,
+                                                    {color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}>
+                                                    Add media
+                                                </Text>
                                             </TouchableOpacity>
                                         </View>
                                     </View>

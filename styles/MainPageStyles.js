@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         marginTop: '5%',
         display: 'flex',
         width: '100%',
-        height: '35%',
+        height: '25%',
         justifyContent: 'space-between',
         alignContent: 'center'
     },
@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25,
     },
     submitButtons: {
+        marginTop: '10%',
         paddingLeft: '10%',
         display: 'flex',
         flexDirection: 'row',
@@ -46,6 +47,18 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 10,
         paddingHorizontal: 15,
+    },
+    buttonText: {
+        fontSize: 18,
+        fontWeight: '500',
+        alignSelf: 'center',
+        marginTop: '6%'
+    },
+    primaryText: {
+        fontSize: 24,
+        fontWeight: '500',
+        alignSelf: 'center',
+        marginTop: '20%'
     }
 });
 

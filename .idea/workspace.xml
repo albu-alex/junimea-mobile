@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add input form to add post modal">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add buttons to add post modal">
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
     </list>
@@ -185,14 +184,7 @@
       <workItem from="1649312706330" duration="645000" />
       <workItem from="1649788289883" duration="1234000" />
       <workItem from="1649796801402" duration="418000" />
-      <workItem from="1649835480935" duration="2614000" />
-    </task>
-    <task id="LOCAL-00080" summary="Fix UserPost buttons alignment issues">
-      <created>1646165296904</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1646165296905</updated>
+      <workItem from="1649835480935" duration="2968000" />
     </task>
     <task id="LOCAL-00081" summary="Create Comment header">
       <created>1646168747836</created>
@@ -530,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649836686550</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Add buttons to add post modal">
+      <created>1649838161925</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1649838161925</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Full dark theme support for settings" />
     <MESSAGE value="Small refactor" />
     <MESSAGE value="Weird image picker issues" />
     <MESSAGE value="Add full light/dark mode support for Search" />
@@ -575,7 +573,8 @@
     <MESSAGE value="Opening modal on fab press" />
     <MESSAGE value="Made modal transparent" />
     <MESSAGE value="Add input form to add post modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add input form to add post modal" />
+    <MESSAGE value="Add buttons to add post modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add buttons to add post modal" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
