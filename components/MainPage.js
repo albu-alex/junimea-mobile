@@ -1,6 +1,6 @@
 //npm import
 import {
-    View, KeyboardAvoidingView, FlatList, Platform,
+    View, KeyboardAvoidingView, FlatList, Platform, Text,
     TouchableWithoutFeedback, Keyboard, RefreshControl, Modal, TouchableOpacity, TextInput
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
@@ -126,6 +126,17 @@ export default function MainPage({_}){
                                              color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}
                                             placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
                                             placeholder={'tag1, tag2, ...'} />
+                                        </View>
+                                        <Text>Mock text please ignore</Text>
+                                        <View style={styles.submitButtons}>
+                                            <TouchableOpacity style={[styles.button,
+                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={() => null}>
+                                                <Text>Create Post</Text>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity style={[styles.button,
+                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={() => null}>
+                                                <Text>Add photo</Text>
+                                            </TouchableOpacity>
                                         </View>
                                     </View>
                                 </TouchableWithoutFeedback>

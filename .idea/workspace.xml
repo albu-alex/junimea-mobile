@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Made modal transparent">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add input form to add post modal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
@@ -185,14 +185,7 @@
       <workItem from="1649312706330" duration="645000" />
       <workItem from="1649788289883" duration="1234000" />
       <workItem from="1649796801402" duration="418000" />
-      <workItem from="1649835480935" duration="1176000" />
-    </task>
-    <task id="LOCAL-00079" summary="App works fine in production mode">
-      <created>1646071525877</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1646071525877</updated>
+      <workItem from="1649835480935" duration="2614000" />
     </task>
     <task id="LOCAL-00080" summary="Fix UserPost buttons alignment issues">
       <created>1646165296904</created>
@@ -530,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649797216276</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="Add input form to add post modal">
+      <created>1649836686549</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1649836686550</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +550,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Full dark theme support for settings" />
     <MESSAGE value="Small refactor" />
     <MESSAGE value="Weird image picker issues" />
@@ -575,7 +574,8 @@
     <MESSAGE value="Fix bug when displaying posts with tags" />
     <MESSAGE value="Opening modal on fab press" />
     <MESSAGE value="Made modal transparent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made modal transparent" />
+    <MESSAGE value="Add input form to add post modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add input form to add post modal" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
