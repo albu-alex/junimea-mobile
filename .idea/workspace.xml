@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add buttons to add post modal">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Finish styling add post modal">
+      <change afterPath="$PROJECT_DIR$/methods/MainPage/createPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/MainPageStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/MainPageStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/postPhoto.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +108,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -184,14 +197,8 @@
       <workItem from="1649312706330" duration="645000" />
       <workItem from="1649788289883" duration="1234000" />
       <workItem from="1649796801402" duration="418000" />
-      <workItem from="1649835480935" duration="2968000" />
-    </task>
-    <task id="LOCAL-00081" summary="Create Comment header">
-      <created>1646168747836</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1646168747837</updated>
+      <workItem from="1649835480935" duration="3255000" />
+      <workItem from="1649851663354" duration="1816000" />
     </task>
     <task id="LOCAL-00082" summary="Styling and add comment text">
       <created>1646169615487</created>
@@ -529,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649838161925</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Finish styling add post modal">
+      <created>1649838782843</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1649838782843</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Small refactor" />
     <MESSAGE value="Weird image picker issues" />
     <MESSAGE value="Add full light/dark mode support for Search" />
     <MESSAGE value="App works as it should in production mode" />
@@ -574,7 +587,8 @@
     <MESSAGE value="Made modal transparent" />
     <MESSAGE value="Add input form to add post modal" />
     <MESSAGE value="Add buttons to add post modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add buttons to add post modal" />
+    <MESSAGE value="Finish styling add post modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish styling add post modal" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

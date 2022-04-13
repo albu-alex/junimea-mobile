@@ -16,6 +16,8 @@ import { styles } from "../styles/MainPageStyles";
 import { getInitialPosts } from "../methods/MainPage/getInitialPosts"
 import { getSelf } from "../methods/MainPage/getSelf"
 import { setPosts } from "../methods/MainPage/setPosts";
+import { postPhoto } from "../methods/UserPost/postPhoto";
+import { createPost } from "../methods/MainPage/createPost";
 
 //custom components import
 import UserPost from "./UserPost"
@@ -27,6 +29,7 @@ export default function MainPage({_}){
     const [showModal, setShowModal] = useState(false)
     const [title, setTitle] = useState("")
     const [tags, setTags] = useState("")
+    const [photos, addPhoto] = useState([])
     const renderItem = ({ item }) => (
         <View key={item.id.toString()}>
             <UserPost key={item.id.toString()} id={item.id} />
@@ -41,7 +44,6 @@ export default function MainPage({_}){
         else {
             setPostNumber(postNumber - 10)
         }
-        alert(postNumber)
         setData(fetchedData)
         await setPosts(fetchedData)
         setRefreshing(false)
@@ -54,6 +56,23 @@ export default function MainPage({_}){
         setData(newData)
         await setPosts(fetchedData)
         setRefreshing(false)
+    }
+    const addPostPhoto = async () => {
+        const newPhoto = await postPhoto()
+        const newPhotos = photos
+        newPhotos.push(newPhoto)
+        addPhoto(newPhotos)
+    }
+    const postAddResponse = async () => {
+        const ok = await createPost(title, tags, photos)
+        if (ok) {
+            alert("Post added successfully!")
+            setPostNumber(-1)
+            await fetchPosts()
+        }
+        else {
+            alert("There was an error while trying to add new post!")
+        }
     }
     useEffect(async () => {
         await fetchPosts()
@@ -130,19 +149,19 @@ export default function MainPage({_}){
                                         <View>
                                             <Text style={[styles.primaryText,
                                             {color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}>
-                                                No photos added
+                                                You have added {photos.length} photo(s)!
                                             </Text>
                                         </View>
                                         <View style={styles.submitButtons}>
                                             <TouchableOpacity style={[styles.button,
-                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={() => null}>
+                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={postAddResponse}>
                                                 <Text style={[styles.buttonText,
                                                 {color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}>
                                                     Create Post
                                                 </Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity style={[styles.button,
-                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={() => null}>
+                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050'}]} onPress={addPostPhoto}>
                                                 <Text style={[styles.buttonText,
                                                     {color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}>
                                                     Add media
