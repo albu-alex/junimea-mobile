@@ -12,6 +12,7 @@ import { getUserDetails } from "../methods/UserProfile/getUserDetails"
 import { getPosts } from "../methods/UserProfile/getPosts"
 import { uploadFile } from "../methods/UserProfile/uploadFile";
 import { getScheme } from "../methods/App/getScheme";
+import { getSavedPosts } from "../methods/UserProfile/getSavedPosts";
 
 //custom components import
 import UserPost from "./UserPost"
@@ -21,6 +22,8 @@ export default function UserProfile({ navigation }){
     const [username, setUsername] = useState('')
     const [userID, setUserID] = useState('')
     const [data, setData] = useState([])
+    const [savedPosts, setSavedPosts] = useState([])
+    const [showSavedPosts, setShowSavedPosts] = useState(false)
     const [refreshing, setRefreshing] = useState(false)
     const [backgroundColor, setBackgroundColor] = useState("")
     const [iconColor, setIconColor] = useState("")
@@ -45,6 +48,7 @@ export default function UserProfile({ navigation }){
 
     useEffect(async () => {
         await fetchPosts()
+        await fetchSavedPosts()
     }, [])
 
     const changeProfilePicture = async() => {
@@ -57,6 +61,17 @@ export default function UserProfile({ navigation }){
         setData(posts)
         setRefreshing(false)
     }
+
+    const fetchSavedPosts = async () => {
+        setRefreshing(true)
+        let posts = await getSavedPosts()
+        setSavedPosts(posts)
+        setRefreshing(false)
+    }
+
+    const renderSavedPost = ({ item }) => (
+        <UserPost key={item.id} id={item.id} />
+    )
 
     const renderItem = ({ item }) => (
         (userID === item.userId) ?
@@ -99,25 +114,37 @@ export default function UserProfile({ navigation }){
                         {color: buttonTextColor}]}>Change picture</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.profileButton,
-                    {backgroundColor: iconColor}]} onPress={() => alert("View saved posts")}>
+                    {backgroundColor: iconColor}]} onPress={() => setShowSavedPosts(!showSavedPosts)}>
                     <Text style={[styles.buttonText,
-                        {color: buttonTextColor}]}>View saved posts</Text>
+                        {color: buttonTextColor}]}>(!showSavedPosts) ? View saved posts : View user posts</Text>
                 </TouchableOpacity>
             </View>
-            <FlatList
-                windowSize={60}
-                initialNumToRender={10}
-                removeClippedSubviews={true}
-                data={data}
-                extraData={this.state}
-                renderItem={renderItem}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={refreshing}
-                        onRefresh={fetchPosts}
-                    />
-                }
-            />
+            {!showSavedPosts &&
+                <FlatList
+                    windowSize={60}
+                    initialNumToRender={10}
+                    removeClippedSubviews={true}
+                    data={data}
+                    extraData={this.state}
+                    renderItem={renderItem}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={refreshing}
+                            onRefresh={fetchPosts}
+                        />
+                    }
+                />
+            }
+            {showSavedPosts &&
+                <FlatList
+                    windowSize={60}
+                    initialNumToRender={10}
+                    removeClippedSubviews={true}
+                    data={savedPosts}
+                    extraData={this.state}
+                    renderItem={renderSavedPost}
+                />
+            }
         </View>
     )
 }

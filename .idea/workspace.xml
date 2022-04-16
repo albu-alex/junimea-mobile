@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Optimize imports for the rest of the components">
-      <change afterPath="$PROJECT_DIR$/methods/UserPost/setHiddenPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methods/UserPost/reportBug.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/reportBug.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add saved posts in frontend">
+      <change afterPath="$PROJECT_DIR$/methods/UserProfile/getSavedPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,21 +185,7 @@
       <workItem from="1649183463528" duration="2925000" />
       <workItem from="1649317670792" duration="22000" />
       <workItem from="1650110567401" duration="3424000" />
-      <workItem from="1650118570553" duration="1261000" />
-    </task>
-    <task id="LOCAL-00076" summary="App works in production mode">
-      <created>1645975907357</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975907357</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Add like post and dislike post functionality">
-      <created>1646068165876</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1646068165876</updated>
+      <workItem from="1650118570553" duration="2151000" />
     </task>
     <task id="LOCAL-00078" summary="Fix image out of bounds bug">
       <created>1646071112959</created>
@@ -532,7 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650113859695</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Refactor + add hidden posts in frontend">
+      <created>1650119867450</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1650119867451</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Add saved posts in frontend">
+      <created>1650120021107</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1650120021108</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,8 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Refactor code + add color scheme to local storage" />
-    <MESSAGE value="Bug fixing + live theme updates" />
     <MESSAGE value="Added light/dark theme support to Settings" />
     <MESSAGE value="App works fine in production mode" />
     <MESSAGE value="Full dark theme support for settings" />
@@ -576,7 +572,9 @@
     <MESSAGE value="Refactor and optimize imports for UserPost and Search" />
     <MESSAGE value="Optimize FlatList rendering and code for UserProfile" />
     <MESSAGE value="Optimize imports for the rest of the components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimize imports for the rest of the components" />
+    <MESSAGE value="Refactor + add hidden posts in frontend" />
+    <MESSAGE value="Add saved posts in frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add saved posts in frontend" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
