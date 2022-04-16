@@ -23,15 +23,15 @@ import { createNewComment } from "../methods/UserPost/createNewComment";
 import { postPhoto } from "../methods/UserPost/postPhoto";
 
 export default function UserPost(props){
-    const [showComments, setshowComments] = useState(false);
+    const [showComments, setShowComments] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
     const [postDetails, setPostDetails] = useState({});
     const [commentText, setCommentText] = useState('');
     const [photos, setPhotos] = useState([]);
     const togglePost = async () => {
-        let toggle = reportBug(postHidden);
-        await setPostHidden(toggle);
+        await reportBug(postHidden, {id:props.id})
+        setPostHidden(!postHidden);
     }
     const setLikes = async (isLike) => {
         if (isLike)
@@ -175,7 +175,7 @@ export default function UserPost(props){
                             scheme === 'dark'
                             ? {color: "#AAAAAA"}
                             : {color: "#555555"}]}>{postDetails.likes}</Text>
-                <TouchableOpacity onPress={() => setshowComments(!showComments)}>
+                <TouchableOpacity onPress={() => setShowComments(!showComments)}>
                     {scheme === 'dark' &&
                         <Icon name='comment' size={24} color={'#AAAAAA'}/>
                     }

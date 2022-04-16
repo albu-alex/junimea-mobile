@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Refactor and optimize imports for UserPost and Search">
-      <change beforePath="$PROJECT_DIR$/components/UserProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserProfile.js" afterDir="false" />
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Optimize imports for the rest of the components">
+      <change afterPath="$PROJECT_DIR$/methods/UserPost/setHiddenPosts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methods/UserPost/reportBug.js" beforeDir="false" afterPath="$PROJECT_DIR$/methods/UserPost/reportBug.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,14 +63,14 @@
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Login.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Search.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -183,21 +186,8 @@
       <workItem from="1649181868491" duration="1179000" />
       <workItem from="1649183463528" duration="2925000" />
       <workItem from="1649317670792" duration="22000" />
-      <workItem from="1650110567401" duration="2997000" />
-    </task>
-    <task id="LOCAL-00074" summary="Create updateProfile method">
-      <created>1645975025443</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975025443</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Add TextInput functionalities">
-      <created>1645975374401</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975374401</updated>
+      <workItem from="1650110567401" duration="3424000" />
+      <workItem from="1650118570553" duration="1261000" />
     </task>
     <task id="LOCAL-00076" summary="App works in production mode">
       <created>1645975907357</created>
@@ -528,7 +518,21 @@
       <option name="project" value="LOCAL" />
       <updated>1650113175263</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Optimize FlatList rendering and code for UserProfile">
+      <created>1650113618260</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1650113618260</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Optimize imports for the rest of the components">
+      <created>1650113859695</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1650113859695</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,8 +551,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Login/Logout text change if user is already logged in or not" />
-    <MESSAGE value="Theme change also implemented in Main" />
     <MESSAGE value="Refactor code + add color scheme to local storage" />
     <MESSAGE value="Bug fixing + live theme updates" />
     <MESSAGE value="Added light/dark theme support to Settings" />
@@ -572,7 +574,9 @@
     <MESSAGE value="UserProfile FlatList optimization + starting to adapt UserProfile to light/dark mode" />
     <MESSAGE value="Complete mockup for Search component" />
     <MESSAGE value="Refactor and optimize imports for UserPost and Search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor and optimize imports for UserPost and Search" />
+    <MESSAGE value="Optimize FlatList rendering and code for UserProfile" />
+    <MESSAGE value="Optimize imports for the rest of the components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize imports for the rest of the components" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
