@@ -1,7 +1,7 @@
 //npm import
 import {
     Text, View, TouchableOpacity, Image, TextInput,
-    ActivityIndicator, Animated, Dimensions, Modal, Alert
+    ActivityIndicator, Animated, Dimensions, Modal
 } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -30,9 +30,7 @@ export default function UserPost(props){
     const [commentText, setCommentText] = useState('');
     const [photos, setPhotos] = useState([]);
     const togglePost = async () => {
-        let toggle = await reportBug(postHidden);
-        // minor bug here
-        // alert(toggle)
+        let toggle = reportBug(postHidden);
         await setPostHidden(toggle);
     }
     const setLikes = async (isLike) => {
@@ -40,13 +38,13 @@ export default function UserPost(props){
             await likePost(props.id)
         else
             await dislikePost(props.id)
-        resetPostDetails()
+        await resetPostDetails()
     }
     const addComment = async () => {
-        let result = await createNewComment(commentText, props.id, photos)
+        await createNewComment(commentText, props.id, photos)
         setCommentText("")
         setPhotos([])
-        resetPostDetails()
+        await resetPostDetails()
     }
     const resetPostDetails = async () => {
         let details = await loadPost(props.id)
