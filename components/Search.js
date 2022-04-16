@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 //custom method import
 import { getScheme } from "../methods/App/getScheme";
+import { search } from "../methods/Search/search";
 
 //css stylesheet import
 import { styles } from "../styles/SearchStyles";
@@ -19,6 +20,22 @@ export default function Search({ navigation }){
     const [inputBackgroundColor, setInputBackgroundColor] = useState("")
     const [textColor, setTextColor] = useState("")
     const [iconColor, setIconColor] = useState("")
+    const [tags, setTags] = useState([])
+    const beginSearch = ({ nativeEvent: { key: keyValue } }) => {
+        if(keyValue === 'Enter') {
+            const newTags = search(tags, searchText)
+            setTags(newTags)
+            setSearchText("")
+        }
+    }
+    useEffect(() => {
+        const mockUpTags = []
+        mockUpTags.push("Steaua")
+        mockUpTags.push("Rapid")
+        mockUpTags.push("Dinamo")
+        mockUpTags.push("CFR Cluj")
+        setTags(mockUpTags)
+    }, []);
     useEffect(async () => {
         setScheme(await getScheme())
         const newBackgroundColor = (scheme === 'dark') ? '#252525' : '#DADADA'
@@ -39,7 +56,7 @@ export default function Search({ navigation }){
                         <TextInput autoCorrect={false} placeholderTextColor={iconColor} placeholder={'Search Junimea'}
                                    onChangeText={newSearchText => setSearchText(newSearchText)} multiline={true}
                                    defaultValue={searchText} style={[styles.textInput,
-                            {backgroundColor: inputBackgroundColor, color: iconColor}]} />
+                            {backgroundColor: inputBackgroundColor, color: iconColor}]} onKeyPress={beginSearch} />
                         <TouchableOpacity style={{borderRadius: 10}} onPress={() => navigation.navigate("MainPage")}>
                             <Text style={styles.buttonText}>Cancel</Text>
                         </TouchableOpacity>
@@ -47,16 +64,12 @@ export default function Search({ navigation }){
                     <Text style={[styles.primaryText,
                         {color: textColor}]}>Trending</Text>
                     <ScrollView>
-                        <TouchableOpacity onPress={() => null} activeOpacity={0.8}>
-                            <Text style={[styles.tags,
-                                {color: textColor}]}>Steaua</Text>
-                        </TouchableOpacity>
-                        <Text style={[styles.tags,
-                            {color: textColor}]}>Dinamo</Text>
-                        <Text style={[styles.tags,
-                            {color: textColor}]}>CFR Cluj</Text>
-                        <Text style={[styles.tags,
-                            {color: textColor}]}>Astra</Text>
+                        {tags.map((object, i) =>
+                            <TouchableOpacity onPress={() => null}>
+                                <Text style={[styles.tags,
+                                    {color: textColor}]}>{object}</Text>
+                            </TouchableOpacity>
+                        )}
                     </ScrollView>
                 </View>
             </TouchableWithoutFeedback>
