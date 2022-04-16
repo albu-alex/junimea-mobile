@@ -52,8 +52,10 @@ export default function UserProfile({ navigation }){
     }
 
     const fetchPosts = async () => {
+        setRefreshing(true)
         let posts = await getPosts()
         setData(posts)
+        setRefreshing(false)
     }
 
     const renderItem = ({ item }) => (
@@ -103,9 +105,11 @@ export default function UserProfile({ navigation }){
                 </TouchableOpacity>
             </View>
             <FlatList
-                windowSize={20}
+                windowSize={60}
+                initialNumToRender={10}
                 removeClippedSubviews={true}
                 data={data}
+                extraData={this.state}
                 renderItem={renderItem}
                 refreshControl={
                     <RefreshControl
