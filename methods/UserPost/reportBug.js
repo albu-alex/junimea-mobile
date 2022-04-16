@@ -1,5 +1,6 @@
 import { Alert } from 'react-native'
 import { setHiddenPosts } from "./setHiddenPosts";
+import { setSavedPosts } from "./setSavedPosts";
 
 export function reportBug(postHidden, post){
     if(postHidden) {
@@ -23,7 +24,7 @@ export function reportBug(postHidden, post){
                 {
                     text: "Save post",
                     style: "cancel",
-                    onPress: () => alert("save post")
+                    onPress: () => setSavedPosts(post)
                 }
             ]
         );
