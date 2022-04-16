@@ -1,7 +1,6 @@
 //npm import
-import { Text, View, TouchableOpacity, Image, TextInput,
-    ActivityIndicator, Animated, Dimensions, Modal } from 'react-native';
-import React, {useRef, useState, useEffect} from 'react';
+import { Text, View, TouchableOpacity, Image, Dimensions} from 'react-native';
+import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 //custom method import

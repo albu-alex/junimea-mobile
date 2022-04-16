@@ -1,7 +1,7 @@
 //npm import
-import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList, Modal,
-    TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
-import React, {useState, useCallback, useEffect} from 'react';
+import { Text, View, KeyboardAvoidingView, TouchableOpacity, Modal,
+    TextInput, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
