@@ -133,18 +133,28 @@ export default function MainPage({_}){
                                             }
                                         </TouchableOpacity>
                                         <View style={styles.postForm}>
-                                            <TextInput onChangeText={newTitle => setTitle(newTitle)} defaultValue={title}
-                                            style={[styles.textInput,
-                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050',
-                                            color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}
-                                            placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
-                                            placeholder={'Enter the title of the post'} />
-                                            <TextInput onChangeText={newTags => setTags(newTags)} defaultValue={tags}
-                                            style={[styles.textInput,
-                                            {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050',
-                                             color: (scheme === 'dark') ? 'ghostwhite' : '#070700'}]}
-                                            placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
-                                            placeholder={'tag1, tag2, ...'} />
+                                            <View style={{display: 'flex', flexDirection: 'row'}}>
+                                                <Icon name={'font'} size={20} color={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
+                                                    style={{marginTop: '4%', zIndex: 2}}/>
+                                                <TextInput onChangeText={newTitle => setTitle(newTitle)} defaultValue={title}
+                                                style={[styles.textInput,
+                                                {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050',
+                                                color: (scheme === 'dark') ? 'ghostwhite' : '#070700',
+                                                marginLeft: '-7%'}]}
+                                                placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
+                                                placeholder={'Enter the title of the post'} />
+                                            </View>
+                                            <View style={{display: 'flex', flexDirection: 'row'}}>
+                                                <Icon name={'tags'} size={20} color={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
+                                                      style={{marginTop: '4%', zIndex: 2}}/>
+                                                <TextInput onChangeText={newTags => setTags(newTags)} defaultValue={tags}
+                                                style={[styles.textInput,
+                                                {backgroundColor: (scheme === 'dark') ? '#AFAFAF' : '#505050',
+                                                 color: (scheme === 'dark') ? 'ghostwhite' : '#070700',
+                                                 marginLeft: '-7%'}]}
+                                                placeholderTextColor={(scheme === 'dark') ? 'ghostwhite' : '#070700'}
+                                                placeholder={'tag1, tag2, ...'} />
+                                            </View>
                                         </View>
                                         <View>
                                             <Text style={[styles.primaryText,
