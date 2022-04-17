@@ -116,7 +116,7 @@ export default function UserProfile({ navigation }){
                 <TouchableOpacity style={[styles.profileButton,
                     {backgroundColor: iconColor}]} onPress={() => setShowSavedPosts(!showSavedPosts)}>
                     <Text style={[styles.buttonText,
-                        {color: buttonTextColor}]}>(!showSavedPosts) ? View saved posts : View user posts</Text>
+                        {color: buttonTextColor}]}>{(!showSavedPosts) ? 'View saved posts' : 'View user posts'}</Text>
                 </TouchableOpacity>
             </View>
             {!showSavedPosts &&
