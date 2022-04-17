@@ -3,7 +3,7 @@ import {
     View, KeyboardAvoidingView, FlatList, Platform, Text,
     TouchableWithoutFeedback, Keyboard, RefreshControl, Modal, TouchableOpacity, TextInput
 } from 'react-native';
-import GestureRecognizer from 'react-native-swipe-gestures'
+import GestureRecognizer from 'react-native-swipe-gestures';
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from "react-native-appearance";

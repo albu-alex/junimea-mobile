@@ -4,6 +4,7 @@ import { Text, View, KeyboardAvoidingView, TouchableOpacity, Modal,
 import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 //custom method import
 import { updateProfile } from "../methods/Settings/updateProfile"
@@ -72,6 +73,7 @@ export default function Settings({navigation}){
                                 {color: buttonTextColor}]}>Close settings</Text>
                         </TouchableOpacity>
                         {showModal &&
+                            <GestureRecognizer onSwipeDown={() => setShowModal(false)}>
                             <Modal animationType={'slide'} transparent={false}>
                                 <KeyboardAvoidingView
                                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -127,6 +129,7 @@ export default function Settings({navigation}){
                                     </TouchableWithoutFeedback>
                                 </KeyboardAvoidingView>
                             </Modal>
+                            </GestureRecognizer>
                         }
                     </View>
                 </View>
