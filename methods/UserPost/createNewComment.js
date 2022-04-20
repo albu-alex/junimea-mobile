@@ -14,7 +14,7 @@ export async function createNewComment(commentText, id, images){
     })
     .then(function (response){
         if(response.status === 200){
-            return response.data
+            alert("Comment created successfully")
         }
     })
     .catch(function(){

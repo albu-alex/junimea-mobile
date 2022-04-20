@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Fix photo array addition bug">
+    <list default="true" id="c277b7a9-4bac-4e01-bb71-e76551c40420" name="Changes" comment="Add GestureRecognizer to Modal(not yet tested)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/LoginStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/LoginStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,41 +44,45 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/Login/verifyLogin.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/styles/SearchStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/getUserDetails.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/loadPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadFile.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/methods/UserProfile/uploadProfilePicture.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Main.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/components/Comment.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/CommentStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Login.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/MainPage.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getSelf.js" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/MainPage/getInitialPosts.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/Settings.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/UserPostStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/App.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/components/Search.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/likePost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserProfile.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/methods/UserPost/dislikePost.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/SettingsStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/styles/MainPageStyles.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/methods/Settings/updateProfile.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/components/UserPost.js" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23XmPDxBrJmWgXKFDCfIM3fOrft" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -100,6 +104,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="advanced.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="C:\Users\Alex\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\211.7628.21\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -175,139 +180,18 @@
       <workItem from="1648667327238" duration="4649000" />
       <workItem from="1648710174609" duration="1634000" />
       <workItem from="1649010627492" duration="2189000" />
-    </task>
-    <task id="LOCAL-00067" summary="Follow PureComponent practices improving app performance">
-      <created>1645882934967</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1645882934967</updated>
-    </task>
-    <task id="LOCAL-00068" summary="App works great in production mode">
-      <created>1645883618117</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1645883618117</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Profile icon changes with user profile picture with small performance problems">
-      <created>1645888930404</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1645888930407</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Setup update profile modal">
-      <created>1645901444785</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1645901444785</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Change UpdateProfile modal implementation">
-      <created>1645972720780</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1645972720780</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Basic update profile modal styling">
-      <created>1645974035641</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1645974035641</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Update profile modal styling complete">
-      <created>1645974666338</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1645974666338</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Create updateProfile method">
-      <created>1645975025443</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975025443</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Add TextInput functionalities">
-      <created>1645975374401</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975374401</updated>
-    </task>
-    <task id="LOCAL-00076" summary="App works in production mode">
-      <created>1645975907357</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1645975907357</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Add like post and dislike post functionality">
-      <created>1646068165876</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1646068165876</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Fix image out of bounds bug">
-      <created>1646071112959</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1646071112959</updated>
-    </task>
-    <task id="LOCAL-00079" summary="App works fine in production mode">
-      <created>1646071525877</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1646071525877</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Fix UserPost buttons alignment issues">
-      <created>1646165296904</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1646165296905</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Create Comment header">
-      <created>1646168747836</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1646168747837</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Styling and add comment text">
-      <created>1646169615487</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1646169615487</updated>
-    </task>
-    <task id="LOCAL-00083" summary="Add no comment icon to comment section">
-      <created>1646662741211</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1646662741211</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Add image and interaction to comment">
-      <created>1646665292840</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1646665292841</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Render actual photos inside comments">
-      <created>1646680985970</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1646680985971</updated>
+      <workItem from="1649181868491" duration="1179000" />
+      <workItem from="1649183463528" duration="2925000" />
+      <workItem from="1649262369306" duration="2379000" />
+      <workItem from="1649312706330" duration="645000" />
+      <workItem from="1649788289883" duration="1234000" />
+      <workItem from="1649796801402" duration="418000" />
+      <workItem from="1649835480935" duration="3255000" />
+      <workItem from="1649851663354" duration="1940000" />
+      <workItem from="1650195527239" duration="832000" />
+      <workItem from="1650205525130" duration="288000" />
+      <workItem from="1650212055303" duration="119000" />
+      <workItem from="1650230052655" duration="81000" />
     </task>
     <task id="LOCAL-00086" summary="Add functionalities to like and reply in comment">
       <created>1646681718119</created>
@@ -519,7 +403,140 @@
       <option name="project" value="LOCAL" />
       <updated>1649011962865</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Fix scheme not updating in login">
+      <created>1649182436237</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1649182436237</updated>
+    </task>
+    <task id="LOCAL-00117" summary="Full light and dark mode support for Login">
+      <created>1649184685477</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1649184685478</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Full light and dark mode support for Comment">
+      <created>1649186511991</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1649186511991</updated>
+    </task>
+    <task id="LOCAL-00119" summary="Full light/dark theme support for UserProfile">
+      <created>1649263398891</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1649263398891</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Fix not rendering posts in UserProfile">
+      <created>1649264156370</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1649264156370</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Settings shows in which mode you are currently on(light/dark)">
+      <created>1649604255178</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1649604255178</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Change alert text">
+      <created>1649604389181</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1649604389181</updated>
+    </task>
+    <task id="LOCAL-00123" summary="Fix scheme related bugs + incoming change to redux">
+      <created>1649604764530</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1649604764530</updated>
+    </task>
+    <task id="LOCAL-00124" summary="Posts now get loaded from last to first">
+      <created>1649605716061</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1649605716061</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Fix bug when displaying posts with tags">
+      <created>1649605929772</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1649605929772</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Opening modal on fab press">
+      <created>1649789525732</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1649789525732</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Made modal transparent">
+      <created>1649797216275</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1649797216276</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Add input form to add post modal">
+      <created>1649836686549</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1649836686550</updated>
+    </task>
+    <task id="LOCAL-00129" summary="Add buttons to add post modal">
+      <created>1649838161925</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1649838161925</updated>
+    </task>
+    <task id="LOCAL-00130" summary="Finish styling add post modal">
+      <created>1649838782843</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1649838782843</updated>
+    </task>
+    <task id="LOCAL-00131" summary="Add createPost method + modified photos added text">
+      <created>1649853605762</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1649853605762</updated>
+    </task>
+    <task id="LOCAL-00132" summary="Add text icons to text inputs in MainPage modal">
+      <created>1650196270131</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1650196270131</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Fix button text bug">
+      <created>1650196326524</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1650196326524</updated>
+    </task>
+    <task id="LOCAL-00134" summary="Add GestureRecognizer to Modal(not yet tested)">
+      <created>1650212102292</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1650212102292</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,32 +555,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add new comment method without photos" />
-    <MESSAGE value="Add postPhoto method" />
-    <MESSAGE value="Add photos to comments" />
-    <MESSAGE value="Style changes" />
-    <MESSAGE value="Logout alert if user not logged in" />
-    <MESSAGE value="Fixing upload file bug" />
-    <MESSAGE value="Fix axios requests" />
-    <MESSAGE value="Login/Logout text change if user is already logged in or not" />
-    <MESSAGE value="Theme change also implemented in Main" />
-    <MESSAGE value="Refactor code + add color scheme to local storage" />
-    <MESSAGE value="Bug fixing + live theme updates" />
-    <MESSAGE value="Added light/dark theme support to Settings" />
-    <MESSAGE value="App works fine in production mode" />
-    <MESSAGE value="Full dark theme support for settings" />
-    <MESSAGE value="Small refactor" />
-    <MESSAGE value="Weird image picker issues" />
-    <MESSAGE value="Add full light/dark mode support for Search" />
-    <MESSAGE value="App works as it should in production mode" />
-    <MESSAGE value="Still fixing image picker related issues" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Code refactor" />
     <MESSAGE value="Fixed photo upload issues" />
     <MESSAGE value="Refactor + add floating action button in main page" />
     <MESSAGE value="Refactor code in main page and settings" />
     <MESSAGE value="Fix comment file upload" />
     <MESSAGE value="Fix photo array addition bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix photo array addition bug" />
+    <MESSAGE value="Fix scheme not updating in login" />
+    <MESSAGE value="Full light and dark mode support for Login" />
+    <MESSAGE value="Full light and dark mode support for Comment" />
+    <MESSAGE value="Full light/dark theme support for UserProfile" />
+    <MESSAGE value="Fix not rendering posts in UserProfile" />
+    <MESSAGE value="Settings shows in which mode you are currently on(light/dark)" />
+    <MESSAGE value="Change alert text" />
+    <MESSAGE value="Fix scheme related bugs + incoming change to redux" />
+    <MESSAGE value="Posts now get loaded from last to first" />
+    <MESSAGE value="Fix bug when displaying posts with tags" />
+    <MESSAGE value="Opening modal on fab press" />
+    <MESSAGE value="Made modal transparent" />
+    <MESSAGE value="Add input form to add post modal" />
+    <MESSAGE value="Add buttons to add post modal" />
+    <MESSAGE value="Finish styling add post modal" />
+    <MESSAGE value="Add createPost method + modified photos added text" />
+    <MESSAGE value="Add text icons to text inputs in MainPage modal" />
+    <MESSAGE value="Fix button text bug" />
+    <MESSAGE value="Add GestureRecognizer to Modal(not yet tested)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GestureRecognizer to Modal(not yet tested)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

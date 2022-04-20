@@ -1,5 +1,5 @@
 //npm import
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavigationContainer, DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppearanceProvider, useColorScheme } from "react-native-appearance";
@@ -7,7 +7,8 @@ import { AppearanceProvider, useColorScheme } from "react-native-appearance";
 //custom components import
 import Login from "./components/Login";
 import Main from "./components/Main";
-import {storeScheme} from "./methods/App/storeScheme";
+import { storeScheme } from "./methods/App/storeScheme";
+import { getScheme } from "./methods/App/getScheme";
 
 const Stack = createNativeStackNavigator();
 

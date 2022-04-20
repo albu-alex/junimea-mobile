@@ -1,7 +1,7 @@
 //npm import
 import {
     Text, View, TouchableOpacity, Image, TextInput,
-    ActivityIndicator, Animated, Dimensions, Modal, Alert
+    ActivityIndicator, Animated, Dimensions, Modal
 } from 'react-native';
 import React, {useRef, useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -23,30 +23,28 @@ import { createNewComment } from "../methods/UserPost/createNewComment";
 import { postPhoto } from "../methods/UserPost/postPhoto";
 
 export default function UserPost(props){
-    const [showComments, setshowComments] = useState(false);
+    const [showComments, setShowComments] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
     const [postDetails, setPostDetails] = useState({});
     const [commentText, setCommentText] = useState('');
     const [photos, setPhotos] = useState([]);
     const togglePost = async () => {
-        let toggle = await reportBug(postHidden);
-        // minor bug here
-        // alert(toggle)
-        await setPostHidden(toggle);
+        await reportBug(postHidden, {id:props.id})
+        setPostHidden(!postHidden);
     }
     const setLikes = async (isLike) => {
         if (isLike)
             await likePost(props.id)
         else
             await dislikePost(props.id)
-        resetPostDetails()
+        await resetPostDetails()
     }
     const addComment = async () => {
-        let result = await createNewComment(commentText, props.id, photos)
+        await createNewComment(commentText, props.id, photos)
         setCommentText("")
         setPhotos([])
-        resetPostDetails()
+        await resetPostDetails()
     }
     const resetPostDetails = async () => {
         let details = await loadPost(props.id)
@@ -114,7 +112,7 @@ export default function UserPost(props){
                     </TouchableOpacity>
                 </View>
                 <View style={styles.tags}>
-                    {postDetails.tags &&postDetails.tags.map((object, i) =>
+                    {postDetails.tags && postDetails.tags.map((object, i) =>
                         <TouchableOpacity style={[styles.tagBackground,
                                                 scheme === 'dark'
                                                 ? { backgroundColor: '#AAAAAA', borderColor: '#151515' }
@@ -122,7 +120,7 @@ export default function UserPost(props){
                                 <Text style={[styles.tag,
                                             scheme === 'dark'
                                             ? { color: "#151515" }
-                                            : { color: "#EAEAEA"}]}>{object}</Text>
+                                            : { color: "#EAEAEA"}]}>{object.name}</Text>
                         </TouchableOpacity>
                         )
                     }
@@ -177,7 +175,7 @@ export default function UserPost(props){
                             scheme === 'dark'
                             ? {color: "#AAAAAA"}
                             : {color: "#555555"}]}>{postDetails.likes}</Text>
-                <TouchableOpacity onPress={() => setshowComments(!showComments)}>
+                <TouchableOpacity onPress={() => setShowComments(!showComments)}>
                     {scheme === 'dark' &&
                         <Icon name='comment' size={24} color={'#AAAAAA'}/>
                     }

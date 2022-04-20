@@ -1,9 +1,10 @@
 //npm import
-import { Text, View, KeyboardAvoidingView, TouchableOpacity, FlatList, Modal,
-    TextInput, Platform, TouchableWithoutFeedback, Keyboard, RefreshControl } from 'react-native';
-import React, {useState, useCallback, useEffect} from 'react';
+import { Text, View, KeyboardAvoidingView, TouchableOpacity, Modal,
+    TextInput, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import React, {useState, useEffect} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 //custom method import
 import { updateProfile } from "../methods/Settings/updateProfile"
@@ -54,16 +55,16 @@ export default function Settings({navigation}){
                                 {color: buttonTextColor}]}>{userID === '' ? "Login" : "Logout"}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,
-                            {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("change theme")}>
+                            {backgroundColor: buttonBackgroundColor}]} onPress={() => alert("Feature coming soon!")}>
                             <Icon style={styles.icon} name='moon-o' size={24} color={buttonTextColor}></Icon>
                             <Text style={[styles.buttonText,
-                                {color: buttonTextColor}]}>Dark mode</Text>
+                                {color: buttonTextColor}]}>{scheme === 'dark' ? 'Dark mode' : 'Light mode'}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,
                             {backgroundColor: buttonBackgroundColor}]} onPress={() => setShowModal(true)}>
                             <Icon style={styles.icon} name='user' size={24} color={buttonTextColor}></Icon>
                             <Text style={[styles.buttonText,
-                                {color: buttonTextColor}]}>Update profile</Text>
+                                {color: buttonTextColor}]}>Update Profile</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.button,
                             {backgroundColor: buttonBackgroundColor}]} onPress={() => navigation.navigate("MainPage")}>
@@ -72,6 +73,7 @@ export default function Settings({navigation}){
                                 {color: buttonTextColor}]}>Close settings</Text>
                         </TouchableOpacity>
                         {showModal &&
+                            <GestureRecognizer onSwipeDown={() => setShowModal(false)}>
                             <Modal animationType={'slide'} transparent={false}>
                                 <KeyboardAvoidingView
                                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -127,6 +129,7 @@ export default function Settings({navigation}){
                                     </TouchableWithoutFeedback>
                                 </KeyboardAvoidingView>
                             </Modal>
+                            </GestureRecognizer>
                         }
                     </View>
                 </View>

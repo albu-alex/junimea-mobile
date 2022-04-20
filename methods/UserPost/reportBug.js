@@ -1,6 +1,8 @@
-import { Alert, Platform } from 'react-native'
+import { Alert } from 'react-native'
+import { setHiddenPosts } from "./setHiddenPosts";
+import { setSavedPosts } from "./setSavedPosts";
 
-export function reportBug(postHidden){
+export function reportBug(postHidden, post){
     if(postHidden) {
         Alert.alert("", "",
             [
@@ -17,16 +19,15 @@ export function reportBug(postHidden){
                 {
                     text: "Hide post",
                     style: "cancel",
-                    onPress: () => alert("hide post")
+                    onPress: () => setHiddenPosts(post)
                 },
                 {
                     text: "Save post",
                     style: "cancel",
-                    onPress: () => alert("save post")
+                    onPress: () => setSavedPosts(post)
                 }
             ]
         );
-        return true;
     }
     Alert.alert("", "",
         [
@@ -52,5 +53,4 @@ export function reportBug(postHidden){
             }
         ]
     );
-    return false;
 }
