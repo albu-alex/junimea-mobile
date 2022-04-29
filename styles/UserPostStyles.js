@@ -4,6 +4,8 @@ const styles = StyleSheet.create({
     container: {
         marginTop: '2%',
         marginBottom: '5%',
+        display: "flex",
+        flex: 1
     },
     postHeader: {
         flexDirection: 'row',
