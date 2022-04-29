@@ -27,6 +27,7 @@ export default function UserPost(props){
     const [showModal, setShowModal] = useState(false);
     const [postHidden, setPostHidden] = useState(false);
     const [postDetails, setPostDetails] = useState({});
+    const [isLiked, setLiked] = useState(false)
     const [commentText, setCommentText] = useState('');
     const [photos, setPhotos] = useState([]);
     const togglePost = async () => {
@@ -73,6 +74,7 @@ export default function UserPost(props){
     useEffect(async () => {
         let details = await loadPost(props.id);
         setPostDetails(details);
+        setLiked(details.liked)
     }, []);
     const scheme = useColorScheme()
     return(
@@ -157,18 +159,18 @@ export default function UserPost(props){
             <View style={styles.feedback}>
                 <TouchableOpacity onPress={() => setLikes(true)}>
                     {scheme === 'dark' &&
-                        <Icon name='thumbs-up' size={24} color={'#AAAAAA'}/>
+                        <Icon style={{opacity: (isLiked) ? 0.4 : 1}} name='thumbs-up' size={24} color={'#AAAAAA'}/>
                     }
                     {scheme === 'light' &&
-                        <Icon name='thumbs-up' size={24} color={'#555555'}/>
+                        <Icon style={{opacity: (isLiked) ? 0.4 : 1}} name='thumbs-up' size={24} color={'#555555'}/>
                     }
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setLikes(false)}>
                     {scheme === 'dark' &&
-                        < Icon name='thumbs-down' size={24} color={'#AAAAAA'} />
+                        <Icon style={{opacity: (!isLiked) ? 0.4 : 1}} name='thumbs-down' size={24} color={'#AAAAAA'} />
                     }
                     {scheme === 'light' &&
-                        < Icon name='thumbs-down' size={24} color={'#555555'} />
+                        <Icon style={{opacity: (!isLiked) ? 0.4 : 1}} name='thumbs-down' size={24} color={'#555555'} />
                     }
                 </TouchableOpacity>
                 <Text style={[styles.likeCount,
